@@ -2,10 +2,14 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
     }
     dependencies {
         classpath ProjectConfig.GRADLE
         classpath ProjectConfig.KOTLIN_GRADLE_PLUGIN
+        classpath ProjectConfig.ANDROID_JUNIT5
     }
 }
 
