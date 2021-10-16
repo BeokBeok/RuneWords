@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_rune_el">엘</string>
+    <string name="title_rune_eld">엘드</string>
+    <string name="title_rune_tir">티르</string>
+    <string name="title_rune_nef">네프</string>
+    <string name="title_rune_eth">에드</string>
+    <string name="title_rune_ith">아이드</string>
+    <string name="title_rune_tal">탈</string>
+    <string name="title_rune_ral">랄</string>
+    <string name="title_rune_ort">오르트</string>
+    <string name="title_rune_thul">주울</string>
+    <string name="title_rune_amn">엠</string>
+    <string name="title_rune_sol">솔</string>
+    <string name="title_rune_shael">샤엘</string>
+    <string name="title_rune_dol">돌</string>
+    <string name="title_rune_hel">헬</string>
+    <string name="title_rune_io">이오</string>
+    <string name="title_rune_lum">룸</string>
+    <string name="title_rune_ko">코</string>
+    <string name="title_rune_fal">팔</string>
+    <string name="title_rune_lem">렘</string>
+    <string name="title_rune_pul">풀</string>
+    <string name="title_rune_um">우움</string>
+    <string name="title_rune_mal">말</string>
+    <string name="title_rune_ist">이스트</string>
+    <string name="title_rune_gul">굴</string>
+    <string name="title_rune_vex">백스</string>
+    <string name="title_rune_ohm">오움</string>
+    <string name="title_rune_lo">로</string>
+    <string name="title_rune_sur">수르</string>
+    <string name="title_rune_ber">베르</string>
+    <string name="title_rune_jah">자</string>
+    <string name="title_rune_cham">참</string>
+    <string name="title_rune_zod">조드</string>
+</resources>

@@ -1,16 +1,13 @@
 plugins {
     id("com.android.application")
-    id("kotlin-android")
+    kotlin("android")
     id("de.mannodermaus.android-junit5")
 }
 
 android {
-    compileSdk = 31
+    applyDefault()
 
     defaultConfig {
-        applicationId = "com.beok.runewords"
-        minSdk = 23
-        targetSdk = 31
         versionCode = 1
         versionName = "1.0"
 
@@ -30,9 +27,6 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
     buildFeatures {
         compose = true
     }
@@ -45,6 +39,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":feature:home"))
+
     AndroidX.run {
         implementation(CORE_KTX)
         implementation(APPCOMPAT)
