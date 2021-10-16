@@ -45,6 +45,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":feature:splash"))
+
     AndroidX.run {
         implementation(CORE_KTX)
         implementation(APPCOMPAT)

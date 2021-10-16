@@ -1,16 +1,16 @@
-package com.beok.runewords
+package com.beok.runewords.splash
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.compose.setContent
-import androidx.compose.material.MaterialTheme
+import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : AppCompatActivity() {
+class SplashActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContent {
-            ActivityMainView.Layout()
+            ActivitySplashView.Layout()
         }
     }
 }

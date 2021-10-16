@@ -1,11 +1,11 @@
-package com.beok.runewords
+package com.beok.runewords.splash
 
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 
-object ActivityMainView {
+object ActivitySplashView {
 
     @Composable
     fun Layout() {
