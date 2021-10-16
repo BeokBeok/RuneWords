@@ -1,5 +1,5 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("kotlin-android")
 }
 
@@ -7,13 +7,8 @@ android {
     compileSdk = 31
 
     defaultConfig {
-        applicationId = "com.beok.runewords"
         minSdk = 23
         targetSdk = 31
-        versionCode = 1
-        versionName = "1.0"
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
