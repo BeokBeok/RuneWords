@@ -33,6 +33,12 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = Compose.VERSION
+    }
     testOptions {
         unitTests.isReturnDefaultValues = true
     }
@@ -46,6 +52,15 @@ dependencies {
     }
 
     implementation(Google.MATERIAL)
+
+    Compose.run {
+        implementation(UI)
+        implementation(MATERIAL)
+        implementation(UI_TOOLING)
+        implementation(RUNTIME_LIVEDATA)
+        implementation(ACTIVITY)
+        implementation(CONSTRAINT_LAYOUT)
+    }
 
     JUnit.run {
         testImplementation(JUPITER_API)
