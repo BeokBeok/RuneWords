@@ -26,26 +26,41 @@ object ActivityHomeView {
     @Composable
     fun Layout() {
         MaterialTheme {
-            LazyVerticalGrid(cells = GridCells.Adaptive(minSize = 128.dp)) {
-                items(Rune.all()) { item ->
-                    Column(
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .padding(20.dp)
-                            .clickable {  },
-                        verticalArrangement = Arrangement.Center,
-                        horizontalAlignment = Alignment.CenterHorizontally
-                    ) {
-                        Image(
-                            painter = painterResource(id = item.iconResourceID),
-                            contentDescription = null,
-                            modifier = Modifier.width(50.dp).height(50.dp),
-                            contentScale = ContentScale.Crop
-                        )
-                        Text(text = stringResource(id = item.nameResourceID))
-                    }
-                }
+            Content()
+        }
+    }
+
+    @Composable
+    private fun Content() {
+        LazyVerticalGrid(cells = GridCells.Adaptive(minSize = 128.dp)) {
+            items(Rune.all()) { item ->
+                RuneItem(
+                    item = item,
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(20.dp)
+                        .clickable { }
+                )
             }
+        }
+    }
+
+    @Composable
+    private fun RuneItem(item: Rune, modifier: Modifier) {
+        Column(
+            modifier = modifier,
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Image(
+                painter = painterResource(id = item.iconResourceID),
+                contentDescription = null,
+                modifier = Modifier
+                    .width(50.dp)
+                    .height(50.dp),
+                contentScale = ContentScale.Crop
+            )
+            Text(text = stringResource(id = item.nameResourceID))
         }
     }
 }
