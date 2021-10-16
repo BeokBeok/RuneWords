@@ -1,16 +1,18 @@
-package com.beok.runewords.splash
+package com.beok.runewords.home
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 
-class SplashActivity : AppCompatActivity() {
+@SuppressLint("CustomSplashScreen")
+class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContent {
-            ActivitySplashView.Layout()
+            ActivityHomeView.Layout()
         }
     }
 }

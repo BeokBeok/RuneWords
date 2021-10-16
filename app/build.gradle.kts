@@ -45,7 +45,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":feature:splash"))
+    implementation(project(":feature:home"))
 
     AndroidX.run {
         implementation(CORE_KTX)
