@@ -1,6 +1,5 @@
 package com.beok.runewords.home
 
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -23,7 +22,6 @@ import androidx.compose.ui.unit.dp
 
 object ActivityHomeView {
 
-    @ExperimentalFoundationApi
     @Composable
     fun Layout() {
         MaterialTheme {
