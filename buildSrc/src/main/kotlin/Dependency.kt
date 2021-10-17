@@ -30,3 +30,8 @@ object Compose {
     const val ACTIVITY = "androidx.activity:activity-compose:1.3.1"
     const val CONSTRAINT_LAYOUT = "androidx.constraintlayout:constraintlayout-compose:1.0.0-rc01"
 }
+
+object Firebase {
+    const val PLATFORM = "com.google.firebase:firebase-bom:28.4.2"
+    const val ANALYTICS_KTX = "com.google.firebase:firebase-analytics-ktx"
+}
