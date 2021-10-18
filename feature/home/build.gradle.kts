@@ -34,6 +34,8 @@ tasks {
 }
 
 dependencies {
+    implementation(project(":common"))
+
     AndroidX.run {
         implementation(CORE_KTX)
         implementation(APPCOMPAT)
