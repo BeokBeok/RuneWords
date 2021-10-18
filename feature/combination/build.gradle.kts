@@ -1,7 +1,7 @@
 plugins {
-    id("com.android.application")
-    id("com.google.gms.google-services")
+    id("com.android.library")
     kotlin("android")
+    id("com.google.gms.google-services")
     id("de.mannodermaus.android-junit5")
 }
 
@@ -9,21 +9,9 @@ android {
     applyDefault()
 
     defaultConfig {
-        versionCode = 1
-        versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    buildTypes {
-        getByName("release") {
-            isMinifyEnabled = true
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
-    }
     buildFeatures {
         compose = true
     }
@@ -36,10 +24,6 @@ android {
 }
 
 dependencies {
-    implementation(project(":common"))
-    implementation(project(":feature:home"))
-    implementation(project(":feature:combination"))
-
     AndroidX.run {
         implementation(CORE_KTX)
         implementation(APPCOMPAT)
@@ -58,7 +42,7 @@ dependencies {
 
     Firebase.run {
         implementation(platform(PLATFORM))
-        implementation(ANALYTICS_KTX)
+        implementation(FIRESTORE_KTX)
     }
 
     JUnit.run {
