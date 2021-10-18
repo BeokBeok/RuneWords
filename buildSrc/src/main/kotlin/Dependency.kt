@@ -1,6 +1,7 @@
 object AndroidX {
     const val CORE_KTX = "androidx.core:core-ktx:1.6.0"
     const val APPCOMPAT =  "androidx.appcompat:appcompat:1.3.1"
+    const val CORE_TESTING = "androidx.arch.core:core-testing:2.1.0"
 }
 
 object Google {
@@ -52,4 +53,8 @@ object Coroutines {
     private const val VERSION = "1.5.2"
 
     const val CORE = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$VERSION"
+}
+
+object MockK {
+    const val MOCKK = "io.mockk:mockk:1.12.0"
 }

@@ -31,6 +31,7 @@ dependencies {
     AndroidX.run {
         implementation(CORE_KTX)
         implementation(APPCOMPAT)
+        testImplementation(CORE_TESTING)
     }
 
     implementation(Google.MATERIAL)
@@ -61,4 +62,5 @@ dependencies {
     }
 
     testImplementation(AssertJ.CORE)
+    testImplementation(MockK.MOCKK)
 }
