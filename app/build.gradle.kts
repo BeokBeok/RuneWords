@@ -46,7 +46,6 @@ dependencies {
     AndroidX.run {
         implementation(CORE_KTX)
         implementation(APPCOMPAT)
-        implementation(CONSTRAINT_LAYOUT)
     }
 
     implementation(Google.MATERIAL)
