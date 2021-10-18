@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.beok.runewords.combination">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application tools:ignore=",AllowBackup,MissingApplicationIcon">
 
         <activity
