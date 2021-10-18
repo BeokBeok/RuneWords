@@ -12,7 +12,7 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            ActivityHomeView.Layout()
+            ActivityHomeView.Layout(context = this)
         }
     }
 }

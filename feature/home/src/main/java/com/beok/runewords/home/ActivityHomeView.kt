@@ -1,5 +1,6 @@
 package com.beok.runewords.home
 
+import android.content.Context
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -20,18 +21,23 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.core.os.bundleOf
+import com.beok.runewords.common.BundleKeyConstants
+import com.beok.runewords.common.startActivity
 
 object ActivityHomeView {
 
+    private const val CLASSNAME_COMBINATION = "com.beok.runewords.combination.CombinationActivity"
+
     @Composable
-    fun Layout() {
+    fun Layout(context: Context) {
         MaterialTheme {
-            Content()
+            Content(context)
         }
     }
 
     @Composable
-    private fun Content() {
+    private fun Content(context: Context) {
         LazyVerticalGrid(cells = GridCells.Adaptive(minSize = 128.dp)) {
             items(Rune.all()) { item ->
                 RuneItem(
@@ -39,7 +45,12 @@ object ActivityHomeView {
                     modifier = Modifier
                         .fillMaxSize()
                         .padding(20.dp)
-                        .clickable { }
+                        .clickable {
+                            context.startActivity(
+                                className = CLASSNAME_COMBINATION,
+                                bundle = bundleOf(BundleKeyConstants.RUNE_NAME to item.name)
+                            )
+                        }
                 )
             }
         }

@@ -1,7 +1,6 @@
 object AndroidX {
     const val CORE_KTX = "androidx.core:core-ktx:1.6.0"
     const val APPCOMPAT =  "androidx.appcompat:appcompat:1.3.1"
-    const val CONSTRAINT_LAYOUT = "androidx.constraintlayout:constraintlayout:2.1.1"
 }
 
 object Google {
@@ -34,4 +33,9 @@ object Compose {
 object Firebase {
     const val PLATFORM = "com.google.firebase:firebase-bom:28.4.2"
     const val ANALYTICS_KTX = "com.google.firebase:firebase-analytics-ktx"
+    const val FIRESTORE_KTX = "com.google.firebase:firebase-firestore-ktx"
+}
+
+object Timber {
+    const val TIMBER = "com.jakewharton.timber:timber:5.0.1"
 }
