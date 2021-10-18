@@ -5,6 +5,7 @@ object AndroidX {
 
 object Google {
     const val MATERIAL = "com.google.android.material:material:1.4.0"
+    const val PLAY_SERVICES_TASKS = "com.google.android.gms:play-services-tasks:17.2.1"
 }
 
 object JUnit {
@@ -45,4 +46,10 @@ object Hilt {
 
     const val ANDROID = "com.google.dagger:hilt-android:$VERSION"
     const val COMPILER = "com.google.dagger:hilt-compiler:$VERSION"
+}
+
+object Coroutines {
+    private const val VERSION = "1.5.2"
+
+    const val CORE = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$VERSION"
 }
