@@ -61,6 +61,7 @@ dependencies {
     Firebase.run {
         implementation(platform(PLATFORM))
         implementation(ANALYTICS_KTX)
+        implementation(FIRESTORE_KTX)
     }
 
     Hilt.run {
