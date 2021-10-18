@@ -39,3 +39,10 @@ object Firebase {
 object Timber {
     const val TIMBER = "com.jakewharton.timber:timber:5.0.1"
 }
+
+object Hilt {
+    const val VERSION = "2.39.1"
+
+    const val ANDROID = "com.google.dagger:hilt-android:$VERSION"
+    const val COMPILER = "com.google.dagger:hilt-compiler:$VERSION"
+}
