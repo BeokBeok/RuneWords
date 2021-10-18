@@ -2,7 +2,8 @@ plugins {
     id("com.android.application")
     id("com.google.gms.google-services")
     kotlin("android")
-    id("de.mannodermaus.android-junit5")
+    kotlin("kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -30,9 +31,6 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = Compose.VERSION
     }
-    testOptions {
-        unitTests.isReturnDefaultValues = true
-    }
 }
 
 dependencies {
@@ -59,13 +57,11 @@ dependencies {
     Firebase.run {
         implementation(platform(PLATFORM))
         implementation(ANALYTICS_KTX)
+        implementation(FIRESTORE_KTX)
     }
 
-    JUnit.run {
-        testImplementation(JUPITER_API)
-        testRuntimeOnly(JUPITER_ENGINE)
-        testImplementation(JUPITER_PARAMS)
+    Hilt.run {
+        implementation(ANDROID)
+        kapt(COMPILER)
     }
-
-    testImplementation(AssertJ.CORE)
 }

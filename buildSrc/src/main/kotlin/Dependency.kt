@@ -1,10 +1,12 @@
 object AndroidX {
     const val CORE_KTX = "androidx.core:core-ktx:1.6.0"
     const val APPCOMPAT =  "androidx.appcompat:appcompat:1.3.1"
+    const val CORE_TESTING = "androidx.arch.core:core-testing:2.1.0"
 }
 
 object Google {
     const val MATERIAL = "com.google.android.material:material:1.4.0"
+    const val PLAY_SERVICES_TASKS = "com.google.android.gms:play-services-tasks:17.2.1"
 }
 
 object JUnit {
@@ -38,4 +40,21 @@ object Firebase {
 
 object Timber {
     const val TIMBER = "com.jakewharton.timber:timber:5.0.1"
+}
+
+object Hilt {
+    const val VERSION = "2.39.1"
+
+    const val ANDROID = "com.google.dagger:hilt-android:$VERSION"
+    const val COMPILER = "com.google.dagger:hilt-compiler:$VERSION"
+}
+
+object Coroutines {
+    private const val VERSION = "1.5.2"
+
+    const val CORE = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$VERSION"
+}
+
+object MockK {
+    const val MOCKK = "io.mockk:mockk:1.12.0"
 }

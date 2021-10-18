@@ -13,7 +13,20 @@ dependencies {
         implementation(APPCOMPAT)
     }
 
-    implementation(Google.MATERIAL)
+    Google.run {
+        implementation(MATERIAL)
+        implementation(PLAY_SERVICES_TASKS)
+    }
 
     api(Timber.TIMBER)
+    api(Coroutines.CORE)
+}
+
+tasks {
+// See https://kotlinlang.org/docs/reference/experimental.html#experimental-status-of-experimental-api(-markers)
+    withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+        kotlinOptions.freeCompilerArgs += listOf(
+            "-Xuse-experimental=kotlinx.coroutines.ExperimentalCoroutinesApi",
+        )
+    }
 }
