@@ -34,3 +34,7 @@ object Firebase {
     const val PLATFORM = "com.google.firebase:firebase-bom:28.4.2"
     const val ANALYTICS_KTX = "com.google.firebase:firebase-analytics-ktx"
 }
+
+object Timber {
+    const val TIMBER = "com.jakewharton.timber:timber:5.0.1"
+}

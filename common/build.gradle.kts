@@ -14,4 +14,6 @@ dependencies {
     }
 
     implementation(Google.MATERIAL)
+
+    api(Timber.TIMBER)
 }
