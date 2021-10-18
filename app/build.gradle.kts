@@ -4,7 +4,6 @@ plugins {
     kotlin("android")
     kotlin("kapt")
     id("dagger.hilt.android.plugin")
-    id("de.mannodermaus.android-junit5")
 }
 
 android {
@@ -31,9 +30,6 @@ android {
     }
     composeOptions {
         kotlinCompilerExtensionVersion = Compose.VERSION
-    }
-    testOptions {
-        unitTests.isReturnDefaultValues = true
     }
 }
 
@@ -68,12 +64,4 @@ dependencies {
         implementation(ANDROID)
         kapt(COMPILER)
     }
-
-    JUnit.run {
-        testImplementation(JUPITER_API)
-        testRuntimeOnly(JUPITER_ENGINE)
-        testImplementation(JUPITER_PARAMS)
-    }
-
-    testImplementation(AssertJ.CORE)
 }
