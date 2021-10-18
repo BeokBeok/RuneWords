@@ -2,8 +2,9 @@ package com.beok.runewords.combination.domain
 
 import com.beok.runewords.combination.data.RuneWordsRepository
 import com.beok.runewords.combination.domain.model.RuneWords
+import javax.inject.Inject
 
-internal class RuneWordsFetchUseCaseImpl(
+internal class RuneWordsFetchUseCaseImpl @Inject constructor(
     private val repository: RuneWordsRepository
 ) : RuneWordsFetchUseCase {
 
