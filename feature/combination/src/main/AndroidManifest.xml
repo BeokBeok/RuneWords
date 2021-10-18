@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.beok.runewords.combination">
+
+    <application tools:ignore=",AllowBackup,MissingApplicationIcon">
+
+        <activity
+            android:name=".CombinationActivity"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
+
+    </application>
 
 </manifest>
