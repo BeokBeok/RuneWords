@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
     kotlin("android")
+    id("com.google.gms.google-services")
     id("de.mannodermaus.android-junit5")
 }
 
@@ -37,6 +38,11 @@ dependencies {
         implementation(RUNTIME_LIVEDATA)
         implementation(ACTIVITY)
         implementation(CONSTRAINT_LAYOUT)
+    }
+
+    Firebase.run {
+        implementation(platform(PLATFORM))
+        implementation(FIRESTORE_KTX)
     }
 
     JUnit.run {
