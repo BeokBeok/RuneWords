@@ -1,7 +1,9 @@
 plugins {
     id("com.android.library")
     kotlin("android")
+    kotlin("kapt")
     id("com.google.gms.google-services")
+    id("dagger.hilt.android.plugin")
     id("de.mannodermaus.android-junit5")
 }
 
@@ -43,6 +45,11 @@ dependencies {
     Firebase.run {
         implementation(platform(PLATFORM))
         implementation(FIRESTORE_KTX)
+    }
+
+    Hilt.run {
+        implementation(ANDROID)
+        kapt(COMPILER)
     }
 
     JUnit.run {
