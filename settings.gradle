@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 rootProject.name = "RuneWords"
 include ':app'
 include ':feature:home'
+include ':feature:combination'
