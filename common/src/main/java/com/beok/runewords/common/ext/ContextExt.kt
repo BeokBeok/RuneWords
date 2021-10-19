@@ -16,3 +16,7 @@ fun Context.startActivity(
         }
     )
 }.onFailure(Timber::d)
+
+fun Context.resourceIDByName(name: String) = runCatching {
+    resources.getIdentifier(name, "string", packageName)
+}.getOrNull()
