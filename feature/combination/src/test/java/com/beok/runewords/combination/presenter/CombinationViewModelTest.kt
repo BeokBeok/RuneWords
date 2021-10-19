@@ -3,6 +3,7 @@ package com.beok.runewords.combination.presenter
 import com.beok.runewords.combination.InstantExecutorExtension
 import com.beok.runewords.combination.domain.RuneWordsFetchUseCase
 import com.beok.runewords.combination.domain.model.RuneWords
+import com.beok.runewords.common.model.Rune
 import io.mockk.coEvery
 import io.mockk.mockk
 import org.junit.jupiter.api.Assertions.assertEquals
@@ -23,11 +24,11 @@ class CombinationViewModelTest {
 
     @Test
     fun `룬에 해당하는 룬워드를 검색합니다`() {
-        val rune = "el"
+        val rune = Rune.EL
         val mockResponse: List<RuneWords> = listOf(mockk())
         coEvery {
             runeWordsFetchUseCase
-                .execute(rune = rune)
+                .execute(rune = rune.name)
                 .getOrNull()
         } returns mockResponse
 

@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.beok.runewords.common.BundleKeyConstants
+import com.beok.runewords.common.model.Rune
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -14,7 +15,7 @@ class CombinationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        (intent.extras?.get(BundleKeyConstants.RUNE_NAME) as? String)
+        (intent.extras?.get(BundleKeyConstants.RUNE_NAME) as? Rune)
             ?.let(viewModel::fetchRuneWords)
     }
 }

@@ -50,7 +50,9 @@ internal object ActivityHomeView {
                         .clickable {
                             context.startActivity(
                                 className = CLASSNAME_COMBINATION,
-                                bundle = bundleOf(BundleKeyConstants.RUNE_NAME to item.name)
+                                bundle = bundleOf(
+                                    BundleKeyConstants.RUNE_NAME to Rune.findByName(item.name)
+                                )
                             )
                         }
                 )
