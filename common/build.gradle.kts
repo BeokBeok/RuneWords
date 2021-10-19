@@ -1,10 +1,15 @@
 plugins {
     id("com.android.library")
     kotlin("android")
+    id("de.mannodermaus.android-junit5")
 }
 
 android {
     applyDefault()
+
+    defaultConfig {
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
 }
 
 dependencies {
@@ -20,6 +25,14 @@ dependencies {
 
     api(Timber.TIMBER)
     api(Coroutines.CORE)
+
+    JUnit.run {
+        testImplementation(JUPITER_API)
+        testRuntimeOnly(JUPITER_ENGINE)
+        testImplementation(JUPITER_PARAMS)
+    }
+
+    testImplementation(AssertJ.CORE)
 }
 
 tasks {

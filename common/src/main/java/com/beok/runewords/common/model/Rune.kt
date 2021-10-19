@@ -1,7 +1,8 @@
-package com.beok.runewords.home
+package com.beok.runewords.common.model
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
+import com.beok.runewords.common.R
 
 enum class Rune(
     @StringRes val nameResourceID: Int,
@@ -143,5 +144,10 @@ enum class Rune(
     companion object {
 
         fun all(): List<Rune> = values().toList()
+
+        fun findByName(name: String) = values()
+            .firstOrNull {
+                it.name.lowercase() == name.lowercase()
+            }
     }
 }

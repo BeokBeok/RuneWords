@@ -8,7 +8,7 @@
     <application tools:ignore=",AllowBackup,MissingApplicationIcon">
 
         <activity
-            android:name=".CombinationActivity"
+            android:name=".presenter.CombinationActivity"
             android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
 
     </application>

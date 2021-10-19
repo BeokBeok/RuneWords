@@ -1,7 +1,7 @@
 package com.beok.runewords.combination.data.entity
 
 import com.beok.runewords.combination.domain.model.RuneWords
-import com.beok.runewords.common.EMPTY
+import com.beok.runewords.common.ext.EMPTY
 import com.beok.runewords.common.util.DataToDomainMapper
 
 internal data class RuneWordsResponse(

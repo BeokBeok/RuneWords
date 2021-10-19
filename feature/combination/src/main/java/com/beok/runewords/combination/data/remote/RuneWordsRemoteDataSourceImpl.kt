@@ -1,7 +1,7 @@
 package com.beok.runewords.combination.data.remote
 
 import com.beok.runewords.combination.data.entity.RuneWordsResponse
-import com.beok.runewords.common.await
+import com.beok.runewords.common.ext.await
 import com.google.firebase.firestore.FirebaseFirestore
 import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
