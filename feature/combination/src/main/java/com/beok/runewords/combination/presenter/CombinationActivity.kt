@@ -16,14 +16,19 @@ class CombinationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        setupUI()
+        showContent()
+    }
+
+    private fun setupUI() {
         setContent {
             ActivityCombinationView.Layout(
                 rune = intent.extras?.get(BundleKeyConstants.RUNE_NAME) as? Rune
-                    ?: return@setContent
+                    ?: return@setContent,
+                context = this,
+                viewModel = viewModel
             )
         }
-
-        showContent()
     }
 
     private fun showContent() {

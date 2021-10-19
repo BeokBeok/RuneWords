@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 import timber.log.Timber
 
 @HiltViewModel
-internal class CombinationViewModel @Inject constructor(
+class CombinationViewModel @Inject constructor(
     private val runeWordsFetchUseCase: RuneWordsFetchUseCase
 ): ViewModel() {
 
@@ -22,7 +22,7 @@ internal class CombinationViewModel @Inject constructor(
 
     fun fetchRuneWords(rune: Rune?) = viewModelScope.launch {
         runeWordsFetchUseCase
-            .execute(rune = rune?.name ?: return@launch)
+            .execute(rune = rune?.name?.lowercase() ?: return@launch)
             .onSuccess {
                 _runeWordsGroup.value = it
             }
