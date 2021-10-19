@@ -1,4 +1,4 @@
-package com.beok.runewords.home
+package com.beok.runewords.common
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
