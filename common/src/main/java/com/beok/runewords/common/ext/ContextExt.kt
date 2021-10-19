@@ -1,4 +1,4 @@
-package com.beok.runewords.common
+package com.beok.runewords.common.ext
 
 import android.content.Context
 import android.content.Intent
@@ -16,3 +16,7 @@ fun Context.startActivity(
         }
     )
 }.onFailure(Timber::d)
+
+fun Context.resourceIDByName(name: String) = runCatching {
+    resources.getIdentifier(name, "string", packageName)
+}.getOrNull()

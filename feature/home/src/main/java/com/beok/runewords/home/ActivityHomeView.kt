@@ -23,11 +23,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.core.os.bundleOf
 import com.beok.runewords.common.BundleKeyConstants
-import com.beok.runewords.common.startActivity
+import com.beok.runewords.common.model.Rune
+import com.beok.runewords.common.ext.startActivity
 
-object ActivityHomeView {
+internal object ActivityHomeView {
 
-    private const val CLASSNAME_COMBINATION = "com.beok.runewords.combination.CombinationActivity"
+    private const val CLASSNAME_COMBINATION =
+        "com.beok.runewords.combination.presenter.CombinationActivity"
 
     @Composable
     fun Layout(context: Context) {
@@ -48,7 +50,9 @@ object ActivityHomeView {
                         .clickable {
                             context.startActivity(
                                 className = CLASSNAME_COMBINATION,
-                                bundle = bundleOf(BundleKeyConstants.RUNE_NAME to item.name)
+                                bundle = bundleOf(
+                                    BundleKeyConstants.RUNE_NAME to Rune.findByName(item.name)
+                                )
                             )
                         }
                 )

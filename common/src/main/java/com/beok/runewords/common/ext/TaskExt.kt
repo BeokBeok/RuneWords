@@ -1,4 +1,4 @@
-package com.beok.runewords.common
+package com.beok.runewords.common.ext
 
 import com.google.android.gms.tasks.CancellationTokenSource
 import com.google.android.gms.tasks.RuntimeExecutionException
