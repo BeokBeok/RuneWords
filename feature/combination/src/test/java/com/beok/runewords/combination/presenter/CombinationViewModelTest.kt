@@ -1,5 +1,6 @@
-package com.beok.runewords.combination
+package com.beok.runewords.combination.presenter
 
+import com.beok.runewords.combination.InstantExecutorExtension
 import com.beok.runewords.combination.domain.RuneWordsFetchUseCase
 import com.beok.runewords.combination.domain.model.RuneWords
 import io.mockk.coEvery

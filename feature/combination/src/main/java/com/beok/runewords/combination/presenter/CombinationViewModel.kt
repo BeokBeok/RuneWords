@@ -1,4 +1,4 @@
-package com.beok.runewords.combination
+package com.beok.runewords.combination.presenter
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

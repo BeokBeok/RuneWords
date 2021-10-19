@@ -1,4 +1,4 @@
-package com.beok.runewords.combination
+package com.beok.runewords.combination.presenter
 
 import android.os.Bundle
 import androidx.activity.viewModels
