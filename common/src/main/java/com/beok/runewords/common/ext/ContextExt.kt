@@ -1,4 +1,4 @@
-package com.beok.runewords.common
+package com.beok.runewords.common.ext
 
 import android.content.Context
 import android.content.Intent
