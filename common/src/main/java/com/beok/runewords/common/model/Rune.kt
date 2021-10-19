@@ -147,7 +147,7 @@ enum class Rune(
 
         fun findByName(name: String) = values()
             .firstOrNull {
-                it.name == name.uppercase()
+                it.name.lowercase() == name.lowercase()
             }
     }
 }
