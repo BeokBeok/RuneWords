@@ -1,7 +1,8 @@
-package com.beok.runewords.common
+package com.beok.runewords.common.model
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
+import com.beok.runewords.common.R
 
 enum class Rune(
     @StringRes val nameResourceID: Int,

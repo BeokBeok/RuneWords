@@ -23,7 +23,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.core.os.bundleOf
 import com.beok.runewords.common.BundleKeyConstants
-import com.beok.runewords.common.Rune
+import com.beok.runewords.common.model.Rune
 import com.beok.runewords.common.ext.startActivity
 
 internal object ActivityHomeView {
