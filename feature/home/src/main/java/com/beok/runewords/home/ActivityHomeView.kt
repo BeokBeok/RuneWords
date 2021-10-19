@@ -25,7 +25,7 @@ import androidx.core.os.bundleOf
 import com.beok.runewords.common.BundleKeyConstants
 import com.beok.runewords.common.startActivity
 
-object ActivityHomeView {
+internal object ActivityHomeView {
 
     private const val CLASSNAME_COMBINATION =
         "com.beok.runewords.combination.presenter.CombinationActivity"
