@@ -144,5 +144,10 @@ enum class Rune(
     companion object {
 
         fun all(): List<Rune> = values().toList()
+
+        fun findByName(name: String) = values()
+            .firstOrNull {
+                it.name == name.uppercase()
+            }
     }
 }

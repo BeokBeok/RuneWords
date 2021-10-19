@@ -11,4 +11,13 @@ internal class RuneTest {
 
         assertThat(rune.size).isEqualTo(33)
     }
+
+    @Test
+    fun `룬의 이름에 해당하는 Enum을 찾습니다`() {
+        val runeName = "vex"
+
+        val actual = Rune.findByName(name = runeName)
+
+        assertThat(actual).isEqualTo(Rune.VEX)
+    }
 }
