@@ -9,7 +9,7 @@ import com.beok.runewords.common.model.Rune
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class CombinationActivity : AppCompatActivity() {
+internal class CombinationActivity : AppCompatActivity() {
 
     private val viewModel by viewModels<CombinationViewModel>()
 
