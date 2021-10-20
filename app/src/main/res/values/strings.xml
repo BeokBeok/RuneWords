@@ -80,4 +80,8 @@
     <string name="white">순백 (화이트)</string>
     <string name="wind">바람</string>
     <string name="wisdom">현명</string>
+
+    <!-- RuneWords Type -->
+    <string name="shield">방패</string>
+    <string name="all_weapons">모든 무기</string>
 </resources>
