@@ -69,16 +69,20 @@ internal object ActivityDetailView {
         ) {
             Headline(resourceID = R.string.title_type)
             Text(
-                text = stringResource(
-                    id = context.resourceIDByName(info.value.type) ?: return@Column
-                ),
+                text = info.value.type
+                    .map { typeName ->
+                        context.resourceIDByName(name = typeName)?.let { id ->
+                            stringResource(id = id)
+                        }
+                    }
+                    .joinToString(),
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(vertical = 20.dp),
                 fontSize = 16.sp,
                 textAlign = TextAlign.Center
             )
-            Headline(resourceID = R.string.title_type)
+            Headline(resourceID = R.string.title_rune_words)
             Row(
                 modifier = Modifier
                     .fillMaxWidth()

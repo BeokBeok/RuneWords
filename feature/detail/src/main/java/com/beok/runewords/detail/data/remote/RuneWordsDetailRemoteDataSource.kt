@@ -12,7 +12,7 @@ internal interface RuneWordsDetailRemoteDataSource {
             RuneWordsDetailResponse(
                 name = "call_to_arms",
                 rune_combination = listOf("amn", "ral", "mal", "ist", "ohm"),
-                type = "all_weapons",
+                type = listOf("all_weapons"),
             )
     }
 }

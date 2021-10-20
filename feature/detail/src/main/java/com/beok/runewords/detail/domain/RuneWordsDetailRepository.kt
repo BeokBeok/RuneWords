@@ -11,7 +11,7 @@ internal interface RuneWordsDetailRepository {
         override suspend fun fetchInfo(name: String): RuneWordsDetail = RuneWordsDetail(
             name = "call_to_arms",
             runeCombination = listOf("amn", "ral", "mal", "ist", "ohm"),
-            type = "all_weapons"
+            type = listOf("all_weapons")
         )
     }
 }
