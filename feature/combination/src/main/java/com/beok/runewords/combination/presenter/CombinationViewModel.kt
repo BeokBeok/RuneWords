@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 import timber.log.Timber
 
 @HiltViewModel
-class CombinationViewModel @Inject constructor(
+internal class CombinationViewModel @Inject constructor(
     private val runeWordsFetchUseCase: RuneWordsFetchUseCase
 ): ViewModel() {
 

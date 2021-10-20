@@ -1,17 +1,16 @@
-package com.beok.runewords.combination.presenter
+package com.beok.runewords.detail.presenter
 
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.beok.runewords.common.BundleKeyConstants
-import com.beok.runewords.common.model.Rune
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-internal class CombinationActivity : AppCompatActivity() {
+internal class DetailActivity : AppCompatActivity() {
 
-    private val viewModel by viewModels<CombinationViewModel>()
+    private val viewModel by viewModels<DetailViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,19 +19,19 @@ internal class CombinationActivity : AppCompatActivity() {
         showContent()
     }
 
+    private fun showContent() {
+        (intent.extras?.get(BundleKeyConstants.RUNE_WORDS_NAME) as? String)
+            ?.let(viewModel::fetchDetail)
+    }
+
     private fun setupUI() {
         setContent {
-            ActivityCombinationView.Layout(
-                rune = intent.extras?.get(BundleKeyConstants.RUNE_NAME) as? Rune
+            ActivityDetailView.Layout(
+                runeWordsName = intent.extras?.get(BundleKeyConstants.RUNE_WORDS_NAME) as? String
                     ?: return@setContent,
                 context = this,
                 viewModel = viewModel
             )
         }
-    }
-
-    private fun showContent() {
-        (intent.extras?.get(BundleKeyConstants.RUNE_NAME) as? Rune)
-            ?.let(viewModel::fetchRuneWords)
     }
 }

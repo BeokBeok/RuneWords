@@ -5,12 +5,10 @@ import com.beok.runewords.common.ext.EMPTY
 import com.beok.runewords.common.util.DataToDomainMapper
 
 internal data class RuneWordsResponse(
-    val name: String = String.EMPTY,
-    val rune_combination: List<String> = emptyList()
+    val name: String = String.EMPTY
 ): DataToDomainMapper<RuneWords> {
 
     override fun toDto(): RuneWords = RuneWords(
-        name = name,
-        runeCombination = rune_combination
+        name = name
     )
 }
