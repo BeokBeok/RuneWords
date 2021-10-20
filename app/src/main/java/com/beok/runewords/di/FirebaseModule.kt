@@ -1,4 +1,4 @@
-package com.beok.runewords.combination.di
+package com.beok.runewords.di
 
 import com.google.firebase.firestore.FirebaseFirestore
 import dagger.Module

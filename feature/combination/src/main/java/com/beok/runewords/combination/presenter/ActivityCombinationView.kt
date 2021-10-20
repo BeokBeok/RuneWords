@@ -23,10 +23,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.core.os.bundleOf
+import com.beok.runewords.common.BundleKeyConstants
 import com.beok.runewords.common.ext.resourceIDByName
+import com.beok.runewords.common.ext.startActivity
 import com.beok.runewords.common.model.Rune
 
-object ActivityCombinationView {
+internal object ActivityCombinationView {
+
+    private const val CLASSNAME_DETAIL = "com.beok.runewords.detail.presenter.DetailActivity"
 
     @Composable
     fun Layout(rune: Rune, context: Context, viewModel: CombinationViewModel) {
@@ -56,20 +61,25 @@ object ActivityCombinationView {
 
         LazyColumn(modifier = Modifier.fillMaxSize()) {
             items(runeWords.value) { item ->
+                val runeWordsName =
+                    stringResource(id = context.resourceIDByName(item.name) ?: return@items)
                 Column(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .clickable { }
+                        .clickable {
+                            context.startActivity(
+                                className = CLASSNAME_DETAIL,
+                                bundle = bundleOf(
+                                    BundleKeyConstants.RUNE_WORDS_NAME to item.name
+                                )
+                            )
+                        }
                         .padding(horizontal = 16.dp)
                         .padding(top = 16.dp),
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    Text(
-                        text = stringResource(
-                            id = context.resourceIDByName(item.name) ?: return@Column
-                        )
-                    )
+                    Text(text = runeWordsName)
                     Divider(
                         modifier = Modifier
                             .fillMaxWidth()
