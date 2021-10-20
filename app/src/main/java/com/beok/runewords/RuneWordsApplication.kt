@@ -11,7 +11,7 @@ class RuneWordsApplication : Application() {
         super.onCreate()
 
         if (BuildConfig.DEBUG) {
-            Timber.plant()
+            Timber.plant(Timber.DebugTree())
         }
     }
 }
