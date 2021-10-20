@@ -67,48 +67,61 @@ internal object ActivityDetailView {
                 .fillMaxSize()
                 .verticalScroll(rememberScrollState())
         ) {
-            Headline(resourceID = R.string.title_type)
-            Text(
-                text = info.value.type
-                    .map { typeName ->
-                        context.resourceIDByName(name = typeName)?.let { id ->
-                            stringResource(id = id)
-                        }
-                    }
-                    .joinToString(),
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(vertical = 20.dp),
-                fontSize = 16.sp,
-                textAlign = TextAlign.Center
-            )
-            Headline(resourceID = R.string.title_rune_words)
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(vertical = 20.dp),
-                horizontalArrangement = Arrangement.Center
-            ) {
-                info.value.runeCombination.forEach {
-                    Column(
-                        modifier = Modifier.padding(horizontal = 8.dp),
-                        horizontalAlignment = Alignment.CenterHorizontally
-                    ) {
-                        Image(
-                            painter = painterResource(id = it.iconResourceID),
-                            contentDescription = null,
-                            modifier = Modifier
-                                .width(60.dp)
-                                .height(60.dp)
-                        )
-                        Text(
-                            text = stringResource(id = it.nameResourceID),
-                            modifier = Modifier.padding(top = 4.dp)
-                        )
-                    }
+            RuneWordsType(info = info, context = context)
+            RuneWordsCombination(info = info)
+        }
+    }
+
+    @Composable
+    private fun RuneWordsCombination(info: State<RuneWordsVO>) {
+        Headline(resourceID = R.string.title_rune_words)
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = 20.dp),
+            horizontalArrangement = Arrangement.Center
+        ) {
+            info.value.runeCombination.forEach {
+                Column(
+                    modifier = Modifier.padding(horizontal = 8.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Image(
+                        painter = painterResource(id = it.iconResourceID),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .width(60.dp)
+                            .height(60.dp)
+                    )
+                    Text(
+                        text = stringResource(id = it.nameResourceID),
+                        modifier = Modifier.padding(top = 4.dp)
+                    )
                 }
             }
         }
+    }
+
+    @Composable
+    private fun RuneWordsType(
+        info: State<RuneWordsVO>,
+        context: Context
+    ) {
+        Headline(resourceID = R.string.title_type)
+        Text(
+            text = info.value.type
+                .map { typeName ->
+                    context.resourceIDByName(name = typeName)?.let { id ->
+                        stringResource(id = id)
+                    }
+                }
+                .joinToString(),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = 20.dp),
+            fontSize = 16.sp,
+            textAlign = TextAlign.Center
+        )
     }
 
     @Composable
