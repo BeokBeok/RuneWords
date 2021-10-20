@@ -3,6 +3,7 @@ package com.beok.runewords.detail.presenter
 import android.content.Context
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -78,7 +79,8 @@ internal object ActivityDetailView {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(vertical = 20.dp),
+                .padding(vertical = 20.dp)
+                .horizontalScroll(rememberScrollState()),
             horizontalArrangement = Arrangement.Center
         ) {
             info.value.runeCombination.forEach {
