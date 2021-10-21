@@ -85,19 +85,11 @@ internal object ActivityCombinationView {
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text(text = runeWordsName)
-                    if (runeWords.value.lastIndex != index) {
-                        Divider(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(top = 16.dp)
-                        )
-                    } else {
-                        Spacer(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .height(80.dp)
-                        )
-                    }
+                    Divider(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(top = 16.dp)
+                    )
                 }
             }
         }
