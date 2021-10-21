@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -11,8 +12,10 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.Divider
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
@@ -59,8 +62,16 @@ internal object ActivityCombinationView {
         context: Context,
         viewModel: CombinationViewModel
     ) {
-        val runeWords = viewModel.runeWordsGroup.observeAsState(initial = listOf())
+        val isLoading = viewModel.isLoading.observeAsState(initial = false)
+        Box(
+            modifier = Modifier.fillMaxSize(),
+            contentAlignment = Alignment.Center
+        ) {
+            if (isLoading.value)
+                CircularProgressIndicator(modifier = Modifier.wrapContentSize())
+        }
 
+        val runeWords = viewModel.runeWordsGroup.observeAsState(initial = listOf())
         LazyColumn(modifier = Modifier.fillMaxSize()) {
             itemsIndexed(runeWords.value) { index, item ->
                 val runeWordsName =
