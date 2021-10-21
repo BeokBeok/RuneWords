@@ -52,6 +52,7 @@ internal object ActivityCombinationView {
                 CombinationTopBar(rune = rune)
             },
             content = {
+                ContentLoading(viewModel = viewModel)
                 CombinationContent(context = context, viewModel = viewModel)
             }
         )
@@ -62,15 +63,6 @@ internal object ActivityCombinationView {
         context: Context,
         viewModel: CombinationViewModel
     ) {
-        val isLoading = viewModel.isLoading.observeAsState(initial = false)
-        Box(
-            modifier = Modifier.fillMaxSize(),
-            contentAlignment = Alignment.Center
-        ) {
-            if (isLoading.value)
-                CircularProgressIndicator(modifier = Modifier.wrapContentSize())
-        }
-
         val runeWords = viewModel.runeWordsGroup.observeAsState(initial = listOf())
         LazyColumn(modifier = Modifier.fillMaxSize()) {
             itemsIndexed(runeWords.value) { index, item ->
@@ -108,6 +100,17 @@ internal object ActivityCombinationView {
                     }
                 }
             }
+        }
+    }
+
+    @Composable
+    private fun ContentLoading(viewModel: CombinationViewModel) {
+        val isLoading = viewModel.isLoading.observeAsState(initial = false)
+        Box(
+            modifier = Modifier.fillMaxSize(),
+            contentAlignment = Alignment.Center
+        ) {
+            if (isLoading.value) CircularProgressIndicator(modifier = Modifier.wrapContentSize())
         }
     }
 
