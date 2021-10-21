@@ -1,6 +1,11 @@
 package com.beok.runewords.detail.presenter
 
 import android.content.Context
+import android.text.Html
+import android.util.TypedValue
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.horizontalScroll
@@ -29,6 +34,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.viewinterop.AndroidView
 import com.beok.runewords.common.ext.resourceIDByName
 import com.beok.runewords.detail.R
 import com.beok.runewords.detail.presenter.vo.RuneWordsVO
@@ -70,7 +76,34 @@ internal object ActivityDetailView {
         ) {
             RuneWordsType(info = info, context = context)
             RuneWordsCombination(info = info)
+            RuneWordsOption(info = info)
         }
+    }
+
+    @Composable
+    private fun RuneWordsOption(info: State<RuneWordsVO>) {
+        Headline(resourceID = R.string.title_options)
+        AndroidView(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(vertical = 20.dp),
+            factory = { context ->
+                TextView(context).apply {
+                    layoutParams = ViewGroup.LayoutParams(
+                        ViewGroup.LayoutParams.MATCH_PARENT,
+                        ViewGroup.LayoutParams.MATCH_PARENT
+                    )
+                    textAlignment = View.TEXT_ALIGNMENT_CENTER
+                    setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f)
+                    text = Html.fromHtml(
+                        context.getString(
+                            context.resourceIDByName(name = info.value.option) ?: return@apply
+                        ),
+                        Html.FROM_HTML_MODE_COMPACT
+                    )
+                }
+            }
+        )
     }
 
     @Composable
