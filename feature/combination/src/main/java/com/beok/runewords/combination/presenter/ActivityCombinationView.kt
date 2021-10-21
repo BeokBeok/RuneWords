@@ -5,12 +5,14 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.Divider
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
@@ -60,9 +62,9 @@ internal object ActivityCombinationView {
         val runeWords = viewModel.runeWordsGroup.observeAsState(initial = listOf())
 
         LazyColumn(modifier = Modifier.fillMaxSize()) {
-            items(runeWords.value) { item ->
+            itemsIndexed(runeWords.value) { index, item ->
                 val runeWordsName =
-                    stringResource(id = context.resourceIDByName(item.name) ?: return@items)
+                    stringResource(id = context.resourceIDByName(item.name) ?: return@itemsIndexed)
                 Column(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -80,11 +82,19 @@ internal object ActivityCombinationView {
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text(text = runeWordsName)
-                    Divider(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(top = 16.dp)
-                    )
+                    if (runeWords.value.lastIndex != index) {
+                        Divider(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(top = 16.dp)
+                        )
+                    } else {
+                        Spacer(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(80.dp)
+                        )
+                    }
                 }
             }
         }
