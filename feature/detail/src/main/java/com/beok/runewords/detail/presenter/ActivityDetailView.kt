@@ -181,7 +181,8 @@ internal object ActivityDetailView {
                 text = stringResource(
                     id = context.resourceIDByName(name = runeWordsName) ?: return@TopAppBar
                 ),
-                modifier = Modifier.padding(start = 12.dp)
+                modifier = Modifier.padding(start = 12.dp),
+                fontSize = 20.sp
             )
         }
     }
