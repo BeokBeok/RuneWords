@@ -7,7 +7,7 @@ fun BaseAppModuleExtension.applyDefault() {
 
     defaultConfig {
         applicationId = "com.beok.runewords"
-        minSdk = 23
+        minSdk = 26
         targetSdk = 31
     }
 
@@ -21,7 +21,7 @@ fun LibraryExtension.applyDefault() {
     compileSdk = 31
 
     defaultConfig {
-        minSdk = 23
+        minSdk = 26
         targetSdk = 31
     }
 

@@ -6,7 +6,8 @@ import com.beok.runewords.detail.domain.model.RuneWordsDetail
 data class RuneWordsVO(
     val name: String = "",
     val runeCombination: List<Rune> = emptyList(),
-    val type: List<String> = emptyList()
+    val type: List<String> = emptyList(),
+    val option: String = ""
 ) {
 
     fun isEmpty() = name.isEmpty() && runeCombination.isEmpty() && type.isEmpty()
@@ -16,7 +17,8 @@ data class RuneWordsVO(
         fun fromDto(dto: RuneWordsDetail): RuneWordsVO = RuneWordsVO(
             name = dto.name,
             runeCombination = dto.runeCombination.mapNotNull(Rune::findByName),
-            type = dto.type
+            type = dto.type,
+            option = dto.option
         )
     }
 }

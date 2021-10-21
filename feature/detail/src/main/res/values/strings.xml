@@ -2,4 +2,5 @@
 <resources>
     <string name="title_type">타입</string>
     <string name="title_rune_words">룬워드</string>
+    <string name="title_options">옵션</string>
 </resources>

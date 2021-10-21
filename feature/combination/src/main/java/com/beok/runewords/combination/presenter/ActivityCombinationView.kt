@@ -4,13 +4,18 @@ import android.content.Context
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.Divider
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
@@ -23,6 +28,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.core.os.bundleOf
 import com.beok.runewords.common.BundleKeyConstants
 import com.beok.runewords.common.ext.resourceIDByName
@@ -47,6 +53,7 @@ internal object ActivityCombinationView {
                 CombinationTopBar(rune = rune)
             },
             content = {
+                ContentLoading(viewModel = viewModel)
                 CombinationContent(context = context, viewModel = viewModel)
             }
         )
@@ -58,11 +65,10 @@ internal object ActivityCombinationView {
         viewModel: CombinationViewModel
     ) {
         val runeWords = viewModel.runeWordsGroup.observeAsState(initial = listOf())
-
         LazyColumn(modifier = Modifier.fillMaxSize()) {
-            items(runeWords.value) { item ->
+            itemsIndexed(runeWords.value) { index, item ->
                 val runeWordsName =
-                    stringResource(id = context.resourceIDByName(item.name) ?: return@items)
+                    stringResource(id = context.resourceIDByName(item.name) ?: return@itemsIndexed)
                 Column(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -91,6 +97,17 @@ internal object ActivityCombinationView {
     }
 
     @Composable
+    private fun ContentLoading(viewModel: CombinationViewModel) {
+        val isLoading = viewModel.isLoading.observeAsState(initial = false)
+        Box(
+            modifier = Modifier.fillMaxSize(),
+            contentAlignment = Alignment.Center
+        ) {
+            if (isLoading.value) CircularProgressIndicator(modifier = Modifier.wrapContentSize())
+        }
+    }
+
+    @Composable
     private fun CombinationTopBar(rune: Rune) {
         TopAppBar(
             title = {
@@ -101,7 +118,8 @@ internal object ActivityCombinationView {
                 )
                 Text(
                     text = stringResource(id = rune.nameResourceID),
-                    modifier = Modifier.padding(start = 12.dp)
+                    modifier = Modifier.padding(start = 12.dp),
+                    fontSize = 20.sp
                 )
             }
         )
