@@ -6,6 +6,7 @@ import com.beok.runewords.combination.domain.model.RuneWords
 import com.beok.runewords.common.model.Rune
 import io.mockk.coEvery
 import io.mockk.mockk
+import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
@@ -28,7 +29,7 @@ class CombinationViewModelTest {
         val mockResponse: List<RuneWords> = listOf(mockk())
         coEvery {
             runeWordsFetchUseCase
-                .execute(rune = rune.name)
+                .execute(rune = rune.name.lowercase())
                 .getOrNull()
         } returns mockResponse
 

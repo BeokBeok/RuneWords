@@ -20,12 +20,20 @@ internal class CombinationViewModel @Inject constructor(
     private val _runeWordsGroup = MutableLiveData<List<RuneWords>>()
     val runeWordsGroup: LiveData<List<RuneWords>> get() = _runeWordsGroup
 
+    private val _isLoading = MutableLiveData<Boolean>()
+    val isLoading: LiveData<Boolean> get() = _isLoading
+
     fun fetchRuneWords(rune: Rune?) = viewModelScope.launch {
+        _isLoading.value = true
         runeWordsFetchUseCase
             .execute(rune = rune?.name?.lowercase() ?: return@launch)
             .onSuccess {
+                _isLoading.value = false
                 _runeWordsGroup.value = it
             }
-            .onFailure(Timber::d)
+            .onFailure {
+                _isLoading.value = false
+                Timber.d(it)
+            }
     }
 }

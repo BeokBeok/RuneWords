@@ -1,10 +1,16 @@
 package com.beok.runewords.detail.presenter
 
 import android.content.Context
+import android.text.Html
+import android.util.TypedValue
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -12,8 +18,10 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
@@ -29,6 +37,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.viewinterop.AndroidView
 import com.beok.runewords.common.ext.resourceIDByName
 import com.beok.runewords.detail.R
 import com.beok.runewords.detail.presenter.vo.RuneWordsVO
@@ -54,8 +63,20 @@ internal object ActivityDetailView {
                 val info = viewModel.detailInfo.observeAsState(initial = RuneWordsVO())
                 if (info.value.isEmpty()) return@Scaffold
                 DetailContent(context, info)
+                ContentLoading(viewModel)
             }
         )
+    }
+
+    @Composable
+    private fun ContentLoading(viewModel: DetailViewModel) {
+        val isLoading = viewModel.isLoading.observeAsState(initial = false)
+        Box(
+            modifier = Modifier.fillMaxSize(),
+            contentAlignment = Alignment.Center
+        ) {
+            if (isLoading.value) CircularProgressIndicator(modifier = Modifier.wrapContentSize())
+        }
     }
 
     @Composable
@@ -70,7 +91,34 @@ internal object ActivityDetailView {
         ) {
             RuneWordsType(info = info, context = context)
             RuneWordsCombination(info = info)
+            RuneWordsOption(info = info)
         }
+    }
+
+    @Composable
+    private fun RuneWordsOption(info: State<RuneWordsVO>) {
+        Headline(resourceID = R.string.title_options)
+        AndroidView(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(vertical = 20.dp),
+            factory = { context ->
+                TextView(context).apply {
+                    layoutParams = ViewGroup.LayoutParams(
+                        ViewGroup.LayoutParams.MATCH_PARENT,
+                        ViewGroup.LayoutParams.MATCH_PARENT
+                    )
+                    textAlignment = View.TEXT_ALIGNMENT_CENTER
+                    setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f)
+                    text = Html.fromHtml(
+                        context.getString(
+                            context.resourceIDByName(name = info.value.option) ?: return@apply
+                        ),
+                        Html.FROM_HTML_MODE_COMPACT
+                    )
+                }
+            }
+        )
     }
 
     @Composable
@@ -133,7 +181,8 @@ internal object ActivityDetailView {
                 text = stringResource(
                     id = context.resourceIDByName(name = runeWordsName) ?: return@TopAppBar
                 ),
-                modifier = Modifier.padding(start = 12.dp)
+                modifier = Modifier.padding(start = 12.dp),
+                fontSize = 20.sp
             )
         }
     }
