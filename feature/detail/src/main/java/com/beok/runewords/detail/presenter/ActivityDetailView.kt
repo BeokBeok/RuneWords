@@ -38,9 +38,14 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
+import androidx.constraintlayout.compose.ConstraintLayout
+import androidx.constraintlayout.compose.Dimension
 import com.beok.runewords.common.ext.resourceIDByName
 import com.beok.runewords.detail.R
 import com.beok.runewords.detail.presenter.vo.RuneWordsVO
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdSize
+import com.google.android.gms.ads.AdView
 
 internal object ActivityDetailView {
 
@@ -84,14 +89,39 @@ internal object ActivityDetailView {
         context: Context,
         info: State<RuneWordsVO>
     ) {
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .verticalScroll(rememberScrollState())
-        ) {
-            RuneWordsType(info = info, context = context)
-            RuneWordsCombination(info = info)
-            RuneWordsOption(info = info)
+        ConstraintLayout(modifier = Modifier.fillMaxSize()) {
+            val (content, admob) = createRefs()
+            Column(
+                modifier = Modifier
+                    .constrainAs(content) {
+                        top.linkTo(parent.top)
+                        start.linkTo(parent.start)
+                        end.linkTo(parent.end)
+                        bottom.linkTo(admob.top)
+                        width = Dimension.fillToConstraints
+                        height = Dimension.fillToConstraints
+                    }
+                    .verticalScroll(rememberScrollState())
+            ) {
+                RuneWordsType(info = info, context = context)
+                RuneWordsCombination(info = info)
+                RuneWordsOption(info = info)
+            }
+            AndroidView(
+                modifier = Modifier.constrainAs(admob) {
+                    top.linkTo(content.bottom)
+                    start.linkTo(parent.start)
+                    end.linkTo(parent.end)
+                    bottom.linkTo(parent.bottom)
+                },
+                factory = { context ->
+                    AdView(context).apply {
+                        adSize = AdSize.BANNER
+                        adUnitId = context.getString(R.string.admob_banner_app_key)
+                        loadAd(AdRequest.Builder().build())
+                    }
+                }
+            )
         }
     }
 
@@ -100,7 +130,7 @@ internal object ActivityDetailView {
         Headline(resourceID = R.string.title_options)
         AndroidView(
             modifier = Modifier
-                .fillMaxSize()
+                .fillMaxWidth()
                 .padding(vertical = 20.dp),
             factory = { context ->
                 TextView(context).apply {
