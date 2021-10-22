@@ -42,6 +42,7 @@ tasks {
     withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
         kotlinOptions.freeCompilerArgs += listOf(
             "-Xopt-in=androidx.compose.foundation.ExperimentalFoundationApi",
+            "-Xopt-in=androidx.compose.ui.ExperimentalComposeUiApi"
         )
     }
 }
