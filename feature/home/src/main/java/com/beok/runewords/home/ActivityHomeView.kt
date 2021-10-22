@@ -25,10 +25,16 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.viewinterop.AndroidView
+import androidx.constraintlayout.compose.ConstraintLayout
+import androidx.constraintlayout.compose.Dimension
 import androidx.core.os.bundleOf
 import com.beok.runewords.common.BundleKeyConstants
-import com.beok.runewords.common.model.Rune
 import com.beok.runewords.common.ext.startActivity
+import com.beok.runewords.common.model.Rune
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdSize
+import com.google.android.gms.ads.AdView
 
 internal object ActivityHomeView {
 
@@ -63,23 +69,52 @@ internal object ActivityHomeView {
 
     @Composable
     private fun HomeContent(context: Context) {
-        LazyVerticalGrid(cells = GridCells.Adaptive(minSize = 128.dp)) {
-            items(Rune.all()) { item ->
-                RuneItem(
-                    item = item,
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .padding(20.dp)
-                        .clickable {
-                            context.startActivity(
-                                className = CLASSNAME_COMBINATION,
-                                bundle = bundleOf(
-                                    BundleKeyConstants.RUNE_NAME to Rune.findByName(item.name)
+        ConstraintLayout(modifier = Modifier.fillMaxSize()) {
+            val (content, admob) = createRefs()
+            LazyVerticalGrid(
+                modifier = Modifier.constrainAs(content) {
+                    top.linkTo(parent.top)
+                    start.linkTo(parent.start)
+                    end.linkTo(parent.end)
+                    bottom.linkTo(admob.top)
+                    width = Dimension.fillToConstraints
+                    height = Dimension.fillToConstraints
+                },
+                cells = GridCells.Adaptive(minSize = 128.dp)
+            ) {
+                items(Rune.all()) { item ->
+                    RuneItem(
+                        item = item,
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(20.dp)
+                            .clickable {
+                                context.startActivity(
+                                    className = CLASSNAME_COMBINATION,
+                                    bundle = bundleOf(
+                                        BundleKeyConstants.RUNE_NAME to Rune.findByName(item.name)
+                                    )
                                 )
-                            )
-                        }
-                )
+                            }
+                    )
+                }
             }
+            AndroidView(
+                modifier = Modifier
+                    .constrainAs(admob) {
+                        top.linkTo(content.bottom)
+                        start.linkTo(parent.start)
+                        end.linkTo(parent.end)
+                        bottom.linkTo(parent.bottom)
+                    },
+                factory = { context ->
+                    AdView(context).apply {
+                        adSize = AdSize.BANNER
+                        adUnitId = context.getString(R.string.admob_banner_app_key)
+                        loadAd(AdRequest.Builder().build())
+                    }
+                }
+            )
         }
     }
 

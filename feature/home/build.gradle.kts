@@ -22,7 +22,10 @@ dependencies {
         implementation(APPCOMPAT)
     }
 
-    implementation(Google.MATERIAL)
+    Google.run {
+        implementation(MATERIAL)
+        implementation(PLAY_SERVICES_ADS)
+    }
 
     Compose.run {
         implementation(UI)
@@ -39,6 +42,7 @@ tasks {
     withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
         kotlinOptions.freeCompilerArgs += listOf(
             "-Xopt-in=androidx.compose.foundation.ExperimentalFoundationApi",
+            "-Xopt-in=androidx.compose.ui.ExperimentalComposeUiApi"
         )
     }
 }
