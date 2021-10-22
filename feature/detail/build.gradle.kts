@@ -34,7 +34,10 @@ dependencies {
         testImplementation(CORE_TESTING)
     }
 
-    implementation(Google.MATERIAL)
+    Google.run {
+        implementation(MATERIAL)
+        implementation(PLAY_SERVICES_ADS)
+    }
 
     Compose.run {
         implementation(UI)
