@@ -9,6 +9,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.RuneWords"/>
+        android:theme="@style/Theme.RuneWords">
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/admob_app_key" />
+
+    </application>
 
 </manifest>
