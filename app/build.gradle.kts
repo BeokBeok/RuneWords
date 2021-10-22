@@ -10,8 +10,8 @@ android {
     applyDefault()
 
     defaultConfig {
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = AndroidConfig.VERSION_CODE
+        versionName = AndroidConfig.VERSION_NAME
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
