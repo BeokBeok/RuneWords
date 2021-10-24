@@ -65,6 +65,7 @@ internal object ActivityCombinationView {
         val runeWords = viewModel.runeWordsGroup.observeAsState(initial = listOf())
         LazyColumn(modifier = Modifier.fillMaxSize()) {
             items(runeWords.value) { item ->
+                if (context.resourceIDByName(item.name) == 0) return@items
                 val runeWordsName =
                     stringResource(id = context.resourceIDByName(item.name) ?: return@items)
                 Column(
