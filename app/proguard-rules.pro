@@ -19,3 +19,7 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# Firebase FireStore
+-keepclassmembers class com.beok.runewords.combination.data.entity.** { *; }
+-keepclassmembers class com.beok.runewords.detail.data.entity.** { *; }
