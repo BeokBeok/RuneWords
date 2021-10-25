@@ -14,13 +14,22 @@ android {
 
 dependencies {
     AndroidX.run {
-        implementation(CORE_KTX)
-        implementation(APPCOMPAT)
+        api(CORE_KTX)
+        api(APPCOMPAT)
     }
 
     Google.run {
-        implementation(MATERIAL)
+        api(MATERIAL)
         implementation(PLAY_SERVICES_TASKS)
+    }
+
+    Compose.run {
+        api(UI)
+        api(MATERIAL)
+        api(UI_TOOLING)
+        api(RUNTIME_LIVEDATA)
+        api(ACTIVITY)
+        api(CONSTRAINT_LAYOUT)
     }
 
     api(Timber.TIMBER)

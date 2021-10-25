@@ -41,6 +41,7 @@ import androidx.compose.ui.viewinterop.AndroidView
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import com.beok.runewords.common.ext.resourceIDByName
+import com.beok.runewords.common.view.ContentLoading
 import com.beok.runewords.detail.R
 import com.beok.runewords.detail.presenter.vo.RuneWordsVO
 import com.google.android.gms.ads.AdRequest
@@ -65,23 +66,12 @@ internal object ActivityDetailView {
         Scaffold(
             topBar = { DetailTopBar(context, runeWordsName) },
             content = {
+                ContentLoading(isLoading = viewModel.isLoading.observeAsState(initial = false))
                 val info = viewModel.detailInfo.observeAsState(initial = RuneWordsVO())
                 if (info.value.isEmpty()) return@Scaffold
                 DetailContent(context, info)
-                ContentLoading(viewModel)
             }
         )
-    }
-
-    @Composable
-    private fun ContentLoading(viewModel: DetailViewModel) {
-        val isLoading = viewModel.isLoading.observeAsState(initial = false)
-        Box(
-            modifier = Modifier.fillMaxSize(),
-            contentAlignment = Alignment.Center
-        ) {
-            if (isLoading.value) CircularProgressIndicator(modifier = Modifier.wrapContentSize())
-        }
     }
 
     @Composable

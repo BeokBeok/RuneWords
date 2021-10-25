@@ -28,25 +28,7 @@ android {
 dependencies {
     implementation(project(":common"))
 
-    AndroidX.run {
-        implementation(CORE_KTX)
-        implementation(APPCOMPAT)
-        testImplementation(CORE_TESTING)
-    }
-
-    Google.run {
-        implementation(MATERIAL)
-        implementation(PLAY_SERVICES_ADS)
-    }
-
-    Compose.run {
-        implementation(UI)
-        implementation(MATERIAL)
-        implementation(UI_TOOLING)
-        implementation(RUNTIME_LIVEDATA)
-        implementation(ACTIVITY)
-        implementation(CONSTRAINT_LAYOUT)
-    }
+    implementation(Google.PLAY_SERVICES_ADS)
 
     Firebase.run {
         implementation(platform(PLATFORM))
