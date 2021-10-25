@@ -30,11 +30,13 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import androidx.core.os.bundleOf
 import com.beok.runewords.common.BundleKeyConstants
+import com.beok.runewords.common.constants.TrackingConstants
 import com.beok.runewords.common.ext.startActivity
 import com.beok.runewords.common.model.Rune
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.AdView
+import com.google.firebase.analytics.FirebaseAnalytics
 
 internal object ActivityHomeView {
 
@@ -42,17 +44,17 @@ internal object ActivityHomeView {
         "com.beok.runewords.combination.presenter.CombinationActivity"
 
     @Composable
-    fun Layout(context: Context) {
+    fun Layout(context: Context, analytics: FirebaseAnalytics) {
         MaterialTheme {
-            HomeScaffold(context)
+            HomeScaffold(context = context, analytics = analytics)
         }
     }
 
     @Composable
-    private fun HomeScaffold(context: Context) {
+    private fun HomeScaffold(context: Context, analytics: FirebaseAnalytics) {
         Scaffold(
             topBar = { HomeTopBar() },
-            content = { HomeContent(context) }
+            content = { HomeContent(context = context, analytics = analytics) }
         )
     }
 
@@ -68,7 +70,7 @@ internal object ActivityHomeView {
     }
 
     @Composable
-    private fun HomeContent(context: Context) {
+    private fun HomeContent(context: Context, analytics: FirebaseAnalytics) {
         ConstraintLayout(modifier = Modifier.fillMaxSize()) {
             val (content, admob) = createRefs()
             LazyVerticalGrid(
@@ -94,6 +96,10 @@ internal object ActivityHomeView {
                                     bundle = bundleOf(
                                         BundleKeyConstants.RUNE_NAME to Rune.findByName(item.name)
                                     )
+                                )
+                                analytics.logEvent(
+                                    TrackingConstants.Rune.CLICK,
+                                    bundleOf(TrackingConstants.Params.RUNE_NAME to item.name)
                                 )
                             }
                     )
