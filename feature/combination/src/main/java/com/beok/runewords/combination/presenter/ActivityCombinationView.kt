@@ -29,31 +29,48 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.os.bundleOf
 import com.beok.runewords.common.BundleKeyConstants
+import com.beok.runewords.common.constants.TrackingConstants
 import com.beok.runewords.common.ext.resourceIDByName
 import com.beok.runewords.common.ext.startActivity
 import com.beok.runewords.common.model.Rune
 import com.beok.runewords.common.view.ContentLoading
+import com.google.firebase.analytics.FirebaseAnalytics
 
 internal object ActivityCombinationView {
 
     private const val CLASSNAME_DETAIL = "com.beok.runewords.detail.presenter.DetailActivity"
 
     @Composable
-    fun Layout(rune: Rune, context: Context, viewModel: CombinationViewModel) {
+    fun Layout(
+        rune: Rune,
+        context: Context,
+        viewModel: CombinationViewModel,
+        analytics: FirebaseAnalytics
+    ) {
         MaterialTheme {
-            CombinationScaffold(rune = rune, context = context, viewModel = viewModel)
+            CombinationScaffold(
+                rune = rune,
+                context = context,
+                viewModel = viewModel,
+                analytics = analytics
+            )
         }
     }
 
     @Composable
-    private fun CombinationScaffold(rune: Rune, context: Context, viewModel: CombinationViewModel) {
+    private fun CombinationScaffold(
+        rune: Rune,
+        context: Context,
+        viewModel: CombinationViewModel,
+        analytics: FirebaseAnalytics
+    ) {
         Scaffold(
             topBar = {
                 CombinationTopBar(rune = rune)
             },
             content = {
                 ContentLoading(isLoading = viewModel.isLoading.observeAsState(initial = false))
-                CombinationContent(context = context, viewModel = viewModel)
+                CombinationContent(context = context, viewModel = viewModel, analytics = analytics)
             }
         )
     }
@@ -61,7 +78,8 @@ internal object ActivityCombinationView {
     @Composable
     private fun CombinationContent(
         context: Context,
-        viewModel: CombinationViewModel
+        viewModel: CombinationViewModel,
+        analytics: FirebaseAnalytics
     ) {
         val runeWords = viewModel.runeWordsGroup.observeAsState(initial = listOf())
         LazyColumn(modifier = Modifier.fillMaxSize()) {
@@ -78,6 +96,10 @@ internal object ActivityCombinationView {
                                 bundle = bundleOf(
                                     BundleKeyConstants.RUNE_WORDS_NAME to item.name
                                 )
+                            )
+                            analytics.logEvent(
+                                TrackingConstants.Rune.WORDS_WORDS,
+                                bundleOf(TrackingConstants.Params.RUNE_WORDS_NAME to item.name)
                             )
                         }
                         .padding(horizontal = 16.dp)
