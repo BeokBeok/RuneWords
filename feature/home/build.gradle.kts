@@ -1,6 +1,8 @@
 plugins {
     id("com.android.library")
     kotlin("android")
+    kotlin("kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -18,6 +20,16 @@ dependencies {
     implementation(project(":common"))
 
     implementation(Google.PLAY_SERVICES_ADS)
+
+    Firebase.run {
+        implementation(platform(PLATFORM))
+        implementation(ANALYTICS_KTX)
+    }
+
+    Hilt.run {
+        implementation(ANDROID)
+        kapt(COMPILER)
+    }
 }
 
 tasks {
