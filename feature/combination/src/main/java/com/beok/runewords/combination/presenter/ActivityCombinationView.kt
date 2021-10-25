@@ -32,6 +32,7 @@ import com.beok.runewords.common.BundleKeyConstants
 import com.beok.runewords.common.ext.resourceIDByName
 import com.beok.runewords.common.ext.startActivity
 import com.beok.runewords.common.model.Rune
+import com.beok.runewords.common.view.ContentLoading
 
 internal object ActivityCombinationView {
 
@@ -51,7 +52,7 @@ internal object ActivityCombinationView {
                 CombinationTopBar(rune = rune)
             },
             content = {
-                ContentLoading(viewModel = viewModel)
+                ContentLoading(isLoading = viewModel.isLoading.observeAsState(initial = false))
                 CombinationContent(context = context, viewModel = viewModel)
             }
         )
@@ -92,17 +93,6 @@ internal object ActivityCombinationView {
                     )
                 }
             }
-        }
-    }
-
-    @Composable
-    private fun ContentLoading(viewModel: CombinationViewModel) {
-        val isLoading = viewModel.isLoading.observeAsState(initial = false)
-        Box(
-            modifier = Modifier.fillMaxSize(),
-            contentAlignment = Alignment.Center
-        ) {
-            if (isLoading.value) CircularProgressIndicator(modifier = Modifier.wrapContentSize())
         }
     }
 
