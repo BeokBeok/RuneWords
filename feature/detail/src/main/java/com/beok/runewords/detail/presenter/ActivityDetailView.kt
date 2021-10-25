@@ -65,10 +65,10 @@ internal object ActivityDetailView {
         Scaffold(
             topBar = { DetailTopBar(context, runeWordsName) },
             content = {
+                ContentLoading(viewModel)
                 val info = viewModel.detailInfo.observeAsState(initial = RuneWordsVO())
                 if (info.value.isEmpty()) return@Scaffold
                 DetailContent(context, info)
-                ContentLoading(viewModel)
             }
         )
     }
