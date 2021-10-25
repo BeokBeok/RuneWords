@@ -25,12 +25,6 @@ android {
             )
         }
     }
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = Compose.VERSION
-    }
 }
 
 dependencies {
@@ -38,22 +32,6 @@ dependencies {
     implementation(project(":feature:home"))
     implementation(project(":feature:combination"))
     implementation(project(":feature:detail"))
-
-    AndroidX.run {
-        implementation(CORE_KTX)
-        implementation(APPCOMPAT)
-    }
-
-    implementation(Google.MATERIAL)
-
-    Compose.run {
-        implementation(UI)
-        implementation(MATERIAL)
-        implementation(UI_TOOLING)
-        implementation(RUNTIME_LIVEDATA)
-        implementation(ACTIVITY)
-        implementation(CONSTRAINT_LAYOUT)
-    }
 
     Firebase.run {
         implementation(platform(PLATFORM))

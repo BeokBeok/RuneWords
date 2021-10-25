@@ -15,6 +15,13 @@ fun BaseAppModuleExtension.applyDefault() {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = Compose.VERSION
+    }
 }
 
 fun LibraryExtension.applyDefault() {
@@ -28,5 +35,12 @@ fun LibraryExtension.applyDefault() {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = Compose.VERSION
     }
 }
