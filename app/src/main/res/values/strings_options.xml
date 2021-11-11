@@ -460,7 +460,7 @@
         <font color=\'#cc0029\'>적의 번개 저항 -45 ~ 55%<br></font>
         <font color=\'#000000\'>강타 확률 40%<br></font>
         <font color=\'#000000\'>괴물 회복 저지<br></font>
-        <font color=\'#cc0029\'>활력 +0.5~49.5<br></font>
+        <font color=\'#000000\'>활력 +0.5~49.5 (캐릭터 레벨에 비례)<br></font>
         <font color=\'#000000\'>마법 아이템 발견 확률 30% 증가<br></font>
         <font color=\'#000000\'>21 레벨 회오리 갑옷 (충전 30/30)<br></font>
     ]]>
