@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:        
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: set up JDK 11
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
+          
+      - name: Create google-services.json
+        run: echo '${{ secrets.GOOGLE_SERVICES_JSON }}' > ./app/google-services.json
+
+      - name: Build Release AAB
+        run: ./gradlew bundleRelease
+
+      - name: Sign AAB
+        uses: r0adkll/sign-android-release@v1
+        with:
+          releaseDirectory: app/build/outputs/bundle/release
+          signingKeyBase64: ${{ secrets.SIGNING_KEY }}
+          alias: ${{ secrets.ALIAS }}
+          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
+          keyPassword: ${{ secrets.KEY_PASSWORD }}
+
+      - name: Upload AAB
+        uses: actions/upload-artifact@v1
+        with:
+          name: app
+          path: app/build/outputs/bundle/release/app-release.aab
+
+      - name: Create service_account.json
+        run: echo '${{ secrets.SERVICE_ACCOUNT_JSON }}' > service_account.json
+
+      - name: Deploy to Play Store (ALPHA)
+        uses: r0adkll/upload-google-play@v1.0.15
+        with:
+          serviceAccountJson: service_account.json
+          packageName: com.beok.runewords
+          releaseFiles: app/build/outputs/bundle/release/app-release.aab
+          track: alpha
+          whatsNewDirectory: whatsnew/
+          
