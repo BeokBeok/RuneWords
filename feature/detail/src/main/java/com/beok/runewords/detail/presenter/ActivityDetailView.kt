@@ -10,7 +10,6 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -18,17 +17,13 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.State
-import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -51,9 +46,19 @@ import com.google.android.gms.ads.AdView
 internal object ActivityDetailView {
 
     @Composable
-    fun Layout(runeWordsName: String, context: Context, viewModel: DetailViewModel) {
+    fun Layout(
+        runeWordsName: String,
+        context: Context,
+        isLoading: Boolean,
+        info: RuneWordsVO
+    ) {
         MaterialTheme {
-            DetailScaffold(runeWordsName = runeWordsName, context = context, viewModel = viewModel)
+            DetailScaffold(
+                runeWordsName = runeWordsName,
+                context = context,
+                isLoading = isLoading,
+                info = info,
+            )
         }
     }
 
@@ -61,24 +66,21 @@ internal object ActivityDetailView {
     private fun DetailScaffold(
         runeWordsName: String,
         context: Context,
-        viewModel: DetailViewModel
+        isLoading: Boolean,
+        info: RuneWordsVO
     ) {
         Scaffold(
             topBar = { DetailTopBar(context, runeWordsName) },
             content = {
-                ContentLoading(isLoading = viewModel.isLoading.observeAsState(initial = false))
-                val info = viewModel.detailInfo.observeAsState(initial = RuneWordsVO())
-                if (info.value.isEmpty()) return@Scaffold
+                ContentLoading(isLoading = isLoading)
+                if (info.isEmpty()) return@Scaffold
                 DetailContent(context, info)
             }
         )
     }
 
     @Composable
-    private fun DetailContent(
-        context: Context,
-        info: State<RuneWordsVO>
-    ) {
+    private fun DetailContent(context: Context, info: RuneWordsVO) {
         ConstraintLayout(modifier = Modifier.fillMaxSize()) {
             val (content, admob) = createRefs()
             Column(
@@ -116,7 +118,7 @@ internal object ActivityDetailView {
     }
 
     @Composable
-    private fun RuneWordsOption(info: State<RuneWordsVO>) {
+    private fun RuneWordsOption(info: RuneWordsVO) {
         Headline(resourceID = R.string.title_options)
         AndroidView(
             modifier = Modifier
@@ -132,7 +134,7 @@ internal object ActivityDetailView {
                     setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f)
                     text = Html.fromHtml(
                         context.getString(
-                            context.resourceIDByName(name = info.value.option) ?: return@apply
+                            context.resourceIDByName(name = info.option) ?: return@apply
                         ),
                         Html.FROM_HTML_MODE_COMPACT
                     )
@@ -142,7 +144,7 @@ internal object ActivityDetailView {
     }
 
     @Composable
-    private fun RuneWordsCombination(info: State<RuneWordsVO>) {
+    private fun RuneWordsCombination(info: RuneWordsVO) {
         Headline(resourceID = R.string.title_rune_words)
         Row(
             modifier = Modifier
@@ -151,7 +153,7 @@ internal object ActivityDetailView {
                 .horizontalScroll(rememberScrollState()),
             horizontalArrangement = Arrangement.Center
         ) {
-            info.value.runeCombination.forEach {
+            info.runeCombination.forEach {
                 Column(
                     modifier = Modifier.padding(horizontal = 8.dp),
                     horizontalAlignment = Alignment.CenterHorizontally
@@ -173,13 +175,10 @@ internal object ActivityDetailView {
     }
 
     @Composable
-    private fun RuneWordsType(
-        info: State<RuneWordsVO>,
-        context: Context
-    ) {
+    private fun RuneWordsType(info: RuneWordsVO, context: Context) {
         Headline(resourceID = R.string.title_type)
         Text(
-            text = info.value.type
+            text = info.type
                 .map { typeName ->
                     context.resourceIDByName(name = typeName)?.let { id ->
                         stringResource(id = id)

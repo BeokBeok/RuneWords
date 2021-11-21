@@ -30,7 +30,8 @@ internal class DetailActivity : AppCompatActivity() {
                 runeWordsName = intent.extras?.get(BundleKeyConstants.RUNE_WORDS_NAME) as? String
                     ?: return@setContent,
                 context = this,
-                viewModel = viewModel
+                isLoading = viewModel.isLoading,
+                info = viewModel.detailInfo
             )
         }
     }
