@@ -5,6 +5,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.beok.runewords.common.BundleKeyConstants
+import com.google.android.play.core.review.ReviewManagerFactory
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -17,6 +18,7 @@ internal class DetailActivity : AppCompatActivity() {
 
         setupUI()
         showContent()
+        requestInAppReview()
     }
 
     private fun showContent() {
@@ -34,5 +36,17 @@ internal class DetailActivity : AppCompatActivity() {
                 info = viewModel.detailInfo
             )
         }
+    }
+
+    private fun requestInAppReview() {
+        val reviewManager = ReviewManagerFactory.create(this)
+        reviewManager
+            .requestReviewFlow()
+            .addOnCompleteListener {
+                if (!it.isSuccessful) return@addOnCompleteListener
+                reviewManager
+                    .launchReviewFlow(this, it.result)
+                    .addOnCompleteListener {  }
+            }
     }
 }
