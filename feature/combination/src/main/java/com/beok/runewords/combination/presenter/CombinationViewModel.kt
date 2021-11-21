@@ -1,7 +1,9 @@
 package com.beok.runewords.combination.presenter
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.beok.runewords.combination.domain.RuneWordsFetchUseCase
@@ -17,22 +19,23 @@ internal class CombinationViewModel @Inject constructor(
     private val runeWordsFetchUseCase: RuneWordsFetchUseCase
 ): ViewModel() {
 
-    private val _runeWordsGroup = MutableLiveData<List<RuneWords>>()
-    val runeWordsGroup: LiveData<List<RuneWords>> get() = _runeWordsGroup
+    var runeWordsGroup = mutableStateListOf<RuneWords>()
+        private set
 
-    private val _isLoading = MutableLiveData<Boolean>()
-    val isLoading: LiveData<Boolean> get() = _isLoading
+    private var _isLoading by mutableStateOf(false)
+    val isLoading: Boolean get() = _isLoading
 
     fun fetchRuneWords(rune: Rune?) = viewModelScope.launch {
-        _isLoading.value = true
+        _isLoading = true
         runeWordsFetchUseCase
             .execute(rune = rune?.name?.lowercase() ?: return@launch)
             .onSuccess {
-                _isLoading.value = false
-                _runeWordsGroup.value = it
+                _isLoading = false
+                runeWordsGroup.clear()
+                runeWordsGroup.addAll(it)
             }
             .onFailure {
-                _isLoading.value = false
+                _isLoading = false
                 Timber.d(it)
             }
     }

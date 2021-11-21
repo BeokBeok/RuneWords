@@ -1,6 +1,5 @@
 package com.beok.runewords.detail.presenter
 
-import com.beok.runewords.detail.InstantExecutorExtension
 import com.beok.runewords.detail.domain.RuneWordsDetailFetchUseCase
 import com.beok.runewords.detail.domain.model.RuneWordsDetail
 import com.beok.runewords.detail.presenter.vo.RuneWordsVO
@@ -10,9 +9,7 @@ import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.extension.ExtendWith
 
-@ExtendWith(value = [InstantExecutorExtension::class])
 internal class DetailViewModelTest {
 
     private val runeWordsDetailFetchUseCase: RuneWordsDetailFetchUseCase = mockk(relaxed = true)
@@ -35,6 +32,6 @@ internal class DetailViewModelTest {
 
         viewModel.fetchDetail(name = runeWordsName)
 
-        assertEquals(RuneWordsVO.fromDto(mockResponse), viewModel.detailInfo.value)
+        assertEquals(RuneWordsVO.fromDto(mockResponse), viewModel.detailInfo)
     }
 }

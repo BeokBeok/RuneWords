@@ -44,17 +44,17 @@ internal object ActivityHomeView {
         "com.beok.runewords.combination.presenter.CombinationActivity"
 
     @Composable
-    fun Layout(context: Context, analytics: FirebaseAnalytics) {
+    fun Layout(context: Context, runeClickTracking: (String) -> Unit) {
         MaterialTheme {
-            HomeScaffold(context = context, analytics = analytics)
+            HomeScaffold(context = context, runeClickTracking = runeClickTracking)
         }
     }
 
     @Composable
-    private fun HomeScaffold(context: Context, analytics: FirebaseAnalytics) {
+    private fun HomeScaffold(context: Context, runeClickTracking: (String) -> Unit) {
         Scaffold(
             topBar = { HomeTopBar() },
-            content = { HomeContent(context = context, analytics = analytics) }
+            content = { HomeContent(context = context, runeClickTracking = runeClickTracking) }
         )
     }
 
@@ -70,7 +70,7 @@ internal object ActivityHomeView {
     }
 
     @Composable
-    private fun HomeContent(context: Context, analytics: FirebaseAnalytics) {
+    private fun HomeContent(context: Context, runeClickTracking: (String) -> Unit) {
         ConstraintLayout(modifier = Modifier.fillMaxSize()) {
             val (content, admob) = createRefs()
             LazyVerticalGrid(
@@ -97,10 +97,7 @@ internal object ActivityHomeView {
                                         BundleKeyConstants.RUNE_NAME to Rune.findByName(item.name)
                                     )
                                 )
-                                analytics.logEvent(
-                                    TrackingConstants.Rune.CLICK,
-                                    bundleOf(TrackingConstants.Params.RUNE_NAME to item.name)
-                                )
+                                runeClickTracking(item.name)
                             }
                     )
                 }

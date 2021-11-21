@@ -1,18 +1,14 @@
 package com.beok.runewords.combination.presenter
 
-import com.beok.runewords.combination.InstantExecutorExtension
 import com.beok.runewords.combination.domain.RuneWordsFetchUseCase
 import com.beok.runewords.combination.domain.model.RuneWords
 import com.beok.runewords.common.model.Rune
 import io.mockk.coEvery
 import io.mockk.mockk
-import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.extension.ExtendWith
 
-@ExtendWith(value = [InstantExecutorExtension::class])
 class CombinationViewModelTest {
 
     private val runeWordsFetchUseCase: RuneWordsFetchUseCase = mockk(relaxed = true)
@@ -35,6 +31,6 @@ class CombinationViewModelTest {
 
         viewModel.fetchRuneWords(rune = rune)
 
-        assertEquals(mockResponse, viewModel.runeWordsGroup.value)
+        assertEquals(mockResponse, viewModel.runeWordsGroup)
     }
 }
