@@ -181,7 +181,7 @@
         <font color=\'#000000\'>번개 피해 1 - 50 추가<br></font>
         <font color=\'#000000\'>적중 시 마나 7% 훔침<br></font>
         <font color=\'#000000\'>강타 확률 50%<br></font>
-        <font color=\'#000000\'>(캐릭터 레벨당 0.5) 치명적 공격 0.5~49.5% (캐릭터 레벨에 비례)<br></font>
+        <font color=\'#000000\'>치명적 공격 (캐릭터 레벨 x 0.5)%<br></font>
         <font color=\'#000000\'>시야 +1<br></font>
         <font color=\'#000000\'>레벨 22 피 골렘(15 회)<br></font>
         <font color=\'#000000\'>착용 조건 -20%<br></font>
@@ -212,9 +212,9 @@
         <font color=\'#cc0029\'>피해 +340~400<br></font>
         <font color=\'#000000\'>대상의 방어력 무시<br></font>
         <font color=\'#000000\'>대상의 방어력 -25%<br></font>
-        <font color=\'#000000\'>악마에게 주는 피해 +1.875~185.625% (캐릭터 레벨에 비례)<br></font>
+        <font color=\'#000000\'악마에게 주는 피해 +(캐릭터 레벨 x 1.875)%<br></font>
         <font color=\'#000000\'>화염 피해 5 - 30 추가<br></font>
-        <font color=\'#cc0029\'>적의 독 저항 -20~25%<br></font>
+        <font color=\'#cc0029\'>적의 독 저항 -(20~25)%<br></font>
         <font color=\'#000000\'>치명적 공격 20%<br></font>
         <font color=\'#000000\'>괴물 회복 저지<br></font>
         <font color=\'#000000\'>적 처치 시 마나 +2<br></font>
@@ -259,7 +259,7 @@
         <font color=\'#000000\'>방어력 +360<br></font>
         <font color=\'#000000\'>원거리 공격 방어력 +230<br></font>
         <font color=\'#cc0029\'>모든 능력치 +3~5<br></font>
-        <font color=\'#000000\'>힘 +0.375~37.125 (캐릭터 레벨에 비례)<br></font>
+        <font color=\'#000000\'>힘 +(캐릭터 레벨 x 0.375)<br></font>
         <font color=\'#000000\'>마나 +50<br></font>
         <font color=\'#000000\'>최대 번개 저항 +5%<br></font>
         <font color=\'#000000\'>피해 7 감소<br></font>
@@ -273,7 +273,7 @@
         <font color=\'#000000\'>방어력 +30% 증가<br></font>
         <font color=\'#000000\'>방어력 +150~220<br></font>
         <font color=\'#000000\'>최대 생명력 5% 증가<br></font>
-        <font color=\'#000000\'>마나 +0.625~61.875 (캐릭터 레벨에 비례)<br></font>
+        <font color=\'#000000\'>마나 +(캐릭터 레벨 x 0.625)<br></font>
         <font color=\'#cc0029\'>모든 저항 +5~20<br></font>
         <font color=\'#cc0029\'>마법 아이템 발견 확률 12~25% 증가<br></font>
         <font color=\'#000000\'>활력 +10 (투구 한정)<br></font>
@@ -432,7 +432,7 @@
         <font color=\'#000000\'>-20% 적의 콜드 레지스트에 대하여<br></font>
         <font color=\'#000000\'>7% 라이프 획득(공격 명중시)<br></font>
         <font color=\'#000000\'>20% 치명적 공격<br></font>
-        <font color=\'#000000\'>3.125~309.375% 몬스터로부터 얻는 골드 증가 (캐릭터 레벨에 비례해서)<br></font>
+        <font color=\'#000000\'>몬스터로부터 얻는 골드 (캐릭터 레벨 x 3.125)% 증가<br></font>
     ]]>
     </string>
     <string name="rune_word_eternity_option">
@@ -460,7 +460,7 @@
         <font color=\'#cc0029\'>적의 번개 저항 -45 ~ 55%<br></font>
         <font color=\'#000000\'>강타 확률 40%<br></font>
         <font color=\'#000000\'>괴물 회복 저지<br></font>
-        <font color=\'#000000\'>활력 +0.5~49.5 (캐릭터 레벨에 비례)<br></font>
+        <font color=\'#000000\'>활력 +(캐릭터 레벨 x 0.5)<br></font>
         <font color=\'#000000\'>마법 아이템 발견 확률 30% 증가<br></font>
         <font color=\'#000000\'>21 레벨 회오리 갑옷 (충전 30/30)<br></font>
     ]]>
@@ -518,7 +518,7 @@
         <font color=\'#cc0029\'>강타 확률 60~70%<br></font>
         <font color=\'#000000\'>괴물 회복 저지<br></font>
         <font color=\'#000000\'>적중 시 대상 실명<br></font>
-        <font color=\'#000000\'>마법 아이템 발견 확률 (캐릭터 레벨당 0.5) 0.5~49.5% 증가 (캐릭터 레벨에 비례)<br></font>
+        <font color=\'#000000\'>마법 아이템 발견 확률 (캐릭터 레벨 x 0.5)% 증가<br></font>
     ]]>
     </string>
     <string name="rune_word_leaf_option">
@@ -528,7 +528,7 @@
         <font color=\'#000000\'>+3 지옥불 (원소술사 전용)<br></font>
         <font color=\'#000000\'>+3 온기 (원소술사 전용)<br></font>
         <font color=\'#000000\'>+3 화염탄 (원소술사 전용)<br></font>
-        <font color=\'#000000\'>방어력 +2~198 (캐릭터 레벨에 비례)<br></font>
+        <font color=\'#000000\'>방어력 +(캐릭터 레벨 x 2)<br></font>
         <font color=\'#000000\'>냉기 저항 +33%<br></font>
         <font color=\'#000000\'>적 처치 시 마나 +2<br></font>
     ]]>
@@ -606,7 +606,7 @@
         <font color=\'#000000\'>시전 속도 +25%<br></font>
         <font color=\'#000000\'>피해 +300% 증가<br></font>
         <font color=\'#000000\'>방어력 +200% 증가<br></font>
-        <font color=\'#cc0029\'>생명력 +(1~1.5)~(99~148.5) (캐릭터 레벨에 비례)<br></font>
+        <font color=\'#cc0029\'>생명력 +(1~1.5 x 캐릭터 레벨)<br></font>
         <font color=\'#cc0029\'>모든 저항 +25~30<br></font>
         <font color=\'#000000\'>받는 피해의 12%만큼 마나 회복<br></font>
         <font color=\'#000000\'>시야 +1<br></font>
@@ -681,14 +681,14 @@
         <font color=\'#000000\'>피격 시 25% 확률로 17 레벨 화염벽 시전<br></font>
         <font color=\'#cc0029\'>장착 시 16~20 레벨 집중 오라 효과 적용<br></font>
         <font color=\'#cc0029\'>명중률 보너스 260~300%<br></font>
-        <font color=\'#000000\'>악마에게 주는 피해 +1~99% (캐릭터 레벨에 비례)<br></font>
+        <font color=\'#000000\'>악마에게 주는 피해 +(캐릭터 레벨)%<br></font>
         <font color=\'#000000\'>번개 피해 50 - 280 추가<br></font>
         <font color=\'#000000\'>치명적 공격 20%<br></font>
         <font color=\'#000000\'>적중 시 대상 실명<br></font>
         <font color=\'#000000\'>대상 빙결 +3<br></font>
         <font color=\'#000000\'>활력 +10<br></font>
         <font color=\'#000000\'>생명력 회복 +8<br></font>
-        <font color=\'#000000\'>괴물에게서 얻는 금화 1.875~185.625% 증가 (캐릭터 레벨에 비례)<br></font>
+        <font color=\'#000000\'>괴물에게서 얻는 금화 (캐릭터 레벨 x 1.875)% 증가<br></font>
     ]]>
     </string>
     <string name="rune_word_principle_option">
@@ -794,12 +794,12 @@
         <font color=\'#000000\'>달리기/걷기 속도 +45%<br></font>
         <font color=\'#000000\'>+1 순간이동<br></font>
         <font color=\'#cc0029\'>방어력 +750~775<br></font>
-        <font color=\'#000000\'>힘 +0~74+ (캐릭터 레벨에 비례)<br></font>
+        <font color=\'#000000\'>힘 +(캐릭터 레벨 × 0.75)<br></font>
         <font color=\'#000000\'>최대 생명력 5% 증가<br></font>
         <font color=\'#000000\'>피해 8% 감소<br></font>
         <font color=\'#000000\'>적 처치시 생명력 +14<br></font>
         <font color=\'#000000\'>받는 피해의 15%만큼 마나 회복<br></font>
-        <font color=\'#000000\'>마법 아이템 발견 확률 1~99% 증가 (캐릭터 레벨에 비례)<br></font>
+        <font color=\'#000000\'>마법 아이템 발견 확률 (캐릭터 레벨)% 증가<br></font>
     ]]>
     </string>
     <string name="rune_word_doom_option">
