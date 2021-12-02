@@ -35,9 +35,10 @@ object Compose {
 }
 
 object Firebase {
-    const val PLATFORM = "com.google.firebase:firebase-bom:28.4.2"
+    const val PLATFORM = "com.google.firebase:firebase-bom:29.0.1"
     const val ANALYTICS_KTX = "com.google.firebase:firebase-analytics-ktx"
     const val FIRESTORE_KTX = "com.google.firebase:firebase-firestore-ktx"
+    const val CRASHLYTICS_KTX = "com.google.firebase:firebase-crashlytics-ktx"
 }
 
 object Timber {
