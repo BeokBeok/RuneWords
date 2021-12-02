@@ -4,6 +4,7 @@ plugins {
     kotlin("android")
     kotlin("kapt")
     id("dagger.hilt.android.plugin")
+    id("com.google.firebase.crashlytics")
 }
 
 android {
@@ -37,6 +38,7 @@ dependencies {
         implementation(platform(PLATFORM))
         implementation(ANALYTICS_KTX)
         implementation(FIRESTORE_KTX)
+        implementation(CRASHLYTICS_KTX)
     }
 
     Hilt.run {

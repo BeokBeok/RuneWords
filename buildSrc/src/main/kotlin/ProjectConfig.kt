@@ -5,4 +5,5 @@ object ProjectConfig {
     const val GOOGLE_SERVICES = "com.google.gms:google-services:4.3.10"
     const val HILT_ANDROID_GRADLE_PLUGIN =
         "com.google.dagger:hilt-android-gradle-plugin:${Hilt.VERSION}"
+    const val FIREBASE_CRASHLYTICS_GRADLE = "com.google.firebase:firebase-crashlytics-gradle:2.8.1"
 }
