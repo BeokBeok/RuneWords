@@ -45,4 +45,6 @@ dependencies {
         implementation(ANDROID)
         kapt(COMPILER)
     }
+
+    implementation(WorkManager.RUNTIME_KTX)
 }
