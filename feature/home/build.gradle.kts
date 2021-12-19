@@ -19,7 +19,10 @@ android {
 dependencies {
     implementation(project(":common"))
 
-    implementation(Google.PLAY_SERVICES_ADS)
+    Google.run {
+        implementation(PLAY_SERVICES_ADS)
+        implementation(PLAY_CORE_KTX)
+    }
 
     Firebase.run {
         implementation(platform(PLATFORM))
