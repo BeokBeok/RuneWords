@@ -15,9 +15,14 @@ import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
+import androidx.compose.material.Snackbar
+import androidx.compose.material.SnackbarHostState
 import androidx.compose.material.Text
+import androidx.compose.material.TextButton
 import androidx.compose.material.TopAppBar
+import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.State
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
@@ -30,13 +35,12 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import androidx.core.os.bundleOf
 import com.beok.runewords.common.BundleKeyConstants
-import com.beok.runewords.common.constants.TrackingConstants
 import com.beok.runewords.common.ext.startActivity
 import com.beok.runewords.common.model.Rune
+import com.beok.runewords.home.inapp.InAppUpdateState
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.AdView
-import com.google.firebase.analytics.FirebaseAnalytics
 
 internal object ActivityHomeView {
 
@@ -44,18 +48,56 @@ internal object ActivityHomeView {
         "com.beok.runewords.combination.presenter.CombinationActivity"
 
     @Composable
-    fun Layout(context: Context, runeClickTracking: (String) -> Unit) {
+    fun Layout(
+        context: Context,
+        runeClickTracking: (String) -> Unit,
+        inAppUpdateState: InAppUpdateState,
+        updateAction: () -> Unit
+    ) {
         MaterialTheme {
-            HomeScaffold(context = context, runeClickTracking = runeClickTracking)
+            HomeScaffold(
+                context = context,
+                runeClickTracking = runeClickTracking,
+                inAppUpdateState = inAppUpdateState,
+                updateAction = updateAction
+            )
         }
     }
 
     @Composable
-    private fun HomeScaffold(context: Context, runeClickTracking: (String) -> Unit) {
+    private fun HomeScaffold(
+        context: Context,
+        runeClickTracking: (String) -> Unit,
+        inAppUpdateState: InAppUpdateState,
+        updateAction: () -> Unit
+    ) {
         Scaffold(
+            scaffoldState = rememberScaffoldState(snackbarHostState = SnackbarHostState()),
+            snackbarHost = { InAppUpdateSnackBar(inAppUpdateState, updateAction) },
             topBar = { HomeTopBar() },
-            content = { HomeContent(context = context, runeClickTracking = runeClickTracking) }
-        )
+        ) {
+            HomeContent(context = context, runeClickTracking = runeClickTracking)
+        }
+    }
+
+    @Composable
+    private fun InAppUpdateSnackBar(
+        inAppUpdateState: InAppUpdateState,
+        updateAction: () -> Unit
+    ) {
+        if (inAppUpdateState == InAppUpdateState.Downloaded) {
+            Snackbar(
+                modifier = Modifier.padding(16.dp),
+                action = {
+                    TextButton(onClick = { updateAction() }) {
+                        Text(text = stringResource(id = R.string.install_and_restart))
+                    }
+                },
+                content = {
+                    Text(text = stringResource(id = R.string.complete_download_for_update))
+                }
+            )
+        }
     }
 
     @Composable
