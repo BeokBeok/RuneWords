@@ -357,7 +357,7 @@
         <font color=\'#000000\'>시야 -3<br></font>
     ]]>
     </string>
-    <string name="rune_word_harmony_option" translatable="false">
+    <string name="rune_word_hand_of_justice_option" translatable="false">
     <![CDATA[
         <font color=\'#000000\'>레벨 상승 시 100% 확룰로 36 레벨 불길 시전<br></font>
         <font color=\'#000000\'>사망 시 100% 확률로 48 레벨 운석 낙하 시전<br></font>
@@ -372,7 +372,7 @@
         <font color=\'#000000\'>대상 빙결 +3<br></font>
     ]]>
     </string>
-    <string name="rune_word_hand_of_justice_option" translatable="false">
+    <string name="rune_word_harmony_option" translatable="false">
     <![CDATA[
         <font color=\'#000000\'>장착 시 10 레벨 원기 오라 효과 적용<br></font>
         <font color=\'#cc0029\'>피해 +200~275% 증가<br></font>
