@@ -89,7 +89,7 @@ internal object ActivityHomeView {
                 modifier = Modifier.padding(16.dp),
                 action = {
                     TextButton(onClick = { updateAction() }) {
-                        Text(text = stringResource(id = R.string.install_and_restart))
+                        Text(text = stringResource(id = R.string.install))
                     }
                 },
                 content = {
