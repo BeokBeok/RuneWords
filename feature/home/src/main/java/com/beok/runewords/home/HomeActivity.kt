@@ -30,6 +30,7 @@ internal class HomeActivity : AppCompatActivity() {
     private val installStateUpdatedListener by lazy {
         InstallStateUpdatedListener {
             if (it.installStatus() == InstallStatus.DOWNLOADED) {
+                analytics.logEvent(TrackingConstants.InAppUpdate.DOWNLOADED, bundleOf())
                 inAppUpdateViewModel.completeDownload()
             }
         }
@@ -96,6 +97,7 @@ internal class HomeActivity : AppCompatActivity() {
                     inAppUpdateViewModel.registerForHome(appUpdateInfo = state.info, target = this)
                 }
                 InAppUpdateState.Complete -> {
+                    analytics.logEvent(TrackingConstants.InAppUpdate.INSTALL, bundleOf())
                     inAppUpdateViewModel.completeUpdate()
                     inAppUpdateViewModel
                         .unregisterInstallStateUpdatedListener(installStateUpdatedListener)

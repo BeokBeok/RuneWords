@@ -4,6 +4,6 @@
 
     <string name="cancel_update" translatable="false">업데이트가 취소되었습니다.</string>
     <string name="updating" translatable="false">업데이트 중입니다.</string>
-    <string name="install_and_restart" translatable="false">설치 및 재시작</string>
+    <string name="install" translatable="false">설치</string>
     <string name="complete_download_for_update" translatable="false">업데이트 버전 다운로드 완료</string>
 </resources>

@@ -22,7 +22,6 @@ import androidx.compose.material.TextButton
 import androidx.compose.material.TopAppBar
 import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.State
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
@@ -90,7 +89,7 @@ internal object ActivityHomeView {
                 modifier = Modifier.padding(16.dp),
                 action = {
                     TextButton(onClick = { updateAction() }) {
-                        Text(text = stringResource(id = R.string.install_and_restart))
+                        Text(text = stringResource(id = R.string.install))
                     }
                 },
                 content = {
