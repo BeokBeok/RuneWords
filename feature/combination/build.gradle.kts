@@ -28,8 +28,6 @@ android {
 dependencies {
     implementation(project(":common"))
 
-    testImplementation(AndroidX.CORE_TESTING)
-
     Firebase.run {
         implementation(platform(PLATFORM))
         implementation(ANALYTICS_KTX)
@@ -44,7 +42,6 @@ dependencies {
     JUnit.run {
         testImplementation(JUPITER_API)
         testRuntimeOnly(JUPITER_ENGINE)
-        testImplementation(JUPITER_PARAMS)
     }
 
     testImplementation(AssertJ.CORE)

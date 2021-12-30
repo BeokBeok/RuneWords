@@ -1,7 +1,6 @@
 object AndroidX {
     const val CORE_KTX = "androidx.core:core-ktx:1.7.0"
     const val APPCOMPAT =  "androidx.appcompat:appcompat:1.4.0"
-    const val CORE_TESTING = "androidx.arch.core:core-testing:2.1.0"
 }
 
 object Google {
@@ -16,7 +15,6 @@ object JUnit {
 
     const val JUPITER_API = "org.junit.jupiter:junit-jupiter-api:$VERSION"
     const val JUPITER_ENGINE = "org.junit.jupiter:junit-jupiter-engine:$VERSION"
-    const val JUPITER_PARAMS = "org.junit.jupiter:junit-jupiter-params:$VERSION"
 }
 
 object AssertJ {

@@ -46,7 +46,6 @@ dependencies {
     JUnit.run {
         testImplementation(JUPITER_API)
         testRuntimeOnly(JUPITER_ENGINE)
-        testImplementation(JUPITER_PARAMS)
     }
 
     testImplementation(AssertJ.CORE)
