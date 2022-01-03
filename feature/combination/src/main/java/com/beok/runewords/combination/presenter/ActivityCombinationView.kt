@@ -85,32 +85,33 @@ internal object ActivityCombinationView {
     ) {
         LazyColumn(modifier = Modifier.fillMaxSize()) {
             items(runeWords) { item ->
-                if (context.resourceIDByName(item.name) == 0) return@items
-                val runeWordsName =
-                    stringResource(id = context.resourceIDByName(item.name) ?: return@items)
-                Column(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clickable {
-                            context.startActivity(
-                                className = CLASSNAME_DETAIL,
-                                bundle = bundleOf(
-                                    BundleKeyConstants.RUNE_WORDS_NAME to item.name
-                                )
-                            )
-                            runeWordClickTracking(item.name)
-                        }
-                        .padding(horizontal = 16.dp)
-                        .padding(top = 16.dp),
-                    verticalArrangement = Arrangement.Center,
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ) {
-                    Text(text = runeWordsName)
-                    Divider(
+                if (context.resourceIDByName(item.name) != 0) {
+                    val runeWordsName =
+                        stringResource(id = context.resourceIDByName(item.name) ?: return@items)
+                    Column(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(top = 16.dp)
-                    )
+                            .clickable {
+                                context.startActivity(
+                                    className = CLASSNAME_DETAIL,
+                                    bundle = bundleOf(
+                                        BundleKeyConstants.RUNE_WORDS_NAME to item.name
+                                    )
+                                )
+                                runeWordClickTracking(item.name)
+                            }
+                            .padding(horizontal = 16.dp)
+                            .padding(top = 16.dp),
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Text(text = runeWordsName)
+                        Divider(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(top = 16.dp)
+                        )
+                    }
                 }
             }
         }

@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="admob_app_key">ca-app-pub-1017540929895357~2800308253</string>
+    <string name="admob_app_key" translatable="false">ca-app-pub-1017540929895357~2800308253</string>
 </resources>
