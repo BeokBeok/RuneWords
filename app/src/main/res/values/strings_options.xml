@@ -2,21 +2,21 @@
 <resources>
     <string name="rune_word_ancient_pledge_option">
     <![CDATA[
-        <font color=\'#000000\'>+50% enhanced defense<br></font>
-        <font color=\'#000000\'>Cold resist +43%<br></font>
-        <font color=\'#000000\'>Fire resist +48%<br></font>
-        <font color=\'#000000\'>Lightning resist +48%<br></font>
-        <font color=\'#000000\'>Poison resist +48%<br></font>
-        <font color=\'#000000\'>10% damage taken goes to mana<br></font>
+        <font color=\'#000000\'>+50%% enhanced defense<br></font>
+        <font color=\'#000000\'>Cold resist +43%%<br></font>
+        <font color=\'#000000\'>Fire resist +48%%<br></font>
+        <font color=\'#000000\'>Lightning resist +48%%<br></font>
+        <font color=\'#000000\'>Poison resist +48%%<br></font>
+        <font color=\'#000000\'>10%% damage taken goes to mana<br></font>
     ]]>
     </string>
     <string name="rune_word_beast_option">
     <![CDATA[
         <font color=\'#000000\'>Level 9 Fanaticism aura when equipped<br></font>
-        <font color=\'#000000\'>+40% increased attack speed<br></font>
-        <font color=\'#cc0029\'>+240-270% enhanced damage (varies)<br></font>
-        <font color=\'#000000\'>20% chance of crushing blow<br></font>
-        <font color=\'#000000\'>25% chance of open wounds<br></font>
+        <font color=\'#000000\'>+40%% increased attack speed<br></font>
+        <font color=\'#cc0029\'>+240-270%% enhanced damage (varies)<br></font>
+        <font color=\'#000000\'>20%% chance of crushing blow<br></font>
+        <font color=\'#000000\'>25%% chance of open wounds<br></font>
         <font color=\'#000000\'>+3 to Werebear<br></font>
         <font color=\'#000000\'>+3 to Lycanthropy<br></font>
         <font color=\'#000000\'>Prevent monster heal<br></font>
@@ -27,12 +27,12 @@
     </string>
     <string name="rune_word_black_option">
     <![CDATA[
-        <font color=\'#000000\'>+120% enhanced damage<br></font>
-        <font color=\'#000000\'>40% chance of crushing blow<br></font>
+        <font color=\'#000000\'>+120%% enhanced damage<br></font>
+        <font color=\'#000000\'>40%% chance of crushing blow<br></font>
         <font color=\'#000000\'>+200 attack rating<br></font>
         <font color=\'#000000\'>Adds 3-14 cold damage (3 seconds)<br></font>
         <font color=\'#000000\'>+10 to vitality<br></font>
-        <font color=\'#000000\'>15% increased attack speed<br></font>
+        <font color=\'#000000\'>15%% increased attack speed<br></font>
         <font color=\'#000000\'>Knockback<br></font>
         <font color=\'#000000\'>Magic damage reduced by 2<br></font>
         <font color=\'#000000\'>Level 4 Corpse Explosion (12 charges)<br></font>
@@ -41,22 +41,22 @@
     <string name="rune_word_bramble_option">
     <![CDATA[
         <font color=\'#cc0029\'>Level 15-21 Thorns aura when equipped<br></font>
-        <font color=\'#000000\'>+50% faster hit Recovery<br></font>
-        <font color=\'#cc0029\'>+25-50% to poison skill damage<br></font>
+        <font color=\'#000000\'>+50%% faster hit Recovery<br></font>
+        <font color=\'#cc0029\'>+25-50%% to poison skill damage<br></font>
         <font color=\'#000000\'>+300 defense<br></font>
-        <font color=\'#000000\'>Increase maximum mana 50%<br></font>
-        <font color=\'#000000\'>Regenerate mana 15%<br></font>
-        <font color=\'#000000\'>+5% maximum cold resist<br></font>
-        <font color=\'#000000\'>Fire resist +30%<br></font>
-        <font color=\'#000000\'>Poison resist +100%<br></font>
+        <font color=\'#000000\'>Increase maximum mana 50%%<br></font>
+        <font color=\'#000000\'>Regenerate mana 15%%<br></font>
+        <font color=\'#000000\'>+5%% maximum cold resist<br></font>
+        <font color=\'#000000\'>Fire resist +30%%<br></font>
+        <font color=\'#000000\'>Poison resist +100%%<br></font>
         <font color=\'#000000\'>+13 life after each kill<br></font>
         <font color=\'#000000\'>Level 13 Spirit of Barbs (33 charges)<br></font>
     ]]>
     </string>
     <string name="rune_word_bone_option">
     <![CDATA[
-        <font color=\'#000000\'>15% chance to cast level 10 Bone Armor when struck<br></font>
-        <font color=\'#000000\'>15% chance to cast level 10 Bone Spear on striking<br></font>
+        <font color=\'#000000\'>15%% chance to cast level 10 Bone Armor when struck<br></font>
+        <font color=\'#000000\'>15%% chance to cast level 10 Bone Spear on striking<br></font>
         <font color=\'#000000\'>+2 to Necromancer skill levels<br></font>
         <font color=\'#cc0029\'>+100-150 mana<br></font>
         <font color=\'#000000\'>All resistances +30<br></font>
@@ -65,8 +65,8 @@
     </string>
     <string name="rune_word_lion_heart_option">
     <![CDATA[
-        <font color=\'#000000\'>+20% enhanced damage<br></font>
-        <font color=\'#000000\'>Requirements -15%<br></font>
+        <font color=\'#000000\'>+20%% enhanced damage<br></font>
+        <font color=\'#000000\'>Requirements -15%%<br></font>
         <font color=\'#000000\'>+25 to strength<br></font>
         <font color=\'#000000\'>+10 to energy<br></font>
         <font color=\'#000000\'>+20 to vitality<br></font>
@@ -78,24 +78,24 @@
     <string name="rune_word_chains_of_honor_option">
     <![CDATA[
         <font color=\'#000000\'>+2 to all skills<br></font>
-        <font color=\'#000000\'>+200% damage to demons<br></font>
-        <font color=\'#000000\'>+100% damage to undead<br></font>
-        <font color=\'#000000\'>8% life stolen per hit<br></font>
-        <font color=\'#000000\'>+70% enhanced defense<br></font>
+        <font color=\'#000000\'>+200%% damage to demons<br></font>
+        <font color=\'#000000\'>+100%% damage to undead<br></font>
+        <font color=\'#000000\'>8%% life stolen per hit<br></font>
+        <font color=\'#000000\'>+70%% enhanced defense<br></font>
         <font color=\'#000000\'>+20 to strength<br></font>
         <font color=\'#000000\'>Replenish life +7<br></font>
         <font color=\'#000000\'>All resistances +65<br></font>
-        <font color=\'#000000\'>Damage reduced by 8%<br></font>
-        <font color=\'#000000\'>25% better chance of getting magic items<br></font>
+        <font color=\'#000000\'>Damage reduced by 8%%<br></font>
+        <font color=\'#000000\'>25%% better chance of getting magic items<br></font>
     ]]>
     </string>
     <string name="rune_word_radiance_option">
     <![CDATA[
-        <font color=\'#000000\'>+75% enhanced defense<br></font>
+        <font color=\'#000000\'>+75%% enhanced defense<br></font>
         <font color=\'#000000\'>+30 defense vs. missile<br></font>
         <font color=\'#000000\'>+10 to energy<br></font>
         <font color=\'#000000\'>+10 to vitality<br></font>
-        <font color=\'#000000\'>15% damage goes to mana<br></font>
+        <font color=\'#000000\'>15%% damage goes to mana<br></font>
         <font color=\'#000000\'>Magic damage reduced by 3<br></font>
         <font color=\'#000000\'>+33 to mana<br></font>
         <font color=\'#000000\'>Damage reduced by 7<br></font>
@@ -105,38 +105,38 @@
     <string name="rune_word_call_to_arms_option">
     <![CDATA[
         <font color=\'#000000\'>+1 to all skills<br></font>
-        <font color=\'#000000\'>+40% increased attack speed<br></font>
-        <font color=\'#cc0029\'>+250-290% enhanced damage<br></font>
+        <font color=\'#000000\'>+40%% increased attack speed<br></font>
+        <font color=\'#cc0029\'>+250-290%% enhanced damage<br></font>
         <font color=\'#000000\'>Adds 5-30 fire damage<br></font>
-        <font color=\'#000000\'>7% life stolen per hit<br></font>
+        <font color=\'#000000\'>7%% life stolen per hit<br></font>
         <font color=\'#cc0029\'>+2-6 to Battle Command<br></font>
         <font color=\'#cc0029\'>+1-6 to Battle Orders<br></font>
         <font color=\'#cc0029\'>+1-4 to Battle Cry<br></font>
         <font color=\'#000000\'>Prevent monster heal<br></font>
         <font color=\'#000000\'>Replenish life +12<br></font>
-        <font color=\'#000000\'>30% better chance of getting magic items<br></font>
+        <font color=\'#000000\'>30%% better chance of getting magic items<br></font>
     ]]>
     </string>
     <string name="rune_word_nadir_option">
     <![CDATA[
-        <font color=\'#000000\'>+50% enhanced defense<br></font>
+        <font color=\'#000000\'>+50%% enhanced defense<br></font>
         <font color=\'#000000\'>+10 defense<br></font>
         <font color=\'#000000\'>+30 missile defense<br></font>
         <font color=\'#000000\'>Level 13 Cloak of Shadows (9 charges)<br></font>
         <font color=\'#000000\'>+2 to mana after each kill<br></font>
         <font color=\'#000000\'>+5 to strength<br></font>
-        <font color=\'#000000\'>-33% gold from monsters<br></font>
+        <font color=\'#000000\'>-33%% gold from monsters<br></font>
         <font color=\'#000000\'>-3 to light radius<br></font>
     ]]>
     </string>
     <string name="rune_word_chaos_option">
     <![CDATA[
-        <font color=\'#000000\'>9% chance to cast level 11 Frozen Orb on striking<br></font>
-        <font color=\'#000000\'>11% chance to cast level 9 Charged Bolt on striking<br></font>
-        <font color=\'#000000\'>+35% increased attack speed<br></font>
-        <font color=\'#cc0029\'>+290-340% enhanced damage<br></font>
+        <font color=\'#000000\'>9%% chance to cast level 11 Frozen Orb on striking<br></font>
+        <font color=\'#000000\'>11%% chance to cast level 9 Charged Bolt on striking<br></font>
+        <font color=\'#000000\'>+35%% increased attack speed<br></font>
+        <font color=\'#cc0029\'>+290-340%% enhanced damage<br></font>
         <font color=\'#cc0029\'>Adds 216-471 magic damage<br></font>
-        <font color=\'#000000\'>25% chance of open wounds<br></font>
+        <font color=\'#000000\'>25%% chance of open wounds<br></font>
         <font color=\'#000000\'>+1 to Whirlwind<br></font>
         <font color=\'#000000\'>+10 to strength<br></font>
         <font color=\'#000000\'>+15 life after each demon kill<br></font>
@@ -144,28 +144,28 @@
     </string>
     <string name="rune_word_rift_option">
     <![CDATA[
-        <font color=\'#000000\'>20% chance to cast Level 16 Tornado on striking<br></font>
-        <font color=\'#000000\'>16% chance to cast level 21 Frozen Orb on attack<br></font>
-        <font color=\'#000000\'>20% bonus to attack rating<br></font>
+        <font color=\'#000000\'>20%% chance to cast Level 16 Tornado on striking<br></font>
+        <font color=\'#000000\'>16%% chance to cast level 21 Frozen Orb on attack<br></font>
+        <font color=\'#000000\'>20%% bonus to attack rating<br></font>
         <font color=\'#000000\'>Adds 160-250 magic damage<br></font>
         <font color=\'#000000\'>Adds 60-180 fire damage<br></font>
         <font color=\'#cc0029\'>+5-10 to all stats<br></font>
         <font color=\'#000000\'>+10 to dexterity<br></font>
-        <font color=\'#000000\'>38% damage taken goes to mana<br></font>
-        <font color=\'#000000\'>75% extra gold from monsters<br></font>
+        <font color=\'#000000\'>38%% damage taken goes to mana<br></font>
+        <font color=\'#000000\'>75%% extra gold from monsters<br></font>
         <font color=\'#000000\'>Level 15 Iron Maiden (40 charges)<br></font>
-        <font color=\'#000000\'>Requirements -20%<br></font>
+        <font color=\'#000000\'>Requirements -20%%<br></font>
     ]]>
     </string>
     <string name="rune_word_crescent_option">
     <![CDATA[
-        <font color=\'#000000\'>10% chance to cast level 17 Chain Lightning on striking<br></font>
-        <font color=\'#000000\'>7% chance to cast level 13 Static Field on striking<br></font>
-        <font color=\'#000000\'>+20% increased attack speed<br></font>
-        <font color=\'#cc0029\'>+180-220% enhanced damage<br></font>
+        <font color=\'#000000\'>10%% chance to cast level 17 Chain Lightning on striking<br></font>
+        <font color=\'#000000\'>7%% chance to cast level 13 Static Field on striking<br></font>
+        <font color=\'#000000\'>+20%% increased attack speed<br></font>
+        <font color=\'#cc0029\'>+180-220%% enhanced damage<br></font>
         <font color=\'#000000\'>Ignore target\'s defense<br></font>
-        <font color=\'#000000\'>-35% to enemy lightning resistance<br></font>
-        <font color=\'#000000\'>25% chance of open wounds<br></font>
+        <font color=\'#000000\'>-35%% to enemy lightning resistance<br></font>
+        <font color=\'#000000\'>25%% chance of open wounds<br></font>
         <font color=\'#cc0029\'>+9-11 magic absorb<br></font>
         <font color=\'#000000\'>+2 to mana after each kill<br></font>
         <font color=\'#000000\'>Level 18 Summon Spirit Wolf (30 charges)<br></font>
@@ -173,50 +173,50 @@
     </string>
     <string name="rune_word_death_option">
     <![CDATA[
-        <font color=\'#000000\'>100% chance to cast level 44 Chain Lightning when you die<br></font>
-        <font color=\'#000000\'>25% chance to cast level 18 Glacial Spike on attack<br></font>
+        <font color=\'#000000\'>100%% chance to cast level 44 Chain Lightning when you die<br></font>
+        <font color=\'#000000\'>25%% chance to cast level 18 Glacial Spike on attack<br></font>
         <font color=\'#000000\'>Indestructible<br></font>
-        <font color=\'#cc0029\'>+300-385% enhanced damage<br></font>
-        <font color=\'#000000\'>20% bonus to attack rating<br></font>
+        <font color=\'#cc0029\'>+300-385%% enhanced damage<br></font>
+        <font color=\'#000000\'>20%% bonus to attack rating<br></font>
         <font color=\'#000000\'>+50 to attack rating<br></font>
         <font color=\'#000000\'>Adds 1-50 lightning damage<br></font>
-        <font color=\'#000000\'>7% mana stolen per hit<br></font>
-        <font color=\'#000000\'>50% chance of crushing blow<br></font>
-        <font color=\'#000000\'>0.5-49.5% deadly strike (based on character level)<br></font>
+        <font color=\'#000000\'>7%% mana stolen per hit<br></font>
+        <font color=\'#000000\'>50%% chance of crushing blow<br></font>
+        <font color=\'#000000\'>0.5-49.5%% deadly strike (based on character level)<br></font>
         <font color=\'#000000\'>+1 to light radius<br></font>
         <font color=\'#000000\'>Level 22 Blood Golem (15 charges)<br></font>
-        <font color=\'#000000\'>Requirements -20%<br></font>
+        <font color=\'#000000\'>Requirements -20%%<br></font>
     ]]>
     </string>
     <string name="rune_word_breath_of_the_dying_option">
     <![CDATA[
-        <font color=\'#000000\'>50% chance to cast level 20 Poison Nova when you kill an enemy<br></font>
+        <font color=\'#000000\'>50%% chance to cast level 20 Poison Nova when you kill an enemy<br></font>
         <font color=\'#000000\'>Indestructible<br></font>
-        <font color=\'#000000\'>+60% increased attack speed<br></font>
-        <font color=\'#cc0029\'>+350-400% enhanced damage<br></font>
-        <font color=\'#000000\'>+200% damage to undead<br></font>
-        <font color=\'#000000\'>-25% target defense<br></font>
+        <font color=\'#000000\'>+60%% increased attack speed<br></font>
+        <font color=\'#cc0029\'>+350-400%% enhanced damage<br></font>
+        <font color=\'#000000\'>+200%% damage to undead<br></font>
+        <font color=\'#000000\'>-25%% target defense<br></font>
         <font color=\'#000000\'>+50 to attack rating<br></font>
         <font color=\'#000000\'>+50 to attack rating against undead<br></font>
-        <font color=\'#000000\'>7% mana stolen per hit<br></font>
-        <font color=\'#cc0029\'>12-15% life stolen per hit<br></font>
+        <font color=\'#000000\'>7%% mana stolen per hit<br></font>
+        <font color=\'#cc0029\'>12-15%% life stolen per hit<br></font>
         <font color=\'#000000\'>Prevent monster heal<br></font>
         <font color=\'#000000\'>+30 to all attributes<br></font>
         <font color=\'#000000\'>+1 to light radius<br></font>
-        <font color=\'#000000\'>Requirements -20%<br></font>
+        <font color=\'#000000\'>Requirements -20%%<br></font>
     ]]>
     </string>
     <string name="rune_word_grief_option">
     <![CDATA[
-        <font color=\'#000000\'>35% chance to cast level 15 Venom on striking<br></font>
-        <font color=\'#cc0029\'>+30-40% increased attack speed<br></font>
+        <font color=\'#000000\'>35%% chance to cast level 15 Venom on striking<br></font>
+        <font color=\'#cc0029\'>+30-40%% increased attack speed<br></font>
         <font color=\'#cc0029\'>Damage + 340-400<br></font>
         <font color=\'#000000\'>Ignore target\'s defense<br></font>
-        <font color=\'#000000\'>-25% target defense<br></font>
-        <font color=\'#000000\'>+1.875-185.625% damage to demons (based on character level)<br></font>
+        <font color=\'#000000\'>-25%% target defense<br></font>
+        <font color=\'#000000\'>+1.875-185.625%% damage to demons (based on character level)<br></font>
         <font color=\'#000000\'>Adds 5-30 fire damage<br></font>
-        <font color=\'#cc0029\'>-20-25% to enemy poison resistance<br></font>
-        <font color=\'#000000\'>20% deadly strike<br></font>
+        <font color=\'#cc0029\'>-20-25%% to enemy poison resistance<br></font>
+        <font color=\'#000000\'>20%% deadly strike<br></font>
         <font color=\'#000000\'>Prevent monster heal<br></font>
         <font color=\'#000000\'>+2 to mana after each kill<br></font>
         <font color=\'#cc0029\'>+10-15 life after each kill<br></font>
@@ -224,29 +224,29 @@
     </string>
     <string name="rune_word_destruction_option">
     <![CDATA[
-        <font color=\'#000000\'>23% chance to cast level 12 Volcano on striking<br></font>
-        <font color=\'#000000\'>5% chance to cast level 23 Molten Boulder on striking<br></font>
-        <font color=\'#000000\'>100% chance to cast level 45 Meteor when you die<br></font>
-        <font color=\'#000000\'>15% chance to cast level 22 Nova on attack<br></font>
-        <font color=\'#000000\'>+350% enhanced damage<br></font>
-        <font color=\'#000000\'>Ignore target's defense<br></font>
+        <font color=\'#000000\'>23%% chance to cast level 12 Volcano on striking<br></font>
+        <font color=\'#000000\'>5%% chance to cast level 23 Molten Boulder on striking<br></font>
+        <font color=\'#000000\'>100%% chance to cast level 45 Meteor when you die<br></font>
+        <font color=\'#000000\'>15%% chance to cast level 22 Nova on attack<br></font>
+        <font color=\'#000000\'>+350%% enhanced damage<br></font>
+        <font color=\'#000000\'>Ignore target\'s defense<br></font>
         <font color=\'#000000\'>Adds 100-180 magic damage<br></font>
-        <font color=\'#000000\'>7% mana stolen per hit<br></font>
-        <font color=\'#000000\'>20% chance of crushing blow<br></font>
-        <font color=\'#000000\'>20% deadly strike<br></font>
+        <font color=\'#000000\'>7%% mana stolen per hit<br></font>
+        <font color=\'#000000\'>20%% chance of crushing blow<br></font>
+        <font color=\'#000000\'>20%% deadly strike<br></font>
         <font color=\'#000000\'>Prevent monster heal<br></font>
         <font color=\'#000000\'>+10 to dexterity<br></font>
     ]]>
     </string>
     <string name="rune_word_holy_thunder_option">
     <![CDATA[
-        <font color=\'#000000\'>+60% enhanced damage<br></font>
-        <font color=\'#000000\'>-25% target defense<br></font>
+        <font color=\'#000000\'>+60%% enhanced damage<br></font>
+        <font color=\'#000000\'>-25%% target defense<br></font>
         <font color=\'#000000\'>Adds 5-30 fire damage<br></font>
         <font color=\'#000000\'>Adds 21-110 lightning damage<br></font>
         <font color=\'#000000\'>+75 poison damage over 5 seconds<br></font>
         <font color=\'#000000\'>+10 to maximum damage<br></font>
-        <font color=\'#000000\'>Lighting resistance +60%<br></font>
+        <font color=\'#000000\'>Lighting resistance +60%%<br></font>
         <font color=\'#000000\'>+5 maximum lightning resistance<br></font>
         <font color=\'#000000\'>+3 to Holy Shock (Paladin only)<br></font>
         <font color=\'#000000\'>Level 7 Chain Lightning (60 charges)<br></font>
@@ -254,122 +254,122 @@
     </string>
     <string name="rune_word_dragon_option">
     <![CDATA[
-        <font color=\'#000000\'>20% chance to cast level 18 Venom when struck<br></font>
-        <font color=\'#000000\'>12% chance to cast level 15 Hydra on striking<br></font>
+        <font color=\'#000000\'>20%% chance to cast level 18 Venom when struck<br></font>
+        <font color=\'#000000\'>12%% chance to cast level 15 Hydra on striking<br></font>
         <font color=\'#000000\'>Level 14 Holy Fire aura when equipped<br></font>
         <font color=\'#000000\'>+360 defense<br></font>
         <font color=\'#000000\'>+230 missile defense<br></font>
         <font color=\'#cc0029\'>+3-5 to all attributes<br></font>
         <font color=\'#000000\'>0.375-37.125 to strength (based on character level)<br></font>
-        <font color=\'#000000\'>Increase maximum mana by 5% (body armor)<br></font>
+        <font color=\'#000000\'>Increase maximum mana by 5%% (body armor)<br></font>
         <font color=\'#000000\'>+50 to mana (shields)<br></font>
-        <font color=\'#000000\'>+5% to maximum lightning resist<br></font>
+        <font color=\'#000000\'>+5%% to maximum lightning resist<br></font>
         <font color=\'#000000\'>Damage reduced by 7<br></font>
     ]]>
     </string>
     <string name="rune_word_dream_option">
     <![CDATA[
-        <font color=\'#000000\'>10% chance to cast level 15 Confuse when struck<br></font>
+        <font color=\'#000000\'>10%% chance to cast level 15 Confuse when struck<br></font>
         <font color=\'#000000\'>Level 15 Holy Shock aura when equipped<br></font>
-        <font color=\'#cc0029\'>+20-30% faster hit recovery<br></font>
-        <font color=\'#000000\'>+30% enhanced defense<br></font>
+        <font color=\'#cc0029\'>+20-30%% faster hit recovery<br></font>
+        <font color=\'#000000\'>+30%% enhanced defense<br></font>
         <font color=\'#cc0029\'>+150-220 defense<br></font>
         <font color=\'#000000\'>+10 to vitality<br></font>
-        <font color=\'#000000\'>Increase maximum life 5% (helms)<br></font>
+        <font color=\'#000000\'>Increase maximum life 5%% (helms)<br></font>
         <font color=\'#000000\'>+50 to life (shields)<br></font>
         <font color=\'#000000\'>0.625-61.875 to mana (based on character level)<br></font>
         <font color=\'#cc0029\'>All resistance +5-20<br></font>
-        <font color=\'#cc0029\'>12-25% better chance of getting magic items<br></font>
+        <font color=\'#cc0029\'>12-25%% better chance of getting magic items<br></font>
     ]]>
     </string>
     <string name="rune_word_edge_option">
     <![CDATA[
         <font color=\'#000000\'>Level 15 Thorns aura when equipped<br></font>
-        <font color=\'#000000\'>+35% increased attack speed<br></font>
-        <font color=\'#cc0029\'>+320-380% damage to demons<br></font>
-        <font color=\'#000000\'>+280% damage to undead<br></font>
+        <font color=\'#000000\'>+35%% increased attack speed<br></font>
+        <font color=\'#cc0029\'>+320-380%% damage to demons<br></font>
+        <font color=\'#000000\'>+280%% damage to undead<br></font>
         <font color=\'#000000\'>+75 poison damage over 5 seconds<br></font>
-        <font color=\'#000000\'>7% life stolen per hit<br></font>
+        <font color=\'#000000\'>7%% life stolen per hit<br></font>
         <font color=\'#000000\'>Prevent monster heal<br></font>
         <font color=\'#cc0029\'>+5-10 to all attributes<br></font>
         <font color=\'#000000\'>+2 to mana after each kill<br></font>
-        <font color=\'#000000\'>Reduces all vendor prices by 15%<br></font>
+        <font color=\'#000000\'>Reduces all vendor prices by 15%%<br></font>
     ]]>
     </string>
     <string name="rune_word_rhyme_option">
     <![CDATA[
-        <font color=\'#000000\'>20% increased chance of blocking<br></font>
-        <font color=\'#000000\'>40% faster block rate<br></font>
+        <font color=\'#000000\'>20%% increased chance of blocking<br></font>
+        <font color=\'#000000\'>40%% faster block rate<br></font>
         <font color=\'#000000\'>All resistances +25<br></font>
-        <font color=\'#000000\'>Regenerate mana 15%<br></font>
+        <font color=\'#000000\'>Regenerate mana 15%%<br></font>
         <font color=\'#000000\'>Cannot be frozen<br></font>
-        <font color=\'#000000\'>50% extra gold from monsters<br></font>
-        <font color=\'#000000\'>25% better chance of getting magic items<br></font>
+        <font color=\'#000000\'>50%% extra gold from monsters<br></font>
+        <font color=\'#000000\'>25%% better chance of getting magic items<br></font>
     ]]>
     </string>
     <string name="rune_word_enlightenment_option">
     <![CDATA[
-        <font color=\'#000000\'>5% chance to cast level 15 Blaze when struck<br></font>
-        <font color=\'#000000\'>5% chance to cast level 15 Fire Ball on striking<br></font>
+        <font color=\'#000000\'>5%% chance to cast level 15 Blaze when struck<br></font>
+        <font color=\'#000000\'>5%% chance to cast level 15 Fire Ball on striking<br></font>
         <font color=\'#000000\'>+2 to Sorceress skill levels<br></font>
         <font color=\'#000000\'>+1 to Warmth<br></font>
-        <font color=\'#000000\'>+30% enhanced defense<br></font>
-        <font color=\'#000000\'>Fire resist +30%<br></font>
+        <font color=\'#000000\'>+30%% enhanced defense<br></font>
+        <font color=\'#000000\'>Fire resist +30%%<br></font>
         <font color=\'#000000\'>Damage reduced by 7<br></font>
     ]]>
     </string>
     <string name="rune_word_exile_option">
     <![CDATA[
-        <font color=\'#000000\'>15% chance to cast level 5 Life Tap on striking<br></font>
+        <font color=\'#000000\'>15%% chance to cast level 5 Life Tap on striking<br></font>
         <font color=\'#cc0029\'>Level 13-16 Defiance aura when equipped<br></font>
         <font color=\'#000000\'>+2 to Paladin Offensive auras<br></font>
-        <font color=\'#000000\'>+30% faster block rate<br></font>
+        <font color=\'#000000\'>+30%% faster block rate<br></font>
         <font color=\'#000000\'>Freezes target<br></font>
-        <font color=\'#cc0029\'>+220-260% enhanced defense<br></font>
+        <font color=\'#cc0029\'>+220-260%% enhanced defense<br></font>
         <font color=\'#000000\'>Replenish life +7<br></font>
-        <font color=\'#000000\'>+5% maximum cold resist<br></font>
-        <font color=\'#000000\'>+5% maximum fire resist<br></font>
-        <font color=\'#000000\'>25% better chance of getting magic items<br></font>
+        <font color=\'#000000\'>+5%% maximum cold resist<br></font>
+        <font color=\'#000000\'>+5%% maximum fire resist<br></font>
+        <font color=\'#000000\'>25%% better chance of getting magic items<br></font>
         <font color=\'#000000\'>Repairs 1 durability in 4 seconds<br></font>
     ]]>
     </string>
     <string name="rune_word_famine_option">
     <![CDATA[
-        <font color=\'#000000\'>+30% increased attack speed<br></font>
-        <font color=\'#cc0029\'>+320-370% enhanced damage<br></font>
+        <font color=\'#000000\'>+30%% increased attack speed<br></font>
+        <font color=\'#cc0029\'>+320-370%% enhanced damage<br></font>
         <font color=\'#000000\'>Ignore target\'s defense<br></font>
         <font color=\'#000000\'>Adds 180-200 magic damage<br></font>
         <font color=\'#000000\'>Adds 50-200 fire damage<br></font>
         <font color=\'#000000\'>Adds 51-250 lightning damage<br></font>
         <font color=\'#000000\'>Adds 50-200 cold damage<br></font>
-        <font color=\'#000000\'>12% life stolen per hit<br></font>
+        <font color=\'#000000\'>12%% life stolen per hit<br></font>
         <font color=\'#000000\'>Prevent monster heal<br></font>
         <font color=\'#000000\'>+10 to strength<br></font>
     ]]>
     </string>
     <string name="rune_word_gloom_option">
     <![CDATA[
-        <font color=\'#000000\'>15% chance to cast level 3 Dim Vision when struck<br></font>
-        <font color=\'#000000\'>+10% faster hit recovery<br></font>
-        <font color=\'#cc0029\'>+200-260% enhanced defense<br></font>
+        <font color=\'#000000\'>15%% chance to cast level 3 Dim Vision when struck<br></font>
+        <font color=\'#000000\'>+10%% faster hit recovery<br></font>
+        <font color=\'#cc0029\'>+200-260%% enhanced defense<br></font>
         <font color=\'#000000\'>+10 to strength<br></font>
         <font color=\'#000000\'>All resistance +45<br></font>
         <font color=\'#000000\'>Half freeze duration<br></font>
-        <font color=\'#000000\'>5% damage taken goes to mana<br></font>
+        <font color=\'#000000\'>5%% damage taken goes to mana<br></font>
         <font color=\'#000000\'>-3 to light radius<br></font>
     ]]>
     </string>
     <string name="rune_word_hand_of_justice_option">
     <![CDATA[
-        <font color=\'#000000\'>100% chance to cast level 36 Blaze when you level up<br></font>
-        <font color=\'#000000\'>100% chance to cast level 48 Meteor when you die<br></font>
+        <font color=\'#000000\'>100%% chance to cast level 36 Blaze when you level up<br></font>
+        <font color=\'#000000\'>100%% chance to cast level 48 Meteor when you die<br></font>
         <font color=\'#000000\'>Level 16 Holy Fire aura when equipped<br></font>
-        <font color=\'#000000\'>+33% increased attack speed<br></font>
-        <font color=\'#cc0029\'>+280-330% enhanced damage<br></font>
-        <font color=\'#000000\'>Ignore target's defense<br></font>
-        <font color=\'#000000\'>7% life stolen per hit<br></font>
-        <font color=\'#000000\'>-20% enemy fire resistance<br></font>
-        <font color=\'#000000\'>20% deadly strike<br></font>
+        <font color=\'#000000\'>+33%% increased attack speed<br></font>
+        <font color=\'#cc0029\'>+280-330%% enhanced damage<br></font>
+        <font color=\'#000000\'>Ignore target\'s defense<br></font>
+        <font color=\'#000000\'>7%% life stolen per hit<br></font>
+        <font color=\'#000000\'>-20%% enemy fire resistance<br></font>
+        <font color=\'#000000\'>20%% deadly strike<br></font>
         <font color=\'#000000\'>Hit blinds target<br></font>
         <font color=\'#000000\'>Freezes target +3<br></font>
     ]]>
@@ -377,7 +377,7 @@
     <string name="rune_word_harmony_option">
     <![CDATA[
         <font color=\'#000000\'>Level 10 Vigor aura when equipped<br></font>
-        <font color=\'#cc0029\'>+200-275% enhanced damage<br></font>
+        <font color=\'#cc0029\'>+200-275%% enhanced damage<br></font>
         <font color=\'#000000\'>+9 to minimum damage<br></font>
         <font color=\'#000000\'>+9 to maximize damage<br></font>
         <font color=\'#000000\'>Adds 55-160 lightning damage<br></font>
@@ -385,7 +385,7 @@
         <font color=\'#000000\'>Adds 55-160 cold damage<br></font>
         <font color=\'#cc0029\'>+2-6 to Valkyrie<br></font>
         <font color=\'#000000\'>+10 to dexterity<br></font>
-        <font color=\'#000000\'>Regenerate mana 20%<br></font>
+        <font color=\'#000000\'>Regenerate mana 20%%<br></font>
         <font color=\'#000000\'>+2 to mana after each kill<br></font>
         <font color=\'#000000\'>+2 to light radius<br></font>
         <font color=\'#000000\'>Level 20 Revive (25 charges)<br></font>
@@ -394,14 +394,14 @@
     <string name="rune_word_heart_of_oak_option">
     <![CDATA[
         <font color=\'#000000\'>+3 to all skills<br></font>
-        <font color=\'#000000\'>+40% faster cast rate<br></font>
-        <font color=\'#000000\'>+75% damage to demons<br></font>
+        <font color=\'#000000\'>+40%% faster cast rate<br></font>
+        <font color=\'#000000\'>+75%% damage to demons<br></font>
         <font color=\'#000000\'>+100 to attack rating against demons<br></font>
         <font color=\'#000000\'>Adds 3-14 cold damage (3 seconds)<br></font>
-        <font color=\'#000000\'>7% mana stolen per hit<br></font>
+        <font color=\'#000000\'>7%% mana stolen per hit<br></font>
         <font color=\'#000000\'>+10 dexterity<br></font>
         <font color=\'#000000\'>Replenish life +20<br></font>
-        <font color=\'#000000\'>Increase maximum mana 15%<br></font>
+        <font color=\'#000000\'>Increase maximum mana 15%%<br></font>
         <font color=\'#cc0029\'>All resistances +30-40<br></font>
         <font color=\'#000000\'>Level 4 Oak Sage (25 charges)<br></font>
         <font color=\'#000000\'>Leven 14 Raven (60 charges)<br></font>
@@ -409,13 +409,13 @@
     </string>
     <string name="rune_word_honor_option">
     <![CDATA[
-        <font color=\'#000000\'>+160% enhanced damage<br></font>
+        <font color=\'#000000\'>+160%% enhanced damage<br></font>
         <font color=\'#000000\'>+9 minimum damage<br></font>
         <font color=\'#000000\'>+9 maximum damage<br></font>
-        <font color=\'#000000\'>25% deadly strike<br></font>
+        <font color=\'#000000\'>25%% deadly strike<br></font>
         <font color=\'#000000\'>+250 to attack rating<br></font>
         <font color=\'#000000\'>+1 to all skills<br></font>
-        <font color=\'#000000\'>7% life stolen per hit<br></font>
+        <font color=\'#000000\'>7%% life stolen per hit<br></font>
         <font color=\'#000000\'>Replenish life +10<br></font>
         <font color=\'#000000\'>+10 strength<br></font>
         <font color=\'#000000\'>+1 light radius<br></font>
@@ -424,103 +424,103 @@
     </string>
     <string name="rune_word_ice_option">
     <![CDATA[
-        <font color=\'#000000\'>100% chance to cast level 40 Blizzard when you level up<br></font>
-        <font color=\'#000000\'>25% chance to cast level 22 Frost Nova on striking<br></font>
+        <font color=\'#000000\'>100%% chance to cast level 40 Blizzard when you level up<br></font>
+        <font color=\'#000000\'>25%% chance to cast level 22 Frost Nova on striking<br></font>
         <font color=\'#000000\'>Level 18 Holy Freeze aura when equipped<br></font>
-        <font color=\'#000000\'>+20% increased attack speed<br></font>
-        <font color=\'#cc0029\'>+140-210% enhanced damage<br></font>
-        <font color=\'#000000\'>Ignore target's defense<br></font>
-        <font color=\'#cc0029\'>+25-30% cold skill damage<br></font>
-        <font color=\'#000000\'>-20% to enemy cold skill resistance<br></font>
-        <font color=\'#000000\'>7% life stolen per hit<br></font>
-        <font color=\'#000000\'>20% deadly strike<br></font>
-        <font color=\'#000000\'>3.125-309.375% extra gold from monsters (based on character level)<br></font>
+        <font color=\'#000000\'>+20%% increased attack speed<br></font>
+        <font color=\'#cc0029\'>+140-210%% enhanced damage<br></font>
+        <font color=\'#000000\'>Ignore target\'s defense<br></font>
+        <font color=\'#cc0029\'>+25-30%% cold skill damage<br></font>
+        <font color=\'#000000\'>-20%% to enemy cold skill resistance<br></font>
+        <font color=\'#000000\'>7%% life stolen per hit<br></font>
+        <font color=\'#000000\'>20%% deadly strike<br></font>
+        <font color=\'#000000\'>3.125-309.375%% extra gold from monsters (based on character level)<br></font>
     ]]>
     </string>
     <string name="rune_word_eternity_option">
     <![CDATA[
         <font color=\'#000000\'>Indestructible<br></font>
-        <font color=\'#cc0029\'>+260-310% enhanced damage<br></font>
+        <font color=\'#cc0029\'>+260-310%% enhanced damage<br></font>
         <font color=\'#000000\'>+9 to minimum damage<br></font>
-        <font color=\'#000000\'>7% life stolen per hit<br></font>
-        <font color=\'#000000\'>20% chance of crushing blow<br></font>
+        <font color=\'#000000\'>7%% life stolen per hit<br></font>
+        <font color=\'#000000\'>20%% chance of crushing blow<br></font>
         <font color=\'#000000\'>Hit blinds target<br></font>
-        <font color=\'#000000\'>Slow target by 33%<br></font>
-        <font color=\'#000000\'>Regenerate mana 16%<br></font>
+        <font color=\'#000000\'>Slow target by 33%%<br></font>
+        <font color=\'#000000\'>Regenerate mana 16%%<br></font>
         <font color=\'#000000\'>Replenish life +16<br></font>
         <font color=\'#000000\'>Cannot be frozen<br></font>
-        <font color=\'#000000\'>30% better chance of getting magic items<br></font>
+        <font color=\'#000000\'>30%% better chance of getting magic items<br></font>
         <font color=\'#000000\'>Level 8 Revive (88 charges)<br></font>
     ]]>
     </string>
     <string name="rune_word_infinity_option">
     <![CDATA[
-        <font color=\'#000000\'>50% chance to cast level 20 Chain Lightning when you kill an enemy<br></font>
+        <font color=\'#000000\'>50%% chance to cast level 20 Chain Lightning when you kill an enemy<br></font>
         <font color=\'#000000\'>Level 12 Conviction aura when equipped<br></font>
-        <font color=\'#000000\'>+35% faster run/walk<br></font>
-        <font color=\'#cc0029\'>+255-325% enhanced damage<br></font>
-        <font color=\'#cc0029\'>-45-55% to enemy lightning resistance<br></font>
-        <font color=\'#000000\'>40% chance of crushing blow<br></font>
+        <font color=\'#000000\'>+35%% faster run/walk<br></font>
+        <font color=\'#cc0029\'>+255-325%% enhanced damage<br></font>
+        <font color=\'#cc0029\'>-45-55%% to enemy lightning resistance<br></font>
+        <font color=\'#000000\'>40%% chance of crushing blow<br></font>
         <font color=\'#000000\'>Prevent monster heal<br></font>
         <font color=\'#000000\'>0.5-49.5 to vitality (based on character level)<br></font>
-        <font color=\'#000000\'>30% better chance of getting magic items<br></font>
+        <font color=\'#000000\'>30%% better chance of getting magic items<br></font>
         <font color=\'#000000\'>Level 21 Cyclone Armor (30 charges)<br></font>
     ]]>
     </string>
     <string name="rune_word_insight_option">
     <![CDATA[
         <font color=\'#cc0029\'>Level 12-17 Meditation aura when equipped (varies)<br></font>
-        <font color=\'#000000\'>+35% faster cast rate<br></font>
-        <font color=\'#cc0029\'>+200-260% enhanced damage<br></font>
+        <font color=\'#000000\'>+35%% faster cast rate<br></font>
+        <font color=\'#cc0029\'>+200-260%% enhanced damage<br></font>
         <font color=\'#000000\'>+9 to minimum damage<br></font>
-        <font color=\'#cc0029\'>180-250% bonus to attack rating<br></font>
+        <font color=\'#cc0029\'>180-250%% bonus to attack rating<br></font>
         <font color=\'#000000\'>Adds 5-30 fire damage<br></font>
         <font color=\'#000000\'>+75 poison damage over 5 seconds<br></font>
         <font color=\'#cc0029\'>+1-6 to Critical Strike<br></font>
         <font color=\'#000000\'>+5 to all attributes<br></font>
         <font color=\'#000000\'>+2 to mana after each kill<br></font>
-        <font color=\'#000000\'>23% better chance of getting magic items<br></font>
+        <font color=\'#000000\'>23%% better chance of getting magic items<br></font>
     ]]>
     </string>
     <string name="rune_word_king_grace_option">
     <![CDATA[
-        <font color=\'#000000\'>+100% enhanced damage<br></font>
-        <font color=\'#000000\'>+100% damage to demons<br></font>
-        <font color=\'#000000\'>+50% damage to undead<br></font>
+        <font color=\'#000000\'>+100%% enhanced damage<br></font>
+        <font color=\'#000000\'>+100%% damage to demons<br></font>
+        <font color=\'#000000\'>+50%% damage to undead<br></font>
         <font color=\'#000000\'>Adds 5-30 fire damage<br></font>
         <font color=\'#000000\'>Adds 3-14 cold damage (3 seconds)<br></font>
         <font color=\'#000000\'>+150 to attack rating<br></font>
         <font color=\'#000000\'>+100 to attack rating against demons<br></font>
         <font color=\'#000000\'>+100 to attack rating against undead<br></font>
-        <font color=\'#000000\'>7% life stolen per hit<br></font>
+        <font color=\'#000000\'>7%% life stolen per hit<br></font>
     ]]>
     </string>
     <string name="rune_word_king_slayer_option">
     <![CDATA[
-        <font color=\'#000000\'>+30% increased attack speed<br></font>
-        <font color=\'#cc0029\'>+230-270% enhanced damage<br></font>
-        <font color=\'#000000\'>-25% target defense<br></font>
-        <font color=\'#000000\'>20% bonus to attack rating<br></font>
-        <font color=\'#000000\'>33% chance of crushing blow<br></font>
-        <font color=\'#000000\'>50% chance of open wounds<br></font>
+        <font color=\'#000000\'>+30%% increased attack speed<br></font>
+        <font color=\'#cc0029\'>+230-270%% enhanced damage<br></font>
+        <font color=\'#000000\'>-25%% target defense<br></font>
+        <font color=\'#000000\'>20%% bonus to attack rating<br></font>
+        <font color=\'#000000\'>33%% chance of crushing blow<br></font>
+        <font color=\'#000000\'>50%% chance of open wounds<br></font>
         <font color=\'#000000\'>+1 to Vengeance<br></font>
         <font color=\'#000000\'>Prevent monster heal<br></font>
         <font color=\'#000000\'>+10 to strength<br></font>
-        <font color=\'#000000\'>40% extra gold from monsters<br></font>
+        <font color=\'#000000\'>40%% extra gold from monsters<br></font>
     ]]>
     </string>
     <string name="rune_word_last_wish_option">
     <![CDATA[
-        <font color=\'#000000\'>6% chance to cast level 11 Fade when struck<br></font>
-        <font color=\'#000000\'>10% chance to cast level 18 Life Tap on striking<br></font>
-        <font color=\'#000000\'>20% chance to cast level 20 Charged Bolt on attack<br></font>
+        <font color=\'#000000\'>6%% chance to cast level 11 Fade when struck<br></font>
+        <font color=\'#000000\'>10%% chance to cast level 18 Life Tap on striking<br></font>
+        <font color=\'#000000\'>20%% chance to cast level 20 Charged Bolt on attack<br></font>
         <font color=\'#000000\'>Level 17 Might aura when equipped<br></font>
-        <font color=\'#cc0029\'>+330-375% enhanced damage<br></font>
-        <font color=\'#000000\'>Ignore target's defense<br></font>
-        <font color=\'#cc0029\'>60-70% chance of crushing blow<br></font>
+        <font color=\'#cc0029\'>+330-375%% enhanced damage<br></font>
+        <font color=\'#000000\'>Ignore target\'s defense<br></font>
+        <font color=\'#cc0029\'>60-70%% chance of crushing blow<br></font>
         <font color=\'#000000\'>Prevent monster heal<br></font>
         <font color=\'#000000\'>Hit blinds target<br></font>
-        <font color=\'#000000\'>+0.5-49.5% chance of getting magic items (based on character level)<br></font>
+        <font color=\'#000000\'>+0.5-49.5%% chance of getting magic items (based on character level)<br></font>
     ]]>
     </string>
     <string name="rune_word_leaf_option">
@@ -532,15 +532,15 @@
         <font color=\'#000000\'>+3 to Warmth (Sorceress only)<br></font>
         <font color=\'#000000\'>+2 to mana after each kill<br></font>
         <font color=\'#000000\'>+2-198 to defense (based on character level)<br></font>
-        <font color=\'#000000\'>Cold resist +33%<br></font>
+        <font color=\'#000000\'>Cold resist +33%%<br></font>
     ]]>
     </string>
     <string name="rune_word_malice_option">
     <![CDATA[
-        <font color=\'#000000\'>+33% enhanced damage<br></font>
+        <font color=\'#000000\'>+33%% enhanced damage<br></font>
         <font color=\'#000000\'>+9 maximum damage<br></font>
-        <font color=\'#000000\'>100% chance of open wounds<br></font>
-        <font color=\'#000000\'>-25% target defense<br></font>
+        <font color=\'#000000\'>100%% chance of open wounds<br></font>
+        <font color=\'#000000\'>-25%% target defense<br></font>
         <font color=\'#000000\'>-100 to monster defense per hit<br></font>
         <font color=\'#000000\'>Prevent monster heal<br></font>
         <font color=\'#000000\'>+50 to attack rating<br></font>
@@ -549,13 +549,13 @@
     </string>
     <string name="rune_word_melody_option">
     <![CDATA[
-        <font color=\'#000000\'>+50% enhanced damage<br></font>
-        <font color=\'#000000\'>+300% damage to undead<br></font>
+        <font color=\'#000000\'>+50%% enhanced damage<br></font>
+        <font color=\'#000000\'>+300%% damage to undead<br></font>
         <font color=\'#000000\'>+3 to bow and crossbow skills (Amazon only)<br></font>
         <font color=\'#000000\'>+3 to Critical Strike (Amazon only)<br></font>
         <font color=\'#000000\'>+3 to Dodge (Amazon only)<br></font>
         <font color=\'#000000\'>+3 to Slow Missiles (Amazon only)<br></font>
-        <font color=\'#000000\'>20% increased attack speed<br></font>
+        <font color=\'#000000\'>20%% increased attack speed<br></font>
         <font color=\'#000000\'>+10 to dexterity<br></font>
         <font color=\'#000000\'>Knockback<br></font>
     ]]>
@@ -563,84 +563,84 @@
     <string name="rune_word_memory_option">
     <![CDATA[
         <font color=\'#000000\'>+3 to Sorceress skill levels<br></font>
-        <font color=\'#000000\'>33% faster cast rate<br></font>
-        <font color=\'#000000\'>Increase maximum mana 20%<br></font>
+        <font color=\'#000000\'>33%% faster cast rate<br></font>
+        <font color=\'#000000\'>Increase maximum mana 20%%<br></font>
         <font color=\'#000000\'>+3 to Energy Shield (Sorceress only)<br></font>
         <font color=\'#000000\'>+2 to Static Field (Sorceress only)<br></font>
         <font color=\'#000000\'>+10 to energy<br></font>
         <font color=\'#000000\'>+10 to vitality<br></font>
         <font color=\'#000000\'>+9 minimum damage<br></font>
-        <font color=\'#000000\'>-25% target defense<br></font>
+        <font color=\'#000000\'>-25%% target defense<br></font>
         <font color=\'#000000\'>Magic damage reduced by 7<br></font>
-        <font color=\'#000000\'>+50% enhanced defense<br></font>
+        <font color=\'#000000\'>+50%% enhanced defense<br></font>
     ]]>
     </string>
     <string name="rune_word_myth_option">
     <![CDATA[
-        <font color=\'#000000\'>3% chance to cast level 1 Howl when struck<br></font>
-        <font color=\'#000000\'>10% chance to cast level 1 Taunt on striking<br></font>
+        <font color=\'#000000\'>3%% chance to cast level 1 Howl when struck<br></font>
+        <font color=\'#000000\'>10%% chance to cast level 1 Taunt on striking<br></font>
         <font color=\'#000000\'>+2 to Barbarian skill levels<br></font>
         <font color=\'#000000\'>+30 missile defense<br></font>
         <font color=\'#000000\'>Replenish life +10<br></font>
         <font color=\'#000000\'>Attacker takes damage of 14<br></font>
-        <font color=\'#000000\'>Requirements -15%<br></font>
+        <font color=\'#000000\'>Requirements -15%%<br></font>
     ]]>
     </string>
     <string name="rune_word_passion_option">
     <![CDATA[
-        <font color=\'#000000\'>+25% increased attack speed<br></font>
-        <font color=\'#cc0029\'>+160-210% enhanced damage<br></font>
-        <font color=\'#cc0029\'>50-80% bonus to attack rating<br></font>
-        <font color=\'#000000\'>+75% damage to demons<br></font>
+        <font color=\'#000000\'>+25%% increased attack speed<br></font>
+        <font color=\'#cc0029\'>+160-210%% enhanced damage<br></font>
+        <font color=\'#cc0029\'>50-80%% bonus to attack rating<br></font>
+        <font color=\'#000000\'>+75%% damage to demons<br></font>
         <font color=\'#000000\'>+50 attack rating against undead<br></font>
         <font color=\'#000000\'>Adds 1-50 lightning damage<br></font>
         <font color=\'#000000\'>+1 to Berserk<br></font>
         <font color=\'#000000\'>+1 to Zeal<br></font>
         <font color=\'#000000\'>Hit blinds target +10<br></font>
-        <font color=\'#000000\'>Hit causes monster to flee 25%<br></font>
-        <font color=\'#000000\'>75% extra gold from monsters<br></font>
+        <font color=\'#000000\'>Hit causes monster to flee 25%%<br></font>
+        <font color=\'#000000\'>75%% extra gold from monsters<br></font>
         <font color=\'#000000\'>Level 3 Heart of Wolverine (12 charges)<br></font>
     ]]>
     </string>
     <string name="rune_word_fortitude_option">
     <![CDATA[
-        <font color=\'#000000\'>20% chance to cast level 15 Chilling Armor when struck<br></font>
-        <font color=\'#000000\'>+25% faster cast rate<br></font>
-        <font color=\'#000000\'>+300% enhanced damage<br></font>
-        <font color=\'#000000\'>+200% enhanced defense<br></font>
+        <font color=\'#000000\'>20%% chance to cast level 15 Chilling Armor when struck<br></font>
+        <font color=\'#000000\'>+25%% faster cast rate<br></font>
+        <font color=\'#000000\'>+300%% enhanced damage<br></font>
+        <font color=\'#000000\'>+200%% enhanced defense<br></font>
         <font color=\'#cc0029\'>+(1~1.5) x A to life (based on character level)<br></font>
         <font color=\'#cc0029\'>All resistances +25-30<br></font>
-        <font color=\'#000000\'>12% damage taken goes to mana<br></font>
+        <font color=\'#000000\'>12%% damage taken goes to mana<br></font>
         <font color=\'#000000\'>+1 to light radius<br></font>
         <font color=\'#000000\'>+9 minimum damage (weapon)<br></font>
         <font color=\'#000000\'>+50 to attack rating (weapon)<br></font>
-        <font color=\'#000000\'>20% deadly strike (weapon)<br></font>
-        <font color=\'#000000\'>Hit causes monster to flee 25% (weapon)<br></font>
+        <font color=\'#000000\'>20%% deadly strike (weapon)<br></font>
+        <font color=\'#000000\'>Hit causes monster to flee 25%% (weapon)<br></font>
         <font color=\'#000000\'>+15 defense (body armor)<br></font>
         <font color=\'#000000\'>Replenish life +7 (body armor)<br></font>
-        <font color=\'#000000\'>+5% to maximum lightning resist (body armor)<br></font>
+        <font color=\'#000000\'>+5%% to maximum lightning resist (body armor)<br></font>
     ]]>
     </string>
     <string name="rune_word_peace_option">
     <![CDATA[
-        <font color=\'#000000\'>4% chance to cast level 5 Slow Missiles when struck<br></font>
-        <font color=\'#000000\'>2% chance to cast level 15 Valkyrie on striking<br></font>
+        <font color=\'#000000\'>4%% chance to cast level 5 Slow Missiles when struck<br></font>
+        <font color=\'#000000\'>2%% chance to cast level 15 Valkyrie on striking<br></font>
         <font color=\'#000000\'>+2 to Amazon skill levels<br></font>
-        <font color=\'#000000\'>+20% faster hit recovery<br></font>
+        <font color=\'#000000\'>+20%% faster hit recovery<br></font>
         <font color=\'#000000\'>+2 to Critical Strike<br></font>
-        <font color=\'#000000\'>Cold resist +30%<br></font>
+        <font color=\'#000000\'>Cold resist +30%%<br></font>
         <font color=\'#000000\'>Attacker takes damage of 14<br></font>
     ]]>
     </string>
     <string name="rune_word_brand_option">
     <![CDATA[
-        <font color=\'#000000\'>35% chance to cast level 14 Amplify Damage when struck<br></font>
-        <font color=\'#000000\'>100% chance to cast level 18 Bone Spear on striking<br></font>
-        <font color=\'#cc0029\'>+260-340% enhanced damage<br></font>
+        <font color=\'#000000\'>35%% chance to cast level 14 Amplify Damage when struck<br></font>
+        <font color=\'#000000\'>100%% chance to cast level 18 Bone Spear on striking<br></font>
+        <font color=\'#cc0029\'>+260-340%% enhanced damage<br></font>
         <font color=\'#000000\'>Ignore target\'s defense<br></font>
-        <font color=\'#000000\'>20% bonus to attack rating<br></font>
-        <font color=\'#cc0029\'>+280-330% damage to demons<br></font>
-        <font color=\'#000000\'>20% deadly strike<br></font>
+        <font color=\'#000000\'>20%% bonus to attack rating<br></font>
+        <font color=\'#cc0029\'>+280-330%% damage to demons<br></font>
+        <font color=\'#000000\'>20%% deadly strike<br></font>
         <font color=\'#000000\'>Prevent monster heal<br></font>
         <font color=\'#000000\'>Knockback<br></font>
         <font color=\'#000000\'>Fires explosive arrows or bolts<br></font>
@@ -648,28 +648,28 @@
     </string>
     <string name="rune_word_phoenix_option">
     <![CDATA[
-        <font color=\'#000000\'>100% chance to cast level 40 Blaze when you level up<br></font>
-        <font color=\'#000000\'>40% chance to cast level 22 Firestorm on striking<br></font>
+        <font color=\'#000000\'>100%% chance to cast level 40 Blaze when you level up<br></font>
+        <font color=\'#000000\'>40%% chance to cast level 22 Firestorm on striking<br></font>
         <font color=\'#cc0029\'>Level 10-15 Redemption aura when equipped<br></font>
-        <font color=\'#cc0029\'>+350-400% enhanced damage<br></font>
-        <font color=\'#000000\'>-28% to enemy fire resistance<br></font>
+        <font color=\'#cc0029\'>+350-400%% enhanced damage<br></font>
+        <font color=\'#000000\'>-28%% to enemy fire resistance<br></font>
         <font color=\'#cc0029\'>+350-400 missile defense<br></font>
         <font color=\'#cc0029\'>+15-21 fire absorb<br></font>
-        <font color=\'#000000\'>Ignore target's defense (weapon)<br></font>
-        <font color=\'#000000\'>14% mana stolen per hit (weapon)<br></font>
-        <font color=\'#000000\'>20% deadly strike (weapon)<br></font>
+        <font color=\'#000000\'>Ignore target\'s defense (weapon)<br></font>
+        <font color=\'#000000\'>14%% mana stolen per hit (weapon)<br></font>
+        <font color=\'#000000\'>20%% deadly strike (weapon)<br></font>
         <font color=\'#000000\'>+50 to life (shields)<br></font>
-        <font color=\'#000000\'>+5% maximum lightning resist (shields)<br></font>
-        <font color=\'#000000\'>+10% maximum fire resist (shields)<br></font>
+        <font color=\'#000000\'>+5%% maximum lightning resist (shields)<br></font>
+        <font color=\'#000000\'>+10%% maximum fire resist (shields)<br></font>
     ]]>
     </string>
     <string name="rune_word_oath_option">
     <![CDATA[
-        <font color=\'#000000\'>30% chance to cast level 20 bone spirit on striking<br></font>
+        <font color=\'#000000\'>30%% chance to cast level 20 bone spirit on striking<br></font>
         <font color=\'#000000\'>Indestructible<br></font>
-        <font color=\'#000000\'>+50% increased attack speed<br></font>
-        <font color=\'#cc0029\'>+210-340% enhanced damage<br></font>
-        <font color=\'#000000\'>+75% damage to demons<br></font>
+        <font color=\'#000000\'>+50%% increased attack speed<br></font>
+        <font color=\'#cc0029\'>+210-340%% enhanced damage<br></font>
+        <font color=\'#000000\'>+75%% damage to demons<br></font>
         <font color=\'#000000\'>+100 attack rating against demons<br></font>
         <font color=\'#000000\'>Prevent monster heal<br></font>
         <font color=\'#000000\'>+10 to energy<br></font>
@@ -680,56 +680,56 @@
     </string>
     <string name="rune_word_pride_option">
     <![CDATA[
-        <font color=\'#000000\'>25% chance to cast level 17 Fire Ball when struck<br></font>
+        <font color=\'#000000\'>25%% chance to cast level 17 Fire Ball when struck<br></font>
         <font color=\'#cc0029\'>Level 16-20 Concentrate aura when equipped<br></font>
-        <font color=\'#cc0029\'>260-300% bonus to attack rating<br></font>
-        <font color=\'#000000\'>+1-99% damage to demons (based on character level)<br></font>
+        <font color=\'#cc0029\'>260-300%% bonus to attack rating<br></font>
+        <font color=\'#000000\'>+1-99%% damage to demons (based on character level)<br></font>
         <font color=\'#000000\'>Adds 50-280 lightning damage<br></font>
-        <font color=\'#000000\'>20% deadly strike<br></font>
+        <font color=\'#000000\'>20%% deadly strike<br></font>
         <font color=\'#000000\'>Hit blinds target<br></font>
         <font color=\'#000000\'>Freezes target +3<br></font>
         <font color=\'#000000\'>+10 to vitality<br></font>
         <font color=\'#000000\'>Replenish life +8<br></font>
-        <font color=\'#000000\'>1.875-185.625% extra gold from monsters (based on character level)<br></font>
+        <font color=\'#000000\'>1.875-185.625%% extra gold from monsters (based on character level)<br></font>
     ]]>
     </string>
     <string name="rune_word_principle_option">
     <![CDATA[
-        <font color=\'#000000\'>100% chance to cast level 5 Holy Bolt on striking<br></font>
+        <font color=\'#000000\'>100%% chance to cast level 5 Holy Bolt on striking<br></font>
         <font color=\'#000000\'>+2 to Paladin skill levels<br></font>
-        <font color=\'#000000\'>+50% damage to undead<br></font>
+        <font color=\'#000000\'>+50%% damage to undead<br></font>
         <font color=\'#cc0029\'>+100-150 to life<br></font>
-        <font color=\'#000000\'>15% slower stamina drain<br></font>
-        <font color=\'#000000\'>+5% maximum poison resist<br></font>
-        <font color=\'#000000\'>Fire resist +30%<br></font>
+        <font color=\'#000000\'>15%% slower stamina drain<br></font>
+        <font color=\'#000000\'>+5%% maximum poison resist<br></font>
+        <font color=\'#000000\'>Fire resist +30%%<br></font>
     ]]>
     </string>
     <string name="rune_word_obedience_option">
     <![CDATA[
-        <font color=\'#000000\'>30% chance to cast level 21 Enchant when you kill an enemy<br></font>
-        <font color=\'#000000\'>40% faster hit recovery<br></font>
-        <font color=\'#000000\'>+370% enhanced damage<br></font>
-        <font color=\'#000000\'>-25% target defense<br></font>
+        <font color=\'#000000\'>30%% chance to cast level 21 Enchant when you kill an enemy<br></font>
+        <font color=\'#000000\'>40%% faster hit recovery<br></font>
+        <font color=\'#000000\'>+370%% enhanced damage<br></font>
+        <font color=\'#000000\'>-25%% target defense<br></font>
         <font color=\'#000000\'>Adds 3-14 cold damage (3 seconds)<br></font>
-        <font color=\'#000000\'>-25% to enemy fire resistance<br></font>
-        <font color=\'#000000\'>40% chance of crushing blow<br></font>
+        <font color=\'#000000\'>-25%% to enemy fire resistance<br></font>
+        <font color=\'#000000\'>40%% chance of crushing blow<br></font>
         <font color=\'#cc0029\'>+200-300 defense<br></font>
         <font color=\'#000000\'>+10 to strength<br></font>
         <font color=\'#000000\'>+10 to dexterity<br></font>
         <font color=\'#cc0029\'>All resistances +20-30<br></font>
-        <font color=\'#000000\'>Requirements -20%<br></font>
+        <font color=\'#000000\'>Requirements -20%%<br></font>
     ]]>
     </string>
     <string name="rune_word_wrath_option">
     <![CDATA[
-        <font color=\'#000000\'>30% chance to cast level 1 Decrepify on striking<br></font>
-        <font color=\'#000000\'>5% chance to cast level 10 Life Tap on striking<br></font>
-        <font color=\'#000000\'>+375% damage to demons<br></font>
+        <font color=\'#000000\'>30%% chance to cast level 1 Decrepify on striking<br></font>
+        <font color=\'#000000\'>5%% chance to cast level 10 Life Tap on striking<br></font>
+        <font color=\'#000000\'>+375%% damage to demons<br></font>
         <font color=\'#000000\'>+100 attack rating against demons<br></font>
-        <font color=\'#cc0029\'>+250-300% damage to undead (varies)<br></font>
+        <font color=\'#cc0029\'>+250-300%% damage to undead (varies)<br></font>
         <font color=\'#000000\'>Adds 85-120 magic damage<br></font>
         <font color=\'#000000\'>Adds 41-240 lightning damage<br></font>
-        <font color=\'#000000\'>20% chance of crushing blow<br></font>
+        <font color=\'#000000\'>20%% chance of crushing blow<br></font>
         <font color=\'#000000\'>Prevent monster heal<br></font>
         <font color=\'#000000\'>+10 to energy<br></font>
         <font color=\'#000000\'>Cannot be frozen<br></font>
@@ -737,94 +737,94 @@
     </string>
     <string name="rune_word_rain_option">
     <![CDATA[
-        <font color=\'#000000\'>5% chance to cast level 15 Cyclone Armor when struck<br></font>
-        <font color=\'#000000\'>5% chance to cast level 15 Twister on striking<br></font>
+        <font color=\'#000000\'>5%% chance to cast level 15 Cyclone Armor when struck<br></font>
+        <font color=\'#000000\'>5%% chance to cast level 15 Twister on striking<br></font>
         <font color=\'#000000\'>+2 to Druid skill levels<br></font>
         <font color=\'#cc0029\'>+100-150 mana<br></font>
-        <font color=\'#000000\'>Lightning resist +30%<br></font>
+        <font color=\'#000000\'>Lightning resist +30%%<br></font>
         <font color=\'#000000\'>Magic damage reduced by 7<br></font>
-        <font color=\'#000000\'>15% damage taken goes to mana<br></font>
+        <font color=\'#000000\'>15%% damage taken goes to mana<br></font>
     ]]>
     </string>
     <string name="rune_word_voice_of_reason_option">
     <![CDATA[
-        <font color=\'#000000\'>15% chance to cast level 13 Frozen Orb on striking)<br></font>
-        <font color=\'#000000\'>18% chance to cast level 20 Ice Blast on striking)<br></font>
+        <font color=\'#000000\'>15%% chance to cast level 13 Frozen Orb on striking)<br></font>
+        <font color=\'#000000\'>18%% chance to cast level 20 Ice Blast on striking)<br></font>
         <font color=\'#000000\'>+50 to attack rating<br></font>
-        <font color=\'#cc0029\'>+220-350% damage to demons<br></font>
-        <font color=\'#cc0029\'>+355-375% damage to undead<br></font>
+        <font color=\'#cc0029\'>+220-350%% damage to demons<br></font>
+        <font color=\'#cc0029\'>+355-375%% damage to undead<br></font>
         <font color=\'#000000\'>+50 to attack rating against undead<br></font>
         <font color=\'#000000\'>Adds 100-220 cold damage<br></font>
-        <font color=\'#000000\'>-24% to enemy cold resistance<br></font>
+        <font color=\'#000000\'>-24%% to enemy cold resistance<br></font>
         <font color=\'#000000\'>+10 to dexterity<br></font>
         <font color=\'#000000\'>Cannot be frozen<br></font>
-        <font color=\'#000000\'>75% extra gold from monsters<br></font>
+        <font color=\'#000000\'>75%% extra gold from monsters<br></font>
         <font color=\'#000000\'>+1 to light radius<br></font>
     ]]>
     </string>
     <string name="rune_word_delirium_option">
     <![CDATA[
-        <font color=\'#000000\'>1% chance to cast level 50 Delirium when struck<br></font>
-        <font color=\'#000000\'>6% chance to cast level 14 Mind Blast when struck<br></font>
-        <font color=\'#000000\'>14% chance to cast level 13 Terror when struck<br></font>
-        <font color=\'#000000\'>11% chance to cast level 18 Confuse on striking<br></font>
+        <font color=\'#000000\'>1%% chance to cast level 50 Delirium when struck<br></font>
+        <font color=\'#000000\'>6%% chance to cast level 14 Mind Blast when struck<br></font>
+        <font color=\'#000000\'>14%% chance to cast level 13 Terror when struck<br></font>
+        <font color=\'#000000\'>11%% chance to cast level 18 Confuse on striking<br></font>
         <font color=\'#000000\'>+2 to all skills<br></font>
         <font color=\'#000000\'>+261 defense<br></font>
         <font color=\'#000000\'>+10 to vitality<br></font>
-        <font color=\'#000000\'>50% extra gold from monsters<br></font>
-        <font color=\'#000000\'>25% better chance of getting magic items<br></font>
+        <font color=\'#000000\'>50%% extra gold from monsters<br></font>
+        <font color=\'#000000\'>25%% better chance of getting magic items<br></font>
         <font color=\'#000000\'>Level 17 Attract (60 charges)<br></font>
     ]]>
     </string>
     <string name="rune_word_fury_option">
     <![CDATA[
-        <font color=\'#000000\'>+209% enhanced damage<br></font>
-        <font color=\'#000000\'>40% increased attack speed<br></font>
+        <font color=\'#000000\'>+209%% enhanced damage<br></font>
+        <font color=\'#000000\'>40%% increased attack speed<br></font>
         <font color=\'#000000\'>Prevent monster heal<br></font>
-        <font color=\'#000000\'>66% chance of open wounds<br></font>
-        <font color=\'#000000\'>33% deadly strike<br></font>
-        <font color=\'#000000\'>Ignore target's defense<br></font>
-        <font color=\'#000000\'>-25% target defense<br></font>
-        <font color=\'#000000\'>20% bonus to attack rating<br></font>
-        <font color=\'#000000\'>6% life stolen per hit<br></font>
+        <font color=\'#000000\'>66%% chance of open wounds<br></font>
+        <font color=\'#000000\'>33%% deadly strike<br></font>
+        <font color=\'#000000\'>Ignore target\'s defense<br></font>
+        <font color=\'#000000\'>-25%% target defense<br></font>
+        <font color=\'#000000\'>20%% bonus to attack rating<br></font>
+        <font color=\'#000000\'>6%% life stolen per hit<br></font>
         <font color=\'#000000\'>+5 to Frenzy (Barbarian only)<br></font>
     ]]>
     </string>
     <string name="rune_word_enigma_option">
     <![CDATA[
         <font color=\'#000000\'>+2 to all skills<br></font>
-        <font color=\'#000000\'>+45% faster run/walk<br></font>
+        <font color=\'#000000\'>+45%% faster run/walk<br></font>
         <font color=\'#000000\'>+1 to Teleport<br></font>
         <font color=\'#cc0029\'>+750-775 defense<br></font>
         <font color=\'#000000\'>+0-75 to Strength (based on character level)<br></font>
-        <font color=\'#000000\'>Increase maximum life by 5%<br></font>
-        <font color=\'#000000\'>Damage reduced by 8%<br></font>
+        <font color=\'#000000\'>Increase maximum life by 5%%<br></font>
+        <font color=\'#000000\'>Damage reduced by 8%%<br></font>
         <font color=\'#000000\'>+14 to life after each kill<br></font>
-        <font color=\'#000000\'>15% damage taken goes to mana<br></font>
-        <font color=\'#000000\'>+1-99% better chance of getting magic items (based on character level)<br></font>
+        <font color=\'#000000\'>15%% damage taken goes to mana<br></font>
+        <font color=\'#000000\'>+1-99%% better chance of getting magic items (based on character level)<br></font>
     ]]>
     </string>
     <string name="rune_word_doom_option">
     <![CDATA[
-        <font color=\'#000000\'>5% chance to cast level 18 Volcano on striking<br></font>
+        <font color=\'#000000\'>5%% chance to cast level 18 Volcano on striking<br></font>
         <font color=\'#000000\'>Level 12 Holy Freeze aura when equipped<br></font>
         <font color=\'#000000\'>+2 to all skills<br></font>
-        <font color=\'#000000\'>+45% increased attack speed<br></font>
-        <font color=\'#cc0029\'>+330-370% enhanced damage (varies)<br></font>
-        <font color=\'#cc0029\'>-(40-60)% to enemy cold resistance (varies)<br></font>
-        <font color=\'#000000\'>20% deadly strike<br></font>
-        <font color=\'#000000\'>25% chance of open wounds<br></font>
+        <font color=\'#000000\'>+45%% increased attack speed<br></font>
+        <font color=\'#cc0029\'>+330-370%% enhanced damage (varies)<br></font>
+        <font color=\'#cc0029\'>-(40-60)%% to enemy cold resistance (varies)<br></font>
+        <font color=\'#000000\'>20%% deadly strike<br></font>
+        <font color=\'#000000\'>25%% chance of open wounds<br></font>
         <font color=\'#000000\'>Prevent monster heal<br></font>
         <font color=\'#000000\'>Freezes target +3<br></font>
-        <font color=\'#000000\'>Requirements -20%<br></font>
+        <font color=\'#000000\'>Requirements -20%%<br></font>
     ]]>
     </string>
     <string name="rune_word_sanctuary_option">
     <![CDATA[
-        <font color=\'#000000\'>+20% faster hit recovery<br></font>
-        <font color=\'#000000\'>+20% faster block rate<br></font>
-        <font color=\'#000000\'>20% increased chance of blocking<br></font>
-        <font color=\'#cc0029\'>+130-160% enhanced defense<br></font>
+        <font color=\'#000000\'>+20%% faster hit recovery<br></font>
+        <font color=\'#000000\'>+20%% faster block rate<br></font>
+        <font color=\'#000000\'>20%% increased chance of blocking<br></font>
+        <font color=\'#cc0029\'>+130-160%% enhanced defense<br></font>
         <font color=\'#000000\'>+250 defense vs. missile<br></font>
         <font color=\'#000000\'>+20 to dexterity<br></font>
         <font color=\'#cc0029\'>All resistance +50-70<br></font>
@@ -837,34 +837,34 @@
         <font color=\'#000000\'>+1 to all skills<br></font>
         <font color=\'#000000\'>+10 to energy<br></font>
         <font color=\'#000000\'>+2 to mana after each kill<br></font>
-        <font color=\'#000000\'>Lightning resist +30%<br></font>
+        <font color=\'#000000\'>Lightning resist +30%%<br></font>
         <font color=\'#000000\'>Damage reduced by 7<br></font>
         <font color=\'#000000\'>+2 to light radius<br></font>
     ]]>
     </string>
     <string name="rune_word_silence_option">
     <![CDATA[
-        <font color=\'#000000\'>200% enhanced damage<br></font>
-        <font color=\'#000000\'>+75% damage to undead<br></font>
-        <font color=\'#000000\'>Requirements -20%<br></font>
-        <font color=\'#000000\'>20% increased attack speed<br></font>
+        <font color=\'#000000\'>200%% enhanced damage<br></font>
+        <font color=\'#000000\'>+75%% damage to undead<br></font>
+        <font color=\'#000000\'>Requirements -20%%<br></font>
+        <font color=\'#000000\'>20%% increased attack speed<br></font>
         <font color=\'#000000\'>+50 to attack rating against undead<br></font>
         <font color=\'#000000\'>+2 to all skills<br></font>
         <font color=\'#000000\'>All resistances +75<br></font>
-        <font color=\'#000000\'>20% faster hit recovery<br></font>
-        <font color=\'#000000\'>11% mana stolen per hit<br></font>
-        <font color=\'#000000\'>Hit causes monsters to flee 25%<br></font>
+        <font color=\'#000000\'>20%% faster hit recovery<br></font>
+        <font color=\'#000000\'>11%% mana stolen per hit<br></font>
+        <font color=\'#000000\'>Hit causes monsters to flee 25%%<br></font>
         <font color=\'#000000\'>Hit blinds target +33<br></font>
         <font color=\'#000000\'>+2 to mana after each kill<br></font>
-        <font color=\'#000000\'>30% better chance of getting magic items<br></font>
+        <font color=\'#000000\'>30%% better chance of getting magic items<br></font>
     ]]>
     </string>
     <string name="rune_word_smoke_option">
     <![CDATA[
-        <font color=\'#000000\'>+75% enhanced defense<br></font>
+        <font color=\'#000000\'>+75%% enhanced defense<br></font>
         <font color=\'#000000\'>+280 missile defense<br></font>
         <font color=\'#000000\'>All resistances +50<br></font>
-        <font color=\'#000000\'>20% faster hit recovery<br></font>
+        <font color=\'#000000\'>20%% faster hit recovery<br></font>
         <font color=\'#000000\'>Level 6 Weaken (18 charges)<br></font>
         <font color=\'#000000\'>+10 to energy<br></font>
         <font color=\'#000000\'>-1 to light radius<br></font>
@@ -873,8 +873,8 @@
     <string name="rune_word_spirit_option">
     <![CDATA[
         <font color=\'#000000\'>+2 to all skills<br></font>
-        <font color=\'#cc0029\'>+25-35% faster cast rate<br></font>
-        <font color=\'#000000\'>+55% faster hit recovery<br></font>
+        <font color=\'#cc0029\'>+25-35%% faster cast rate<br></font>
+        <font color=\'#000000\'>+55%% faster hit recovery<br></font>
         <font color=\'#000000\'>+22 to vitality<br></font>
         <font color=\'#cc0029\'>89-112 to mana<br></font>
         <font color=\'#cc0029\'>+3-8 magic absorb<br></font>
@@ -882,34 +882,34 @@
         <font color=\'#000000\'>Adds 1-50 lightning damage (weapon)<br></font>
         <font color=\'#000000\'>Adds 3-14 cold damage (3 seconds) (weapon)<br></font>
         <font color=\'#000000\'>+75 poison damage over 5 seconds (weapon)<br></font>
-        <font color=\'#000000\'>7% life stolen per hit (weapon)<br></font>
-        <font color=\'#000000\'>Cold resist +35% (shields)<br></font>
-        <font color=\'#000000\'>Lightning resist +35% (shields)<br></font>
-        <font color=\'#000000\'>Poison resist +35% (shields)<br></font>
+        <font color=\'#000000\'>7%% life stolen per hit (weapon)<br></font>
+        <font color=\'#000000\'>Cold resist +35%% (shields)<br></font>
+        <font color=\'#000000\'>Lightning resist +35%% (shields)<br></font>
+        <font color=\'#000000\'>Poison resist +35%% (shields)<br></font>
         <font color=\'#000000\'>Attacker takes damage of 14 (shields)<br></font>
     ]]>
     </string>
     <string name="rune_word_splendor_option">
     <![CDATA[
         <font color=\'#000000\'>+1 to all skills<br></font>
-        <font color=\'#000000\'>+10% faster cast rate<br></font>
-        <font color=\'#000000\'>+20% faster block rate<br></font>
-        <font color=\'#cc0029\'>+60-100% enhanced defense<br></font>
+        <font color=\'#000000\'>+10%% faster cast rate<br></font>
+        <font color=\'#000000\'>+20%% faster block rate<br></font>
+        <font color=\'#cc0029\'>+60-100%% enhanced defense<br></font>
         <font color=\'#000000\'>+10 to energy<br></font>
-        <font color=\'#000000\'>Regenerate mana 15%<br></font>
-        <font color=\'#000000\'>50% extra gold from monsters<br></font>
-        <font color=\'#000000\'>20% better chance of getting magic items<br></font>
+        <font color=\'#000000\'>Regenerate mana 15%%<br></font>
+        <font color=\'#000000\'>50%% extra gold from monsters<br></font>
+        <font color=\'#000000\'>20%% better chance of getting magic items<br></font>
         <font color=\'#000000\'>+3 to light radius<br></font>
     ]]>
     </string>
     <string name="rune_word_steel_option">
     <![CDATA[
-        <font color=\'#000000\'>20% enhanced damage<br></font>
+        <font color=\'#000000\'>20%% enhanced damage<br></font>
         <font color=\'#000000\'>+3 minimum damage<br></font>
         <font color=\'#000000\'>+3 maximum damage<br></font>
         <font color=\'#000000\'>+50 to attack rating<br></font>
-        <font color=\'#000000\'>50% chance of open wounds<br></font>
-        <font color=\'#000000\'>25% increased attack speed<br></font>
+        <font color=\'#000000\'>50%% chance of open wounds<br></font>
+        <font color=\'#000000\'>25%% increased attack speed<br></font>
         <font color=\'#000000\'>+2 to mana after each kill<br></font>
         <font color=\'#000000\'>+1 to light radius<br></font>
     ]]>
@@ -919,17 +919,17 @@
         <font color=\'#000000\'>Magic damage reduced by 3<br></font>
         <font color=\'#000000\'>+6 to dexterity<br></font>
         <font color=\'#000000\'>+15 to maximum stamina<br></font>
-        <font color=\'#000000\'>Poison resist +30%<br></font>
-        <font color=\'#000000\'>Regenerate mana 15%<br></font>
-        <font color=\'#000000\'>25% faster run/walk<br></font>
-        <font color=\'#000000\'>25% faster cast rate<br></font>
-        <font color=\'#000000\'>25% faster hit recovery<br></font>
+        <font color=\'#000000\'>Poison resist +30%%<br></font>
+        <font color=\'#000000\'>Regenerate mana 15%%<br></font>
+        <font color=\'#000000\'>25%% faster run/walk<br></font>
+        <font color=\'#000000\'>25%% faster cast rate<br></font>
+        <font color=\'#000000\'>25%% faster hit recovery<br></font>
     ]]>
     </string>
     <string name="rune_word_stone_option">
     <![CDATA[
-        <font color=\'#000000\'>+60% faster hit recovery<br></font>
-        <font color=\'#cc0029\'>+250-290% enhanced defense (varies)<br></font>
+        <font color=\'#000000\'>+60%% faster hit recovery<br></font>
+        <font color=\'#cc0029\'>+250-290%% enhanced defense (varies)<br></font>
         <font color=\'#000000\'>+300 missile defense<br></font>
         <font color=\'#000000\'>+16 to strength<br></font>
         <font color=\'#000000\'>+16 to vitality<br></font>
@@ -941,9 +941,9 @@
     </string>
     <string name="rune_word_strength_option">
     <![CDATA[
-        <font color=\'#000000\'>35% enhanced damage<br></font>
-        <font color=\'#000000\'>25% chance of crushing blow<br></font>
-        <font color=\'#000000\'>7% life stolen per hit<br></font>
+        <font color=\'#000000\'>35%% enhanced damage<br></font>
+        <font color=\'#000000\'>25%% chance of crushing blow<br></font>
+        <font color=\'#000000\'>7%% life stolen per hit<br></font>
         <font color=\'#000000\'>+2 to mana after each kill<br></font>
         <font color=\'#000000\'>+20 to strength<br></font>
         <font color=\'#000000\'>+10 to vitality<br></font>
@@ -951,51 +951,51 @@
     </string>
     <string name="rune_word_duress_option">
     <![CDATA[
-        <font color=\'#000000\'>40% faster hit recover<br></font>
-        <font color=\'#cc0029\'>+10-20% enhanced damage<br></font>
+        <font color=\'#000000\'>40%% faster hit recover<br></font>
+        <font color=\'#cc0029\'>+10-20%% enhanced damage<br></font>
         <font color=\'#000000\'>Adds 37-133 cold damage (2 seconds)<br></font>
-        <font color=\'#000000\'>15% chance of crushing blow<br></font>
-        <font color=\'#000000\'>33% chance of open wounds<br></font>
-        <font color=\'#cc0029\'>+150-200% enhanced defense<br></font>
-        <font color=\'#000000\'>-20% slower stamina drain<br></font>
-        <font color=\'#000000\'>Cold resist +45%<br></font>
-        <font color=\'#000000\'>Lightning resist +15%<br></font>
-        <font color=\'#000000\'>Fire resist +15%<br></font>
-        <font color=\'#000000\'>Poison resist +15%<br></font>
+        <font color=\'#000000\'>15%% chance of crushing blow<br></font>
+        <font color=\'#000000\'>33%% chance of open wounds<br></font>
+        <font color=\'#cc0029\'>+150-200%% enhanced defense<br></font>
+        <font color=\'#000000\'>-20%% slower stamina drain<br></font>
+        <font color=\'#000000\'>Cold resist +45%%<br></font>
+        <font color=\'#000000\'>Lightning resist +15%%<br></font>
+        <font color=\'#000000\'>Fire resist +15%%<br></font>
+        <font color=\'#000000\'>Poison resist +15%%<br></font>
     ]]>
     </string>
     <string name="rune_word_treachery_option">
     <![CDATA[
-        <font color=\'#000000\'>5% chance to cast level 15 Fade when struck<br></font>
-        <font color=\'#000000\'>25% chance to cast level 15 Venom on striking<br></font>
+        <font color=\'#000000\'>5%% chance to cast level 15 Fade when struck<br></font>
+        <font color=\'#000000\'>25%% chance to cast level 15 Venom on striking<br></font>
         <font color=\'#000000\'>+2 to Assassin skill levels<br></font>
-        <font color=\'#000000\'>+45% increased attack speed<br></font>
-        <font color=\'#000000\'>+20% faster hit recovery<br></font>
-        <font color=\'#000000\'>Cold resist 30%<br></font>
-        <font color=\'#000000\'>50% extra gold from monsters<br></font>
+        <font color=\'#000000\'>+45%% increased attack speed<br></font>
+        <font color=\'#000000\'>+20%% faster hit recovery<br></font>
+        <font color=\'#000000\'>Cold resist 30%%<br></font>
+        <font color=\'#000000\'>50%% extra gold from monsters<br></font>
     ]]>
     </string>
     <string name="rune_word_faith_option">
     <![CDATA[
         <font color=\'#cc0029\'>Level 12-15 Fanaticism aura when equipped<br></font>
         <font color=\'#cc0029\'>+1-2 all skills<br></font>
-        <font color=\'#000000\'>+330% enhanced damage<br></font>
+        <font color=\'#000000\'>+330%% enhanced damage<br></font>
         <font color=\'#000000\'>Ignore target\'s defense<br></font>
-        <font color=\'#000000\'>300% bonus to attack rating<br></font>
-        <font color=\'#000000\'>+75% damage to undead<br></font>
+        <font color=\'#000000\'>300%% bonus to attack rating<br></font>
+        <font color=\'#000000\'>+75%% damage to undead<br></font>
         <font color=\'#000000\'>+50 to attack rating against undead<br></font>
         <font color=\'#000000\'>+120 fire damage<br></font>
         <font color=\'#000000\'>All resistance +15<br></font>
-        <font color=\'#000000\'>10% reanimate as Returned<br></font>
-        <font color=\'#000000\'>75% extra gold from monsters<br></font>
+        <font color=\'#000000\'>10%% reanimate as Returned<br></font>
+        <font color=\'#000000\'>75%% extra gold from monsters<br></font>
     ]]>
     </string>
     <string name="rune_word_venom_option">
     <![CDATA[
-        <font color=\'#000000\'>Hit causes monsters to flee 25%<br></font>
+        <font color=\'#000000\'>Hit causes monsters to flee 25%%<br></font>
         <font color=\'#000000\'>Prevent monster heal<br></font>
         <font color=\'#000000\'>Ignore target\'s defense<br></font>
-        <font color=\'#000000\'>7% mana stolen per hit<br></font>
+        <font color=\'#000000\'>7%% mana stolen per hit<br></font>
         <font color=\'#000000\'>Level 15 Poison Explosion (27 charges)<br></font>
         <font color=\'#000000\'>Level 13 Poison Nova (11 charges)<br></font>
         <font color=\'#000000\'>+273 poison damage over 6 seconds<br></font>
@@ -1003,59 +1003,59 @@
     </string>
     <string name="rune_word_law_bringer_option">
     <![CDATA[
-        <font color=\'#000000\'>20% chance to cast level 15 Decrepify on striking<br></font>
+        <font color=\'#000000\'>20%% chance to cast level 15 Decrepify on striking<br></font>
         <font color=\'#cc0029\'>Level 16-18 Sanctuary aura when equipped<br></font>
-        <font color=\'#000000\'>-50% target defense<br></font>
+        <font color=\'#000000\'>-50%% target defense<br></font>
         <font color=\'#000000\'>Adds 150-210 fire damage<br></font>
         <font color=\'#000000\'>Adds 130-180 cold damage<br></font>
-        <font color=\'#000000\'>7% life stolen per hit<br></font>
+        <font color=\'#000000\'>7%% life stolen per hit<br></font>
         <font color=\'#000000\'>Slain monsters rest in peace<br></font>
         <font color=\'#cc0029\'>+200-250 missile defense<br></font>
         <font color=\'#000000\'>+10 to dexterity<br></font>
-        <font color=\'#000000\'>75% extra gold from monsters<br></font>
+        <font color=\'#000000\'>75%% extra gold from monsters<br></font>
     ]]>
     </string>
     <string name="rune_word_wealth_option">
     <![CDATA[
-        <font color=\'#000000\'>300% extra gold from monsters<br></font>
-        <font color=\'#000000\'>100% better chance of getting magic items<br></font>
+        <font color=\'#000000\'>300%% extra gold from monsters<br></font>
+        <font color=\'#000000\'>100%% better chance of getting magic items<br></font>
         <font color=\'#000000\'>+2 to mana after each kill<br></font>
         <font color=\'#000000\'>+10 to dexterity<br></font>
     ]]>
     </string>
     <string name="rune_word_zephyr_option">
     <![CDATA[
-        <font color=\'#000000\'>+33% enhanced damage<br></font>
+        <font color=\'#000000\'>+33%% enhanced damage<br></font>
         <font color=\'#000000\'>+66 to attack rating<br></font>
         <font color=\'#000000\'>Adds 1-50 lightning damage<br></font>
-        <font color=\'#000000\'>-25% target defense<br></font>
+        <font color=\'#000000\'>-25%% target defense<br></font>
         <font color=\'#000000\'>+25 defense<br></font>
-        <font color=\'#000000\'>25% faster run/walk<br></font>
-        <font color=\'#000000\'>25% increased attack speed<br></font>
-        <font color=\'#000000\'>7% chance to cast level 1 Twister when struck<br></font>
+        <font color=\'#000000\'>25%% faster run/walk<br></font>
+        <font color=\'#000000\'>25%% increased attack speed<br></font>
+        <font color=\'#000000\'>7%% chance to cast level 1 Twister when struck<br></font>
     ]]>
     </string>
     <string name="rune_word_white_option">
     <![CDATA[
-        <font color=\'#000000\'>Hit causes monster to flee 25%<br></font>
+        <font color=\'#000000\'>Hit causes monster to flee 25%%<br></font>
         <font color=\'#000000\'>+10 to vitality<br></font>
         <font color=\'#000000\'>+3 to poison and bone skills (Necromancer only)<br></font>
         <font color=\'#000000\'>+2 to Bone Spear (Necromancer only)<br></font>
         <font color=\'#000000\'>+3 to Bone Armor (Necromancer only)<br></font>
         <font color=\'#000000\'>+4 to Skeleton Master (Necromancer only)<br></font>
         <font color=\'#000000\'>Magic damage reduced by 4<br></font>
-        <font color=\'#000000\'>20% faster cast rate<br></font>
+        <font color=\'#000000\'>20%% faster cast rate<br></font>
         <font color=\'#000000\'>+13 to mana<br></font>
     ]]>
     </string>
     <string name="rune_word_wind_option">
     <![CDATA[
-        <font color=\'#000000\'>10% chance to cast level 9 Tornado on striking<br></font>
-        <font color=\'#000000\'>+20% faster run/walk<br></font>
-        <font color=\'#000000\'>+40% increased attack speed<br></font>
-        <font color=\'#000000\'>+15% faster hit recovery<br></font>
-        <font color=\'#cc0029\'>+120-160% enhanced damage<br></font>
-        <font color=\'#000000\'>-50% target defense<br></font>
+        <font color=\'#000000\'>10%% chance to cast level 9 Tornado on striking<br></font>
+        <font color=\'#000000\'>+20%% faster run/walk<br></font>
+        <font color=\'#000000\'>+40%% increased attack speed<br></font>
+        <font color=\'#000000\'>+15%% faster hit recovery<br></font>
+        <font color=\'#cc0029\'>+120-160%% enhanced damage<br></font>
+        <font color=\'#000000\'>-50%% target defense<br></font>
         <font color=\'#000000\'>+50 to attack rating<br></font>
         <font color=\'#000000\'>Hit blinds target<br></font>
         <font color=\'#000000\'>+1 to light radius<br></font>
@@ -1063,8 +1063,8 @@
     </string>
     <string name="rune_word_prudence_option">
     <![CDATA[
-        <font color=\'#000000\'>+25% faster hit recovery<br></font>
-        <font color=\'#cc0029\'>+140-170% enhanced defense<br></font>
+        <font color=\'#000000\'>+25%% faster hit recovery<br></font>
+        <font color=\'#cc0029\'>+140-170%% enhanced defense<br></font>
         <font color=\'#cc0029\'>All resistance +25-35<br></font>
         <font color=\'#000000\'>Damage reduced by 3<br></font>
         <font color=\'#000000\'>Magic damage reduced by 17<br></font>
