@@ -16,6 +16,7 @@ dependencies {
     AndroidX.run {
         api(CORE_KTX)
         api(APPCOMPAT)
+        implementation(CORE_SPLASHSCREEN)
     }
 
     Google.run {

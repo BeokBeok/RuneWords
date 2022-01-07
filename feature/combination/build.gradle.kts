@@ -10,10 +10,6 @@ plugins {
 android {
     applyDefault()
 
-    defaultConfig {
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
-
     buildFeatures {
         compose = true
     }
