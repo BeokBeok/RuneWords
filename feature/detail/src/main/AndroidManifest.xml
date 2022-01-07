@@ -9,7 +9,7 @@
 
         <activity
             android:name=".presenter.DetailActivity"
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
+            android:theme="@style/Theme.RuneWords" />
 
     </application>
 
