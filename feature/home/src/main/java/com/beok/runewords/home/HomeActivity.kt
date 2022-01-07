@@ -9,6 +9,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.core.os.bundleOf
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.beok.runewords.common.constants.TrackingConstants
 import com.beok.runewords.home.inapp.InAppUpdateState
 import com.beok.runewords.home.inapp.InAppUpdateViewModel
@@ -39,22 +40,8 @@ internal class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        MobileAds.initialize(this)
-        setContent {
-            ActivityHomeView.Layout(
-                context = this,
-                runeClickTracking = { runeName ->
-                    analytics.logEvent(
-                        TrackingConstants.Rune.CLICK,
-                        bundleOf(TrackingConstants.Params.RUNE_NAME to runeName)
-                    )
-                },
-                inAppUpdateState = inAppUpdateViewModel.state
-                    .observeAsState(initial = InAppUpdateState.None)
-                    .value,
-                updateAction = inAppUpdateViewModel::installAndRestart
-            )
-        }
+        setupSplashScreen()
+        setContent()
         setupListener()
         checkUpdatable()
         observeInAppUpdate()
@@ -73,6 +60,31 @@ internal class HomeActivity : AppCompatActivity() {
         if (resultCode != Activity.RESULT_OK) {
             Toast.makeText(this, getString(R.string.cancel_update), Toast.LENGTH_SHORT)
                 .show()
+        }
+    }
+
+    private fun setupSplashScreen() {
+        installSplashScreen().setKeepVisibleCondition {
+            MobileAds.initialize(this)
+            false
+        }
+    }
+
+    private fun setContent() {
+        setContent {
+            ActivityHomeView.Layout(
+                context = this,
+                runeClickTracking = { runeName ->
+                    analytics.logEvent(
+                        TrackingConstants.Rune.CLICK,
+                        bundleOf(TrackingConstants.Params.RUNE_NAME to runeName)
+                    )
+                },
+                inAppUpdateState = inAppUpdateViewModel.state
+                    .observeAsState(initial = InAppUpdateState.None)
+                    .value,
+                updateAction = inAppUpdateViewModel::installAndRestart
+            )
         }
     }
 

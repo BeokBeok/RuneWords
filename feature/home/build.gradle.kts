@@ -19,6 +19,8 @@ android {
 dependencies {
     implementation(project(":common"))
 
+    implementation(AndroidX.CORE_SPLASHSCREEN)
+
     Google.run {
         implementation(PLAY_SERVICES_ADS)
         implementation(PLAY_CORE_KTX)
