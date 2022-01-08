@@ -1,2 +1,2 @@
-[ver 1.4.0]
-- Implemented a splash screen.
+[ver 1.4.1]
+- Fixed the issue that action bar is exposed in dark mode.
