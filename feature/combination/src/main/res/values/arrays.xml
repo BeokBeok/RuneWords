@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="ladder_rune_words">
+        <item>pattern</item>
+        <item>wisdom</item>
+        <item>flickering_flame</item>
+        <item>plague</item>
+        <item>mist</item>
+        <item>unbending_will</item>
+        <item>obsession</item>
+    </string-array>
+
+</resources>

@@ -82,6 +82,15 @@
     <string name="wind">바람</string>
     <string name="prudence">신중 (현명)</string>
 
+    <!-- Ladder RuneWords List (2.4) -->
+    <string name="pattern">귀감</string>
+    <string name="wisdom">지혜</string>
+    <string name="flickering_flame">꺼져가는 불길</string>
+    <string name="plague">역병</string>
+    <string name="mist">안개</string>
+    <string name="unbending_will">불굴의 의지</string>
+    <string name="obsession">집착</string>
+
     <!-- RuneWords Type -->
     <string name="all_weapons">모든 무기</string>
     <string name="axe">액스</string>
