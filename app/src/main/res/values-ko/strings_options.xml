@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-        <string name="rune_word_ancient_pledge_option">
+    <string name="rune_word_ancient_pledge_option">
     <![CDATA[
         <font color=\'#000000\'>방어력 +50% 증가<br></font>
         <font color=\'#000000\'>냉기 저항 +43%<br></font>
