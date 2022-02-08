@@ -61,6 +61,3 @@ object MockK {
     const val MOCKK = "io.mockk:mockk:1.12.1"
 }
 
-object WorkManager {
-    const val RUNTIME_KTX = "androidx.work:work-runtime-ktx:2.7.1"
-}

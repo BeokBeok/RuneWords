@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="rune_word_pattern_option">
+    <![CDATA[
+        <font color=\'#000000\'>막기 속도 +30%<br></font>
+        <font color=\'#cc0029\'>피해 +40% ~ 80% 증가<br></font>
+        <font color=\'#000000\'>명중률 보너스 10%<br></font>
+        <font color=\'#000000\'>화염 피해 17 - 62 추가<br></font>
+        <font color=\'#000000\'>번개 피해 1 - 50 추가<br></font>
+        <font color=\'#000000\'>냉기 피해 3 - 14 추가<br></font>
+        <font color=\'#000000\'>독 피해 +75 (5초에 걸쳐)<br></font>
+        <font color=\'#000000\'>힘 +6<br></font>
+        <font color=\'#000000\'>민첩 +6<br></font>
+        <font color=\'#000000\'>모든 저항 +15<br></font>
+    ]]>
+    </string>
+    <string name="rune_word_wisdom_option">
+    <![CDATA[
+        <font color=\'#000000\'>관통 공격<br></font>
+        <font color=\'#000000\'>명중률 보너스 20%<br></font>
+        <font color=\'#000000\'>적중당 5% 마나 훔침<br></font>
+        <font color=\'#000000\'>방어력 +30% 증가<br></font>
+        <font color=\'#000000\'>마력 +10<br></font>
+        <font color=\'#000000\'>지구력 고갈 속도 15% 감소<br></font>
+        <font color=\'#000000\'>빙결되지 않음<br></font>
+        <font color=\'#000000\'>적 처치 시 마나 +5<br></font>
+        <font color=\'#000000\'>받은 피해의 15%만큼 마나 회복<br></font>
+    ]]>
+    </string>
+    <string name="rune_word_flickering_flame_option">
+    <![CDATA[
+        <font color=\'#cc0029\'>장착 시 4~8 레벨 화염 저항 오라 적용<br></font>
+        <font color=\'#000000\'>화염 기술 +3<br></font>
+        <font color=\'#cc0029\'>적의 화염 저항 -10 ~ 15%<br></font>
+        <font color=\'#000000\'>방어력 +30% 증가<br></font>
+        <font color=\'#000000\'>원거리 공격 방어력 +30<br></font>
+        <font color=\'#cc0029\'>마나 +50 ~ 75<br></font>
+        <font color=\'#000000\'>최대 화염 저항 +5%<br></font>
+        <font color=\'#000000\'>빙결 지속시간 절반으로 감소<br></font>
+        <font color=\'#000000\'>독 지속시간 50% 감소<br></font>
+    ]]>
+    </string>
+    <string name="rune_word_plague_option">
+    <![CDATA[
+        <font color=\'#000000\'>타격 시 25% 확률로 15 레벨 맹독 확산 시전<br></font>
+        <font color=\'#000000\'>피격 시 20% 확률로 12 레벨 저항 감소 시전<br></font>
+        <font color=\'#cc0029\'>장착 시 13 ~ 17 레벨 정화 오라 효과 적용<br></font>
+        <font color=\'#cc0029\'>모든 기술 +1 ~ 2<br></font>
+        <font color=\'#000000\'>공격 속도 +20%<br></font>
+        <font color=\'#cc0029\'>피해 +220 ~ 320% 증가<br></font>
+        <font color=\'#000000\'>적의 독 저항 -23%<br></font>
+        <font color=\'#000000\'>치명적 공격 (캐릭터 레벨 x 0.3)%<br></font>
+        <font color=\'#000000\'>상처 악화 확률 25%<br></font>
+        <font color=\'#000000\'>대상 빙결 +3<br></font>
+    ]]>
+    </string>
+    <string name="rune_word_mist_option">
+    <![CDATA[
+        <font color=\'#cc0029\'>장착 시 8 ~ 12 레벨 집중 오라 효과 적용<br></font>
+        <font color=\'#000000\'>모든 기술 +3<br></font>
+        <font color=\'#000000\'>공격 속도 +20%<br></font>
+        <font color=\'#000000\'>관통 공격 +100%<br></font>
+        <font color=\'#cc0029\'>피해 325 ~ 375% 증가<br></font>
+        <font color=\'#000000\'>최대 피해 +9<br></font>
+        <font color=\'#000000\'>명중률 보너스 +20%<br></font>
+        <font color=\'#000000\'>냉기 피해 3 - 14 추가<br></font>
+        <font color=\'#000000\'>대상 빙결 +3<br></font>
+        <font color=\'#000000\'>활력 +24<br></font>
+        <font color=\'#000000\'>모든 저항 +40<br></font>
+    ]]>
+    </string>
+    <string name="rune_word_unbending_will_option">
+    <![CDATA[
+        <font color=\'#000000\'>타격 시 18% 확률로 18 레벨 도발 시전<br></font>
+        <font color=\'#000000\'>전투 기술 +3 (야만용사 전용)<br></font>
+        <font color=\'#cc0029\'>공격 속도 +20 ~ 30%<br></font>
+        <font color=\'#cc0029\'>피해 +300 ~ 350% 증가<br></font>
+        <font color=\'#000000\'>최대 피해 +9<br></font>
+        <font color=\'#000000\'>명중률 +50<br></font>
+        <font color=\'#000000\'>언데드에게 주는 피해 +75%<br></font>
+        <font color=\'#000000\'>언데드에 대한 명중률 +50<br></font>
+        <font color=\'#cc0029\'>적중당 생명력 8 ~ 10% 훔침<br></font>
+        <font color=\'#000000\'>괴물 회복 저지<br></font>
+        <font color=\'#000000\'>힘 +10<br></font>
+        <font color=\'#000000\'>활력 +10<br></font>
+        <font color=\'#000000\'>피해 8 감소<br></font>
+        <font color=\'#000000\'>시야 +1<br></font>
+        <font color=\'#000000\'>착용 조건 -20%<br></font>
+    ]]>
+    </string>
+    <string name="rune_word_obsession_option">
+    <![CDATA[
+        <font color=\'#000000\'>파괴 불가<br></font>
+        <font color=\'#000000\'>피격 시 24% 확률로 10 레벨 약화 시전<br></font>
+        <font color=\'#000000\'>모든 기술 +4<br></font>
+        <font color=\'#000000\'>시전 속도 +65%<br></font>
+        <font color=\'#000000\'>타격 회복 속도 +60%<br></font>
+        <font color=\'#000000\'>밀쳐내기<br></font>
+        <font color=\'#000000\'>활력 +10<br></font>
+        <font color=\'#000000\'>마력 +10<br></font>
+        <font color=\'#cc0029\'>최대 생명력 +15 ~ 25%<br></font>
+        <font color=\'#cc0029\'>마나 재생 +15 ~ 30%<br></font>
+        <font color=\'#cc0029\'>모든 저항 +60 ~ 70<br></font>
+        <font color=\'#000000\'>괴물에게서 얻는 금화 75% 증가<br></font>
+        <font color=\'#000000\'>마법 아이템 발견 확률 30% 추가<br></font>
+    ]]>
+    </string>
+</resources>
