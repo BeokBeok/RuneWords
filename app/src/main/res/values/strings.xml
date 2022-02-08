@@ -82,6 +82,15 @@
     <string name="wind">Wind</string>
     <string name="prudence">Prudence</string>
 
+    <!-- Ladder RuneWords List (2.4) -->
+    <string name="pattern">Pattern</string>
+    <string name="wisdom">Wisdom</string>
+    <string name="flickering_flame">Flickering Flame</string>
+    <string name="plague">Plague</string>
+    <string name="mist">Mist</string>
+    <string name="unbending_will">Unbending Will</string>
+    <string name="obsession">Obsession</string>
+
     <!-- RuneWords Type -->
     <string name="all_weapons">All Weapons</string>
     <string name="axe">Axe</string>
