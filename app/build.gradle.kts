@@ -44,7 +44,5 @@ dependencies {
         kapt(COMPILER)
     }
 
-    implementation(WorkManager.RUNTIME_KTX)
-
     implementation(Google.PLAY_CORE_KTX)
 }
