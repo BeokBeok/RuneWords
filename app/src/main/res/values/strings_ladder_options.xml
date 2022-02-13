@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="rune_word_pattern_option">
+    <string name="rune_word_pattern_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+30% Faster Block Rate<br></font>
         <font color=\'#cc0029\'>+40-80% Enhanced Damage<br></font>
@@ -14,7 +14,7 @@
         <font color=\'#000000\'>All Resistances +15<br></font>
     ]]>
     </string>
-    <string name="rune_word_wisdom_option">
+    <string name="rune_word_wisdom_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+33% Piercing Attack<br></font>
         <font color=\'#000000\'>+15-25% Bonus to Attack Rating (varies)<br></font>
@@ -27,7 +27,7 @@
         <font color=\'#000000\'>15% Damage Taken Goes to Mana<br></font>
     ]]>
     </string>
-    <string name="rune_word_flickering_flame_option">
+    <string name="rune_word_flickering_flame_option" formatted="false">
     <![CDATA[
         <font color=\'#cc0029\'>Level 4-8 Resist Fire Aura When Equipped<br></font>
         <font color=\'#000000\'>+3 To Fire Skills<br></font>
@@ -40,7 +40,7 @@
         <font color=\'#000000\'>Poison Length Reduced by 50%<br></font>
     ]]>
     </string>
-    <string name="rune_word_plague_option">
+    <string name="rune_word_plague_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>20% Chance to cast level 12 Lower Resist when struck<br></font>
         <font color=\'#000000\'>25% Chance to cast level 15 Poison Nova on striking<br></font>
@@ -54,7 +54,7 @@
         <font color=\'#000000\'>Freezes Target +3<br></font>
     ]]>
     </string>
-    <string name="rune_word_mist_option">
+    <string name="rune_word_mist_option" formatted="false">
     <![CDATA[
         <font color=\'#cc0029\'>Level 8-12 Concentration Aura When Equipped<br></font>
         <font color=\'#000000\'>+3 To All Skills<br></font>
@@ -69,7 +69,7 @@
         <font color=\'#000000\'>+24 Vitality<br></font>
     ]]>
     </string>
-    <string name="rune_word_unbending_will_option">
+    <string name="rune_word_unbending_will_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>18% Chance to cast Level 18 Taunt on striking<br></font>
         <font color=\'#000000\'>+3 To Combat Skills (Barbarian Only)<br></font>
@@ -88,7 +88,7 @@
         <font color=\'#000000\'>Requirements -20%<br></font>
     ]]>
     </string>
-    <string name="rune_word_obsession_option">
+    <string name="rune_word_obsession_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>Indestructible<br></font>
         <font color=\'#000000\'>24% Chance to cast level 10 Weaken when struck<br></font>

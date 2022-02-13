@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="rune_word_ancient_pledge_option">
+    <string name="rune_word_ancient_pledge_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>방어력 +50% 증가<br></font>
         <font color=\'#000000\'>냉기 저항 +43%<br></font>
@@ -10,7 +10,7 @@
         <font color=\'#000000\'>받는 피해의 10%만큼 마나 회복<br></font>
     ]]>
     </string>
-    <string name="rune_word_beast_option">
+    <string name="rune_word_beast_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>장착 시 9 레벨의 광신 오라 효과 적용<br></font>
         <font color=\'#000000\'>공격 속도 +40%<br></font>
@@ -25,7 +25,7 @@
         <font color=\'#000000\'>적 처치시 마나 +2<br></font>
     ]]>
     </string>
-    <string name="rune_word_black_option">
+    <string name="rune_word_black_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>공격 속도 +15%<br></font>
         <font color=\'#000000\'>피해 +120% 증가<br></font>
@@ -38,7 +38,7 @@
         <font color=\'#000000\'>레벨 4 커프스 익스플로젼 (12회)<br></font>
     ]]>
     </string>
-    <string name="rune_word_bramble_option">
+    <string name="rune_word_bramble_option" formatted="false">
     <![CDATA[
         <font color=\'#cc0029\'>착용 시 15~21 레벨 가시 오라 효과 적용<br></font>
         <font color=\'#000000\'>타격 회복 속도 +50% 매우 빠른 회복속도 증가<br></font>
@@ -53,7 +53,7 @@
         <font color=\'#000000\'>13 레벨 가시의 영혼 (충전 33회)<br></font>
     ]]>
     </string>
-    <string name="rune_word_bone_option">
+    <string name="rune_word_bone_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>피격 시 15% 기회로 레벨 10 본 아머 시전<br></font>
         <font color=\'#000000\'>타격 시 15% 기회로 레벨 10 본 스피어 시전<br></font>
@@ -63,7 +63,7 @@
         <font color=\'#000000\'>데미지 감소 7<br></font>
     ]]>
     </string>
-    <string name="rune_word_lion_heart_option">
+    <string name="rune_word_lion_heart_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>피해 +20% 증가<br></font>
         <font color=\'#000000\'>힘 +25<br></font>
@@ -75,7 +75,7 @@
         <font color=\'#000000\'>착용 조건 -15%<br></font>
     ]]>
     </string>
-    <string name="rune_word_chains_of_honor_option">
+    <string name="rune_word_chains_of_honor_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>모든 기술 +2<br></font>
         <font color=\'#000000\'>악마에게 주는 피해 +200%<br></font>
@@ -89,7 +89,7 @@
         <font color=\'#000000\'>마법 아이템 발견 확률 25% 증가<br></font>
     ]]>
     </string>
-    <string name="rune_word_radiance_option">
+    <string name="rune_word_radiance_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+75% 방어 상승<br></font>
         <font color=\'#000000\'>+30 원거리 공격 방어<br></font>
@@ -102,7 +102,7 @@
         <font color=\'#000000\'>+5 시야 증가<br></font>
     ]]>
     </string>
-    <string name="rune_word_call_to_arms_option">
+    <string name="rune_word_call_to_arms_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>모든 기술 +1<br></font>
         <font color=\'#000000\'>공격 속도 +40%<br></font>
@@ -117,7 +117,7 @@
         <font color=\'#000000\'>마법 아이템 발견 확률 30% 증가<br></font>
     ]]>
     </string>
-    <string name="rune_word_nadir_option">
+    <string name="rune_word_nadir_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>방어력 +50% 증가<br></font>
         <font color=\'#000000\'>방어력 +10<br></font>
@@ -129,7 +129,7 @@
         <font color=\'#000000\'>13 레벨 그림자 망토 (충전 9/9회)<br></font>
     ]]>
     </string>
-    <string name="rune_word_chaos_option">
+    <string name="rune_word_chaos_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>타격 시 9% 기회로 레벨 11 프로즌 오브 시전<br></font>
         <font color=\'#000000\'>타격 시 11% 기회로 레벨 9 차지드 볼트 시전<br></font>
@@ -142,7 +142,7 @@
         <font color=\'#000000\'>+15 라이프 상승(적 제거시)<br></font>
     ]]>
     </string>
-    <string name="rune_word_rift_option">
+    <string name="rune_word_rift_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>타격 시 20% 확률로 16 레벨 회오리바람 시전<br></font>
         <font color=\'#000000\'>공격 시 16% 확률로 21 레벨 얼음 보주 시전<br></font>
@@ -157,7 +157,7 @@
         <font color=\'#000000\'>착용 조건 -20%<br></font>
     ]]>
     </string>
-    <string name="rune_word_crescent_option">
+    <string name="rune_word_crescent_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>타격 시 10% 확률로 17 레벨 연쇄 번개 시전<br></font>
         <font color=\'#000000\'>타격 시 7% 확률로 13 레벨 전자기장 시전<br></font>
@@ -171,7 +171,7 @@
         <font color=\'#000000\'>18 레벨 영혼 늑대 소환 (충전 30/30회)<br></font>
     ]]>
     </string>
-    <string name="rune_word_death_option">
+    <string name="rune_word_death_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>사망 시 100% 확률로 44 레벨 연쇄 번개 시전<br></font>
         <font color=\'#000000\'>공격 시 25% 확률로 18 레벨 빙하 가시 시전<br></font>
@@ -188,7 +188,7 @@
         <font color=\'#000000\'>착용 조건 -20%<br></font>
     ]]>
     </string>
-    <string name="rune_word_breath_of_the_dying_option">
+    <string name="rune_word_breath_of_the_dying_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>적 처치시 50% 확률로 20 레벨 맹독 확산 시전<br></font>
         <font color=\'#000000\'>파괴 불가<br></font>
@@ -206,7 +206,7 @@
         <font color=\'#000000\'>착용 조건 -20%<br></font>
     ]]>
     </string>
-    <string name="rune_word_grief_option">
+    <string name="rune_word_grief_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>타격 시 35% 확률로 15 레벨 맹독 시전<br></font>
         <font color=\'#cc0029\'>공격 속도 +30~40%<br></font>
@@ -222,7 +222,7 @@
         <font color=\'#cc0029\'>적 처치 시 생명력 +10~15<br></font>
     ]]>
     </string>
-    <string name="rune_word_destruction_option">
+    <string name="rune_word_destruction_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>타격 시 23% 기회로 레벨 12 볼케이노 시전<br></font>
         <font color=\'#000000\'>타격 시 5% 기회로 레벨 23 몰튼 보울더 시전<br></font>
@@ -238,7 +238,7 @@
         <font color=\'#000000\'>+10 민첩성<br></font>
     ]]>
     </string>
-    <string name="rune_word_holy_thunder_option">
+    <string name="rune_word_holy_thunder_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>피해 +60% 증가<br></font>
         <font color=\'#000000\'>최대 피해 +10<br></font>
@@ -252,7 +252,7 @@
         <font color=\'#000000\'>7 레벨 연쇄 번개 (충전 60/60회)<br></font>
     ]]>
     </string>
-    <string name="rune_word_dragon_option">
+    <string name="rune_word_dragon_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>피격 시 20% 확률로 18 레벨 맹독 시전<br></font>
         <font color=\'#000000\'>타격 시 12% 확률로 15 레벨 히드라 시전<br></font>
@@ -267,7 +267,7 @@
         <font color=\'#000000\'>마나 +50 (방패 한정)<br></font>
     ]]>
     </string>
-    <string name="rune_word_dream_option">
+    <string name="rune_word_dream_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>피격 시 10% 확률로 15 레벨 혼란 시전<br></font>
         <font color=\'#000000\'>장착 시 15 레벨 신성 충격 오라 효과 적용<br></font>
@@ -282,7 +282,7 @@
         <font color=\'#000000\'>생명력 +50 (방패 한정)<br></font>
     ]]>
     </string>
-    <string name="rune_word_edge_option">
+    <string name="rune_word_edge_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>장착시 15레벨의 쏜즈 오라의 효과 적용<br></font>
         <font color=\'#000000\'>+35% 공격속도 증가<br></font>
@@ -296,7 +296,7 @@
         <font color=\'#000000\'>상점에서 파는 모든 물품의 가격 하락 15%<br></font>
     ]]>
     </string>
-    <string name="rune_word_rhyme_option">
+    <string name="rune_word_rhyme_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>막기 속도 +40%<br></font>
         <font color=\'#000000\'>막기 확률 20% 증가<br></font>
@@ -307,7 +307,7 @@
         <font color=\'#000000\'>마법 아이템 발견 확률 25% 증가<br></font>
     ]]>
     </string>
-    <string name="rune_word_enlightenment_option">
+    <string name="rune_word_enlightenment_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>피격 시 5% 확률로 15 레벨 불길 시전<br></font>
         <font color=\'#000000\'>공격 시 5% 확률로 15 레벨 화염구 시전<br></font>
@@ -318,7 +318,7 @@
         <font color=\'#000000\'>피해 감소 7<br></font>
     ]]>
     </string>
-    <string name="rune_word_exile_option">
+    <string name="rune_word_exile_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>타격 시 15% 확률로 5 레벨 생명력 추출 시전<br></font>
         <font color=\'#cc0029\'>장착시 13~16 레벨 인내 오라의 효과 적용<br></font>
@@ -333,7 +333,7 @@
         <font color=\'#000000\'>내구력 1 회복 (매 4초당)<br></font>
     ]]>
     </string>
-    <string name="rune_word_famine_option">
+    <string name="rune_word_famine_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+30% 공격속도 증가<br></font>
         <font color=\'#cc0029\'>+320~370% 증가된 데미지<br></font>
@@ -347,7 +347,7 @@
         <font color=\'#000000\'>+10 힘<br></font>
     ]]>
     </string>
-    <string name="rune_word_gloom_option">
+    <string name="rune_word_gloom_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>피격 시 15% 확률로 3 레벨 시야 흐리기 시전<br></font>
         <font color=\'#000000\'>타격 회복 속도 +10%<br></font>
@@ -359,7 +359,7 @@
         <font color=\'#000000\'>시야 -3<br></font>
     ]]>
     </string>
-    <string name="rune_word_hand_of_justice_option">
+    <string name="rune_word_hand_of_justice_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>레벨 상승 시 100% 확룰로 36 레벨 불길 시전<br></font>
         <font color=\'#000000\'>사망 시 100% 확률로 48 레벨 운석 낙하 시전<br></font>
@@ -374,7 +374,7 @@
         <font color=\'#000000\'>대상 빙결 +3<br></font>
     ]]>
     </string>
-    <string name="rune_word_harmony_option">
+    <string name="rune_word_harmony_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>장착 시 10 레벨 원기 오라 효과 적용<br></font>
         <font color=\'#cc0029\'>피해 +200~275% 증가<br></font>
@@ -391,7 +391,7 @@
         <font color=\'#000000\'>20 레벨 부활 (충전 25/25회)<br></font>
     ]]>
     </string>
-    <string name="rune_word_heart_of_oak_option">
+    <string name="rune_word_heart_of_oak_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>모든 기술 +3<br></font>
         <font color=\'#000000\'>시전 속도 +40%<br></font>
@@ -407,7 +407,7 @@
         <font color=\'#000000\'>14 레벨 큰까마귀 (충전 60회)<br></font>
     ]]>
     </string>
-    <string name="rune_word_honor_option">
+    <string name="rune_word_honor_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>모든 기술 +1<br></font>
         <font color=\'#000000\'>피해 +160% 증가<br></font>
@@ -422,7 +422,7 @@
         <font color=\'#000000\'>시야 +1<br></font>
     ]]>
     </string>
-    <string name="rune_word_ice_option">
+    <string name="rune_word_ice_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>100% 기회로 레벨 40 블리자드 시전 (당신의 레벨이 상승한 경우)<br></font>
         <font color=\'#000000\'>타격 시 25% 기회로 레벨 22 프로스트 노바 시전<br></font>
@@ -437,7 +437,7 @@
         <font color=\'#000000\'>몬스터로부터 얻는 골드 (캐릭터 레벨 x 3.125)% 증가<br></font>
     ]]>
     </string>
-    <string name="rune_word_eternity_option">
+    <string name="rune_word_eternity_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>파괴 불가<br></font>
         <font color=\'#cc0029\'>+260~310% 증가된 데미지<br></font>
@@ -453,7 +453,7 @@
         <font color=\'#000000\'>레벨 8 리바이브 (88회)<br></font>
     ]]>
     </string>
-    <string name="rune_word_infinity_option">
+    <string name="rune_word_infinity_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>적 처치 시 50% 확률로 20 레벨 연쇄 번개 시전<br></font>
         <font color=\'#000000\'>장착 시 12 레벨 선고 오라 효과 적용<br></font>
@@ -467,7 +467,7 @@
         <font color=\'#000000\'>21 레벨 회오리 갑옷 (충전 30/30)<br></font>
     ]]>
     </string>
-    <string name="rune_word_insight_option">
+    <string name="rune_word_insight_option" formatted="false">
     <![CDATA[
         <font color=\'#cc0029\'>장착 시 12~17 레벨 명상 오라의 효과 적용<br></font>
         <font color=\'#000000\'>시전 속도 +35%<br></font>
@@ -482,7 +482,7 @@
         <font color=\'#000000\'>마법 아이템 발견 확률 23% 증가<br></font>
     ]]>
     </string>
-    <string name="rune_word_king_grace_option">
+    <string name="rune_word_king_grace_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>피해 +100% 증가<br></font>
         <font color=\'#000000\'>명중률 +150<br></font>
@@ -495,7 +495,7 @@
         <font color=\'#000000\'>적중당 생명력 7% 훔침<br></font>
     ]]>
     </string>
-    <string name="rune_word_king_slayer_option">
+    <string name="rune_word_king_slayer_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>공격 속도 +30%<br></font>
         <font color=\'#cc0029\'>피해 +230~270% 증가<br></font>
@@ -509,7 +509,7 @@
         <font color=\'#000000\'>괴물에게서 얻는 금화 40% 증가<br></font>
     ]]>
     </string>
-    <string name="rune_word_last_wish_option">
+    <string name="rune_word_last_wish_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>피격 시 6% 확률로 11 레벨 흐리기 시전<br></font>
         <font color=\'#000000\'>타격 시 10% 확률로 18 레벨 생명력 추출 시전<br></font>
@@ -523,7 +523,7 @@
         <font color=\'#000000\'>마법 아이템 발견 확률 (캐릭터 레벨 x 0.5)% 증가<br></font>
     ]]>
     </string>
-    <string name="rune_word_leaf_option">
+    <string name="rune_word_leaf_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>화염 기술 +3<br></font>
         <font color=\'#000000\'>화염 피해 5 - 30 추가<br></font>
@@ -535,7 +535,7 @@
         <font color=\'#000000\'>적 처치 시 마나 +2<br></font>
     ]]>
     </string>
-    <string name="rune_word_malice_option">
+    <string name="rune_word_malice_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>피해 +33% 증가<br></font>
         <font color=\'#000000\'>최대 피해 +9<br></font>
@@ -547,7 +547,7 @@
         <font color=\'#000000\'>생명력 흡수 -5<br></font>
     ]]>
     </string>
-    <string name="rune_word_melody_option">
+    <string name="rune_word_melody_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>활과 쇠뇌 기술 +3 (아마존 전용)<br></font>
         <font color=\'#000000\'>공격 속도 +20%<br></font>
@@ -560,7 +560,7 @@
         <font color=\'#000000\'>민첩 +10<br></font>
     ]]>
     </string>
-    <string name="rune_word_memory_option">
+    <string name="rune_word_memory_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>원소술사 기술 레벨 +3<br></font>
         <font color=\'#000000\'>시전 속도 +33%<br></font>
@@ -575,7 +575,7 @@
         <font color=\'#000000\'>대상의 방어력 -25%<br></font>
     ]]>
     </string>
-    <string name="rune_word_myth_option">
+    <string name="rune_word_myth_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>피격 시 3% 확률로 1 레벨 포효 시전<br></font>
         <font color=\'#000000\'>타격 시 10% 확률로 1 레벨 도발 시전<br></font>
@@ -586,7 +586,7 @@
         <font color=\'#000000\'>착용 조건 -15%<br></font>
     ]]>
     </string>
-    <string name="rune_word_passion_option">
+    <string name="rune_word_passion_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>공격 속도 +25%<br></font>
         <font color=\'#cc0029\'>피해 +160~210% 증가<br></font>
@@ -602,7 +602,7 @@
         <font color=\'#000000\'>3 레벨 울버린의 심장 (충전 12/12회)<br></font>
     ]]>
     </string>
-    <string name="rune_word_fortitude_option">
+    <string name="rune_word_fortitude_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>피격 시 20% 확률로 15 레벨 냉기 갑옷 시전<br></font>
         <font color=\'#000000\'>시전 속도 +25%<br></font>
@@ -621,7 +621,7 @@
         <font color=\'#000000\'>최대 번개 저항 +5% (갑옷 한정)<br></font>
     ]]>
     </string>
-    <string name="rune_word_peace_option">
+    <string name="rune_word_peace_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>피격 시 4% 기회로 레벨 5 슬로우 미사일 시전<br></font>
         <font color=\'#000000\'>타격 시 2% 기회로 레벨 15 발키리 시전<br></font>
@@ -632,7 +632,7 @@
         <font color=\'#000000\'>공격자가 받는 데미지 14<br></font>
     ]]>
     </string>
-    <string name="rune_word_brand_option">
+    <string name="rune_word_brand_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>피격 시 35% 확률로 14 레벨 피해 증폭 시전<br></font>
         <font color=\'#000000\'>타격 시 100% 확률로 18 레벨 뼈 창 시전<br></font>
@@ -646,7 +646,7 @@
         <font color=\'#000000\'>밀쳐내기<br></font>
     ]]>
     </string>
-    <string name="rune_word_phoenix_option">
+    <string name="rune_word_phoenix_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>레벨 상승 시 100% 확률로 40 레벨 불길 시전<br></font>
         <font color=\'#000000\'>타격 시 40% 확률로 22 레벨 화염폭풍 시전<br></font>
@@ -663,7 +663,7 @@
         <font color=\'#000000\'>최대 화염 저항 +10% (방패 한정)<br></font>
     ]]>
     </string>
-    <string name="rune_word_oath_option">
+    <string name="rune_word_oath_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>파괴 불가<br></font>
         <font color=\'#000000\'>타격 시 30% 확률로 20 레벨 뼈 영혼 시전<br></font>
@@ -678,7 +678,7 @@
         <font color=\'#000000\'>17 레벨 강철 골렘 (충전 14회)<br></font>
     ]]>
     </string>
-    <string name="rune_word_pride_option">
+    <string name="rune_word_pride_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>피격 시 25% 확률로 17 레벨 화염벽 시전<br></font>
         <font color=\'#cc0029\'>장착 시 16~20 레벨 집중 오라 효과 적용<br></font>
@@ -693,7 +693,7 @@
         <font color=\'#000000\'>괴물에게서 얻는 금화 (캐릭터 레벨 x 1.875)% 증가<br></font>
     ]]>
     </string>
-    <string name="rune_word_principle_option">
+    <string name="rune_word_principle_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>타격 시 100% 기회로 레벨 5 홀리 볼트 시전<br></font>
         <font color=\'#000000\'>+2 모든 성기사 기술 레벨 상승<br></font>
@@ -704,7 +704,7 @@
         <font color=\'#000000\'>파이어 저항 +30%<br></font>
     ]]>
     </string>
-    <string name="rune_word_obedience_option">
+    <string name="rune_word_obedience_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>적 처치 시 30% 확률로 21 레벨 마법부여 시전<br></font>
         <font color=\'#000000\'>타격 회복 속도 +40%<br></font>
@@ -720,7 +720,7 @@
         <font color=\'#000000\'>착용 조건 -20%<br></font>
     ]]>
     </string>
-    <string name="rune_word_wrath_option">
+    <string name="rune_word_wrath_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>타격 시 30% 확률로 1 레벨 노화 시전<br></font>
         <font color=\'#000000\'>타격 시 5% 확률로 10 레벨 생명력 추출 시전<br></font>
@@ -735,7 +735,7 @@
         <font color=\'#000000\'>빙결되지 않음<br></font>
     ]]>
     </string>
-    <string name="rune_word_rain_option">
+    <string name="rune_word_rain_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>피격 시 5% 기회로 레벨 15 사이클론 아머 시전<br></font>
         <font color=\'#000000\'>타격 시 5% 기회로 레벨 15 트위스터 시전<br></font>
@@ -746,7 +746,7 @@
         <font color=\'#000000\'>15% 데미지 마나로 흡수<br></font>
     ]]>
     </string>
-    <string name="rune_word_voice_of_reason_option">
+    <string name="rune_word_voice_of_reason_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>타격 시 15% 기회로 레벨 13 프로즌 오브 시전<br></font>
         <font color=\'#000000\'>타격 시 18% 기회로 레벨 20 아이스 블래스트 시전<br></font>
@@ -762,7 +762,7 @@
         <font color=\'#000000\'>+1 시야 증가<br></font>
     ]]>
     </string>
-    <string name="rune_word_delirium_option">
+    <string name="rune_word_delirium_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>피격 시 1% 확률로 50 레벨 착란 시전<br></font>
         <font color=\'#000000\'>피격 시 6% 확률로 14 레벨 정신 폭발 시전<br></font>
@@ -776,7 +776,7 @@
         <font color=\'#000000\'>17 레벨 유혹 (충전 60회)<br></font>
     ]]>
     </string>
-    <string name="rune_word_fury_option">
+    <string name="rune_word_fury_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>공격 속도 +40%<br></font>
         <font color=\'#000000\'>피해 +209% 증가<br></font>
@@ -790,7 +790,7 @@
         <font color=\'#000000\'>괴물 회복 저지<br></font>
     ]]>
     </string>
-    <string name="rune_word_enigma_option">
+    <string name="rune_word_enigma_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>모든 기술 +2<br></font>
         <font color=\'#000000\'>달리기/걷기 속도 +45%<br></font>
@@ -804,7 +804,7 @@
         <font color=\'#000000\'>마법 아이템 발견 확률 (캐릭터 레벨)% 증가<br></font>
     ]]>
     </string>
-    <string name="rune_word_doom_option">
+    <string name="rune_word_doom_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>타격 시 5% 확률로 18 레밸 화산 시전<br></font>
         <font color=\'#000000\'>장착 시 12 레벨 신성한 빙결 오라 효과 적용<br></font>
@@ -819,7 +819,7 @@
         <font color=\'#000000\'>착용 조건 -20%<br></font>
     ]]>
     </string>
-    <string name="rune_word_sanctuary_option">
+    <string name="rune_word_sanctuary_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+20% 매우 빠른 회복속도 증가<br></font>
         <font color=\'#000000\'>+20% 매우 빠른 방어속도 증가<br></font>
@@ -832,7 +832,7 @@
         <font color=\'#000000\'>레벨 12 슬로우 미사일 (60회)<br></font>
     ]]>
     </string>
-    <string name="rune_word_lore_option">
+    <string name="rune_word_lore_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>모든 기술 +1<br></font>
         <font color=\'#000000\'>마력 +10<br></font>
@@ -842,7 +842,7 @@
         <font color=\'#000000\'>시야 +2<br></font>
     ]]>
     </string>
-    <string name="rune_word_silence_option">
+    <string name="rune_word_silence_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>모든 기술 +2<br></font>
         <font color=\'#000000\'>공격 속도 +20%<br></font>
@@ -859,7 +859,7 @@
         <font color=\'#000000\'>착용 조건 -20%<br></font>
     ]]>
     </string>
-    <string name="rune_word_smoke_option">
+    <string name="rune_word_smoke_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>타격 회복 속도 +20%<br></font>
         <font color=\'#000000\'>방어력 +75% 증가<br></font>
@@ -870,7 +870,7 @@
         <font color=\'#000000\'>6 레벨 약화 (충전 18회)<br></font>
     ]]>
     </string>
-    <string name="rune_word_spirit_option">
+    <string name="rune_word_spirit_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>모든 기술 +2<br></font>
         <font color=\'#cc0029\'>시전 속도 +25~35%<br></font>
@@ -889,7 +889,7 @@
         <font color=\'#000000\'>공격자가 피해를 14 받음 (방패 한정)<br></font>
     ]]>
     </string>
-    <string name="rune_word_splendor_option">
+    <string name="rune_word_splendor_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>모든 기술 +1<br></font>
         <font color=\'#000000\'>시전 속도 +10%<br></font>
@@ -902,7 +902,7 @@
         <font color=\'#000000\'>시야 +3<br></font>
     ]]>
     </string>
-    <string name="rune_word_steel_option">
+    <string name="rune_word_steel_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>공격 속도 +25%<br></font>
         <font color=\'#000000\'>피해 +20% 증가<br></font>
@@ -914,7 +914,7 @@
         <font color=\'#000000\'>시야 +1<br></font>
     ]]>
     </string>
-    <string name="rune_word_stealth_option">
+    <string name="rune_word_stealth_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>달리기/걷기 속도 +25%<br></font>
         <font color=\'#000000\'>시전 속도 +25%<br></font>
@@ -926,7 +926,7 @@
         <font color=\'#000000\'>마법 피해 3 감소<br></font>
     ]]>
     </string>
-    <string name="rune_word_stone_option">
+    <string name="rune_word_stone_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>타격 회복 속도 +60%<br></font>
         <font color=\'#cc0029\'>방어력 +250~290% 증가<br></font>
@@ -939,7 +939,7 @@
         <font color=\'#000000\'>16 레벨 점토 골렘 (충전 16회)<br></font>
     ]]>
     </string>
-    <string name="rune_word_strength_option">
+    <string name="rune_word_strength_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>피해 +35% 증가<br></font>
         <font color=\'#000000\'>적중당 생명력 7% 훔침<br></font>
@@ -949,7 +949,7 @@
         <font color=\'#000000\'>적 처치 시 마나 +2<br></font>
     ]]>
     </string>
-    <string name="rune_word_duress_option">
+    <string name="rune_word_duress_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>타격 회복 속도 +40%<br></font>
         <font color=\'#cc0029\'>피해 +10~20% 증가<br></font>
@@ -964,7 +964,7 @@
         <font color=\'#000000\'>독 저항 +15%<br></font>
     ]]>
     </string>
-    <string name="rune_word_treachery_option">
+    <string name="rune_word_treachery_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>피격 시 5% 확률로 15 레벨 흐리기 시전<br></font>
         <font color=\'#000000\'>타격 시 25% 확률로 15 레벨 맹독 시전<br></font>
@@ -975,7 +975,7 @@
         <font color=\'#000000\'>괴물에게서 얻는 금화 50% 증가<br></font>
     ]]>
     </string>
-    <string name="rune_word_faith_option">
+    <string name="rune_word_faith_option" formatted="false">
     <![CDATA[
         <font color=\'#cc0029\'>장착 시 12~15 레벨 광신 오라 효과 적용<br></font>
         <font color=\'#cc0029\'>모든 기술 +1~2<br></font>
@@ -990,7 +990,7 @@
         <font color=\'#000000\'>괴물에게서 얻는 금화 75% 증가<br></font>
     ]]>
     </string>
-    <string name="rune_word_venom_option">
+    <string name="rune_word_venom_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>대상의 방어력 무시<br></font>
         <font color=\'#000000\'>독 피해 +273 (6초에 걸쳐)<br></font>
@@ -1001,7 +1001,7 @@
         <font color=\'#000000\'>15 레벨 맹독 폭발 (충전 27/27회)<br></font>
     ]]>
     </string>
-    <string name="rune_word_law_bringer_option">
+    <string name="rune_word_law_bringer_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>타격 시 20% 확률로 15 레벨 노화 시전<br></font>
         <font color=\'#cc0029\'>장착 시 16~18 레벨 성역 오라 효과 적용<br></font>
@@ -1015,7 +1015,7 @@
         <font color=\'#000000\'>괴물에게서 얻는 금화 75% 증가<br></font>
     ]]>
     </string>
-    <string name="rune_word_wealth_option">
+    <string name="rune_word_wealth_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>민첩 +10<br></font>
         <font color=\'#000000\'>적 처치시 마나 +2<br></font>
@@ -1023,7 +1023,7 @@
         <font color=\'#000000\'>마법 아이템 발견 확률 100% 증가<br></font>
     ]]>
     </string>
-    <string name="rune_word_zephyr_option">
+    <string name="rune_word_zephyr_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>피격 시 7% 확률로 1 레벨 돌개바람 시전<br></font>
         <font color=\'#000000\'>달리기/걷기 속도 +25%<br></font>
@@ -1035,7 +1035,7 @@
         <font color=\'#000000\'>방어력 +25<br></font>
     ]]>
     </string>
-    <string name="rune_word_white_option">
+    <string name="rune_word_white_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>독과 뼈 기술 +3 (강령술사 전용)<br></font>
         <font color=\'#000000\'>시전 속도 +20%<br></font>
@@ -1048,7 +1048,7 @@
         <font color=\'#000000\'>마법 피해 4 감소<br></font>
     ]]>
     </string>
-    <string name="rune_word_wind_option">
+    <string name="rune_word_wind_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>타격 시 10% 기회로 레벨 9 토네이도 시전<br></font>
         <font color=\'#000000\'>+20% 매우 빠른 달리기/걷기 속도 증가<br></font>
@@ -1061,7 +1061,7 @@
         <font color=\'#000000\'>+1 시야 증가<br></font>
     ]]>
     </string>
-    <string name="rune_word_prudence_option">
+    <string name="rune_word_prudence_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>타격 회복 속도 +25%<br></font>
         <font color=\'#cc0029\'>방어력 +140~170% 증가<br></font>

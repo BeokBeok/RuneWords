@@ -120,8 +120,6 @@ internal object ActivityHomeView {
                     start.linkTo(parent.start)
                     end.linkTo(parent.end)
                     bottom.linkTo(admob.top)
-                    width = Dimension.fillToConstraints
-                    height = Dimension.fillToConstraints
                 },
                 cells = GridCells.Adaptive(minSize = 128.dp)
             ) {
@@ -143,22 +141,6 @@ internal object ActivityHomeView {
                     )
                 }
             }
-            AndroidView(
-                modifier = Modifier
-                    .constrainAs(admob) {
-                        top.linkTo(content.bottom)
-                        start.linkTo(parent.start)
-                        end.linkTo(parent.end)
-                        bottom.linkTo(parent.bottom)
-                    },
-                factory = { context ->
-                    AdView(context).apply {
-                        adSize = AdSize.BANNER
-                        adUnitId = context.getString(R.string.admob_banner_app_key)
-                        loadAd(AdRequest.Builder().build())
-                    }
-                }
-            )
         }
     }
 

@@ -13,7 +13,11 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.beok.runewords.common.constants.TrackingConstants
 import com.beok.runewords.home.inapp.InAppUpdateState
 import com.beok.runewords.home.inapp.InAppUpdateViewModel
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.android.play.core.install.InstallStateUpdatedListener
 import com.google.android.play.core.install.model.InstallStatus
 import com.google.firebase.analytics.FirebaseAnalytics
@@ -66,6 +70,7 @@ internal class HomeActivity : AppCompatActivity() {
     private fun setupSplashScreen() {
         installSplashScreen().setKeepVisibleCondition {
             MobileAds.initialize(this)
+            setupScreenAd()
             false
         }
     }
@@ -117,5 +122,19 @@ internal class HomeActivity : AppCompatActivity() {
             }.javaClass
         }
     }
-}
 
+    private fun setupScreenAd() {
+        InterstitialAd.load(
+            this,
+            getString(R.string.admob_screen_app_key),
+            AdRequest.Builder().build(),
+            object : InterstitialAdLoadCallback() {
+                override fun onAdFailedToLoad(loadAdError: LoadAdError) = Unit
+
+                override fun onAdLoaded(ad: InterstitialAd) {
+                    ad.show(this@HomeActivity)
+                }
+            }
+        )
+    }
+}
