@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="rune_word_ancient_pledge_option">
+    <string name="rune_word_ancient_pledge_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+50% enhanced defense<br></font>
         <font color=\'#000000\'>Cold resist +43%<br></font>
@@ -10,7 +10,7 @@
         <font color=\'#000000\'>10% damage taken goes to mana<br></font>
     ]]>
     </string>
-    <string name="rune_word_beast_option">
+    <string name="rune_word_beast_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>Level 9 Fanaticism aura when equipped<br></font>
         <font color=\'#000000\'>+40% increased attack speed<br></font>
@@ -25,7 +25,7 @@
         <font color=\'#000000\'>+2 to mana after each kill<br></font>
     ]]>
     </string>
-    <string name="rune_word_black_option">
+    <string name="rune_word_black_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+120% enhanced damage<br></font>
         <font color=\'#000000\'>40% chance of crushing blow<br></font>
@@ -38,7 +38,7 @@
         <font color=\'#000000\'>Level 4 Corpse Explosion (12 charges)<br></font>
     ]]>
     </string>
-    <string name="rune_word_bramble_option">
+    <string name="rune_word_bramble_option" formatted="false">
     <![CDATA[
         <font color=\'#cc0029\'>Level 15-21 Thorns aura when equipped<br></font>
         <font color=\'#000000\'>+50% faster hit Recovery<br></font>
@@ -53,7 +53,7 @@
         <font color=\'#000000\'>Level 13 Spirit of Barbs (33 charges)<br></font>
     ]]>
     </string>
-    <string name="rune_word_bone_option">
+    <string name="rune_word_bone_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>15% chance to cast level 10 Bone Armor when struck<br></font>
         <font color=\'#000000\'>15% chance to cast level 10 Bone Spear on striking<br></font>
@@ -63,7 +63,7 @@
         <font color=\'#000000\'>Damage reduced by 7<br></font>
     ]]>
     </string>
-    <string name="rune_word_lion_heart_option">
+    <string name="rune_word_lion_heart_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+20% enhanced damage<br></font>
         <font color=\'#000000\'>Requirements -15%<br></font>
@@ -75,7 +75,7 @@
         <font color=\'#000000\'>All resistances +30<br></font>
     ]]>
     </string>
-    <string name="rune_word_chains_of_honor_option">
+    <string name="rune_word_chains_of_honor_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+2 to all skills<br></font>
         <font color=\'#000000\'>+200% damage to demons<br></font>
@@ -89,7 +89,7 @@
         <font color=\'#000000\'>25% better chance of getting magic items<br></font>
     ]]>
     </string>
-    <string name="rune_word_radiance_option">
+    <string name="rune_word_radiance_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+75% enhanced defense<br></font>
         <font color=\'#000000\'>+30 defense vs. missile<br></font>
@@ -102,7 +102,7 @@
         <font color=\'#000000\'>+5 light radius<br></font>
     ]]>
     </string>
-    <string name="rune_word_call_to_arms_option">
+    <string name="rune_word_call_to_arms_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+1 to all skills<br></font>
         <font color=\'#000000\'>+40% increased attack speed<br></font>
@@ -117,7 +117,7 @@
         <font color=\'#000000\'>30% better chance of getting magic items<br></font>
     ]]>
     </string>
-    <string name="rune_word_nadir_option">
+    <string name="rune_word_nadir_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+50% enhanced defense<br></font>
         <font color=\'#000000\'>+10 defense<br></font>
@@ -129,7 +129,7 @@
         <font color=\'#000000\'>-3 to light radius<br></font>
     ]]>
     </string>
-    <string name="rune_word_chaos_option">
+    <string name="rune_word_chaos_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>9% chance to cast level 11 Frozen Orb on striking<br></font>
         <font color=\'#000000\'>11% chance to cast level 9 Charged Bolt on striking<br></font>
@@ -142,7 +142,7 @@
         <font color=\'#000000\'>+15 life after each demon kill<br></font>
     ]]>
     </string>
-    <string name="rune_word_rift_option">
+    <string name="rune_word_rift_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>20% chance to cast Level 16 Tornado on striking<br></font>
         <font color=\'#000000\'>16% chance to cast level 21 Frozen Orb on attack<br></font>
@@ -157,7 +157,7 @@
         <font color=\'#000000\'>Requirements -20%<br></font>
     ]]>
     </string>
-    <string name="rune_word_crescent_option">
+    <string name="rune_word_crescent_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>10% chance to cast level 17 Chain Lightning on striking<br></font>
         <font color=\'#000000\'>7% chance to cast level 13 Static Field on striking<br></font>
@@ -171,7 +171,7 @@
         <font color=\'#000000\'>Level 18 Summon Spirit Wolf (30 charges)<br></font>
     ]]>
     </string>
-    <string name="rune_word_death_option">
+    <string name="rune_word_death_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>100% chance to cast level 44 Chain Lightning when you die<br></font>
         <font color=\'#000000\'>25% chance to cast level 18 Glacial Spike on attack<br></font>
@@ -188,7 +188,7 @@
         <font color=\'#000000\'>Requirements -20%<br></font>
     ]]>
     </string>
-    <string name="rune_word_breath_of_the_dying_option">
+    <string name="rune_word_breath_of_the_dying_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>50% chance to cast level 20 Poison Nova when you kill an enemy<br></font>
         <font color=\'#000000\'>Indestructible<br></font>
@@ -206,7 +206,7 @@
         <font color=\'#000000\'>Requirements -20%<br></font>
     ]]>
     </string>
-    <string name="rune_word_grief_option">
+    <string name="rune_word_grief_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>35% chance to cast level 15 Venom on striking<br></font>
         <font color=\'#cc0029\'>+30-40% increased attack speed<br></font>
@@ -222,7 +222,7 @@
         <font color=\'#cc0029\'>+10-15 life after each kill<br></font>
     ]]>
     </string>
-    <string name="rune_word_destruction_option">
+    <string name="rune_word_destruction_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>23% chance to cast level 12 Volcano on striking<br></font>
         <font color=\'#000000\'>5% chance to cast level 23 Molten Boulder on striking<br></font>
@@ -238,7 +238,7 @@
         <font color=\'#000000\'>+10 to dexterity<br></font>
     ]]>
     </string>
-    <string name="rune_word_holy_thunder_option">
+    <string name="rune_word_holy_thunder_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+60% enhanced damage<br></font>
         <font color=\'#000000\'>-25% target defense<br></font>
@@ -252,7 +252,7 @@
         <font color=\'#000000\'>Level 7 Chain Lightning (60 charges)<br></font>
     ]]>
     </string>
-    <string name="rune_word_dragon_option">
+    <string name="rune_word_dragon_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>20% chance to cast level 18 Venom when struck<br></font>
         <font color=\'#000000\'>12% chance to cast level 15 Hydra on striking<br></font>
@@ -267,7 +267,7 @@
         <font color=\'#000000\'>Damage reduced by 7<br></font>
     ]]>
     </string>
-    <string name="rune_word_dream_option">
+    <string name="rune_word_dream_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>10% chance to cast level 15 Confuse when struck<br></font>
         <font color=\'#000000\'>Level 15 Holy Shock aura when equipped<br></font>
@@ -282,7 +282,7 @@
         <font color=\'#cc0029\'>12-25% better chance of getting magic items<br></font>
     ]]>
     </string>
-    <string name="rune_word_edge_option">
+    <string name="rune_word_edge_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>Level 15 Thorns aura when equipped<br></font>
         <font color=\'#000000\'>+35% increased attack speed<br></font>
@@ -296,7 +296,7 @@
         <font color=\'#000000\'>Reduces all vendor prices by 15%<br></font>
     ]]>
     </string>
-    <string name="rune_word_rhyme_option">
+    <string name="rune_word_rhyme_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>20% increased chance of blocking<br></font>
         <font color=\'#000000\'>40% faster block rate<br></font>
@@ -307,7 +307,7 @@
         <font color=\'#000000\'>25% better chance of getting magic items<br></font>
     ]]>
     </string>
-    <string name="rune_word_enlightenment_option">
+    <string name="rune_word_enlightenment_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>5% chance to cast level 15 Blaze when struck<br></font>
         <font color=\'#000000\'>5% chance to cast level 15 Fire Ball on striking<br></font>
@@ -318,7 +318,7 @@
         <font color=\'#000000\'>Damage reduced by 7<br></font>
     ]]>
     </string>
-    <string name="rune_word_exile_option">
+    <string name="rune_word_exile_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>15% chance to cast level 5 Life Tap on striking<br></font>
         <font color=\'#cc0029\'>Level 13-16 Defiance aura when equipped<br></font>
@@ -333,7 +333,7 @@
         <font color=\'#000000\'>Repairs 1 durability in 4 seconds<br></font>
     ]]>
     </string>
-    <string name="rune_word_famine_option">
+    <string name="rune_word_famine_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+30% increased attack speed<br></font>
         <font color=\'#cc0029\'>+320-370% enhanced damage<br></font>
@@ -347,7 +347,7 @@
         <font color=\'#000000\'>+10 to strength<br></font>
     ]]>
     </string>
-    <string name="rune_word_gloom_option">
+    <string name="rune_word_gloom_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>15% chance to cast level 3 Dim Vision when struck<br></font>
         <font color=\'#000000\'>+10% faster hit recovery<br></font>
@@ -359,7 +359,7 @@
         <font color=\'#000000\'>-3 to light radius<br></font>
     ]]>
     </string>
-    <string name="rune_word_hand_of_justice_option">
+    <string name="rune_word_hand_of_justice_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>100% chance to cast level 36 Blaze when you level up<br></font>
         <font color=\'#000000\'>100% chance to cast level 48 Meteor when you die<br></font>
@@ -374,7 +374,7 @@
         <font color=\'#000000\'>Freezes target +3<br></font>
     ]]>
     </string>
-    <string name="rune_word_harmony_option">
+    <string name="rune_word_harmony_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>Level 10 Vigor aura when equipped<br></font>
         <font color=\'#cc0029\'>+200-275% enhanced damage<br></font>
@@ -391,7 +391,7 @@
         <font color=\'#000000\'>Level 20 Revive (25 charges)<br></font>
     ]]>
     </string>
-    <string name="rune_word_heart_of_oak_option">
+    <string name="rune_word_heart_of_oak_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+3 to all skills<br></font>
         <font color=\'#000000\'>+40% faster cast rate<br></font>
@@ -407,7 +407,7 @@
         <font color=\'#000000\'>Leven 14 Raven (60 charges)<br></font>
     ]]>
     </string>
-    <string name="rune_word_honor_option">
+    <string name="rune_word_honor_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+160% enhanced damage<br></font>
         <font color=\'#000000\'>+9 minimum damage<br></font>
@@ -422,7 +422,7 @@
         <font color=\'#000000\'>+2 to mana after each kill<br></font>
     ]]>
     </string>
-    <string name="rune_word_ice_option">
+    <string name="rune_word_ice_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>100% chance to cast level 40 Blizzard when you level up<br></font>
         <font color=\'#000000\'>25% chance to cast level 22 Frost Nova on striking<br></font>
@@ -437,7 +437,7 @@
         <font color=\'#000000\'>3.125-309.375% extra gold from monsters (based on character level)<br></font>
     ]]>
     </string>
-    <string name="rune_word_eternity_option">
+    <string name="rune_word_eternity_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>Indestructible<br></font>
         <font color=\'#cc0029\'>+260-310% enhanced damage<br></font>
@@ -453,7 +453,7 @@
         <font color=\'#000000\'>Level 8 Revive (88 charges)<br></font>
     ]]>
     </string>
-    <string name="rune_word_infinity_option">
+    <string name="rune_word_infinity_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>50% chance to cast level 20 Chain Lightning when you kill an enemy<br></font>
         <font color=\'#000000\'>Level 12 Conviction aura when equipped<br></font>
@@ -467,7 +467,7 @@
         <font color=\'#000000\'>Level 21 Cyclone Armor (30 charges)<br></font>
     ]]>
     </string>
-    <string name="rune_word_insight_option">
+    <string name="rune_word_insight_option" formatted="false">
     <![CDATA[
         <font color=\'#cc0029\'>Level 12-17 Meditation aura when equipped (varies)<br></font>
         <font color=\'#000000\'>+35% faster cast rate<br></font>
@@ -482,7 +482,7 @@
         <font color=\'#000000\'>23% better chance of getting magic items<br></font>
     ]]>
     </string>
-    <string name="rune_word_king_grace_option">
+    <string name="rune_word_king_grace_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+100% enhanced damage<br></font>
         <font color=\'#000000\'>+100% damage to demons<br></font>
@@ -495,7 +495,7 @@
         <font color=\'#000000\'>7% life stolen per hit<br></font>
     ]]>
     </string>
-    <string name="rune_word_king_slayer_option">
+    <string name="rune_word_king_slayer_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+30% increased attack speed<br></font>
         <font color=\'#cc0029\'>+230-270% enhanced damage<br></font>
@@ -509,7 +509,7 @@
         <font color=\'#000000\'>40% extra gold from monsters<br></font>
     ]]>
     </string>
-    <string name="rune_word_last_wish_option">
+    <string name="rune_word_last_wish_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>6% chance to cast level 11 Fade when struck<br></font>
         <font color=\'#000000\'>10% chance to cast level 18 Life Tap on striking<br></font>
@@ -523,7 +523,7 @@
         <font color=\'#000000\'>+0.5-49.5% chance of getting magic items (based on character level)<br></font>
     ]]>
     </string>
-    <string name="rune_word_leaf_option">
+    <string name="rune_word_leaf_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>Adds 5-30 fire damage<br></font>
         <font color=\'#000000\'>+3 to fire skills<br></font>
@@ -535,7 +535,7 @@
         <font color=\'#000000\'>Cold resist +33%<br></font>
     ]]>
     </string>
-    <string name="rune_word_malice_option">
+    <string name="rune_word_malice_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+33% enhanced damage<br></font>
         <font color=\'#000000\'>+9 maximum damage<br></font>
@@ -547,7 +547,7 @@
         <font color=\'#000000\'>Drain life -5<br></font>
     ]]>
     </string>
-    <string name="rune_word_melody_option">
+    <string name="rune_word_melody_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+50% enhanced damage<br></font>
         <font color=\'#000000\'>+300% damage to undead<br></font>
@@ -560,7 +560,7 @@
         <font color=\'#000000\'>Knockback<br></font>
     ]]>
     </string>
-    <string name="rune_word_memory_option">
+    <string name="rune_word_memory_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+3 to Sorceress skill levels<br></font>
         <font color=\'#000000\'>33% faster cast rate<br></font>
@@ -575,7 +575,7 @@
         <font color=\'#000000\'>+50% enhanced defense<br></font>
     ]]>
     </string>
-    <string name="rune_word_myth_option">
+    <string name="rune_word_myth_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>3% chance to cast level 1 Howl when struck<br></font>
         <font color=\'#000000\'>10% chance to cast level 1 Taunt on striking<br></font>
@@ -586,7 +586,7 @@
         <font color=\'#000000\'>Requirements -15%<br></font>
     ]]>
     </string>
-    <string name="rune_word_passion_option">
+    <string name="rune_word_passion_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+25% increased attack speed<br></font>
         <font color=\'#cc0029\'>+160-210% enhanced damage<br></font>
@@ -602,7 +602,7 @@
         <font color=\'#000000\'>Level 3 Heart of Wolverine (12 charges)<br></font>
     ]]>
     </string>
-    <string name="rune_word_fortitude_option">
+    <string name="rune_word_fortitude_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>20% chance to cast level 15 Chilling Armor when struck<br></font>
         <font color=\'#000000\'>+25% faster cast rate<br></font>
@@ -621,7 +621,7 @@
         <font color=\'#000000\'>+5% to maximum lightning resist (body armor)<br></font>
     ]]>
     </string>
-    <string name="rune_word_peace_option">
+    <string name="rune_word_peace_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>4% chance to cast level 5 Slow Missiles when struck<br></font>
         <font color=\'#000000\'>2% chance to cast level 15 Valkyrie on striking<br></font>
@@ -632,7 +632,7 @@
         <font color=\'#000000\'>Attacker takes damage of 14<br></font>
     ]]>
     </string>
-    <string name="rune_word_brand_option">
+    <string name="rune_word_brand_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>35% chance to cast level 14 Amplify Damage when struck<br></font>
         <font color=\'#000000\'>100% chance to cast level 18 Bone Spear on striking<br></font>
@@ -646,7 +646,7 @@
         <font color=\'#000000\'>Fires explosive arrows or bolts<br></font>
     ]]>
     </string>
-    <string name="rune_word_phoenix_option">
+    <string name="rune_word_phoenix_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>100% chance to cast level 40 Blaze when you level up<br></font>
         <font color=\'#000000\'>40% chance to cast level 22 Firestorm on striking<br></font>
@@ -663,7 +663,7 @@
         <font color=\'#000000\'>+10% maximum fire resist (shields)<br></font>
     ]]>
     </string>
-    <string name="rune_word_oath_option">
+    <string name="rune_word_oath_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>30% chance to cast level 20 bone spirit on striking<br></font>
         <font color=\'#000000\'>Indestructible<br></font>
@@ -678,7 +678,7 @@
         <font color=\'#000000\'>Level 17 Iron Golem (14 charges)<br></font>
     ]]>
     </string>
-    <string name="rune_word_pride_option">
+    <string name="rune_word_pride_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>25% chance to cast level 17 Fire Ball when struck<br></font>
         <font color=\'#cc0029\'>Level 16-20 Concentrate aura when equipped<br></font>
@@ -693,7 +693,7 @@
         <font color=\'#000000\'>1.875-185.625% extra gold from monsters (based on character level)<br></font>
     ]]>
     </string>
-    <string name="rune_word_principle_option">
+    <string name="rune_word_principle_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>100% chance to cast level 5 Holy Bolt on striking<br></font>
         <font color=\'#000000\'>+2 to Paladin skill levels<br></font>
@@ -704,7 +704,7 @@
         <font color=\'#000000\'>Fire resist +30%<br></font>
     ]]>
     </string>
-    <string name="rune_word_obedience_option">
+    <string name="rune_word_obedience_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>30% chance to cast level 21 Enchant when you kill an enemy<br></font>
         <font color=\'#000000\'>40% faster hit recovery<br></font>
@@ -720,7 +720,7 @@
         <font color=\'#000000\'>Requirements -20%<br></font>
     ]]>
     </string>
-    <string name="rune_word_wrath_option">
+    <string name="rune_word_wrath_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>30% chance to cast level 1 Decrepify on striking<br></font>
         <font color=\'#000000\'>5% chance to cast level 10 Life Tap on striking<br></font>
@@ -735,7 +735,7 @@
         <font color=\'#000000\'>Cannot be frozen<br></font>
     ]]>
     </string>
-    <string name="rune_word_rain_option">
+    <string name="rune_word_rain_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>5% chance to cast level 15 Cyclone Armor when struck<br></font>
         <font color=\'#000000\'>5% chance to cast level 15 Twister on striking<br></font>
@@ -746,7 +746,7 @@
         <font color=\'#000000\'>15% damage taken goes to mana<br></font>
     ]]>
     </string>
-    <string name="rune_word_voice_of_reason_option">
+    <string name="rune_word_voice_of_reason_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>15% chance to cast level 13 Frozen Orb on striking)<br></font>
         <font color=\'#000000\'>18% chance to cast level 20 Ice Blast on striking)<br></font>
@@ -762,7 +762,7 @@
         <font color=\'#000000\'>+1 to light radius<br></font>
     ]]>
     </string>
-    <string name="rune_word_delirium_option">
+    <string name="rune_word_delirium_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>1% chance to cast level 50 Delirium when struck<br></font>
         <font color=\'#000000\'>6% chance to cast level 14 Mind Blast when struck<br></font>
@@ -776,7 +776,7 @@
         <font color=\'#000000\'>Level 17 Attract (60 charges)<br></font>
     ]]>
     </string>
-    <string name="rune_word_fury_option">
+    <string name="rune_word_fury_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+209% enhanced damage<br></font>
         <font color=\'#000000\'>40% increased attack speed<br></font>
@@ -790,7 +790,7 @@
         <font color=\'#000000\'>+5 to Frenzy (Barbarian only)<br></font>
     ]]>
     </string>
-    <string name="rune_word_enigma_option">
+    <string name="rune_word_enigma_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+2 to all skills<br></font>
         <font color=\'#000000\'>+45% faster run/walk<br></font>
@@ -804,7 +804,7 @@
         <font color=\'#000000\'>+1-99% better chance of getting magic items (based on character level)<br></font>
     ]]>
     </string>
-    <string name="rune_word_doom_option">
+    <string name="rune_word_doom_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>5% chance to cast level 18 Volcano on striking<br></font>
         <font color=\'#000000\'>Level 12 Holy Freeze aura when equipped<br></font>
@@ -819,7 +819,7 @@
         <font color=\'#000000\'>Requirements -20%<br></font>
     ]]>
     </string>
-    <string name="rune_word_sanctuary_option">
+    <string name="rune_word_sanctuary_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+20% faster hit recovery<br></font>
         <font color=\'#000000\'>+20% faster block rate<br></font>
@@ -832,7 +832,7 @@
         <font color=\'#000000\'>Level 12 Slow Missiles (60 charges)<br></font>
     ]]>
     </string>
-    <string name="rune_word_lore_option">
+    <string name="rune_word_lore_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+1 to all skills<br></font>
         <font color=\'#000000\'>+10 to energy<br></font>
@@ -842,7 +842,7 @@
         <font color=\'#000000\'>+2 to light radius<br></font>
     ]]>
     </string>
-    <string name="rune_word_silence_option">
+    <string name="rune_word_silence_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>200% enhanced damage<br></font>
         <font color=\'#000000\'>+75% damage to undead<br></font>
@@ -859,7 +859,7 @@
         <font color=\'#000000\'>30% better chance of getting magic items<br></font>
     ]]>
     </string>
-    <string name="rune_word_smoke_option">
+    <string name="rune_word_smoke_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+75% enhanced defense<br></font>
         <font color=\'#000000\'>+280 missile defense<br></font>
@@ -870,7 +870,7 @@
         <font color=\'#000000\'>-1 to light radius<br></font>
     ]]>
     </string>
-    <string name="rune_word_spirit_option">
+    <string name="rune_word_spirit_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+2 to all skills<br></font>
         <font color=\'#cc0029\'>+25-35% faster cast rate<br></font>
@@ -889,7 +889,7 @@
         <font color=\'#000000\'>Attacker takes damage of 14 (shields)<br></font>
     ]]>
     </string>
-    <string name="rune_word_splendor_option">
+    <string name="rune_word_splendor_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+1 to all skills<br></font>
         <font color=\'#000000\'>+10% faster cast rate<br></font>
@@ -902,7 +902,7 @@
         <font color=\'#000000\'>+3 to light radius<br></font>
     ]]>
     </string>
-    <string name="rune_word_steel_option">
+    <string name="rune_word_steel_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>20% enhanced damage<br></font>
         <font color=\'#000000\'>+3 minimum damage<br></font>
@@ -914,7 +914,7 @@
         <font color=\'#000000\'>+1 to light radius<br></font>
     ]]>
     </string>
-    <string name="rune_word_stealth_option">
+    <string name="rune_word_stealth_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>Magic damage reduced by 3<br></font>
         <font color=\'#000000\'>+6 to dexterity<br></font>
@@ -926,7 +926,7 @@
         <font color=\'#000000\'>25% faster hit recovery<br></font>
     ]]>
     </string>
-    <string name="rune_word_stone_option">
+    <string name="rune_word_stone_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+60% faster hit recovery<br></font>
         <font color=\'#cc0029\'>+250-290% enhanced defense (varies)<br></font>
@@ -939,7 +939,7 @@
         <font color=\'#000000\'>Level 16 Clay Golem (16 charges)<br></font>
     ]]>
     </string>
-    <string name="rune_word_strength_option">
+    <string name="rune_word_strength_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>35% enhanced damage<br></font>
         <font color=\'#000000\'>25% chance of crushing blow<br></font>
@@ -949,7 +949,7 @@
         <font color=\'#000000\'>+10 to vitality<br></font>
     ]]>
     </string>
-    <string name="rune_word_duress_option">
+    <string name="rune_word_duress_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>40% faster hit recover<br></font>
         <font color=\'#cc0029\'>+10-20% enhanced damage<br></font>
@@ -964,7 +964,7 @@
         <font color=\'#000000\'>Poison resist +15%<br></font>
     ]]>
     </string>
-    <string name="rune_word_treachery_option">
+    <string name="rune_word_treachery_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>5% chance to cast level 15 Fade when struck<br></font>
         <font color=\'#000000\'>25% chance to cast level 15 Venom on striking<br></font>
@@ -975,7 +975,7 @@
         <font color=\'#000000\'>50% extra gold from monsters<br></font>
     ]]>
     </string>
-    <string name="rune_word_faith_option">
+    <string name="rune_word_faith_option" formatted="false">
     <![CDATA[
         <font color=\'#cc0029\'>Level 12-15 Fanaticism aura when equipped<br></font>
         <font color=\'#cc0029\'>+1-2 all skills<br></font>
@@ -990,7 +990,7 @@
         <font color=\'#000000\'>75% extra gold from monsters<br></font>
     ]]>
     </string>
-    <string name="rune_word_venom_option">
+    <string name="rune_word_venom_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>Hit causes monsters to flee 25%<br></font>
         <font color=\'#000000\'>Prevent monster heal<br></font>
@@ -1001,7 +1001,7 @@
         <font color=\'#000000\'>+273 poison damage over 6 seconds<br></font>
     ]]>
     </string>
-    <string name="rune_word_law_bringer_option">
+    <string name="rune_word_law_bringer_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>20% chance to cast level 15 Decrepify on striking<br></font>
         <font color=\'#cc0029\'>Level 16-18 Sanctuary aura when equipped<br></font>
@@ -1015,7 +1015,7 @@
         <font color=\'#000000\'>75% extra gold from monsters<br></font>
     ]]>
     </string>
-    <string name="rune_word_wealth_option">
+    <string name="rune_word_wealth_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>300% extra gold from monsters<br></font>
         <font color=\'#000000\'>100% better chance of getting magic items<br></font>
@@ -1023,7 +1023,7 @@
         <font color=\'#000000\'>+10 to dexterity<br></font>
     ]]>
     </string>
-    <string name="rune_word_zephyr_option">
+    <string name="rune_word_zephyr_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+33% enhanced damage<br></font>
         <font color=\'#000000\'>+66 to attack rating<br></font>
@@ -1035,7 +1035,7 @@
         <font color=\'#000000\'>7% chance to cast level 1 Twister when struck<br></font>
     ]]>
     </string>
-    <string name="rune_word_white_option">
+    <string name="rune_word_white_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>Hit causes monster to flee 25%<br></font>
         <font color=\'#000000\'>+10 to vitality<br></font>
@@ -1048,7 +1048,7 @@
         <font color=\'#000000\'>+13 to mana<br></font>
     ]]>
     </string>
-    <string name="rune_word_wind_option">
+    <string name="rune_word_wind_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>10% chance to cast level 9 Tornado on striking<br></font>
         <font color=\'#000000\'>+20% faster run/walk<br></font>
@@ -1061,7 +1061,7 @@
         <font color=\'#000000\'>+1 to light radius<br></font>
     ]]>
     </string>
-    <string name="rune_word_prudence_option">
+    <string name="rune_word_prudence_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+25% faster hit recovery<br></font>
         <font color=\'#cc0029\'>+140-170% enhanced defense<br></font>

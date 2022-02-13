@@ -6,16 +6,11 @@ plugins {
 
 android {
     applyDefault()
-
-    defaultConfig {
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
 }
 
 dependencies {
     AndroidX.run {
         api(CORE_KTX)
-        api(APPCOMPAT)
         implementation(CORE_SPLASHSCREEN)
     }
 
