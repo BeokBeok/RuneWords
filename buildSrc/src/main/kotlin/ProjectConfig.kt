@@ -6,4 +6,5 @@ object ProjectConfig {
     const val HILT_ANDROID_GRADLE_PLUGIN =
         "com.google.dagger:hilt-android-gradle-plugin:${Hilt.VERSION}"
     const val FIREBASE_CRASHLYTICS_GRADLE = "com.google.firebase:firebase-crashlytics-gradle:2.8.1"
+    const val JAVAPOET = "com.squareup:javapoet:1.13.0"
 }
