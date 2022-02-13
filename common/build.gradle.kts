@@ -6,10 +6,6 @@ plugins {
 
 android {
     applyDefault()
-
-    defaultConfig {
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
 }
 
 dependencies {
