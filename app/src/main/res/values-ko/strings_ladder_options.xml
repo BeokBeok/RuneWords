@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="rune_word_pattern_option">
+    <string name="rune_word_pattern_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>막기 속도 +30%<br></font>
         <font color=\'#cc0029\'>피해 +40% ~ 80% 증가<br></font>
@@ -14,7 +14,7 @@
         <font color=\'#000000\'>모든 저항 +15<br></font>
     ]]>
     </string>
-    <string name="rune_word_wisdom_option">
+    <string name="rune_word_wisdom_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>관통 공격<br></font>
         <font color=\'#000000\'>명중률 보너스 20%<br></font>
@@ -27,7 +27,7 @@
         <font color=\'#000000\'>받은 피해의 15%만큼 마나 회복<br></font>
     ]]>
     </string>
-    <string name="rune_word_flickering_flame_option">
+    <string name="rune_word_flickering_flame_option" formatted="false">
     <![CDATA[
         <font color=\'#cc0029\'>장착 시 4~8 레벨 화염 저항 오라 적용<br></font>
         <font color=\'#000000\'>화염 기술 +3<br></font>
@@ -40,7 +40,7 @@
         <font color=\'#000000\'>독 지속시간 50% 감소<br></font>
     ]]>
     </string>
-    <string name="rune_word_plague_option">
+    <string name="rune_word_plague_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>타격 시 25% 확률로 15 레벨 맹독 확산 시전<br></font>
         <font color=\'#000000\'>피격 시 20% 확률로 12 레벨 저항 감소 시전<br></font>
@@ -54,7 +54,7 @@
         <font color=\'#000000\'>대상 빙결 +3<br></font>
     ]]>
     </string>
-    <string name="rune_word_mist_option">
+    <string name="rune_word_mist_option" formatted="false">
     <![CDATA[
         <font color=\'#cc0029\'>장착 시 8 ~ 12 레벨 집중 오라 효과 적용<br></font>
         <font color=\'#000000\'>모든 기술 +3<br></font>
@@ -69,7 +69,7 @@
         <font color=\'#000000\'>모든 저항 +40<br></font>
     ]]>
     </string>
-    <string name="rune_word_unbending_will_option">
+    <string name="rune_word_unbending_will_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>타격 시 18% 확률로 18 레벨 도발 시전<br></font>
         <font color=\'#000000\'>전투 기술 +3 (야만용사 전용)<br></font>
@@ -88,7 +88,7 @@
         <font color=\'#000000\'>착용 조건 -20%<br></font>
     ]]>
     </string>
-    <string name="rune_word_obsession_option">
+    <string name="rune_word_obsession_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>파괴 불가<br></font>
         <font color=\'#000000\'>피격 시 24% 확률로 10 레벨 약화 시전<br></font>
