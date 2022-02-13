@@ -1,6 +1,5 @@
 object AndroidX {
     const val CORE_KTX = "androidx.core:core-ktx:1.7.0"
-    const val APPCOMPAT =  "androidx.appcompat:appcompat:1.4.0"
     const val CORE_SPLASHSCREEN = "androidx.core:core-splashscreen:1.0.0-alpha02"
 }
 
