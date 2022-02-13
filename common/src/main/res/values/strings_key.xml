@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="admob_banner_app_key">ca-app-pub-1017540929895357/3347103164</string>
+    <string name="admob_banner_app_key" translatable="false">ca-app-pub-1017540929895357/3347103164</string>
+    <string name="admob_screen_app_key" translatable="false">ca-app-pub-1017540929895357/8974259310</string>
 </resources>
