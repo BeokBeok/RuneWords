@@ -4,7 +4,7 @@ object AndroidX {
 }
 
 object Google {
-    const val MATERIAL = "com.google.android.material:material:1.4.0"
+    const val MATERIAL = "com.google.android.material:material:1.5.0"
     const val PLAY_SERVICES_TASKS = "com.google.android.gms:play-services-tasks:18.0.1"
     const val PLAY_SERVICES_ADS = "com.google.android.gms:play-services-ads:20.5.0"
     const val PLAY_CORE_KTX = "com.google.android.play:core-ktx:1.8.1"
@@ -18,11 +18,11 @@ object JUnit {
 }
 
 object AssertJ {
-    const val CORE = "org.assertj:assertj-core:3.21.0"
+    const val CORE = "org.assertj:assertj-core:3.22.0"
 }
 
 object Compose {
-    const val VERSION = "1.0.5"
+    const val VERSION = "1.1.0"
 
     const val UI = "androidx.compose.ui:ui:$VERSION"
     const val MATERIAL = "androidx.compose.material:material:$VERSION"
@@ -33,7 +33,7 @@ object Compose {
 }
 
 object Firebase {
-    const val PLATFORM = "com.google.firebase:firebase-bom:29.0.3"
+    const val PLATFORM = "com.google.firebase:firebase-bom:29.1.0"
     const val ANALYTICS_KTX = "com.google.firebase:firebase-analytics-ktx"
     const val FIRESTORE_KTX = "com.google.firebase:firebase-firestore-ktx"
     const val CRASHLYTICS_KTX = "com.google.firebase:firebase-crashlytics-ktx"
@@ -44,7 +44,7 @@ object Timber {
 }
 
 object Hilt {
-    const val VERSION = "2.39.1"
+    const val VERSION = "2.40.5"
 
     const val ANDROID = "com.google.dagger:hilt-android:$VERSION"
     const val COMPILER = "com.google.dagger:hilt-compiler:$VERSION"
@@ -59,4 +59,3 @@ object Coroutines {
 object MockK {
     const val MOCKK = "io.mockk:mockk:1.12.1"
 }
-
