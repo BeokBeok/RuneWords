@@ -1,7 +1,7 @@
 package com.beok.runewords.combination.di
 
-import com.beok.runewords.combination.data.RuneWordsRepository
-import com.beok.runewords.combination.domain.RuneWordsRepositoryImpl
+import com.beok.runewords.combination.domain.RuneWordsRepository
+import com.beok.runewords.combination.data.RuneWordsRepositoryImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

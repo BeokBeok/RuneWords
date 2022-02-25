@@ -1,6 +1,5 @@
 package com.beok.runewords.combination.domain
 
-import com.beok.runewords.combination.data.RuneWordsRepository
 import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test

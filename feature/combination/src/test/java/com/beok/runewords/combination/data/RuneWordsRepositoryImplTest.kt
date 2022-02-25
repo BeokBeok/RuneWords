@@ -1,10 +1,10 @@
-package com.beok.runewords.combination.domain
+package com.beok.runewords.combination.data
 
-import com.beok.runewords.combination.data.RuneWordsRepository
 import com.beok.runewords.combination.data.remote.RuneWordsRemoteDataSource
+import com.beok.runewords.combination.domain.RuneWordsRepository
 import com.beok.runewords.common.util.toDto
 import kotlinx.coroutines.runBlocking
-import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 
 internal class RuneWordsRepositoryImplTest {
@@ -20,6 +20,6 @@ internal class RuneWordsRepositoryImplTest {
             .toDto()
         val actual = repository.searchByRune(rune = rune)
 
-        assertEquals(expected, actual)
+        Assertions.assertEquals(expected, actual)
     }
 }
