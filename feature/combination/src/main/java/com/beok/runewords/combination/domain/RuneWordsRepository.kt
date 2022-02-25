@@ -1,4 +1,4 @@
-package com.beok.runewords.combination.data
+package com.beok.runewords.combination.domain
 
 import com.beok.runewords.combination.domain.model.RuneWords
 
