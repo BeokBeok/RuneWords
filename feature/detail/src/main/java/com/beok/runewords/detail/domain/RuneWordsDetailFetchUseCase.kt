@@ -2,7 +2,7 @@ package com.beok.runewords.detail.domain
 
 import com.beok.runewords.detail.domain.model.RuneWordsDetail
 
-interface RuneWordsDetailFetchUseCase {
+internal interface RuneWordsDetailFetchUseCase {
 
     suspend fun execute(name: String): Result<RuneWordsDetail>
 

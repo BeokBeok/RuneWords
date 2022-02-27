@@ -2,7 +2,7 @@ package com.beok.runewords.home.inapp
 
 import com.google.android.play.core.appupdate.AppUpdateInfo
 
-sealed class InAppUpdateState {
+internal sealed class InAppUpdateState {
 
     object None : InAppUpdateState()
 
