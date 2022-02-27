@@ -3,7 +3,7 @@ package com.beok.runewords.detail.presenter.vo
 import com.beok.runewords.common.model.Rune
 import com.beok.runewords.detail.domain.model.RuneWordsDetail
 
-data class RuneWordsVO(
+internal data class RuneWordsVO(
     val name: String = "",
     val runeCombination: List<Rune> = emptyList(),
     val type: List<String> = emptyList(),

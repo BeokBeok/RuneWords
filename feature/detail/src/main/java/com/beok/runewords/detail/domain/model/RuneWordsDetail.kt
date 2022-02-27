@@ -1,6 +1,6 @@
 package com.beok.runewords.detail.domain.model
 
-data class RuneWordsDetail(
+internal data class RuneWordsDetail(
     val name: String,
     val runeCombination: List<String>,
     val type: List<String>,
