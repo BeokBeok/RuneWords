@@ -19,6 +19,7 @@ import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.android.play.core.install.InstallStateUpdatedListener
+import com.google.android.play.core.install.model.AppUpdateType
 import com.google.android.play.core.install.model.InstallStatus
 import com.google.firebase.analytics.FirebaseAnalytics
 import dagger.hilt.android.AndroidEntryPoint
@@ -47,8 +48,13 @@ internal class HomeActivity : AppCompatActivity() {
         setupSplashScreen()
         setContent()
         setupListener()
-        checkUpdatable()
         observeInAppUpdate()
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        checkUpdatable()
     }
 
     override fun onDestroy() {
@@ -111,7 +117,11 @@ internal class HomeActivity : AppCompatActivity() {
                         .unregisterInstallStateUpdatedListener(installStateUpdatedListener)
                 }
                 is InAppUpdateState.Possible -> {
-                    inAppUpdateViewModel.registerForHome(appUpdateInfo = state.info, target = this)
+                    inAppUpdateViewModel.registerForHome(
+                        appUpdateInfo = state.info,
+                        appUpdateType = AppUpdateType.IMMEDIATE,
+                        target = this
+                    )
                 }
                 InAppUpdateState.Complete -> {
                     analytics.logEvent(TrackingConstants.InAppUpdate.INSTALL, bundleOf())

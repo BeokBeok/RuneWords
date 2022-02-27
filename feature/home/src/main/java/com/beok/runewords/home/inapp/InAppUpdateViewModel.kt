@@ -17,17 +17,22 @@ internal class InAppUpdateViewModel @Inject constructor(
     private val inAppUpdateManager: AppUpdateManager
 ) : ViewModel() {
 
-    private var _state = MutableLiveData<InAppUpdateState>(InAppUpdateState.None)
+    private val _state = MutableLiveData<InAppUpdateState>(InAppUpdateState.None)
     val state: LiveData<InAppUpdateState> get() = _state
 
     fun checkAppUpdatable() {
         inAppUpdateManager.appUpdateInfo
             .addOnSuccessListener { appUpdateInfo ->
                 when {
+                    appUpdateInfo.updateAvailability() ==
+                        UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS -> {
+                            _state.value = InAppUpdateState.Possible(info = appUpdateInfo)
+                        }
                     appUpdateInfo.updateAvailability() != UpdateAvailability.UPDATE_AVAILABLE -> {
                         _state.value = InAppUpdateState.Impossible
                     }
-                    appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.FLEXIBLE) -> {
+                    appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.FLEXIBLE) ||
+                    appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE) -> {
                         _state.value = InAppUpdateState.Possible(info = appUpdateInfo)
                     }
                 }
