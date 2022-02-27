@@ -1,9 +1,7 @@
 package com.beok.runewords.home
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -67,10 +65,6 @@ internal class HomeActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (requestCode != InAppUpdateViewModel.REQ_IN_APP_UPDATE) return
-        if (resultCode != Activity.RESULT_OK) {
-            Toast.makeText(this, getString(R.string.cancel_update), Toast.LENGTH_SHORT)
-                .show()
-        }
     }
 
     private fun setupSplashScreen() {
