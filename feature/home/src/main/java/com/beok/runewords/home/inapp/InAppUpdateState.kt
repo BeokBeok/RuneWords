@@ -9,8 +9,4 @@ internal sealed class InAppUpdateState {
     object Impossible : InAppUpdateState()
 
     data class Possible(val info: AppUpdateInfo) : InAppUpdateState()
-
-    object Complete : InAppUpdateState()
-
-    object Downloaded : InAppUpdateState()
 }
