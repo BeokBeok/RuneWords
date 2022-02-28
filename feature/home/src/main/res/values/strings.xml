@@ -1,9 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="title_rune_list">Rune list</string>
-
-    <string name="cancel_update">Update canceled</string>
-    <string name="updating">Updating</string>
-    <string name="install">Setup</string>
-    <string name="complete_download_for_update">The updated version of the app has been downloaded.</string>
 </resources>
