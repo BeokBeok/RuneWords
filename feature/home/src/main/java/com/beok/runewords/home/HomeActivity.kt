@@ -85,10 +85,6 @@ internal class HomeActivity : AppCompatActivity() {
                         bundleOf(TrackingConstants.Params.RUNE_NAME to runeName)
                     )
                 },
-                inAppUpdateState = inAppUpdateViewModel.state
-                    .observeAsState(initial = InAppUpdateState.None)
-                    .value,
-                updateAction = inAppUpdateViewModel::installAndRestart
             )
         }
     }
