@@ -108,4 +108,5 @@
     <string name="wand">Wand</string>
     <string name="club">Club</string>
     <string name="melee_weapon">Melee Weapon</string>
+    <string name="spear">Spear</string>
 </resources>

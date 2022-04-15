@@ -42,7 +42,7 @@ internal class HomeActivity : AppCompatActivity() {
     }
 
     private fun setupSplashScreen() {
-        installSplashScreen().setKeepVisibleCondition {
+        installSplashScreen().setKeepOnScreenCondition {
             MobileAds.initialize(this)
             setupScreenAd()
             false

@@ -108,4 +108,5 @@
     <string name="wand">완드</string>
     <string name="club">클럽</string>
     <string name="melee_weapon">근접 무기</string>
+    <string name="spear">창</string>
 </resources>
