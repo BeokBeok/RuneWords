@@ -1,6 +1,6 @@
 object AndroidX {
     const val CORE_KTX = "androidx.core:core-ktx:1.7.0"
-    const val CORE_SPLASHSCREEN = "androidx.core:core-splashscreen:1.0.0-alpha02"
+    const val CORE_SPLASHSCREEN = "androidx.core:core-splashscreen:1.0.0-beta02"
 }
 
 object Google {
@@ -22,7 +22,7 @@ object AssertJ {
 }
 
 object Compose {
-    const val VERSION = "1.1.0"
+    const val VERSION = "1.1.1"
 
     const val UI = "androidx.compose.ui:ui:$VERSION"
     const val MATERIAL = "androidx.compose.material:material:$VERSION"
@@ -33,7 +33,7 @@ object Compose {
 }
 
 object Firebase {
-    const val PLATFORM = "com.google.firebase:firebase-bom:29.1.0"
+    const val PLATFORM = "com.google.firebase:firebase-bom:29.3.0"
     const val ANALYTICS_KTX = "com.google.firebase:firebase-analytics-ktx"
     const val FIRESTORE_KTX = "com.google.firebase:firebase-firestore-ktx"
     const val CRASHLYTICS_KTX = "com.google.firebase:firebase-crashlytics-ktx"
@@ -44,18 +44,18 @@ object Timber {
 }
 
 object Hilt {
-    const val VERSION = "2.40.5"
+    const val VERSION = "2.41"
 
     const val ANDROID = "com.google.dagger:hilt-android:$VERSION"
     const val COMPILER = "com.google.dagger:hilt-compiler:$VERSION"
 }
 
 object Coroutines {
-    private const val VERSION = "1.6.0"
+    private const val VERSION = "1.6.1"
 
     const val CORE = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$VERSION"
 }
 
 object MockK {
-    const val MOCKK = "io.mockk:mockk:1.12.1"
+    const val MOCKK = "io.mockk:mockk:1.12.3"
 }
