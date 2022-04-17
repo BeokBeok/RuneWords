@@ -87,11 +87,11 @@ internal object ActivityCombinationView {
     ) {
         LazyColumn(modifier = Modifier.fillMaxSize()) {
             items(runeWords) { item ->
-                if (context.resourceIDByName(item.name) != 0) {
+                if (context.resourceIDByName(item.name) > 0) {
                     val isLadder = stringArrayResource(id = R.array.ladder_rune_words)
                         .contains(item.name)
                     var runeWordsName =
-                        stringResource(id = context.resourceIDByName(item.name) ?: return@items)
+                        stringResource(id = context.resourceIDByName(item.name))
                     if (isLadder) {
                         runeWordsName = stringResource(id = R.string.ladder_only, runeWordsName)
                     }

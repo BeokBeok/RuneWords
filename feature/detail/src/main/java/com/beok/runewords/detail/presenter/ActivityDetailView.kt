@@ -132,12 +132,12 @@ internal object ActivityDetailView {
                     )
                     textAlignment = View.TEXT_ALIGNMENT_CENTER
                     setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f)
-                    text = Html.fromHtml(
-                        context.getString(
-                            context.resourceIDByName(name = info.option) ?: return@apply
-                        ),
-                        Html.FROM_HTML_MODE_COMPACT
-                    )
+                    text = if (context.resourceIDByName(name = info.option) > 0) {
+                        Html.fromHtml(
+                           context.getString(context.resourceIDByName(name = info.option)),
+                            Html.FROM_HTML_MODE_COMPACT
+                        )
+                    } else ""
                 }
             }
         )
@@ -179,11 +179,8 @@ internal object ActivityDetailView {
         Headline(resourceID = R.string.title_type)
         Text(
             text = info.type
-                .map { typeName ->
-                    context.resourceIDByName(name = typeName)?.let { id ->
-                        stringResource(id = id)
-                    }
-                }
+                .filter { context.resourceIDByName(name = it) > 0 }
+                .map { stringResource(id = context.resourceIDByName(it)) }
                 .joinToString(),
             modifier = Modifier
                 .fillMaxWidth()
@@ -197,9 +194,9 @@ internal object ActivityDetailView {
     private fun DetailTopBar(context: Context, runeWordsName: String) {
         TopAppBar(modifier = Modifier.fillMaxWidth()) {
             Text(
-                text = stringResource(
-                    id = context.resourceIDByName(name = runeWordsName) ?: return@TopAppBar
-                ),
+                text = if (context.resourceIDByName(name = runeWordsName) > 0) {
+                    stringResource(id = context.resourceIDByName(name = runeWordsName))
+                } else "",
                 modifier = Modifier.padding(start = 12.dp),
                 fontSize = 20.sp
             )
