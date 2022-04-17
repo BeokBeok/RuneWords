@@ -12,7 +12,8 @@ internal interface RuneWordsDetailRepository {
             name = "call_to_arms",
             runeCombination = listOf("amn", "ral", "mal", "ist", "ohm"),
             type = listOf("all_weapons"),
-            option = "rune_word_call_to_arms_option"
+            option = "rune_word_call_to_arms_option",
+            levelLimit = 57
         )
     }
 }

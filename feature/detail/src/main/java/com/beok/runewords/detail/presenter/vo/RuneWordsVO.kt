@@ -7,7 +7,8 @@ internal data class RuneWordsVO(
     val name: String = "",
     val runeCombination: List<Rune> = emptyList(),
     val type: List<String> = emptyList(),
-    val option: String = ""
+    val option: String = "",
+    val levelLimit: Int = 1
 ) {
 
     fun isEmpty() = name.isEmpty() && runeCombination.isEmpty() && type.isEmpty()
@@ -18,7 +19,8 @@ internal data class RuneWordsVO(
             name = dto.name,
             runeCombination = dto.runeCombination.mapNotNull(Rune::findByName),
             type = dto.type,
-            option = dto.option
+            option = dto.option,
+            levelLimit = dto.levelLimit
         )
     }
 }
