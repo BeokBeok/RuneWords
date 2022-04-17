@@ -145,7 +145,7 @@ internal object ActivityDetailView {
 
     @Composable
     private fun RuneWordsCombination(info: RuneWordsVO) {
-        Headline(resourceID = R.string.title_rune_words)
+        Headline(resourceID = R.string.title_rune_words, formatArgs = arrayOf(info.levelLimit))
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -204,9 +204,9 @@ internal object ActivityDetailView {
     }
 
     @Composable
-    private fun Headline(resourceID: Int) {
+    private fun Headline(resourceID: Int, vararg formatArgs: Any) {
         Text(
-            text = stringResource(id = resourceID),
+            text = stringResource(id = resourceID, formatArgs = formatArgs),
             modifier = Modifier
                 .fillMaxWidth()
                 .background(color = Color.LightGray)

@@ -7,13 +7,15 @@ internal data class RuneWordsDetailResponse(
     val name: String = "",
     val rune_combination: List<String> = emptyList(),
     val type: List<String> = emptyList(),
-    val option: String = ""
+    val option: String = "",
+    val level_limit: Int = 1
 ) : DataToDomainMapper<RuneWordsDetail> {
 
     override fun toDto(): RuneWordsDetail = RuneWordsDetail(
         name = name,
         runeCombination = rune_combination,
         type = type,
-        option = option
+        option = option,
+        levelLimit = level_limit
     )
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="title_type">Type</string>
-    <string name="title_rune_words">RuneWords</string>
+    <string name="title_rune_words">RuneWords[Req Level %d]</string>
     <string name="title_options">Option</string>
 </resources>
