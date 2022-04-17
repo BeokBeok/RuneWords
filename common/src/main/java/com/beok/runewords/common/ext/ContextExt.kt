@@ -19,4 +19,4 @@ fun Context.startActivity(
 
 fun Context.resourceIDByName(name: String) = runCatching {
     resources.getIdentifier(name, "string", packageName)
-}.getOrNull()
+}.getOrDefault(0)
