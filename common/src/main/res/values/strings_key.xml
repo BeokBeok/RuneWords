@@ -2,4 +2,6 @@
 <resources>
     <string name="admob_banner_app_key" translatable="false">ca-app-pub-1017540929895357/3347103164</string>
     <string name="admob_screen_app_key" translatable="false">ca-app-pub-1017540929895357/8974259310</string>
+
+    <string name="test_admob_screen_app_key" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
 </resources>
