@@ -1,6 +1,7 @@
 package com.beok.runewords.detail.presenter
 
 import android.content.Context
+import android.content.Intent
 import android.text.Html
 import android.util.TypedValue
 import android.view.View
@@ -167,7 +168,8 @@ internal object ActivityDetailView {
                         .clickable {
                             context.startActivity(
                                 className = CLASS_NAME_COMBINATION,
-                                bundle = bundleOf(BundleKeyConstants.RUNE_NAME to it)
+                                bundle = bundleOf(BundleKeyConstants.RUNE_NAME to it),
+                                intentFlags = Intent.FLAG_ACTIVITY_CLEAR_TOP
                             )
                         },
                     horizontalAlignment = Alignment.CenterHorizontally,
