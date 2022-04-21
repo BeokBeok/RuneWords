@@ -8,11 +8,13 @@ import timber.log.Timber
 
 fun Context.startActivity(
     className: String,
-    bundle: Bundle = bundleOf()
+    bundle: Bundle = bundleOf(),
+    intentFlags: Int? = null
 ) = runCatching {
     startActivity(
         Intent(this, Class.forName(className)).apply {
             if (!bundle.isEmpty) putExtras(bundle)
+            if (intentFlags != null) flags = intentFlags
         }
     )
 }.onFailure(Timber::d)
