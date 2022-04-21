@@ -85,7 +85,13 @@ internal class HomeActivity : AppCompatActivity() {
         MobileAds.initialize(this)
         InterstitialAd.load(
             this,
-            getString(R.string.admob_screen_app_key),
+            getString(
+                if (BuildConfig.DEBUG) {
+                    R.string.test_admob_screen_app_key
+                } else {
+                    R.string.admob_screen_app_key
+                }
+            ),
             AdRequest.Builder().build(),
             object : InterstitialAdLoadCallback() {
                 override fun onAdFailedToLoad(loadAdError: LoadAdError) {
