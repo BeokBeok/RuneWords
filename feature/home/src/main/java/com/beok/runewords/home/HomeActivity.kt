@@ -31,7 +31,6 @@ internal class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setupSplashScreen()
-        setContent()
         observeInAppUpdate()
     }
 
@@ -43,7 +42,6 @@ internal class HomeActivity : AppCompatActivity() {
 
     private fun setupSplashScreen() {
         installSplashScreen().setKeepOnScreenCondition {
-            MobileAds.initialize(this)
             setupScreenAd()
             false
         }
@@ -84,14 +82,18 @@ internal class HomeActivity : AppCompatActivity() {
     }
 
     private fun setupScreenAd() {
+        MobileAds.initialize(this)
         InterstitialAd.load(
             this,
             getString(R.string.admob_screen_app_key),
             AdRequest.Builder().build(),
             object : InterstitialAdLoadCallback() {
-                override fun onAdFailedToLoad(loadAdError: LoadAdError) = Unit
+                override fun onAdFailedToLoad(loadAdError: LoadAdError) {
+                    setContent()
+                }
 
                 override fun onAdLoaded(ad: InterstitialAd) {
+                    setContent()
                     ad.show(this@HomeActivity)
                 }
             }
