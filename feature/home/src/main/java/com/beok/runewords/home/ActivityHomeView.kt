@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -27,7 +28,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.core.os.bundleOf
 import com.beok.runewords.common.BundleKeyConstants
 import com.beok.runewords.common.ext.startActivity
@@ -77,15 +77,9 @@ internal object ActivityHomeView {
 
     @Composable
     private fun HomeContent(context: Context, runeClickTracking: (String) -> Unit) {
-        ConstraintLayout(modifier = Modifier.fillMaxSize()) {
-            val (content, admob) = createRefs()
+        Box(modifier = Modifier.fillMaxSize()) {
             LazyVerticalGrid(
-                modifier = Modifier.constrainAs(content) {
-                    top.linkTo(parent.top)
-                    start.linkTo(parent.start)
-                    end.linkTo(parent.end)
-                    bottom.linkTo(admob.top)
-                },
+                modifier = Modifier.fillMaxSize(),
                 cells = GridCells.Adaptive(minSize = 128.dp)
             ) {
                 items(Rune.all()) { item ->
