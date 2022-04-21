@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -35,7 +36,10 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
+import androidx.core.os.bundleOf
+import com.beok.runewords.common.BundleKeyConstants
 import com.beok.runewords.common.ext.resourceIDByName
+import com.beok.runewords.common.ext.startActivity
 import com.beok.runewords.common.view.ContentLoading
 import com.beok.runewords.detail.R
 import com.beok.runewords.detail.presenter.vo.RuneWordsVO
@@ -44,6 +48,9 @@ import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.AdView
 
 internal object ActivityDetailView {
+
+    private const val CLASS_NAME_COMBINATION =
+        "com.beok.runewords.combination.presenter.CombinationActivity"
 
     @Composable
     fun Layout(
@@ -96,7 +103,7 @@ internal object ActivityDetailView {
                     .verticalScroll(rememberScrollState())
             ) {
                 RuneWordsType(info = info, context = context)
-                RuneWordsCombination(info = info)
+                RuneWordsCombination(info = info, context = context)
                 RuneWordsOption(info = info)
             }
             AndroidView(
@@ -134,7 +141,7 @@ internal object ActivityDetailView {
                     setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f)
                     text = if (context.resourceIDByName(name = info.option) > 0) {
                         Html.fromHtml(
-                           context.getString(context.resourceIDByName(name = info.option)),
+                            context.getString(context.resourceIDByName(name = info.option)),
                             Html.FROM_HTML_MODE_COMPACT
                         )
                     } else ""
@@ -144,7 +151,7 @@ internal object ActivityDetailView {
     }
 
     @Composable
-    private fun RuneWordsCombination(info: RuneWordsVO) {
+    private fun RuneWordsCombination(info: RuneWordsVO, context: Context) {
         Headline(resourceID = R.string.title_rune_words, formatArgs = arrayOf(info.levelLimit))
         Row(
             modifier = Modifier
@@ -155,8 +162,15 @@ internal object ActivityDetailView {
         ) {
             info.runeCombination.forEach {
                 Column(
-                    modifier = Modifier.padding(horizontal = 8.dp),
-                    horizontalAlignment = Alignment.CenterHorizontally
+                    modifier = Modifier
+                        .padding(horizontal = 8.dp)
+                        .clickable {
+                            context.startActivity(
+                                className = CLASS_NAME_COMBINATION,
+                                bundle = bundleOf(BundleKeyConstants.RUNE_NAME to it)
+                            )
+                        },
+                    horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
                     Image(
                         painter = painterResource(id = it.iconResourceID),
