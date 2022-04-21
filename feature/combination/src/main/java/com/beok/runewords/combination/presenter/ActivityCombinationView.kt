@@ -1,6 +1,7 @@
 package com.beok.runewords.combination.presenter
 
 import android.content.Context
+import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -104,7 +105,8 @@ internal object ActivityCombinationView {
                                     className = CLASSNAME_DETAIL,
                                     bundle = bundleOf(
                                         BundleKeyConstants.RUNE_WORDS_NAME to item.name
-                                    )
+                                    ),
+                                    intentFlags = Intent.FLAG_ACTIVITY_CLEAR_TOP
                                 )
                                 runeWordClickTracking(item.name)
                             }
