@@ -1,4 +1,4 @@
-package com.beok.runewords.detail.presenter
+package com.beok.runewords.detail.presentation
 
 import android.content.Context
 import android.content.Intent
@@ -43,7 +43,7 @@ import com.beok.runewords.common.ext.resourceIDByName
 import com.beok.runewords.common.ext.startActivity
 import com.beok.runewords.common.view.ContentLoading
 import com.beok.runewords.detail.R
-import com.beok.runewords.detail.presenter.vo.RuneWordsVO
+import com.beok.runewords.detail.presentation.vo.RuneWordsVO
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.AdView
@@ -51,7 +51,7 @@ import com.google.android.gms.ads.AdView
 internal object ActivityDetailView {
 
     private const val CLASS_NAME_COMBINATION =
-        "com.beok.runewords.combination.presenter.CombinationActivity"
+        "com.beok.runewords.combination.presentation.CombinationActivity"
 
     @Composable
     fun Layout(

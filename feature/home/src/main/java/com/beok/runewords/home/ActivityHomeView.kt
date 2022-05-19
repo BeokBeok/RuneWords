@@ -1,6 +1,7 @@
 package com.beok.runewords.home
 
 import android.content.Context
+import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -36,7 +37,7 @@ import com.beok.runewords.common.model.Rune
 internal object ActivityHomeView {
 
     private const val CLASSNAME_COMBINATION =
-        "com.beok.runewords.combination.presenter.CombinationActivity"
+        "com.beok.runewords.combination.presentation.CombinationActivity"
 
     @Composable
     fun Layout(
@@ -93,7 +94,8 @@ internal object ActivityHomeView {
                                     className = CLASSNAME_COMBINATION,
                                     bundle = bundleOf(
                                         BundleKeyConstants.RUNE_NAME to Rune.findByName(item.name)
-                                    )
+                                    ),
+                                    intentFlags = Intent.FLAG_ACTIVITY_CLEAR_TOP
                                 )
                                 runeClickTracking(item.name)
                             }

@@ -1,4 +1,4 @@
-package com.beok.runewords.combination.presenter
+package com.beok.runewords.combination.presentation
 
 import android.content.Context
 import android.content.Intent
@@ -36,7 +36,7 @@ import com.beok.runewords.common.view.ContentLoading
 
 internal object ActivityCombinationView {
 
-    private const val CLASSNAME_DETAIL = "com.beok.runewords.detail.presenter.DetailActivity"
+    private const val CLASSNAME_DETAIL = "com.beok.runewords.detail.presentation.DetailActivity"
 
     @Composable
     fun Layout(

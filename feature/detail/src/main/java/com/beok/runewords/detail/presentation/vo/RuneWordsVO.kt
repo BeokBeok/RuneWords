@@ -1,4 +1,4 @@
-package com.beok.runewords.detail.presenter.vo
+package com.beok.runewords.detail.presentation.vo
 
 import com.beok.runewords.common.model.Rune
 import com.beok.runewords.detail.domain.model.RuneWordsDetail

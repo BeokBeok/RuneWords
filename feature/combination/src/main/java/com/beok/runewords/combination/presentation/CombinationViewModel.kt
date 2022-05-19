@@ -1,4 +1,4 @@
-package com.beok.runewords.combination.presenter
+package com.beok.runewords.combination.presentation
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
