@@ -1,6 +1,7 @@
 package com.beok.runewords.home
 
 import android.content.Context
+import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -93,7 +94,8 @@ internal object ActivityHomeView {
                                     className = CLASSNAME_COMBINATION,
                                     bundle = bundleOf(
                                         BundleKeyConstants.RUNE_NAME to Rune.findByName(item.name)
-                                    )
+                                    ),
+                                    intentFlags = Intent.FLAG_ACTIVITY_CLEAR_TOP
                                 )
                                 runeClickTracking(item.name)
                             }
