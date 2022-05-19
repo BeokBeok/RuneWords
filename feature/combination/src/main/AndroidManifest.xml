@@ -8,7 +8,7 @@
     <application tools:ignore=",AllowBackup,MissingApplicationIcon">
 
         <activity
-            android:name=".presenter.CombinationActivity"
+            android:name=".presentation.CombinationActivity"
             android:theme="@style/Theme.RuneWords" />
 
     </application>
