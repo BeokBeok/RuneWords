@@ -37,7 +37,7 @@ import com.beok.runewords.common.model.Rune
 internal object ActivityHomeView {
 
     private const val CLASSNAME_COMBINATION =
-        "com.beok.runewords.combination.presenter.CombinationActivity"
+        "com.beok.runewords.combination.presentation.CombinationActivity"
 
     @Composable
     fun Layout(

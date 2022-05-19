@@ -1,4 +1,4 @@
-package com.beok.runewords.detail.presenter
+package com.beok.runewords.detail.presentation
 
 import android.os.Bundle
 import androidx.activity.compose.setContent

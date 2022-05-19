@@ -1,4 +1,4 @@
-package com.beok.runewords.detail.presenter
+package com.beok.runewords.detail.presentation
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -6,7 +6,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.beok.runewords.detail.domain.RuneWordsDetailFetchUseCase
-import com.beok.runewords.detail.presenter.vo.RuneWordsVO
+import com.beok.runewords.detail.presentation.vo.RuneWordsVO
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.launch
