@@ -7,34 +7,21 @@ plugins {
 
 android {
     applyDefault()
-
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = Compose.VERSION
-    }
 }
 
 dependencies {
     implementation(project(":common"))
 
-    implementation(AndroidX.CORE_SPLASHSCREEN)
+    implementation(libs.core.splashscreen)
 
-    Google.run {
-        implementation(PLAY_SERVICES_ADS)
-        implementation(PLAY_CORE_KTX)
-    }
+    implementation(libs.play.services.ads)
+    implementation(libs.play.core.ktx)
 
-    Firebase.run {
-        implementation(platform(PLATFORM))
-        implementation(ANALYTICS_KTX)
-    }
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics.ktx)
 
-    Hilt.run {
-        implementation(ANDROID)
-        kapt(COMPILER)
-    }
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
 }
 
 tasks {

@@ -20,7 +20,7 @@ fun BaseAppModuleExtension.applyDefault() {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = Compose.VERSION
+        kotlinCompilerExtensionVersion = "1.1.1"
     }
 }
 
@@ -41,6 +41,6 @@ fun LibraryExtension.applyDefault() {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = Compose.VERSION
+        kotlinCompilerExtensionVersion = "1.1.1"
     }
 }

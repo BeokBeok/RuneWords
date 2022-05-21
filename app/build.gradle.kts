@@ -32,17 +32,13 @@ dependencies {
     implementation(project(":feature:combination"))
     implementation(project(":feature:detail"))
 
-    Firebase.run {
-        implementation(platform(PLATFORM))
-        implementation(ANALYTICS_KTX)
-        implementation(FIRESTORE_KTX)
-        implementation(CRASHLYTICS_KTX)
-    }
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics.ktx)
+    implementation(libs.firebase.firestore.ktx)
+    implementation(libs.firebase.crashlytics.ktx)
 
-    Hilt.run {
-        implementation(ANDROID)
-        kapt(COMPILER)
-    }
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
 
-    implementation(Google.PLAY_CORE_KTX)
+    implementation(libs.play.core.ktx)
 }
