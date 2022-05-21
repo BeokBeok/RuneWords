@@ -18,6 +18,7 @@ android {
 dependencies {
     implementation(project(":common"))
 
+    implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics.ktx)
     implementation(libs.firebase.firestore.ktx)
 

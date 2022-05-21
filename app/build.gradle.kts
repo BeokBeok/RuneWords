@@ -32,6 +32,7 @@ dependencies {
     implementation(project(":feature:combination"))
     implementation(project(":feature:detail"))
 
+    implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics.ktx)
     implementation(libs.firebase.firestore.ktx)
     implementation(libs.firebase.crashlytics.ktx)

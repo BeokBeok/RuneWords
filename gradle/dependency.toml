@@ -10,9 +10,7 @@ assertJ = "3.22.0"
 compose = "1.1.1"
 activityCompose = "1.4.0"
 constraintLayoutCompose = "1.0.0-rc02"
-firebaseAnalyticsKtx = "21.0.0"
-firebaseFirestoreKtx = "24.1.2"
-firebaseCrashlyticsKtx = "18.2.10"
+firebase = "30.0.1"
 timber = "5.0.1"
 hilt = "2.41"
 coroutines = "1.6.1"
@@ -45,9 +43,10 @@ activity-compose = { module = "androidx.activity:activity-compose", version.ref 
 constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "constraintLayoutCompose" }
 
 # firebase
-firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx", version.ref = "firebaseAnalyticsKtx" }
-firebase-firestore-ktx = { module = "com.google.firebase:firebase-firestore-ktx", version.ref = "firebaseFirestoreKtx" }
-firebase-crashlytics-ktx = { module = "com.google.firebase:firebase-crashlytics-ktx", version.ref = "firebaseCrashlyticsKtx" }
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebase" }
+firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx" }
+firebase-firestore-ktx = { module = "com.google.firebase:firebase-firestore-ktx" }
+firebase-crashlytics-ktx = { module = "com.google.firebase:firebase-crashlytics-ktx" }
 
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 
