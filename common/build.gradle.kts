@@ -9,34 +9,20 @@ android {
 }
 
 dependencies {
-    AndroidX.run {
-        api(CORE_KTX)
-        implementation(CORE_SPLASHSCREEN)
-    }
+    api(libs.core.ktx)
+    implementation(libs.core.splashscreen)
 
-    Google.run {
-        api(MATERIAL)
-        implementation(PLAY_SERVICES_TASKS)
-    }
+    api(libs.material)
+    implementation(libs.play.services.tasks)
 
-    Compose.run {
-        api(UI)
-        api(MATERIAL)
-        api(UI_TOOLING)
-        api(RUNTIME_LIVEDATA)
-        api(ACTIVITY)
-        api(CONSTRAINT_LAYOUT)
-    }
+    api(libs.bundles.compose)
 
-    api(Timber.TIMBER)
-    api(Coroutines.CORE)
+    api(libs.timber)
+    api(libs.kotlinx.coroutines.core)
 
-    JUnit.run {
-        testImplementation(JUPITER_API)
-        testRuntimeOnly(JUPITER_ENGINE)
-    }
-
-    testImplementation(AssertJ.CORE)
+    testImplementation(libs.junit.jupiter.api)
+    testRuntimeOnly(libs.junit.jupiter.engine)
+    testImplementation(libs.assertj.core)
 }
 
 tasks {

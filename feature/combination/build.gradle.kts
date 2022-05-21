@@ -10,12 +10,6 @@ plugins {
 android {
     applyDefault()
 
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = Compose.VERSION
-    }
     testOptions {
         unitTests.isReturnDefaultValues = true
     }
@@ -24,22 +18,15 @@ android {
 dependencies {
     implementation(project(":common"))
 
-    Firebase.run {
-        implementation(platform(PLATFORM))
-        implementation(ANALYTICS_KTX)
-        implementation(FIRESTORE_KTX)
-    }
+    implementation(libs.firebase.analytics.ktx)
+    implementation(libs.firebase.firestore.ktx)
 
-    Hilt.run {
-        implementation(ANDROID)
-        kapt(COMPILER)
-    }
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
 
-    JUnit.run {
-        testImplementation(JUPITER_API)
-        testRuntimeOnly(JUPITER_ENGINE)
-    }
+    testImplementation(libs.junit.jupiter.api)
+    testImplementation(libs.assertj.core)
+    testRuntimeOnly(libs.junit.jupiter.engine)
 
-    testImplementation(AssertJ.CORE)
-    testImplementation(MockK.MOCKK)
+    testImplementation(libs.mockk)
 }
