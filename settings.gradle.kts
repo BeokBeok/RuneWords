@@ -18,5 +18,6 @@ include(
     ":common",
     ":feature:home",
     ":feature:combination",
-    ":feature:detail"
+    ":feature:detail",
+    ":benchmark"
 )

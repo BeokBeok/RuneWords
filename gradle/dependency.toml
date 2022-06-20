@@ -16,7 +16,7 @@ junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.re
 junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "jUnit5" }
 assertj-core = { module = "org.assertj:assertj-core", version = "3.22.0" }
 
-# compose
+# Compose
 compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
 compose-material = { module = "androidx.compose.material:material", version.ref = "compose" }
 compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
@@ -24,7 +24,7 @@ compose-runtime-livedata = { module = "androidx.compose.runtime:runtime-livedata
 activity-compose = { module = "androidx.activity:activity-compose", version = "1.4.0" }
 constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayout-compose", version = "1.0.0-rc02" }
 
-# firebase
+# Firebase
 firebase-bom = { module = "com.google.firebase:firebase-bom", version = "30.0.1" }
 firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx" }
 firebase-firestore-ktx = { module = "com.google.firebase:firebase-firestore-ktx" }
@@ -39,6 +39,8 @@ hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hil
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version = "1.6.1" }
 
 mockk = { module = "io.mockk:mockk", version = "1.12.3" }
+
+profile-installer = { module = "androidx.profileinstaller:profileinstaller", version = "1.1.0" }
 
 # Gradle
 gradle = { module = "com.android.tools.build:gradle", version = "7.1.3" }
