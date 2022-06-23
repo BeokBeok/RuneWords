@@ -1,13 +1,12 @@
 package com.beok.runewords.combination.presentation
 
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.beok.runewords.combination.domain.RuneWordsFetchUseCase
-import com.beok.runewords.combination.domain.model.RuneWords
+import com.beok.runewords.combination.presentation.vo.CombinationState
 import com.beok.runewords.common.model.Rune
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -17,25 +16,20 @@ import timber.log.Timber
 @HiltViewModel
 internal class CombinationViewModel @Inject constructor(
     private val runeWordsFetchUseCase: RuneWordsFetchUseCase
-): ViewModel() {
+) : ViewModel() {
 
-    var runeWordsGroup = mutableStateListOf<RuneWords>()
-        private set
-
-    private var _isLoading by mutableStateOf(false)
-    val isLoading: Boolean get() = _isLoading
+    private var _state by mutableStateOf<CombinationState>(CombinationState.None)
+    val state: CombinationState get() = _state
 
     fun fetchRuneWords(rune: Rune?) = viewModelScope.launch {
-        _isLoading = true
+        _state = CombinationState.Loading
         runeWordsFetchUseCase
             .execute(rune = rune?.name?.lowercase() ?: return@launch)
             .onSuccess {
-                _isLoading = false
-                runeWordsGroup.clear()
-                runeWordsGroup.addAll(it)
+                _state = CombinationState.Content(value = it)
             }
             .onFailure {
-                _isLoading = false
+                _state = CombinationState.Failed
                 Timber.d(it)
             }
     }

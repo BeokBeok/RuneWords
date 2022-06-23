@@ -33,8 +33,7 @@ internal class CombinationActivity : AppCompatActivity() {
                 rune = intent.extras?.get(BundleKeyConstants.RUNE_NAME) as? Rune
                     ?: return@setContent,
                 context = this,
-                isLoading = viewModel.isLoading,
-                runeWords = viewModel.runeWordsGroup,
+                state = viewModel.state,
                 runeWordClickTracking = { runeWordName ->
                     analytics.logEvent(
                         TrackingConstants.Rune.WORDS_WORDS,
