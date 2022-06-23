@@ -43,6 +43,7 @@ import com.beok.runewords.common.ext.resourceIDByName
 import com.beok.runewords.common.ext.startActivity
 import com.beok.runewords.common.view.ContentLoading
 import com.beok.runewords.detail.R
+import com.beok.runewords.detail.presentation.vo.DetailState
 import com.beok.runewords.detail.presentation.vo.RuneWordsVO
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
@@ -57,15 +58,13 @@ internal object ActivityDetailView {
     fun Layout(
         runeWordsName: String,
         context: Context,
-        isLoading: Boolean,
-        info: RuneWordsVO
+        state: DetailState
     ) {
         MaterialTheme {
             DetailScaffold(
                 runeWordsName = runeWordsName,
                 context = context,
-                isLoading = isLoading,
-                info = info,
+                state = state
             )
         }
     }
@@ -74,15 +73,22 @@ internal object ActivityDetailView {
     private fun DetailScaffold(
         runeWordsName: String,
         context: Context,
-        isLoading: Boolean,
-        info: RuneWordsVO
+        state: DetailState
     ) {
         Scaffold(
             topBar = { DetailTopBar(context, runeWordsName) },
             content = {
-                ContentLoading(isLoading = isLoading)
-                if (info.isEmpty()) return@Scaffold
-                DetailContent(context, info)
+                when (state) {
+                    is DetailState.Content -> {
+                        if (state.value.isEmpty()) return@Scaffold
+                        DetailContent(context, state.value)
+                    }
+                    DetailState.Loading -> {
+                        ContentLoading(isLoading = true)
+                    }
+                    DetailState.Failed,
+                    DetailState.None -> Unit
+                }
             }
         )
     }
