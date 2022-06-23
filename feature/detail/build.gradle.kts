@@ -32,4 +32,5 @@ dependencies {
 
     testImplementation(libs.assertj.core)
     testImplementation(libs.mockk)
+    testImplementation(libs.kotlin.test.junit)
 }

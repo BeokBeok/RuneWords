@@ -20,7 +20,8 @@ dependencies {
     api(libs.timber)
     api(libs.kotlinx.coroutines.core)
 
-    testImplementation(libs.junit.jupiter.api)
+    implementation(libs.junit.jupiter.api)
+    implementation(libs.kotlinx.coroutines.test)
     testRuntimeOnly(libs.junit.jupiter.engine)
     testImplementation(libs.assertj.core)
 }

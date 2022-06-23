@@ -28,6 +28,7 @@ import androidx.compose.ui.unit.sp
 import androidx.core.os.bundleOf
 import com.beok.runewords.combination.R
 import com.beok.runewords.combination.domain.model.RuneWords
+import com.beok.runewords.combination.presentation.vo.CombinationState
 import com.beok.runewords.common.BundleKeyConstants
 import com.beok.runewords.common.ext.resourceIDByName
 import com.beok.runewords.common.ext.startActivity
@@ -42,16 +43,14 @@ internal object ActivityCombinationView {
     fun Layout(
         rune: Rune,
         context: Context,
-        isLoading: Boolean,
-        runeWords: List<RuneWords>,
+        state: CombinationState,
         runeWordClickTracking: (String) -> Unit
     ) {
         MaterialTheme {
             CombinationScaffold(
                 rune = rune,
                 context = context,
-                isLoading = isLoading,
-                runeWords = runeWords,
+                state = state,
                 runeWordClickTracking = runeWordClickTracking
             )
         }
@@ -61,8 +60,7 @@ internal object ActivityCombinationView {
     private fun CombinationScaffold(
         rune: Rune,
         context: Context,
-        isLoading: Boolean,
-        runeWords: List<RuneWords>,
+        state: CombinationState,
         runeWordClickTracking: (String) -> Unit
     ) {
         Scaffold(
@@ -70,12 +68,20 @@ internal object ActivityCombinationView {
                 CombinationTopBar(rune = rune)
             },
             content = {
-                ContentLoading(isLoading = isLoading)
-                CombinationContent(
-                    context = context,
-                    runeWords = runeWords,
-                    runeWordClickTracking = runeWordClickTracking
-                )
+                when (state) {
+                    is CombinationState.Content -> {
+                        CombinationContent(
+                            context = context,
+                            runeWords =  state.value,
+                            runeWordClickTracking = runeWordClickTracking
+                        )
+                    }
+                    CombinationState.Loading -> {
+                        ContentLoading(isLoading = true)
+                    }
+                    CombinationState.Failed,
+                    CombinationState.None -> Unit
+                }
             }
         )
     }

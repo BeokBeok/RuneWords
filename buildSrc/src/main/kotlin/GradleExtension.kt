@@ -22,6 +22,12 @@ fun BaseAppModuleExtension.applyDefault() {
     composeOptions {
         kotlinCompilerExtensionVersion = "1.1.1"
     }
+    packagingOptions {
+        resources {
+            excludes += "META-INF/LICENSE.md"
+            excludes += "META-INF/LICENSE-notice.md"
+        }
+    }
 }
 
 fun LibraryExtension.applyDefault() {
