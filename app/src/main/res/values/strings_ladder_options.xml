@@ -17,8 +17,8 @@
     <string name="rune_word_wisdom_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+33% Piercing Attack<br></font>
-        <font color=\'#cc0029\'>+15-25% Bonus to Attack Rating (varies)<br></font>
-        <font color=\'#cc0029\'>4-8% Mana Stolen Per Hit (varies)<br></font>
+        <font color=\'#cc0029\'>+15-25% Bonus to Attack Rating<br></font>
+        <font color=\'#cc0029\'>4-8% Mana Stolen Per Hit<br></font>
         <font color=\'#000000\'>+30% Enhanced Defense<br></font>
         <font color=\'#000000\'>+10 Energy<br></font>
         <font color=\'#000000\'>15% Slower Stamina Drain<br></font>
