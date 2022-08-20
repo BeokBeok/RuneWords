@@ -46,6 +46,6 @@ dependencies {
 
 androidComponents {
     beforeVariants(selector().all()) {
-        it.enabled = it.buildType == "benchmark"
+        it.enable = it.buildType == "benchmark"
     }
 }

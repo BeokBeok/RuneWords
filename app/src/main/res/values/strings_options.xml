@@ -14,13 +14,13 @@
     <![CDATA[
         <font color=\'#000000\'>Level 9 Fanaticism aura when equipped<br></font>
         <font color=\'#000000\'>+40% increased attack speed<br></font>
-        <font color=\'#cc0029\'>+240-270% enhanced damage (varies)<br></font>
+        <font color=\'#cc0029\'>+240-270% enhanced damage<br></font>
         <font color=\'#000000\'>20% chance of crushing blow<br></font>
         <font color=\'#000000\'>25% chance of open wounds<br></font>
         <font color=\'#000000\'>+3 to Werebear<br></font>
         <font color=\'#000000\'>+3 to Lycanthropy<br></font>
         <font color=\'#000000\'>Prevent monster heal<br></font>
-        <font color=\'#cc0029\'>+25-40 strength (varies)<br></font>
+        <font color=\'#cc0029\'>+25-40 strength<br></font>
         <font color=\'#000000\'>+10 to energy<br></font>
         <font color=\'#000000\'>+2 to mana after each kill<br></font>
     ]]>
@@ -469,7 +469,7 @@
     </string>
     <string name="rune_word_insight_option" formatted="false">
     <![CDATA[
-        <font color=\'#cc0029\'>Level 12-17 Meditation aura when equipped (varies)<br></font>
+        <font color=\'#cc0029\'>Level 12-17 Meditation aura when equipped<br></font>
         <font color=\'#000000\'>+35% faster cast rate<br></font>
         <font color=\'#cc0029\'>+200-260% enhanced damage<br></font>
         <font color=\'#000000\'>+9 to minimum damage<br></font>
@@ -726,7 +726,7 @@
         <font color=\'#000000\'>5% chance to cast level 10 Life Tap on striking<br></font>
         <font color=\'#000000\'>+375% damage to demons<br></font>
         <font color=\'#000000\'>+100 attack rating against demons<br></font>
-        <font color=\'#cc0029\'>+250-300% damage to undead (varies)<br></font>
+        <font color=\'#cc0029\'>+250-300% damage to undead<br></font>
         <font color=\'#000000\'>Adds 85-120 magic damage<br></font>
         <font color=\'#000000\'>Adds 41-240 lightning damage<br></font>
         <font color=\'#000000\'>20% chance of crushing blow<br></font>
@@ -810,7 +810,7 @@
         <font color=\'#000000\'>Level 12 Holy Freeze aura when equipped<br></font>
         <font color=\'#000000\'>+2 to all skills<br></font>
         <font color=\'#000000\'>+45% increased attack speed<br></font>
-        <font color=\'#cc0029\'>+330-370% enhanced damage (varies)<br></font>
+        <font color=\'#cc0029\'>+330-370% enhanced damage<br></font>
         <font color=\'#cc0029\'>-(40-60)% to enemy cold resistance (varies)<br></font>
         <font color=\'#000000\'>20% deadly strike<br></font>
         <font color=\'#000000\'>25% chance of open wounds<br></font>
