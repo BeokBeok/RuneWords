@@ -17,8 +17,8 @@
     <string name="rune_word_wisdom_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>관통 공격<br></font>
-        <font color=\'#000000\'>명중률 보너스 20%<br></font>
-        <font color=\'#000000\'>적중당 5% 마나 훔침<br></font>
+        <font color=\'#cc0029\'>명중률 보너스 15~25%<br></font>
+        <font color=\'#cc0029\'>적중당 4~8% 마나 훔침<br></font>
         <font color=\'#000000\'>방어력 +30% 증가<br></font>
         <font color=\'#000000\'>마력 +10<br></font>
         <font color=\'#000000\'>지구력 고갈 속도 15% 감소<br></font>
