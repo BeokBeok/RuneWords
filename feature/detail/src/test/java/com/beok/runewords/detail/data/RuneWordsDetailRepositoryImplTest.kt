@@ -18,6 +18,7 @@ internal class RuneWordsDetailRepositoryImplTest {
         val expected = runeWordsDetailRemoteDataSource
             .fetchInfo(name = runeWordsName)
             .toDto()
+            .copy(levelLimit = 57)
         val actual = repository.fetchInfo(name = runeWordsName)
 
         assertEquals(expected, actual)
