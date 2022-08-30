@@ -3,23 +3,39 @@ package com.beok.runewords.home.inapp
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.beok.runewords.home.HomeActivity
+import com.beok.runewords.home.domain.FetchForceUpdateVersionUseCase
 import com.google.android.play.core.appupdate.AppUpdateInfo
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.install.model.AppUpdateType
 import com.google.android.play.core.install.model.UpdateAvailability
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
+import kotlinx.coroutines.launch
 
 @HiltViewModel
 internal class InAppUpdateViewModel @Inject constructor(
-    private val inAppUpdateManager: AppUpdateManager
+    private val inAppUpdateManager: AppUpdateManager,
+    private val fetchForceUpdateVersionUseCase: FetchForceUpdateVersionUseCase
 ) : ViewModel() {
 
     private val _state = MutableLiveData<InAppUpdateState>(InAppUpdateState.None)
     val state: LiveData<InAppUpdateState> get() = _state
 
-    fun checkAppUpdatable() {
+    var appUpdateType: Int = AppUpdateType.FLEXIBLE
+        private set
+
+    fun refreshAppUpdateType(version: String) = viewModelScope.launch {
+        fetchForceUpdateVersionUseCase.execute()
+            .onSuccess { forceUpdateVersion ->
+                if (forceUpdateVersion >= version) {
+                    appUpdateType = AppUpdateType.IMMEDIATE
+                }
+            }
+    }
+
+    fun forceUpdate() {
         inAppUpdateManager.appUpdateInfo
             .addOnSuccessListener { appUpdateInfo ->
                 _state.value = when {
@@ -41,7 +57,6 @@ internal class InAppUpdateViewModel @Inject constructor(
 
     fun registerForHome(
         appUpdateInfo: AppUpdateInfo,
-        appUpdateType: Int = AppUpdateType.FLEXIBLE,
         target: HomeActivity
     ) {
         inAppUpdateManager.startUpdateFlowForResult(
