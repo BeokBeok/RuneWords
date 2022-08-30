@@ -37,12 +37,13 @@ internal class HomeActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        checkUpdatable()
+        if (inAppUpdateViewModel.appUpdateType == AppUpdateType.IMMEDIATE) forceUpdate()
     }
 
     private fun setupSplashScreen() {
         installSplashScreen().setKeepOnScreenCondition {
             setupScreenAd()
+            refreshAppUpdateType()
             false
         }
     }
@@ -61,8 +62,14 @@ internal class HomeActivity : AppCompatActivity() {
         }
     }
 
-    private fun checkUpdatable() {
-        inAppUpdateViewModel.checkAppUpdatable()
+    private fun refreshAppUpdateType() {
+        inAppUpdateViewModel.refreshAppUpdateType(
+            version = packageManager.getPackageInfo(packageName, 0).versionName
+        )
+    }
+
+    private fun forceUpdate() {
+        inAppUpdateViewModel.forceUpdate()
     }
 
     private fun observeInAppUpdate() {
@@ -73,7 +80,6 @@ internal class HomeActivity : AppCompatActivity() {
                 is InAppUpdateState.Possible -> {
                     inAppUpdateViewModel.registerForHome(
                         appUpdateInfo = state.info,
-                        appUpdateType = AppUpdateType.IMMEDIATE,
                         target = this
                     )
                 }
