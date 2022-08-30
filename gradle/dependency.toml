@@ -27,10 +27,11 @@ activity-compose = { module = "androidx.activity:activity-compose", version = "1
 constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayout-compose", version = "1.0.0-rc02" }
 
 # Firebase
-firebase-bom = { module = "com.google.firebase:firebase-bom", version = "30.0.1" }
+firebase-bom = { module = "com.google.firebase:firebase-bom", version = "30.3.1" }
 firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx" }
 firebase-firestore-ktx = { module = "com.google.firebase:firebase-firestore-ktx" }
 firebase-crashlytics-ktx = { module = "com.google.firebase:firebase-crashlytics-ktx" }
+firebase-config-ktx = { module = "com.google.firebase:firebase-config-ktx" }
 
 timber = { module = "com.jakewharton.timber:timber", version = "5.0.1" }
 
