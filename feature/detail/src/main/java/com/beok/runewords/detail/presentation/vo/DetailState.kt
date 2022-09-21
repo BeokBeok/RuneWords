@@ -8,5 +8,5 @@ internal sealed class DetailState {
 
     object Loading : DetailState()
 
-    object Failed: DetailState()
+    object Failed : DetailState()
 }
