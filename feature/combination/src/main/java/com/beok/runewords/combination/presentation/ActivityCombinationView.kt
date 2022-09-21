@@ -72,7 +72,7 @@ internal object ActivityCombinationView {
                     is CombinationState.Content -> {
                         CombinationContent(
                             context = context,
-                            runeWords =  state.value,
+                            runeWords = state.value,
                             runeWordClickTracking = runeWordClickTracking
                         )
                     }

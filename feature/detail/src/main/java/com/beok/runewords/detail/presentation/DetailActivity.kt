@@ -45,7 +45,7 @@ internal class DetailActivity : AppCompatActivity() {
                 if (!it.isSuccessful) return@addOnCompleteListener
                 reviewManager
                     .launchReviewFlow(this, it.result)
-                    .addOnCompleteListener {  }
+                    .addOnCompleteListener { }
             }
     }
 }

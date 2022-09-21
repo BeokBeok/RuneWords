@@ -41,13 +41,13 @@ internal class InAppUpdateViewModel @Inject constructor(
                 _state.value = when {
                     appUpdateInfo.updateAvailability() ==
                         UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS -> {
-                            InAppUpdateState.Possible(info = appUpdateInfo)
-                        }
+                        InAppUpdateState.Possible(info = appUpdateInfo)
+                    }
                     appUpdateInfo.updateAvailability() != UpdateAvailability.UPDATE_AVAILABLE -> {
                         InAppUpdateState.Impossible
                     }
                     appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.FLEXIBLE) ||
-                    appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE) -> {
+                        appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE) -> {
                         InAppUpdateState.Possible(info = appUpdateInfo)
                     }
                     else -> InAppUpdateState.None

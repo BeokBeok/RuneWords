@@ -13,6 +13,15 @@ buildscript {
         classpath(libs.google.services.gradle)
         classpath(libs.hilt.android.gradle)
         classpath(libs.firebase.crashlytics.gradle)
+        classpath(libs.ktlint.gradle)
+    }
+}
+
+subprojects {
+    apply(plugin = "org.jlleitschuh.gradle.ktlint")
+
+    repositories {
+        mavenCentral()
     }
 }
 

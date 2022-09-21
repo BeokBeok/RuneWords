@@ -6,7 +6,7 @@ import com.beok.runewords.common.util.DataToDomainMapper
 
 internal data class RuneWordsResponse(
     val name: String = String.EMPTY
-): DataToDomainMapper<RuneWords> {
+) : DataToDomainMapper<RuneWords> {
 
     override fun toDto(): RuneWords = RuneWords(
         name = name
