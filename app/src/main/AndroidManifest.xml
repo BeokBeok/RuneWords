@@ -12,6 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RuneWords.Starting">
 
+        <activity
+            android:name="com.facebook.flipper.android.diagnostics.FlipperDiagnosticActivity"
+            android:exported="true" />
+
         <profileable
             android:shell="true"
             tools:targetApi="q" />
