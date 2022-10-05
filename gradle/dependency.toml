@@ -49,10 +49,10 @@ mockk = { module = "io.mockk:mockk", version = "1.12.3" }
 profile-installer = { module = "androidx.profileinstaller:profileinstaller", version = "1.1.0" }
 
 # Gradle
-gradle = { module = "com.android.tools.build:gradle", version = "7.2.1" }
+gradle = { module = "com.android.tools.build:gradle", version = "7.3.0" }
 kotlin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version = "1.6.10" }
 android-junit5-gradle = { module = "de.mannodermaus.gradle.plugins:android-junit5", version = "1.8.2.0" }
-google-services-gradle = { module = "com.google.gms:google-services", version = "4.3.10" }
+google-services-gradle = { module = "com.google.gms:google-services", version = "4.3.14" }
 hilt-android-gradle = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hilt" }
 firebase-crashlytics-gradle = { module = "com.google.firebase:firebase-crashlytics-gradle", version = "2.8.1" }
 ktlint-gradle = { module = "org.jlleitschuh.gradle:ktlint-gradle", version = "11.0.0" }
