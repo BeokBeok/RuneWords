@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.beok.runewords">
 
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+
     <application
         android:name=".RuneWordsApplication"
         android:allowBackup="false"

@@ -105,8 +105,8 @@ internal class HomeActivity : AppCompatActivity() {
                 }
 
                 override fun onAdLoaded(ad: InterstitialAd) {
-                    setContent()
                     ad.show(this@HomeActivity)
+                    setContent()
                 }
             }
         )
