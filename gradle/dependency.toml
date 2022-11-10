@@ -46,7 +46,7 @@ kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-t
 
 mockk = { module = "io.mockk:mockk", version = "1.12.3" }
 
-profile-installer = { module = "androidx.profileinstaller:profileinstaller", version = "1.1.0" }
+profile-installer = { module = "androidx.profileinstaller:profileinstaller", version = "1.2.0" }
 
 # Gradle
 gradle = { module = "com.android.tools.build:gradle", version = "7.3.0" }
