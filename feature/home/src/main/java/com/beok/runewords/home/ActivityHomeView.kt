@@ -12,9 +12,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.lazy.GridCells
-import androidx.compose.foundation.lazy.LazyVerticalGrid
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.SnackbarHostState
@@ -60,8 +60,12 @@ internal object ActivityHomeView {
         Scaffold(
             scaffoldState = rememberScaffoldState(snackbarHostState = SnackbarHostState()),
             topBar = { HomeTopBar() },
-        ) {
-            HomeContent(context = context, runeClickTracking = runeClickTracking)
+        ) { paddings ->
+            HomeContent(
+                modifier = Modifier.padding(paddings),
+                context = context,
+                runeClickTracking = runeClickTracking
+            )
         }
     }
 
@@ -77,11 +81,15 @@ internal object ActivityHomeView {
     }
 
     @Composable
-    private fun HomeContent(context: Context, runeClickTracking: (String) -> Unit) {
-        Box(modifier = Modifier.fillMaxSize()) {
+    private fun HomeContent(
+        modifier: Modifier,
+        context: Context,
+        runeClickTracking: (String) -> Unit
+    ) {
+        Box(modifier = modifier.fillMaxSize()) {
             LazyVerticalGrid(
                 modifier = Modifier.fillMaxSize(),
-                cells = GridCells.Adaptive(minSize = 128.dp)
+                columns = GridCells.Adaptive(minSize = 128.dp)
             ) {
                 items(Rune.all()) { item ->
                     RuneItem(

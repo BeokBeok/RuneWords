@@ -1,9 +1,9 @@
 package com.beok.runewords.home
 
 import android.os.Bundle
+import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.beok.runewords.common.constants.TrackingConstants
@@ -20,7 +20,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-internal class HomeActivity : AppCompatActivity() {
+internal class HomeActivity : ComponentActivity() {
 
     @Inject
     lateinit var analytics: FirebaseAnalytics
