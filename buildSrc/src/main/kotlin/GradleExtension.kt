@@ -3,12 +3,12 @@ import com.android.build.gradle.internal.dsl.BaseAppModuleExtension
 import com.android.build.gradle.LibraryExtension
 
 fun BaseAppModuleExtension.applyDefault() {
-    compileSdk = 31
+    compileSdk = 33
 
     defaultConfig {
         applicationId = "com.beok.runewords"
         minSdk = 26
-        targetSdk = 31
+        targetSdk = 33
     }
 
     compileOptions {
@@ -20,7 +20,7 @@ fun BaseAppModuleExtension.applyDefault() {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.1.1"
+        kotlinCompilerExtensionVersion = "1.3.0"
     }
     packagingOptions {
         resources {
@@ -31,11 +31,11 @@ fun BaseAppModuleExtension.applyDefault() {
 }
 
 fun LibraryExtension.applyDefault() {
-    compileSdk = 31
+    compileSdk = 33
 
     defaultConfig {
         minSdk = 26
-        targetSdk = 31
+        targetSdk = 33
     }
 
     compileOptions {
@@ -47,6 +47,6 @@ fun LibraryExtension.applyDefault() {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.1.1"
+        kotlinCompilerExtensionVersion = "1.3.0"
     }
 }

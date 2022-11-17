@@ -806,7 +806,7 @@
     </string>
     <string name="rune_word_doom_option" formatted="false">
     <![CDATA[
-        <font color=\'#000000\'>타격 시 5% 확률로 18 레밸 화산 시전<br></font>
+        <font color=\'#000000\'>타격 시 5% 확률로 18 레벨 화산 시전<br></font>
         <font color=\'#000000\'>장착 시 12 레벨 신성한 빙결 오라 효과 적용<br></font>
         <font color=\'#000000\'>모든 기술 +2<br></font>
         <font color=\'#000000\'>공격 속도 +45%<br></font>

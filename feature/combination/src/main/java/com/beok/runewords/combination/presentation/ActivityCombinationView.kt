@@ -67,10 +67,11 @@ internal object ActivityCombinationView {
             topBar = {
                 CombinationTopBar(rune = rune)
             },
-            content = {
+            content = { padding ->
                 when (state) {
                     is CombinationState.Content -> {
                         CombinationContent(
+                            modifier = Modifier.padding(padding),
                             context = context,
                             runeWords = state.value,
                             runeWordClickTracking = runeWordClickTracking
@@ -88,11 +89,12 @@ internal object ActivityCombinationView {
 
     @Composable
     private fun CombinationContent(
+        modifier: Modifier,
         context: Context,
         runeWords: List<RuneWords>,
         runeWordClickTracking: (String) -> Unit
     ) {
-        LazyColumn(modifier = Modifier.fillMaxSize()) {
+        LazyColumn(modifier = modifier.fillMaxSize()) {
             items(runeWords) { item ->
                 if (context.resourceIDByName(item.name) > 0) {
                     val isLadder = stringArrayResource(id = R.array.ladder_rune_words)
