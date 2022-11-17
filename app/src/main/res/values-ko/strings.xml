@@ -93,19 +93,19 @@
 
     <!-- RuneWords Type -->
     <string name="all_weapons">모든 무기</string>
-    <string name="axe">액스</string>
+    <string name="axe">도끼</string>
     <string name="scepter">셉터</string>
     <string name="hammer">해머</string>
     <string name="armor">갑옷</string>
     <string name="assassin_weapon">암살자 무기</string>
-    <string name="pole_arm">폴암</string>
+    <string name="pole_arm">미늘창</string>
     <string name="ranged_weapon">원거리 무기</string>
     <string name="shield">방패</string>
-    <string name="sword">소드</string>
+    <string name="sword">도검</string>
     <string name="mace">메이스</string>
-    <string name="staff">스태프</string>
+    <string name="staff">지팡이</string>
     <string name="head">투구</string>
-    <string name="wand">완드</string>
+    <string name="wand">원드</string>
     <string name="club">클럽</string>
     <string name="melee_weapon">근접 무기</string>
     <string name="spear">창</string>

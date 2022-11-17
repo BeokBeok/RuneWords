@@ -50,6 +50,10 @@ captures/
 .idea/dictionaries
 .idea/libraries
 .idea/jarRepositories.xml
+.idea/androidTestResultsUserPreferences.xml
+.idea/codeInsightSettings.xml
+.idea/deploymentTargetDropDown.xml
+.idea/inspectionProfiles/Project_Default.xml
 # Android Studio 3 in .gitignore file.
 .idea/caches
 .idea/modules.xml
@@ -80,6 +84,7 @@ fastlane/screenshots
 fastlane/test_output
 fastlane/readme.md
 fastlane/firebase-app-distributor-services.json
+Gemfile.lock
 
 # Version control
 vcs.xml
@@ -231,5 +236,8 @@ fabric.properties
 ### AndroidStudio Patch ###
 
 !/gradle/wrapper/gradle-wrapper.jar
+
+# output-metadata.json
+app/*/output-metadata.json
 
 # End of https://www.toptal.com/developers/gitignore/api/android,androidstudio,kotlin

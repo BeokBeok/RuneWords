@@ -77,11 +77,15 @@ internal object ActivityDetailView {
     ) {
         Scaffold(
             topBar = { DetailTopBar(context, runeWordsName) },
-            content = {
+            content = { paddings ->
                 when (state) {
                     is DetailState.Content -> {
                         if (state.value.isEmpty()) return@Scaffold
-                        DetailContent(context, state.value)
+                        DetailContent(
+                            modifier = Modifier.padding(paddings),
+                            context = context,
+                            info = state.value
+                        )
                     }
                     DetailState.Loading -> {
                         ContentLoading(isLoading = true)
@@ -94,8 +98,12 @@ internal object ActivityDetailView {
     }
 
     @Composable
-    private fun DetailContent(context: Context, info: RuneWordsVO) {
-        ConstraintLayout(modifier = Modifier.fillMaxSize()) {
+    private fun DetailContent(
+        modifier: Modifier,
+        context: Context,
+        info: RuneWordsVO
+    ) {
+        ConstraintLayout(modifier = modifier.fillMaxSize()) {
             val (content, admob) = createRefs()
             Column(
                 modifier = Modifier
