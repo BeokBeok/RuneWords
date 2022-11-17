@@ -28,9 +28,11 @@ internal class HomeActivity : ComponentActivity() {
     private val inAppUpdateViewModel by viewModels<InAppUpdateViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        installSplashScreen()
         super.onCreate(savedInstanceState)
 
-        setupSplashScreen()
+        setupScreenAd()
+        refreshAppUpdateType()
         observeInAppUpdate()
     }
 
@@ -38,14 +40,6 @@ internal class HomeActivity : ComponentActivity() {
         super.onResume()
 
         if (inAppUpdateViewModel.appUpdateType == AppUpdateType.IMMEDIATE) forceUpdate()
-    }
-
-    private fun setupSplashScreen() {
-        installSplashScreen().setKeepOnScreenCondition {
-            setupScreenAd()
-            refreshAppUpdateType()
-            false
-        }
     }
 
     private fun setContent() {
