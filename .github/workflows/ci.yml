@@ -12,13 +12,29 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: set up JDK 11
+      - name: Set up JDK 11
         uses: actions/setup-java@v1
         with:
           java-version: 11
           
       - name: Create google-services.json
         run: echo '${{ secrets.GOOGLE_SERVICES_JSON }}' > ./app/google-services.json
+
+      - name: Update Application file
+        run: |
+          mv app/src/release/**/*Application.kt app/src/java/com/beok/runewords/RuneWordsApplication.kt
+          rm -f app/src/debug/**/*Application.kt
+
+      - name: Clean Managed Devices
+        run: ./gradlew cleanManagedDevices --unused-only
+
+      - name: Generate Baseline Profile
+        run: |
+          ./gradlew :benchmark:pixel2Api31BenchmarkAndroidTest -Pandroid.testoptions.manageddevices.emulator.gpu="swiftshader_indirect" -Pandroid.testInstrumentationRunnerArguments.androidx.benchmark.enabledRules=BaselineProfile -Dorg.gradle.workers.max=4
+
+      - name: Move & Rename Baseline Profiles
+        run: |
+          mv -f benchmark/build/outputs/managed_device_android_test_additional_output/pixel2Api31/BaselineProfileGenerator_startup-baseline-prof.txt app/src/main/baseline-prof.txt
 
       - name: Build Release AAB
         run: ./gradlew bundleRelease
