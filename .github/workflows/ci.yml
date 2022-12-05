@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:        
       - name: Checkout
@@ -22,8 +22,8 @@ jobs:
 
       - name: Update Application file
         run: |
-          mv app/src/release/**/*Application.kt app/src/java/com/beok/runewords/RuneWordsApplication.kt
-          rm -f app/src/debug/**/*Application.kt
+          mv app/src/release/java/com/beok/runewords/RuneWordsApplication.kt app/src/main/java/com/beok/runewords/RuneWordsApplication.kt
+          rm -f app/src/debug/java/com/beok/runewords/RuneWordsApplication.kt
 
       - name: Clean Managed Devices
         run: ./gradlew cleanManagedDevices --unused-only
@@ -34,7 +34,7 @@ jobs:
 
       - name: Move & Rename Baseline Profiles
         run: |
-          mv -f benchmark/build/outputs/managed_device_android_test_additional_output/pixel2Api31/BaselineProfileGenerator_startup-baseline-prof.txt app/src/main/baseline-prof.txt
+          mv -f benchmark/build/outputs/managed_device_android_test_additional_output/pixel2Api31/ExampleStartupBenchmark_startup-baseline-prof.txt app/src/main/baseline-prof.txt
 
       - name: Build Release AAB
         run: ./gradlew bundleRelease
