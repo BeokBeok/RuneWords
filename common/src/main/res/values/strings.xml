@@ -33,4 +33,106 @@
     <string name="title_rune_jah">Jah</string>
     <string name="title_rune_cham">Cham</string>
     <string name="title_rune_zod">Zod</string>
+
+    <string name="option_el_one">+50 To Attack Rating\n+1 light radius</string>
+    <string name="option_el_two">+15 defense\n+1 light radius</string>
+
+    <string name="option_eld_one">+75% Damage to Undead\n+50 Attack Rating Against Undead</string>
+    <string name="option_eld_two">15% Slower Stamina Drain</string>
+    <string name="option_eld_three">7% increased chance of blocking</string>
+
+    <string name="option_tir_one">+2 Mana After Each Kill</string>
+
+    <string name="option_nef_one">Knock-back</string>
+    <string name="option_nef_two">+30 Defense Vs. Missile</string>
+
+    <string name="option_eth_one">-25% target defense</string>
+    <string name="option_eth_two">Regenerate mana 15%</string>
+
+    <string name="option_ith_one">+9 Maximum Damage</string>
+    <string name="option_ith_two">15% damage taken goes to mana</string>
+
+    <string name="option_tal_one">+75 Poison Damage Over 5 Seconds</string>
+    <string name="option_tal_two">Poison resist +30%</string>
+    <string name="option_tal_three">Poison resist +35%</string>
+
+    <string name="option_ral_one">Adds 5 – 30 Fire Damage</string>
+    <string name="option_ral_two">Fire resist +30%</string>
+    <string name="option_ral_three">Fire resist +35%</string>
+
+    <string name="option_ort_one">Adds 5 – 30 Lightning Damage</string>
+    <string name="option_ort_two">Lightning resist +30%</string>
+    <string name="option_ort_three">Lightning resist +35%</string>
+
+    <string name="option_thul_one">Adds 5 – 30 Cold Damage</string>
+    <string name="option_thul_two">Cold resist +30%</string>
+    <string name="option_thul_three">Cold resist +35%</string>
+
+    <string name="option_amn_one">7% life stolen per hit</string>
+    <string name="option_amn_two">Attacker takes damage of 14</string>
+
+    <string name="option_sol_one">+9 Minimum damage</string>
+    <string name="option_sol_two">Damage reduced by 7</string>
+
+    <string name="option_shael_one">+20% Increased Attack Speed</string>
+    <string name="option_shael_two">+20% Faster hit Recovery</string>
+    <string name="option_shael_three">+20% Faster Block Rate</string>
+
+    <string name="option_dol_one">Hit causes monster to flee 25%</string>
+    <string name="option_dol_two">Replenish life +7</string>
+
+    <string name="option_hel_one">Requirements -20%</string>
+    <string name="option_hel_two">Requirements -15%</string>
+
+    <string name="option_io_one">+10 to life</string>
+
+    <string name="option_lum_one">+10 to mana</string>
+
+    <string name="option_ko_one">+10 to dexterity</string>
+
+    <string name="option_fal_one">+10 to strength</string>
+
+    <string name="option_lem_one">75% Extra Gold from Monsters</string>
+    <string name="option_lem_two">50% Extra Gold from Monsters</string>
+
+    <string name="option_pul_one">+75% damage to demons</string>
+    <string name="option_pul_two">+30% Enhanced Defense</string>
+
+    <string name="option_um_one">25% chance of open wounds</string>
+    <string name="option_um_two">+15 All resistances</string>
+    <string name="option_um_three">+22 All resistance</string>
+
+    <string name="option_mal_one">Prevent monster heal</string>
+    <string name="option_mal_two">Magic damage reduced by 7</string>
+
+    <string name="option_ist_one">30% better chance of getting magic items</string>
+    <string name="option_ist_two">25% better chance of getting magic items</string>
+
+    <string name="option_gul_one">20% Bonus to Attack Rating</string>
+    <string name="option_gul_two">+5% maximum poison resist</string>
+
+    <string name="option_vex_one">7% mana stolen per hit</string>
+    <string name="option_vex_two">+5% maximum fire resist</string>
+
+    <string name="option_ohm_one">+50% enhanced damage</string>
+    <string name="option_ohm_two">+5% maximum cold resist</string>
+
+    <string name="option_lo_one">20% Deadly Strike</string>
+    <string name="option_lo_two">+5% maximum lightning resist</string>
+
+    <string name="option_sur_one">Hit blinds target</string>
+    <string name="option_sur_two">Increase maximum mana 5%</string>
+    <string name="option_sur_three">+50 to mana</string>
+
+    <string name="option_ber_one">20% chance of crushing blow</string>
+    <string name="option_ber_two">Damage reduced by 8%</string>
+
+    <string name="option_jah_one">Ignore target\'s defense</string>
+    <string name="option_jah_two">Increase maximum life 5%</string>
+    <string name="option_jah_three">+50 to life</string>
+
+    <string name="option_cham_one">Freezes Target +3</string>
+    <string name="option_cham_two">Cannot Be Frozen</string>
+
+    <string name="option_zod_one">Indestructible</string>
 </resources>
