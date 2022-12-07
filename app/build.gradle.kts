@@ -37,6 +37,7 @@ dependencies {
     implementation(project(":feature:home"))
     implementation(project(":feature:combination"))
     implementation(project(":feature:detail"))
+    implementation(project(":feature:info"))
 
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics.ktx)
