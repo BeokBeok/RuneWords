@@ -20,4 +20,22 @@ internal class RuneTest {
 
         assertThat(actual).isEqualTo(Rune.VEX)
     }
+
+    @Test
+    fun `현재 룬의 이전 룬을 찾습니다`() {
+        val rune = Rune.ZOD
+
+        val actual = Rune.previous(rune)
+
+        assertThat(actual).isEqualTo(Rune.CHAM)
+    }
+
+    @Test
+    fun `현재 룬이 EL이면_이전 룬은 EL입니다`() {
+        val rune = Rune.EL
+
+        val actual = Rune.previous(rune)
+
+        assertThat(actual).isEqualTo(Rune.EL)
+    }
 }

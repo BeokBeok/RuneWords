@@ -309,5 +309,12 @@ enum class Rune(
             .firstOrNull {
                 it.name.lowercase() == name.lowercase()
             }
+
+        fun previous(target: Rune): Rune {
+            if (target == EL) return EL
+            return values().first {
+                it.ordinal == target.ordinal - 1
+            }
+        }
     }
 }
