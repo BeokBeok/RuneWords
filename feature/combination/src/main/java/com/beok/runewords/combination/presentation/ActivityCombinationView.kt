@@ -172,7 +172,7 @@ internal object ActivityCombinationView {
                                 context.startActivity(
                                     className = CLASSNAME_INFO,
                                     bundle = bundleOf(
-                                        BundleKeyConstants.RUNE_NAME to rune.name
+                                        BundleKeyConstants.RUNE_NAME to rune
                                     )
                                 )
                             }
