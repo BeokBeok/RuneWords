@@ -19,5 +19,6 @@ include(
     ":feature:home",
     ":feature:combination",
     ":feature:detail",
+    ":feature:info",
     ":benchmark"
 )
