@@ -36,8 +36,14 @@ internal class CombinationActivity : AppCompatActivity() {
                 state = viewModel.state,
                 runeWordClickTracking = { runeWordName ->
                     analytics.logEvent(
-                        TrackingConstants.Rune.WORDS_WORDS,
+                        TrackingConstants.Rune.WORDS_CLICK,
                         bundleOf(TrackingConstants.Params.RUNE_WORDS_NAME to runeWordName)
+                    )
+                },
+                runeInfoClickTracking = { runeName ->
+                    analytics.logEvent(
+                        TrackingConstants.Rune.INFO_CLICK,
+                        bundleOf(TrackingConstants.Params.RUNE_NAME to runeName)
                     )
                 }
             )

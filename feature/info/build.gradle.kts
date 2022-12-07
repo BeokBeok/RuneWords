@@ -12,10 +12,6 @@ android {
 dependencies {
     implementation(project(":common"))
 
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.analytics.ktx)
-    implementation(libs.firebase.config.ktx)
-
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
 }

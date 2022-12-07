@@ -2,7 +2,6 @@ package com.beok.runewords.combination.presentation
 
 import android.content.Context
 import android.content.Intent
-import android.os.Bundle
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -21,7 +20,6 @@ import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -51,14 +49,16 @@ internal object ActivityCombinationView {
         rune: Rune,
         context: Context,
         state: CombinationState,
-        runeWordClickTracking: (String) -> Unit
+        runeWordClickTracking: (String) -> Unit,
+        runeInfoClickTracking: (String) -> Unit
     ) {
         MaterialTheme {
             CombinationScaffold(
                 rune = rune,
                 context = context,
                 state = state,
-                runeWordClickTracking = runeWordClickTracking
+                runeWordClickTracking = runeWordClickTracking,
+                runeInfoClickTracking = runeInfoClickTracking
             )
         }
     }
@@ -68,13 +68,15 @@ internal object ActivityCombinationView {
         rune: Rune,
         context: Context,
         state: CombinationState,
-        runeWordClickTracking: (String) -> Unit
+        runeWordClickTracking: (String) -> Unit,
+        runeInfoClickTracking: (String) -> Unit
     ) {
         Scaffold(
             topBar = {
                 CombinationTopBar(
                     context = context,
-                    rune = rune
+                    rune = rune,
+                    runeInfoClickTracking = runeInfoClickTracking
                 )
             },
             content = { padding ->
@@ -148,7 +150,8 @@ internal object ActivityCombinationView {
     @Composable
     private fun CombinationTopBar(
         context: Context,
-        rune: Rune
+        rune: Rune,
+        runeInfoClickTracking: (String) -> Unit
     ) {
         TopAppBar(
             title = {
@@ -175,6 +178,7 @@ internal object ActivityCombinationView {
                                         BundleKeyConstants.RUNE_NAME to rune
                                     )
                                 )
+                                runeInfoClickTracking(rune.name)
                             }
                             .padding(12.dp),
                         imageVector = Icons.Outlined.Info,
