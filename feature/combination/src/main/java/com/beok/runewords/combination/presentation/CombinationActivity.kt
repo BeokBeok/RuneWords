@@ -34,6 +34,7 @@ internal class CombinationActivity : AppCompatActivity() {
                     ?: return@setContent,
                 context = this,
                 state = viewModel.state,
+                runeInfoIconType = viewModel.runeInfoIconType,
                 runeWordClickTracking = { runeWordName ->
                     analytics.logEvent(
                         TrackingConstants.Rune.WORDS_CLICK,
@@ -53,5 +54,6 @@ internal class CombinationActivity : AppCompatActivity() {
     private fun showContent() {
         (intent.extras?.get(BundleKeyConstants.RUNE_NAME) as? Rune)
             ?.let(viewModel::fetchRuneWords)
+        viewModel.fetchRuneInfoIconType()
     }
 }

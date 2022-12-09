@@ -5,6 +5,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.beok.runewords.combination.domain.RuneInfoIconTypeFetchUseCase
 import com.beok.runewords.combination.domain.RuneWordsFetchUseCase
 import com.beok.runewords.combination.presentation.vo.CombinationState
 import com.beok.runewords.common.model.Rune
@@ -15,11 +16,15 @@ import timber.log.Timber
 
 @HiltViewModel
 internal class CombinationViewModel @Inject constructor(
-    private val runeWordsFetchUseCase: RuneWordsFetchUseCase
+    private val runeWordsFetchUseCase: RuneWordsFetchUseCase,
+    private val runeInfoIconTypeFetchUseCase: RuneInfoIconTypeFetchUseCase
 ) : ViewModel() {
 
     private var _state by mutableStateOf<CombinationState>(CombinationState.None)
     val state: CombinationState get() = _state
+
+    private var _runeInfoIconType by mutableStateOf("")
+    val runeInfoIconType: String get() = _runeInfoIconType
 
     fun fetchRuneWords(rune: Rune?) = viewModelScope.launch {
         _state = CombinationState.Loading
@@ -31,6 +36,13 @@ internal class CombinationViewModel @Inject constructor(
             .onFailure {
                 _state = CombinationState.Failed
                 Timber.d(it)
+            }
+    }
+
+    fun fetchRuneInfoIconType() = viewModelScope.launch {
+        runeInfoIconTypeFetchUseCase.execute()
+            .onSuccess {
+                _runeInfoIconType = it
             }
     }
 }
