@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -13,10 +14,13 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Divider
+import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Info
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -38,20 +42,23 @@ import com.beok.runewords.common.view.ContentLoading
 internal object ActivityCombinationView {
 
     private const val CLASSNAME_DETAIL = "com.beok.runewords.detail.presentation.DetailActivity"
+    private const val CLASSNAME_INFO = "com.beok.runewords.info.presentation.RuneInfoActivity"
 
     @Composable
     fun Layout(
         rune: Rune,
         context: Context,
         state: CombinationState,
-        runeWordClickTracking: (String) -> Unit
+        runeWordClickTracking: (String) -> Unit,
+        runeInfoClickTracking: (String) -> Unit
     ) {
         MaterialTheme {
             CombinationScaffold(
                 rune = rune,
                 context = context,
                 state = state,
-                runeWordClickTracking = runeWordClickTracking
+                runeWordClickTracking = runeWordClickTracking,
+                runeInfoClickTracking = runeInfoClickTracking
             )
         }
     }
@@ -61,11 +68,16 @@ internal object ActivityCombinationView {
         rune: Rune,
         context: Context,
         state: CombinationState,
-        runeWordClickTracking: (String) -> Unit
+        runeWordClickTracking: (String) -> Unit,
+        runeInfoClickTracking: (String) -> Unit
     ) {
         Scaffold(
             topBar = {
-                CombinationTopBar(rune = rune)
+                CombinationTopBar(
+                    context = context,
+                    rune = rune,
+                    runeInfoClickTracking = runeInfoClickTracking
+                )
             },
             content = { padding ->
                 when (state) {
@@ -136,7 +148,11 @@ internal object ActivityCombinationView {
     }
 
     @Composable
-    private fun CombinationTopBar(rune: Rune) {
+    private fun CombinationTopBar(
+        context: Context,
+        rune: Rune,
+        runeInfoClickTracking: (String) -> Unit
+    ) {
         TopAppBar(
             title = {
                 Image(
@@ -149,6 +165,26 @@ internal object ActivityCombinationView {
                     modifier = Modifier.padding(start = 12.dp),
                     fontSize = 20.sp
                 )
+                Box(
+                    modifier = Modifier.fillMaxWidth(),
+                    contentAlignment = Alignment.CenterEnd
+                ) {
+                    Icon(
+                        modifier = Modifier
+                            .clickable {
+                                context.startActivity(
+                                    className = CLASSNAME_INFO,
+                                    bundle = bundleOf(
+                                        BundleKeyConstants.RUNE_NAME to rune
+                                    )
+                                )
+                                runeInfoClickTracking(rune.name)
+                            }
+                            .padding(12.dp),
+                        imageVector = Icons.Outlined.Info,
+                        contentDescription = null,
+                    )
+                }
             }
         )
     }

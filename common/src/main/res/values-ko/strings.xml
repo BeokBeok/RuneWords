@@ -33,4 +33,106 @@
     <string name="title_rune_jah">자</string>
     <string name="title_rune_cham">참</string>
     <string name="title_rune_zod">조드</string>
+
+    <string name="option_el_one">명중률 +50\n시야 +1</string>
+    <string name="option_el_two">방어력 +15\n시야 +1</string>
+
+    <string name="option_eld_one">언데드에게 주는 피해 +75%\n언데드에 대한 명중률 +50</string>
+    <string name="option_eld_two">지구력 고갈 속도 15% 감소</string>
+    <string name="option_eld_three">막기 확률 7% 증가</string>
+
+    <string name="option_tir_one">적 처치 시 마나 +2</string>
+
+    <string name="option_nef_one">밀쳐내기</string>
+    <string name="option_nef_two">원거리 공격 방어력 +30</string>
+
+    <string name="option_eth_one">대상의 방어력 -25%</string>
+    <string name="option_eth_two">마나 재생 15%</string>
+
+    <string name="option_ith_one">최대 피해 +9</string>
+    <string name="option_ith_two">받는 피해의 15%만큼 마나 회복</string>
+
+    <string name="option_tal_one">독 피해 +75 (5초에 걸쳐)</string>
+    <string name="option_tal_two">독 저항 +30%</string>
+    <string name="option_tal_three">독 저항 +35%</string>
+
+    <string name="option_ral_one">화염 피해 5 – 30 추가</string>
+    <string name="option_ral_two">화염 저항 +30%</string>
+    <string name="option_ral_three">화염 저항 +35%</string>
+
+    <string name="option_ort_one">번개 피해 5 – 30 추가</string>
+    <string name="option_ort_two">번개 저항 +30%</string>
+    <string name="option_ort_three">번개 저항 +35%</string>
+
+    <string name="option_thul_one">냉기 피해 5 – 30 추가</string>
+    <string name="option_thul_two">냉기 저항 +30%</string>
+    <string name="option_thul_three">냉기 저항 +35%</string>
+
+    <string name="option_amn_one">적중당 생명력 7% 훔침</string>
+    <string name="option_amn_two">공격자가 피해를 14 받음</string>
+
+    <string name="option_sol_one">최소 피해 +9</string>
+    <string name="option_sol_two">피해 7 감소</string>
+
+    <string name="option_shael_one">공격 속도 +20%</string>
+    <string name="option_shael_two">타격 회복 속도 +20%</string>
+    <string name="option_shael_three">막기 속도 +20%</string>
+
+    <string name="option_dol_one">적중 시 괴물 도주 25%</string>
+    <string name="option_dol_two">생명력 회복 +7</string>
+
+    <string name="option_hel_one">착용 조건 -20%</string>
+    <string name="option_hel_two">착용 조건 -15%</string>
+
+    <string name="option_io_one">생명력 +10</string>
+
+    <string name="option_lum_one">마력 +10</string>
+
+    <string name="option_ko_one">민첩 +10</string>
+
+    <string name="option_fal_one">힘 +10</string>
+
+    <string name="option_lem_one">괴물에게서 얻는 금화 75% 증가</string>
+    <string name="option_lem_two">괴물에게서 얻는 금화 50% 증가</string>
+
+    <string name="option_pul_one">악마에게 주는 피해 +75%</string>
+    <string name="option_pul_two">방어력 +30% 증가</string>
+
+    <string name="option_um_one">상처 악화 확률 25%</string>
+    <string name="option_um_two">모든 저항 +15</string>
+    <string name="option_um_three">모든 저항 +22</string>
+
+    <string name="option_mal_one">괴물 회복 저지</string>
+    <string name="option_mal_two">마법 피해 7 감소</string>
+
+    <string name="option_ist_one">마법 아이템 발견 확률 30% 증가</string>
+    <string name="option_ist_two">마법 아이템 발견 확률 25% 증가</string>
+
+    <string name="option_gul_one">명중률 보너스 20%</string>
+    <string name="option_gul_two">최대 독 저항 +5%</string>
+
+    <string name="option_vex_one">적중당 마나 7% 훔침</string>
+    <string name="option_vex_two">최대 화염 저항 +5%</string>
+
+    <string name="option_ohm_one">피해 +50% 증가</string>
+    <string name="option_ohm_two">최대 냉기 저항 +5%</string>
+
+    <string name="option_lo_one">치명적 공격 20%</string>
+    <string name="option_lo_two">최대 번개 저항 +5%</string>
+
+    <string name="option_sur_one">적중 시 대상 실명</string>
+    <string name="option_sur_two">최대 마나 5% 증가</string>
+    <string name="option_sur_three">마나 +50</string>
+
+    <string name="option_ber_one">강타 확률 20%</string>
+    <string name="option_ber_two">피해 8% 감소</string>
+
+    <string name="option_jah_one">대상의 방어력 무시</string>
+    <string name="option_jah_two">최대 생명력 5% 증가</string>
+    <string name="option_jah_three">생명력 +50</string>
+
+    <string name="option_cham_one">대상 빙결 +3</string>
+    <string name="option_cham_two">빙결되지 않음</string>
+
+    <string name="option_zod_one">파괴 불가</string>
 </resources>
