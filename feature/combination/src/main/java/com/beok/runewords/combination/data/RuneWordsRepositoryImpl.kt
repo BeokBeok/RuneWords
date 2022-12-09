@@ -4,6 +4,7 @@ import com.beok.runewords.combination.domain.RuneWordsRepository
 import com.beok.runewords.combination.data.remote.RuneWordsRemoteDataSource
 import com.beok.runewords.combination.domain.model.RuneWords
 import com.beok.runewords.common.util.toDto
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import javax.inject.Inject
 
 internal class RuneWordsRepositoryImpl @Inject constructor(
@@ -14,4 +15,7 @@ internal class RuneWordsRepositoryImpl @Inject constructor(
         remoteDataSource
             .searchByRune(rune)
             .toDto()
+
+    override suspend fun fetchRuneInfoIconType(): String =
+        remoteDataSource.fetchRuneInfoIconType()
 }
