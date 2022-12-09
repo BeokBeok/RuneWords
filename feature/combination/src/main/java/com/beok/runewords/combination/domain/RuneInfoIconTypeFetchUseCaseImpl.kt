@@ -4,7 +4,7 @@ import javax.inject.Inject
 
 internal class RuneInfoIconTypeFetchUseCaseImpl @Inject constructor(
     private val repository: RuneWordsRepository
-): RuneInfoIconTypeFetchUseCase {
+) : RuneInfoIconTypeFetchUseCase {
 
     override suspend fun execute(): Result<String> = runCatching {
         repository.fetchRuneInfoIconType()

@@ -5,7 +5,6 @@ import com.beok.runewords.combination.domain.RuneWordsRepository
 import com.beok.runewords.common.util.toDto
 import kotlin.test.assertEquals
 import kotlinx.coroutines.runBlocking
-import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 
 internal class RuneWordsRepositoryImplTest {
