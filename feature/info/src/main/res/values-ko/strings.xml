@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_weapon">무기</string>
+    <string name="title_helm">투구</string>
+    <string name="title_armor">갑옷</string>
+    <string name="title_shield">방패</string>
+</resources>

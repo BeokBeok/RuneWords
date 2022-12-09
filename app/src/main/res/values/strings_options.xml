@@ -245,7 +245,7 @@
         <font color=\'#000000\'>Adds 5-30 fire damage<br></font>
         <font color=\'#000000\'>Adds 21-110 lightning damage<br></font>
         <font color=\'#000000\'>+75 poison damage over 5 seconds<br></font>
-        <font color=\'#000000\'>+10 to maximum damage<br></font>
+        <font color=\'#000000\'>+10 Maximum damage<br></font>
         <font color=\'#000000\'>Lighting resistance +60%<br></font>
         <font color=\'#000000\'>+5 maximum lightning resistance<br></font>
         <font color=\'#000000\'>+3 to Holy Shock (Paladin only)<br></font>
@@ -378,8 +378,8 @@
     <![CDATA[
         <font color=\'#000000\'>Level 10 Vigor aura when equipped<br></font>
         <font color=\'#cc0029\'>+200-275% enhanced damage<br></font>
-        <font color=\'#000000\'>+9 to minimum damage<br></font>
-        <font color=\'#000000\'>+9 to maximize damage<br></font>
+        <font color=\'#000000\'>+9 Minimum damage<br></font>
+        <font color=\'#000000\'>+9 Maximum damage<br></font>
         <font color=\'#000000\'>Adds 55-160 lightning damage<br></font>
         <font color=\'#000000\'>Adds 55-160 fire damage<br></font>
         <font color=\'#000000\'>Adds 55-160 cold damage<br></font>
@@ -410,8 +410,8 @@
     <string name="rune_word_honor_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+160% enhanced damage<br></font>
-        <font color=\'#000000\'>+9 minimum damage<br></font>
-        <font color=\'#000000\'>+9 maximum damage<br></font>
+        <font color=\'#000000\'>+9 Minimum damage<br></font>
+        <font color=\'#000000\'>+9 Maximum damage<br></font>
         <font color=\'#000000\'>25% deadly strike<br></font>
         <font color=\'#000000\'>+250 to attack rating<br></font>
         <font color=\'#000000\'>+1 to all skills<br></font>
@@ -441,7 +441,7 @@
     <![CDATA[
         <font color=\'#000000\'>Indestructible<br></font>
         <font color=\'#cc0029\'>+260-310% enhanced damage<br></font>
-        <font color=\'#000000\'>+9 to minimum damage<br></font>
+        <font color=\'#000000\'>+9 Minimum damage<br></font>
         <font color=\'#000000\'>7% life stolen per hit<br></font>
         <font color=\'#000000\'>20% chance of crushing blow<br></font>
         <font color=\'#000000\'>Hit blinds target<br></font>
@@ -472,7 +472,7 @@
         <font color=\'#cc0029\'>Level 12-17 Meditation aura when equipped<br></font>
         <font color=\'#000000\'>+35% faster cast rate<br></font>
         <font color=\'#cc0029\'>+200-260% enhanced damage<br></font>
-        <font color=\'#000000\'>+9 to minimum damage<br></font>
+        <font color=\'#000000\'>+9 Minimum damage<br></font>
         <font color=\'#cc0029\'>180-250% bonus to attack rating<br></font>
         <font color=\'#000000\'>Adds 5-30 fire damage<br></font>
         <font color=\'#000000\'>+75 poison damage over 5 seconds<br></font>
@@ -538,7 +538,7 @@
     <string name="rune_word_malice_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+33% enhanced damage<br></font>
-        <font color=\'#000000\'>+9 maximum damage<br></font>
+        <font color=\'#000000\'>+9 Maximum damage<br></font>
         <font color=\'#000000\'>100% chance of open wounds<br></font>
         <font color=\'#000000\'>-25% target defense<br></font>
         <font color=\'#000000\'>-100 to monster defense per hit<br></font>
@@ -569,7 +569,7 @@
         <font color=\'#000000\'>+2 to Static Field (Sorceress only)<br></font>
         <font color=\'#000000\'>+10 to energy<br></font>
         <font color=\'#000000\'>+10 to vitality<br></font>
-        <font color=\'#000000\'>+9 minimum damage<br></font>
+        <font color=\'#000000\'>+9 Minimum damage<br></font>
         <font color=\'#000000\'>-25% target defense<br></font>
         <font color=\'#000000\'>Magic damage reduced by 7<br></font>
         <font color=\'#000000\'>+50% enhanced defense<br></font>
@@ -612,7 +612,7 @@
         <font color=\'#cc0029\'>All resistances +25-30<br></font>
         <font color=\'#000000\'>12% damage taken goes to mana<br></font>
         <font color=\'#000000\'>+1 to light radius<br></font>
-        <font color=\'#000000\'>+9 minimum damage (weapon)<br></font>
+        <font color=\'#000000\'>+9 Minimum damage (weapon)<br></font>
         <font color=\'#000000\'>+50 to attack rating (weapon)<br></font>
         <font color=\'#000000\'>20% deadly strike (weapon)<br></font>
         <font color=\'#000000\'>Hit causes monster to flee 25% (weapon)<br></font>
@@ -905,8 +905,8 @@
     <string name="rune_word_steel_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>20% enhanced damage<br></font>
-        <font color=\'#000000\'>+3 minimum damage<br></font>
-        <font color=\'#000000\'>+3 maximum damage<br></font>
+        <font color=\'#000000\'>+3 Minimum damage<br></font>
+        <font color=\'#000000\'>+3 Maximum damage<br></font>
         <font color=\'#000000\'>+50 to attack rating<br></font>
         <font color=\'#000000\'>50% chance of open wounds<br></font>
         <font color=\'#000000\'>25% increased attack speed<br></font>

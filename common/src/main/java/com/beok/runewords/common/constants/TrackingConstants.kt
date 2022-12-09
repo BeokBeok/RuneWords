@@ -4,7 +4,8 @@ object TrackingConstants {
 
     object Rune {
         const val CLICK = "rune_click"
-        const val WORDS_WORDS = "rune_words_click"
+        const val INFO_CLICK = "rune_info_click"
+        const val WORDS_CLICK = "rune_words_click"
     }
 
     object Params {

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_weapon">Weapon</string>
+    <string name="title_helm">Helm</string>
+    <string name="title_armor">Armor</string>
+    <string name="title_shield">Shield</string>
+</resources>
