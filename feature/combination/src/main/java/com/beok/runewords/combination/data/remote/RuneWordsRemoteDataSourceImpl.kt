@@ -28,11 +28,7 @@ internal class RuneWordsRemoteDataSourceImpl @Inject constructor(
         }
 
     override suspend fun fetchRuneInfoIconType(): String = withContext(Dispatchers.IO) {
-        remoteConfig.fetchAndActivate()
-            .await()
-            .run {
-                remoteConfig.getString(KEY_RUNE_INFO_ICON_TYPE)
-            }
+        remoteConfig.getString(KEY_RUNE_INFO_ICON_TYPE)
     }
 
     companion object {
