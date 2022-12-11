@@ -20,7 +20,9 @@ import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Info
+import androidx.compose.material.icons.filled.Info
+import androidx.compose.material.icons.filled.MoreVert
+import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -49,6 +51,7 @@ internal object ActivityCombinationView {
         rune: Rune,
         context: Context,
         state: CombinationState,
+        runeInfoIconType: String,
         runeWordClickTracking: (String) -> Unit,
         runeInfoClickTracking: (String) -> Unit
     ) {
@@ -57,6 +60,7 @@ internal object ActivityCombinationView {
                 rune = rune,
                 context = context,
                 state = state,
+                runeInfoIconType = runeInfoIconType,
                 runeWordClickTracking = runeWordClickTracking,
                 runeInfoClickTracking = runeInfoClickTracking
             )
@@ -68,6 +72,7 @@ internal object ActivityCombinationView {
         rune: Rune,
         context: Context,
         state: CombinationState,
+        runeInfoIconType: String,
         runeWordClickTracking: (String) -> Unit,
         runeInfoClickTracking: (String) -> Unit
     ) {
@@ -76,6 +81,7 @@ internal object ActivityCombinationView {
                 CombinationTopBar(
                     context = context,
                     rune = rune,
+                    runeInfoIconType = runeInfoIconType,
                     runeInfoClickTracking = runeInfoClickTracking
                 )
             },
@@ -151,6 +157,7 @@ internal object ActivityCombinationView {
     private fun CombinationTopBar(
         context: Context,
         rune: Rune,
+        runeInfoIconType: String,
         runeInfoClickTracking: (String) -> Unit
     ) {
         TopAppBar(
@@ -165,27 +172,48 @@ internal object ActivityCombinationView {
                     modifier = Modifier.padding(start = 12.dp),
                     fontSize = 20.sp
                 )
-                Box(
-                    modifier = Modifier.fillMaxWidth(),
-                    contentAlignment = Alignment.CenterEnd
-                ) {
-                    Icon(
-                        modifier = Modifier
-                            .clickable {
-                                context.startActivity(
-                                    className = CLASSNAME_INFO,
-                                    bundle = bundleOf(
-                                        BundleKeyConstants.RUNE_NAME to rune
-                                    )
-                                )
-                                runeInfoClickTracking(rune.name)
-                            }
-                            .padding(12.dp),
-                        imageVector = Icons.Outlined.Info,
-                        contentDescription = null,
+                if (runeInfoIconType.isNotEmpty()) {
+                    RuneInfoIcon(
+                        context = context,
+                        rune = rune,
+                        runeInfoClickTracking = runeInfoClickTracking,
+                        runeInfoIconType = runeInfoIconType
                     )
                 }
             }
         )
+    }
+
+    @Composable
+    private fun RuneInfoIcon(
+        context: Context,
+        rune: Rune,
+        runeInfoClickTracking: (String) -> Unit,
+        runeInfoIconType: String
+    ) {
+        Box(
+            modifier = Modifier.fillMaxWidth(),
+            contentAlignment = Alignment.CenterEnd
+        ) {
+            Icon(
+                modifier = Modifier
+                    .clickable {
+                        context.startActivity(
+                            className = CLASSNAME_INFO,
+                            bundle = bundleOf(
+                                BundleKeyConstants.RUNE_NAME to rune
+                            )
+                        )
+                        runeInfoClickTracking(rune.name)
+                    }
+                    .padding(12.dp),
+                imageVector = when (runeInfoIconType) {
+                    "info" -> Icons.Default.Info
+                    "more" -> Icons.Default.MoreVert
+                    else -> Icons.Default.Refresh
+                },
+                contentDescription = null,
+            )
+        }
     }
 }
