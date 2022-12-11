@@ -1,5 +1,6 @@
 package com.beok.runewords.combination.presentation
 
+import com.beok.runewords.combination.domain.RuneInfoIconTypeFetchUseCase
 import com.beok.runewords.combination.domain.RuneWordsFetchUseCase
 import com.beok.runewords.combination.presentation.vo.CombinationState
 import com.beok.runewords.common.model.Rune
@@ -14,11 +15,15 @@ import org.junit.jupiter.api.extension.ExtendWith
 internal class CombinationViewModelTest {
 
     private val useCase: RuneWordsFetchUseCase = RuneWordsFetchUseCase.Fake()
+    private val runeInfoIconTypeFetchUseCase = RuneInfoIconTypeFetchUseCase.Fake()
     private lateinit var viewModel: CombinationViewModel
 
     @BeforeEach
     fun setup() {
-        viewModel = CombinationViewModel(runeWordsFetchUseCase = useCase)
+        viewModel = CombinationViewModel(
+            runeWordsFetchUseCase = useCase,
+            runeInfoIconTypeFetchUseCase = runeInfoIconTypeFetchUseCase
+        )
     }
 
     @Test
@@ -34,5 +39,18 @@ internal class CombinationViewModelTest {
 
         // then
         assertEquals(expected = expected, actual = viewModel.state)
+    }
+
+    @Test
+    fun `룬 정보 아이콘 타입을_불러옵니다`() = runBlocking {
+        // given
+        val expected = runeInfoIconTypeFetchUseCase.execute()
+            .getOrNull()
+
+        // when
+        viewModel.fetchRuneInfoIconType()
+
+        // then
+        assertEquals(expected = expected, actual = viewModel.runeInfoIconType)
     }
 }
