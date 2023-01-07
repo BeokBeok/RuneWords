@@ -31,7 +31,6 @@ internal class DetailActivity : AppCompatActivity() {
             ActivityDetailView.Layout(
                 runeWordsName = intent.extras?.get(BundleKeyConstants.RUNE_WORDS_NAME) as? String
                     ?: return@setContent,
-                context = this,
                 state = viewModel.state
             )
         }
