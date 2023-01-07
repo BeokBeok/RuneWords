@@ -26,6 +26,7 @@ import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringArrayResource
 import androidx.compose.ui.res.stringResource
@@ -40,6 +41,8 @@ import com.beok.runewords.common.ext.resourceIDByName
 import com.beok.runewords.common.ext.startActivity
 import com.beok.runewords.common.model.Rune
 import com.beok.runewords.common.view.ContentLoading
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.toImmutableList
 
 internal object ActivityCombinationView {
 
@@ -49,7 +52,6 @@ internal object ActivityCombinationView {
     @Composable
     fun Layout(
         rune: Rune,
-        context: Context,
         state: CombinationState,
         runeInfoIconType: String,
         runeWordClickTracking: (String) -> Unit,
@@ -58,7 +60,6 @@ internal object ActivityCombinationView {
         MaterialTheme {
             CombinationScaffold(
                 rune = rune,
-                context = context,
                 state = state,
                 runeInfoIconType = runeInfoIconType,
                 runeWordClickTracking = runeWordClickTracking,
@@ -70,7 +71,6 @@ internal object ActivityCombinationView {
     @Composable
     private fun CombinationScaffold(
         rune: Rune,
-        context: Context,
         state: CombinationState,
         runeInfoIconType: String,
         runeWordClickTracking: (String) -> Unit,
@@ -79,7 +79,6 @@ internal object ActivityCombinationView {
         Scaffold(
             topBar = {
                 CombinationTopBar(
-                    context = context,
                     rune = rune,
                     runeInfoIconType = runeInfoIconType,
                     runeInfoClickTracking = runeInfoClickTracking
@@ -90,8 +89,7 @@ internal object ActivityCombinationView {
                     is CombinationState.Content -> {
                         CombinationContent(
                             modifier = Modifier.padding(padding),
-                            context = context,
-                            runeWords = state.value,
+                            runeWords = state.value.toImmutableList(),
                             runeWordClickTracking = runeWordClickTracking
                         )
                     }
@@ -108,10 +106,10 @@ internal object ActivityCombinationView {
     @Composable
     private fun CombinationContent(
         modifier: Modifier,
-        context: Context,
-        runeWords: List<RuneWords>,
+        runeWords: ImmutableList<RuneWords>,
         runeWordClickTracking: (String) -> Unit
     ) {
+        val context: Context = LocalContext.current
         LazyColumn(modifier = modifier.fillMaxSize()) {
             items(runeWords) { item ->
                 if (context.resourceIDByName(item.name) > 0) {
@@ -155,7 +153,6 @@ internal object ActivityCombinationView {
 
     @Composable
     private fun CombinationTopBar(
-        context: Context,
         rune: Rune,
         runeInfoIconType: String,
         runeInfoClickTracking: (String) -> Unit
@@ -174,7 +171,6 @@ internal object ActivityCombinationView {
                 )
                 if (runeInfoIconType.isNotEmpty()) {
                     RuneInfoIcon(
-                        context = context,
                         rune = rune,
                         runeInfoClickTracking = runeInfoClickTracking,
                         runeInfoIconType = runeInfoIconType
@@ -186,11 +182,11 @@ internal object ActivityCombinationView {
 
     @Composable
     private fun RuneInfoIcon(
-        context: Context,
         rune: Rune,
         runeInfoClickTracking: (String) -> Unit,
         runeInfoIconType: String
     ) {
+        val context: Context = LocalContext.current
         Box(
             modifier = Modifier.fillMaxWidth(),
             contentAlignment = Alignment.CenterEnd

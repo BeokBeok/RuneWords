@@ -25,6 +25,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -40,30 +41,20 @@ internal object ActivityHomeView {
         "com.beok.runewords.combination.presentation.CombinationActivity"
 
     @Composable
-    fun Layout(
-        context: Context,
-        runeClickTracking: (String) -> Unit,
-    ) {
+    fun Layout(runeClickTracking: (String) -> Unit) {
         MaterialTheme {
-            HomeScaffold(
-                context = context,
-                runeClickTracking = runeClickTracking,
-            )
+            HomeScaffold(runeClickTracking = runeClickTracking)
         }
     }
 
     @Composable
-    private fun HomeScaffold(
-        context: Context,
-        runeClickTracking: (String) -> Unit,
-    ) {
+    private fun HomeScaffold(runeClickTracking: (String) -> Unit) {
         Scaffold(
             scaffoldState = rememberScaffoldState(snackbarHostState = SnackbarHostState()),
             topBar = { HomeTopBar() },
         ) { paddings ->
             HomeContent(
                 modifier = Modifier.padding(paddings),
-                context = context,
                 runeClickTracking = runeClickTracking
             )
         }
@@ -83,9 +74,9 @@ internal object ActivityHomeView {
     @Composable
     private fun HomeContent(
         modifier: Modifier,
-        context: Context,
         runeClickTracking: (String) -> Unit
     ) {
+        val context: Context = LocalContext.current
         Box(modifier = modifier.fillMaxSize()) {
             LazyVerticalGrid(
                 modifier = Modifier.fillMaxSize(),

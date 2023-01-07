@@ -29,6 +29,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
@@ -57,13 +58,11 @@ internal object ActivityDetailView {
     @Composable
     fun Layout(
         runeWordsName: String,
-        context: Context,
         state: DetailState
     ) {
         MaterialTheme {
             DetailScaffold(
                 runeWordsName = runeWordsName,
-                context = context,
                 state = state
             )
         }
@@ -72,18 +71,16 @@ internal object ActivityDetailView {
     @Composable
     private fun DetailScaffold(
         runeWordsName: String,
-        context: Context,
         state: DetailState
     ) {
         Scaffold(
-            topBar = { DetailTopBar(context, runeWordsName) },
+            topBar = { DetailTopBar(runeWordsName) },
             content = { paddings ->
                 when (state) {
                     is DetailState.Content -> {
                         if (state.value.isEmpty()) return@Scaffold
                         DetailContent(
                             modifier = Modifier.padding(paddings),
-                            context = context,
                             info = state.value
                         )
                     }
@@ -100,7 +97,6 @@ internal object ActivityDetailView {
     @Composable
     private fun DetailContent(
         modifier: Modifier,
-        context: Context,
         info: RuneWordsVO
     ) {
         ConstraintLayout(modifier = modifier.fillMaxSize()) {
@@ -117,8 +113,8 @@ internal object ActivityDetailView {
                     }
                     .verticalScroll(rememberScrollState())
             ) {
-                RuneWordsType(info = info, context = context)
-                RuneWordsCombination(info = info, context = context)
+                RuneWordsType(info = info)
+                RuneWordsCombination(info = info)
                 RuneWordsOption(info = info)
             }
             AndroidView(
@@ -141,7 +137,7 @@ internal object ActivityDetailView {
 
     @Composable
     private fun RuneWordsOption(info: RuneWordsVO) {
-        Headline(resourceID = R.string.title_options)
+        Headline(title = stringResource(id = R.string.title_options))
         AndroidView(
             modifier = Modifier
                 .fillMaxWidth()
@@ -166,8 +162,14 @@ internal object ActivityDetailView {
     }
 
     @Composable
-    private fun RuneWordsCombination(info: RuneWordsVO, context: Context) {
-        Headline(resourceID = R.string.title_rune_words, formatArgs = arrayOf(info.levelLimit))
+    private fun RuneWordsCombination(info: RuneWordsVO) {
+        val context: Context = LocalContext.current
+        Headline(
+            title = stringResource(
+                id = R.string.title_rune_words,
+                formatArgs = arrayOf(info.levelLimit)
+            )
+        )
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -205,8 +207,9 @@ internal object ActivityDetailView {
     }
 
     @Composable
-    private fun RuneWordsType(info: RuneWordsVO, context: Context) {
-        Headline(resourceID = R.string.title_type)
+    private fun RuneWordsType(info: RuneWordsVO) {
+        val context: Context = LocalContext.current
+        Headline(title = stringResource(id = R.string.title_type))
         Text(
             text = info.type
                 .filter { context.resourceIDByName(name = it) > 0 }
@@ -221,7 +224,8 @@ internal object ActivityDetailView {
     }
 
     @Composable
-    private fun DetailTopBar(context: Context, runeWordsName: String) {
+    private fun DetailTopBar(runeWordsName: String) {
+        val context: Context = LocalContext.current
         TopAppBar(modifier = Modifier.fillMaxWidth()) {
             Text(
                 text = if (context.resourceIDByName(name = runeWordsName) > 0) {
@@ -234,9 +238,9 @@ internal object ActivityDetailView {
     }
 
     @Composable
-    private fun Headline(resourceID: Int, vararg formatArgs: Any) {
+    private fun Headline(title: String) {
         Text(
-            text = stringResource(id = resourceID, formatArgs = formatArgs),
+            text = title,
             modifier = Modifier
                 .fillMaxWidth()
                 .background(color = Color.LightGray)
