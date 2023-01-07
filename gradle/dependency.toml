@@ -12,6 +12,7 @@ material = { module = "com.google.android.material:material", version = "1.5.0" 
 play-services-tasks = { module = "com.google.android.gms:play-services-tasks", version = "18.0.1" }
 play-services-ads = { module = "com.google.android.gms:play-services-ads", version = "20.5.0" }
 play-core-ktx = { module = "com.google.android.play:core-ktx", version = "1.8.1" }
+kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version = "0.3.5" }
 
 # JUnit5
 junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "jUnit5" }

@@ -32,7 +32,6 @@ internal class CombinationActivity : AppCompatActivity() {
             ActivityCombinationView.Layout(
                 rune = intent.extras?.get(BundleKeyConstants.RUNE_NAME) as? Rune
                     ?: return@setContent,
-                context = this,
                 state = viewModel.state,
                 runeInfoIconType = viewModel.runeInfoIconType,
                 runeWordClickTracking = { runeWordName ->
