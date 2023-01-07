@@ -45,7 +45,6 @@ internal class HomeActivity : ComponentActivity() {
     private fun setContent() {
         setContent {
             ActivityHomeView.Layout(
-                context = this,
                 runeClickTracking = { runeName ->
                     analytics.logEvent(
                         TrackingConstants.Rune.CLICK,
