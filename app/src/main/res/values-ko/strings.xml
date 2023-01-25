@@ -91,6 +91,16 @@
     <string name="unbending_will">불굴의 의지</string>
     <string name="obsession">집착</string>
 
+    <!-- Ladder RuneWords List (2.6) -->
+    <string name="bulwark">방벽</string>
+    <string name="cure">치료</string>
+    <string name="ground">접지</string>
+    <string name="hearth">화로</string>
+    <string name="temper">담금질</string>
+    <string name="hustle">투지</string>
+    <string name="mosaic">모자이크</string>
+    <string name="metamorphosis">탈태</string>
+
     <!-- RuneWords Type -->
     <string name="all_weapons">모든 무기</string>
     <string name="axe">도끼</string>
