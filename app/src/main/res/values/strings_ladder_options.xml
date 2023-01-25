@@ -1,5 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="rune_word_bulwark_option" formatted="false">
+    <![CDATA[
+        <font color=\'#000000\'>+20% Faster Hit Recovery<br></font>
+        <font color=\'#cc0029\'>+4-6% Life stolen per hit<br></font>
+        <font color=\'#cc0029\'>+75-100% Enhanced Defense<br></font>
+        <font color=\'#000000\'>+10 to Vitality<br></font>
+        <font color=\'#000000\'>Increase Maximum Life 5%<br></font>
+        <font color=\'#000000\'>Replenish Life +30<br></font>
+        <font color=\'#000000\'>Damage Reduced by 7<br></font>
+        <font color=\'#cc0029\'>Physical Damage Received Reduced by 10-15%<br></font>
+    ]]>
+    </string>
+    <string name="rune_word_cure_option" formatted="false">
+    <![CDATA[
+        <font color=\'#000000\'>+20% Faster Hit Recovery<br></font>
+        <font color=\'#cc0029\'>+75-100% Enhanced Defense<br></font>
+        <font color=\'#000000\'>+10 to Vitality<br></font>
+        <font color=\'#000000\'>Increase Maximum Life 5%<br></font>
+        <font color=\'#cc0029\'>Poison Resist +40-60%<br></font>
+        <font color=\'#000000\'>Poison Length Reduced by 75%<br></font>
+    ]]>
+    </string>
+    <string name="rune_word_ground_option" formatted="false">
+    <![CDATA[
+        <font color=\'#000000\'>+20% Faster Hit Recovery<br></font>
+        <font color=\'#cc0029\'>+75-100% Enhanced Defense<br></font>
+        <font color=\'#000000\'>+10 to Vitality<br></font>
+        <font color=\'#000000\'>Increase Maximum Life 5%<br></font>
+        <font color=\'#cc0029\'>Lightning Resist +40-60%<br></font>
+        <font color=\'#cc0029\'>Lightning Absorb +10-15%<br></font>
+    ]]>
+    </string>
+    <string name="rune_word_hearth_option" formatted="false">
+    <![CDATA[
+        <font color=\'#000000\'>+20% Faster Hit Recovery<br></font>
+        <font color=\'#cc0029\'>+75-100% Enhanced Defense<br></font>
+        <font color=\'#000000\'>+10 to Vitality<br></font>
+        <font color=\'#000000\'>Increase Maximum Life 5%<br></font>
+        <font color=\'#cc0029\'>Cold Resist +40-60%<br></font>
+        <font color=\'#cc0029\'>Cold Absorb +10-15%<br></font>
+    ]]>
+    </string>
+    <string name="rune_word_temper_option" formatted="false">
+    <![CDATA[
+        <font color=\'#000000\'>+20% Faster Hit Recovery<br></font>
+        <font color=\'#cc0029\'>+75-100% Enhanced Defense<br></font>
+        <font color=\'#000000\'>+10 to Vitality<br></font>
+        <font color=\'#000000\'>Increase Maximum Life 5%<br></font>
+        <font color=\'#cc0029\'>Fire Resist +40-60%<br></font>
+        <font color=\'#cc0029\'>Fire Absorb +10-15%<br></font>
+    ]]>
+    </string>
+    <string name="rune_word_hustle_option" formatted="false">
+    <![CDATA[
+        <font color=\'#000000\'><b>Weapon</b><br></font>
+        <font color=\'#000000\'>5% Chance to cast level nine Burst of Speed on striking<br></font>
+        <font color=\'#000000\'>+30% Increased Attack Speed<br></font>
+        <font color=\'#cc0029\'>+130-150% Enhanced Damage<br></font>
+        <font color=\'#000000\'>+75% Damage to Undead<br></font>
+        <font color=\'#000000\'>+50 to Attack Rating against Undead<br></font>
+        <font color=\'#000000\'>+10 to Dexterity<br><br></font>
+        <font color=\'#000000\'><b>Armor</b><br></font>
+        <font color=\'#000000\'>+50% Faster Run/Walk<br></font>
+        <font color=\'#000000\'>+20% Increased Attack Speed<br></font>
+        <font color=\'#000000\'>+20% Faster Hit Recovery<br></font>
+        <font color=\'#000000\'>+10 to Dexterity<br></font>
+        <font color=\'#000000\'>50% Slower Stamina Drain<br></font>
+    ]]>
+    </string>
+    <string name="rune_word_mosaic_option" formatted="false">
+    <![CDATA[
+        <font color=\'#000000\'>+25% chance for finishing moves to not consume charges<br></font>
+        <font color=\'#000000\'>+2 to Martial Arts (Assassin only)<br></font>
+        <font color=\'#000000\'>+20% Increased Attack Speed<br></font>
+        <font color=\'#cc0029\'>+200-250% Enhanced Damage<br></font>
+        <font color=\'#000000\'>+20% Bonus to Attack Rating<br></font>
+        <font color=\'#000000\'>Adds 3-14 Cold Damage<br></font>
+        <font color=\'#000000\'>Prevent Monster Heal<br></font>
+    ]]>
+    </string>
+    <string name="rune_word_metamorphosis_option" formatted="false">
+    <![CDATA[
+        <font color=\'#000000\'>Werewolf strikes grant Mark for 180 seconds<br></font>
+        <font color=\'#000000\'>Mark of the Wolf:<br></font>
+        <font color=\'#000000\'>+20% Bonus to Attack Rating<br></font>
+        <font color=\'#000000\'>Increase Maximum Life 40%<br><br></font>
+        <font color=\'#000000\'>Werebear strikes grant Mark for 180 seconds<br></font>
+        <font color=\'#000000\'>Mark of the Bear:<br></font>
+        <font color=\'#000000\'>+25% Attack Speed<br></font>
+        <font color=\'#000000\'>+25% Chance of Crushing Blow<br><br></font>
+        <font color=\'#000000\'>Physical Damage Received Reduced by 20%<br></font>
+        <font color=\'#000000\'>+5 to Shape Shifting Skills (Druid only)<br></font>
+        <font color=\'#cc0029\'>+50-80% Enhanced Defense<br></font>
+        <font color=\'#000000\'>+10 to Strength<br></font>
+        <font color=\'#000000\'>+10 to Vitality<br></font>
+        <font color=\'#000000\'>All Resistances +10<br></font>
+        <font color=\'#000000\'>Cannot be Frozen<br></font>
+    ]]>
+    </string>
     <string name="rune_word_pattern_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+30% Faster Block Rate<br></font>
