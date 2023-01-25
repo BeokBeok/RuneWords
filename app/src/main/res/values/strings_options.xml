@@ -659,19 +659,28 @@
     </string>
     <string name="rune_word_phoenix_option" formatted="false">
     <![CDATA[
+        <font color=\'#000000\'><b>Shield</b><br></font>
         <font color=\'#000000\'>100% chance to cast level 40 Blaze when you level up<br></font>
         <font color=\'#000000\'>40% chance to cast level 22 Firestorm on striking<br></font>
         <font color=\'#cc0029\'>Level 10-15 Redemption aura when equipped<br></font>
         <font color=\'#cc0029\'>+350-400% enhanced damage<br></font>
         <font color=\'#000000\'>-28% to enemy fire resistance<br></font>
         <font color=\'#cc0029\'>+350-400 missile defense<br></font>
-        <font color=\'#cc0029\'>+15-21 fire absorb<br></font>
-        <font color=\'#000000\'>Ignore target\'s defense (weapon)<br></font>
-        <font color=\'#000000\'>14% mana stolen per hit (weapon)<br></font>
-        <font color=\'#000000\'>20% deadly strike (weapon)<br></font>
-        <font color=\'#000000\'>+50 to life (shields)<br></font>
-        <font color=\'#000000\'>+5% maximum lightning resist (shields)<br></font>
-        <font color=\'#000000\'>+10% maximum fire resist (shields)<br></font>
+        <font color=\'#000000\'>+50 to life<br></font>
+        <font color=\'#000000\'>+5% maximum lightning resist<br></font>
+        <font color=\'#000000\'>+10% maximum fire resist<br></font>
+        <font color=\'#cc0029\'>+15-21 fire absorb<br><br></font>
+        <font color=\'#000000\'><b>Weapon</b><br></font>
+        <font color=\'#000000\'>100% chance to cast level 40 Blaze when you level up<br></font>
+        <font color=\'#000000\'>40% chance to cast level 22 Firestorm on striking<br></font>
+        <font color=\'#cc0029\'>Level 10-15 Redemption aura when equipped<br></font>
+        <font color=\'#cc0029\'>+350-400% enhanced damage<br></font>
+        <font color=\'#000000\'>Ignore target\'s defense<br></font>
+        <font color=\'#000000\'>14% mana stolen per hit<br></font>
+        <font color=\'#000000\'>-28% to enemy fire resistance<br></font>
+        <font color=\'#000000\'>20% deadly strike<br></font>
+        <font color=\'#cc0029\'>+350-400 missile defense<br></font>
+        <font color=\'#cc0029\'>+15-21 fire absorb<br><br></font>
     ]]>
     </string>
     <string name="rune_word_oath_option" formatted="false">

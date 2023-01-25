@@ -659,19 +659,28 @@
     </string>
     <string name="rune_word_phoenix_option" formatted="false">
     <![CDATA[
+        <font color=\'#000000\'><b>방패</b><br></font>
         <font color=\'#000000\'>레벨 상승 시 100% 확률로 40 레벨 불길 시전<br></font>
         <font color=\'#000000\'>타격 시 40% 확률로 22 레벨 화염폭풍 시전<br></font>
         <font color=\'#cc0029\'>장착 시 10~15레벨 속죄 오라 효과 적용<br></font>
         <font color=\'#cc0029\'>피해 +350~400% 증가<br></font>
         <font color=\'#000000\'>적의 화염 저항 -28%<br></font>
         <font color=\'#cc0029\'>원거리 공격 방어력 +350~400<br></font>
+        <font color=\'#000000\'>생명력 +50<br></font>
+        <font color=\'#000000\'>최대 번개 저항 +5%<br></font>
+        <font color=\'#000000\'>최대 화염 저항 +10%<br></font>
+        <font color=\'#cc0029\'>화염 흡수 +15~21<br><br></font>
+        <font color=\'#000000\'><b>무기</b><br></font>
+        <font color=\'#000000\'>레벨 상승 시 100% 확률로 40 레벨 불길 시전<br></font>
+        <font color=\'#000000\'>타격 시 40% 확률로 22 레벨 화염폭풍 시전<br></font>
+        <font color=\'#cc0029\'>장착 시 10~15레벨 속죄 오라 효과 적용<br></font>
+        <font color=\'#cc0029\'>피해 +350~400% 증가<br></font>
+        <font color=\'#000000\'>대상의 방어력 무시<br></font>
+        <font color=\'#000000\'>적중당 마나 14% 훔침<br></font>
+        <font color=\'#000000\'>적의 화염 저항 -28%<br></font>
+        <font color=\'#000000\'>치명적 공격 20%<br></font>
+        <font color=\'#cc0029\'>원거리 공격 방어력 +350~400<br></font>
         <font color=\'#cc0029\'>화염 흡수 +15~21<br></font>
-        <font color=\'#000000\'>대상의 방어력 무시 (무기 한정)<br></font>
-        <font color=\'#000000\'>적중당 마나 14% 훔침 (무기 한정)<br></font>
-        <font color=\'#000000\'>치명적 공격 20% (무기 한정)<br></font>
-        <font color=\'#000000\'>생명력 +50 (방패 한정)<br></font>
-        <font color=\'#000000\'>최대 번개 저항 +5% (방패 한정)<br></font>
-        <font color=\'#000000\'>최대 화염 저항 +10% (방패 한정)<br></font>
     ]]>
     </string>
     <string name="rune_word_oath_option" formatted="false">
