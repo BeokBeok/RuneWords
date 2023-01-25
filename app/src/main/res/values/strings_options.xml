@@ -892,21 +892,30 @@
     </string>
     <string name="rune_word_spirit_option" formatted="false">
     <![CDATA[
+        <font color=\'#000000\'><b>Shield</b><br></font>
         <font color=\'#000000\'>+2 to all skills<br></font>
         <font color=\'#cc0029\'>+25-35% faster cast rate<br></font>
         <font color=\'#000000\'>+55% faster hit recovery<br></font>
+        <font color=\'#000000\'>+250 missile defense<br></font>
+        <font color=\'#000000\'>+22 to vitality<br></font>
+        <font color=\'#cc0029\'>89-112 to mana<br></font>
+        <font color=\'#000000\'>Cold resist +35%<br></font>
+        <font color=\'#000000\'>Lightning resist +35%<br></font>
+        <font color=\'#000000\'>Poison resist +35%<br></font>
+        <font color=\'#cc0029\'>+3-8 magic absorb<br></font>
+        <font color=\'#000000\'>Attacker takes damage of 14<br><br></font>
+        <font color=\'#000000\'><b>Sword</b><br></font>
+        <font color=\'#000000\'>+2 to all skills<br></font>
+        <font color=\'#cc0029\'>+25-35% faster cast rate<br></font>
+        <font color=\'#000000\'>+55% faster hit recovery<br></font>
+        <font color=\'#000000\'>Adds 1-50 lightning damage<br></font>
+        <font color=\'#000000\'>Adds 3-14 cold damage (3 seconds)<br></font>
+        <font color=\'#000000\'>+75 poison damage over 5 seconds<br></font>
+        <font color=\'#000000\'>7% life stolen per hit<br></font>
+        <font color=\'#000000\'>+250 missile defense<br></font>
         <font color=\'#000000\'>+22 to vitality<br></font>
         <font color=\'#cc0029\'>89-112 to mana<br></font>
         <font color=\'#cc0029\'>+3-8 magic absorb<br></font>
-        <font color=\'#000000\'>+250 missile defense<br></font>
-        <font color=\'#000000\'>Adds 1-50 lightning damage (weapon)<br></font>
-        <font color=\'#000000\'>Adds 3-14 cold damage (3 seconds) (weapon)<br></font>
-        <font color=\'#000000\'>+75 poison damage over 5 seconds (weapon)<br></font>
-        <font color=\'#000000\'>7% life stolen per hit (weapon)<br></font>
-        <font color=\'#000000\'>Cold resist +35% (shields)<br></font>
-        <font color=\'#000000\'>Lightning resist +35% (shields)<br></font>
-        <font color=\'#000000\'>Poison resist +35% (shields)<br></font>
-        <font color=\'#000000\'>Attacker takes damage of 14 (shields)<br></font>
     ]]>
     </string>
     <string name="rune_word_splendor_option" formatted="false">
