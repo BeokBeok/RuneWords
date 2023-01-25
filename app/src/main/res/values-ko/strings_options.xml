@@ -604,21 +604,32 @@
     </string>
     <string name="rune_word_fortitude_option" formatted="false">
     <![CDATA[
+        <font color=\'#000000\'><b>갑옷</b><br></font>
         <font color=\'#000000\'>피격 시 20% 확률로 15 레벨 냉기 갑옷 시전<br></font>
         <font color=\'#000000\'>시전 속도 +25%<br></font>
         <font color=\'#000000\'>피해 +300% 증가<br></font>
+        <font color=\'#000000\'>방어력 +200% 증가<br></font>
+        <font color=\'#000000\'>방어력 +15<br></font>
+        <font color=\'#cc0029\'>생명력 +(1~1.5 x 캐릭터 레벨)<br></font>
+        <font color=\'#000000\'>생명력 회복 +7<br></font>
+        <font color=\'#000000\'>최대 번개 저항 +5%<br></font>
+        <font color=\'#cc0029\'>모든 저항 +25~30<br></font>
+        <font color=\'#000000\'>피해 7 감소<br></font>
+        <font color=\'#000000\'>받는 피해의 12%만큼 마나 회복<br></font>
+        <font color=\'#000000\'>시야 +1<br><br></font>
+        <font color=\'#000000\'><b>무기</b><br></font>
+        <font color=\'#000000\'>피격 시 20% 확률로 15 레벨 냉기 갑옷 시전<br></font>
+        <font color=\'#000000\'>시전 속도 +25%<br></font>
+        <font color=\'#000000\'>피해 +300% 증가<br></font>
+        <font color=\'#000000\'>최소 피해 +9<br></font>
+        <font color=\'#000000\'>명중률 +50<br></font>
+        <font color=\'#000000\'>치명적 공격 20%<br></font>
+        <font color=\'#000000\'>적중 시 괴물 도주 25%<br></font>
         <font color=\'#000000\'>방어력 +200% 증가<br></font>
         <font color=\'#cc0029\'>생명력 +(1~1.5 x 캐릭터 레벨)<br></font>
         <font color=\'#cc0029\'>모든 저항 +25~30<br></font>
         <font color=\'#000000\'>받는 피해의 12%만큼 마나 회복<br></font>
         <font color=\'#000000\'>시야 +1<br></font>
-        <font color=\'#000000\'>최소 피해 +9 (무기 한정)<br></font>
-        <font color=\'#000000\'>명중률 +50 (무기 한정)<br></font>
-        <font color=\'#000000\'>치명적 공격 20% (무기 한정)<br></font>
-        <font color=\'#000000\'>적중 시 괴물 도주 25% (무기 한정)<br></font>
-        <font color=\'#000000\'>방어력 +15 (갑옷 한정)<br></font>
-        <font color=\'#000000\'>생명력 회복 +7 (갑옷 한정)<br></font>
-        <font color=\'#000000\'>최대 번개 저항 +5% (갑옷 한정)<br></font>
     ]]>
     </string>
     <string name="rune_word_peace_option" formatted="false">
