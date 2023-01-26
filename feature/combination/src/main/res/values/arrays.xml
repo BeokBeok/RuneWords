@@ -2,6 +2,14 @@
 <resources>
 
     <string-array name="ladder_rune_words">
+        <item>bulwark</item>
+        <item>cure</item>
+        <item>ground</item>
+        <item>hearth</item>
+        <item>temper</item>
+        <item>hustle</item>
+        <item>mosaic</item>
+        <item>metamorphosis</item>
         <item>pattern</item>
         <item>wisdom</item>
         <item>flickering_flame</item>

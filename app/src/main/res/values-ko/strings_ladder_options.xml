@@ -1,5 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="rune_word_bulwark_option" formatted="false">
+    <![CDATA[
+        <font color=\'#000000\'>타격 회복 속도 +20%<br></font>
+        <font color=\'#cc0029\'>적중당 생명력 +4~6% 훔침<br></font>
+        <font color=\'#cc0029\'>방어력 +75~100% 증가<br></font>
+        <font color=\'#000000\'>생명력 +10<br></font>
+        <font color=\'#000000\'>최대 생명력 5% 증가<br></font>
+        <font color=\'#000000\'>생명력 회복 +30<br></font>
+        <font color=\'#000000\'>피해 7 감소 <br></font>
+        <font color=\'#cc0029\'>받는 물리 피해 10~15% 감소<br></font>
+    ]]>
+    </string>
+    <string name="rune_word_cure_option" formatted="false">
+    <![CDATA[
+        <font color=\'#000000\'>타격 회복 속도 +20%<br></font>
+        <font color=\'#cc0029\'>방어력 +75~100% 증가<br></font>
+        <font color=\'#000000\'>생명력 +10<br></font>
+        <font color=\'#000000\'>최대 생명력 5% 증가<br></font>
+        <font color=\'#cc0029\'>독 저항 +40~60%<br></font>
+        <font color=\'#000000\'>독 지속시간 75% 감소<br></font>
+    ]]>
+    </string>
+    <string name="rune_word_ground_option" formatted="false">
+    <![CDATA[
+        <font color=\'#000000\'>타격 회복 속도 +20%<br></font>
+        <font color=\'#cc0029\'>방어력 +75~100% 증가<br></font>
+        <font color=\'#000000\'>생명력 +10<br></font>
+        <font color=\'#000000\'>최대 생명력 5% 증가<br></font>
+        <font color=\'#cc0029\'>번개 저항 +40~60%<br></font>
+        <font color=\'#cc0029\'>번개 흡수 +10~15%<br></font>
+    ]]>
+    </string>
+    <string name="rune_word_hearth_option" formatted="false">
+    <![CDATA[
+        <font color=\'#000000\'>타격 회복 속도 +20%<br></font>
+        <font color=\'#cc0029\'>방어력 +75~100% 증가<br></font>
+        <font color=\'#000000\'>생명력 +10<br></font>
+        <font color=\'#000000\'>최대 생명력 5% 증가<br></font>
+        <font color=\'#cc0029\'>냉기 저항 +40~60%<br></font>
+        <font color=\'#cc0029\'>냉기 흡수 +10~15%<br></font>
+    ]]>
+    </string>
+    <string name="rune_word_temper_option" formatted="false">
+    <![CDATA[
+        <font color=\'#000000\'>타격 회복 속도 +20%<br></font>
+        <font color=\'#cc0029\'>방어력 +75~100% 증가<br></font>
+        <font color=\'#000000\'>생명력 +10<br></font>
+        <font color=\'#000000\'>최대 생명력 5% 증가<br></font>
+        <font color=\'#cc0029\'>화염 저항 +40~60%<br></font>
+        <font color=\'#cc0029\'>화염 흡수 +10~15%<br></font>
+    ]]>
+    </string>
+    <string name="rune_word_hustle_option" formatted="false">
+    <![CDATA[
+        <font color=\'#000000\'><b>무기</b><br></font>
+        <font color=\'#000000\'>타격 시 5% 확률로 9레벨 폭발적인 속도 시전<br></font>
+        <font color=\'#000000\'>공격 속도 +30%<br></font>
+        <font color=\'#cc0029\'>피해 +130~150% 증가<br></font>
+        <font color=\'#000000\'>언데드에게 주는 피해 +75%<br></font>
+        <font color=\'#000000\'>언데드에 대한 명중률 +50<br></font>
+        <font color=\'#000000\'>민첩 +10<br><br></font>
+        <font color=\'#000000\'><b>갑옷</b><br></font>
+        <font color=\'#000000\'>달리기/걷기 속도 +50%<br></font>
+        <font color=\'#000000\'>공격 속도 +20%<br></font>
+        <font color=\'#000000\'>타격 회복 속도 +20%<br></font>
+        <font color=\'#000000\'>민첩 +10<br></font>
+        <font color=\'#000000\'>지구력 고갈 속도 50% 감소<br></font>
+    ]]>
+    </string>
+    <string name="rune_word_mosaic_option" formatted="false">
+    <![CDATA[
+        <font color=\'#000000\'>25% 확률로 필살기가 충전을 소모하지 않음<br></font>
+        <font color=\'#000000\'>무술 +2 (암살자 전용)<br></font>
+        <font color=\'#000000\'>공격 속도 +20%<br></font>
+        <font color=\'#cc0029\'>피해 +200~250% 증가<br></font>
+        <font color=\'#000000\'>명중률 보너스 20%<br></font>
+        <font color=\'#000000\'>냉기 피해 3-14 추가<br></font>
+        <font color=\'#000000\'>괴물 회복 저지<br></font>
+    ]]>
+    </string>
+    <string name="rune_word_metamorphosis_option" formatted="false">
+    <![CDATA[
+        <font color=\'#000000\'>늑대인간 공격이 180초 동안 징표 효과 부여<br></font>
+        <font color=\'#000000\'>늑대의 징표:<br></font>
+        <font color=\'#000000\'>명중률 보너스 20%<br></font>
+        <font color=\'#000000\'>최대 생명력 40% 증가<br><br></font>
+        <font color=\'#000000\'>곰인간 공격이 180초 동안 징표 효과 부여<br></font>
+        <font color=\'#000000\'>곰의 징표:<br></font>
+        <font color=\'#000000\'>공격 속도 +25%<br></font>
+        <font color=\'#000000\'>강타 확률 +25%<br></font>
+        <font color=\'#000000\'>받는 물리 피해 20% 감소<br><br></font>
+        <font color=\'#000000\'>변신 기술 +5 (드루이드 전용)<br></font>
+        <font color=\'#cc0029\'>방어력 +50~80% 증가<br></font>
+        <font color=\'#000000\'>힘 +10<br></font>
+        <font color=\'#000000\'>생명력 +10<br></font>
+        <font color=\'#000000\'>모든 저항 +10<br></font>
+        <font color=\'#000000\'>빙결되지 않음<br></font>
+    ]]>
+    </string>
     <string name="rune_word_pattern_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>막기 속도 +30%<br></font>
@@ -18,7 +117,7 @@
     <![CDATA[
         <font color=\'#000000\'>관통 공격<br></font>
         <font color=\'#cc0029\'>명중률 보너스 15~25%<br></font>
-        <font color=\'#cc0029\'>적중당 4~8% 마나 훔침<br></font>
+        <font color=\'#cc0029\'>적중당 마나 4~8% 훔침<br></font>
         <font color=\'#000000\'>방어력 +30% 증가<br></font>
         <font color=\'#000000\'>마력 +10<br></font>
         <font color=\'#000000\'>지구력 고갈 속도 15% 감소<br></font>
