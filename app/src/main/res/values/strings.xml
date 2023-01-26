@@ -91,12 +91,22 @@
     <string name="unbending_will">Unbending Will</string>
     <string name="obsession">Obsession</string>
 
+    <!-- Ladder RuneWords List (2.6) -->
+    <string name="bulwark">Bulwark</string>
+    <string name="cure">Cure</string>
+    <string name="ground">Ground</string>
+    <string name="hearth">Hearth</string>
+    <string name="temper">Temper</string>
+    <string name="hustle">Hustle</string>
+    <string name="mosaic">Mosaic</string>
+    <string name="metamorphosis">Metamorphosis</string>
+
     <!-- RuneWords Type -->
     <string name="all_weapons">All Weapons</string>
     <string name="axe">Axe</string>
     <string name="scepter">Scepter</string>
     <string name="hammer">Hammer</string>
-    <string name="armor">Armor</string>
+    <string name="armor">Body Armor</string>
     <string name="assassin_weapon">Assassin Weapon</string>
     <string name="pole_arm">Pole arm</string>
     <string name="ranged_weapon">Missile Weapon</string>

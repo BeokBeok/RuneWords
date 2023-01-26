@@ -254,6 +254,7 @@
     </string>
     <string name="rune_word_dragon_option" formatted="false">
     <![CDATA[
+        <font color=\'#000000\'><b>Shield</b><br></font>
         <font color=\'#000000\'>20% chance to cast level 18 Venom when struck<br></font>
         <font color=\'#000000\'>12% chance to cast level 15 Hydra on striking<br></font>
         <font color=\'#000000\'>Level 14 Holy Fire aura when equipped<br></font>
@@ -261,25 +262,46 @@
         <font color=\'#000000\'>+230 missile defense<br></font>
         <font color=\'#cc0029\'>+3-5 to all attributes<br></font>
         <font color=\'#000000\'>0.375-37.125 to strength (based on character level)<br></font>
-        <font color=\'#000000\'>Increase maximum mana by 5% (body armor)<br></font>
-        <font color=\'#000000\'>+50 to mana (shields)<br></font>
+        <font color=\'#000000\'>+50 to mana<br></font>
+        <font color=\'#000000\'>+5% to maximum lightning resist<br></font>
+        <font color=\'#000000\'>Damage reduced by 7<br><br></font>
+        <font color=\'#000000\'><b>Body Armor</b><br></font>
+        <font color=\'#000000\'>20% chance to cast level 18 Venom when struck<br></font>
+        <font color=\'#000000\'>12% chance to cast level 15 Hydra on striking<br></font>
+        <font color=\'#000000\'>Level 14 Holy Fire aura when equipped<br></font>
+        <font color=\'#000000\'>+360 defense<br></font>
+        <font color=\'#000000\'>+230 missile defense<br></font>
+        <font color=\'#cc0029\'>+3-5 to all attributes<br></font>
+        <font color=\'#000000\'>0.375-37.125 to strength (based on character level)<br></font>
+        <font color=\'#000000\'>Increase maximum mana by 5%<br></font>
         <font color=\'#000000\'>+5% to maximum lightning resist<br></font>
         <font color=\'#000000\'>Damage reduced by 7<br></font>
     ]]>
     </string>
     <string name="rune_word_dream_option" formatted="false">
     <![CDATA[
+        <font color=\'#000000\'><b>Helm</b><br></font>
         <font color=\'#000000\'>10% chance to cast level 15 Confuse when struck<br></font>
         <font color=\'#000000\'>Level 15 Holy Shock aura when equipped<br></font>
         <font color=\'#cc0029\'>+20-30% faster hit recovery<br></font>
         <font color=\'#000000\'>+30% enhanced defense<br></font>
         <font color=\'#cc0029\'>+150-220 defense<br></font>
         <font color=\'#000000\'>+10 to vitality<br></font>
-        <font color=\'#000000\'>Increase maximum life 5% (helms)<br></font>
-        <font color=\'#000000\'>+50 to life (shields)<br></font>
+        <font color=\'#000000\'>Increase maximum life 5%<br></font>
         <font color=\'#000000\'>0.625-61.875 to mana (based on character level)<br></font>
         <font color=\'#cc0029\'>All resistance +5-20<br></font>
-        <font color=\'#cc0029\'>12-25% better chance of getting magic items<br></font>
+        <font color=\'#cc0029\'>12-25% better chance of getting magic items<br><br></font>
+        <font color=\'#000000\'><b>Shield</b><br></font>
+        <font color=\'#000000\'>10% chance to cast level 15 Confuse when struck<br></font>
+        <font color=\'#000000\'>Level 15 Holy Shock aura when equipped<br></font>
+        <font color=\'#cc0029\'>+20-30% faster hit recovery<br></font>
+        <font color=\'#000000\'>+30% enhanced defense<br></font>
+        <font color=\'#cc0029\'>+150-220 defense<br></font>
+        <font color=\'#000000\'>+10 to vitality<br></font>
+        <font color=\'#000000\'>+50 to life<br></font>
+        <font color=\'#000000\'>0.625-61.875 to mana (based on character level)<br></font>
+        <font color=\'#cc0029\'>All resistance +5-20<br></font>
+        <font color=\'#cc0029\'>12-25% better chance of getting magic items<br><br></font>
     ]]>
     </string>
     <string name="rune_word_edge_option" formatted="false">
@@ -604,21 +626,32 @@
     </string>
     <string name="rune_word_fortitude_option" formatted="false">
     <![CDATA[
+        <font color=\'#000000\'><b>Body Armor</b><br></font>
         <font color=\'#000000\'>20% chance to cast level 15 Chilling Armor when struck<br></font>
         <font color=\'#000000\'>+25% faster cast rate<br></font>
         <font color=\'#000000\'>+300% enhanced damage<br></font>
+        <font color=\'#000000\'>+200% enhanced defense<br></font>
+        <font color=\'#000000\'>+15 defense<br></font>
+        <font color=\'#cc0029\'>+(1~1.5) x A to life (based on character level)<br></font>
+        <font color=\'#000000\'>Replenish life +7<br></font>
+        <font color=\'#000000\'>+5% to maximum lightning resist<br></font>
+        <font color=\'#cc0029\'>All resistances +25-30<br></font>
+        <font color=\'#000000\'>Damage Reduced By 7<br></font>
+        <font color=\'#000000\'>12% damage taken goes to mana<br></font>
+        <font color=\'#000000\'>+1 to light radius<br><br></font>
+        <font color=\'#000000\'><b>Weapon</b><br></font>
+        <font color=\'#000000\'>20% chance to cast level 15 Chilling Armor when struck<br></font>
+        <font color=\'#000000\'>+25% faster cast rate<br></font>
+        <font color=\'#000000\'>+300% enhanced damage<br></font>
+        <font color=\'#000000\'>+9 Minimum damage<br></font>
+        <font color=\'#000000\'>+50 to attack rating<br></font>
+        <font color=\'#000000\'>20% deadly strike<br></font>
+        <font color=\'#000000\'>Hit causes monster to flee 25%<br></font>
         <font color=\'#000000\'>+200% enhanced defense<br></font>
         <font color=\'#cc0029\'>+(1~1.5) x A to life (based on character level)<br></font>
         <font color=\'#cc0029\'>All resistances +25-30<br></font>
         <font color=\'#000000\'>12% damage taken goes to mana<br></font>
         <font color=\'#000000\'>+1 to light radius<br></font>
-        <font color=\'#000000\'>+9 Minimum damage (weapon)<br></font>
-        <font color=\'#000000\'>+50 to attack rating (weapon)<br></font>
-        <font color=\'#000000\'>20% deadly strike (weapon)<br></font>
-        <font color=\'#000000\'>Hit causes monster to flee 25% (weapon)<br></font>
-        <font color=\'#000000\'>+15 defense (body armor)<br></font>
-        <font color=\'#000000\'>Replenish life +7 (body armor)<br></font>
-        <font color=\'#000000\'>+5% to maximum lightning resist (body armor)<br></font>
     ]]>
     </string>
     <string name="rune_word_peace_option" formatted="false">
@@ -648,19 +681,28 @@
     </string>
     <string name="rune_word_phoenix_option" formatted="false">
     <![CDATA[
+        <font color=\'#000000\'><b>Shield</b><br></font>
         <font color=\'#000000\'>100% chance to cast level 40 Blaze when you level up<br></font>
         <font color=\'#000000\'>40% chance to cast level 22 Firestorm on striking<br></font>
         <font color=\'#cc0029\'>Level 10-15 Redemption aura when equipped<br></font>
         <font color=\'#cc0029\'>+350-400% enhanced damage<br></font>
         <font color=\'#000000\'>-28% to enemy fire resistance<br></font>
         <font color=\'#cc0029\'>+350-400 missile defense<br></font>
-        <font color=\'#cc0029\'>+15-21 fire absorb<br></font>
-        <font color=\'#000000\'>Ignore target\'s defense (weapon)<br></font>
-        <font color=\'#000000\'>14% mana stolen per hit (weapon)<br></font>
-        <font color=\'#000000\'>20% deadly strike (weapon)<br></font>
-        <font color=\'#000000\'>+50 to life (shields)<br></font>
-        <font color=\'#000000\'>+5% maximum lightning resist (shields)<br></font>
-        <font color=\'#000000\'>+10% maximum fire resist (shields)<br></font>
+        <font color=\'#000000\'>+50 to life<br></font>
+        <font color=\'#000000\'>+5% maximum lightning resist<br></font>
+        <font color=\'#000000\'>+10% maximum fire resist<br></font>
+        <font color=\'#cc0029\'>+15-21 fire absorb<br><br></font>
+        <font color=\'#000000\'><b>Weapon</b><br></font>
+        <font color=\'#000000\'>100% chance to cast level 40 Blaze when you level up<br></font>
+        <font color=\'#000000\'>40% chance to cast level 22 Firestorm on striking<br></font>
+        <font color=\'#cc0029\'>Level 10-15 Redemption aura when equipped<br></font>
+        <font color=\'#cc0029\'>+350-400% enhanced damage<br></font>
+        <font color=\'#000000\'>Ignore target\'s defense<br></font>
+        <font color=\'#000000\'>14% mana stolen per hit<br></font>
+        <font color=\'#000000\'>-28% to enemy fire resistance<br></font>
+        <font color=\'#000000\'>20% deadly strike<br></font>
+        <font color=\'#cc0029\'>+350-400 missile defense<br></font>
+        <font color=\'#cc0029\'>+15-21 fire absorb<br><br></font>
     ]]>
     </string>
     <string name="rune_word_oath_option" formatted="false">
@@ -872,21 +914,30 @@
     </string>
     <string name="rune_word_spirit_option" formatted="false">
     <![CDATA[
+        <font color=\'#000000\'><b>Shield</b><br></font>
         <font color=\'#000000\'>+2 to all skills<br></font>
         <font color=\'#cc0029\'>+25-35% faster cast rate<br></font>
         <font color=\'#000000\'>+55% faster hit recovery<br></font>
+        <font color=\'#000000\'>+250 missile defense<br></font>
+        <font color=\'#000000\'>+22 to vitality<br></font>
+        <font color=\'#cc0029\'>89-112 to mana<br></font>
+        <font color=\'#000000\'>Cold resist +35%<br></font>
+        <font color=\'#000000\'>Lightning resist +35%<br></font>
+        <font color=\'#000000\'>Poison resist +35%<br></font>
+        <font color=\'#cc0029\'>+3-8 magic absorb<br></font>
+        <font color=\'#000000\'>Attacker takes damage of 14<br><br></font>
+        <font color=\'#000000\'><b>Sword</b><br></font>
+        <font color=\'#000000\'>+2 to all skills<br></font>
+        <font color=\'#cc0029\'>+25-35% faster cast rate<br></font>
+        <font color=\'#000000\'>+55% faster hit recovery<br></font>
+        <font color=\'#000000\'>Adds 1-50 lightning damage<br></font>
+        <font color=\'#000000\'>Adds 3-14 cold damage (3 seconds)<br></font>
+        <font color=\'#000000\'>+75 poison damage over 5 seconds<br></font>
+        <font color=\'#000000\'>7% life stolen per hit<br></font>
+        <font color=\'#000000\'>+250 missile defense<br></font>
         <font color=\'#000000\'>+22 to vitality<br></font>
         <font color=\'#cc0029\'>89-112 to mana<br></font>
         <font color=\'#cc0029\'>+3-8 magic absorb<br></font>
-        <font color=\'#000000\'>+250 missile defense<br></font>
-        <font color=\'#000000\'>Adds 1-50 lightning damage (weapon)<br></font>
-        <font color=\'#000000\'>Adds 3-14 cold damage (3 seconds) (weapon)<br></font>
-        <font color=\'#000000\'>+75 poison damage over 5 seconds (weapon)<br></font>
-        <font color=\'#000000\'>7% life stolen per hit (weapon)<br></font>
-        <font color=\'#000000\'>Cold resist +35% (shields)<br></font>
-        <font color=\'#000000\'>Lightning resist +35% (shields)<br></font>
-        <font color=\'#000000\'>Poison resist +35% (shields)<br></font>
-        <font color=\'#000000\'>Attacker takes damage of 14 (shields)<br></font>
     ]]>
     </string>
     <string name="rune_word_splendor_option" formatted="false">
