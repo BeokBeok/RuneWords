@@ -254,6 +254,7 @@
     </string>
     <string name="rune_word_dragon_option" formatted="false">
     <![CDATA[
+        <font color=\'#000000\'><b>방패</b><br></font>
         <font color=\'#000000\'>피격 시 20% 확률로 18 레벨 맹독 시전<br></font>
         <font color=\'#000000\'>타격 시 12% 확률로 15 레벨 히드라 시전<br></font>
         <font color=\'#000000\'>장착 시 14 레벨 신성한 불꽃 오라 효과 적용<br></font>
@@ -261,10 +262,20 @@
         <font color=\'#000000\'>원거리 공격 방어력 +230<br></font>
         <font color=\'#cc0029\'>모든 능력치 +3~5<br></font>
         <font color=\'#000000\'>힘 +(캐릭터 레벨 x 0.375)<br></font>
+        <font color=\'#000000\'>마나 +50<br></font>
+        <font color=\'#000000\'>최대 번개 저항 +5%<br></font>
+        <font color=\'#000000\'>피해 7 감소<br><br></font>
+        <font color=\'#000000\'><b>갑옷</b><br></font>
+        <font color=\'#000000\'>피격 시 20% 확률로 18 레벨 맹독 시전<br></font>
+        <font color=\'#000000\'>타격 시 12% 확률로 15 레벨 히드라 시전<br></font>
+        <font color=\'#000000\'>장착 시 14 레벨 신성한 불꽃 오라 효과 적용<br></font>
+        <font color=\'#000000\'>방어력 +360<br></font>
+        <font color=\'#000000\'>원거리 공격 방어력 +230<br></font>
+        <font color=\'#cc0029\'>모든 능력치 +3~5<br></font>
+        <font color=\'#000000\'>힘 +(캐릭터 레벨 x 0.375)<br></font>
+        <font color=\'#000000\'>최대 마나 증가 5%<br></font>
         <font color=\'#000000\'>최대 번개 저항 +5%<br></font>
         <font color=\'#000000\'>피해 7 감소<br></font>
-        <font color=\'#000000\'>최대 마나 증가 5% (갑옷 한정)<br></font>
-        <font color=\'#000000\'>마나 +50 (방패 한정)<br></font>
     ]]>
     </string>
     <string name="rune_word_dream_option" formatted="false">

@@ -254,6 +254,7 @@
     </string>
     <string name="rune_word_dragon_option" formatted="false">
     <![CDATA[
+        <font color=\'#000000\'><b>Shield</b><br></font>
         <font color=\'#000000\'>20% chance to cast level 18 Venom when struck<br></font>
         <font color=\'#000000\'>12% chance to cast level 15 Hydra on striking<br></font>
         <font color=\'#000000\'>Level 14 Holy Fire aura when equipped<br></font>
@@ -261,8 +262,18 @@
         <font color=\'#000000\'>+230 missile defense<br></font>
         <font color=\'#cc0029\'>+3-5 to all attributes<br></font>
         <font color=\'#000000\'>0.375-37.125 to strength (based on character level)<br></font>
-        <font color=\'#000000\'>Increase maximum mana by 5% (body armor)<br></font>
-        <font color=\'#000000\'>+50 to mana (shields)<br></font>
+        <font color=\'#000000\'>+50 to mana<br></font>
+        <font color=\'#000000\'>+5% to maximum lightning resist<br></font>
+        <font color=\'#000000\'>Damage reduced by 7<br><br></font>
+        <font color=\'#000000\'><b>Body Armor</b><br></font>
+        <font color=\'#000000\'>20% chance to cast level 18 Venom when struck<br></font>
+        <font color=\'#000000\'>12% chance to cast level 15 Hydra on striking<br></font>
+        <font color=\'#000000\'>Level 14 Holy Fire aura when equipped<br></font>
+        <font color=\'#000000\'>+360 defense<br></font>
+        <font color=\'#000000\'>+230 missile defense<br></font>
+        <font color=\'#cc0029\'>+3-5 to all attributes<br></font>
+        <font color=\'#000000\'>0.375-37.125 to strength (based on character level)<br></font>
+        <font color=\'#000000\'>Increase maximum mana by 5%<br></font>
         <font color=\'#000000\'>+5% to maximum lightning resist<br></font>
         <font color=\'#000000\'>Damage reduced by 7<br></font>
     ]]>
