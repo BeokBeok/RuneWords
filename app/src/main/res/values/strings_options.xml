@@ -280,17 +280,28 @@
     </string>
     <string name="rune_word_dream_option" formatted="false">
     <![CDATA[
+        <font color=\'#000000\'><b>Helm</b><br></font>
         <font color=\'#000000\'>10% chance to cast level 15 Confuse when struck<br></font>
         <font color=\'#000000\'>Level 15 Holy Shock aura when equipped<br></font>
         <font color=\'#cc0029\'>+20-30% faster hit recovery<br></font>
         <font color=\'#000000\'>+30% enhanced defense<br></font>
         <font color=\'#cc0029\'>+150-220 defense<br></font>
         <font color=\'#000000\'>+10 to vitality<br></font>
-        <font color=\'#000000\'>Increase maximum life 5% (helms)<br></font>
-        <font color=\'#000000\'>+50 to life (shields)<br></font>
+        <font color=\'#000000\'>Increase maximum life 5%<br></font>
         <font color=\'#000000\'>0.625-61.875 to mana (based on character level)<br></font>
         <font color=\'#cc0029\'>All resistance +5-20<br></font>
-        <font color=\'#cc0029\'>12-25% better chance of getting magic items<br></font>
+        <font color=\'#cc0029\'>12-25% better chance of getting magic items<br><br></font>
+        <font color=\'#000000\'><b>Shield</b><br></font>
+        <font color=\'#000000\'>10% chance to cast level 15 Confuse when struck<br></font>
+        <font color=\'#000000\'>Level 15 Holy Shock aura when equipped<br></font>
+        <font color=\'#cc0029\'>+20-30% faster hit recovery<br></font>
+        <font color=\'#000000\'>+30% enhanced defense<br></font>
+        <font color=\'#cc0029\'>+150-220 defense<br></font>
+        <font color=\'#000000\'>+10 to vitality<br></font>
+        <font color=\'#000000\'>+50 to life<br></font>
+        <font color=\'#000000\'>0.625-61.875 to mana (based on character level)<br></font>
+        <font color=\'#cc0029\'>All resistance +5-20<br></font>
+        <font color=\'#cc0029\'>12-25% better chance of getting magic items<br><br></font>
     ]]>
     </string>
     <string name="rune_word_edge_option" formatted="false">

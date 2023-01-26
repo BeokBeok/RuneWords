@@ -280,17 +280,28 @@
     </string>
     <string name="rune_word_dream_option" formatted="false">
     <![CDATA[
+        <font color=\'#000000\'><b>투구</b><br></font>
         <font color=\'#000000\'>피격 시 10% 확률로 15 레벨 혼란 시전<br></font>
         <font color=\'#000000\'>장착 시 15 레벨 신성 충격 오라 효과 적용<br></font>
         <font color=\'#cc0029\'>타격 회복 속도 +20~30%<br></font>
         <font color=\'#000000\'>방어력 +30% 증가<br></font>
         <font color=\'#cc0029\'>방어력 +150~220<br></font>
+        <font color=\'#000000\'>활력 +10<br></font>
         <font color=\'#000000\'>최대 생명력 5% 증가<br></font>
         <font color=\'#000000\'>마나 +(캐릭터 레벨 x 0.625)<br></font>
         <font color=\'#cc0029\'>모든 저항 +5~20<br></font>
+        <font color=\'#cc0029\'>마법 아이템 발견 확률 12~25% 증가<br><br></font>
+        <font color=\'#000000\'><b>방패</b><br></font>
+        <font color=\'#000000\'>피격 시 10% 확률로 15 레벨 혼란 시전<br></font>
+        <font color=\'#000000\'>장착 시 15 레벨 신성 충격 오라 효과 적용<br></font>
+        <font color=\'#cc0029\'>타격 회복 속도 +20~30%<br></font>
+        <font color=\'#000000\'>방어력 +30% 증가<br></font>
+        <font color=\'#cc0029\'>방어력 +150~220<br></font>
+        <font color=\'#000000\'>활력 +10<br></font>
+        <font color=\'#000000\'>생명력 +50<br></font>
+        <font color=\'#000000\'>마나 +(캐릭터 레벨 x 0.625)<br></font>
+        <font color=\'#cc0029\'>모든 저항 +5~20<br></font>
         <font color=\'#cc0029\'>마법 아이템 발견 확률 12~25% 증가<br></font>
-        <font color=\'#000000\'>활력 +10 (투구 한정)<br></font>
-        <font color=\'#000000\'>생명력 +50 (방패 한정)<br></font>
     ]]>
     </string>
     <string name="rune_word_edge_option" formatted="false">
