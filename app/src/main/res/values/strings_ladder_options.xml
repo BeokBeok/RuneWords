@@ -14,12 +14,13 @@
     </string>
     <string name="rune_word_cure_option" formatted="false">
     <![CDATA[
+        <font color=\'#000000\'>Level 1 Cleansing Aura when Equipped<br></font>
         <font color=\'#000000\'>+20% Faster Hit Recovery<br></font>
         <font color=\'#cc0029\'>+75-100% Enhanced Defense<br></font>
         <font color=\'#000000\'>+10 to Vitality<br></font>
         <font color=\'#000000\'>Increase Maximum Life 5%<br></font>
         <font color=\'#cc0029\'>Poison Resist +40-60%<br></font>
-        <font color=\'#000000\'>Poison Length Reduced by 75%<br></font>
+        <font color=\'#000000\'>Poison Length Reduced by 50%<br></font>
     ]]>
     </string>
     <string name="rune_word_ground_option" formatted="false">
@@ -40,6 +41,7 @@
         <font color=\'#000000\'>Increase Maximum Life 5%<br></font>
         <font color=\'#cc0029\'>Cold Resist +40-60%<br></font>
         <font color=\'#cc0029\'>Cold Absorb +10-15%<br></font>
+        <font color=\'#000000\'>Cannot be Frozen<br></font>
     ]]>
     </string>
     <string name="rune_word_temper_option" formatted="false">
@@ -55,28 +57,35 @@
     <string name="rune_word_hustle_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'><b>Weapon</b><br></font>
-        <font color=\'#000000\'>5% Chance to cast level nine Burst of Speed on striking<br></font>
+        <font color=\'#000000\'>5% Chance to cast level 1 Burst of Speed on striking<br></font>
+        <font color=\'#000000\'>Level 1 Fanaticism aura when equipped<br></font>
         <font color=\'#000000\'>+30% Increased Attack Speed<br></font>
-        <font color=\'#cc0029\'>+130-150% Enhanced Damage<br></font>
+        <font color=\'#cc0029\'>+180-200% Enhanced Damage<br></font>
         <font color=\'#000000\'>+75% Damage to Undead<br></font>
         <font color=\'#000000\'>+50 to Attack Rating against Undead<br></font>
         <font color=\'#000000\'>+10 to Dexterity<br><br></font>
         <font color=\'#000000\'><b>Body Armor</b><br></font>
-        <font color=\'#000000\'>+50% Faster Run/Walk<br></font>
-        <font color=\'#000000\'>+20% Increased Attack Speed<br></font>
+        <font color=\'#000000\'>+65% Faster Run/Walk<br></font>
+        <font color=\'#000000\'>+40% Increased Attack Speed<br></font>
         <font color=\'#000000\'>+20% Faster Hit Recovery<br></font>
+        <font color=\'#000000\'>+6 to Evade<br></font>
         <font color=\'#000000\'>+10 to Dexterity<br></font>
         <font color=\'#000000\'>50% Slower Stamina Drain<br></font>
+        <font color=\'#000000\'>All Resistances +10<br></font>
     ]]>
     </string>
     <string name="rune_word_mosaic_option" formatted="false">
     <![CDATA[
-        <font color=\'#000000\'>+25% chance for finishing moves to not consume charges<br></font>
+        <font color=\'#000000\'>+50% chance for finishing moves to not consume charges<br></font>
+        <font color=\'#000000\'>When a finisher is executed this way, it now refreshes the expiration timer of the stack<br></font>
         <font color=\'#000000\'>+2 to Martial Arts (Assassin only)<br></font>
         <font color=\'#000000\'>+20% Increased Attack Speed<br></font>
         <font color=\'#cc0029\'>+200-250% Enhanced Damage<br></font>
         <font color=\'#000000\'>+20% Bonus to Attack Rating<br></font>
-        <font color=\'#000000\'>Adds 3-14 Cold Damage<br></font>
+        <font color=\'#000000\'>+7% Life stolen per hit<br></font>
+        <font color=\'#cc0029\'>+8-15% Cold Skill Damage<br></font>
+        <font color=\'#cc0029\'>+8-15% Lightning Skill Damage<br></font>
+        <font color=\'#cc0029\'>+8-15% Fire Skill Damage<br></font>
         <font color=\'#000000\'>Prevent Monster Heal<br></font>
     ]]>
     </string>
@@ -84,124 +93,19 @@
     <![CDATA[
         <font color=\'#000000\'>Werewolf strikes grant Mark for 180 seconds<br></font>
         <font color=\'#000000\'>Mark of the Wolf:<br></font>
-        <font color=\'#000000\'>+20% Bonus to Attack Rating<br></font>
+        <font color=\'#000000\'>+30% Bonus to Attack Rating<br></font>
         <font color=\'#000000\'>Increase Maximum Life 40%<br><br></font>
         <font color=\'#000000\'>Werebear strikes grant Mark for 180 seconds<br></font>
         <font color=\'#000000\'>Mark of the Bear:<br></font>
         <font color=\'#000000\'>+25% Attack Speed<br></font>
-        <font color=\'#000000\'>+25% Chance of Crushing Blow<br></font>
         <font color=\'#000000\'>Physical Damage Received Reduced by 20%<br><br></font>
         <font color=\'#000000\'>+5 to Shape Shifting Skills (Druid only)<br></font>
+        <font color=\'#000000\'>+25% Chance of Crushing Blow<br></font>
         <font color=\'#cc0029\'>+50-80% Enhanced Defense<br></font>
         <font color=\'#000000\'>+10 to Strength<br></font>
         <font color=\'#000000\'>+10 to Vitality<br></font>
         <font color=\'#000000\'>All Resistances +10<br></font>
         <font color=\'#000000\'>Cannot be Frozen<br></font>
-    ]]>
-    </string>
-    <string name="rune_word_pattern_option" formatted="false">
-    <![CDATA[
-        <font color=\'#000000\'>+30% Faster Block Rate<br></font>
-        <font color=\'#cc0029\'>+40-80% Enhanced Damage<br></font>
-        <font color=\'#000000\'>10% Bonus to Attack Rating<br></font>
-        <font color=\'#000000\'>Adds 17-62 Fire Damage<br></font>
-        <font color=\'#000000\'>Adds 1-50 Lightning Damage<br></font>
-        <font color=\'#000000\'>Adds 3-14 Cold Damage<br></font>
-        <font color=\'#000000\'>+75 Poison Damage Over 5 Seconds<br></font>
-        <font color=\'#000000\'>+6 to Strength<br></font>
-        <font color=\'#000000\'>+6 to Dexterity<br></font>
-        <font color=\'#000000\'>All Resistances +15<br></font>
-    ]]>
-    </string>
-    <string name="rune_word_wisdom_option" formatted="false">
-    <![CDATA[
-        <font color=\'#000000\'>+33% Piercing Attack<br></font>
-        <font color=\'#cc0029\'>+15-25% Bonus to Attack Rating<br></font>
-        <font color=\'#cc0029\'>4-8% Mana Stolen Per Hit<br></font>
-        <font color=\'#000000\'>+30% Enhanced Defense<br></font>
-        <font color=\'#000000\'>+10 Energy<br></font>
-        <font color=\'#000000\'>15% Slower Stamina Drain<br></font>
-        <font color=\'#000000\'>Cannot Be Frozen<br></font>
-        <font color=\'#000000\'>+5 Mana After Each Kill<br></font>
-        <font color=\'#000000\'>15% Damage Taken Goes to Mana<br></font>
-    ]]>
-    </string>
-    <string name="rune_word_flickering_flame_option" formatted="false">
-    <![CDATA[
-        <font color=\'#cc0029\'>Level 4-8 Resist Fire Aura When Equipped<br></font>
-        <font color=\'#000000\'>+3 To Fire Skills<br></font>
-        <font color=\'#cc0029\'>-10-15% to Enemy Fire Resistance<br></font>
-        <font color=\'#000000\'>+30% Enhanced Defense<br></font>
-        <font color=\'#000000\'>+30 Defense Vs. Missile<br></font>
-        <font color=\'#cc0029\'>+50-75 To Mana<br></font>
-        <font color=\'#000000\'>Half Freeze Duration<br></font>
-        <font color=\'#000000\'>+5% To Maximum Fire Resist<br></font>
-        <font color=\'#000000\'>Poison Length Reduced by 50%<br></font>
-    ]]>
-    </string>
-    <string name="rune_word_plague_option" formatted="false">
-    <![CDATA[
-        <font color=\'#000000\'>20% Chance to cast level 12 Lower Resist when struck<br></font>
-        <font color=\'#000000\'>25% Chance to cast level 15 Poison Nova on striking<br></font>
-        <font color=\'#cc0029\'>Level 13-17 Cleansing Aura When Equipped<br></font>
-        <font color=\'#cc0029\'>+1-2 All Skills<br></font>
-        <font color=\'#000000\'>+20% Increased Attack Speed<br></font>
-        <font color=\'#cc0029\'>+220-320% Enhanced Damage<br></font>
-        <font color=\'#000000\'>-23% To Enemy Poison Resistance<br></font>
-        <font color=\'#000000\'>0.3% (0-29.7) Deadly Strike (Based on Character Level)<br></font>
-        <font color=\'#000000\'>+25% Chance of Open Wounds<br></font>
-        <font color=\'#000000\'>Freezes Target +3<br></font>
-    ]]>
-    </string>
-    <string name="rune_word_mist_option" formatted="false">
-    <![CDATA[
-        <font color=\'#cc0029\'>Level 8-12 Concentration Aura When Equipped<br></font>
-        <font color=\'#000000\'>+3 To All Skills<br></font>
-        <font color=\'#000000\'>20% Increased Attack Speed<br></font>
-        <font color=\'#000000\'>+100% Piercing Attack<br></font>
-        <font color=\'#cc0029\'>+325-375% Enhanced Damage<br></font>
-        <font color=\'#000000\'>+9 Maximum Damage<br></font>
-        <font color=\'#000000\'>20% Bonus to Attack Rating<br></font>
-        <font color=\'#000000\'>Adds 3-14 Cold Damage<br></font>
-        <font color=\'#000000\'>All Resistances +40<br></font>
-        <font color=\'#000000\'>Freeze Target +3<br></font>
-        <font color=\'#000000\'>+24 Vitality<br></font>
-    ]]>
-    </string>
-    <string name="rune_word_unbending_will_option" formatted="false">
-    <![CDATA[
-        <font color=\'#000000\'>18% Chance to cast Level 18 Taunt on striking<br></font>
-        <font color=\'#000000\'>+3 To Combat Skills (Barbarian Only)<br></font>
-        <font color=\'#cc0029\'>+20-30% Increased Attack Speed<br></font>
-        <font color=\'#cc0029\'>+300-350% Enhanced Damage<br></font>
-        <font color=\'#000000\'>+9 Maximum Damage<br></font>
-        <font color=\'#000000\'>+50 To Attack Rating<br></font>
-        <font color=\'#000000\'>+75% Damage to Undead<br></font>
-        <font color=\'#000000\'>+50 Attack Rating Against Undead<br></font>
-        <font color=\'#cc0029\'>8-10% Life Stolen Per Hit<br></font>
-        <font color=\'#000000\'>Prevent Monster Heal<br></font>
-        <font color=\'#000000\'>+10 To Strength<br></font>
-        <font color=\'#000000\'>+10 To Vitality<br></font>
-        <font color=\'#000000\'>Damage Reduced By 8<br></font>
-        <font color=\'#000000\'>+1 Light Radius<br></font>
-        <font color=\'#000000\'>Requirements -20%<br></font>
-    ]]>
-    </string>
-    <string name="rune_word_obsession_option" formatted="false">
-    <![CDATA[
-        <font color=\'#000000\'>Indestructible<br></font>
-        <font color=\'#000000\'>24% Chance to cast level 10 Weaken when struck<br></font>
-        <font color=\'#000000\'>+4 To All Skills<br></font>
-        <font color=\'#000000\'>+65% Faster Cast Rate<br></font>
-        <font color=\'#000000\'>+60% Faster Hit Recovery<br></font>
-        <font color=\'#000000\'>Knockback<br></font>
-        <font color=\'#000000\'>+10 To Vitality<br></font>
-        <font color=\'#000000\'>+10 To Energy<br></font>
-        <font color=\'#cc0029\'>Increase Maximum Life 15-25%<br></font>
-        <font color=\'#cc0029\'>Regenerate Mana 15-30%<br></font>
-        <font color=\'#cc0029\'>All Resistances +60-70<br></font>
-        <font color=\'#000000\'>75% Extra Gold from Monsters<br></font>
-        <font color=\'#000000\'>30% Better Chance of Getting Magic Items<br></font>
     ]]>
     </string>
 </resources>
