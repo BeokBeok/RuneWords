@@ -77,7 +77,6 @@
     <string name="rune_word_mosaic_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>+50% chance for finishing moves to not consume charges<br></font>
-        <font color=\'#000000\'>When a finisher is executed this way, it now refreshes the expiration timer of the stack<br></font>
         <font color=\'#000000\'>+2 to Martial Arts (Assassin only)<br></font>
         <font color=\'#000000\'>+20% Increased Attack Speed<br></font>
         <font color=\'#cc0029\'>+200-250% Enhanced Damage<br></font>
