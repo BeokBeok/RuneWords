@@ -14,6 +14,7 @@ buildscript {
         classpath(libs.hilt.android.gradle)
         classpath(libs.firebase.crashlytics.gradle)
         classpath(libs.ktlint.gradle)
+        classpath(libs.dependency.guard)
     }
 }
 

@@ -6,6 +6,7 @@ plugins {
     id("dagger.hilt.android.plugin")
     id("com.google.firebase.crashlytics")
     id("org.jlleitschuh.gradle.ktlint")
+    id ("com.dropbox.dependency-guard")
 }
 
 android {
@@ -52,4 +53,8 @@ dependencies {
     releaseImplementation(libs.flipper.noop)
 
     implementation(libs.play.core.ktx)
+}
+
+dependencyGuard {
+    configuration("releaseRuntimeClasspath")
 }
