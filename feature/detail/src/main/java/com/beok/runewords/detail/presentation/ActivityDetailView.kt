@@ -99,6 +99,7 @@ internal object ActivityDetailView {
         modifier: Modifier,
         info: RuneWordsVO
     ) {
+        val applicationContext = LocalContext.current.applicationContext
         ConstraintLayout(modifier = modifier.fillMaxSize()) {
             val (content, admob) = createRefs()
             Column(
@@ -125,7 +126,7 @@ internal object ActivityDetailView {
                     bottom.linkTo(parent.bottom)
                 },
                 factory = { context ->
-                    AdView(context).apply {
+                    AdView(applicationContext).apply {
                         adSize = AdSize.BANNER
                         adUnitId = context.getString(R.string.admob_banner_app_key)
                         loadAd(AdRequest.Builder().build())
