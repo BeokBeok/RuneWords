@@ -29,6 +29,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -99,6 +100,7 @@ internal object ActivityDetailView {
         modifier: Modifier,
         info: RuneWordsVO
     ) {
+        val deviceCurrentWidth = LocalConfiguration.current.screenWidthDp
         val applicationContext = LocalContext.current.applicationContext
         ConstraintLayout(modifier = modifier.fillMaxSize()) {
             val (content, admob) = createRefs()
@@ -127,7 +129,10 @@ internal object ActivityDetailView {
                 },
                 factory = { context ->
                     AdView(applicationContext).apply {
-                        adSize = AdSize.BANNER
+                        adSize = AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(
+                            applicationContext,
+                            deviceCurrentWidth
+                        )
                         adUnitId = context.getString(R.string.admob_banner_app_key)
                         loadAd(AdRequest.Builder().build())
                     }
