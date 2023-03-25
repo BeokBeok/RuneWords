@@ -53,6 +53,8 @@ dependencies {
     releaseImplementation(libs.flipper.noop)
 
     implementation(libs.play.core.ktx)
+
+    implementation(libs.play.services.ads)
 }
 
 dependencyGuard {

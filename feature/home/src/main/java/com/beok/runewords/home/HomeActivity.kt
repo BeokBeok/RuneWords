@@ -81,7 +81,6 @@ internal class HomeActivity : ComponentActivity() {
     }
 
     private fun setupScreenAd() {
-        MobileAds.initialize(this)
         InterstitialAd.load(
             this,
             getString(
