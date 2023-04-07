@@ -12,11 +12,6 @@ android {
 dependencies {
     implementation(project(":common"))
 
-    implementation(libs.core.splashscreen)
-
-    implementation(libs.play.services.ads)
-    implementation(libs.play.core.ktx)
-
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics.ktx)
     implementation(libs.firebase.config.ktx)

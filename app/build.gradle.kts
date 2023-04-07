@@ -40,6 +40,8 @@ dependencies {
     implementation(project(":feature:detail"))
     implementation(project(":feature:info"))
 
+    implementation(libs.core.splashscreen)
+
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics.ktx)
     implementation(libs.firebase.firestore.ktx)
