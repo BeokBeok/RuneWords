@@ -8,6 +8,8 @@ import com.beok.runewords.combination.presentation.navigation.combinationScreen
 import com.beok.runewords.combination.presentation.navigation.navigateToCombination
 import com.beok.runewords.home.presentation.navigation.homeNavigationRoute
 import com.beok.runewords.home.presentation.navigation.homeScreen
+import com.beok.runewords.info.presentation.navigation.navigateToRuneInfo
+import com.beok.runewords.info.presentation.navigation.runeInfoScreen
 
 @Composable
 fun RuneWordsNavHost(
@@ -21,6 +23,9 @@ fun RuneWordsNavHost(
         homeScreen(onRuneClick = {
             navController.navigateToCombination(it)
         })
-        combinationScreen()
+        combinationScreen(onRuneInfoClick = {
+            navController.navigateToRuneInfo(it)
+        })
+        runeInfoScreen()
     }
 }

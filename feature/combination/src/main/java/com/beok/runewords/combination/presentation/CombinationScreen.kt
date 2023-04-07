@@ -41,7 +41,8 @@ import kotlinx.collections.immutable.toImmutableList
 @Composable
 internal fun CombinationRoute(
     rune: Rune?,
-    viewModel: CombinationViewModel = hiltViewModel()
+    viewModel: CombinationViewModel = hiltViewModel(),
+    onRuneInfoClick: (String) -> Unit
 ) {
     if (rune == null) return
     LaunchedEffect(key1 = Unit) {
@@ -52,7 +53,10 @@ internal fun CombinationRoute(
     Column(modifier = Modifier.fillMaxSize()) {
         when (state) {
             is CombinationState.Content -> {
-                CombinationTopBar(rune = rune)
+                CombinationTopBar(
+                    rune = rune,
+                    onRuneInfoClick = onRuneInfoClick
+                )
                 CombinationContent(runeWords = state.value.toImmutableList())
             }
             CombinationState.Loading -> {
@@ -101,7 +105,10 @@ private fun CombinationContent(runeWords: ImmutableList<RuneWords>) {
 }
 
 @Composable
-private fun CombinationTopBar(rune: Rune) {
+private fun CombinationTopBar(
+    rune: Rune,
+    onRuneInfoClick: (String) -> Unit
+) {
     TopAppBar(
         title = {
             Image(
@@ -114,13 +121,19 @@ private fun CombinationTopBar(rune: Rune) {
                 modifier = Modifier.padding(start = 12.dp),
                 fontSize = 20.sp
             )
-            RuneInfoIcon(rune = rune)
+            RuneInfoIcon(
+                rune = rune,
+                onRuneInfoClick = onRuneInfoClick
+            )
         }
     )
 }
 
 @Composable
-private fun RuneInfoIcon(rune: Rune) {
+private fun RuneInfoIcon(
+    rune: Rune,
+    onRuneInfoClick: (String) -> Unit
+) {
     Box(
         modifier = Modifier.fillMaxWidth(),
         contentAlignment = Alignment.CenterEnd
@@ -128,6 +141,7 @@ private fun RuneInfoIcon(rune: Rune) {
         Icon(
             modifier = Modifier
                 .clickable {
+                    onRuneInfoClick(rune.name)
                 }
                 .padding(12.dp),
             imageVector = Icons.Default.Info,

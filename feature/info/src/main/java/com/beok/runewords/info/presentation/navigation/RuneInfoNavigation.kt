@@ -1,35 +1,36 @@
-package com.beok.runewords.combination.presentation.navigation
+package com.beok.runewords.info.presentation.navigation
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
+import androidx.navigation.NavOptions
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.beok.runewords.combination.presentation.CombinationRoute
 import com.beok.runewords.common.BundleKeyConstants
 import com.beok.runewords.common.model.Rune
+import com.beok.runewords.info.presentation.RuneInfoScreen
 
-const val combinationNavigationRoute = "combination"
+const val infoNavigationRoute = "runeInfo"
 
-fun NavController.navigateToCombination(rune: String) {
-    navigate(route = "$combinationNavigationRoute/$rune") {
-        launchSingleTop = true
-    }
+fun NavController.navigateToRuneInfo(rune: String, navOptions: NavOptions? = null) {
+    navigate(
+        route = "$infoNavigationRoute/$rune",
+        navOptions = navOptions
+    )
 }
 
-fun NavGraphBuilder.combinationScreen(onRuneInfoClick: (String) -> Unit) {
+fun NavGraphBuilder.runeInfoScreen() {
     composable(
-        route = "$combinationNavigationRoute/{${BundleKeyConstants.RUNE_NAME}}",
+        route = "$infoNavigationRoute/{${BundleKeyConstants.RUNE_NAME}}",
         arguments = listOf(
             navArgument(BundleKeyConstants.RUNE_NAME) {
                 type = NavType.StringType
             }
         )
     ) { navBackStackEntry ->
-        CombinationRoute(
+        RuneInfoScreen(
             rune = navBackStackEntry.arguments?.getString(BundleKeyConstants.RUNE_NAME)
-                ?.let(Rune::findByName),
-            onRuneInfoClick = onRuneInfoClick
+                ?.let(Rune::findByName)
         )
     }
 }
