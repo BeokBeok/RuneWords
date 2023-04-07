@@ -1,6 +1,7 @@
 package com.beok.runewords.combination.presentation
 
 import android.content.Context
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -44,7 +45,12 @@ internal fun CombinationRoute(
     viewModel: CombinationViewModel = hiltViewModel(),
     onRuneInfoClick: (String) -> Unit,
     onRuneWordClick: (String) -> Unit,
+    onBackClick: () -> Unit
 ) {
+    BackHandler {
+        onBackClick()
+    }
+
     val state: CombinationState by viewModel.combinationState.collectAsState()
     Column(modifier = Modifier.fillMaxSize()) {
         when (state) {

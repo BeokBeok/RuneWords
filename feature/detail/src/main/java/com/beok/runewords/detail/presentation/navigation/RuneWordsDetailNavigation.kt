@@ -11,7 +11,9 @@ import com.beok.runewords.detail.presentation.DetailRoute
 const val detailNavigationRoute = "detail"
 
 fun NavController.navigateToDetail(runeWordName: String) {
-    navigate(route = "$detailNavigationRoute/$runeWordName")
+    navigate(route = "$detailNavigationRoute/$runeWordName") {
+        launchSingleTop = true
+    }
 }
 
 fun NavGraphBuilder.detailScreen(
