@@ -1,18 +1,18 @@
-package com.beok.runewords.home.inapp
+package com.beok.runewords.inapp
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.beok.runewords.home.HomeActivity
+import com.beok.runewords.RuneWordsActivity
 import com.beok.runewords.home.domain.FetchForceUpdateVersionUseCase
 import com.google.android.play.core.appupdate.AppUpdateInfo
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.install.model.AppUpdateType
 import com.google.android.play.core.install.model.UpdateAvailability
 import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @HiltViewModel
 internal class InAppUpdateViewModel @Inject constructor(
@@ -57,7 +57,7 @@ internal class InAppUpdateViewModel @Inject constructor(
 
     fun registerForHome(
         appUpdateInfo: AppUpdateInfo,
-        target: HomeActivity
+        target: RuneWordsActivity
     ) {
         inAppUpdateManager.startUpdateFlowForResult(
             appUpdateInfo,

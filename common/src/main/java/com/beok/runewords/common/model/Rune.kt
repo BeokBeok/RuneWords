@@ -305,7 +305,7 @@ enum class Rune(
 
         fun all(): List<Rune> = values().toList()
 
-        fun findByName(name: String) = values()
+        fun findByName(name: String): Rune? = values()
             .firstOrNull {
                 it.name.lowercase() == name.lowercase()
             }

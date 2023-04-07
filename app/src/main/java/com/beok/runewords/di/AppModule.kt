@@ -1,4 +1,4 @@
-package com.beok.runewords.home.di
+package com.beok.runewords.di
 
 import android.content.Context
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory

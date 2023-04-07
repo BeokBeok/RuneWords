@@ -27,6 +27,7 @@ compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = 
 compose-runtime-livedata = { module = "androidx.compose.runtime:runtime-livedata", name = "runtime-livedata", version.ref = "compose" }
 activity-compose = { module = "androidx.activity:activity-compose", version = "1.4.0" }
 constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayout-compose", version = "1.0.0-rc02" }
+navigation-compose = { module = "androidx.navigation:navigation-compose", version = "2.5.3" }
 
 # Firebase
 firebase-bom = { module = "com.google.firebase:firebase-bom", version = "30.3.1" }
@@ -40,6 +41,7 @@ timber = { module = "com.jakewharton.timber:timber", version = "5.0.1" }
 # Hilt
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
+hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version = "1.0.0" }
 
 # Coroutines
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
@@ -71,5 +73,6 @@ compose = [
     "compose-ui-tooling",
     "compose-runtime-livedata",
     "activity-compose",
-    "constraintlayout-compose"
+    "constraintlayout-compose",
+    "navigation-compose"
 ]

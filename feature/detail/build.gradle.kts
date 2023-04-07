@@ -24,6 +24,7 @@ dependencies {
     implementation(libs.firebase.firestore.ktx)
 
     implementation(libs.hilt.android)
+    implementation(libs.hilt.navigation.compose)
     kapt(libs.hilt.compiler)
 
     testImplementation(libs.junit.jupiter.api)

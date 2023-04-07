@@ -1,48 +1,43 @@
 package com.beok.runewords.combination.presentation
 
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.beok.runewords.combination.domain.RuneInfoIconTypeFetchUseCase
-import com.beok.runewords.combination.domain.RuneWordsFetchUseCase
+import com.beok.runewords.combination.domain.RuneWordsRepository
 import com.beok.runewords.combination.presentation.vo.CombinationState
-import com.beok.runewords.common.model.Rune
+import com.beok.runewords.common.BundleKeyConstants
+import com.beok.runewords.common.model.Result
+import com.beok.runewords.common.model.asResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
-import kotlinx.coroutines.launch
-import timber.log.Timber
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.stateIn
 
 @HiltViewModel
 internal class CombinationViewModel @Inject constructor(
-    private val runeWordsFetchUseCase: RuneWordsFetchUseCase,
-    private val runeInfoIconTypeFetchUseCase: RuneInfoIconTypeFetchUseCase
+    savedStateHandle: SavedStateHandle,
+    runeWordsRepository: RuneWordsRepository,
 ) : ViewModel() {
 
-    private var _state by mutableStateOf<CombinationState>(CombinationState.None)
-    val state: CombinationState get() = _state
-
-    private var _runeInfoIconType by mutableStateOf("")
-    val runeInfoIconType: String get() = _runeInfoIconType
-
-    fun fetchRuneWords(rune: Rune?) = viewModelScope.launch {
-        _state = CombinationState.Loading
-        runeWordsFetchUseCase
-            .execute(rune = rune?.name?.lowercase() ?: return@launch)
-            .onSuccess {
-                _state = CombinationState.Content(value = it)
-            }
-            .onFailure {
-                _state = CombinationState.Failed
-                Timber.d(it)
-            }
+    val rune: String by lazy {
+        savedStateHandle[BundleKeyConstants.RUNE_NAME]!!
     }
 
-    fun fetchRuneInfoIconType() = viewModelScope.launch {
-        runeInfoIconTypeFetchUseCase.execute()
-            .onSuccess {
-                _runeInfoIconType = it
+    val combinationState: StateFlow<CombinationState> =
+        runeWordsRepository.searchByRune(rune.lowercase())
+            .asResult()
+            .map { runeWordsResult ->
+                when (runeWordsResult) {
+                    is Result.Error -> CombinationState.Failed
+                    Result.Loading -> CombinationState.Loading
+                    is Result.Success -> CombinationState.Content(runeWordsResult.data)
+                }
             }
-    }
+            .stateIn(
+                scope = viewModelScope,
+                started = SharingStarted.WhileSubscribed(5_000),
+                initialValue = CombinationState.None
+            )
 }

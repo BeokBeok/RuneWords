@@ -6,7 +6,7 @@ plugins {
     id("dagger.hilt.android.plugin")
     id("com.google.firebase.crashlytics")
     id("org.jlleitschuh.gradle.ktlint")
-    id ("com.dropbox.dependency-guard")
+    id("com.dropbox.dependency-guard")
 }
 
 android {
@@ -40,6 +40,8 @@ dependencies {
     implementation(project(":feature:detail"))
     implementation(project(":feature:info"))
 
+    implementation(libs.core.splashscreen)
+
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics.ktx)
     implementation(libs.firebase.firestore.ktx)
@@ -52,9 +54,8 @@ dependencies {
     debugImplementation(libs.soloader)
     releaseImplementation(libs.flipper.noop)
 
-    implementation(libs.play.core.ktx)
-
     implementation(libs.play.services.ads)
+    implementation(libs.play.core.ktx)
 }
 
 dependencyGuard {
