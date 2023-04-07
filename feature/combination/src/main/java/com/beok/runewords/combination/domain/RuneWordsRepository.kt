@@ -1,16 +1,24 @@
 package com.beok.runewords.combination.domain
 
 import com.beok.runewords.combination.domain.model.RuneWords
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 
 internal interface RuneWordsRepository {
 
-    suspend fun searchByRune(rune: String): List<RuneWords>
+    fun searchByRune(rune: String): Flow<List<RuneWords>>
 
     class Fake : RuneWordsRepository {
 
-        override suspend fun searchByRune(rune: String): List<RuneWords> = listOf(
-            RuneWords(name = "death_breath"),
-            RuneWords(name = "patience")
-        )
+        override fun searchByRune(rune: String): Flow<List<RuneWords>> {
+            return flow {
+                emit(
+                    listOf(
+                        RuneWords(name = "breath_of_the_dying"),
+                        RuneWords(name = "obsession")
+                    )
+                )
+            }
+        }
     }
 }

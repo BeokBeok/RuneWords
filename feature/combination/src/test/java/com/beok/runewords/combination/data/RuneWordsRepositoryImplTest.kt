@@ -6,6 +6,7 @@ import com.beok.runewords.common.util.toDto
 import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
+import kotlinx.coroutines.flow.first
 
 internal class RuneWordsRepositoryImplTest {
 
@@ -18,7 +19,9 @@ internal class RuneWordsRepositoryImplTest {
         val expected = remoteDataSource
             .searchByRune(rune = rune)
             .toDto()
+
         val actual = repository.searchByRune(rune = rune)
+            .first()
 
         assertEquals(expected, actual)
     }

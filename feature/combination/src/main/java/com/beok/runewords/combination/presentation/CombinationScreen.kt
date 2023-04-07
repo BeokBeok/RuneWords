@@ -19,7 +19,8 @@ import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -45,11 +46,8 @@ internal fun CombinationRoute(
     onRuneInfoClick: (String) -> Unit
 ) {
     if (rune == null) return
-    LaunchedEffect(key1 = Unit) {
-        viewModel.fetchRuneWords(rune)
-    }
 
-    val state = viewModel.state
+    val state: CombinationState by viewModel.combinationState.collectAsState()
     Column(modifier = Modifier.fillMaxSize()) {
         when (state) {
             is CombinationState.Content -> {
@@ -57,7 +55,9 @@ internal fun CombinationRoute(
                     rune = rune,
                     onRuneInfoClick = onRuneInfoClick
                 )
-                CombinationContent(runeWords = state.value.toImmutableList())
+                CombinationContent(
+                    runeWords = (state as CombinationState.Content).value.toImmutableList()
+                )
             }
             CombinationState.Loading -> {
                 ContentLoading(isLoading = true)

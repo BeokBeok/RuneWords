@@ -14,6 +14,7 @@ const val combinationNavigationRoute = "combination"
 fun NavController.navigateToCombination(rune: String) {
     navigate(route = "$combinationNavigationRoute/$rune") {
         launchSingleTop = true
+        restoreState = true
     }
 }
 
