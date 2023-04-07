@@ -2,6 +2,7 @@ package com.beok.runewords.detail.data
 
 import com.beok.runewords.detail.data.remote.RuneWordsDetailRemoteDataSource
 import com.beok.runewords.detail.domain.RuneWordsDetailRepository
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
@@ -20,6 +21,7 @@ internal class RuneWordsDetailRepositoryImplTest {
             .toDto()
             .copy(levelLimit = 57)
         val actual = repository.fetchInfo(name = runeWordsName)
+            .first()
 
         assertEquals(expected, actual)
     }

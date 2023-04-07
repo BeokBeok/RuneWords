@@ -9,8 +9,8 @@ internal interface RuneWordsRemoteDataSource {
     class Fake : RuneWordsRemoteDataSource {
         override suspend fun searchByRune(rune: String): List<RuneWordsResponse> =
             listOf(
-                RuneWordsResponse(name = "death_breath"),
-                RuneWordsResponse(name = "patience")
+                RuneWordsResponse(name = "breath_of_the_dying"),
+                RuneWordsResponse(name = "obsession")
             )
     }
 }

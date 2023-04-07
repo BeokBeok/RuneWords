@@ -15,7 +15,7 @@ internal class RuneWordsRepositoryImplTest {
 
     @Test
     fun `룬에 해당하는 룬워드 아이템을 검색합니다`() = runBlocking {
-        val rune = "el"
+        val rune = "zod"
         val expected = remoteDataSource
             .searchByRune(rune = rune)
             .toDto()
