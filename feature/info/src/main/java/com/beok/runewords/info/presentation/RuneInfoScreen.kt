@@ -12,8 +12,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.Icon
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
@@ -29,27 +27,16 @@ import com.beok.runewords.common.model.Rune
 import com.beok.runewords.info.R
 
 @Composable
-internal fun RuneInfoScreen(rune: Rune = Rune.BER) {
-    MaterialTheme {
-        RuneInfoScaffold(rune)
-    }
-}
+internal fun RuneInfoScreen(rune: Rune?) {
+    if (rune == null) return
 
-@Composable
-private fun RuneInfoScaffold(rune: Rune) {
-    Scaffold(
-        topBar = {
-            RuneInfoTopBar(rune)
-        },
-        content = { padding ->
-            RuneInfoContent(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(padding),
-                rune = rune
-            )
-        }
-    )
+    Column(modifier = Modifier.fillMaxSize()) {
+        RuneInfoTopBar(rune)
+        RuneInfoContent(
+            modifier = Modifier.fillMaxSize(),
+            rune = rune
+        )
+    }
 }
 
 @Composable
