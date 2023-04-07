@@ -6,7 +6,7 @@ plugins {
     id("dagger.hilt.android.plugin")
     id("com.google.firebase.crashlytics")
     id("org.jlleitschuh.gradle.ktlint")
-    id ("com.dropbox.dependency-guard")
+    id("com.dropbox.dependency-guard")
 }
 
 android {

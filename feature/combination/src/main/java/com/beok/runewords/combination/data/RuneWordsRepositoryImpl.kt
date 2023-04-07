@@ -17,5 +17,4 @@ internal class RuneWordsRepositoryImpl @Inject constructor(
             emit(remoteDataSource.searchByRune(rune).toDto())
         }
     }
-
 }
