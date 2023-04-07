@@ -1,6 +1,5 @@
 package com.beok.runewords.home.presentation
 
-import android.content.Context
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -13,7 +12,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -22,10 +20,10 @@ import com.beok.runewords.common.model.Rune
 import com.beok.runewords.home.R
 
 @Composable
-fun HomeScreen() {
+internal fun HomeScreen(onRuneClick: (String) -> Unit) {
     Column(modifier = Modifier.fillMaxSize()) {
         HomeTopBar()
-        HomeContent()
+        HomeContent(onRuneClick = onRuneClick)
     }
 }
 
@@ -41,8 +39,7 @@ private fun HomeTopBar() {
 }
 
 @Composable
-private fun HomeContent() {
-//    val context: Context = LocalContext.current
+private fun HomeContent(onRuneClick: (String) -> Unit) {
     Box(modifier = Modifier.fillMaxSize()) {
         LazyVerticalGrid(
             modifier = Modifier.fillMaxSize(),
@@ -55,13 +52,7 @@ private fun HomeContent() {
                         .fillMaxSize()
                         .padding(20.dp)
                         .clickable {
-//                            context.startActivity(
-//                                className = ActivityHomeView.CLASSNAME_COMBINATION,
-//                                bundle = bundleOf(
-//                                    BundleKeyConstants.RUNE_NAME to Rune.findByName(item.name)
-//                                ),
-//                                intentFlags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-//                            )
+                            onRuneClick(item.name)
                         }
                 )
             }

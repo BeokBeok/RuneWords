@@ -12,8 +12,8 @@ fun NavController.navigateToHome(navOptions: NavOptions? = null) {
     navigate(route = homeNavigationRoute, navOptions = navOptions)
 }
 
-fun NavGraphBuilder.homeScreen() {
+fun NavGraphBuilder.homeScreen(onRuneClick: (String) -> Unit) {
     composable(route = homeNavigationRoute) {
-        HomeScreen()
+        HomeScreen(onRuneClick = onRuneClick)
     }
 }

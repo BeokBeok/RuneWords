@@ -14,7 +14,4 @@ internal class RuneWordsRepositoryImpl @Inject constructor(
         remoteDataSource
             .searchByRune(rune)
             .toDto()
-
-    override suspend fun fetchRuneInfoIconType(): String =
-        remoteDataSource.fetchRuneInfoIconType()
 }

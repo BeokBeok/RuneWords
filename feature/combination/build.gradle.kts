@@ -20,10 +20,11 @@ dependencies {
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics.ktx)
     implementation(libs.firebase.firestore.ktx)
-    implementation(libs.firebase.config.ktx)
+
     implementation(libs.kotlinx.collections.immutable)
 
     implementation(libs.hilt.android)
+    implementation(libs.hilt.navigation.compose)
     kapt(libs.hilt.compiler)
 
     testImplementation(libs.junit.jupiter.api)

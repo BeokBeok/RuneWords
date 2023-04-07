@@ -3,9 +3,9 @@ package com.beok.runewords.combination.data
 import com.beok.runewords.combination.data.remote.RuneWordsRemoteDataSource
 import com.beok.runewords.combination.domain.RuneWordsRepository
 import com.beok.runewords.common.util.toDto
-import kotlin.test.assertEquals
 import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Test
+import kotlin.test.assertEquals
 
 internal class RuneWordsRepositoryImplTest {
 
@@ -19,15 +19,6 @@ internal class RuneWordsRepositoryImplTest {
             .searchByRune(rune = rune)
             .toDto()
         val actual = repository.searchByRune(rune = rune)
-
-        assertEquals(expected, actual)
-    }
-
-    @Test
-    fun `룬 정보 아이콘 타입을 얻습니다`() = runBlocking {
-        val expected = remoteDataSource.fetchRuneInfoIconType()
-
-        val actual = repository.fetchRuneInfoIconType()
 
         assertEquals(expected, actual)
     }
