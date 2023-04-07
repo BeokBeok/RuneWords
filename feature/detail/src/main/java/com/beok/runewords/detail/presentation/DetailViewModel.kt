@@ -1,36 +1,43 @@
 package com.beok.runewords.detail.presentation
 
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.beok.runewords.detail.domain.RuneWordsDetailFetchUseCase
+import com.beok.runewords.common.BundleKeyConstants
+import com.beok.runewords.common.model.Result
+import com.beok.runewords.common.model.asResult
+import com.beok.runewords.detail.domain.RuneWordsDetailRepository
 import com.beok.runewords.detail.presentation.vo.DetailState
 import com.beok.runewords.detail.presentation.vo.RuneWordsVO
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
-import kotlinx.coroutines.launch
-import timber.log.Timber
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.stateIn
 
 @HiltViewModel
 internal class DetailViewModel @Inject constructor(
-    private val runeWordsDetailFetchUseCase: RuneWordsDetailFetchUseCase
+    savedStateHandle: SavedStateHandle,
+    runeWordsDetailRepository: RuneWordsDetailRepository,
 ) : ViewModel() {
 
-    private var _state by mutableStateOf<DetailState>(DetailState.None)
-    val state: DetailState get() = _state
-
-    fun fetchDetail(name: String) = viewModelScope.launch {
-        _state = DetailState.Loading
-        runeWordsDetailFetchUseCase
-            .execute(name = name)
-            .onSuccess {
-                _state = DetailState.Content(value = RuneWordsVO.fromDto(it))
-            }
-            .onFailure {
-                _state = DetailState.Failed
-                Timber.d(it)
-            }
+    private val runeWordsName: String by lazy {
+        savedStateHandle[BundleKeyConstants.RUNE_WORDS_NAME]!!
     }
+
+    val detailState: StateFlow<DetailState> =
+        runeWordsDetailRepository.fetchInfo(runeWordsName)
+            .asResult()
+            .map { detailResult ->
+                when (detailResult) {
+                    is Result.Error -> DetailState.Failed
+                    Result.Loading -> DetailState.Loading
+                    is Result.Success -> DetailState.Content(RuneWordsVO.fromDto(detailResult.data))
+                }
+            }.stateIn(
+                scope = viewModelScope,
+                started = SharingStarted.WhileSubscribed(5_000),
+                initialValue = DetailState.None
+            )
 }

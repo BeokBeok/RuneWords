@@ -5,11 +5,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.beok.runewords.home.BuildConfig
@@ -22,6 +19,7 @@ import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.android.play.core.install.model.AppUpdateType
+import com.google.android.play.core.review.ReviewManagerFactory
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -74,7 +72,7 @@ internal class RuneWordsActivity : ComponentActivity() {
         setContent {
             MaterialTheme {
                 Box(modifier = Modifier.fillMaxSize()) {
-                    RuneWordsNavHost()
+                    RuneWordsNavHost(showReviewWriteForm = ::showReviewWriteForm)
                 }
             }
         }
@@ -99,5 +97,17 @@ internal class RuneWordsActivity : ComponentActivity() {
                 }
             }
         }
+    }
+
+    private fun showReviewWriteForm() {
+        val reviewManager = ReviewManagerFactory.create(this)
+        reviewManager
+            .requestReviewFlow()
+            .addOnCompleteListener {
+                if (!it.isSuccessful) return@addOnCompleteListener
+                reviewManager
+                    .launchReviewFlow(this, it.result)
+                    .addOnCompleteListener { }
+            }
     }
 }

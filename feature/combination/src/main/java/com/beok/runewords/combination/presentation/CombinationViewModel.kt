@@ -21,7 +21,7 @@ internal class CombinationViewModel @Inject constructor(
     runeWordsRepository: RuneWordsRepository,
 ) : ViewModel() {
 
-    private val rune: String by lazy {
+    val rune: String by lazy {
         savedStateHandle[BundleKeyConstants.RUNE_NAME]!!
     }
 

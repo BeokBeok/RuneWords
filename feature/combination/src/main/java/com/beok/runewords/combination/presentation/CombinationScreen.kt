@@ -41,22 +41,21 @@ import kotlinx.collections.immutable.toImmutableList
 
 @Composable
 internal fun CombinationRoute(
-    rune: Rune?,
     viewModel: CombinationViewModel = hiltViewModel(),
-    onRuneInfoClick: (String) -> Unit
+    onRuneInfoClick: (String) -> Unit,
+    onRuneWordClick: (String) -> Unit,
 ) {
-    if (rune == null) return
-
     val state: CombinationState by viewModel.combinationState.collectAsState()
     Column(modifier = Modifier.fillMaxSize()) {
         when (state) {
             is CombinationState.Content -> {
                 CombinationTopBar(
-                    rune = rune,
+                    rune = Rune.findByName(viewModel.rune) ?: return@Column,
                     onRuneInfoClick = onRuneInfoClick
                 )
                 CombinationContent(
-                    runeWords = (state as CombinationState.Content).value.toImmutableList()
+                    runeWords = (state as CombinationState.Content).value.toImmutableList(),
+                    onRuneWordClick = onRuneWordClick
                 )
             }
             CombinationState.Loading -> {
@@ -69,7 +68,10 @@ internal fun CombinationRoute(
 }
 
 @Composable
-private fun CombinationContent(runeWords: ImmutableList<RuneWords>) {
+private fun CombinationContent(
+    runeWords: ImmutableList<RuneWords>,
+    onRuneWordClick: (String) -> Unit,
+) {
     val context: Context = LocalContext.current
     LazyColumn(modifier = Modifier.fillMaxSize()) {
         items(runeWords) { item ->
@@ -86,6 +88,7 @@ private fun CombinationContent(runeWords: ImmutableList<RuneWords>) {
                     modifier = Modifier
                         .fillMaxWidth()
                         .clickable {
+                            onRuneWordClick(item.name)
                         }
                         .padding(horizontal = 16.dp)
                         .padding(top = 16.dp),
