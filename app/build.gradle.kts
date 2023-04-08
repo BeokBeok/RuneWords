@@ -35,6 +35,7 @@ android {
 
 dependencies {
     implementation(project(":common"))
+    implementation(project(":tracking"))
     implementation(project(":feature:home"))
     implementation(project(":feature:combination"))
     implementation(project(":feature:detail"))
