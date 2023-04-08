@@ -11,8 +11,8 @@ import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.beok.runewords.home.BuildConfig
 import com.beok.runewords.home.R
-import com.beok.runewords.inapp.InAppUpdateState
-import com.beok.runewords.inapp.InAppUpdateViewModel
+import com.beok.runewords.inapp.presentation.InAppUpdateState
+import com.beok.runewords.inapp.presentation.InAppUpdateViewModel
 import com.beok.runewords.navigation.RuneWordsNavHost
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.LoadAdError

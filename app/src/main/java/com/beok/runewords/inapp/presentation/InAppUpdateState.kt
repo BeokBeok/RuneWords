@@ -1,4 +1,4 @@
-package com.beok.runewords.inapp
+package com.beok.runewords.inapp.presentation
 
 import com.google.android.play.core.appupdate.AppUpdateInfo
 

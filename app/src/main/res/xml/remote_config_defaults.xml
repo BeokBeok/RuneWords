@@ -4,8 +4,4 @@
         <key>key_force_update_version</key>
         <value>0.0.0</value>
     </entry>
-    <entry>
-        <key>key_rune_info_icon_type</key>
-        <value>info</value>
-    </entry>
 </defaultMap>
