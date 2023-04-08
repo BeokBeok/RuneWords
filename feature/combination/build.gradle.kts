@@ -16,9 +16,8 @@ android {
 
 dependencies {
     implementation(project(":common"))
+    implementation(project(":tracking"))
 
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.analytics.ktx)
     implementation(libs.firebase.firestore.ktx)
 
     implementation(libs.kotlinx.collections.immutable)
