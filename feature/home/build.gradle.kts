@@ -11,9 +11,7 @@ android {
 
 dependencies {
     implementation(project(":common"))
-
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.analytics.ktx)
+    implementation(project(":tracking"))
 
     implementation(libs.hilt.android)
     implementation(libs.hilt.navigation.compose)

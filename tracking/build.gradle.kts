@@ -10,8 +10,8 @@ android {
 }
 
 dependencies {
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.analytics.ktx)
+    api(platform(libs.firebase.bom))
+    api(libs.firebase.analytics.ktx)
 
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
