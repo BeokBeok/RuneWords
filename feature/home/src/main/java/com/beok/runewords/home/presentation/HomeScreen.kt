@@ -32,19 +32,7 @@ import com.beok.runewords.tracking.TrackingConstants
 @Composable
 internal fun HomeScreen(onRuneClick: (String) -> Unit) {
     Column(modifier = Modifier.fillMaxSize()) {
-        HomeTopBar()
         HomeContent(onRuneClick = onRuneClick)
-    }
-}
-
-@Composable
-private fun HomeTopBar() {
-    TopAppBar(modifier = Modifier.fillMaxWidth()) {
-        Text(
-            text = stringResource(id = R.string.title_rune_list),
-            modifier = Modifier.padding(start = 12.dp),
-            fontSize = 20.sp
-        )
     }
 }
 
