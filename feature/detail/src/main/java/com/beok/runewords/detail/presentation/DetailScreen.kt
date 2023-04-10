@@ -39,12 +39,15 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
+import androidx.core.os.bundleOf
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.beok.runewords.common.ext.resourceIDByName
 import com.beok.runewords.common.view.ContentLoading
 import com.beok.runewords.detail.R
 import com.beok.runewords.detail.presentation.vo.DetailState
 import com.beok.runewords.detail.presentation.vo.RuneWordsVO
+import com.beok.runewords.tracking.LocalTracker
+import com.beok.runewords.tracking.TrackingConstants
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.AdView
@@ -158,6 +161,7 @@ private fun RuneWordsCombination(
     info: RuneWordsVO,
     onRuneClick: (String) -> Unit
 ) {
+    val tracking = LocalTracker.current
     Headline(
         title = stringResource(
             id = R.string.title_rune_words,
@@ -177,6 +181,10 @@ private fun RuneWordsCombination(
                     .padding(horizontal = 8.dp)
                     .clickable {
                         onRuneClick(it.name)
+                        tracking.logEvent(
+                            name = TrackingConstants.Rune.CLICK,
+                            bundle = bundleOf(TrackingConstants.Params.RUNE_NAME to it.name)
+                        )
                     },
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {

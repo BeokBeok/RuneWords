@@ -1,4 +1,4 @@
-package com.beok.runewords.common.constants
+package com.beok.runewords.tracking
 
 object TrackingConstants {
 

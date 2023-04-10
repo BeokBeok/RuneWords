@@ -2,19 +2,18 @@ package com.beok.runewords.combination.data.remote
 
 import com.beok.runewords.combination.data.entity.RuneWordsResponse
 import com.beok.runewords.common.ext.await
-import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
-internal class RuneWordsRemoteDataSourceImpl @Inject constructor(
-    private val fireStore: FirebaseFirestore,
-) : RuneWordsRemoteDataSource {
+internal class RuneWordsRemoteDataSourceImpl @Inject constructor() : RuneWordsRemoteDataSource {
 
     override suspend fun searchByRune(rune: String): List<RuneWordsResponse> =
         withContext(Dispatchers.IO) {
             val runeWordGroup = mutableListOf<RuneWordsResponse>()
-            fireStore
+            Firebase.firestore
                 .collection(COLLECTION_NAME_RUNEWORDS)
                 .whereArrayContains(FIELD_NAME_RUNE_COMBINATION, rune)
                 .get()

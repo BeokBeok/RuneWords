@@ -30,6 +30,7 @@ import androidx.compose.ui.res.stringArrayResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.os.bundleOf
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.beok.runewords.combination.R
 import com.beok.runewords.combination.domain.model.RuneWords
@@ -37,6 +38,8 @@ import com.beok.runewords.combination.presentation.vo.CombinationState
 import com.beok.runewords.common.ext.resourceIDByName
 import com.beok.runewords.common.model.Rune
 import com.beok.runewords.common.view.ContentLoading
+import com.beok.runewords.tracking.LocalTracker
+import com.beok.runewords.tracking.TrackingConstants
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toImmutableList
 
@@ -79,6 +82,7 @@ private fun CombinationContent(
     onRuneWordClick: (String) -> Unit,
 ) {
     val context: Context = LocalContext.current
+    val tracking = LocalTracker.current
     LazyColumn(modifier = Modifier.fillMaxSize()) {
         items(runeWords) { item ->
             if (context.resourceIDByName(item.name) > 0) {
@@ -95,6 +99,12 @@ private fun CombinationContent(
                         .fillMaxWidth()
                         .clickable {
                             onRuneWordClick(item.name)
+                            tracking.logEvent(
+                                name = TrackingConstants.Rune.WORDS_CLICK,
+                                bundle = bundleOf(
+                                    TrackingConstants.Params.RUNE_WORDS_NAME to item.name
+                                )
+                            )
                         }
                         .padding(horizontal = 16.dp)
                         .padding(top = 16.dp),
@@ -118,6 +128,7 @@ private fun CombinationTopBar(
     rune: Rune,
     onRuneInfoClick: (String) -> Unit
 ) {
+    val tracking = LocalTracker.current
     TopAppBar(
         title = {
             Image(
@@ -132,7 +143,13 @@ private fun CombinationTopBar(
             )
             RuneInfoIcon(
                 rune = rune,
-                onRuneInfoClick = onRuneInfoClick
+                onRuneInfoClick = {
+                    onRuneInfoClick(it)
+                    tracking.logEvent(
+                        name = TrackingConstants.Rune.INFO_CLICK,
+                        bundle = bundleOf(TrackingConstants.Params.RUNE_NAME to it)
+                    )
+                }
             )
         }
     )

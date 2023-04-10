@@ -20,5 +20,6 @@ include(
     ":feature:combination",
     ":feature:detail",
     ":feature:info",
-    ":benchmark"
+    ":benchmark",
+    ":tracking"
 )
