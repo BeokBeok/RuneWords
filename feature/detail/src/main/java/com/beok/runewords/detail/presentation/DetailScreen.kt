@@ -197,7 +197,8 @@ private fun RuneWordsCombination(
                 )
                 Text(
                     text = stringResource(id = it.nameResourceID),
-                    modifier = Modifier.padding(top = 4.dp)
+                    modifier = Modifier.padding(top = 4.dp),
+                    color = Color.Black
                 )
             }
         }
@@ -217,22 +218,27 @@ private fun RuneWordsType(info: RuneWordsVO) {
             .fillMaxWidth()
             .padding(vertical = 20.dp),
         fontSize = 16.sp,
-        textAlign = TextAlign.Center
+        textAlign = TextAlign.Center,
+        color = Color.Black
     )
 }
 
 @Composable
 private fun DetailTopBar(runeWordsName: String) {
     val context: Context = LocalContext.current
-    TopAppBar(modifier = Modifier.fillMaxWidth()) {
-        Text(
-            text = if (context.resourceIDByName(name = runeWordsName) > 0) {
-                stringResource(id = context.resourceIDByName(name = runeWordsName))
-            } else "",
-            modifier = Modifier.padding(start = 12.dp),
-            fontSize = 20.sp
-        )
-    }
+    TopAppBar(
+        title = {
+            Text(
+                text = if (context.resourceIDByName(name = runeWordsName) > 0) {
+                    stringResource(id = context.resourceIDByName(name = runeWordsName))
+                } else "",
+                modifier = Modifier.padding(start = 12.dp),
+                fontSize = 20.sp,
+                color = Color.Black
+            )
+        },
+        backgroundColor = Color.White
+    )
 }
 
 @Composable
@@ -243,6 +249,7 @@ private fun Headline(title: String) {
             .fillMaxWidth()
             .background(color = Color.LightGray)
             .padding(vertical = 4.dp),
-        textAlign = TextAlign.Center
+        textAlign = TextAlign.Center,
+        color = Color.Black
     )
 }

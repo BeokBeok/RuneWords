@@ -24,6 +24,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringArrayResource
@@ -139,7 +140,8 @@ private fun CombinationTopBar(
             Text(
                 text = stringResource(id = rune.nameResourceID),
                 modifier = Modifier.padding(start = 12.dp),
-                fontSize = 20.sp
+                fontSize = 20.sp,
+                color = Color.Black
             )
             RuneInfoIcon(
                 rune = rune,
@@ -151,7 +153,8 @@ private fun CombinationTopBar(
                     )
                 }
             )
-        }
+        },
+        backgroundColor = Color.White
     )
 }
 
@@ -172,6 +175,7 @@ private fun RuneInfoIcon(
                 .padding(12.dp),
             imageVector = Icons.Default.Info,
             contentDescription = null,
+            tint = Color.Black
         )
     }
 }
