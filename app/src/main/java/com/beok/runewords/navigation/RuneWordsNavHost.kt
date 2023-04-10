@@ -10,7 +10,6 @@ import com.beok.runewords.detail.presentation.navigation.detailScreen
 import com.beok.runewords.detail.presentation.navigation.navigateToDetail
 import com.beok.runewords.home.presentation.navigation.homeNavigationRoute
 import com.beok.runewords.home.presentation.navigation.homeScreen
-import com.beok.runewords.home.presentation.navigation.navigateToHome
 import com.beok.runewords.info.presentation.navigation.navigateToRuneInfo
 import com.beok.runewords.info.presentation.navigation.runeInfoScreen
 
@@ -28,7 +27,6 @@ fun RuneWordsNavHost(
         combinationScreen(
             onRuneInfoClick = navController::navigateToRuneInfo,
             onRuneWordClick = navController::navigateToDetail,
-            onBackClick = navController::navigateToHome
         )
         runeInfoScreen()
         detailScreen(
