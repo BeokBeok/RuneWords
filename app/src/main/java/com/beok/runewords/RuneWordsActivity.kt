@@ -6,7 +6,6 @@ import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
@@ -17,6 +16,7 @@ import com.beok.runewords.inapp.presentation.InAppUpdateViewModel
 import com.beok.runewords.navigation.RuneWordsNavHost
 import com.beok.runewords.tracking.LocalTracker
 import com.beok.runewords.tracking.Tracking
+import com.beok.runewords.ui.RuneWordsTheme
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.interstitial.InterstitialAd
@@ -77,7 +77,7 @@ internal class RuneWordsActivity : ComponentActivity() {
 
     private fun setContent() {
         setContent {
-            MaterialTheme {
+            RuneWordsTheme {
                 CompositionLocalProvider(LocalTracker provides tracking) {
                     Box(modifier = Modifier.fillMaxSize()) {
                         RuneWordsNavHost(showReviewWriteForm = ::showReviewWriteForm)
