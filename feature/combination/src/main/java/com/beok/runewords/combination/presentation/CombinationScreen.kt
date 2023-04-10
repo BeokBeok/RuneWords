@@ -15,6 +15,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Divider
 import androidx.compose.material.Icon
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
@@ -24,7 +25,6 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringArrayResource
@@ -112,7 +112,10 @@ private fun CombinationContent(
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    Text(text = runeWordsName)
+                    Text(
+                        text = runeWordsName,
+                        color = MaterialTheme.colors.primary
+                    )
                     Divider(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -141,7 +144,7 @@ private fun CombinationTopBar(
                 text = stringResource(id = rune.nameResourceID),
                 modifier = Modifier.padding(start = 12.dp),
                 fontSize = 20.sp,
-                color = Color.Black
+                color = MaterialTheme.colors.primary
             )
             RuneInfoIcon(
                 rune = rune,
@@ -154,7 +157,7 @@ private fun CombinationTopBar(
                 }
             )
         },
-        backgroundColor = Color.White
+        backgroundColor = MaterialTheme.colors.background
     )
 }
 
@@ -175,7 +178,7 @@ private fun RuneInfoIcon(
                 .padding(12.dp),
             imageVector = Icons.Default.Info,
             contentDescription = null,
-            tint = Color.Black
+            tint = MaterialTheme.colors.primary
         )
     }
 }

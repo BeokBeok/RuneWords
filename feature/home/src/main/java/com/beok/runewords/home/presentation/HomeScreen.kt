@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -74,6 +75,9 @@ private fun RuneItem(item: Rune, modifier: Modifier) {
                 .height(50.dp),
             contentScale = ContentScale.Crop
         )
-        Text(text = stringResource(id = item.nameResourceID))
+        Text(
+            text = stringResource(id = item.nameResourceID),
+            color = MaterialTheme.colors.primary
+        )
     }
 }

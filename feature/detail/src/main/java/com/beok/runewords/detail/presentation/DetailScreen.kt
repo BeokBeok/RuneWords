@@ -20,6 +20,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
@@ -135,7 +136,8 @@ private fun RuneWordsOption(info: RuneWordsVO) {
     Headline(title = stringResource(id = R.string.title_options))
     AndroidView(
         modifier = Modifier
-            .fillMaxWidth()
+            .fillMaxSize()
+            .background(color = Color.White)
             .padding(vertical = 20.dp),
         factory = { context ->
             TextView(context).apply {
@@ -198,7 +200,7 @@ private fun RuneWordsCombination(
                 Text(
                     text = stringResource(id = it.nameResourceID),
                     modifier = Modifier.padding(top = 4.dp),
-                    color = Color.Black
+                    color = MaterialTheme.colors.primary
                 )
             }
         }
@@ -219,7 +221,7 @@ private fun RuneWordsType(info: RuneWordsVO) {
             .padding(vertical = 20.dp),
         fontSize = 16.sp,
         textAlign = TextAlign.Center,
-        color = Color.Black
+        color = MaterialTheme.colors.primary,
     )
 }
 
@@ -234,10 +236,10 @@ private fun DetailTopBar(runeWordsName: String) {
                 } else "",
                 modifier = Modifier.padding(start = 12.dp),
                 fontSize = 20.sp,
-                color = Color.Black
+                color = MaterialTheme.colors.primary
             )
         },
-        backgroundColor = Color.White
+        backgroundColor = MaterialTheme.colors.background
     )
 }
 
