@@ -20,6 +20,7 @@ import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -146,7 +147,8 @@ private fun RuneInfoTopBar(rune: Rune) {
                     }
                 }
             }
-        }
+        },
+        backgroundColor = Color.White
     )
 }
 
@@ -168,7 +170,11 @@ private fun RuneCompound(
         )
     }
     if (isGem) {
-        Icon(imageVector = Icons.Default.Add, contentDescription = null)
+        Icon(
+            imageVector = Icons.Default.Add,
+            contentDescription = null,
+            tint = Color.Black
+        )
         Image(
             painter = painterResource(id = rune.gemResourceID!!),
             contentDescription = null,
