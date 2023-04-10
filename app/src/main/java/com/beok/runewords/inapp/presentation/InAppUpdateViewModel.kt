@@ -1,11 +1,11 @@
-package com.beok.runewords.inapp
+package com.beok.runewords.inapp.presentation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.beok.runewords.RuneWordsActivity
-import com.beok.runewords.home.domain.FetchForceUpdateVersionUseCase
+import com.beok.runewords.inapp.domain.InAppRepository
 import com.google.android.play.core.appupdate.AppUpdateInfo
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.install.model.AppUpdateType
@@ -17,7 +17,7 @@ import javax.inject.Inject
 @HiltViewModel
 internal class InAppUpdateViewModel @Inject constructor(
     private val inAppUpdateManager: AppUpdateManager,
-    private val fetchForceUpdateVersionUseCase: FetchForceUpdateVersionUseCase
+    private val inAppRepository: InAppRepository
 ) : ViewModel() {
 
     private val _state = MutableLiveData<InAppUpdateState>(InAppUpdateState.None)
@@ -27,7 +27,7 @@ internal class InAppUpdateViewModel @Inject constructor(
         private set
 
     fun refreshAppUpdateType(version: String) = viewModelScope.launch {
-        fetchForceUpdateVersionUseCase.execute()
+        inAppRepository.fetchForceUpdateVersion()
             .onSuccess { forceUpdateVersion ->
                 if (forceUpdateVersion >= version) {
                     appUpdateType = AppUpdateType.IMMEDIATE
@@ -65,10 +65,6 @@ internal class InAppUpdateViewModel @Inject constructor(
             target,
             REQ_IN_APP_UPDATE
         )
-    }
-
-    fun completeUpdate() {
-        inAppUpdateManager.completeUpdate()
     }
 
     companion object {

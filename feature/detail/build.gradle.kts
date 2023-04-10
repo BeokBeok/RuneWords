@@ -16,11 +16,11 @@ android {
 
 dependencies {
     implementation(project(":common"))
+    implementation(project(":tracking"))
 
     implementation(libs.play.services.ads)
     implementation(libs.play.core.ktx)
 
-    implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.firestore.ktx)
 
     implementation(libs.hilt.android)

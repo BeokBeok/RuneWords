@@ -35,6 +35,7 @@ android {
 
 dependencies {
     implementation(project(":common"))
+    implementation(project(":tracking"))
     implementation(project(":feature:home"))
     implementation(project(":feature:combination"))
     implementation(project(":feature:detail"))
@@ -46,6 +47,7 @@ dependencies {
     implementation(libs.firebase.analytics.ktx)
     implementation(libs.firebase.firestore.ktx)
     implementation(libs.firebase.crashlytics.ktx)
+    implementation(libs.firebase.config.ktx)
 
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)

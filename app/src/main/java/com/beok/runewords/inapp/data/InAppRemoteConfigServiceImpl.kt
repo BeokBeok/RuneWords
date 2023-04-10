@@ -1,13 +1,13 @@
-package com.beok.runewords.home.data
+package com.beok.runewords.inapp.data
 
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class HomeRemoteConfigServiceImpl @Inject constructor(
+class InAppRemoteConfigServiceImpl @Inject constructor(
     private val remoteConfig: FirebaseRemoteConfig
-) : HomeRemoteConfigService {
+) : InAppRemoteConfigService {
 
     override suspend fun fetchForceUpdateVersion(): String = withContext(Dispatchers.IO) {
         remoteConfig.getString(KEY_FORCE_UPDATE_VERSION)

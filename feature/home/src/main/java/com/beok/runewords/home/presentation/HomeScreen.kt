@@ -23,8 +23,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.os.bundleOf
 import com.beok.runewords.common.model.Rune
 import com.beok.runewords.home.R
+import com.beok.runewords.tracking.LocalTracker
+import com.beok.runewords.tracking.TrackingConstants
 
 @Composable
 internal fun HomeScreen(onRuneClick: (String) -> Unit) {
@@ -47,6 +50,7 @@ private fun HomeTopBar() {
 
 @Composable
 private fun HomeContent(onRuneClick: (String) -> Unit) {
+    val tracking = LocalTracker.current
     Box(modifier = Modifier.fillMaxSize()) {
         LazyVerticalGrid(
             modifier = Modifier.fillMaxSize(),
@@ -60,6 +64,10 @@ private fun HomeContent(onRuneClick: (String) -> Unit) {
                         .padding(20.dp)
                         .clickable {
                             onRuneClick(item.name)
+                            tracking.logEvent(
+                                name = TrackingConstants.Rune.CLICK,
+                                bundle = bundleOf(TrackingConstants.Params.RUNE_NAME to item.name)
+                            )
                         }
                 )
             }
