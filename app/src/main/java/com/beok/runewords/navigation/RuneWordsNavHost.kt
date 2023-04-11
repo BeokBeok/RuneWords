@@ -4,8 +4,10 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
+import com.beok.runewords.combination.presentation.navigation.combinationNavigationRoute
 import com.beok.runewords.combination.presentation.navigation.combinationScreen
 import com.beok.runewords.combination.presentation.navigation.navigateToCombination
+import com.beok.runewords.common.BundleKeyConstants
 import com.beok.runewords.detail.presentation.navigation.detailScreen
 import com.beok.runewords.detail.presentation.navigation.navigateToDetail
 import com.beok.runewords.home.presentation.navigation.homeNavigationRoute
@@ -31,7 +33,15 @@ fun RuneWordsNavHost(
         runeInfoScreen()
         detailScreen(
             showReviewWriteForm = showReviewWriteForm,
-            onRuneClick = navController::navigateToCombination
+            onRuneClick = {
+                navController.navigateToCombination(it) {
+                    popUpTo(
+                        route = "$combinationNavigationRoute/{${BundleKeyConstants.RUNE_NAME}}"
+                    ) {
+                        inclusive = true
+                    }
+                }
+            }
         )
     }
 }
