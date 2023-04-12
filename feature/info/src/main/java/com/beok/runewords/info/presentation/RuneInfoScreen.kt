@@ -161,7 +161,8 @@ private fun RuneCompound(
 ) {
     Icon(
         imageVector = Icons.Default.ArrowBack,
-        contentDescription = null
+        contentDescription = null,
+        tint = MaterialTheme.colors.primary
     )
     repeat(requireRuneCount) {
         Image(
@@ -174,7 +175,7 @@ private fun RuneCompound(
         Icon(
             imageVector = Icons.Default.Add,
             contentDescription = null,
-            tint = MaterialTheme.colors.background
+            tint = MaterialTheme.colors.primary
         )
         Image(
             painter = painterResource(id = rune.gemResourceID!!),
