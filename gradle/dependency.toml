@@ -52,7 +52,7 @@ mockk = { module = "io.mockk:mockk", version = "1.12.3" }
 profile-installer = { module = "androidx.profileinstaller:profileinstaller", version = "1.2.0" }
 
 # Gradle
-gradle = { module = "com.android.tools.build:gradle", version = "7.3.0" }
+gradle = { module = "com.android.tools.build:gradle", version = "7.4.2" }
 kotlin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version = "1.7.10" }
 android-junit5-gradle = { module = "de.mannodermaus.gradle.plugins:android-junit5", version = "1.8.2.0" }
 google-services-gradle = { module = "com.google.gms:google-services", version = "4.3.14" }
