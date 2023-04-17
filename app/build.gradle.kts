@@ -10,6 +10,8 @@ plugins {
 }
 
 android {
+    namespace = "com.beok.runewords"
+
     applyDefault()
 
     defaultConfig {

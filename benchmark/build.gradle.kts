@@ -6,6 +6,8 @@ plugins {
 }
 
 android {
+    namespace = "com.beok.benchmark"
+
     compileSdk = 33
 
     defaultConfig {

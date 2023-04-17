@@ -6,6 +6,8 @@ plugins {
 }
 
 android {
+    namespace = "com.beok.runewords.home"
+
     applyDefault()
 }
 
