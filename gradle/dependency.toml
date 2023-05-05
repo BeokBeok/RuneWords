@@ -64,7 +64,6 @@ dependency-guard = { module = "com.dropbox.dependency-guard:dependency-guard", v
 # Flipper
 flipper = { module = "com.facebook.flipper:flipper", version.ref = "flipper" }
 soloader = { module = "com.facebook.soloader:soloader", version = "0.10.4" }
-flipper-noop = { module = "com.facebook.flipper:flipper-noop", version.ref = "flipper" }
 
 [bundles]
 compose = [
