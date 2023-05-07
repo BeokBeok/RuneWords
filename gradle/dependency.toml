@@ -1,9 +1,10 @@
 [versions]
 jUnit5 = "5.8.2"
-compose = "1.3.0"
+compose = "1.4.3"
 hilt = "2.44"
 coroutines = "1.6.1"
 flipper = "0.164.0"
+kotlin = "1.8.10"
 
 [libraries]
 core-ktx = { module = "androidx.core:core-ktx", version = "1.7.0" }
@@ -18,7 +19,7 @@ kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collec
 junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "jUnit5" }
 junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "jUnit5" }
 assertj-core = { module = "org.assertj:assertj-core", version = "3.22.0" }
-kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version = "1.7.10" }
+kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
 
 # Compose
 compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
@@ -53,7 +54,7 @@ profile-installer = { module = "androidx.profileinstaller:profileinstaller", ver
 
 # Gradle
 gradle = { module = "com.android.tools.build:gradle", version = "7.4.2" }
-kotlin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version = "1.7.10" }
+kotlin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 android-junit5-gradle = { module = "de.mannodermaus.gradle.plugins:android-junit5", version = "1.8.2.0" }
 google-services-gradle = { module = "com.google.gms:google-services", version = "4.3.14" }
 hilt-android-gradle = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hilt" }
