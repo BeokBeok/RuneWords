@@ -9,4 +9,6 @@ internal sealed class InAppUpdateState {
     object Impossible : InAppUpdateState()
 
     data class Possible(val info: AppUpdateInfo) : InAppUpdateState()
+
+    data class Error(val throwable: Throwable) : InAppUpdateState()
 }
