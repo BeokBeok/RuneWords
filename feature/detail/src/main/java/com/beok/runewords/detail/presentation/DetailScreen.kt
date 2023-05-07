@@ -119,9 +119,11 @@ private fun DetailContent(
             },
             factory = { context ->
                 AdView(applicationContext).apply {
-                    adSize = AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(
-                        applicationContext,
-                        deviceCurrentWidth
+                    setAdSize(
+                        AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(
+                            applicationContext,
+                            deviceCurrentWidth
+                        )
                     )
                     adUnitId = context.getString(R.string.admob_banner_app_key)
                     loadAd(AdRequest.Builder().build())

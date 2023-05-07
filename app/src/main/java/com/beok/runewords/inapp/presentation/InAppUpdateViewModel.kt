@@ -11,8 +11,8 @@ import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.install.model.AppUpdateType
 import com.google.android.play.core.install.model.UpdateAvailability
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.launch
 import javax.inject.Inject
+import kotlinx.coroutines.launch
 
 @HiltViewModel
 internal class InAppUpdateViewModel @Inject constructor(
@@ -35,7 +35,7 @@ internal class InAppUpdateViewModel @Inject constructor(
             }
     }
 
-    fun forceUpdate() {
+    fun checkForceUpdate() {
         inAppUpdateManager.appUpdateInfo
             .addOnSuccessListener { appUpdateInfo ->
                 _state.value = when {
@@ -55,16 +55,20 @@ internal class InAppUpdateViewModel @Inject constructor(
             }
     }
 
-    fun registerForHome(
+    fun requestInAppUpdate(
         appUpdateInfo: AppUpdateInfo,
         target: RuneWordsActivity
     ) {
-        inAppUpdateManager.startUpdateFlowForResult(
-            appUpdateInfo,
-            appUpdateType,
-            target,
-            REQ_IN_APP_UPDATE
-        )
+        runCatching {
+            inAppUpdateManager.startUpdateFlowForResult(
+                appUpdateInfo,
+                appUpdateType,
+                target,
+                REQ_IN_APP_UPDATE
+            )
+        }.onFailure {
+            _state.value = InAppUpdateState.Error(it)
+        }
     }
 
     companion object {
