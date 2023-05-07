@@ -7,6 +7,8 @@ plugins {
 }
 
 android {
+    namespace = "com.beok.runewords.detail"
+
     applyDefault()
 
     testOptions {
