@@ -10,6 +10,8 @@ plugins {
 }
 
 android {
+    namespace = "com.beok.runewords"
+
     applyDefault()
 
     defaultConfig {
@@ -54,7 +56,6 @@ dependencies {
 
     debugImplementation(libs.flipper)
     debugImplementation(libs.soloader)
-    releaseImplementation(libs.flipper.noop)
 
     implementation(libs.play.services.ads)
     implementation(libs.play.core.ktx)

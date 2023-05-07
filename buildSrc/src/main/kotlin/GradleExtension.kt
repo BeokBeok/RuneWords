@@ -20,7 +20,7 @@ fun BaseAppModuleExtension.applyDefault() {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.3.0"
+        kotlinCompilerExtensionVersion = "1.4.3"
     }
     packagingOptions {
         resources {
@@ -47,6 +47,6 @@ fun LibraryExtension.applyDefault() {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.3.0"
+        kotlinCompilerExtensionVersion = "1.4.3"
     }
 }
