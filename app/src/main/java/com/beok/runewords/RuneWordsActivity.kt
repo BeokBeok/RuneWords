@@ -1,5 +1,7 @@
 package com.beok.runewords
 
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -23,6 +25,7 @@ import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.android.play.core.install.model.AppUpdateType
 import com.google.android.play.core.review.ReviewManagerFactory
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -47,7 +50,7 @@ internal class RuneWordsActivity : ComponentActivity() {
         super.onResume()
 
         if (inAppUpdateViewModel.appUpdateType == AppUpdateType.IMMEDIATE) {
-            inAppUpdateViewModel.forceUpdate()
+            inAppUpdateViewModel.checkForceUpdate()
         }
     }
 
@@ -88,9 +91,13 @@ internal class RuneWordsActivity : ComponentActivity() {
     }
 
     private fun refreshAppUpdateType() {
-        inAppUpdateViewModel.refreshAppUpdateType(
-            version = packageManager.getPackageInfo(packageName, 0).versionName
-        )
+        val packageManager = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            packageManager.getPackageInfo(packageName, PackageManager.PackageInfoFlags.of(0L))
+        } else {
+            @Suppress("DEPRECATION")
+            packageManager.getPackageInfo(packageName, 0)
+        }
+        inAppUpdateViewModel.refreshAppUpdateType(version = packageManager.versionName)
     }
 
     private fun observeInAppUpdate() {
@@ -99,10 +106,14 @@ internal class RuneWordsActivity : ComponentActivity() {
                 InAppUpdateState.None,
                 InAppUpdateState.Impossible -> Unit
                 is InAppUpdateState.Possible -> {
-                    inAppUpdateViewModel.registerForHome(
+                    inAppUpdateViewModel.requestInAppUpdate(
                         appUpdateInfo = state.info,
                         target = this
                     )
+                }
+                is InAppUpdateState.Error -> {
+                    FirebaseCrashlytics.getInstance()
+                        .recordException(state.throwable)
                 }
             }
         }
