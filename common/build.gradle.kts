@@ -32,7 +32,7 @@ tasks {
 // See https://kotlinlang.org/docs/reference/experimental.html#experimental-status-of-experimental-api(-markers)
     withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
         kotlinOptions.freeCompilerArgs += listOf(
-            "-Xuse-experimental=kotlinx.coroutines.ExperimentalCoroutinesApi",
+            "-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
         )
     }
 }
