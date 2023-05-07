@@ -35,7 +35,6 @@ fun LibraryExtension.applyDefault() {
 
     defaultConfig {
         minSdk = 26
-        targetSdk = 33
     }
 
     compileOptions {
