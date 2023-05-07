@@ -3,7 +3,7 @@ jUnit5 = "5.8.2"
 compose = "1.4.3"
 hilt = "2.46"
 coroutines = "1.7.0"
-flipper = "0.164.0"
+flipper = "0.190.0"
 kotlin = "1.8.10"
 
 [libraries]
