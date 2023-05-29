@@ -1,11 +1,7 @@
 package com.beok.runewords
 
 import android.app.Application
-import com.facebook.flipper.android.AndroidFlipperClient
-import com.facebook.flipper.android.utils.FlipperUtils
-import com.facebook.flipper.plugins.inspector.DescriptorMapping
-import com.facebook.flipper.plugins.inspector.InspectorFlipperPlugin
-import com.facebook.soloader.SoLoader
+import com.beok.runewords.manager.FlipperManager
 import com.google.android.gms.ads.MobileAds
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
@@ -22,12 +18,8 @@ class RuneWordsApplication : Application() {
             Timber.plant(Timber.DebugTree())
         }
 
-        if (BuildConfig.DEBUG && FlipperUtils.shouldEnableFlipper(this)) {
-            SoLoader.init(this, false)
-            AndroidFlipperClient.getInstance(this)
-                .also {
-                    it.addPlugin(InspectorFlipperPlugin(this, DescriptorMapping.withDefaults()))
-                }.start()
+        if (BuildConfig.DEBUG) {
+            FlipperManager(this).init()
         }
     }
 }
