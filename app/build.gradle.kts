@@ -4,7 +4,7 @@ plugins {
     id("runewords.android.application.firebase")
     id("runewords.android.hilt")
     id("org.jlleitschuh.gradle.ktlint")
-    id("com.dropbox.dependency-guard")
+    id("runewords.android.dependency.guard")
 }
 
 android {
@@ -41,8 +41,4 @@ dependencies {
 
     implementation(libs.play.services.ads)
     implementation(libs.play.core.ktx)
-}
-
-dependencyGuard {
-    configuration("releaseRuntimeClasspath")
 }

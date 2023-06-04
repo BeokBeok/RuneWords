@@ -12,6 +12,7 @@ java {
 dependencies {
     compileOnly(libs.gradle)
     compileOnly(libs.kotlin.gradle)
+    compileOnly(libs.dependency.guard)
 }
 
 gradlePlugin {
@@ -39,6 +40,10 @@ gradlePlugin {
         register("androidHilt") {
             id = "runewords.android.hilt"
             implementationClass = "AndroidHiltConventionPlugin"
+        }
+        register("androidDependencyGuard") {
+            id = "runewords.android.dependency.guard"
+            implementationClass = "AndroidDependencyGuardConventionPlugin"
         }
     }
 }
