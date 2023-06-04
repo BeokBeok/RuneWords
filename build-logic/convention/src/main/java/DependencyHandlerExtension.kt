@@ -7,3 +7,11 @@ internal fun DependencyHandler.implementation(dependencyNotation: Any) {
 internal fun DependencyHandler.kapt(dependencyNotation: Any) {
     add("kapt", dependencyNotation)
 }
+
+internal fun DependencyHandler.testImplementation(dependencyNotation: Any) {
+    add("testImplementation", dependencyNotation)
+}
+
+internal fun DependencyHandler.testRuntimeOnly(dependencyNotation: Any) {
+    add("testRuntimeOnly", dependencyNotation)
+}

@@ -45,5 +45,9 @@ gradlePlugin {
             id = "runewords.android.dependency.guard"
             implementationClass = "AndroidDependencyGuardConventionPlugin"
         }
+        register("androidJUnit") {
+            id = "runewords.android.junit"
+            implementationClass = "AndroidJUnitConventionPlugin"
+        }
     }
 }
