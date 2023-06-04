@@ -36,5 +36,9 @@ gradlePlugin {
             id = "runewords.android.application.firebase"
             implementationClass = "AndroidApplicationFirebaseConventionPlugin"
         }
+        register("androidHilt") {
+            id = "runewords.android.hilt"
+            implementationClass = "AndroidHiltConventionPlugin"
+        }
     }
 }
