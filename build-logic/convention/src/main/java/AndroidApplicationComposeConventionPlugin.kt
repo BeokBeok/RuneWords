@@ -2,6 +2,7 @@ import com.android.build.api.dsl.ApplicationExtension
 import com.beok.runewords.convention.configureAndroidCompose
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.getByType
 
 class AndroidApplicationComposeConventionPlugin : Plugin<Project> {
@@ -11,6 +12,10 @@ class AndroidApplicationComposeConventionPlugin : Plugin<Project> {
 
             extensions.getByType<ApplicationExtension>()
                 .let(::configureAndroidCompose)
+
+            extensions.configure<ApplicationExtension> {
+                defaultConfig.applicationId = "com.beok.runewords"
+            }
         }
     }
 }
