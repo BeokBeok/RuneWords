@@ -24,13 +24,22 @@ internal fun Project.configureKotlinAndroid(
         kotlinOptions {
             jvmTarget = JavaVersion.VERSION_11.toString()
 
+            freeCompilerArgs = freeCompilerArgs
+                .plus(listOf("-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"))
+            freeCompilerArgs = freeCompilerArgs
+                .plus(
+                    listOf(
+                        "-opt-in=androidx.compose.foundation.ExperimentalFoundationApi",
+                        "-opt-in=androidx.compose.ui.ExperimentalComposeUiApi"
+                    )
+                )
             if (project.findProperty("enableMultiModuleComposeReports") == "true") {
                 freeCompilerArgs = freeCompilerArgs
                     .plus(
                         listOf(
                             "-P",
                             "plugin:androidx.compose.compiler.plugins.kotlin:reportsDestination=" +
-                                "${rootProject.buildDir.absolutePath}/compose_metrics/"
+                                    "${rootProject.buildDir.absolutePath}/compose_metrics/"
                         )
                     )
                 freeCompilerArgs = freeCompilerArgs
@@ -38,7 +47,7 @@ internal fun Project.configureKotlinAndroid(
                         listOf(
                             "-P",
                             "plugin:androidx.compose.compiler.plugins.kotlin:metricsDestination=" +
-                                "${rootProject.buildDir.absolutePath}/compose_metrics/"
+                                    "${rootProject.buildDir.absolutePath}/compose_metrics/"
                         )
                     )
             }
