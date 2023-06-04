@@ -1,19 +1,12 @@
 plugins {
-    id("com.android.library")
-    kotlin("android")
-    kotlin("kapt")
-    id("dagger.hilt.android.plugin")
-    id("de.mannodermaus.android-junit5")
+    id("runewords.android.library")
+    id("runewords.android.library.compose")
+    id("runewords.android.hilt")
+    id("runewords.android.junit")
 }
 
 android {
     namespace = "com.beok.runewords.combination"
-
-    applyDefault()
-
-    testOptions {
-        unitTests.isReturnDefaultValues = true
-    }
 }
 
 dependencies {
@@ -24,14 +17,5 @@ dependencies {
 
     implementation(libs.kotlinx.collections.immutable)
 
-    implementation(libs.hilt.android)
     implementation(libs.hilt.navigation.compose)
-    kapt(libs.hilt.compiler)
-
-    testImplementation(libs.junit.jupiter.api)
-    testImplementation(libs.assertj.core)
-    testRuntimeOnly(libs.junit.jupiter.engine)
-
-    testImplementation(libs.mockk)
-    testImplementation(libs.kotlin.test.junit)
 }

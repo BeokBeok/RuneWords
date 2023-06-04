@@ -1,20 +1,15 @@
 plugins {
-    id("com.android.library")
-    kotlin("android")
-    kotlin("kapt")
-    id("dagger.hilt.android.plugin")
+    id("runewords.android.library")
+    id("runewords.android.library.compose")
+    id("runewords.android.hilt")
 }
 
 android {
     namespace = "com.beok.runewords.info"
-
-    applyDefault()
 }
 
 dependencies {
     implementation(project(":common"))
 
-    implementation(libs.hilt.android)
     implementation(libs.hilt.navigation.compose)
-    kapt(libs.hilt.compiler)
 }
