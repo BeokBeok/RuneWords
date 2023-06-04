@@ -14,10 +14,18 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
 
             extensions.configure<ApplicationExtension> {
                 configureKotlinAndroid(this)
+
                 with(defaultConfig) {
                     targetSdk = 33
                     versionCode = VERSION_CODE
                     versionName = VERSION_NAME
+                }
+
+                packagingOptions {
+                    resources {
+                        excludes += "META-INF/LICENSE.md"
+                        excludes += "META-INF/LICENSE-notice.md"
+                    }
                 }
             }
         }
