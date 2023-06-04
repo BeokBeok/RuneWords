@@ -18,10 +18,10 @@ class AndroidApplicationFirebaseConventionPlugin : Plugin<Project> {
                 val bom = libs.findLibrary("firebase-bom")
                     .get()
                 implementation(platform(bom))
-                implementation(libs.findLibrary("firebase.analytics.ktx"))
-                implementation(libs.findLibrary("firebase.firestore.ktx"))
-                implementation(libs.findLibrary("firebase.crashlytics.ktx"))
-                implementation(libs.findLibrary("firebase.config.ktx"))
+                implementation(libs.findLibrary("firebase.analytics.ktx").get())
+                implementation(libs.findLibrary("firebase.firestore.ktx").get())
+                implementation(libs.findLibrary("firebase.crashlytics.ktx").get())
+                implementation(libs.findLibrary("firebase.config.ktx").get())
             }
         }
     }

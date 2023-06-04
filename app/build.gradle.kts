@@ -1,10 +1,9 @@
 plugins {
     id("runewords.android.application")
     id("runewords.android.application.compose")
-    id("com.google.gms.google-services")
+    id("runewords.android.application.firebase")
     kotlin("kapt")
     id("dagger.hilt.android.plugin")
-    id("com.google.firebase.crashlytics")
     id("org.jlleitschuh.gradle.ktlint")
     id("com.dropbox.dependency-guard")
 }
@@ -37,12 +36,6 @@ dependencies {
     implementation(project(":feature:info"))
 
     implementation(libs.core.splashscreen)
-
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.analytics.ktx)
-    implementation(libs.firebase.firestore.ktx)
-    implementation(libs.firebase.crashlytics.ktx)
-    implementation(libs.firebase.config.ktx)
 
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
