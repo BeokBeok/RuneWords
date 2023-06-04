@@ -1,8 +1,7 @@
 plugins {
     id("runewords.android.library")
     id("runewords.android.library.compose")
-    kotlin("kapt")
-    id("dagger.hilt.android.plugin")
+    id("runewords.android.hilt")
 }
 
 android {
@@ -12,7 +11,4 @@ android {
 dependencies {
     api(platform(libs.firebase.bom))
     api(libs.firebase.analytics.ktx)
-
-    implementation(libs.hilt.android)
-    kapt(libs.hilt.compiler)
 }

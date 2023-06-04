@@ -2,8 +2,7 @@ plugins {
     id("runewords.android.application")
     id("runewords.android.application.compose")
     id("runewords.android.application.firebase")
-    kotlin("kapt")
-    id("dagger.hilt.android.plugin")
+    id("runewords.android.hilt")
     id("org.jlleitschuh.gradle.ktlint")
     id("com.dropbox.dependency-guard")
 }
@@ -36,9 +35,6 @@ dependencies {
     implementation(project(":feature:info"))
 
     implementation(libs.core.splashscreen)
-
-    implementation(libs.hilt.android)
-    kapt(libs.hilt.compiler)
 
     debugImplementation(libs.flipper)
     debugImplementation(libs.soloader)

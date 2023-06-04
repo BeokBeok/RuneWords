@@ -1,8 +1,7 @@
 plugins {
     id("runewords.android.library")
     id("runewords.android.library.compose")
-    kotlin("kapt")
-    id("dagger.hilt.android.plugin")
+    id("runewords.android.hilt")
     id("de.mannodermaus.android-junit5")
 }
 
@@ -23,9 +22,7 @@ dependencies {
 
     implementation(libs.firebase.firestore.ktx)
 
-    implementation(libs.hilt.android)
     implementation(libs.hilt.navigation.compose)
-    kapt(libs.hilt.compiler)
 
     testImplementation(libs.junit.jupiter.api)
     testRuntimeOnly(libs.junit.jupiter.engine)

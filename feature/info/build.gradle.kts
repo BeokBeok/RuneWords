@@ -1,8 +1,7 @@
 plugins {
     id("runewords.android.library")
     id("runewords.android.library.compose")
-    kotlin("kapt")
-    id("dagger.hilt.android.plugin")
+    id("runewords.android.hilt")
 }
 
 android {
@@ -12,7 +11,5 @@ android {
 dependencies {
     implementation(project(":common"))
 
-    implementation(libs.hilt.android)
     implementation(libs.hilt.navigation.compose)
-    kapt(libs.hilt.compiler)
 }
