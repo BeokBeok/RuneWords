@@ -1,7 +1,7 @@
 plugins {
     id("runewords.android.library")
     id("runewords.android.library.compose")
-    id("de.mannodermaus.android-junit5")
+    id("runewords.android.junit")
 }
 
 android {
@@ -17,9 +17,4 @@ dependencies {
 
     api(libs.timber)
     api(libs.kotlinx.coroutines.core)
-
-    implementation(libs.junit.jupiter.api)
-    implementation(libs.kotlinx.coroutines.test)
-    testRuntimeOnly(libs.junit.jupiter.engine)
-    testImplementation(libs.assertj.core)
 }
