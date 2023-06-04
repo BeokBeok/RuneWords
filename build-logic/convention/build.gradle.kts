@@ -13,3 +13,24 @@ dependencies {
     compileOnly(libs.gradle)
     compileOnly(libs.kotlin.gradle)
 }
+
+gradlePlugin {
+    plugins {
+        register("androidApplicationCompose") {
+            id = "runewords.android.application.compose"
+            implementationClass = "AndroidApplicationComposeConventionPlugin"
+        }
+        register("androidApplication") {
+            id = "runewords.android.application"
+            implementationClass = "AndroidApplicationConventionPlugin"
+        }
+        register("androidLibraryCompose") {
+            id = "runewords.android.library.compose"
+            implementationClass = "AndroidLibraryComposeConventionPlugin"
+        }
+        register("androidLibrary") {
+            id = "runewords.android.library"
+            implementationClass = "AndroidLibraryConventionPlugin"
+        }
+    }
+}
