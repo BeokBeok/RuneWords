@@ -32,5 +32,9 @@ gradlePlugin {
             id = "runewords.android.library"
             implementationClass = "AndroidLibraryConventionPlugin"
         }
+        register("androidFirebase") {
+            id = "runewords.android.application.firebase"
+            implementationClass = "AndroidApplicationFirebaseConventionPlugin"
+        }
     }
 }
