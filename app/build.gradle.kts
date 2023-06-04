@@ -1,7 +1,7 @@
 plugins {
-    id("com.android.application")
+    id("runewords.android.application")
+    id("runewords.android.application.compose")
     id("com.google.gms.google-services")
-    kotlin("android")
     kotlin("kapt")
     id("dagger.hilt.android.plugin")
     id("com.google.firebase.crashlytics")
@@ -11,13 +11,6 @@ plugins {
 
 android {
     namespace = "com.beok.runewords"
-
-    applyDefault()
-
-    defaultConfig {
-        versionCode = AndroidConfig.VERSION_CODE
-        versionName = AndroidConfig.VERSION_NAME
-    }
 
     buildTypes {
         getByName("release") {

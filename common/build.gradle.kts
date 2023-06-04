@@ -1,13 +1,11 @@
 plugins {
-    id("com.android.library")
-    kotlin("android")
+    id("runewords.android.library")
+    id("runewords.android.library.compose")
     id("de.mannodermaus.android-junit5")
 }
 
 android {
     namespace = "com.beok.runewords.common"
-
-    applyDefault()
 }
 
 dependencies {
@@ -16,8 +14,6 @@ dependencies {
 
     api(libs.material)
     implementation(libs.play.services.tasks)
-
-    api(libs.bundles.compose)
 
     api(libs.timber)
     api(libs.kotlinx.coroutines.core)

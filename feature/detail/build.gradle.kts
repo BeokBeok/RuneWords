@@ -1,6 +1,6 @@
 plugins {
-    id("com.android.library")
-    kotlin("android")
+    id("runewords.android.library")
+    id("runewords.android.library.compose")
     kotlin("kapt")
     id("dagger.hilt.android.plugin")
     id("de.mannodermaus.android-junit5")
@@ -8,8 +8,6 @@ plugins {
 
 android {
     namespace = "com.beok.runewords.detail"
-
-    applyDefault()
 
     testOptions {
         unitTests.isReturnDefaultValues = true
