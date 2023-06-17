@@ -13,11 +13,6 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
     }
-    versionCatalogs {
-        create("libs") {
-            from(files("./gradle/dependency.toml"))
-        }
-    }
 }
 rootProject.name = "RuneWords"
 include(
