@@ -1,22 +1,10 @@
 import com.android.build.api.dsl.ManagedVirtualDevice
 
 plugins {
-    id("com.android.test")
-    id("org.jetbrains.kotlin.android")
+    id("runewords.android.benchmark")
 }
 
 android {
-    namespace = "com.beok.benchmark"
-
-    compileSdk = 33
-
-    defaultConfig {
-        minSdk = 26
-        targetSdk = 33
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
-
     buildTypes {
         // This benchmark buildType is used for benchmarking, and should function like your
         // release build (for example, with minification on). It"s signed with a debug key
@@ -25,18 +13,6 @@ android {
             isDebuggable = true
             signingConfig = getByName("debug").signingConfig
             matchingFallbacks += listOf("release")
-        }
-    }
-
-    testOptions {
-        managedDevices {
-            devices {
-                create("pixel2Api31", ManagedVirtualDevice::class) {
-                    device = "Pixel 2"
-                    apiLevel = 31
-                    systemImageSource = "aosp"
-                }
-            }
         }
     }
 
