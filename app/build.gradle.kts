@@ -5,18 +5,27 @@ plugins {
     id("runewords.android.hilt")
     id("org.jlleitschuh.gradle.ktlint")
     id("runewords.android.dependency.guard")
+    id("com.google.firebase.appdistribution")
 }
 
 android {
     namespace = "com.beok.runewords"
 
     buildTypes {
-        getByName("release") {
+        release {
             isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+        }
+        debug {
+            firebaseAppDistribution {
+                artifactType = "APK"
+                releaseNotesFile = "$rootDir/whatsnew/whatsnew-ko-KR"
+                groups = "tester"
+                serviceCredentialsFile = "$rootDir/firebase-app-distributor-services.json"
+            }
         }
         create("benchmark") {
             signingConfig = signingConfigs.getByName("debug")
