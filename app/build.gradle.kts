@@ -12,12 +12,20 @@ android {
     namespace = "com.beok.runewords"
 
     buildTypes {
-        getByName("release") {
+        release {
             isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+        }
+        debug {
+            firebaseAppDistribution {
+                artifactType = "APK"
+                releaseNotesFile = "$rootDir/whatsnew/whatsnew-ko-KR"
+                groups = "tester"
+                serviceCredentialsFile = "$rootDir/firebase-app-distributor-services.json"
+            }
         }
         create("benchmark") {
             signingConfig = signingConfigs.getByName("debug")
