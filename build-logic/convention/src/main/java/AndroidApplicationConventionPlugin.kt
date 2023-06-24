@@ -27,6 +27,10 @@ internal class AndroidApplicationConventionPlugin : Plugin<Project> {
                         excludes += "META-INF/LICENSE-notice.md"
                     }
                 }
+
+                buildFeatures {
+                    buildConfig = true
+                }
             }
         }
     }
