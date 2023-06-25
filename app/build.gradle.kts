@@ -3,6 +3,7 @@ plugins {
     id("runewords.android.application.compose")
     id("runewords.android.application.firebase")
     id("runewords.android.hilt")
+    id("org.jlleitschuh.gradle.ktlint")
     id("runewords.android.dependency.guard")
     id("com.google.firebase.appdistribution")
 }

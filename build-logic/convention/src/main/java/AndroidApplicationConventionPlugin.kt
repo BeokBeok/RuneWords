@@ -21,15 +21,11 @@ internal class AndroidApplicationConventionPlugin : Plugin<Project> {
                     versionName = VERSION_NAME
                 }
 
-                packaging {
+                packagingOptions {
                     resources {
                         excludes += "META-INF/LICENSE.md"
                         excludes += "META-INF/LICENSE-notice.md"
                     }
-                }
-
-                buildFeatures {
-                    buildConfig = true
                 }
             }
         }
