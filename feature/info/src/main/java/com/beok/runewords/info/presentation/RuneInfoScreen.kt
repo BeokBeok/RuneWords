@@ -25,7 +25,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.beok.runewords.common.model.Rune
-import com.beok.runewords.info.R
+import com.beok.runewords.common.R
 
 @Composable
 internal fun RuneInfoScreen(rune: Rune?) {
