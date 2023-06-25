@@ -11,6 +11,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.beok.runewords.home.BuildConfig
+import com.beok.runewords.home.R
 import com.beok.runewords.inapp.presentation.InAppUpdateState
 import com.beok.runewords.inapp.presentation.InAppUpdateViewModel
 import com.beok.runewords.navigation.RuneWordsNavHost
@@ -57,9 +59,9 @@ internal class RuneWordsActivity : ComponentActivity() {
             this,
             getString(
                 if (BuildConfig.DEBUG) {
-                    com.beok.runewords.common.R.string.test_admob_screen_app_key
+                    R.string.test_admob_screen_app_key
                 } else {
-                    com.beok.runewords.common.R.string.admob_screen_app_key
+                    R.string.admob_screen_app_key
                 }
             ),
             AdRequest.Builder().build(),
