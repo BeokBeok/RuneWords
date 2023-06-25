@@ -36,7 +36,6 @@ private data class DeviceConfig(
     val taskName: String
         get() = device.toLowerCase(Locale.getDefault())
             .replace(oldValue = " ", newValue = "")
-            .plus(other = "api")
+            .plus(other = "Api")
             .plus(other = apiLevel.toString())
-            .plus(systemImageSource)
 }
