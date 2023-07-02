@@ -4,17 +4,6 @@ buildscript {
         mavenCentral()
         maven("https://plugins.gradle.org/m2/")
     }
-    dependencies {
-        classpath(libs.gradle)
-        classpath(libs.kotlin.gradle)
-        classpath(libs.android.junit5.gradle)
-        classpath(libs.google.services.gradle)
-        classpath(libs.hilt.android.gradle)
-        classpath(libs.firebase.crashlytics.gradle)
-        classpath(libs.ktlint.gradle)
-        classpath(libs.dependency.guard)
-        classpath(libs.firebase.appdistribution.gradle)
-    }
 }
 
 subprojects {
@@ -23,4 +12,16 @@ subprojects {
     repositories {
         mavenCentral()
     }
+}
+
+plugins {
+    alias(libs.plugins.android.application) apply false
+    alias(libs.plugins.kotlin.jvm) apply false
+    alias(libs.plugins.android.junit5) apply false
+    alias(libs.plugins.google.services) apply false
+    alias(libs.plugins.hilt.android) apply false
+    alias(libs.plugins.firebase.crashlytics) apply false
+    alias(libs.plugins.ktlint) apply false
+    alias(libs.plugins.dependency.guard) apply false
+    alias(libs.plugins.appdistribution) apply false
 }
