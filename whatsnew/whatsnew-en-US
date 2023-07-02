@@ -1,2 +1,2 @@
-[ver 1.13.0]
-- Improve stability.
+[ver 1.13.1]
+- Fixed a problem where the dark theme was not applied to the runeword option.
