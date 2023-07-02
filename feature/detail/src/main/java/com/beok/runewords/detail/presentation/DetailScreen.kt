@@ -1,7 +1,6 @@
 package com.beok.runewords.detail.presentation
 
 import android.content.Context
-import android.text.Html
 import android.util.TypedValue
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +9,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -42,7 +42,9 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import androidx.core.os.bundleOf
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.beok.runewords.common.ext.EMPTY
 import com.beok.runewords.common.ext.resourceIDByName
+import com.beok.runewords.common.util.HtmlConverter
 import com.beok.runewords.common.view.ContentLoading
 import com.beok.runewords.detail.R
 import com.beok.runewords.detail.presentation.vo.DetailState
@@ -135,11 +137,11 @@ private fun DetailContent(
 
 @Composable
 private fun RuneWordsOption(info: RuneWordsVO) {
+    val isDarkTheme = isSystemInDarkTheme()
     Headline(title = stringResource(id = R.string.title_options))
     AndroidView(
         modifier = Modifier
             .fillMaxSize()
-            .background(color = Color.White)
             .padding(vertical = 20.dp),
         factory = { context ->
             TextView(context).apply {
@@ -150,11 +152,13 @@ private fun RuneWordsOption(info: RuneWordsVO) {
                 textAlignment = View.TEXT_ALIGNMENT_CENTER
                 setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f)
                 text = if (context.resourceIDByName(name = info.option) > 0) {
-                    Html.fromHtml(
-                        context.getString(context.resourceIDByName(name = info.option)),
-                        Html.FROM_HTML_MODE_COMPACT
+                    HtmlConverter.fromTheme(
+                        source = context.getString(context.resourceIDByName(name = info.option)),
+                        isDarkTheme = isDarkTheme
                     )
-                } else ""
+                } else {
+                    String.EMPTY
+                }
             }
         }
     )
