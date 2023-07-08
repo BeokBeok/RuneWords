@@ -25,6 +25,7 @@ internal fun Project.configureAndroidCompose(
         }
 
         dependencies {
+            implementation(platform(libs.findLibrary("compose-bom").get()))
             implementation(libs.findBundle("compose").get())
         }
     }
