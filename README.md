@@ -1,4 +1,5 @@
 # Runewords
+[![CI](https://github.com/BeokBeok/RuneWords/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/BeokBeok/RuneWords/actions/workflows/ci.yml)
 
 ### 기능
 룬을 클릭하면 룬에 대한 룬워드 리스트를 볼 수 있으며, 룬워드를 누르면 룬워드에 대한 상세 정보를 보여줍니다.
