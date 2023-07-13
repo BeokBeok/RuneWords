@@ -2,7 +2,7 @@ package com.beok.runewords.manager
 
 import android.content.Context
 
-object FlipperManager {
+class FlipperManager(private val context: Context) {
 
-    fun init(context: Context) = Unit
+    fun init() = Unit
 }

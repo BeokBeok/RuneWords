@@ -7,9 +7,9 @@ import com.facebook.flipper.plugins.inspector.DescriptorMapping
 import com.facebook.flipper.plugins.inspector.InspectorFlipperPlugin
 import com.facebook.soloader.SoLoader
 
-object FlipperManager {
+class FlipperManager(private val context: Context) {
 
-    fun init(context: Context) {
+    fun init() {
         if (!FlipperUtils.shouldEnableFlipper(context)) return
         SoLoader.init(context, false)
         AndroidFlipperClient.getInstance(context)

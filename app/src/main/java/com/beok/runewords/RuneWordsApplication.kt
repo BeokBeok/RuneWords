@@ -19,7 +19,7 @@ class RuneWordsApplication : Application() {
         }
 
         if (BuildConfig.DEBUG) {
-            FlipperManager.init(context = this)
+            FlipperManager(context = this).init()
         }
     }
 }
