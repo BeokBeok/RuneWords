@@ -38,5 +38,8 @@ jobs:
       - name: Build Debug APK
         run: ./gradlew assembleDebug
 
+      - name: Check Test
+        run: ./gradlew testDebugUnitTest
+
       - name: Deploy to Firebase App Distributor
         run: ./gradlew appDistributionUploadDebug
