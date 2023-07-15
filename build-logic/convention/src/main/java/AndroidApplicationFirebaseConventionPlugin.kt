@@ -10,6 +10,7 @@ internal class AndroidApplicationFirebaseConventionPlugin : Plugin<Project> {
             with(pluginManager) {
                 apply("com.google.gms.google-services")
                 apply("com.google.firebase.crashlytics")
+                apply("com.google.firebase.firebase-perf")
             }
 
             val libs = extensions.getByType<VersionCatalogsExtension>()
@@ -22,6 +23,7 @@ internal class AndroidApplicationFirebaseConventionPlugin : Plugin<Project> {
                 implementation(libs.findLibrary("firebase.firestore.ktx").get())
                 implementation(libs.findLibrary("firebase.crashlytics.ktx").get())
                 implementation(libs.findLibrary("firebase.config.ktx").get())
+                implementation(libs.findLibrary("firebase.perf.ktx").get())
             }
         }
     }
