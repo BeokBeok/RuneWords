@@ -1,13 +1,14 @@
 package com.beok.runewords.detail.data.entity
 
+import com.beok.runewords.common.ext.EMPTY
 import com.beok.runewords.common.util.DataToDomainMapper
 import com.beok.runewords.detail.domain.model.RuneWordsDetail
 
 internal data class RuneWordsDetailResponse(
-    val name: String = "",
+    val name: String = String.EMPTY,
     val rune_combination: List<String> = emptyList(),
     val type: List<String> = emptyList(),
-    val option: String = "",
+    val option: String = String.EMPTY,
     val level_limit: Int = 1
 ) : DataToDomainMapper<RuneWordsDetail> {
 
