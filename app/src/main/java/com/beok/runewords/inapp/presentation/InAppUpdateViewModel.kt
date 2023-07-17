@@ -20,7 +20,7 @@ internal class InAppUpdateViewModel @Inject constructor(
     private val inAppRepository: InAppRepository
 ) : ViewModel() {
 
-    private val _state = MutableLiveData<InAppUpdateState>(InAppUpdateState.None)
+    private val _state = MutableLiveData<InAppUpdateState>()
     val state: LiveData<InAppUpdateState> get() = _state
 
     var appUpdateType: Int = AppUpdateType.FLEXIBLE
@@ -31,7 +31,9 @@ internal class InAppUpdateViewModel @Inject constructor(
             .onSuccess { forceUpdateVersion ->
                 if (forceUpdateVersion >= version) {
                     appUpdateType = AppUpdateType.IMMEDIATE
+                    return@onSuccess
                 }
+                checkForceUpdate()
             }
     }
 
@@ -50,8 +52,11 @@ internal class InAppUpdateViewModel @Inject constructor(
                         appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE) -> {
                         InAppUpdateState.Possible(info = appUpdateInfo)
                     }
-                    else -> InAppUpdateState.None
+                    else -> InAppUpdateState.Impossible
                 }
+            }
+            .addOnFailureListener {
+                _state.value = InAppUpdateState.None
             }
     }
 

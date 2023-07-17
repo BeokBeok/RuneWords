@@ -111,7 +111,9 @@ internal class RuneWordsActivity : ComponentActivity() {
         inAppUpdateViewModel.state.observe(this) { state ->
             when (state) {
                 InAppUpdateState.None,
-                InAppUpdateState.Impossible -> Unit
+                InAppUpdateState.Impossible -> {
+                    showScreenAd()
+                }
                 is InAppUpdateState.Possible -> {
                     inAppUpdateViewModel.requestInAppUpdate(
                         appUpdateInfo = state.info,
@@ -121,6 +123,7 @@ internal class RuneWordsActivity : ComponentActivity() {
                 is InAppUpdateState.Error -> {
                     FirebaseCrashlytics.getInstance()
                         .recordException(state.throwable)
+                    showScreenAd()
                 }
             }
         }
