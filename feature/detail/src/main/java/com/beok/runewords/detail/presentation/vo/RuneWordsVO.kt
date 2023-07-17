@@ -1,15 +1,16 @@
 package com.beok.runewords.detail.presentation.vo
 
 import androidx.compose.runtime.Stable
+import com.beok.runewords.common.ext.EMPTY
 import com.beok.runewords.common.model.Rune
 import com.beok.runewords.detail.domain.model.RuneWordsDetail
 
 @Stable
 internal data class RuneWordsVO(
-    val name: String = "",
+    val name: String = String.EMPTY,
     val runeCombination: List<Rune> = emptyList(),
     val type: List<String> = emptyList(),
-    val option: String = "",
+    val option: String = String.EMPTY,
     val levelLimit: Int = 1
 ) {
 

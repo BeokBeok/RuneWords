@@ -239,7 +239,7 @@ private fun DetailTopBar(runeWordsName: String) {
             Text(
                 text = if (context.resourceIDByName(name = runeWordsName) > 0) {
                     stringResource(id = context.resourceIDByName(name = runeWordsName))
-                } else "",
+                } else String.EMPTY,
                 modifier = Modifier.padding(start = 12.dp),
                 fontSize = 20.sp,
                 color = MaterialTheme.colors.primary
