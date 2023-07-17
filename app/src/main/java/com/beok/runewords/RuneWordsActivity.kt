@@ -11,6 +11,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import com.beok.runewords.home.BuildConfig
 import com.beok.runewords.home.R
 import com.beok.runewords.inapp.presentation.InAppUpdateState
@@ -28,6 +31,8 @@ import com.google.android.play.core.review.ReviewManagerFactory
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 internal class RuneWordsActivity : ComponentActivity() {
@@ -41,7 +46,7 @@ internal class RuneWordsActivity : ComponentActivity() {
         installSplashScreen()
         super.onCreate(savedInstanceState)
 
-        setupScreenAd()
+        setContent()
         refreshAppUpdateType()
         observeInAppUpdate()
     }
@@ -54,28 +59,30 @@ internal class RuneWordsActivity : ComponentActivity() {
         }
     }
 
-    private fun setupScreenAd() {
-        InterstitialAd.load(
-            this,
-            getString(
-                if (BuildConfig.DEBUG) {
-                    R.string.test_admob_screen_app_key
-                } else {
-                    R.string.admob_screen_app_key
-                }
-            ),
-            AdRequest.Builder().build(),
-            object : InterstitialAdLoadCallback() {
-                override fun onAdFailedToLoad(loadAdError: LoadAdError) {
-                    setContent()
-                }
+    private fun showScreenAd() {
+        lifecycleScope.launch {
+            repeatOnLifecycle(state = Lifecycle.State.CREATED) {
+                delay(1_000)
+                InterstitialAd.load(
+                    this@RuneWordsActivity,
+                    getString(
+                        if (BuildConfig.DEBUG) {
+                            R.string.test_admob_screen_app_key
+                        } else {
+                            R.string.admob_screen_app_key
+                        }
+                    ),
+                    AdRequest.Builder().build(),
+                    object : InterstitialAdLoadCallback() {
+                        override fun onAdFailedToLoad(loadAdError: LoadAdError) = Unit
 
-                override fun onAdLoaded(ad: InterstitialAd) {
-                    ad.show(this@RuneWordsActivity)
-                    setContent()
-                }
+                        override fun onAdLoaded(ad: InterstitialAd) {
+                            ad.show(this@RuneWordsActivity)
+                        }
+                    }
+                )
             }
-        )
+        }
     }
 
     private fun setContent() {
