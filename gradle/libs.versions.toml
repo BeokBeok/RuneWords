@@ -1,10 +1,11 @@
 [versions]
 jUnit5 = "5.9.3"
 compose = "1.4.3"
+composeCompiler = "1.4.8"
 hilt = "2.46.1"
 coroutines = "1.7.1"
 flipper = "0.190.0"
-kotlin = "1.8.10"
+kotlin = "1.8.22"
 gradle = "7.4.2"
 
 [libraries]
