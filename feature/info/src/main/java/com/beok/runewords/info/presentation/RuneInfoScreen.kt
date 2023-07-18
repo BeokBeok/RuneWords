@@ -171,16 +171,15 @@ private fun RuneCompound(
             modifier = Modifier.size(width = 40.dp, height = 40.dp)
         )
     }
-    if (isGem) {
-        Icon(
-            imageVector = Icons.Default.Add,
-            contentDescription = null,
-            tint = MaterialTheme.colors.primary
-        )
-        Image(
-            painter = painterResource(id = rune.gemResourceID!!),
-            contentDescription = null,
-            modifier = Modifier.size(width = 40.dp, height = 40.dp)
-        )
-    }
+    if (isGem.not()) return
+    Icon(
+        imageVector = Icons.Default.Add,
+        contentDescription = null,
+        tint = MaterialTheme.colors.primary
+    )
+    Image(
+        painter = painterResource(id = rune.gemResourceID!!),
+        contentDescription = null,
+        modifier = Modifier.size(width = 40.dp, height = 40.dp)
+    )
 }

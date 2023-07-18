@@ -62,9 +62,11 @@ internal fun CombinationRoute(
                     onRuneWordClick = onRuneWordClick
                 )
             }
+
             CombinationState.Loading -> {
                 ContentLoading(isLoading = true)
             }
+
             CombinationState.Failed,
             CombinationState.None -> Unit
         }
@@ -80,42 +82,41 @@ private fun CombinationContent(
     val tracking = LocalTracker.current
     LazyColumn(modifier = Modifier.fillMaxSize()) {
         items(runeWords) { item ->
-            if (context.resourceIDByName(item.name) > 0) {
-                val isLadder = stringArrayResource(id = R.array.ladder_rune_words)
-                    .contains(item.name)
-                var runeWordsName =
-                    stringResource(id = context.resourceIDByName(item.name))
-                if (isLadder) {
-                    runeWordsName = stringResource(id = R.string.ladder_only, runeWordsName)
-                }
+            if (context.resourceIDByName(item.name) < 1) return@items
+            val isLadder = stringArrayResource(id = R.array.ladder_rune_words)
+                .contains(item.name)
+            var runeWordsName =
+                stringResource(id = context.resourceIDByName(item.name))
+            if (isLadder) {
+                runeWordsName = stringResource(id = R.string.ladder_only, runeWordsName)
+            }
 
-                Column(
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clickable {
+                        onRuneWordClick(item.name)
+                        tracking.logEvent(
+                            name = TrackingConstants.Rune.WORDS_CLICK,
+                            bundle = bundleOf(
+                                TrackingConstants.Params.RUNE_WORDS_NAME to item.name
+                            )
+                        )
+                    }
+                    .padding(horizontal = 16.dp)
+                    .padding(top = 16.dp),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Text(
+                    text = runeWordsName,
+                    color = MaterialTheme.colors.primary
+                )
+                Divider(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .clickable {
-                            onRuneWordClick(item.name)
-                            tracking.logEvent(
-                                name = TrackingConstants.Rune.WORDS_CLICK,
-                                bundle = bundleOf(
-                                    TrackingConstants.Params.RUNE_WORDS_NAME to item.name
-                                )
-                            )
-                        }
-                        .padding(horizontal = 16.dp)
-                        .padding(top = 16.dp),
-                    verticalArrangement = Arrangement.Center,
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ) {
-                    Text(
-                        text = runeWordsName,
-                        color = MaterialTheme.colors.primary
-                    )
-                    Divider(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(top = 16.dp)
-                    )
-                }
+                        .padding(top = 16.dp)
+                )
             }
         }
     }

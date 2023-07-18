@@ -14,6 +14,7 @@ fun ContentLoading(isLoading: Boolean) {
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-        if (isLoading) CircularProgressIndicator(modifier = Modifier.wrapContentSize())
+        if (isLoading.not()) return@Box
+        CircularProgressIndicator(modifier = Modifier.wrapContentSize())
     }
 }
