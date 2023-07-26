@@ -3,6 +3,7 @@ plugins {
     id("runewords.android.library.compose")
     id("runewords.android.hilt")
     id("runewords.android.junit")
+    id("runewords.android.detekt")
 }
 
 android {
