@@ -4,10 +4,10 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import com.beok.runewords.home.presentation.HomeScreen
 
-const val homeNavigationRoute = "home"
+const val HomeNavigationRoute = "home"
 
 fun NavGraphBuilder.homeScreen(onRuneClick: (String) -> Unit) {
-    composable(route = homeNavigationRoute) {
+    composable(route = HomeNavigationRoute) {
         HomeScreen(onRuneClick = onRuneClick)
     }
 }

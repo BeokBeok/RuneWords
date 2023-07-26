@@ -13,6 +13,7 @@ dependencies {
     compileOnly(libs.gradle)
     compileOnly(libs.kotlin.gradle)
     compileOnly(libs.dependency.guard)
+    compileOnly(libs.detekt.gradle)
 }
 
 gradlePlugin {
@@ -52,6 +53,10 @@ gradlePlugin {
         register("androidBenchmark") {
             id = "runewords.android.benchmark"
             implementationClass = "AndroidBenchmarkConventionPlugin"
+        }
+        register("androidDetekt") {
+            id = "runewords.android.detekt"
+            implementationClass = "AndroidDetektConventionPlugin"
         }
     }
 }

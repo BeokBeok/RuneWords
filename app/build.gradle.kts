@@ -6,6 +6,7 @@ plugins {
     id("org.jlleitschuh.gradle.ktlint")
     id("runewords.android.dependency.guard")
     id("com.google.firebase.appdistribution")
+    id("runewords.android.detekt")
 }
 
 android {

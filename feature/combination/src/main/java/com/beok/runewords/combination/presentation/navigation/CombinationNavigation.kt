@@ -9,13 +9,13 @@ import androidx.navigation.navArgument
 import com.beok.runewords.combination.presentation.CombinationRoute
 import com.beok.runewords.common.BundleKeyConstants
 
-const val combinationNavigationRoute = "combination"
+const val CombinationNavigationRoute = "combination"
 
 fun NavController.navigateToCombination(
     rune: String,
     builder: (NavOptionsBuilder.() -> Unit)? = null
 ) {
-    navigate(route = "$combinationNavigationRoute/$rune") {
+    navigate(route = "$CombinationNavigationRoute/$rune") {
         if (builder != null) builder()
         launchSingleTop = true
     }
@@ -26,7 +26,7 @@ fun NavGraphBuilder.combinationScreen(
     onRuneWordClick: (String) -> Unit,
 ) {
     composable(
-        route = "$combinationNavigationRoute/{${BundleKeyConstants.RUNE_NAME}}",
+        route = "$CombinationNavigationRoute/{${BundleKeyConstants.RUNE_NAME}}",
         arguments = listOf(
             navArgument(BundleKeyConstants.RUNE_NAME) {
                 type = NavType.StringType

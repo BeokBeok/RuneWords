@@ -1,3 +1,5 @@
+import io.gitlab.arturbosch.detekt.Detekt
+
 buildscript {
     repositories {
         google()
@@ -25,4 +27,5 @@ plugins {
     alias(libs.plugins.dependency.guard) apply false
     alias(libs.plugins.appdistribution) apply false
     alias(libs.plugins.firebase.perf) apply false
+    alias(libs.plugins.detekt) apply false
 }
