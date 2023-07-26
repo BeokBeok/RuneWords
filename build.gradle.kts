@@ -1,3 +1,5 @@
+import io.gitlab.arturbosch.detekt.Detekt
+
 buildscript {
     repositories {
         google()
@@ -27,3 +29,14 @@ plugins {
     alias(libs.plugins.firebase.perf) apply false
     alias(libs.plugins.detekt) apply false
 }
+
+tasks.withType<Detekt>().configureEach {
+    reports {
+        html.required.set(true)
+        xml.required.set(true)
+        txt.required.set(true)
+        sarif.required.set(true)
+        md.required.set(true)
+    }
+}
+

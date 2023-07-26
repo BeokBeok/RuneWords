@@ -79,7 +79,7 @@ ktlint = { id = "org.jlleitschuh.gradle.ktlint", version = "11.0.0" }
 dependency-guard = { id = "com.dropbox.dependency-guard", version = "0.4.3" }
 appdistribution = { id = "com.google.firebase.appdistribution", version = "4.0.0" }
 firebase-perf = { id = "com.google.firebase.firebase-perf", version = "1.4.2" }
-detekt = { id = "io.gitlab.arturbosch.detekt", version = "1.23.0"}
+detekt = { id = "io.gitlab.arturbosch.detekt", version = "1.23.0" }
 
 [bundles]
 compose = [

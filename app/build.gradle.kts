@@ -6,6 +6,7 @@ plugins {
     id("org.jlleitschuh.gradle.ktlint")
     id("runewords.android.dependency.guard")
     id("com.google.firebase.appdistribution")
+    id("io.gitlab.arturbosch.detekt")
 }
 
 android {
@@ -50,4 +51,11 @@ dependencies {
 
     implementation(libs.play.services.ads)
     implementation(libs.play.core.ktx)
+}
+
+detekt {
+    buildUponDefaultConfig = true
+    allRules = false
+    config.setFrom("$projectDir/config/detekt.yml")
+    baseline = file("$projectDir/config/baseline.xml")
 }
