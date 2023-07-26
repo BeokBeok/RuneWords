@@ -11,10 +11,8 @@ internal class AndroidDetektConventionPlugin : Plugin<Project> {
             pluginManager.apply("io.gitlab.arturbosch.detekt")
 
             extensions.configure<DetektExtension> {
-                buildUponDefaultConfig = true
-                allRules = false
-                config.setFrom("$projectDir/config/detekt.yml")
-                baseline = file("$projectDir/config/baseline.xml")
+                config.setFrom("$rootDir/config/detekt.yml")
+                baseline = file("$rootDir/config/baseline.xml")
             }
 
             tasks.withType<Detekt>().configureEach {
