@@ -36,7 +36,6 @@ tasks.withType<Detekt>().configureEach {
         xml.required.set(true)
         txt.required.set(true)
         sarif.required.set(true)
-        md.required.set(true)
     }
 }
 
