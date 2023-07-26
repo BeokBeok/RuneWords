@@ -54,5 +54,9 @@ gradlePlugin {
             id = "runewords.android.benchmark"
             implementationClass = "AndroidBenchmarkConventionPlugin"
         }
+        register("androidDetekt") {
+            id = "runewords.android.detekt"
+            implementationClass = "AndroidDetektConventionPlugin"
+        }
     }
 }
