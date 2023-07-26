@@ -10,18 +10,18 @@ import com.beok.runewords.common.BundleKeyConstants
 import com.beok.runewords.common.model.Rune
 import com.beok.runewords.info.presentation.RuneInfoScreen
 
-const val infoNavigationRoute = "runeInfo"
+const val InfoNavigationRoute = "runeInfo"
 
 fun NavController.navigateToRuneInfo(rune: String, navOptions: NavOptions? = null) {
     navigate(
-        route = "$infoNavigationRoute/$rune",
+        route = "$InfoNavigationRoute/$rune",
         navOptions = navOptions
     )
 }
 
 fun NavGraphBuilder.runeInfoScreen() {
     composable(
-        route = "$infoNavigationRoute/{${BundleKeyConstants.RUNE_NAME}}",
+        route = "$InfoNavigationRoute/{${BundleKeyConstants.RUNE_NAME}}",
         arguments = listOf(
             navArgument(BundleKeyConstants.RUNE_NAME) {
                 type = NavType.StringType

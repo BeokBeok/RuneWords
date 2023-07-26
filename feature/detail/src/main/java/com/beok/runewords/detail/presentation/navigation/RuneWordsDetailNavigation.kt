@@ -8,10 +8,10 @@ import androidx.navigation.navArgument
 import com.beok.runewords.common.BundleKeyConstants
 import com.beok.runewords.detail.presentation.DetailRoute
 
-const val detailNavigationRoute = "detail"
+const val DetailNavigationRoute = "detail"
 
 fun NavController.navigateToDetail(runeWordName: String) {
-    navigate(route = "$detailNavigationRoute/$runeWordName") {
+    navigate(route = "$DetailNavigationRoute/$runeWordName") {
         launchSingleTop = true
     }
 }
@@ -21,7 +21,7 @@ fun NavGraphBuilder.detailScreen(
     onRuneClick: (String) -> Unit
 ) {
     composable(
-        route = "$detailNavigationRoute/{${BundleKeyConstants.RUNE_WORDS_NAME}}",
+        route = "$DetailNavigationRoute/{${BundleKeyConstants.RUNE_WORDS_NAME}}",
         arguments = listOf(
             navArgument(BundleKeyConstants.RUNE_WORDS_NAME) {
                 type = NavType.StringType
