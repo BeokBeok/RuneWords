@@ -24,6 +24,8 @@ internal class AndroidApplicationFirebaseConventionPlugin : Plugin<Project> {
                 implementation(libs.findLibrary("firebase.crashlytics.ktx").get())
                 implementation(libs.findLibrary("firebase.config.ktx").get())
                 implementation(libs.findLibrary("firebase.perf.ktx").get())
+                implementation(libs.findLibrary("firebase.appcheck.playintegrity").get())
+                implementation(libs.findLibrary("firebase.appcheck.ktx").get())
             }
         }
     }
