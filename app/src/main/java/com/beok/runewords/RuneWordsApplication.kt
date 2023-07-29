@@ -3,6 +3,7 @@ package com.beok.runewords
 import android.app.Application
 import com.beok.runewords.manager.FlipperManager
 import com.google.android.gms.ads.MobileAds
+import com.google.firebase.appcheck.debug.DebugAppCheckProviderFactory
 import com.google.firebase.appcheck.ktx.appCheck
 import com.google.firebase.appcheck.playintegrity.PlayIntegrityAppCheckProviderFactory
 import com.google.firebase.ktx.Firebase
@@ -28,7 +29,11 @@ class RuneWordsApplication : Application() {
 
         Firebase.initialize(context = this)
         Firebase.appCheck.installAppCheckProviderFactory(
-            PlayIntegrityAppCheckProviderFactory.getInstance()
+            if (BuildConfig.DEBUG) {
+                DebugAppCheckProviderFactory.getInstance()
+            } else {
+                PlayIntegrityAppCheckProviderFactory.getInstance()
+            }
         )
     }
 }

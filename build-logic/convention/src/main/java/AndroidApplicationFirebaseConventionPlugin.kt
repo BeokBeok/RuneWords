@@ -16,9 +16,7 @@ internal class AndroidApplicationFirebaseConventionPlugin : Plugin<Project> {
             val libs = extensions.getByType<VersionCatalogsExtension>()
                 .named("libs")
             dependencies {
-                val bom = libs.findLibrary("firebase-bom")
-                    .get()
-                implementation(platform(bom))
+                implementation(platform(libs.findLibrary("firebase.bom").get()))
                 implementation(libs.findLibrary("firebase.analytics.ktx").get())
                 implementation(libs.findLibrary("firebase.firestore.ktx").get())
                 implementation(libs.findLibrary("firebase.crashlytics.ktx").get())
@@ -26,6 +24,7 @@ internal class AndroidApplicationFirebaseConventionPlugin : Plugin<Project> {
                 implementation(libs.findLibrary("firebase.perf.ktx").get())
                 implementation(libs.findLibrary("firebase.appcheck.playintegrity").get())
                 implementation(libs.findLibrary("firebase.appcheck.ktx").get())
+                implementation(libs.findLibrary("firebase.appcheck.debug").get())
             }
         }
     }

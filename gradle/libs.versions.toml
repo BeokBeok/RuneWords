@@ -43,6 +43,7 @@ firebase-config-ktx = { module = "com.google.firebase:firebase-config-ktx" }
 firebase-perf-ktx = { module = "com.google.firebase:firebase-perf-ktx" }
 firebase-appcheck-playintegrity = { module = "com.google.firebase:firebase-appcheck-playintegrity" }
 firebase-appcheck-ktx = { module = "com.google.firebase:firebase-appcheck-ktx" }
+firebase-appcheck-debug = { module = "com.google.firebase:firebase-appcheck-debug" }
 
 timber = { module = "com.jakewharton.timber:timber", version = "5.0.1" }
 
