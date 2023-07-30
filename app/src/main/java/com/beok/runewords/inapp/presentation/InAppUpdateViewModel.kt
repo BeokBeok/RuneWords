@@ -33,7 +33,6 @@ internal class InAppUpdateViewModel @Inject constructor(
                     appUpdateType = AppUpdateType.IMMEDIATE
                     return@onSuccess
                 }
-                checkForceUpdate()
             }
     }
 
@@ -45,13 +44,12 @@ internal class InAppUpdateViewModel @Inject constructor(
                         UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS -> {
                         InAppUpdateState.Possible(info = appUpdateInfo)
                     }
-                    appUpdateInfo.updateAvailability() != UpdateAvailability.UPDATE_AVAILABLE -> {
-                        InAppUpdateState.Impossible
-                    }
-                    appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.FLEXIBLE) ||
+
+                    appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE &&
                         appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE) -> {
                         InAppUpdateState.Possible(info = appUpdateInfo)
                     }
+
                     else -> InAppUpdateState.Impossible
                 }
             }
