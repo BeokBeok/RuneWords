@@ -33,6 +33,7 @@ internal class InAppUpdateViewModel @Inject constructor(
                     appUpdateType = AppUpdateType.IMMEDIATE
                     return@onSuccess
                 }
+                checkForceUpdate()
             }
     }
 
