@@ -29,7 +29,7 @@ internal class InAppUpdateViewModel @Inject constructor(
     fun refreshAppUpdateType(version: String) = viewModelScope.launch {
         inAppRepository.fetchForceUpdateVersion()
             .onSuccess { forceUpdateVersion ->
-                if (forceUpdateVersion >= version) {
+                if (forceUpdateVersion > version) {
                     appUpdateType = AppUpdateType.IMMEDIATE
                     return@onSuccess
                 }
