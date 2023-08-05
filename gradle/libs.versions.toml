@@ -5,6 +5,7 @@ composeCompiler = "1.4.8"
 hilt = "2.46.1"
 coroutines = "1.7.1"
 flipper = "0.190.0"
+#noinspection GradleDependency
 kotlin = "1.8.22"
 gradle = "7.4.2"
 
@@ -23,7 +24,7 @@ junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.re
 junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "jUnit5" }
 assertj-core = { module = "org.assertj:assertj-core", version = "3.24.2" }
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
-mockk = { module = "io.mockk:mockk", version = "1.12.3" }
+mockk = { module = "io.mockk:mockk", version = "1.12.4" }
 
 # Compose
 compose-bom = { module = "androidx.compose:compose-bom", version = "2023.06.01" }
@@ -36,7 +37,7 @@ constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayou
 navigation-compose = { module = "androidx.navigation:navigation-compose", version = "2.6.0" }
 
 # Firebase
-firebase-bom = { module = "com.google.firebase:firebase-bom", version = "32.2.0" }
+firebase-bom = { module = "com.google.firebase:firebase-bom", version = "32.2.2" }
 firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx" }
 firebase-firestore-ktx = { module = "com.google.firebase:firebase-firestore-ktx" }
 firebase-crashlytics-ktx = { module = "com.google.firebase:firebase-crashlytics-ktx" }
@@ -61,6 +62,7 @@ kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-t
 gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
 kotlin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 dependency-guard = { module = "com.dropbox.dependency-guard:dependency-guard", version = "0.4.3" }
+#noinspection GradleDependency
 detekt-gradle = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version = "1.20.0" }
 
 # Flipper
