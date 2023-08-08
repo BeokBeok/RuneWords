@@ -28,7 +28,7 @@ jobs:
           java-version: 11
           distribution: 'temurin'
           cache: gradle
-          
+
       - name: Create google-services.json
         run: echo '${{ secrets.GOOGLE_SERVICES_JSON }}' > ./app/google-services.json
 
@@ -47,6 +47,17 @@ jobs:
       - name: Move & Rename Baseline Profiles
         run: |
           mv -f benchmark/build/outputs/managed_device_android_test_additional_output/pixel2Api31/ExampleStartupBenchmark_startup-baseline-prof.txt app/src/main/baseline-prof.txt
+
+      - name: Extract existing version code
+        run: |
+          version_code=$(grep "VERSION_CODE" ./build-logic/convention/src/main/java/AndroidApplicationConventionPlugin.kt | awk '{print $5}')
+          version_code=$((version_code + ${GITHUB_RUN_NUMBER}))
+          echo "VERSION_CODE=$version_code" >> $GITHUB_ENV
+
+      - name: Change version code
+        run: |
+          echo "${{ env.VERSION_CODE }}"
+          sed -i "" "s/VERSION_CODE = [0-9]*/VERSION_CODE = ${{ env.VERSION_CODE }}/g" ./build-logic/convention/src/main/java/AndroidApplicationConventionPlugin.kt
 
       - name: Build Release AAB
         run: ./gradlew bundleRelease
