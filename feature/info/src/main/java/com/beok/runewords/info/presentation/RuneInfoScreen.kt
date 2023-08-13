@@ -115,38 +115,10 @@ private fun RuneInfoTopBar(rune: Rune) {
                 modifier = Modifier.fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                when (rune) {
-                    Rune.EL -> Unit
-                    Rune.ELD, Rune.TIR, Rune.NEF,
-                    Rune.ETH, Rune.ITH, Rune.TAL,
-                    Rune.RAL, Rune.ORT, Rune.THUL -> {
-                        RuneCompound(
-                            rune = Rune.previous(rune),
-                            requireRuneCount = 3,
-                            isGem = false
-                        )
+                Rune.previous(rune)
+                    ?.let {
+                        RuneCompound(rune = it)
                     }
-                    Rune.AMN, Rune.SOL, Rune.SHAEL,
-                    Rune.DOL, Rune.HEL, Rune.IO,
-                    Rune.LUM, Rune.KO, Rune.FAL, Rune.LEM,
-                    Rune.PUL -> {
-                        RuneCompound(
-                            rune = Rune.previous(rune),
-                            requireRuneCount = 3,
-                            isGem = true
-                        )
-                    }
-                    Rune.UM, Rune.MAL, Rune.IST,
-                    Rune.GUL, Rune.VEX, Rune.OHM,
-                    Rune.LO, Rune.SUR, Rune.BER,
-                    Rune.JAH, Rune.CHAM, Rune.ZOD -> {
-                        RuneCompound(
-                            rune = Rune.previous(rune),
-                            requireRuneCount = 2,
-                            isGem = true
-                        )
-                    }
-                }
             }
         },
         backgroundColor = MaterialTheme.colors.background
@@ -154,24 +126,20 @@ private fun RuneInfoTopBar(rune: Rune) {
 }
 
 @Composable
-private fun RuneCompound(
-    rune: Rune,
-    requireRuneCount: Int,
-    isGem: Boolean
-) {
+private fun RuneCompound(rune: Rune) {
     Icon(
         imageVector = Icons.Default.ArrowBack,
         contentDescription = null,
         tint = MaterialTheme.colors.primary
     )
-    repeat(requireRuneCount) {
+    repeat(rune.compoundCount) {
         Image(
             painter = painterResource(id = rune.iconResourceID),
             contentDescription = null,
             modifier = Modifier.size(width = 40.dp, height = 40.dp)
         )
     }
-    if (isGem.not()) return
+    if (rune.gemResourceID == null) return
     Icon(
         imageVector = Icons.Default.Add,
         contentDescription = null,

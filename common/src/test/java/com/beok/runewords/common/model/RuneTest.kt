@@ -31,11 +31,11 @@ internal class RuneTest {
     }
 
     @Test
-    fun `현재 룬이 EL이면_이전 룬은 EL입니다`() {
+    fun `현재 룬이 EL이면_이전 룬은 null입니다`() {
         val rune = Rune.EL
 
         val actual = Rune.previous(rune)
 
-        assertThat(actual).isEqualTo(Rune.EL)
+        assertThat(actual).isEqualTo(null)
     }
 }
