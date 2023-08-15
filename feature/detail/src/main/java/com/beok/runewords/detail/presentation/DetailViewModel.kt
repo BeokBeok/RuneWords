@@ -7,8 +7,8 @@ import com.beok.runewords.common.BundleKeyConstants
 import com.beok.runewords.common.model.Result
 import com.beok.runewords.common.model.asResult
 import com.beok.runewords.detail.domain.RuneWordsDetailRepository
-import com.beok.runewords.detail.presentation.vo.DetailState
-import com.beok.runewords.detail.presentation.vo.RuneWordsVO
+import com.beok.runewords.detail.presentation.model.DetailState
+import com.beok.runewords.detail.presentation.model.RuneWordsItem
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.flow.SharingStarted
@@ -33,7 +33,9 @@ internal class DetailViewModel @Inject constructor(
                 when (detailResult) {
                     is Result.Error -> DetailState.Failed
                     Result.Loading -> DetailState.Loading
-                    is Result.Success -> DetailState.Content(RuneWordsVO.fromDto(detailResult.data))
+                    is Result.Success -> DetailState.Content(
+                        RuneWordsItem.fromDomain(detailResult.data)
+                    )
                 }
             }.stateIn(
                 scope = viewModelScope,

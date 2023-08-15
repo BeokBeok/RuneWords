@@ -4,7 +4,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.beok.runewords.combination.domain.RuneWordsRepository
-import com.beok.runewords.combination.presentation.vo.CombinationState
+import com.beok.runewords.combination.presentation.model.CombinationState
 import com.beok.runewords.common.BundleKeyConstants
 import com.beok.runewords.common.model.Result
 import com.beok.runewords.common.model.asResult

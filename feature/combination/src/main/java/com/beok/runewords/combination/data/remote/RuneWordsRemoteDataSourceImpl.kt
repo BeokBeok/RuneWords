@@ -1,6 +1,6 @@
 package com.beok.runewords.combination.data.remote
 
-import com.beok.runewords.combination.data.entity.RuneWordsResponse
+import com.beok.runewords.combination.data.model.RuneWordsResponse
 import com.beok.runewords.common.ext.await
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase

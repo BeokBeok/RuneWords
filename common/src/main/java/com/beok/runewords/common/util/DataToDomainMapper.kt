@@ -2,7 +2,7 @@ package com.beok.runewords.common.util
 
 interface DataToDomainMapper<T> {
 
-    fun toDto(): T
+    fun toDomain(): T
 }
 
-fun <T> List<DataToDomainMapper<T>>.toDto(): List<T> = map { it.toDto() }
+fun <T> List<DataToDomainMapper<T>>.toDomain(): List<T> = map { it.toDomain() }

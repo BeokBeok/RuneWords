@@ -1,4 +1,4 @@
-package com.beok.runewords.detail.presentation.vo
+package com.beok.runewords.detail.presentation.model
 
 import androidx.compose.runtime.Stable
 import com.beok.runewords.common.ext.EMPTY
@@ -6,7 +6,7 @@ import com.beok.runewords.common.model.Rune
 import com.beok.runewords.detail.domain.model.RuneWordsDetail
 
 @Stable
-internal data class RuneWordsVO(
+internal data class RuneWordsItem(
     val name: String = String.EMPTY,
     val runeCombination: List<Rune> = emptyList(),
     val type: List<String> = emptyList(),
@@ -18,12 +18,12 @@ internal data class RuneWordsVO(
 
     companion object {
 
-        fun fromDto(dto: RuneWordsDetail): RuneWordsVO = RuneWordsVO(
-            name = dto.name,
-            runeCombination = dto.runeCombination.mapNotNull(Rune::findByName),
-            type = dto.type,
-            option = dto.option,
-            levelLimit = dto.levelLimit
+        fun fromDomain(runeWordsDetail: RuneWordsDetail): RuneWordsItem = RuneWordsItem(
+            name = runeWordsDetail.name,
+            runeCombination = runeWordsDetail.runeCombination.mapNotNull(Rune::findByName),
+            type = runeWordsDetail.type,
+            option = runeWordsDetail.option,
+            levelLimit = runeWordsDetail.levelLimit
         )
     }
 }

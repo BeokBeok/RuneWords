@@ -18,7 +18,7 @@ internal class RuneWordsDetailRepositoryImplTest {
         val runeWordsName = "call_to_arms"
         val expected = runeWordsDetailRemoteDataSource
             .fetchInfo(name = runeWordsName)
-            .toDto()
+            .toDomain()
             .copy(levelLimit = 57)
         val actual = repository.fetchInfo(name = runeWordsName)
             .first()

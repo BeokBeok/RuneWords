@@ -1,6 +1,6 @@
 package com.beok.runewords.detail.data.remote
 
-import com.beok.runewords.detail.data.entity.RuneWordsDetailResponse
+import com.beok.runewords.detail.data.model.RuneWordsDetailResponse
 
 internal interface RuneWordsDetailRemoteDataSource {
 

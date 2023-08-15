@@ -2,7 +2,7 @@ package com.beok.runewords.combination.data
 
 import com.beok.runewords.combination.data.remote.RuneWordsRemoteDataSource
 import com.beok.runewords.combination.domain.RuneWordsRepository
-import com.beok.runewords.common.util.toDto
+import com.beok.runewords.common.util.toDomain
 import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
@@ -18,7 +18,7 @@ internal class RuneWordsRepositoryImplTest {
         val rune = "zod"
         val expected = remoteDataSource
             .searchByRune(rune = rune)
-            .toDto()
+            .toDomain()
 
         val actual = repository.searchByRune(rune = rune)
             .first()

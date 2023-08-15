@@ -49,8 +49,8 @@ import com.beok.runewords.common.ext.resourceIDByName
 import com.beok.runewords.common.util.HtmlConverter
 import com.beok.runewords.common.view.ContentLoading
 import com.beok.runewords.detail.R
-import com.beok.runewords.detail.presentation.vo.DetailState
-import com.beok.runewords.detail.presentation.vo.RuneWordsVO
+import com.beok.runewords.detail.presentation.model.DetailState
+import com.beok.runewords.detail.presentation.model.RuneWordsItem
 import com.beok.runewords.tracking.LocalTracker
 import com.beok.runewords.tracking.TrackingConstants
 import com.google.android.gms.ads.AdRequest
@@ -91,7 +91,7 @@ internal fun DetailRoute(
 
 @Composable
 private fun DetailContent(
-    info: RuneWordsVO,
+    info: RuneWordsItem,
     onRuneClick: (String) -> Unit
 ) {
     val deviceCurrentWidth = LocalConfiguration.current.screenWidthDp
@@ -138,7 +138,7 @@ private fun DetailContent(
 }
 
 @Composable
-private fun RuneWordsOption(info: RuneWordsVO) {
+private fun RuneWordsOption(info: RuneWordsItem) {
     val isDarkTheme = isSystemInDarkTheme()
     Headline(title = stringResource(id = R.string.title_options))
     AndroidView(
@@ -168,7 +168,7 @@ private fun RuneWordsOption(info: RuneWordsVO) {
 
 @Composable
 private fun RuneWordsCombination(
-    info: RuneWordsVO,
+    info: RuneWordsItem,
     onRuneClick: (String) -> Unit
 ) {
     val tracking = LocalTracker.current
@@ -217,7 +217,7 @@ private fun RuneWordsCombination(
 }
 
 @Composable
-private fun RuneWordsType(info: RuneWordsVO) {
+private fun RuneWordsType(info: RuneWordsItem) {
     val context: Context = LocalContext.current
     Headline(title = stringResource(id = R.string.title_type))
     Text(

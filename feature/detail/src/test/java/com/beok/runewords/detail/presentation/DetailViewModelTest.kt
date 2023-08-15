@@ -4,7 +4,7 @@ import androidx.lifecycle.SavedStateHandle
 import com.beok.runewords.common.BundleKeyConstants
 import com.beok.runewords.common.test.MainCoroutineTestExtension
 import com.beok.runewords.detail.domain.RuneWordsDetailRepository
-import com.beok.runewords.detail.presentation.vo.DetailState
+import com.beok.runewords.detail.presentation.model.DetailState
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 import kotlinx.coroutines.flow.first

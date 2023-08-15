@@ -1,10 +1,10 @@
-package com.beok.runewords.detail.presentation.vo
+package com.beok.runewords.detail.presentation.model
 
 internal sealed class DetailState {
 
     object None : DetailState()
 
-    data class Content(val value: RuneWordsVO) : DetailState()
+    data class Content(val value: RuneWordsItem) : DetailState()
 
     object Loading : DetailState()
 

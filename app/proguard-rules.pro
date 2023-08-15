@@ -21,5 +21,5 @@
 #-renamesourcefileattribute SourceFile
 
 # Firebase FireStore
--keepclassmembers class com.beok.runewords.combination.data.entity.** { *; }
--keepclassmembers class com.beok.runewords.detail.data.entity.** { *; }
+-keepclassmembers class com.beok.runewords.combination.data.model.** { *; }
+-keepclassmembers class com.beok.runewords.detail.data.model.** { *; }

@@ -1,4 +1,4 @@
-package com.beok.runewords.detail.data.entity
+package com.beok.runewords.detail.data.model
 
 import com.beok.runewords.common.ext.EMPTY
 import com.beok.runewords.common.util.DataToDomainMapper
@@ -12,7 +12,7 @@ internal data class RuneWordsDetailResponse(
     val level_limit: Int = 1
 ) : DataToDomainMapper<RuneWordsDetail> {
 
-    override fun toDto(): RuneWordsDetail = RuneWordsDetail(
+    override fun toDomain(): RuneWordsDetail = RuneWordsDetail(
         name = name,
         runeCombination = rune_combination,
         type = type,

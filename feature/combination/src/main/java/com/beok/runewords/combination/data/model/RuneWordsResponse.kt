@@ -1,4 +1,4 @@
-package com.beok.runewords.combination.data.entity
+package com.beok.runewords.combination.data.model
 
 import com.beok.runewords.combination.domain.model.RuneWords
 import com.beok.runewords.common.ext.EMPTY
@@ -8,7 +8,7 @@ internal data class RuneWordsResponse(
     val name: String = String.EMPTY
 ) : DataToDomainMapper<RuneWords> {
 
-    override fun toDto(): RuneWords = RuneWords(
+    override fun toDomain(): RuneWords = RuneWords(
         name = name
     )
 }

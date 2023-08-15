@@ -2,7 +2,7 @@ package com.beok.runewords.combination.presentation
 
 import androidx.lifecycle.SavedStateHandle
 import com.beok.runewords.combination.domain.RuneWordsRepository
-import com.beok.runewords.combination.presentation.vo.CombinationState
+import com.beok.runewords.combination.presentation.model.CombinationState
 import com.beok.runewords.common.BundleKeyConstants
 import com.beok.runewords.common.model.Rune
 import com.beok.runewords.common.test.MainCoroutineTestExtension

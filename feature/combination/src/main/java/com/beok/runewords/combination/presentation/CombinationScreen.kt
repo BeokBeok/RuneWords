@@ -34,7 +34,7 @@ import androidx.core.os.bundleOf
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.beok.runewords.combination.R
 import com.beok.runewords.combination.domain.model.RuneWords
-import com.beok.runewords.combination.presentation.vo.CombinationState
+import com.beok.runewords.combination.presentation.model.CombinationState
 import com.beok.runewords.common.ext.resourceIDByName
 import com.beok.runewords.common.model.Rune
 import com.beok.runewords.common.view.ContentLoading

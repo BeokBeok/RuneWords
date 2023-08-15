@@ -13,7 +13,7 @@ internal class RuneWordsDetailRepositoryImpl @Inject constructor(
 
     override fun fetchInfo(name: String): Flow<RuneWordsDetail> {
         return flow {
-            emit(remoteDataSource.fetchInfo(name).toDto())
+            emit(remoteDataSource.fetchInfo(name).toDomain())
         }
     }
 }

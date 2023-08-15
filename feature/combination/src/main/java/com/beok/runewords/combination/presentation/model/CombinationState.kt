@@ -1,4 +1,4 @@
-package com.beok.runewords.combination.presentation.vo
+package com.beok.runewords.combination.presentation.model
 
 import com.beok.runewords.combination.domain.model.RuneWords
 

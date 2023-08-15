@@ -1,6 +1,6 @@
 package com.beok.runewords.combination.data.remote
 
-import com.beok.runewords.combination.data.entity.RuneWordsResponse
+import com.beok.runewords.combination.data.model.RuneWordsResponse
 
 internal interface RuneWordsRemoteDataSource {
 
