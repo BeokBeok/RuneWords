@@ -26,7 +26,6 @@ import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
-import com.google.android.play.core.install.model.AppUpdateType
 import com.google.android.play.core.review.ReviewManagerFactory
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import dagger.hilt.android.AndroidEntryPoint
@@ -54,7 +53,7 @@ internal class RuneWordsActivity : ComponentActivity() {
     override fun onResume() {
         super.onResume()
 
-        if (inAppUpdateViewModel.appUpdateType == AppUpdateType.IMMEDIATE) {
+        if (inAppUpdateViewModel.isForceUpdate()) {
             inAppUpdateViewModel.checkForceUpdate()
         }
     }

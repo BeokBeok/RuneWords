@@ -23,8 +23,7 @@ internal class InAppUpdateViewModel @Inject constructor(
     private val _state = MutableLiveData<InAppUpdateState>()
     val state: LiveData<InAppUpdateState> get() = _state
 
-    var appUpdateType: Int = AppUpdateType.FLEXIBLE
-        private set
+    private var appUpdateType: Int = AppUpdateType.FLEXIBLE
 
     fun refreshAppUpdateType(version: String) = viewModelScope.launch {
         inAppRepository.fetchForceUpdateVersion()
@@ -40,14 +39,9 @@ internal class InAppUpdateViewModel @Inject constructor(
     fun checkForceUpdate() {
         inAppUpdateManager.appUpdateInfo
             .addOnSuccessListener { appUpdateInfo ->
-                _state.value = when {
-                    appUpdateInfo.updateAvailability() ==
-                        UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS -> {
-                        InAppUpdateState.Possible(info = appUpdateInfo)
-                    }
-
-                    appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE &&
-                        appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE) -> {
+                _state.value = when (appUpdateInfo.updateAvailability()) {
+                    UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS,
+                    UpdateAvailability.UPDATE_AVAILABLE -> {
                         InAppUpdateState.Possible(info = appUpdateInfo)
                     }
 
@@ -63,6 +57,7 @@ internal class InAppUpdateViewModel @Inject constructor(
         appUpdateInfo: AppUpdateInfo,
         target: RuneWordsActivity
     ) {
+        if (isForceUpdate().not()) return
         runCatching {
             inAppUpdateManager.startUpdateFlowForResult(
                 appUpdateInfo,
@@ -73,6 +68,10 @@ internal class InAppUpdateViewModel @Inject constructor(
         }.onFailure {
             _state.value = InAppUpdateState.Error(it)
         }
+    }
+
+    fun isForceUpdate(): Boolean {
+        return appUpdateType == AppUpdateType.IMMEDIATE
     }
 
     companion object {
