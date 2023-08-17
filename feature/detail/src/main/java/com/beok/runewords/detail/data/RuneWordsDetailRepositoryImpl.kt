@@ -14,14 +14,21 @@ internal class RuneWordsDetailRepositoryImpl @Inject constructor(
 
     override fun fetchInfo(name: String): Flow<RuneWordsDetail> {
         return flow {
-            emit(
-                cache.getOrPut(
-                    key = name,
-                    defaultValue = {
-                        remoteDataSource.fetchInfo(name).toDomain()
+            cache.getOrPut(
+                key = name,
+                defaultValue = {
+                    remoteDataSource.fetchInfo(name).toDomain()
+                }
+            ).also { local ->
+                emit(local)
+            }.let { local ->
+                remoteDataSource.fetchInfo(name)
+                    .toDomain()
+                    .let { remote ->
+                        if (local == remote) return@flow
+                        cache[name] = remote
                     }
-                )
-            )
+            }
         }
     }
 }
