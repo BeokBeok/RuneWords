@@ -11,10 +11,25 @@ import kotlinx.coroutines.flow.flow
 internal class RuneWordsRepositoryImpl @Inject constructor(
     private val remoteDataSource: RuneWordsRemoteDataSource
 ) : RuneWordsRepository {
+    private val cache = mutableMapOf<String, List<RuneWords>>()
 
     override fun searchByRune(rune: String): Flow<List<RuneWords>> {
         return flow {
-            emit(remoteDataSource.searchByRune(rune).toDomain())
+            cache.getOrPut(
+                key = rune,
+                defaultValue = {
+                    remoteDataSource.searchByRune(rune).toDomain()
+                }
+            ).also { local ->
+                emit(local)
+            }.let { local ->
+                remoteDataSource.searchByRune(rune)
+                    .toDomain()
+                    .let { remote ->
+                        if (local == remote) return@flow
+                        cache[rune] = remote
+                    }
+            }
         }
     }
 }
