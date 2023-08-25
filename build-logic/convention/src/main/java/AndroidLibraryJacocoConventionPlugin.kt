@@ -8,7 +8,6 @@ internal class AndroidLibraryJacocoConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             pluginManager.apply("jacoco")
-            pluginManager.apply("com.android.library")
 
             configureJacoco(extensions.getByType<LibraryAndroidComponentsExtension>())
         }
