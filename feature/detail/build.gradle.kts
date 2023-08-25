@@ -5,6 +5,7 @@ plugins {
     id("runewords.android.junit")
     id("runewords.android.detekt")
     id("runewords.android.library.jacoco")
+    id("runewords.android.room")
 }
 
 android {

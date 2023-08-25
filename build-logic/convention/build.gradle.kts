@@ -66,5 +66,9 @@ gradlePlugin {
             id = "runewords.android.library.jacoco"
             implementationClass = "AndroidLibraryJacocoConventionPlugin"
         }
+        register("androidRoom") {
+            id = "runewords.android.room"
+            implementationClass = "AndroidRoomConventionPlugin"
+        }
     }
 }
