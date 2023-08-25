@@ -38,6 +38,9 @@ private val coverageExclusions = listOf(
     "**/di/*.*",
     "**/ui/*.*",
     "**/navigation/*.*",
+    "**/*DAO*.*",
+    "**/*Database*.*",
+    "**/*TypeConverter*.*"
 )
 
 internal fun Project.configureJacoco(
