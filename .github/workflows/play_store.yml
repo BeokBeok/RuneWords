@@ -32,11 +32,6 @@ jobs:
       - name: Create google-services.json
         run: echo '${{ secrets.GOOGLE_SERVICES_JSON }}' > ./app/google-services.json
 
-      - name: Set up FlipperManager
-        run: |
-          mv -f app/src/release/java/com/beok/runewords/manager/FlipperManager.kt app/src/main/java/com/beok/runewords/manager/FlipperManager.kt
-          rm -f app/src/debug/java/com/beok/runewords/manager/FlipperManager.kt
-
       - name: Clean Managed Devices
         run: ./gradlew cleanManagedDevices --unused-only
 
