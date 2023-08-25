@@ -8,6 +8,7 @@ flipper = "0.190.0"
 #noinspection GradleDependency
 kotlin = "1.8.22"
 gradle = "7.4.2"
+jacoco = "0.8.7"
 
 [libraries]
 core-ktx = { module = "androidx.core:core-ktx", version = "1.10.1" }
@@ -65,10 +66,6 @@ dependency-guard = { module = "com.dropbox.dependency-guard:dependency-guard", v
 #noinspection GradleDependency
 detekt-gradle = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version = "1.20.0" }
 
-# Flipper
-flipper = { module = "com.facebook.flipper:flipper", version.ref = "flipper" }
-soloader = { module = "com.facebook.soloader:soloader", version = "0.10.5" }
-
 # Benchmark
 junit = { module = "androidx.test.ext:junit", version = "1.1.5" }
 espresso-core = { module = "androidx.test.espresso:espresso-core", version = "3.5.1" }
@@ -78,7 +75,7 @@ benchmark-macro-junit4 = { module = "androidx.benchmark:benchmark-macro-junit4",
 [plugins]
 android-application = { id = "com.android.application", version.ref = "gradle" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
-android-junit5 = { id = "de.mannodermaus.android-junit5", version = "1.8.2.0" }
+android-junit5 = { id = "de.mannodermaus.android-junit5", version = "1.9.0.0" }
 google-services = { id = "com.google.gms.google-services", version = "4.3.14" }
 hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 firebase-crashlytics = { id = "com.google.firebase.crashlytics", version = "2.8.1" }
