@@ -1,7 +1,6 @@
 package com.beok.runewords
 
 import android.app.Application
-import com.beok.runewords.manager.FlipperManager
 import com.google.android.gms.ads.MobileAds
 import com.google.firebase.appcheck.debug.DebugAppCheckProviderFactory
 import com.google.firebase.appcheck.ktx.appCheck
@@ -21,10 +20,6 @@ class RuneWordsApplication : Application() {
 
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
-        }
-
-        if (BuildConfig.DEBUG) {
-            FlipperManager(context = this).init()
         }
 
         Firebase.initialize(context = this)
