@@ -66,5 +66,13 @@ gradlePlugin {
             id = "runewords.android.library.jacoco"
             implementationClass = "AndroidLibraryJacocoConventionPlugin"
         }
+        register("androidLibraryRoom") {
+            id = "runewords.android.library.room"
+            implementationClass = "AndroidLibraryRoomConventionPlugin"
+        }
+        register("androidKotlinxSerialization") {
+            id = "runewords.android.kotlinx.serialization"
+            implementationClass = "AndroidKotlinxSerializationConventionPlugin"
+        }
     }
 }
