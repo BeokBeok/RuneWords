@@ -8,8 +8,8 @@ import com.beok.runewords.detail.domain.RuneWordsDetailRepository
 import com.beok.runewords.detail.domain.model.RuneWordsDetail
 import javax.inject.Inject
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.asFlow
 import kotlinx.coroutines.flow.flatMapConcat
+import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOf
 
 internal class RuneWordsDetailRepositoryImpl @Inject constructor(
@@ -19,19 +19,43 @@ internal class RuneWordsDetailRepositoryImpl @Inject constructor(
 
     override fun fetchInfo(name: String): Flow<RuneWordsDetail> {
         return localDataSource.findBy(name)
-            .flatMapConcat {
-                if (it.isNotEmpty()) {
-                    return@flatMapConcat it.toDomain().asFlow()
+            .flatMapConcat { local ->
+                if (local.isNotEmpty()) {
+                    return@flatMapConcat emitAndSync(runeWordsDetailTables = local, runeName = name)
                 }
-                flowOf(
-                    remoteDataSource.fetchInfo(name)
-                        .toDomain()
-                        .also { runeWordsDetail ->
-                            localDataSource.insert(
-                                RuneWordsDetailTable.fromDomain(runeWordsDetail)
-                            )
-                        }
-                )
+                emitAndSet(runeName = name)
             }
+    }
+
+    private suspend fun emitAndSet(runeName: String): Flow<RuneWordsDetail> {
+        return flowOf(
+            remoteDataSource.fetchInfo(runeName)
+                .toDomain()
+                .also { runeWordsDetail ->
+                    localDataSource.insert(
+                        RuneWordsDetailTable.fromDomain(runeWordsDetail)
+                    )
+                }
+        )
+    }
+
+    private fun emitAndSync(
+        runeWordsDetailTables: List<RuneWordsDetailTable>,
+        runeName: String
+    ): Flow<RuneWordsDetail> {
+        return flow {
+            runeWordsDetailTables.toDomain()
+                .first()
+                .also {
+                    emit(it)
+                }.let { local ->
+                    remoteDataSource.fetchInfo(runeName)
+                        .toDomain()
+                        .also { remote ->
+                            if (local == remote) return@let
+                            localDataSource.insert(RuneWordsDetailTable.fromDomain(remote))
+                        }
+                }
+        }
     }
 }
