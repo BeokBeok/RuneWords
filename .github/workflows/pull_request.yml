@@ -9,7 +9,7 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:        
       - name: Checkout
@@ -38,5 +38,13 @@ jobs:
       - name: Build Debug APK
         run: ./gradlew assembleDebug
 
-      - name: Check Test
-        run: ./gradlew testDebugUnitTest
+      - name: Run Coverage
+        run: ./gradlew jacocoTestReport
+
+      - name: Jacoco Report to PR
+        id: jacoco
+        uses: madrapps/jacoco-report@v1.6.1
+        with:
+          paths: |
+            ${{ github.workspace }}/**/build/reports/jacoco/**/jacocoTestDebugUnitTestReport.xml
+          token: ${{ secrets.JACOCO_TOKEN }}

@@ -7,6 +7,7 @@ plugins {
     id("runewords.android.dependency.guard")
     id("com.google.firebase.appdistribution")
     id("runewords.android.detekt")
+    id("runewords.android.application.jacoco")
 }
 
 android {
@@ -46,11 +47,11 @@ dependencies {
 
     implementation(libs.core.splashscreen)
 
-    debugImplementation(libs.flipper)
-    debugImplementation(libs.soloader)
-
     implementation(libs.play.services.ads)
     implementation(libs.play.core.ktx)
+
+//    debugImplementation(libs.flipper)
+//    debugImplementation(libs.soloader)
 
 //    implementation(libs.leakcanary.android)
 }

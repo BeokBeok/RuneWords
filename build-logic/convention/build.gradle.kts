@@ -58,5 +58,13 @@ gradlePlugin {
             id = "runewords.android.detekt"
             implementationClass = "AndroidDetektConventionPlugin"
         }
+        register("androidApplicationJacoco") {
+            id = "runewords.android.application.jacoco"
+            implementationClass = "AndroidApplicationJacocoConventionPlugin"
+        }
+        register("androidLibraryJacoco") {
+            id = "runewords.android.library.jacoco"
+            implementationClass = "AndroidLibraryJacocoConventionPlugin"
+        }
     }
 }
