@@ -70,5 +70,9 @@ gradlePlugin {
             id = "runewords.android.room"
             implementationClass = "AndroidRoomConventionPlugin"
         }
+        register("androidKotlinxSerialization") {
+            id = "runewords.android.kotlinx.serialization"
+            implementationClass = "AndroidKotlinxSerializationConventionPlugin"
+        }
     }
 }

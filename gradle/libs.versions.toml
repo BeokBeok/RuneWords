@@ -77,6 +77,9 @@ benchmark-macro-junit4 = { module = "androidx.benchmark:benchmark-macro-junit4",
 room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
 room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
 
+# Kotlinx-serialization
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version = "1.6.0" }
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "gradle" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
@@ -89,6 +92,7 @@ dependency-guard = { id = "com.dropbox.dependency-guard", version = "0.4.3" }
 appdistribution = { id = "com.google.firebase.appdistribution", version = "4.0.0" }
 firebase-perf = { id = "com.google.firebase.firebase-perf", version = "1.4.2" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version = "1.20.0" }
+kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 
 [bundles]
 compose = [
