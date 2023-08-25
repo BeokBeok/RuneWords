@@ -7,6 +7,7 @@ plugins {
     id("runewords.android.dependency.guard")
     id("com.google.firebase.appdistribution")
     id("runewords.android.detekt")
+    id("runewords.android.application.jacoco")
 }
 
 android {
