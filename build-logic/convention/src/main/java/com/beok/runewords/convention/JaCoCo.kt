@@ -56,23 +56,24 @@ internal fun Project.configureJacoco(
     androidComponentsExtension.onVariants { variant ->
         val testTaskName = "test${variant.name.capitalize()}UnitTest"
 
-        val reportTask = tasks.register("jacoco${testTaskName.capitalize()}Report", JacocoReport::class) {
-            dependsOn(testTaskName)
+        val reportTask =
+            tasks.register("jacoco${testTaskName.capitalize()}Report", JacocoReport::class) {
+                dependsOn(testTaskName)
 
-            reports {
-                xml.required.set(true)
-                html.required.set(true)
-            }
-
-            classDirectories.setFrom(
-                fileTree("$buildDir/tmp/kotlin-classes/${variant.name}") {
-                    exclude(coverageExclusions)
+                reports {
+                    xml.required.set(true)
+                    html.required.set(true)
                 }
-            )
 
-            sourceDirectories.setFrom(files("$projectDir/src/main/java"))
-            executionData.setFrom(file("$buildDir/jacoco/$testTaskName.exec"))
-        }
+                classDirectories.setFrom(
+                    fileTree("$buildDir/tmp/kotlin-classes/${variant.name}") {
+                        exclude(coverageExclusions)
+                    }
+                )
+
+                sourceDirectories.setFrom(files("$projectDir/src/main/java"))
+                executionData.setFrom(file("$buildDir/jacoco/$testTaskName.exec"))
+            }
 
         jacocoTestReport.dependsOn(reportTask)
     }

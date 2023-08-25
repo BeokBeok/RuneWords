@@ -49,7 +49,7 @@ dependencies {
 
     implementation(libs.play.services.ads)
     implementation(libs.play.core.ktx)
-    
+
 //    debugImplementation(libs.flipper)
 //    debugImplementation(libs.soloader)
 
