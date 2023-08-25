@@ -10,7 +10,7 @@ import javax.inject.Inject
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.asFlow
 import kotlinx.coroutines.flow.flatMapConcat
-import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOf
 
 internal class RuneWordsDetailRepositoryImpl @Inject constructor(
     private val localDataSource: RuneWordsDetailDAO,
@@ -23,17 +23,15 @@ internal class RuneWordsDetailRepositoryImpl @Inject constructor(
                 if (it.isNotEmpty()) {
                     return@flatMapConcat it.toDomain().asFlow()
                 }
-                flow {
-                    emit(
-                        remoteDataSource.fetchInfo(name)
-                            .toDomain()
-                            .also { runeWordsDetail ->
-                                localDataSource.insert(
-                                    RuneWordsDetailTable.fromDomain(runeWordsDetail)
-                                )
-                            }
-                    )
-                }
+                flowOf(
+                    remoteDataSource.fetchInfo(name)
+                        .toDomain()
+                        .also { runeWordsDetail ->
+                            localDataSource.insert(
+                                RuneWordsDetailTable.fromDomain(runeWordsDetail)
+                            )
+                        }
+                )
             }
     }
 }
