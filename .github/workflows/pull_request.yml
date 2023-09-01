@@ -11,7 +11,7 @@ jobs:
   build:
     runs-on: macos-latest
 
-    steps:        
+    steps:
       - name: Checkout
         uses: actions/checkout@v3
 
@@ -48,3 +48,10 @@ jobs:
           paths: |
             ${{ github.workspace }}/**/build/reports/jacoco/**/jacocoTestDebugUnitTestReport.xml
           token: ${{ secrets.JACOCO_TOKEN }}
+
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action/composite@v2
+        if: always()
+        with:
+          files: |
+            ${{ github.workspace }}/**/build/reports/jacoco/**/jacocoTestDebugUnitTestReport.xml
