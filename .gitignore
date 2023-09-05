@@ -240,4 +240,7 @@ fabric.properties
 # output-metadata.json
 app/*/output-metadata.json
 
+# 1.json
+/**/schemas/**/*.json
+
 # End of https://www.toptal.com/developers/gitignore/api/android,androidstudio,kotlin
