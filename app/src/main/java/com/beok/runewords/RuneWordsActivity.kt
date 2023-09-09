@@ -15,7 +15,6 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.beok.runewords.home.BuildConfig
-import com.beok.runewords.home.R
 import com.beok.runewords.inapp.presentation.InAppUpdateState
 import com.beok.runewords.inapp.presentation.InAppUpdateViewModel
 import com.beok.runewords.navigation.RuneWordsNavHost
@@ -66,9 +65,9 @@ internal class RuneWordsActivity : ComponentActivity() {
                     this@RuneWordsActivity,
                     getString(
                         if (BuildConfig.DEBUG) {
-                            R.string.test_admob_screen_app_key
+                            com.beok.runewords.common.R.string.test_admob_screen_app_key
                         } else {
-                            R.string.admob_screen_app_key
+                            com.beok.runewords.common.R.string.admob_screen_app_key
                         }
                     ),
                     AdRequest.Builder().build(),

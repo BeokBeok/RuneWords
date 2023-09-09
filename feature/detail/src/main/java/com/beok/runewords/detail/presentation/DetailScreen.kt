@@ -129,7 +129,9 @@ private fun DetailContent(
                             deviceCurrentWidth
                         )
                     )
-                    adUnitId = context.getString(R.string.admob_banner_app_key)
+                    adUnitId = context.getString(
+                        com.beok.runewords.common.R.string.admob_banner_app_key
+                    )
                     loadAd(AdRequest.Builder().build())
                 }
             }
