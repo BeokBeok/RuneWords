@@ -41,7 +41,7 @@ jobs:
 
       - name: Move & Rename Baseline Profiles
         run: |
-          mv -f benchmark/build/outputs/managed_device_android_test_additional_output/pixel2Api31/ExampleStartupBenchmark_startup-baseline-prof.txt app/src/main/baseline-prof.txt
+          mv -f benchmark/build/outputs/managed_device_android_test_additional_output/benchmark/pixel2Api31/ExampleStartupBenchmark_startup-baseline-prof.txt app/src/main/baseline-prof.txt
 
       - name: Extract existing version code
         run: |
