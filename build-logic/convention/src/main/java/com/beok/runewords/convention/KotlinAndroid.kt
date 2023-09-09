@@ -17,44 +17,42 @@ internal fun Project.configureKotlinAndroid(
         }
 
         compileOptions {
-            sourceCompatibility = JavaVersion.VERSION_11
-            targetCompatibility = JavaVersion.VERSION_11
+            sourceCompatibility = JavaVersion.VERSION_17
+            targetCompatibility = JavaVersion.VERSION_17
         }
 
-        kotlinOptions {
-            jvmTarget = JavaVersion.VERSION_11.toString()
+        tasks.withType<KotlinCompile>().configureEach {
+            kotlinOptions {
+                jvmTarget = JavaVersion.VERSION_17.toString()
 
-            freeCompilerArgs = freeCompilerArgs
-                .plus(listOf("-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"))
-            freeCompilerArgs = freeCompilerArgs
-                .plus(
-                    listOf(
-                        "-opt-in=androidx.compose.foundation.ExperimentalFoundationApi",
-                        "-opt-in=androidx.compose.ui.ExperimentalComposeUiApi"
-                    )
-                )
-            if (project.findProperty("enableMultiModuleComposeReports") == "true") {
+                freeCompilerArgs = freeCompilerArgs
+                    .plus(listOf("-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"))
                 freeCompilerArgs = freeCompilerArgs
                     .plus(
                         listOf(
-                            "-P",
-                            "plugin:androidx.compose.compiler.plugins.kotlin:reportsDestination=" +
-                                    "${rootProject.buildDir.absolutePath}/compose_metrics/"
+                            "-opt-in=androidx.compose.foundation.ExperimentalFoundationApi",
+                            "-opt-in=androidx.compose.ui.ExperimentalComposeUiApi"
                         )
                     )
-                freeCompilerArgs = freeCompilerArgs
-                    .plus(
-                        listOf(
-                            "-P",
-                            "plugin:androidx.compose.compiler.plugins.kotlin:metricsDestination=" +
-                                    "${rootProject.buildDir.absolutePath}/compose_metrics/"
+                if (project.findProperty("enableMultiModuleComposeReports") == "true") {
+                    freeCompilerArgs = freeCompilerArgs
+                        .plus(
+                            listOf(
+                                "-P",
+                                "plugin:androidx.compose.compiler.plugins.kotlin:reportsDestination=" +
+                                        "${rootProject.buildDir.absolutePath}/compose_metrics/"
+                            )
                         )
-                    )
+                    freeCompilerArgs = freeCompilerArgs
+                        .plus(
+                            listOf(
+                                "-P",
+                                "plugin:androidx.compose.compiler.plugins.kotlin:metricsDestination=" +
+                                        "${rootProject.buildDir.absolutePath}/compose_metrics/"
+                            )
+                        )
+                }
             }
         }
     }
-}
-
-private fun CommonExtension<*, *, *, *>.kotlinOptions(block: KotlinJvmOptions.() -> Unit) {
-    (this as ExtensionAware).extensions.configure("kotlinOptions", block)
 }
