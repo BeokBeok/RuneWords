@@ -53,26 +53,26 @@ private fun RuneInfoContent(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 24.dp),
-            imageResourceID = R.drawable.ic_weapon,
+            imageResourceID = com.beok.runewords.common.R.drawable.ic_weapon,
             messageResourceID = rune.weaponResourceID
         )
         RuneInfoItem(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 24.dp),
-            imageResourceID = R.drawable.ic_helm,
+            imageResourceID = com.beok.runewords.common.R.drawable.ic_helm,
             messageResourceID = rune.helmResourceID
         )
         RuneInfoItem(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 24.dp),
-            imageResourceID = R.drawable.ic_armor,
+            imageResourceID = com.beok.runewords.common.R.drawable.ic_armor,
             messageResourceID = rune.armorResourceID
         )
         RuneInfoItem(
             modifier = Modifier.fillMaxWidth(),
-            imageResourceID = R.drawable.ic_shield,
+            imageResourceID = com.beok.runewords.common.R.drawable.ic_shield,
             messageResourceID = rune.shieldResourceID
         )
     }

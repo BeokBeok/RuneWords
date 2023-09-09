@@ -7,7 +7,7 @@ import org.gradle.kotlin.dsl.create
 import org.gradle.kotlin.dsl.invoke
 
 internal fun configureGradleManagedDevices(
-    commonExtension: CommonExtension<*, *, *, *>
+    commonExtension: CommonExtension<*, *, *, *, *>
 ) {
     val pixel2 = DeviceConfig(
         device = "Pixel 2",
@@ -34,7 +34,7 @@ private data class DeviceConfig(
     val systemImageSource: String
 ) {
     val taskName: String
-        get() = device.toLowerCase(Locale.getDefault())
+        get() = device.lowercase(Locale.getDefault())
             .replace(oldValue = " ", newValue = "")
             .plus(other = "Api")
             .plus(other = apiLevel.toString())
