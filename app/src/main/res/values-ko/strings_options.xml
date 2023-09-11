@@ -914,7 +914,7 @@
     </string>
     <string name="rune_word_spirit_option" formatted="false">
     <![CDATA[
-        <font color=\'#000000\'><b>빙페</b><br></font>
+        <font color=\'#000000\'><b>방패</b><br></font>
         <font color=\'#000000\'>모든 기술 +2<br></font>
         <font color=\'#cc0029\'>시전 속도 +25~35%<br></font>
         <font color=\'#000000\'>타격 회복 속도 +55%<br></font>
