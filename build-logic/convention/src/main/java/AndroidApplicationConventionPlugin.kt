@@ -16,7 +16,7 @@ internal class AndroidApplicationConventionPlugin : Plugin<Project> {
                 configureKotlinAndroid(this)
 
                 with(defaultConfig) {
-                    targetSdk = 33
+                    targetSdk = 34
                     versionCode = VERSION_CODE
                     versionName = VERSION_NAME
                 }
