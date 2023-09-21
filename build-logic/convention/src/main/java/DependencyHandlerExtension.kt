@@ -4,8 +4,8 @@ internal fun DependencyHandler.implementation(dependencyNotation: Any) {
     add("implementation", dependencyNotation)
 }
 
-internal fun DependencyHandler.kapt(dependencyNotation: Any) {
-    add("kapt", dependencyNotation)
+internal fun DependencyHandler.ksp(dependencyNotation: Any) {
+    add("ksp", dependencyNotation)
 }
 
 internal fun DependencyHandler.testImplementation(dependencyNotation: Any) {
