@@ -1,4 +1,3 @@
-import com.android.build.api.dsl.LibraryExtension
 import com.google.devtools.ksp.gradle.KspExtension
 import java.io.File
 import org.gradle.api.Plugin
