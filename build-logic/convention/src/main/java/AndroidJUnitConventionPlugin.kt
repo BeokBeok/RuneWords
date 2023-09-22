@@ -25,6 +25,7 @@ internal class AndroidJUnitConventionPlugin : Plugin<Project> {
                 testImplementation(libs.findLibrary("mockk").get())
                 testImplementation(libs.findLibrary("kotlin.test.junit").get())
                 implementation(libs.findLibrary("kotlinx.coroutines.test").get())
+                testImplementation(libs.findLibrary("konsist").get())
             }
         }
     }
