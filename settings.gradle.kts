@@ -23,5 +23,6 @@ include(
     ":feature:detail",
     ":feature:info",
     ":benchmark",
-    ":tracking"
+    ":tracking",
+    ":coding-convention"
 )
