@@ -38,6 +38,9 @@ jobs:
       - name: Build Debug APK
         run: ./gradlew assembleDebug
 
+      - name: Check detekt
+        run: ./gradlew detekt
+
       - name: Run Coverage
         run: ./gradlew jacocoTestReport
 
