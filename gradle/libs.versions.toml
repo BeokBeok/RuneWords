@@ -96,7 +96,7 @@ ktlint = { id = "org.jlleitschuh.gradle.ktlint", version = "11.6.0" }
 dependency-guard = { id = "com.dropbox.dependency-guard", version = "0.4.3" }
 appdistribution = { id = "com.google.firebase.appdistribution", version = "4.0.0" }
 firebase-perf = { id = "com.google.firebase.firebase-perf", version = "1.4.2" }
-detekt = { id = "io.gitlab.arturbosch.detekt", version = "1.20.0" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version = "1.23.1" }
 kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 com-android-library = { id = "com.android.library", version.ref = "gradle" }
