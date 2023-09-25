@@ -9,7 +9,7 @@ gradle = "8.1.1"
 jacoco = "0.8.7"
 room = "2.6.0-beta01"
 ksp = "1.9.0-1.0.13"
-org-jetbrains-kotlin-android = "1.9.0"
+org-jetbrains-kotlin-android = "1.9.10"
 junit = "4.13.2"
 appcompat = "1.6.1"
 
