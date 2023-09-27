@@ -9,9 +9,6 @@ gradle = "8.1.1"
 jacoco = "0.8.7"
 room = "2.6.0-beta01"
 ksp = "1.9.0-1.0.13"
-org-jetbrains-kotlin-android = "1.9.0"
-junit = "4.13.2"
-appcompat = "1.6.1"
 
 [libraries]
 core-ktx = { module = "androidx.core:core-ktx", version = "1.12.0" }
@@ -82,8 +79,6 @@ room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
 
 # Kotlinx-serialization
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version = "1.6.0" }
-junit-junit = { group = "junit", name = "junit", version.ref = "junit" }
-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "gradle" }
@@ -99,8 +94,6 @@ firebase-perf = { id = "com.google.firebase.firebase-perf", version = "1.4.2" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version = "1.23.1" }
 kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
-com-android-library = { id = "com.android.library", version.ref = "gradle" }
-org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "org-jetbrains-kotlin-android" }
 
 [bundles]
 compose = [
