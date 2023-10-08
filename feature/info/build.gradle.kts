@@ -1,17 +1,7 @@
 plugins {
-    id("runewords.android.library")
-    id("runewords.android.library.compose")
-    id("runewords.android.hilt")
-    id("runewords.android.detekt")
-    id("runewords.android.library.jacoco")
+    id("runewords.android.feature")
 }
 
 android {
     namespace = "com.beok.runewords.info"
-}
-
-dependencies {
-    implementation(project(":common"))
-
-    implementation(libs.hilt.navigation.compose)
 }
