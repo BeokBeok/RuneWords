@@ -18,7 +18,7 @@ import kotlinx.coroutines.flow.stateIn
 @HiltViewModel
 internal class CombinationViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
-    runeWordsRepository: RuneWordsRepository,
+    runeWordsRepository: RuneWordsRepository
 ) : ViewModel() {
 
     val rune: String by lazy {
