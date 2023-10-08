@@ -1,12 +1,11 @@
 import com.android.build.gradle.TestExtension
 import com.beok.runewords.convention.configureGradleManagedDevices
 import com.beok.runewords.convention.configureKotlinAndroid
+import com.beok.runewords.convention.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.api.artifacts.VersionCatalogsExtension
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
-import org.gradle.kotlin.dsl.getByType
 
 internal class AndroidBenchmarkConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
@@ -27,8 +26,6 @@ internal class AndroidBenchmarkConventionPlugin : Plugin<Project> {
                 configureGradleManagedDevices(this)
             }
 
-            val libs = extensions.getByType<VersionCatalogsExtension>()
-                .named("libs")
             dependencies {
                 implementation(libs.findLibrary("junit").get())
                 implementation(libs.findLibrary("espresso.core").get())

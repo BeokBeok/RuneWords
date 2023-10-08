@@ -2,11 +2,9 @@ package com.beok.runewords.convention
 
 import com.android.build.api.variant.AndroidComponentsExtension
 import org.gradle.api.Project
-import org.gradle.api.artifacts.VersionCatalogsExtension
 import org.gradle.api.tasks.testing.Test
 import org.gradle.configurationcache.extensions.capitalized
 import org.gradle.kotlin.dsl.configure
-import org.gradle.kotlin.dsl.getByType
 import org.gradle.kotlin.dsl.register
 import org.gradle.kotlin.dsl.withType
 import org.gradle.testing.jacoco.plugins.JacocoPluginExtension
@@ -48,9 +46,7 @@ internal fun Project.configureJacoco(
     androidComponentsExtension: AndroidComponentsExtension<*, *, *>,
 ) {
     configure<JacocoPluginExtension> {
-        toolVersion = extensions.getByType<VersionCatalogsExtension>()
-            .named("libs")
-            .findVersion("jacoco")
+        toolVersion = libs.findVersion("jacoco")
             .get()
             .toString()
     }
