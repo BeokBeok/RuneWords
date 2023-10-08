@@ -75,5 +75,9 @@ gradlePlugin {
             id = "runewords.android.kotlinx.serialization"
             implementationClass = "AndroidKotlinxSerializationConventionPlugin"
         }
+        register("androidFeature") {
+            id = "runewords.android.feature"
+            implementationClass = "AndroidFeatureConventionPlugin"
+        }
     }
 }

@@ -199,7 +199,7 @@ private fun RuneWordsCombination(
                             bundle = bundleOf(TrackingConstants.Params.RUNE_NAME to it.name)
                         )
                     },
-                horizontalAlignment = Alignment.CenterHorizontally,
+                horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Image(
                     painter = painterResource(id = it.iconResourceID),
@@ -232,7 +232,7 @@ private fun RuneWordsType(info: RuneWordsItem) {
             .padding(vertical = 20.dp),
         fontSize = 16.sp,
         textAlign = TextAlign.Center,
-        color = MaterialTheme.colors.primary,
+        color = MaterialTheme.colors.primary
     )
 }
 

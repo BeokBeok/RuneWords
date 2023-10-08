@@ -1,8 +1,7 @@
+import com.beok.runewords.convention.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.api.artifacts.VersionCatalogsExtension
 import org.gradle.kotlin.dsl.dependencies
-import org.gradle.kotlin.dsl.getByType
 
 internal class AndroidApplicationFirebaseConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
@@ -13,8 +12,6 @@ internal class AndroidApplicationFirebaseConventionPlugin : Plugin<Project> {
                 apply("com.google.firebase.firebase-perf")
             }
 
-            val libs = extensions.getByType<VersionCatalogsExtension>()
-                .named("libs")
             dependencies {
                 implementation(platform(libs.findLibrary("firebase.bom").get()))
                 implementation(libs.findLibrary("firebase.analytics.ktx").get())

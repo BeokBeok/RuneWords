@@ -23,12 +23,12 @@ fun RuneWordsNavHost(
 ) {
     NavHost(
         navController = navController,
-        startDestination = startDestination,
+        startDestination = startDestination
     ) {
         homeScreen(onRuneClick = navController::navigateToCombination)
         combinationScreen(
             onRuneInfoClick = navController::navigateToRuneInfo,
-            onRuneWordClick = navController::navigateToDetail,
+            onRuneWordClick = navController::navigateToDetail
         )
         runeInfoScreen()
         detailScreen(
