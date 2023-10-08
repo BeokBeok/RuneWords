@@ -1,7 +1,7 @@
 import com.android.build.api.dsl.LibraryExtension
+import com.beok.runewords.convention.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.api.artifacts.VersionCatalogsExtension
 import org.gradle.kotlin.dsl.dependencies
 import org.gradle.kotlin.dsl.getByType
 
@@ -15,8 +15,6 @@ internal class AndroidJUnitConventionPlugin : Plugin<Project> {
                     unitTests.isReturnDefaultValues = true
                 }
 
-            val libs = extensions.getByType<VersionCatalogsExtension>()
-                .named("libs")
             dependencies {
                 implementation(libs.findLibrary("junit.jupiter.api").get())
                 testImplementation(libs.findLibrary("assertj.core").get())

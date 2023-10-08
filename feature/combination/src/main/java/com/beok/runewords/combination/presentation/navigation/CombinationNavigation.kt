@@ -23,7 +23,7 @@ fun NavController.navigateToCombination(
 
 fun NavGraphBuilder.combinationScreen(
     onRuneInfoClick: (String) -> Unit,
-    onRuneWordClick: (String) -> Unit,
+    onRuneWordClick: (String) -> Unit
 ) {
     composable(
         route = "$CombinationNavigationRoute/{${BundleKeyConstants.RUNE_NAME}}",
@@ -35,7 +35,7 @@ fun NavGraphBuilder.combinationScreen(
     ) {
         CombinationRoute(
             onRuneInfoClick = onRuneInfoClick,
-            onRuneWordClick = onRuneWordClick,
+            onRuneWordClick = onRuneWordClick
         )
     }
 }

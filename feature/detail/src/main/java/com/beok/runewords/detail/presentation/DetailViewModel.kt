@@ -19,7 +19,7 @@ import kotlinx.coroutines.flow.stateIn
 @HiltViewModel
 internal class DetailViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
-    runeWordsDetailRepository: RuneWordsDetailRepository,
+    runeWordsDetailRepository: RuneWordsDetailRepository
 ) : ViewModel() {
 
     private val runeWordsName: String by lazy {

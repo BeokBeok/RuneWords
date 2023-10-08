@@ -47,7 +47,7 @@ import kotlinx.collections.immutable.toImmutableList
 internal fun CombinationRoute(
     viewModel: CombinationViewModel = hiltViewModel(),
     onRuneInfoClick: (String) -> Unit,
-    onRuneWordClick: (String) -> Unit,
+    onRuneWordClick: (String) -> Unit
 ) {
     val state: CombinationState by viewModel.combinationState.collectAsState()
     Column(modifier = Modifier.fillMaxSize()) {
@@ -76,7 +76,7 @@ internal fun CombinationRoute(
 @Composable
 private fun CombinationContent(
     runeWords: ImmutableList<RuneWords>,
-    onRuneWordClick: (String) -> Unit,
+    onRuneWordClick: (String) -> Unit
 ) {
     val context: Context = LocalContext.current
     val tracking = LocalTracker.current

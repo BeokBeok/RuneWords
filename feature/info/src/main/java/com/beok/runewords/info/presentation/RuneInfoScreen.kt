@@ -47,7 +47,7 @@ private fun RuneInfoContent(
 ) {
     Column(
         modifier = modifier.padding(vertical = 24.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         RuneInfoItem(
             modifier = Modifier
