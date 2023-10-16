@@ -26,7 +26,7 @@ junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", vers
 assertj-core = { module = "org.assertj:assertj-core", version = "3.24.2" }
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
 mockk = { module = "io.mockk:mockk", version = "1.13.8" }
-konsist = { module = "com.lemonappdev:konsist", version = "0.12.2" }
+konsist = { module = "com.lemonappdev:konsist", version = "0.13.0" }
 
 # Compose
 compose-bom = { module = "androidx.compose:compose-bom", version = "2023.09.00" }
