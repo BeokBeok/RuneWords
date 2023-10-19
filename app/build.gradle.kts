@@ -49,4 +49,6 @@ dependencies {
 
     implementation(libs.play.services.ads)
     implementation(libs.play.core.ktx)
+
+    implementation(libs.startup.runtime)
 }
