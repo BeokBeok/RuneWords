@@ -9,7 +9,7 @@ import com.google.firebase.appcheck.playintegrity.PlayIntegrityAppCheckProviderF
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.ktx.initialize
 
-object FirebaseInitializer : Initializer<Unit> {
+class FirebaseInitializer : Initializer<Unit> {
     override fun create(context: Context) {
         Firebase.initialize(context = context)
         Firebase.appCheck.installAppCheckProviderFactory(
