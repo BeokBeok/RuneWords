@@ -1,9 +1,9 @@
 plugins {
-    id("runewords.android.library")
-    id("runewords.android.library.compose")
-    id("runewords.android.junit")
-    id("runewords.android.detekt")
-    id("runewords.android.library.jacoco")
+    alias(libs.plugins.runewords.android.library)
+    alias(libs.plugins.runewords.android.library.compose)
+    alias(libs.plugins.runewords.android.junit)
+    alias(libs.plugins.runewords.android.detekt)
+    alias(libs.plugins.runewords.android.library.jacoco)
 }
 
 android {
