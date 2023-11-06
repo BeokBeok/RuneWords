@@ -1,5 +1,5 @@
 plugins {
-    id("runewords.android.benchmark")
+    alias(libs.plugins.runewords.android.benchmark)
 }
 
 android {

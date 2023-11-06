@@ -1,13 +1,13 @@
 plugins {
-    id("runewords.android.application")
-    id("runewords.android.application.compose")
-    id("runewords.android.application.firebase")
-    id("runewords.android.hilt")
+    alias(libs.plugins.runewords.android.application)
+    alias(libs.plugins.runewords.android.application.compose)
+    alias(libs.plugins.runewords.android.application.firebase)
+    alias(libs.plugins.runewords.android.hilt)
     id("org.jlleitschuh.gradle.ktlint")
-    id("runewords.android.dependency.guard")
+    alias(libs.plugins.runewords.android.dependency.guard)
     id("com.google.firebase.appdistribution")
-    id("runewords.android.detekt")
-    id("runewords.android.application.jacoco")
+    alias(libs.plugins.runewords.android.detekt)
+    alias(libs.plugins.runewords.android.application.jacoco)
 }
 
 android {

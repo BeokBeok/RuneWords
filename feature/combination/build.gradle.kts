@@ -1,7 +1,7 @@
 plugins {
-    id("runewords.android.feature")
-    id("runewords.android.library.room")
-    id("runewords.android.kotlinx.serialization")
+    alias(libs.plugins.runewords.android.feature)
+    alias(libs.plugins.runewords.android.library.room)
+    alias(libs.plugins.runewords.android.kotlinx.serialization)
 }
 
 android {
