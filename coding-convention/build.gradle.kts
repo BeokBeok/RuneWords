@@ -1,6 +1,6 @@
 plugins {
-    id("runewords.android.library")
-    id("runewords.android.junit")
+    alias(libs.plugins.runewords.android.library)
+    alias(libs.plugins.runewords.android.junit)
 }
 
 android {

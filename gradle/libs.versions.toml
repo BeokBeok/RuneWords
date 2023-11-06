@@ -17,7 +17,7 @@ play-services-tasks = { module = "com.google.android.gms:play-services-tasks", v
 play-services-ads = { module = "com.google.android.gms:play-services-ads", version = "22.4.0" }
 play-core-ktx = { module = "com.google.android.play:core-ktx", version = "1.8.1" }
 kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version = "0.3.6" }
-leakcanary-android ={ module = "com.squareup.leakcanary:leakcanary-android", version = "2.12" }
+leakcanary-android = { module = "com.squareup.leakcanary:leakcanary-android", version = "2.12" }
 
 # Test
 junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "jUnit5" }
@@ -96,6 +96,23 @@ firebase-perf = { id = "com.google.firebase.firebase-perf", version = "1.4.2" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version = "1.23.3" }
 kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+
+# Plugins defined by this project
+runewords-android-application-compose = { id = "runewords.android.application.compose", version = "unspecified" }
+runewords-android-application = { id = "runewords.android.application", version = "unspecified" }
+runewords-android-library-compose = { id = "runewords.android.library.compose", version = "unspecified" }
+runewords-android-library = { id = "runewords.android.library", version = "unspecified" }
+runewords-android-application-firebase = { id = "runewords.android.application.firebase", version = "unspecified" }
+runewords-android-hilt = { id = "runewords.android.hilt", version = "unspecified" }
+runewords-android-dependency-guard = { id = "runewords.android.dependency.guard", version = "unspecified" }
+runewords-android-junit = { id = "runewords.android.junit", version = "unspecified" }
+runewords-android-benchmark = { id = "runewords.android.benchmark", version = "unspecified" }
+runewords-android-detekt = { id = "runewords.android.detekt", version = "unspecified" }
+runewords-android-application-jacoco = { id = "runewords.android.application.jacoco", version = "unspecified" }
+runewords-android-library-jacoco = { id = "runewords.android.library.jacoco", version = "unspecified" }
+runewords-android-library-room = { id = "runewords.android.library.room", version = "unspecified" }
+runewords-android-kotlinx-serialization = { id = "runewords.android.kotlinx.serialization", version = "unspecified" }
+runewords-android-feature = { id = "runewords.android.feature", version = "unspecified" }
 
 [bundles]
 compose = [
