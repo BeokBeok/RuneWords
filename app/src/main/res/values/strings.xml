@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Diablo2 RuneWords</string>
+    <string name="downloading" translatable="false">Downloading</string>
+    <string name="downloading_failed" translatable="false">Downloading failed</string>
 
     <!-- RuneWords List -->
     <string name="ancient_pledge">Ancient\'s Pledge</string>
