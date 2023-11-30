@@ -48,7 +48,8 @@ dependencies {
     implementation(libs.core.splashscreen)
 
     implementation(libs.play.services.ads)
-    implementation(libs.play.core.ktx)
+    implementation(libs.play.review.ktx)
+    implementation(libs.play.update.ktx)
 
     implementation(libs.startup.runtime)
 }

@@ -1,21 +1,26 @@
 package com.beok.runewords
 
+import android.app.Activity
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.result.IntentSenderRequest
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.beok.runewords.home.BuildConfig
-import com.beok.runewords.inapp.presentation.InAppUpdateState
+import com.beok.runewords.inapp.presentation.InAppUpdateContract
 import com.beok.runewords.inapp.presentation.InAppUpdateViewModel
 import com.beok.runewords.navigation.RuneWordsNavHost
 import com.beok.runewords.tracking.LocalTracker
@@ -25,8 +30,12 @@ import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
+import com.google.android.play.core.appupdate.AppUpdateManager
+import com.google.android.play.core.appupdate.AppUpdateOptions
+import com.google.android.play.core.common.IntentSenderForResultStarter
+import com.google.android.play.core.install.model.AppUpdateType
+import com.google.android.play.core.install.model.UpdateAvailability
 import com.google.android.play.core.review.ReviewManagerFactory
-import com.google.firebase.crashlytics.FirebaseCrashlytics
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import kotlinx.coroutines.delay
@@ -38,54 +47,74 @@ internal class RuneWordsActivity : ComponentActivity() {
     @Inject
     lateinit var tracking: Tracking
 
+    @Inject
+    lateinit var inAppUpdateManager: AppUpdateManager
+
     private val inAppUpdateViewModel by viewModels<InAppUpdateViewModel>()
+
+    private val inAppUpdateLauncher = registerForActivityResult(
+        ActivityResultContracts.StartIntentSenderForResult()
+    ) { result ->
+        if (result.data == null) return@registerForActivityResult
+        if (result.resultCode == REQ_IN_APP_UPDATE) {
+            Toast.makeText(this, R.string.downloading, Toast.LENGTH_SHORT).show()
+            if (result.resultCode != Activity.RESULT_OK) {
+                Toast.makeText(this, R.string.downloading_failed, Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private val updateResultStarter =
+        IntentSenderForResultStarter { intent, _, fillInIntent, flagsMask, flagsValues, _, _ ->
+            val request = IntentSenderRequest.Builder(intent)
+                .setFillInIntent(fillInIntent)
+                .setFlags(flagsValues, flagsMask)
+                .build()
+            inAppUpdateLauncher.launch(request)
+        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         installSplashScreen()
         super.onCreate(savedInstanceState)
 
-        setContent()
         refreshAppUpdateType()
-        observeInAppUpdate()
+        handleEffect()
     }
 
     override fun onResume() {
         super.onResume()
 
-        if (inAppUpdateViewModel.isForceUpdate()) {
-            inAppUpdateViewModel.checkForceUpdate()
-        }
+        forceUpdate()
     }
 
-    private fun showScreenAd() {
-        lifecycleScope.launch {
-            repeatOnLifecycle(state = Lifecycle.State.CREATED) {
-                delay(1_000)
-                InterstitialAd.load(
-                    this@RuneWordsActivity,
-                    getString(
-                        if (BuildConfig.DEBUG) {
-                            com.beok.runewords.common.R.string.test_admob_screen_app_key
-                        } else {
-                            com.beok.runewords.common.R.string.admob_screen_app_key
-                        }
-                    ),
-                    AdRequest.Builder().build(),
-                    object : InterstitialAdLoadCallback() {
-                        override fun onAdFailedToLoad(loadAdError: LoadAdError) = Unit
+    private fun showAd() {
+        InterstitialAd.load(
+            this@RuneWordsActivity,
+            getString(
+                if (BuildConfig.DEBUG) {
+                    com.beok.runewords.common.R.string.test_admob_screen_app_key
+                } else {
+                    com.beok.runewords.common.R.string.admob_screen_app_key
+                }
+            ),
+            AdRequest.Builder().build(),
+            object : InterstitialAdLoadCallback() {
+                override fun onAdFailedToLoad(loadAdError: LoadAdError) = Unit
 
-                        override fun onAdLoaded(ad: InterstitialAd) {
-                            ad.show(this@RuneWordsActivity)
-                        }
-                    }
-                )
+                override fun onAdLoaded(ad: InterstitialAd) {
+                    ad.show(this@RuneWordsActivity)
+                }
             }
-        }
+        )
     }
 
-    private fun setContent() {
+    private fun showContentWithAd() {
         setContent {
             RuneWordsTheme {
+                LaunchedEffect(key1 = Unit) {
+                    delay(500)
+                    showAd()
+                }
                 CompositionLocalProvider(LocalTracker provides tracking) {
                     Box(modifier = Modifier.fillMaxSize()) {
                         RuneWordsNavHost(showReviewWriteForm = ::showReviewWriteForm)
@@ -99,32 +128,55 @@ internal class RuneWordsActivity : ComponentActivity() {
         val packageManager = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             packageManager.getPackageInfo(packageName, PackageManager.PackageInfoFlags.of(0L))
         } else {
-            @Suppress("DEPRECATION")
             packageManager.getPackageInfo(packageName, 0)
         }
-        inAppUpdateViewModel.refreshAppUpdateType(version = packageManager.versionName)
+        inAppUpdateViewModel.handleEvent(
+            event = InAppUpdateContract.Event.CheckInAppUpdateType(
+                version = packageManager.versionName
+            )
+        )
     }
 
-    private fun observeInAppUpdate() {
-        inAppUpdateViewModel.state.observe(this) { state ->
-            when (state) {
-                InAppUpdateState.None,
-                InAppUpdateState.Impossible -> {
-                    showScreenAd()
-                }
-                is InAppUpdateState.Possible -> {
-                    inAppUpdateViewModel.requestInAppUpdate(
-                        appUpdateInfo = state.info,
-                        target = this
-                    )
-                }
-                is InAppUpdateState.Error -> {
-                    FirebaseCrashlytics.getInstance()
-                        .recordException(state.throwable)
-                    showScreenAd()
+    private fun handleEffect() {
+        lifecycleScope.launch {
+            repeatOnLifecycle(state = Lifecycle.State.CREATED) {
+                inAppUpdateViewModel.effect.collect { effect ->
+                    when (effect) {
+                        InAppUpdateContract.Effect.ShowScreenAD -> {
+                            showContentWithAd()
+                        }
+
+                        InAppUpdateContract.Effect.ForceUpdate -> {
+                            forceUpdate()
+                        }
+                    }
                 }
             }
         }
+    }
+
+    private fun forceUpdate() {
+        inAppUpdateManager.appUpdateInfo
+            .addOnSuccessListener { appUpdateInfo ->
+                when (appUpdateInfo.updateAvailability()) {
+                    UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS,
+                    UpdateAvailability.UPDATE_AVAILABLE -> {
+                        inAppUpdateManager.startUpdateFlowForResult(
+                            appUpdateInfo,
+                            updateResultStarter,
+                            AppUpdateOptions.defaultOptions(AppUpdateType.IMMEDIATE),
+                            REQ_IN_APP_UPDATE
+                        )
+                    }
+
+                    else -> {
+                        showContentWithAd()
+                    }
+                }
+            }
+            .addOnFailureListener {
+                showContentWithAd()
+            }
     }
 
     private fun showReviewWriteForm() {
@@ -137,5 +189,9 @@ internal class RuneWordsActivity : ComponentActivity() {
                     .launchReviewFlow(this, it.result)
                     .addOnCompleteListener { }
             }
+    }
+
+    companion object {
+        private const val REQ_IN_APP_UPDATE = 755
     }
 }

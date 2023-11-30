@@ -15,7 +15,8 @@ core-splashscreen = { module = "androidx.core:core-splashscreen", version = "1.0
 material = { module = "com.google.android.material:material", version = "1.10.0" }
 play-services-tasks = { module = "com.google.android.gms:play-services-tasks", version = "18.0.2" }
 play-services-ads = { module = "com.google.android.gms:play-services-ads", version = "22.4.0" }
-play-core-ktx = { module = "com.google.android.play:core-ktx", version = "1.8.1" }
+play-update-ktx = { module = "com.google.android.play:app-update-ktx", version = "2.1.0"}
+play-review-ktx = { module = "com.google.android.play:review-ktx", version = "2.0.1"}
 kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version = "0.3.6" }
 leakcanary-android = { module = "com.squareup.leakcanary:leakcanary-android", version = "2.12" }
 
