@@ -45,14 +45,14 @@ jobs:
 
       - name: Extract existing version code
         run: |
-          version_code=$(grep "VERSION_CODE" ./build-logic/convention/src/main/java/AndroidApplicationConventionPlugin.kt | awk '{print $5}')
+          version_code=$(grep "VERSION_CODE" ./build-logic/convention/src/main/java/plugin/AndroidApplicationConventionPlugin.kt | awk '{print $5}')
           version_code=$((version_code + ${GITHUB_RUN_NUMBER}))
           echo "VERSION_CODE=$version_code" >> $GITHUB_ENV
 
       - name: Change version code
         run: |
           echo "${{ env.VERSION_CODE }}"
-          sed -i "" "s/VERSION_CODE = [0-9]*/VERSION_CODE = ${{ env.VERSION_CODE }}/g" ./build-logic/convention/src/main/java/AndroidApplicationConventionPlugin.kt
+          sed -i "" "s/VERSION_CODE = [0-9]*/VERSION_CODE = ${{ env.VERSION_CODE }}/g" ./build-logic/convention/src/main/java/plugin/AndroidApplicationConventionPlugin.kt
 
       - name: Build Release AAB
         run: ./gradlew bundleRelease
