@@ -1,6 +1,7 @@
-package com.beok.runewords.convention
+package config
 
 import com.android.build.api.variant.AndroidComponentsExtension
+import extension.libs
 import org.gradle.api.Project
 import org.gradle.api.tasks.testing.Test
 import org.gradle.configurationcache.extensions.capitalized

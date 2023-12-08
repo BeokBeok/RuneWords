@@ -1,6 +1,10 @@
-import com.beok.runewords.convention.libs
+package plugin
+
+import extension.libs
 import com.google.devtools.ksp.gradle.KspExtension
+import extension.implementation
 import java.io.File
+import extension.ksp
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.tasks.InputDirectory

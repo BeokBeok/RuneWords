@@ -1,4 +1,8 @@
-import com.beok.runewords.convention.libs
+package plugin
+
+import extension.libs
+import extension.implementation
+import extension.ksp
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies

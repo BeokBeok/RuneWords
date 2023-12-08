@@ -21,63 +21,63 @@ gradlePlugin {
     plugins {
         register("androidApplicationCompose") {
             id = "runewords.android.application.compose"
-            implementationClass = "AndroidApplicationComposeConventionPlugin"
+            implementationClass = "plugin.AndroidApplicationComposeConventionPlugin"
         }
         register("androidApplication") {
             id = "runewords.android.application"
-            implementationClass = "AndroidApplicationConventionPlugin"
+            implementationClass = "plugin.AndroidApplicationConventionPlugin"
         }
         register("androidLibraryCompose") {
             id = "runewords.android.library.compose"
-            implementationClass = "AndroidLibraryComposeConventionPlugin"
+            implementationClass = "plugin.AndroidLibraryComposeConventionPlugin"
         }
         register("androidLibrary") {
             id = "runewords.android.library"
-            implementationClass = "AndroidLibraryConventionPlugin"
+            implementationClass = "plugin.AndroidLibraryConventionPlugin"
         }
         register("androidFirebase") {
             id = "runewords.android.application.firebase"
-            implementationClass = "AndroidApplicationFirebaseConventionPlugin"
+            implementationClass = "plugin.AndroidApplicationFirebaseConventionPlugin"
         }
         register("androidHilt") {
             id = "runewords.android.hilt"
-            implementationClass = "AndroidHiltConventionPlugin"
+            implementationClass = "plugin.AndroidHiltConventionPlugin"
         }
         register("androidDependencyGuard") {
             id = "runewords.android.dependency.guard"
-            implementationClass = "AndroidDependencyGuardConventionPlugin"
+            implementationClass = "plugin.AndroidDependencyGuardConventionPlugin"
         }
         register("androidJUnit") {
             id = "runewords.android.junit"
-            implementationClass = "AndroidJUnitConventionPlugin"
+            implementationClass = "plugin.AndroidJUnitConventionPlugin"
         }
         register("androidBenchmark") {
             id = "runewords.android.benchmark"
-            implementationClass = "AndroidBenchmarkConventionPlugin"
+            implementationClass = "plugin.AndroidBenchmarkConventionPlugin"
         }
         register("androidDetekt") {
             id = "runewords.android.detekt"
-            implementationClass = "AndroidDetektConventionPlugin"
+            implementationClass = "plugin.AndroidDetektConventionPlugin"
         }
         register("androidApplicationJacoco") {
             id = "runewords.android.application.jacoco"
-            implementationClass = "AndroidApplicationJacocoConventionPlugin"
+            implementationClass = "plugin.AndroidApplicationJacocoConventionPlugin"
         }
         register("androidLibraryJacoco") {
             id = "runewords.android.library.jacoco"
-            implementationClass = "AndroidLibraryJacocoConventionPlugin"
+            implementationClass = "plugin.AndroidLibraryJacocoConventionPlugin"
         }
         register("androidLibraryRoom") {
             id = "runewords.android.library.room"
-            implementationClass = "AndroidLibraryRoomConventionPlugin"
+            implementationClass = "plugin.AndroidLibraryRoomConventionPlugin"
         }
         register("androidKotlinxSerialization") {
             id = "runewords.android.kotlinx.serialization"
-            implementationClass = "AndroidKotlinxSerializationConventionPlugin"
+            implementationClass = "plugin.AndroidKotlinxSerializationConventionPlugin"
         }
         register("androidFeature") {
             id = "runewords.android.feature"
-            implementationClass = "AndroidFeatureConventionPlugin"
+            implementationClass = "plugin.AndroidFeatureConventionPlugin"
         }
     }
 }

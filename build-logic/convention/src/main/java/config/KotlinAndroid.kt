@@ -1,4 +1,4 @@
-package com.beok.runewords.convention
+package config
 
 import com.android.build.api.dsl.CommonExtension
 import org.gradle.api.JavaVersion

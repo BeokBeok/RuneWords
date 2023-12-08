@@ -1,7 +1,10 @@
+package plugin
+
 import com.android.build.gradle.TestExtension
-import com.beok.runewords.convention.configureGradleManagedDevices
-import com.beok.runewords.convention.configureKotlinAndroid
-import com.beok.runewords.convention.libs
+import config.configureGradleManagedDevices
+import config.configureKotlinAndroid
+import extension.libs
+import extension.implementation
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
