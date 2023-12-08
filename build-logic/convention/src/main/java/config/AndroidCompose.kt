@@ -1,7 +1,8 @@
-package com.beok.runewords.convention
+package config
 
 import com.android.build.api.dsl.CommonExtension
-import implementation
+import extension.libs
+import extension.implementation
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies
 

@@ -1,9 +1,14 @@
+package plugin
+
 import com.android.build.api.dsl.LibraryExtension
-import com.beok.runewords.convention.libs
+import extension.libs
+import extension.implementation
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies
 import org.gradle.kotlin.dsl.getByType
+import extension.testImplementation
+import extension.testRuntimeOnly
 
 internal class AndroidJUnitConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {

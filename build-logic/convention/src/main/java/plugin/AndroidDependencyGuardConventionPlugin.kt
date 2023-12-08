@@ -1,3 +1,5 @@
+package plugin
+
 import com.dropbox.gradle.plugins.dependencyguard.DependencyGuardPluginExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project
