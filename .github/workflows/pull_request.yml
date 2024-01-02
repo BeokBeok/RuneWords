@@ -11,7 +11,14 @@ jobs:
   build:
     runs-on: macos-latest
 
-    steps:        
+    steps:
+      - name: Test
+        run: |
+          if [ ${{ endsWith(github.head_ref, 'test') }} == true ]; then
+            echo 'bad'
+          else
+            echo 'good'
+          fi
       - name: Checkout
         uses: actions/checkout@v4
 
