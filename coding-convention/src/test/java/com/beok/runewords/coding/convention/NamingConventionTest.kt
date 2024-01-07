@@ -7,6 +7,7 @@ import com.lemonappdev.konsist.api.ext.list.withAllAnnotationsOf
 import com.lemonappdev.konsist.api.ext.list.withAllParentsOf
 import com.lemonappdev.konsist.api.ext.list.withNameEndingWith
 import com.lemonappdev.konsist.api.verify.assert
+import com.lemonappdev.konsist.api.verify.assertTrue
 import org.junit.jupiter.api.Test
 
 internal class NamingConventionTest {
@@ -17,7 +18,7 @@ internal class NamingConventionTest {
             .classes()
             .withAllAnnotationsOf(Entity::class)
             .withNameEndingWith(suffix = "Table")
-            .assert { it.resideInPackage(name = "..data.model") }
+            .assertTrue { it.resideInPackage(name = "..data.model") }
     }
 
     @Test
@@ -26,7 +27,7 @@ internal class NamingConventionTest {
             .scopeFromProject()
             .classes()
             .withNameEndingWith(suffix = "Response")
-            .assert { it.resideInPackage(name = "..data.model") }
+            .assertTrue { it.resideInPackage(name = "..data.model") }
     }
 
     @Test
@@ -35,7 +36,7 @@ internal class NamingConventionTest {
             .scopeFromProject()
             .classes()
             .withNameEndingWith(suffix = "Database")
-            .assert { it.resideInPackage(name = "..data.local") }
+            .assertTrue { it.resideInPackage(name = "..data.local") }
     }
 
     @Test
@@ -44,7 +45,7 @@ internal class NamingConventionTest {
             .scopeFromProject()
             .interfaces()
             .withNameEndingWith(suffix = "DAO")
-            .assert { it.resideInPackage(name = "..data.local") }
+            .assertTrue { it.resideInPackage(name = "..data.local") }
     }
 
     @Test
@@ -53,7 +54,7 @@ internal class NamingConventionTest {
             .scopeFromProject()
             .interfaces()
             .withNameEndingWith(suffix = "RemoteDataSource")
-            .assert { it.resideInPackage(name = "..data.remote") }
+            .assertTrue { it.resideInPackage(name = "..data.remote") }
     }
 
     @Test
@@ -62,7 +63,7 @@ internal class NamingConventionTest {
             .scopeFromProject()
             .classes()
             .withNameEndingWith(suffix = "RemoteDataSourceImpl")
-            .assert { it.resideInPackage(name = "..data.remote") }
+            .assertTrue { it.resideInPackage(name = "..data.remote") }
     }
 
     @Test
@@ -71,7 +72,7 @@ internal class NamingConventionTest {
             .scopeFromProject()
             .interfaces()
             .withNameEndingWith(suffix = "Repository")
-            .assert { it.resideInPackage(name = "..domain") }
+            .assertTrue { it.resideInPackage(name = "..domain") }
     }
 
     @Test
@@ -80,7 +81,7 @@ internal class NamingConventionTest {
             .scopeFromProject()
             .classes()
             .withNameEndingWith(suffix = "RepositoryImpl")
-            .assert { it.resideInPackage(name = "..data") }
+            .assertTrue { it.resideInPackage(name = "..data") }
     }
 
     @Test
@@ -89,7 +90,7 @@ internal class NamingConventionTest {
             .scopeFromProject()
             .classes()
             .withAllParentsOf(ViewModel::class)
-            .assert {
+            .assertTrue {
                 it.name.endsWith("ViewModel")
                 it.resideInPackage(name = "..presentation")
             }
