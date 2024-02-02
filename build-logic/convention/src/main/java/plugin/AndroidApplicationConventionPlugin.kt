@@ -27,6 +27,8 @@ internal class AndroidApplicationConventionPlugin : Plugin<Project> {
                     resources {
                         excludes += "META-INF/LICENSE.md"
                         excludes += "META-INF/LICENSE-notice.md"
+                        excludes += "META-INF/INDEX.LIST"
+                        excludes += "META-INF/DEPENDENCIES"
                     }
                 }
             }
