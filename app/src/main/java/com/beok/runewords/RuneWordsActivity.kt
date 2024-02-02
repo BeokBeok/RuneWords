@@ -127,7 +127,7 @@ internal class RuneWordsActivity : ComponentActivity() {
         integrityViewModel.handleEvent(
             event = IntegrityContract.Event.CheckIntegrity(
                 requestHash = "aGVsbG8gd29scmQgdGhlcmU",
-                gcpInputStream = assets.open("empty")
+                gcpInputStream = assets.open("service-account.json")
             )
         )
     }
@@ -154,8 +154,12 @@ internal class RuneWordsActivity : ComponentActivity() {
                             refreshAppUpdateType()
                         }
                         is IntegrityContract.Effect.UnRecognize -> {
-                            Firebase.crashlytics.recordException(effect.throwable)
-                            refreshAppUpdateType()
+                            if (com.beok.runewords.BuildConfig.DEBUG) {
+                                refreshAppUpdateType()
+                            } else {
+                                Firebase.crashlytics.recordException(effect.throwable)
+                                finishAffinity()
+                            }
                         }
                     }
                 }

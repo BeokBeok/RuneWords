@@ -14,9 +14,15 @@ data class AppIntegrity(
     @SerialName("versionCode")
     val versionCode: String = ""
 ) {
+    @Serializable
     enum class AppRecognitionVerdict {
+        @SerialName("PLAY_RECOGNIZED")
         PLAY_RECOGNIZED,
+
+        @SerialName("UNRECOGNIZED_VERSION")
         UNRECOGNIZED_VERSION,
+
+        @SerialName("UNEVALUATED")
         UNEVALUATED,
         NONE;
 

@@ -2,7 +2,6 @@ package com.beok.runewords.integrity.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.beok.runewords.BuildConfig
 import com.beok.runewords.integrity.domain.IntegrityRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import java.lang.RuntimeException
@@ -31,12 +30,6 @@ class IntegrityViewModel @Inject constructor(
         when (event) {
             is IntegrityContract.Event.CheckIntegrity -> {
                 viewModelScope.launch {
-                    if (BuildConfig.DEBUG) {
-                        _effect.send(
-                            element = IntegrityContract.Effect.Recognize
-                        )
-                        return@launch
-                    }
                     integrityRepository.integrity(
                         requestHash = event.requestHash,
                         gcpInputStream = event.gcpInputStream
