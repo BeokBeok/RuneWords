@@ -54,6 +54,9 @@ jobs:
           echo "${{ env.VERSION_CODE }}"
           sed -i "" "s/VERSION_CODE = [0-9]*/VERSION_CODE = ${{ env.VERSION_CODE }}/g" ./build-logic/convention/src/main/java/plugin/AndroidApplicationConventionPlugin.kt
 
+      - name: Create assets
+        run: echo '${{ secrets.SERVICE_ACCOUNT_JSON }}' > ./app/src/main/assets/service_account.json
+
       - name: Build Release AAB
         run: ./gradlew bundleRelease
 

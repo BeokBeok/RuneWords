@@ -33,7 +33,7 @@ internal class InAppUpdateViewModel @Inject constructor(
                 viewModelScope.launch {
                     inAppRepository.fetchForceUpdateVersion()
                         .onSuccess { forceUpdateVersion ->
-                            _effect.trySend(
+                            _effect.send(
                                 element = if (forceUpdateVersion <= event.version) {
                                     InAppUpdateContract.Effect.ShowScreenAD
                                 } else {
