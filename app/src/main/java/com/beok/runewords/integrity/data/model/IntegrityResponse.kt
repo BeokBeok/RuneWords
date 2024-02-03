@@ -6,7 +6,5 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class IntegrityResponse(
     @SerialName("tokenPayloadExternal")
-    val tokenPayloadExternal: TokenPayloadExternal = TokenPayloadExternal(),
-    @SerialName("error")
-    val error: Error = Error()
+    val tokenPayloadExternal: TokenPayloadExternal = TokenPayloadExternal()
 )

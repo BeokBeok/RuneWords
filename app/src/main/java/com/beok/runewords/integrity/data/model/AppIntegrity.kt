@@ -1,5 +1,6 @@
 package com.beok.runewords.integrity.data.model
 
+import com.beok.runewords.integrity.domain.model.AppRecognitionVerdict
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -13,23 +14,4 @@ data class AppIntegrity(
     val packageName: String = "",
     @SerialName("versionCode")
     val versionCode: String = ""
-) {
-    @Serializable
-    enum class AppRecognitionVerdict {
-        @SerialName("PLAY_RECOGNIZED")
-        PLAY_RECOGNIZED,
-
-        @SerialName("UNRECOGNIZED_VERSION")
-        UNRECOGNIZED_VERSION,
-
-        @SerialName("UNEVALUATED")
-        UNEVALUATED,
-        NONE;
-
-        companion object {
-            fun isRecognize(appRecognitionVerdict: AppRecognitionVerdict): Boolean {
-                return appRecognitionVerdict == PLAY_RECOGNIZED
-            }
-        }
-    }
-}
+)

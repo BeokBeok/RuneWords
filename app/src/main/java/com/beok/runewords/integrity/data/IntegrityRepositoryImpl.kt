@@ -1,7 +1,7 @@
 package com.beok.runewords.integrity.data
 
-import com.beok.runewords.integrity.data.model.AppIntegrity
 import com.beok.runewords.integrity.domain.IntegrityRepository
+import com.beok.runewords.integrity.domain.model.AppRecognitionVerdict
 import java.io.InputStream
 import javax.inject.Inject
 
@@ -11,7 +11,7 @@ class IntegrityRepositoryImpl @Inject constructor(
     override suspend fun integrity(
         requestHash: String,
         gcpInputStream: InputStream
-    ): Result<Boolean> {
+    ): Result<AppRecognitionVerdict> {
         return runCatching {
             val integrityToken = integrityRemoteDataSource.integrityToken(
                 requestHash = requestHash
@@ -23,16 +23,11 @@ class IntegrityRepositoryImpl @Inject constructor(
                 accessToken = accessToken,
                 integrityToken = integrityToken
             )
-            val isRecognize =
-                AppIntegrity.AppRecognitionVerdict
-                    .isRecognize(
-                        appRecognitionVerdict = response.tokenPayloadExternal
-                            .appIntegrity
-                            .appRecognitionVerdict
-                    )
-            val isEqualsHash =
-                response.tokenPayloadExternal.requestDetails.requestHash == requestHash
-            isRecognize && isEqualsHash
+            if (response.tokenPayloadExternal.requestDetails.requestHash != requestHash) {
+                AppRecognitionVerdict.NOT_MATCH_HASH
+            } else {
+                response.tokenPayloadExternal.appIntegrity.appRecognitionVerdict
+            }
         }
     }
 }

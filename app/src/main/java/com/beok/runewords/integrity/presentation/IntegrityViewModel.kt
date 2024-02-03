@@ -3,8 +3,8 @@ package com.beok.runewords.integrity.presentation
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.beok.runewords.integrity.domain.IntegrityRepository
+import com.beok.runewords.integrity.domain.model.AppRecognitionVerdict
 import dagger.hilt.android.lifecycle.HiltViewModel
-import java.lang.RuntimeException
 import javax.inject.Inject
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.Flow
@@ -33,13 +33,17 @@ class IntegrityViewModel @Inject constructor(
                     integrityRepository.integrity(
                         requestHash = event.requestHash,
                         gcpInputStream = event.gcpInputStream
-                    ).onSuccess { isRecognize ->
+                    ).onSuccess { appRecognitionVerdict ->
                         _effect.send(
-                            element = if (isRecognize) {
+                            element = if (
+                                AppRecognitionVerdict.isRecognize(appRecognitionVerdict)
+                            ) {
                                 IntegrityContract.Effect.Recognize
                             } else {
                                 IntegrityContract.Effect.UnRecognize(
-                                    throwable = RuntimeException("recognize failed")
+                                    throwable = IllegalStateException(
+                                        "UnRecognize because ${appRecognitionVerdict.name}"
+                                    )
                                 )
                             }
                         )

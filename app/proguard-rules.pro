@@ -25,18 +25,9 @@
 -keepclassmembers class com.beok.runewords.detail.data.model.** { *; }
 
 # Google Auth Library OAuth2 HTTP
--keep class com.google.api.client.** { *; }
 -keepclassmembers class com.google.api.client.** { *; }
 -keepattributes Signature,RuntimeVisibleAnnotations,AnnotationDefault
-
-# Please add these rules to your existing keep rules in order to suppress warnings.
-# This is generated automatically by the Android Gradle plugin.
--dontwarn org.ietf.jgss.GSSContext
--dontwarn org.ietf.jgss.GSSCredential
--dontwarn org.ietf.jgss.GSSException
--dontwarn org.ietf.jgss.GSSManager
--dontwarn org.ietf.jgss.GSSName
--dontwarn org.ietf.jgss.Oid
+-keep class com.google.android.play.core.integrity.** { *; }
 
 # Retrofit
 # ref. https://github.com/square/retrofit/blob/trunk/retrofit/src/main/resources/META-INF/proguard/retrofit2.pro
@@ -88,3 +79,6 @@
 
 # With R8 full mode generic signatures are stripped for classes that are not kept.
 -keep,allowobfuscation,allowshrinking class retrofit2.Response
+
+# DataStore
+-keepclassmembers class androidx.datastore.preferences.protobuf.** { *; }
