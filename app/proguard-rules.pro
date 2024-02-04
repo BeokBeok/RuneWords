@@ -26,7 +26,7 @@
 
 # Google Auth Library OAuth2 HTTP
 -keepclassmembers class com.google.api.client.** { *; }
--keep class com.google.android.play.core.integrity.** { *; }
+-keepclassmembers class com.google.android.play.core.integrity.** { *; }
 
 # Retrofit
 # ref. https://github.com/square/retrofit/blob/trunk/retrofit/src/main/resources/META-INF/proguard/retrofit2.pro
@@ -78,8 +78,3 @@
 
 # With R8 full mode generic signatures are stripped for classes that are not kept.
 -keep,allowobfuscation,allowshrinking class retrofit2.Response
-
-# DataStore
--keepclassmembers class * extends com.google.protobuf.GeneratedMessageLite* {
-   <fields>;
-}
