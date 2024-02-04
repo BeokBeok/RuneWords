@@ -16,10 +16,4 @@ enum class AppRecognitionVerdict {
 
     NOT_MATCH_HASH,
     NONE;
-
-    companion object {
-        fun isRecognize(appRecognitionVerdict: AppRecognitionVerdict): Boolean {
-            return appRecognitionVerdict == PLAY_RECOGNIZED
-        }
-    }
 }

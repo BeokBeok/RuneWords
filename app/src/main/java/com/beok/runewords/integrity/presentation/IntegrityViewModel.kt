@@ -35,9 +35,7 @@ class IntegrityViewModel @Inject constructor(
                         gcpInputStream = event.gcpInputStream
                     ).onSuccess { appRecognitionVerdict ->
                         _effect.send(
-                            element = if (
-                                AppRecognitionVerdict.isRecognize(appRecognitionVerdict)
-                            ) {
+                            element = if (appRecognitionVerdict == AppRecognitionVerdict.NONE) {
                                 IntegrityContract.Effect.Recognize
                             } else {
                                 IntegrityContract.Effect.UnRecognize(

@@ -127,7 +127,7 @@ internal class RuneWordsActivity : ComponentActivity() {
         integrityViewModel.handleEvent(
             event = IntegrityContract.Event.CheckIntegrity(
                 requestHash = "aGVsbG8gd29scmQgdGhlcmU",
-                gcpInputStream = assets.open("service-account.json")
+                gcpInputStream = assets.open("integrity.json")
             )
         )
     }

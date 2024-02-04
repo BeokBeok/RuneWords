@@ -26,7 +26,7 @@ class IntegrityRepositoryImpl @Inject constructor(
             if (response.tokenPayloadExternal.requestDetails.requestHash != requestHash) {
                 AppRecognitionVerdict.NOT_MATCH_HASH
             } else {
-                response.tokenPayloadExternal.appIntegrity.appRecognitionVerdict
+                AppRecognitionVerdict.NONE
             }
         }
     }

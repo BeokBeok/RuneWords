@@ -33,7 +33,7 @@ jobs:
         run: echo '${{ secrets.GOOGLE_SERVICES_JSON }}' > ./app/google-services.json
 
       - name: Create assets
-        run: echo '${{ secrets.SERVICE_ACCOUNT_JSON }}' > ./app/src/main/assets/service-account.json
+        run: echo '${{ secrets.INTEGRITY_JSON }}' > ./app/src/main/assets/integrity.json
 
       - name: Clean Managed Devices
         run: ./gradlew cleanManagedDevices --unused-only
