@@ -79,6 +79,3 @@
 
 # With R8 full mode generic signatures are stripped for classes that are not kept.
 -keep,allowobfuscation,allowshrinking class retrofit2.Response
-
-# DataStore
--keepclassmembers class androidx.datastore.preferences.protobuf.** { *; }
