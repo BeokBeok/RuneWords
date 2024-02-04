@@ -60,4 +60,7 @@ dependencies {
     implementation(libs.google.auth.library.oauth2.http)
 
     implementation(libs.startup.runtime)
+
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+    implementation("com.google.protobuf:protobuf-java:3.21.8")
 }

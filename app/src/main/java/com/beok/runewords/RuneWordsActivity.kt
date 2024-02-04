@@ -158,6 +158,11 @@ internal class RuneWordsActivity : ComponentActivity() {
                                 refreshAppUpdateType()
                             } else {
                                 Firebase.crashlytics.recordException(effect.throwable)
+                                Toast.makeText(
+                                    this@RuneWordsActivity,
+                                    effect.throwable.message,
+                                    Toast.LENGTH_SHORT
+                                ).show()
                                 finishAffinity()
                             }
                         }
