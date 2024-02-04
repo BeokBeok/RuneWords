@@ -26,7 +26,6 @@
 
 # Google Auth Library OAuth2 HTTP
 -keepclassmembers class com.google.api.client.** { *; }
--keepattributes Signature,RuntimeVisibleAnnotations,AnnotationDefault
 -keep class com.google.android.play.core.integrity.** { *; }
 
 # Retrofit
@@ -81,4 +80,6 @@
 -keep,allowobfuscation,allowshrinking class retrofit2.Response
 
 # DataStore
--keepclassmembers class androidx.datastore.preferences.protobuf.** { *; }
+-keepclassmembers class * extends com.google.protobuf.GeneratedMessageLite* {
+   <fields>;
+}
