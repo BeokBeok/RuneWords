@@ -98,7 +98,7 @@ android-junit5 = { id = "de.mannodermaus.android-junit5", version = "1.10.0.0" }
 google-services = { id = "com.google.gms.google-services", version = "4.3.14" }
 hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 firebase-crashlytics = { id = "com.google.firebase.crashlytics", version = "2.8.1" }
-ktlint = { id = "org.jlleitschuh.gradle.ktlint", version = "11.6.1" }
+ktlint = { id = "org.jlleitschuh.gradle.ktlint", version = "12.1.0" }
 dependency-guard = { id = "com.dropbox.dependency-guard", version = "0.4.3" }
 appdistribution = { id = "com.google.firebase.appdistribution", version = "4.0.1" }
 firebase-perf = { id = "com.google.firebase.firebase-perf", version = "1.4.2" }
