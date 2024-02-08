@@ -82,7 +82,11 @@ internal class RuneWordsActivity : ComponentActivity() {
         installSplashScreen()
         super.onCreate(savedInstanceState)
 
-        checkIntegrity()
+        if (com.beok.runewords.BuildConfig.DEBUG) {
+            refreshAppUpdateType()
+        } else {
+            checkIntegrity()
+        }
         handleEffect()
     }
 
@@ -153,6 +157,7 @@ internal class RuneWordsActivity : ComponentActivity() {
                         IntegrityContract.Effect.Recognize -> {
                             refreshAppUpdateType()
                         }
+
                         is IntegrityContract.Effect.UnRecognize -> {
                             if (com.beok.runewords.BuildConfig.DEBUG) {
                                 refreshAppUpdateType()
