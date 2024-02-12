@@ -10,7 +10,6 @@ jobs:
     steps:
       - uses: fpicalausa/remove-stale-branches@v1.6.0
         with:
-          dry-run: true
           exempt-branches-regex: "^(main|APPDEV-.*)$"
           days-before-branch-stale: 1
           days-before-branch-delete: 1
