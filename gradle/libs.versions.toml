@@ -2,7 +2,7 @@
 jUnit5 = "5.10.1"
 composeCompiler = "1.5.3"
 hilt = "2.50"
-coroutines = "1.7.3"
+coroutines = "1.8.0"
 kotlin = "1.9.10"
 gradle = "8.2.0"
 jacoco = "0.8.7"
@@ -24,7 +24,7 @@ leakcanary-android = { module = "com.squareup.leakcanary:leakcanary-android", ve
 # Test
 junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "jUnit5" }
 junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "jUnit5" }
-assertj-core = { module = "org.assertj:assertj-core", version = "3.25.1" }
+assertj-core = { module = "org.assertj:assertj-core", version = "3.25.3" }
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
 mockk = { module = "io.mockk:mockk", version = "1.13.9" }
 konsist = { module = "com.lemonappdev:konsist", version = "0.13.0" }
@@ -102,7 +102,7 @@ ktlint = { id = "org.jlleitschuh.gradle.ktlint", version = "11.6.1" }
 dependency-guard = { id = "com.dropbox.dependency-guard", version = "0.4.3" }
 appdistribution = { id = "com.google.firebase.appdistribution", version = "4.0.1" }
 firebase-perf = { id = "com.google.firebase.firebase-perf", version = "1.4.2" }
-detekt = { id = "io.gitlab.arturbosch.detekt", version = "1.23.4" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version = "1.23.5" }
 kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 
