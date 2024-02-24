@@ -1,5 +1,5 @@
 [versions]
-jUnit5 = "5.10.1"
+jUnit5 = "5.10.2"
 composeCompiler = "1.5.3"
 hilt = "2.50"
 coroutines = "1.8.0"
