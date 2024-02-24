@@ -2,7 +2,7 @@
 jUnit5 = "5.10.1"
 composeCompiler = "1.5.3"
 hilt = "2.50"
-coroutines = "1.7.3"
+coroutines = "1.8.0"
 kotlin = "1.9.10"
 gradle = "8.2.0"
 jacoco = "0.8.7"
