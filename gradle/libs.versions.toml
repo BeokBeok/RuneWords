@@ -64,7 +64,7 @@ kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-t
 # Gradle
 gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
 kotlin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
-dependency-guard = { module = "com.dropbox.dependency-guard:dependency-guard", version = "0.4.3" }
+dependency-guard = { module = "com.dropbox.dependency-guard:dependency-guard", version = "0.5.0" }
 detekt-gradle = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version = "1.23.5" }
 ksp-gradle = { module = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
 
@@ -99,7 +99,7 @@ google-services = { id = "com.google.gms.google-services", version = "4.3.14" }
 hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 firebase-crashlytics = { id = "com.google.firebase.crashlytics", version = "2.8.1" }
 ktlint = { id = "org.jlleitschuh.gradle.ktlint", version = "11.6.1" }
-dependency-guard = { id = "com.dropbox.dependency-guard", version = "0.4.3" }
+dependency-guard = { id = "com.dropbox.dependency-guard", version = "0.5.0" }
 appdistribution = { id = "com.google.firebase.appdistribution", version = "4.0.1" }
 firebase-perf = { id = "com.google.firebase.firebase-perf", version = "1.4.2" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version = "1.23.5" }
