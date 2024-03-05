@@ -11,5 +11,5 @@ jobs:
       - uses: fpicalausa/remove-stale-branches@v2.0.1
         with:
           exempt-branches-regex: "^(main|APPDEV-.*)$"
-          days-before-branch-stale: 1
+          days-before-branch-stale: 14
           days-before-branch-delete: 1
