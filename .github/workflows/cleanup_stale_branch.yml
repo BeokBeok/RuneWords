@@ -3,6 +3,7 @@ name: Cleanup stale branch
 on:
   schedule:
     - cron: '0 0 * * *'
+  workflow_dispatch:
 
 jobs:
   remove-stale-branches:
@@ -10,6 +11,6 @@ jobs:
     steps:
       - uses: fpicalausa/remove-stale-branches@v2.0.1
         with:
-          exempt-branches-regex: "^(main|APPDEV-.*)$"
-          days-before-branch-stale: 1
+          exempt-branches-regex: "^(main|APPDEV-.*|dependabot.*)$"
+          days-before-branch-stale: 14
           days-before-branch-delete: 1
