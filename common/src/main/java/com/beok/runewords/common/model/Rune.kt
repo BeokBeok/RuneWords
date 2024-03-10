@@ -337,16 +337,16 @@ enum class Rune(
 
     companion object {
 
-        fun all(): List<Rune> = values().toList()
+        fun all(): List<Rune> = entries
 
-        fun findByName(name: String): Rune? = values()
+        fun findByName(name: String): Rune? = entries
             .firstOrNull {
                 it.name.lowercase() == name.lowercase()
             }
 
         fun previous(target: Rune): Rune? {
             if (target == EL) return null
-            return values().first {
+            return entries.first {
                 it.ordinal == target.ordinal - 1
             }
         }
