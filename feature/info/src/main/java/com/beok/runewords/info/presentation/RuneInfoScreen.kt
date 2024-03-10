@@ -16,8 +16,8 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -25,7 +25,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.beok.runewords.common.model.Rune
-import com.beok.runewords.info.R
 
 @Composable
 internal fun RuneInfoScreen(rune: Rune?) {
@@ -128,7 +127,7 @@ private fun RuneInfoTopBar(rune: Rune) {
 @Composable
 private fun RuneCompound(rune: Rune) {
     Icon(
-        imageVector = Icons.Default.ArrowBack,
+        imageVector = Icons.AutoMirrored.Filled.ArrowBack,
         contentDescription = null,
         tint = MaterialTheme.colors.primary
     )
