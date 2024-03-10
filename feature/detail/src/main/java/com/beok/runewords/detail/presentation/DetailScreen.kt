@@ -225,8 +225,7 @@ private fun RuneWordsType(info: RuneWordsItem) {
     Text(
         text = info.type
             .filter { context.resourceIDByName(name = it) > 0 }
-            .map { stringResource(id = context.resourceIDByName(it)) }
-            .joinToString(),
+            .joinToString { context.getString(context.resourceIDByName(it)) },
         modifier = Modifier
             .fillMaxWidth()
             .padding(vertical = 20.dp),
