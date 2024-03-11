@@ -40,7 +40,7 @@ constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayou
 navigation-compose = { module = "androidx.navigation:navigation-compose", version = "2.7.7" }
 
 # Firebase
-firebase-bom = { module = "com.google.firebase:firebase-bom", version = "32.7.3" }
+firebase-bom = { module = "com.google.firebase:firebase-bom", version = "32.7.4" }
 firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx" }
 firebase-firestore-ktx = { module = "com.google.firebase:firebase-firestore-ktx" }
 firebase-crashlytics-ktx = { module = "com.google.firebase:firebase-crashlytics-ktx" }
