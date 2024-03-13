@@ -159,12 +159,8 @@ internal class RuneWordsActivity : ComponentActivity() {
                         }
 
                         is IntegrityContract.Effect.UnRecognize -> {
-                            if (com.beok.runewords.BuildConfig.DEBUG) {
-                                refreshAppUpdateType()
-                            } else {
-                                Firebase.crashlytics.recordException(effect.throwable)
-                                finishAffinity()
-                            }
+                            Firebase.crashlytics.recordException(effect.throwable)
+                            refreshAppUpdateType()
                         }
                     }
                 }

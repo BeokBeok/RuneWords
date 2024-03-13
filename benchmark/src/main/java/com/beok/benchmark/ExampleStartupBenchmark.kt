@@ -12,6 +12,10 @@ class ExampleStartupBenchmark {
     val baselineProfileRule = BaselineProfileRule()
 
     @Test
-    fun startup() = baselineProfileRule.collect(packageName = "com.beok.runewords") {
+    fun generate() = baselineProfileRule.collect(
+        packageName = "com.beok.runewords",
+        includeInStartupProfile = true
+    ) {
+        startActivityAndWait()
     }
 }
