@@ -7,7 +7,7 @@ kotlin = "1.9.10"
 gradle = "8.3.0"
 jacoco = "0.8.7"
 room = "2.6.0-rc01"
-ksp = "1.9.10-1.0.13"
+ksp = "1.9.23-1.0.19"
 
 [libraries]
 core-ktx = { module = "androidx.core:core-ktx", version = "1.12.0" }
