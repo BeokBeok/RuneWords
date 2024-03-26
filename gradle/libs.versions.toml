@@ -55,7 +55,7 @@ timber = { module = "com.jakewharton.timber:timber", version = "5.0.1" }
 # Hilt
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version = "1.1.0" }
+hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version = "1.2.0" }
 
 # Coroutines
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
@@ -71,7 +71,7 @@ ksp-gradle = { module = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.
 # Benchmark
 junit = { module = "androidx.test.ext:junit", version = "1.1.5" }
 espresso-core = { module = "androidx.test.espresso:espresso-core", version = "3.5.1" }
-uiautomator = { module = "androidx.test.uiautomator:uiautomator", version = "2.2.0" }
+uiautomator = { module = "androidx.test.uiautomator:uiautomator", version = "2.3.0" }
 benchmark-macro-junit4 = { module = "androidx.benchmark:benchmark-macro-junit4", version = "1.2.3" }
 
 # Room
