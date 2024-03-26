@@ -27,7 +27,7 @@ junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", vers
 assertj-core = { module = "org.assertj:assertj-core", version = "3.25.3" }
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
 mockk = { module = "io.mockk:mockk", version = "1.13.10" }
-konsist = { module = "com.lemonappdev:konsist", version = "0.13.0" }
+konsist = { module = "com.lemonappdev:konsist", version = "0.14.0" }
 
 # Compose
 compose-bom = { module = "androidx.compose:compose-bom", version = "2024.02.02" }
@@ -40,7 +40,7 @@ constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayou
 navigation-compose = { module = "androidx.navigation:navigation-compose", version = "2.7.7" }
 
 # Firebase
-firebase-bom = { module = "com.google.firebase:firebase-bom", version = "32.7.4" }
+firebase-bom = { module = "com.google.firebase:firebase-bom", version = "32.8.0" }
 firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx" }
 firebase-firestore-ktx = { module = "com.google.firebase:firebase-firestore-ktx" }
 firebase-crashlytics-ktx = { module = "com.google.firebase:firebase-crashlytics-ktx" }
