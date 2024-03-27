@@ -27,7 +27,7 @@ junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", vers
 assertj-core = { module = "org.assertj:assertj-core", version = "3.25.3" }
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
 mockk = { module = "io.mockk:mockk", version = "1.13.10" }
-konsist = { module = "com.lemonappdev:konsist", version = "0.13.0" }
+konsist = { module = "com.lemonappdev:konsist", version = "0.14.0" }
 
 # Compose
 compose-bom = { module = "androidx.compose:compose-bom", version = "2024.02.02" }
@@ -40,7 +40,7 @@ constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayou
 navigation-compose = { module = "androidx.navigation:navigation-compose", version = "2.7.7" }
 
 # Firebase
-firebase-bom = { module = "com.google.firebase:firebase-bom", version = "32.7.4" }
+firebase-bom = { module = "com.google.firebase:firebase-bom", version = "32.8.0" }
 firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx" }
 firebase-firestore-ktx = { module = "com.google.firebase:firebase-firestore-ktx" }
 firebase-crashlytics-ktx = { module = "com.google.firebase:firebase-crashlytics-ktx" }
@@ -55,7 +55,7 @@ timber = { module = "com.jakewharton.timber:timber", version = "5.0.1" }
 # Hilt
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version = "1.1.0" }
+hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version = "1.2.0" }
 
 # Coroutines
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
@@ -65,13 +65,13 @@ kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-t
 gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
 kotlin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 dependency-guard = { module = "com.dropbox.dependency-guard:dependency-guard", version = "0.5.0" }
-detekt-gradle = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version = "1.23.5" }
+detekt-gradle = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version = "1.23.6" }
 ksp-gradle = { module = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
 
 # Benchmark
 junit = { module = "androidx.test.ext:junit", version = "1.1.5" }
 espresso-core = { module = "androidx.test.espresso:espresso-core", version = "3.5.1" }
-uiautomator = { module = "androidx.test.uiautomator:uiautomator", version = "2.2.0" }
+uiautomator = { module = "androidx.test.uiautomator:uiautomator", version = "2.3.0" }
 benchmark-macro-junit4 = { module = "androidx.benchmark:benchmark-macro-junit4", version = "1.2.3" }
 
 # Room
@@ -102,7 +102,7 @@ ktlint = { id = "org.jlleitschuh.gradle.ktlint", version = "11.6.1" }
 dependency-guard = { id = "com.dropbox.dependency-guard", version = "0.5.0" }
 appdistribution = { id = "com.google.firebase.appdistribution", version = "4.2.0" }
 firebase-perf = { id = "com.google.firebase.firebase-perf", version = "1.4.2" }
-detekt = { id = "io.gitlab.arturbosch.detekt", version = "1.23.5" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version = "1.23.6" }
 kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 
