@@ -30,7 +30,7 @@ mockk = { module = "io.mockk:mockk", version = "1.13.10" }
 konsist = { module = "com.lemonappdev:konsist", version = "0.14.0" }
 
 # Compose
-compose-bom = { module = "androidx.compose:compose-bom", version = "2024.03.00" }
+compose-bom = { module = "androidx.compose:compose-bom", version = "2024.04.00" }
 compose-ui = { module = "androidx.compose.ui:ui" }
 compose-material = { module = "androidx.compose.material:material" }
 compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
