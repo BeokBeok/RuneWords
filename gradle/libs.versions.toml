@@ -1,10 +1,10 @@
 [versions]
 jUnit5 = "5.10.2"
 composeCompiler = "1.5.3"
-hilt = "2.51"
+hilt = "2.51.1"
 coroutines = "1.8.0"
 kotlin = "1.9.10"
-gradle = "8.3.0"
+gradle = "8.3.2"
 jacoco = "0.8.7"
 room = "2.6.0-rc01"
 ksp = "1.9.10-1.0.13"
@@ -40,7 +40,7 @@ constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayou
 navigation-compose = { module = "androidx.navigation:navigation-compose", version = "2.7.7" }
 
 # Firebase
-firebase-bom = { module = "com.google.firebase:firebase-bom", version = "32.8.0" }
+firebase-bom = { module = "com.google.firebase:firebase-bom", version = "32.8.1" }
 firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx" }
 firebase-firestore-ktx = { module = "com.google.firebase:firebase-firestore-ktx" }
 firebase-crashlytics-ktx = { module = "com.google.firebase:firebase-crashlytics-ktx" }

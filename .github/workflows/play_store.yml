@@ -35,17 +35,6 @@ jobs:
       - name: Create assets
         run: echo '${{ secrets.INTEGRITY_JSON }}' > ./app/src/main/assets/integrity.json
 
-      - name: Clean Managed Devices
-        run: ./gradlew cleanManagedDevices --unused-only
-
-      - name: Generate Baseline Profile
-        run: |
-          ./gradlew :benchmark:pixel2Api31BenchmarkAndroidTest -Pandroid.testoptions.manageddevices.emulator.gpu="swiftshader_indirect" -Pandroid.testInstrumentationRunnerArguments.androidx.benchmark.enabledRules=BaselineProfile -Dorg.gradle.workers.max=4
-
-      - name: Move & Rename Baseline Profiles
-        run: |
-          mv -f benchmark/build/outputs/managed_device_android_test_additional_output/benchmark/pixel2Api31/ExampleStartupBenchmark_generate-startup-prof.txt app/src/main/baseline-prof.txt
-
       - name: Extract existing version code
         run: |
           version_code=$(grep "VERSION_CODE" ./build-logic/convention/src/main/java/plugin/AndroidApplicationConventionPlugin.kt | awk '{print $5}')
