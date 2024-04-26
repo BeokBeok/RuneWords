@@ -54,7 +54,7 @@ dependencies {
     implementation(libs.play.integrity)
 
     implementation(libs.retrofit)
-    implementation(libs.retrofit.kotlinx.serialization.converter)
+    implementation(libs.converter.kotlinx.serialization)
     implementation(libs.okhttp3)
 
     implementation(libs.google.auth.library.oauth2.http)
