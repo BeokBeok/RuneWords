@@ -8,7 +8,6 @@ import com.beok.runewords.integrity.data.IntegrityRepositoryImpl
 import com.beok.runewords.integrity.domain.IntegrityRepository
 import com.google.android.play.core.integrity.IntegrityManagerFactory
 import com.google.android.play.core.integrity.StandardIntegrityManager
-import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -18,6 +17,7 @@ import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
+import retrofit2.converter.kotlinx.serialization.asConverterFactory
 import retrofit2.Retrofit
 
 @Module

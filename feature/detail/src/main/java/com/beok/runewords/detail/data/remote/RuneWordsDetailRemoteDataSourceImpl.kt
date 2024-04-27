@@ -1,10 +1,10 @@
 package com.beok.runewords.detail.data.remote
 
-import com.beok.runewords.common.ext.await
 import com.beok.runewords.detail.data.model.RuneWordsDetailResponse
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
