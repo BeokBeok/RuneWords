@@ -1,6 +1,5 @@
 package com.beok.runewords.integrity.data
 
-import com.beok.runewords.common.ext.await
 import com.beok.runewords.integrity.data.model.IntegrityRequest
 import com.beok.runewords.integrity.data.model.IntegrityResponse
 import com.google.android.play.core.integrity.StandardIntegrityManager
@@ -9,6 +8,7 @@ import com.google.auth.oauth2.GoogleCredentials
 import com.google.auth.oauth2.ServiceAccountCredentials
 import java.io.InputStream
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
