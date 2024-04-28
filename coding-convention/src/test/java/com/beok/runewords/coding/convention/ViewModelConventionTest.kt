@@ -12,7 +12,7 @@ internal class ViewModelConventionTest {
         Konsist.scopeFromProject()
             .classes()
             .withNameEndingWith("ViewModel")
-            .assertTrue(function = KoClassDeclaration::hasTestClass)
+            .assertTrue(function = KoClassDeclaration::hasTestClasses)
     }
 
     @Test

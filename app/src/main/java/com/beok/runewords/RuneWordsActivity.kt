@@ -63,9 +63,9 @@ internal class RuneWordsActivity : ComponentActivity() {
         if (result.data == null) return@registerForActivityResult
         if (result.resultCode == REQ_IN_APP_UPDATE) {
             Toast.makeText(this, R.string.downloading, Toast.LENGTH_SHORT).show()
-            if (result.resultCode != Activity.RESULT_OK) {
-                Toast.makeText(this, R.string.downloading_failed, Toast.LENGTH_SHORT).show()
-            }
+        }
+        if (result.resultCode != Activity.RESULT_OK) {
+            Toast.makeText(this, R.string.downloading_failed, Toast.LENGTH_SHORT).show()
         }
     }
 
