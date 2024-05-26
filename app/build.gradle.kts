@@ -31,7 +31,7 @@ android {
             }
         }
         create("benchmark") {
-            signingConfig = signingConfigs.getByName("debug")
+            signingConfig = signingConfigs.named("debug").get()
             matchingFallbacks += listOf("release")
             isDebuggable = false
         }
