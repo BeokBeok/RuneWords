@@ -21,6 +21,7 @@ internal class AndroidLibraryRoomConventionPlugin : Plugin<Project> {
 
             extensions.configure<KspExtension> {
                 arg(RoomSchemaArgProvider(File(projectDir, "schemas")))
+                arg("room.generateKotlin", "true")
             }
 
             dependencies {
