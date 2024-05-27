@@ -27,7 +27,7 @@ junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.re
 junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "jUnit5" }
 assertj-core = { module = "org.assertj:assertj-core", version = "3.25.3" }
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
-mockk = { module = "io.mockk:mockk", version = "1.13.10" }
+mockk = { module = "io.mockk:mockk", version = "1.13.11" }
 konsist = { module = "com.lemonappdev:konsist", version = "0.15.1" }
 
 # Compose
