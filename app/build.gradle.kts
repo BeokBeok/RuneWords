@@ -9,6 +9,7 @@ plugins {
     alias(libs.plugins.runewords.android.detekt)
     alias(libs.plugins.runewords.android.application.jacoco)
     alias(libs.plugins.runewords.android.kotlinx.serialization)
+    id("com.joetr.compose.guard")
 }
 
 android {
