@@ -6,7 +6,7 @@ coroutines = "1.8.1"
 kotlin = "1.9.24"
 gradle = "8.3.2"
 jacoco = "0.8.7"
-room = "2.7.0-alpha02"
+room = "2.7.0-alpha03"
 ksp = "1.9.24-1.0.20"
 retrofit = "2.11.0"
 
@@ -25,7 +25,7 @@ leakcanary-android = { module = "com.squareup.leakcanary:leakcanary-android", ve
 # Test
 junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "jUnit5" }
 junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "jUnit5" }
-assertj-core = { module = "org.assertj:assertj-core", version = "3.25.3" }
+assertj-core = { module = "org.assertj:assertj-core", version = "3.26.0" }
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
 mockk = { module = "io.mockk:mockk", version = "1.13.11" }
 konsist = { module = "com.lemonappdev:konsist", version = "0.15.1" }
