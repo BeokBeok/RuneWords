@@ -70,7 +70,7 @@ detekt-gradle = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", v
 ksp-gradle = { module = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
 
 # Benchmark
-junit = { module = "androidx.test.ext:junit", version = "1.1.5" }
+junit = { module = "androidx.test.ext:junit", version = "1.2.1" }
 espresso-core = { module = "androidx.test.espresso:espresso-core", version = "3.6.1" }
 uiautomator = { module = "androidx.test.uiautomator:uiautomator", version = "2.3.0" }
 benchmark-macro-junit4 = { module = "androidx.benchmark:benchmark-macro-junit4", version = "1.2.4" }
