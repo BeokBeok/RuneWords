@@ -447,7 +447,7 @@
     <string name="rune_word_ice_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>레벨 상승 시 100% 확률로 40 레벨 눈보라 시전<br></font>
-        <font color=\'#000000\'>타격 시 25% 확률로 22 레벨 서릿발 노바 시전<br></font>
+        <font color=\'#000000\'>타격 시 25% 확률로 22 레벨 서릿발 시전<br></font>
         <font color=\'#000000\'>장착 시 18 레벨 신성한 빙결 오라 효과 적용<br></font>
         <font color=\'#000000\'>공격 속도 +20%<br></font>
         <font color=\'#cc0029\'>피해 +140~210% 증가<br></font>
