@@ -1,6 +1,6 @@
 [versions]
 jUnit5 = "5.10.3"
-hilt = "2.51.1"
+hilt = "2.52"
 coroutines = "1.8.1"
 kotlin = "2.0.0"
 gradle = "8.5.2"
