@@ -94,7 +94,7 @@ google-auth-library-oauth2-http = { module = "com.google.auth:google-auth-librar
 [plugins]
 android-application = { id = "com.android.application", version.ref = "gradle" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
-android-junit5 = { id = "de.mannodermaus.android-junit5", version = "1.10.0.0" }
+android-junit5 = { id = "de.mannodermaus.android-junit5", version = "1.11.0.0" }
 google-services = { id = "com.google.gms.google-services", version = "4.4.2" }
 hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 firebase-crashlytics = { id = "com.google.firebase.crashlytics", version = "3.0.2" }
