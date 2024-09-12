@@ -2,11 +2,11 @@
 jUnit5 = "5.11.0"
 hilt = "2.52"
 coroutines = "1.8.1"
-kotlin = "2.0.0"
+kotlin = "2.0.20"
 gradle = "8.5.2"
 jacoco = "0.8.7"
 room = "2.7.0-alpha06"
-ksp = "2.0.0-1.0.24"
+ksp = "2.0.20-1.0.25"
 retrofit = "2.11.0"
 
 [libraries]
