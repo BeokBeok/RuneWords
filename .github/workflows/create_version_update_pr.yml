@@ -1,0 +1,87 @@
+name: Create version update PR
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - release/**
+
+jobs:
+  create_version_update_pr:
+    if: github.event.created
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Cache Gradle
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      - name: Download and install GitHub CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gh
+          gh --version
+
+      - name: Checkout version-update branch
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          git fetch origin
+          
+          if git ls-remote --exit-code --heads origin version-update; then
+            echo "'version-update' branch exists. Try delete remote branch"
+            git push origin --delete version-update
+          else
+            echo "'version-update' branch not exist."
+          fi
+          
+          git checkout main
+          git pull origin main
+          git checkout -b version-update
+
+      - name: Get current MINOR_VERSION and bump it
+        id: bump
+        run: |
+          FILE=./build-logic/convention/src/main/java/plugin/AndroidApplicationConventionPlugin.kt
+
+          # Read current MINOR_VERSION value
+          CURRENT_MINOR=$(grep 'MINOR_VERSION' $FILE | grep -o '[0-9]\+')
+          echo "Current MINOR_VERSION: $CURRENT_MINOR"
+
+          # Increment by 1
+          NEXT_MINOR=$((CURRENT_MINOR + 1))
+          echo "Next MINOR_VERSION: $NEXT_MINOR"
+
+          # Replace value in the file
+          sed -i "s/MINOR_VERSION = $CURRENT_MINOR/MINOR_VERSION = $NEXT_MINOR/" $FILE
+          
+          # Output for next steps
+          echo "file=$FILE" >> "$GITHUB_OUTPUT"
+          echo "next_minor=$NEXT_MINOR" >> "$GITHUB_OUTPUT"
+
+      - name: Commit and push
+        run: |
+          git add ${{ steps.bump.outputs.file }}
+          git status
+          git diff --cached
+          git commit -m "Update MINOR_VERSION"
+          git push origin version-update
+
+      - name: Create PR
+        run: |
+          pr_url=$(gh pr create --base main --head version-update --title "MINOR_VERSION을 ${{ steps.bump.outputs.next_minor }}로 업데이트합니다." --body "자동으로 생성되었습니다.")
+          
+          # 빈 커밋을 푸시하여 CI가 동작되도록 합니다.
+          git commit --allow-empty -m "for CI"
+          git push origin version-update
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
