@@ -76,10 +76,8 @@ jobs:
           git commit -m "Update MINOR_VERSION"
           git push origin version-update
 
-      - name: Authenticate GitHub CLI
-        run: |
-          echo "${{ secrets.PAT_TOKEN }}" | gh auth login --with-token
-
       - name: Create PR
         run: |
           pr_url=$(gh pr create --base main --head version-update --title "MINOR_VERSION을 ${{ steps.bump.outputs.next_minor }}로 업데이트합니다." --body "자동으로 생성되었습니다.")
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
