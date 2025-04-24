@@ -9,6 +9,7 @@ concurrency:
 
 jobs:
   build:
+    if: github.head_ref != 'version-update'
     runs-on: macos-latest
 
     steps:        
