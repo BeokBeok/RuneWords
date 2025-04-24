@@ -9,6 +9,7 @@ concurrency:
 
 jobs:
   build:
+    if: github.event.pull_request.user.login != 'github-actions[bot]'
     runs-on: macos-latest
 
     steps:        
