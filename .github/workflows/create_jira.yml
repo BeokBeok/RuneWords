@@ -8,17 +8,17 @@ on:
 
 jobs:
   create-jira-ticket:
-    if: startsWith(github.event.comment.body, 'mkticket ')
+    if: endsWith(github.event.comment.body, '티켓생성')
     runs-on: ubuntu-latest
     steps:
       - name: Extract ticket title
         id: ticket
         run: |
           RAW_COMMENT="${{ github.event.comment.body }}"
-          if [[ "$RAW_COMMENT" =~ ^mkticket[[:space:]]+(.+) ]]; then
+          if [[ "$RAW_COMMENT" =~ ^(.+)[[:space:]]+티켓생성$ ]]; then
             TITLE="${BASH_REMATCH[1]}"
           else
-            echo "Error: Command must start with 'mkticket ' followed by a title."
+            echo "Error: Command must end with '티켓생성'."
             exit 1
           fi
             
