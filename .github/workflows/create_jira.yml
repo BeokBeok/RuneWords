@@ -41,6 +41,7 @@ jobs:
           COMMENT=$(gh api repos/$REPO/pulls/comments/$REPLY_TO_ID)
           COMMENT_URL=$(echo "$COMMENT" | jq -r '.html_url')
           COMMENT_CONTENT=$(echo "$COMMENT" | jq -r '.body')
+          echo "코맨트 콘텐츠는 $COMMENT_CONTENT"
           
           echo "comment_url=$COMMENT_URL" >> $GITHUB_OUTPUT
           echo "comment_content=$COMMENT_CONTENT" >> $GITHUB_OUTPUT 
