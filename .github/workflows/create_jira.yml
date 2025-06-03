@@ -45,6 +45,7 @@ jobs:
           echo "comment_url=$COMMENT_URL" >> $GITHUB_OUTPUT
 
       - name: Create Jira Ticket
+        id: create_ticket
         run: |
           curl --request POST \
             --url 'https://beokbeok.atlassian.net/rest/api/3/issue' \
@@ -65,8 +66,17 @@ jobs:
                       "type": "paragraph",
                       "content": [
                         {
-                          "text": "${{ steps.comment.outputs.comment_url }} 와 관련된 내용입니다.",
-                          "type": "text"
+                          "type": "text",
+                          "text": "코맨트 링크",
+                          "marks": [
+                            {
+                              "type": "link",
+                              "attrs": {
+                                "href": "${{ steps.comment.outputs.comment_url }}"
+                              }
+                            }
+                          ]
+                          
                         }
                       ]
                     }
