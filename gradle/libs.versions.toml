@@ -1,16 +1,16 @@
 [versions]
 jUnit5 = "5.11.0"
-hilt = "2.52"
+hilt = "2.55"
 coroutines = "1.8.1"
-kotlin = "2.0.20"
+kotlin = "2.1.10"
 gradle = "8.9.1"
 jacoco = "0.8.7"
-room = "2.7.0-alpha07"
+room = "2.7.1"
 ksp = "2.0.20-1.0.25"
 retrofit = "2.11.0"
 
 [libraries]
-core-ktx = { module = "androidx.core:core-ktx", version = "1.13.1" }
+core-ktx = { module = "androidx.core:core-ktx", version = "1.16.0" }
 core-splashscreen = { module = "androidx.core:core-splashscreen", version = "1.0.1" }
 material = { module = "com.google.android.material:material", version = "1.12.0" }
 play-services-tasks = { module = "com.google.android.gms:play-services-tasks", version = "18.2.0" }
@@ -27,21 +27,21 @@ junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", vers
 assertj-core = { module = "org.assertj:assertj-core", version = "3.26.3" }
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
 mockk = { module = "io.mockk:mockk", version = "1.13.12" }
-konsist = { module = "com.lemonappdev:konsist", version = "0.15.1" }
+konsist = { module = "com.lemonappdev:konsist", version = "0.17.1" }
 
 # Compose
-compose-bom = { module = "androidx.compose:compose-bom", version = "2024.09.01" }
+compose-bom = { module = "androidx.compose:compose-bom", version = "2025.05.01" }
 compose-ui = { module = "androidx.compose.ui:ui" }
 compose-material = { module = "androidx.compose.material:material" }
 compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
 compose-runtime-livedata = { module = "androidx.compose.runtime:runtime-livedata" }
 compose-material-icons-core = { module = "androidx.compose.material:material-icons-core" }
-activity-compose = { module = "androidx.activity:activity-compose", version = "1.9.2" }
-constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayout-compose", version = "1.0.1" }
-navigation-compose = { module = "androidx.navigation:navigation-compose", version = "2.8.0" }
+activity-compose = { module = "androidx.activity:activity-compose", version = "1.10.1" }
+constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayout-compose", version = "1.1.1" }
+navigation-compose = { module = "androidx.navigation:navigation-compose", version = "2.9.0" }
 
 # Firebase
-firebase-bom = { module = "com.google.firebase:firebase-bom", version = "33.2.0" }
+firebase-bom = { module = "com.google.firebase:firebase-bom", version = "33.14.0" }
 firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx" }
 firebase-firestore-ktx = { module = "com.google.firebase:firebase-firestore-ktx" }
 firebase-crashlytics-ktx = { module = "com.google.firebase:firebase-crashlytics-ktx" }
@@ -80,7 +80,7 @@ room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
 room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
 
 # Kotlinx-serialization
-kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version = "1.7.1" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version = "1.7.3" }
 
 # app startup
 startup-runtime = { module = "androidx.startup:startup-runtime", version = "1.1.1" }
@@ -98,10 +98,10 @@ kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 android-junit5 = { id = "de.mannodermaus.android-junit5", version = "1.11.0.0" }
 google-services = { id = "com.google.gms.google-services", version = "4.4.2" }
 hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
-firebase-crashlytics = { id = "com.google.firebase.crashlytics", version = "3.0.2" }
+firebase-crashlytics = { id = "com.google.firebase.crashlytics", version = "3.0.3" }
 ktlint = { id = "org.jlleitschuh.gradle.ktlint", version = "11.6.1" }
 dependency-guard = { id = "com.dropbox.dependency-guard", version = "0.5.0" }
-appdistribution = { id = "com.google.firebase.appdistribution", version = "5.0.0" }
+appdistribution = { id = "com.google.firebase.appdistribution", version = "5.1.1" }
 firebase-perf = { id = "com.google.firebase.firebase-perf", version = "1.4.2" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version = "1.23.6" }
 kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }

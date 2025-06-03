@@ -144,7 +144,7 @@ internal class RuneWordsActivity : ComponentActivity() {
         }
         inAppUpdateViewModel.handleEvent(
             event = InAppUpdateContract.Event.CheckInAppUpdateType(
-                version = packageManager.versionName
+                version = packageManager.versionName.orEmpty()
             )
         )
     }
