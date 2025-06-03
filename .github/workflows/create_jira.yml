@@ -42,10 +42,12 @@ jobs:
           COMMENT_URL=$(echo "$COMMENT" | jq -r '.html_url')
           
           echo "comment_url=$COMMENT_URL" >> $GITHUB_OUTPUT
+          echo "comment=$COMMENT" >> $GITHUB_OUTPUT 
 
       - name: Create Jira Ticket
+        id: create_ticket
         run: |
-          curl --request POST \
+          RESPONSE=$(curl --request POST \
             --url 'https://beokbeok.atlassian.net/rest/api/3/issue' \
             --user 'kekemusa37@gmail.com:${{ secrets.JIRA_API_TOKEN }}' \
             --header 'Accept: application/json' \
@@ -64,7 +66,7 @@ jobs:
                       "type": "paragraph",
                       "content": [
                         {
-                          "text": "${{ steps.comment.outputs.comment_url }} 와 관련된 내용입니다.",
+                          "text": "[코맨트](${{ steps.comment.outputs.comment_url }}) 내용\n${{ steps.comment.outputs.comment }}",
                           "type": "text"
                         }
                       ]
@@ -75,4 +77,8 @@ jobs:
                   "name": "Task"
                 }
               }
-            }'
+            }')
+          
+          # Extract the ticket key from response
+          TICKET_KEY=$(echo $RESPONSE | jq -r '.key')
+          echo "ticket_key=$TICKET_KEY" >> $GITHUB_OUTPUT
