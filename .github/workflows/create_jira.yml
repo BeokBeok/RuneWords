@@ -24,7 +24,7 @@ jobs:
             
           echo "title=$TITLE" >> $GITHUB_OUTPUT
 
-      - name: Find referenced comment URL
+      - name: Find referenced comment URL and content
         id: comment
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -40,9 +40,10 @@ jobs:
           
           COMMENT=$(gh api repos/$REPO/pulls/comments/$REPLY_TO_ID)
           COMMENT_URL=$(echo "$COMMENT" | jq -r '.html_url')
+          COMMENT_CONTENT=$(echo "$COMMENT" | jq -r '.body')
           
           echo "comment_url=$COMMENT_URL" >> $GITHUB_OUTPUT
-          echo "comment=$COMMENT" >> $GITHUB_OUTPUT 
+          echo "comment_content=$COMMENT_CONTENT" >> $GITHUB_OUTPUT 
 
       - name: Create Jira Ticket
         id: create_ticket
@@ -66,7 +67,7 @@ jobs:
                       "type": "paragraph",
                       "content": [
                         {
-                          "text": "[코맨트](${{ steps.comment.outputs.comment_url }}) 내용\n${{ steps.comment.outputs.comment }}",
+                          "text": "[코맨트](${{ steps.comment.outputs.comment_url }}) 내용\n${{ steps.comment.outputs.comment_content }}",
                           "type": "text"
                         }
                       ]
