@@ -1,5 +1,7 @@
 package com.beok.runewords.detail.presentation.navigation
 
+import androidx.compose.foundation.layout.systemBarsPadding
+import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavType
@@ -29,6 +31,7 @@ fun NavGraphBuilder.detailScreen(
         )
     ) {
         DetailRoute(
+            modifier = Modifier.systemBarsPadding(),
             showReviewWriteForm = showReviewWriteForm,
             onRuneClick = onRuneClick
         )

@@ -29,8 +29,11 @@ import com.beok.runewords.tracking.LocalTracker
 import com.beok.runewords.tracking.TrackingConstants
 
 @Composable
-internal fun HomeScreen(onRuneClick: (String) -> Unit) {
-    Column(modifier = Modifier.fillMaxSize()) {
+internal fun HomeScreen(
+    modifier: Modifier = Modifier,
+    onRuneClick: (String) -> Unit
+) {
+    Column(modifier = modifier.fillMaxSize()) {
         HomeContent(onRuneClick = onRuneClick)
     }
 }

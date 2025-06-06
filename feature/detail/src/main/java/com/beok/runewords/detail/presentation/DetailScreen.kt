@@ -59,16 +59,17 @@ import com.google.android.gms.ads.AdView
 
 @Composable
 internal fun DetailRoute(
-    viewModel: DetailViewModel = hiltViewModel(),
     showReviewWriteForm: () -> Unit,
-    onRuneClick: (String) -> Unit
+    onRuneClick: (String) -> Unit,
+    modifier: Modifier = Modifier,
+    viewModel: DetailViewModel = hiltViewModel()
 ) {
     LaunchedEffect(key1 = Unit) {
         showReviewWriteForm()
     }
 
     val state by viewModel.detailState.collectAsState()
-    Column(modifier = Modifier.fillMaxSize()) {
+    Column(modifier = modifier.fillMaxSize()) {
         when (state) {
             is DetailState.Content -> {
                 val runeWords = (state as DetailState.Content).value

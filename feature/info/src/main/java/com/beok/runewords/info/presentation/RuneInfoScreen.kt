@@ -27,10 +27,13 @@ import androidx.compose.ui.unit.dp
 import com.beok.runewords.common.model.Rune
 
 @Composable
-internal fun RuneInfoScreen(rune: Rune?) {
+internal fun RuneInfoScreen(
+    rune: Rune?,
+    modifier: Modifier = Modifier
+) {
     if (rune == null) return
 
-    Column(modifier = Modifier.fillMaxSize()) {
+    Column(modifier = modifier.fillMaxSize()) {
         RuneInfoTopBar(rune)
         RuneInfoContent(
             modifier = Modifier.fillMaxSize(),

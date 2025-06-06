@@ -1,5 +1,7 @@
 package com.beok.runewords.info.presentation.navigation
 
+import androidx.compose.foundation.layout.systemBarsPadding
+import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
@@ -29,6 +31,7 @@ fun NavGraphBuilder.runeInfoScreen() {
         )
     ) { navBackStackEntry ->
         RuneInfoScreen(
+            modifier = Modifier.systemBarsPadding(),
             rune = navBackStackEntry.arguments?.getString(BundleKeyConstants.RUNE_NAME)
                 ?.let(Rune::findByName)
         )

@@ -45,12 +45,13 @@ import kotlinx.collections.immutable.toImmutableList
 
 @Composable
 internal fun CombinationRoute(
-    viewModel: CombinationViewModel = hiltViewModel(),
     onRuneInfoClick: (String) -> Unit,
-    onRuneWordClick: (String) -> Unit
+    onRuneWordClick: (String) -> Unit,
+    modifier: Modifier = Modifier,
+    viewModel: CombinationViewModel = hiltViewModel()
 ) {
     val state: CombinationState by viewModel.combinationState.collectAsState()
-    Column(modifier = Modifier.fillMaxSize()) {
+    Column(modifier = modifier.fillMaxSize()) {
         when (state) {
             is CombinationState.Content -> {
                 CombinationTopBar(
