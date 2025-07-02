@@ -46,6 +46,5 @@ internal class InAppUpdateViewModel @Inject constructor(
         }
     }
 
-    // ㅇㅇㅇ
 
 }
