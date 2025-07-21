@@ -4,7 +4,6 @@ plugins {
     alias(libs.plugins.runewords.android.application.firebase)
     alias(libs.plugins.runewords.android.hilt)
     id("org.jlleitschuh.gradle.ktlint")
-    alias(libs.plugins.runewords.android.dependency.guard)
     id("com.google.firebase.appdistribution")
     alias(libs.plugins.runewords.android.detekt)
     alias(libs.plugins.runewords.android.application.jacoco)

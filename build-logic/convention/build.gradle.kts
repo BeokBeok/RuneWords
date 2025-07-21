@@ -12,7 +12,6 @@ java {
 dependencies {
     compileOnly(libs.gradle)
     compileOnly(libs.kotlin.gradle)
-    compileOnly(libs.dependency.guard)
     compileOnly(libs.detekt.gradle)
     compileOnly(libs.ksp.gradle)
 }
@@ -42,10 +41,6 @@ gradlePlugin {
         register("androidHilt") {
             id = "runewords.android.hilt"
             implementationClass = "plugin.AndroidHiltConventionPlugin"
-        }
-        register("androidDependencyGuard") {
-            id = "runewords.android.dependency.guard"
-            implementationClass = "plugin.AndroidDependencyGuardConventionPlugin"
         }
         register("androidJUnit") {
             id = "runewords.android.junit"
