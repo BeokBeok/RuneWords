@@ -1,5 +1,6 @@
-package com.beok.runewords.integrity.data
+package com.beok.runewords.integrity.data.remote
 
+import com.beok.runewords.integrity.data.IntegrityAPI
 import com.beok.runewords.integrity.data.model.IntegrityRequest
 import com.beok.runewords.integrity.data.model.IntegrityResponse
 import com.google.android.play.core.integrity.StandardIntegrityManager

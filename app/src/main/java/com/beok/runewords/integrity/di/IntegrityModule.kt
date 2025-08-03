@@ -2,8 +2,8 @@ package com.beok.runewords.integrity.di
 
 import android.content.Context
 import com.beok.runewords.integrity.data.IntegrityAPI
-import com.beok.runewords.integrity.data.IntegrityRemoteDataSource
-import com.beok.runewords.integrity.data.IntegrityRemoteDataSourceImpl
+import com.beok.runewords.integrity.data.remote.IntegrityRemoteDataSource
+import com.beok.runewords.integrity.data.remote.IntegrityRemoteDataSourceImpl
 import com.beok.runewords.integrity.data.IntegrityRepositoryImpl
 import com.beok.runewords.integrity.domain.IntegrityRepository
 import com.google.android.play.core.integrity.IntegrityManagerFactory

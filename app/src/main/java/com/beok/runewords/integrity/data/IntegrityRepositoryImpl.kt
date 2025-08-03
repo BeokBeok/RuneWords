@@ -1,5 +1,6 @@
 package com.beok.runewords.integrity.data
 
+import com.beok.runewords.integrity.data.remote.IntegrityRemoteDataSource
 import com.beok.runewords.integrity.domain.IntegrityRepository
 import com.beok.runewords.integrity.domain.model.AppRecognitionVerdict
 import java.io.InputStream
