@@ -1,6 +1,5 @@
 package com.beok.runewords.combination.presentation.navigation
 
-import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController

@@ -1,5 +1,6 @@
 package com.beok.runewords.detail.presentation
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.util.TypedValue
 import android.view.View
@@ -133,6 +134,7 @@ private fun DetailContent(
                     adUnitId = context.getString(
                         com.beok.runewords.common.R.string.admob_banner_app_key
                     )
+                    @SuppressLint("MissingPermission")
                     loadAd(AdRequest.Builder().build())
                 }
             }
