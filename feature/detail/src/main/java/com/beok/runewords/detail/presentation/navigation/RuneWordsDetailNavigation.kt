@@ -13,7 +13,7 @@ import com.beok.runewords.detail.presentation.DetailRoute
 const val DetailNavigationRoute = "detail"
 
 fun NavController.navigateToDetail(runeWordName: String) {
-    navigate(route = "$DetailNavigationRoute/$runeWordName") {
+    navigate(route = "$DetailNavigationRoute/${runeWordName.removeSuffix(suffix = "_")}") {
         launchSingleTop = true
     }
 }

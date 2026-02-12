@@ -1230,4 +1230,70 @@
         <font color=\'#000000\'>30% Better Chance of Getting Magic Items<br></font>
     ]]>
     </string>
+    <string name="rune_word_authority_option" formatted="false">
+    <![CDATA[
+        <font color=\'#000000\'>10% Chance to cast level 15 Miasma Chain on striking<br></font>
+        <font color=\'#000000\'>2% Chance to cast level 10 Psychic Ward when struck<br></font>
+        <font color=\'#000000\'>+2 to Warlock Skill Levels<br></font>
+        <font color=\'#000000\'>+20% Faster Hit Recovery<br></font>
+        <font color=\'#cc0029\'>+40-60% Enhanced Damage<br></font>
+        <font color=\'#000000\'>+15% enhanced defense<br></font>
+        <font color=\'#000000\'>Fire Resist +30%<br></font>
+        <font color=\'#000000\'>+15% to Maximum Durability<br></font>
+        <font color=\'#000000\'>Requirements -15%<br></font>
+    ]]>
+    </string>
+    <string name="rune_word_coven_option" formatted="false">
+    <![CDATA[
+        <font color=\'#000000\'>5% Chance to cast level 10 Sigil Lethargy when struck<br></font>
+        <font color=\'#000000\'>+1 to All Skills<br></font>
+        <font color=\'#000000\'>+20% Faster Cast Rate<br></font>
+        <font color=\'#cc0029\'>+30-50% Enhanced Defense<br></font>
+        <font color=\'#000000\'>+10 to Vitality<br></font>
+        <font color=\'#000000\'>Fire Resist +30%<br></font>
+        <font color=\'#cc0029\'>+1-5 Life after each Kill<br></font>
+        <font color=\'#cc0029\'>+26-40% Better Chance of Getting Magic Items<br></font>
+    ]]>
+    </string>
+    <string name="rune_word_void_option" formatted="false">
+    <![CDATA[
+        <font color=\'#000000\'>Indestructible<br></font>
+        <font color=\'#000000\'>+2 to All Skills<br></font>
+        <font color=\'#000000\'>+40% Faster Cast Rate<br></font>
+        <font color=\'#000000\'>Adds 3-14 Cold Damage<br></font>
+        <font color=\'#cc0029\'>+10-15% to Magic Skill Damage<br></font>
+        <font color=\'#000000\'>+1 to Abyss (Level 3)<br></font>
+        <font color=\'#cc0029\'>+8-12 to all Attributes<br></font>
+        <font color=\'#000000\'>30% Better Chance of Getting Magic Items<br></font>
+        <font color=\'#000000\'>Level 4 Decrepify (35/35 Charges)<br></font>
+    ]]>
+    </string>
+    <string name="rune_word_vigilance_option" formatted="false">
+    <![CDATA[
+        <font color=\'#000000\'>5% Chance to cast level 10 Ring of Fire when struck<br></font>
+        <font color=\'#000000\'>+10% Faster Run/Walk<br></font>
+        <font color=\'#000000\'>+30% Faster Block Rate<br></font>
+        <font color=\'#000000\'>Adds 3-5 Magic Damage<br></font>
+        <font color=\'#000000\'>+1 to Ring Of Fire (Abyss only)<br></font>
+        <font color=\'#000000\'>+1 to Death Mark (Abyss only)<br></font>
+        <font color=\'#cc0029\'>+75-100% Enhanced Defense<br></font>
+        <font color=\'#cc0029\'>+20-40 to Life<br></font>
+        <font color=\'#cc0029\'>Replenish Life +7<br></font>
+        <font color=\'#cc0029\'>+20-40 to Mana<br></font>
+        <font color=\'#000000\'>+5% to Maximum Poison Resist<br></font>
+        <font color=\'#cc0029\'>All Resistances +25-35<br></font>
+    ]]>
+    </string>
+    <string name="rune_word_ritual_option" formatted="false">
+    <![CDATA[
+        <font color=\'#000000\'>13% Chance to cast level 1 Sigil Death when struck<br></font>
+        <font color=\'#000000\'>+40% Increased Attack Speed%<br></font>
+        <font color=\'#cc0029\'>+250-320% Enhanced Damage<br></font>
+        <font color=\'#cc0029\'>+200-260% Bonus to Attack Rating<br></font>
+        <font color=\'#cc0029\'>+150-250% Damage to Demons<br></font>
+        <font color=\'#000000\'>7% Life stolen per hit<br></font>
+        <font color=\'#000000\'>Slain Monsters Rest in Peace<br></font>
+        <font color=\'#cc0029\'>+3-5 Life after each Kill<br></font>
+    ]]>
+    </string>
 </resources>

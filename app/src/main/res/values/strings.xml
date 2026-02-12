@@ -103,6 +103,13 @@
     <string name="mosaic">Mosaic</string>
     <string name="metamorphosis">Metamorphosis</string>
 
+    <!-- DLC -->
+    <string name="authority">Authority</string>
+    <string name="coven">Coven</string>
+    <string name="void_">Void</string>
+    <string name="vigilance">Vigilance</string>
+    <string name="ritual">Ritual</string>
+
     <!-- RuneWords Type -->
     <string name="all_weapons">All Weapons</string>
     <string name="axe">Axe</string>
@@ -121,4 +128,6 @@
     <string name="club">Club</string>
     <string name="melee_weapon">Melee Weapon</string>
     <string name="spear">Spear</string>
+    <string name="dagger">Dagger</string>
+    <string name="abyss_shield">Abyss Shield</string>
 </resources>

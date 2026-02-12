@@ -1227,7 +1227,73 @@
         <font color=\'#cc0029\'>마나 재생 +15~30%<br></font>
         <font color=\'#cc0029\'>모든 저항 +60~70<br></font>
         <font color=\'#000000\'>괴물에게서 얻는 금화 75% 증가<br></font>
+        <font color=\'#000000\'>마법 아이템 발견 확률 30% 증가<br></font>
+    ]]>
+    </string>
+    <string name="rune_word_authority_option" formatted="false">
+    <![CDATA[
+        <font color=\'#000000\'>타격 시 10% 확률로 15 레벨 독기 사슬 시전<br></font>
+        <font color=\'#000000\'>피격 시 2% 확률로 10 레벨 정신 결계 시전<br></font>
+        <font color=\'#000000\'>악마술사 기술 +2<br></font>
+        <font color=\'#000000\'>타격 회복 속도 +20%<br></font>
+        <font color=\'#cc0029\'>피해 +40~60% 증가<br></font>
+        <font color=\'#000000\'>방어력 +15% 증가<br></font>
+        <font color=\'#000000\'>화염 저항 +30%<br></font>
+        <font color=\'#000000\'>최대 내구도 15% 증가<br></font>
+        <font color=\'#000000\'>착용 조건 -15%<br></font>
+    ]]>
+    </string>
+    <string name="rune_word_coven_option" formatted="false">
+    <![CDATA[
+        <font color=\'#000000\'>피격 시 5% 확률로 10 레벨 인장: 무기력 시전<br></font>
+        <font color=\'#000000\'>모든 기술 +1<br></font>
+        <font color=\'#000000\'>시전 속도 +20%<br></font>
+        <font color=\'#cc0029\'>방어력 +30~50% 증가<br></font>
+        <font color=\'#000000\'>활력 +10<br></font>
+        <font color=\'#000000\'>화염 저항 +30%<br></font>
+        <font color=\'#cc0029\'>적 처치 시 생명력 +1~5<br></font>
+        <font color=\'#cc0029\'>마법 아이템 발견 확률 26~40% 증가<br></font>
+    ]]>
+    </string>
+    <string name="rune_word_void_option" formatted="false">
+    <![CDATA[
+        <font color=\'#000000\'>파괴 불가<br></font>
+        <font color=\'#000000\'>모든 기술 +2<br></font>
+        <font color=\'#000000\'>시전 속도 +40%<br></font>
+        <font color=\'#000000\'>냉기 피해 3-14 추가<br></font>
+        <font color=\'#cc0029\'>마법 기술 피해 +10~15%<br></font>
+        <font color=\'#000000\'>+1 심연<br></font>
+        <font color=\'#cc0029\'>모든 능력치 +8~12<br></font>
         <font color=\'#000000\'>마법 아이템 발견 확률 30% 추가<br></font>
+        <font color=\'#000000\'>4 레벨 노화 (충전 35회)<br></font>
+    ]]>
+    </string>
+    <string name="rune_word_vigilance_option" formatted="false">
+    <![CDATA[
+        <font color=\'#000000\'>피격 시 5% 확률로 10 레벨 화염 고리 시전<br></font>
+        <font color=\'#000000\'>달리기/걷기 속도 +10%<br></font>
+        <font color=\'#000000\'>막기 속도 +30%<br></font>
+        <font color=\'#000000\'>마법 피해 3-5 추가<br></font>
+        <font color=\'#000000\'>+1 화염 고리 (악마술사 전용)<br></font>
+        <font color=\'#000000\'>+1 죽음의 징표 (악마술사 전용)<br></font>
+        <font color=\'#cc0029\'>방어력 +75~100% 증가<br></font>
+        <font color=\'#cc0029\'>생명력 +20~40<br></font>
+        <font color=\'#cc0029\'>생명력 회복 +7<br></font>
+        <font color=\'#cc0029\'>마나 +20~40<br></font>
+        <font color=\'#000000\'>최대 독 저항 +5%<br></font>
+        <font color=\'#cc0029\'>모든 저항 +25~35<br></font>
+    ]]>
+    </string>
+    <string name="rune_word_ritual_option" formatted="false">
+    <![CDATA[
+        <font color=\'#000000\'>피격 시 13% 확률로 1 레벨 인장: 죽음 시전<br></font>
+        <font color=\'#000000\'>공격 속도 +40%<br></font>
+        <font color=\'#cc0029\'>피해 +250~320% 증가<br></font>
+        <font color=\'#cc0029\'>명중률 보너스 200~260%<br></font>
+        <font color=\'#cc0029\'>악마에게 주는 피해 +150~250%<br></font>
+        <font color=\'#000000\'>적중당 생명력 7% 훔침<br></font>
+        <font color=\'#000000\'>처치한 괴물이 안식에 듦<br></font>
+        <font color=\'#cc0029\'>적 처치 시 생명력 +3~5<br></font>
     ]]>
     </string>
 </resources>

@@ -101,6 +101,13 @@
     <string name="mosaic">모자이크</string>
     <string name="metamorphosis">탈태</string>
 
+    <!-- DLC -->
+    <string name="authority">권위</string>
+    <string name="coven">마녀단</string>
+    <string name="void_">공허</string>
+    <string name="vigilance">경계</string>
+    <string name="ritual">의식</string>
+
     <!-- RuneWords Type -->
     <string name="all_weapons">모든 무기</string>
     <string name="axe">도끼</string>
@@ -119,4 +126,6 @@
     <string name="club">클럽</string>
     <string name="melee_weapon">근접 무기</string>
     <string name="spear">창</string>
+    <string name="dagger">단검</string>
+    <string name="abyss_shield">악마술사 방패</string>
 </resources>
