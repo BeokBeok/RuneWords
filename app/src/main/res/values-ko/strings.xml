@@ -127,5 +127,7 @@
     <string name="melee_weapon">근접 무기</string>
     <string name="spear">창</string>
     <string name="dagger">단검</string>
+    <string name="warlock_shield">악마술사 방패</string>
+    <!-- Deprecated 3.0.1 버전 사용자가 없어질 경우 제거 -->
     <string name="abyss_shield">악마술사 방패</string>
 </resources>

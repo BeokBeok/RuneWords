@@ -129,5 +129,7 @@
     <string name="melee_weapon">Melee Weapon</string>
     <string name="spear">Spear</string>
     <string name="dagger">Dagger</string>
+    <string name="warlock_shield">Warlock Shield</string>
+    <!-- Deprecated 3.0.1 버전 사용자가 없어질 경우 제거 -->
     <string name="abyss_shield">Abyss Shield</string>
 </resources>
