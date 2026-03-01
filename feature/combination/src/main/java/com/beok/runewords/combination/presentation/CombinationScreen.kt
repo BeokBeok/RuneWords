@@ -84,12 +84,18 @@ private fun CombinationContent(
     LazyColumn(modifier = Modifier.fillMaxSize()) {
         items(runeWords) { item ->
             if (context.resourceIDByName(item.name) < 1) return@items
-            val isLadder = stringArrayResource(id = R.array.ladder_rune_words)
-                .contains(item.name)
             var runeWordsName =
                 stringResource(id = context.resourceIDByName(item.name))
-            if (isLadder) {
-                runeWordsName = stringResource(id = R.string.ladder_only, runeWordsName)
+            val isLadder = stringArrayResource(id = R.array.ladder_rune_words)
+                .contains(item.name)
+            val isStandard = stringArrayResource(id = R.array.standard_rune_words)
+                .contains(item.name)
+            runeWordsName = if (isLadder) {
+                 stringResource(id = R.string.ladder_only, runeWordsName)
+            } else if (isStandard) {
+                stringResource(id = R.string.standard_only, runeWordsName)
+            } else {
+                runeWordsName
             }
 
             Column(

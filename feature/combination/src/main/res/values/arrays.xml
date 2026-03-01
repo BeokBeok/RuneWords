@@ -8,8 +8,11 @@
         <item>hearth</item>
         <item>temper</item>
         <item>hustle</item>
-        <item>mosaic</item>
         <item>metamorphosis</item>
+    </string-array>
+
+    <string-array name="standard_rune_words">
+        <item>mosaic</item>
     </string-array>
 
 </resources>

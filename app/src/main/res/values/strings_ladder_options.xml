@@ -74,20 +74,6 @@
         <font color=\'#000000\'>All Resistances +10<br></font>
     ]]>
     </string>
-    <string name="rune_word_mosaic_option" formatted="false">
-    <![CDATA[
-        <font color=\'#000000\'>+50% chance for finishing moves to not consume charges<br></font>
-        <font color=\'#000000\'>+2 to Martial Arts (Assassin only)<br></font>
-        <font color=\'#000000\'>+20% Increased Attack Speed<br></font>
-        <font color=\'#cc0029\'>+200-250% Enhanced Damage<br></font>
-        <font color=\'#000000\'>+20% Bonus to Attack Rating<br></font>
-        <font color=\'#000000\'>+7% Life stolen per hit<br></font>
-        <font color=\'#cc0029\'>+8-15% Cold Skill Damage<br></font>
-        <font color=\'#cc0029\'>+8-15% Lightning Skill Damage<br></font>
-        <font color=\'#cc0029\'>+8-15% Fire Skill Damage<br></font>
-        <font color=\'#000000\'>Prevent Monster Heal<br></font>
-    ]]>
-    </string>
     <string name="rune_word_metamorphosis_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>Werewolf strikes grant Mark for 180 seconds<br></font>
