@@ -23,7 +23,7 @@ internal class AndroidBenchmarkConventionPlugin : Plugin<Project> {
                 configureKotlinAndroid(this)
 
                 with(defaultConfig) {
-                    targetSdk = 35
+                    targetSdk = 36
                     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
                 }
                 configureGradleManagedDevices(this)
