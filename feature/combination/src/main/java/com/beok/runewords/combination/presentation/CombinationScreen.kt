@@ -26,13 +26,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringArrayResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.os.bundleOf
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.beok.runewords.combination.R
 import com.beok.runewords.combination.domain.model.RuneWords
 import com.beok.runewords.combination.presentation.model.CombinationState
 import com.beok.runewords.common.ext.resourceIDByName
@@ -84,19 +82,8 @@ private fun CombinationContent(
     LazyColumn(modifier = Modifier.fillMaxSize()) {
         items(runeWords) { item ->
             if (context.resourceIDByName(item.name) < 1) return@items
-            var runeWordsName =
+            val runeWordsName =
                 stringResource(id = context.resourceIDByName(item.name))
-            val isLadder = stringArrayResource(id = R.array.ladder_rune_words)
-                .contains(item.name)
-            val isStandard = stringArrayResource(id = R.array.standard_rune_words)
-                .contains(item.name)
-            runeWordsName = if (isLadder) {
-                 stringResource(id = R.string.ladder_only, runeWordsName)
-            } else if (isStandard) {
-                stringResource(id = R.string.standard_only, runeWordsName)
-            } else {
-                runeWordsName
-            }
 
             Column(
                 modifier = Modifier

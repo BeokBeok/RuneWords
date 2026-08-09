@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="ladder_only">[ladder] %s</string>
-    <string name="standard_only">[standard] %s</string>
-</resources>
