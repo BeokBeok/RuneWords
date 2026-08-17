@@ -1,10 +1,3 @@
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
-        maven("https://plugins.gradle.org/m2/")
-    }
-}
 
 subprojects {
     apply(plugin = "org.jlleitschuh.gradle.ktlint")
