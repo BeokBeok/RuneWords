@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string-array name="ladder_rune_words">
-        <item>bulwark</item>
-        <item>cure</item>
-        <item>ground</item>
-        <item>hearth</item>
-        <item>temper</item>
-        <item>hustle</item>
-        <item>metamorphosis</item>
-    </string-array>
-
     <string-array name="standard_rune_words">
         <item>mosaic</item>
     </string-array>

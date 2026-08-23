@@ -84,7 +84,7 @@
     <string name="wind">Wind</string>
     <string name="prudence">Prudence</string>
 
-    <!-- Ladder RuneWords List (2.4) -->
+    <!-- RuneWords List (2.4) -->
     <string name="pattern">Pattern</string>
     <string name="wisdom">Wisdom</string>
     <string name="flickering_flame">Flickering Flame</string>
@@ -93,7 +93,7 @@
     <string name="unbending_will">Unbending Will</string>
     <string name="obsession">Obsession</string>
 
-    <!-- Ladder RuneWords List (2.6) -->
+    <!-- RuneWords List (2.6) -->
     <string name="bulwark">Bulwark</string>
     <string name="cure">Cure</string>
     <string name="ground">Ground</string>
