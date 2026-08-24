@@ -1,7 +1,7 @@
 [versions]
 jUnit5 = "5.11.0"
 hilt = "2.55"
-coroutines = "1.8.1"
+coroutines = "1.11.0"
 kotlin = "2.1.10"
 gradle = "8.9.1"
 jacoco = "0.8.7"
