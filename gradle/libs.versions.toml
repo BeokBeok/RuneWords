@@ -1,5 +1,5 @@
 [versions]
-jUnit5 = "5.11.0"
+jUnit5 = "6.1.3"
 hilt = "2.55"
 coroutines = "1.8.1"
 kotlin = "2.1.10"
