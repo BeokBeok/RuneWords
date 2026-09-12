@@ -57,7 +57,8 @@ internal fun Project.configureJacoco(
 
     val jacocoTestReport = tasks.register("jacocoTestReport")
 
-    androidComponentsExtension.onVariants { variant ->
+    val debugSelector = androidComponentsExtension.selector().withBuildType("debug")
+    androidComponentsExtension.onVariants(debugSelector) { variant ->
         val testTaskName = "test${variant.name.capitalized()}UnitTest"
 
         val reportTask =
