@@ -10,6 +10,9 @@ import org.gradle.kotlin.dsl.getByType
 import extension.testImplementation
 import extension.testRuntimeOnly
 
+import org.gradle.api.tasks.testing.Test
+import org.gradle.kotlin.dsl.withType
+
 internal class AndroidJUnitConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
@@ -20,10 +23,15 @@ internal class AndroidJUnitConventionPlugin : Plugin<Project> {
                     unitTests.isReturnDefaultValues = true
                 }
 
+            tasks.withType<Test>().configureEach {
+                useJUnitPlatform()
+            }
+
             dependencies {
                 implementation(libs.findLibrary("junit.jupiter.api").get())
                 testImplementation(libs.findLibrary("assertj.core").get())
                 testRuntimeOnly(libs.findLibrary("junit.jupiter.engine").get())
+                testRuntimeOnly(libs.findLibrary("junit.platform.launcher").get())
 
                 testImplementation(libs.findLibrary("mockk").get())
                 testImplementation(libs.findLibrary("kotlin.test.junit").get())

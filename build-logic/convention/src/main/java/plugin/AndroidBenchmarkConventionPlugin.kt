@@ -1,6 +1,6 @@
 package plugin
 
-import com.android.build.gradle.TestExtension
+import com.android.build.api.dsl.TestExtension
 import config.configureGradleManagedDevices
 import config.configureKotlinAndroid
 import extension.libs
@@ -13,10 +13,7 @@ import org.gradle.kotlin.dsl.dependencies
 internal class AndroidBenchmarkConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
-            with(pluginManager) {
-                apply("com.android.test")
-                apply("org.jetbrains.kotlin.android")
-            }
+            pluginManager.apply("com.android.test")
 
             extensions.configure<TestExtension> {
                 namespace = "com.beok.benchmark"
