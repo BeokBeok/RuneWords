@@ -55,7 +55,7 @@ internal fun Project.configureJacoco(
             .toString()
     }
 
-    val jacocoTestReport = tasks.create("jacocoTestReport")
+    val jacocoTestReport = tasks.register("jacocoTestReport")
 
     androidComponentsExtension.onVariants { variant ->
         val testTaskName = "test${variant.name.capitalized()}UnitTest"
@@ -79,7 +79,9 @@ internal fun Project.configureJacoco(
                 executionData.setFrom(file("${layout.buildDirectory.get().asFile.path}/jacoco/$testTaskName.exec"))
             }
 
-        jacocoTestReport.dependsOn(reportTask)
+        jacocoTestReport.configure {
+            dependsOn(reportTask)
+        }
     }
 
     tasks.withType<Test>().configureEach {
