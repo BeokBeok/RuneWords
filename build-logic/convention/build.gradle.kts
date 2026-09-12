@@ -16,6 +16,12 @@ dependencies {
     compileOnly(libs.ksp.gradle)
 }
 
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+    compilerOptions {
+        freeCompilerArgs.add("-Xskip-metadata-version-check")
+    }
+}
+
 gradlePlugin {
     plugins {
         register("androidApplicationCompose") {
