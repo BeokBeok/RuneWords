@@ -7,7 +7,7 @@ import org.gradle.kotlin.dsl.create
 import org.gradle.kotlin.dsl.invoke
 
 internal fun configureGradleManagedDevices(
-    commonExtension: CommonExtension<*, *, *, *, *, *>
+    commonExtension: CommonExtension
 ) {
     val pixel2 = DeviceConfig(
         device = "Pixel 2",
@@ -15,16 +15,10 @@ internal fun configureGradleManagedDevices(
         systemImageSource = "aosp"
     )
 
-    commonExtension.testOptions {
-        managedDevices {
-            devices {
-                create(pixel2.taskName, ManagedVirtualDevice::class) {
-                    device = pixel2.device
-                    apiLevel = pixel2.apiLevel
-                    systemImageSource = pixel2.systemImageSource
-                }
-            }
-        }
+    commonExtension.testOptions.managedDevices.localDevices.create(pixel2.taskName) {
+        device = pixel2.device
+        apiLevel = pixel2.apiLevel
+        systemImageSource = pixel2.systemImageSource
     }
 }
 

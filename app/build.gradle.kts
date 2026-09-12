@@ -1,3 +1,5 @@
+import com.google.firebase.appdistribution.gradle.firebaseAppDistribution
+
 plugins {
     alias(libs.plugins.runewords.android.application)
     alias(libs.plugins.runewords.android.application.compose)

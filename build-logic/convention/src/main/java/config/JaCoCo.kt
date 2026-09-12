@@ -2,15 +2,18 @@ package config
 
 import com.android.build.api.variant.AndroidComponentsExtension
 import extension.libs
+import java.util.Locale
 import org.gradle.api.Project
 import org.gradle.api.tasks.testing.Test
-import org.gradle.configurationcache.extensions.capitalized
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.register
 import org.gradle.kotlin.dsl.withType
 import org.gradle.testing.jacoco.plugins.JacocoPluginExtension
 import org.gradle.testing.jacoco.plugins.JacocoTaskExtension
 import org.gradle.testing.jacoco.tasks.JacocoReport
+
+private fun String.capitalized(): String =
+    replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
 
 private val coverageExclusions = listOf(
     "**/R.class",
@@ -52,9 +55,10 @@ internal fun Project.configureJacoco(
             .toString()
     }
 
-    val jacocoTestReport = tasks.create("jacocoTestReport")
+    val jacocoTestReport = tasks.register("jacocoTestReport")
 
-    androidComponentsExtension.onVariants { variant ->
+    val debugSelector = androidComponentsExtension.selector().withBuildType("debug")
+    androidComponentsExtension.onVariants(debugSelector) { variant ->
         val testTaskName = "test${variant.name.capitalized()}UnitTest"
 
         val reportTask =
@@ -67,16 +71,18 @@ internal fun Project.configureJacoco(
                 }
 
                 classDirectories.setFrom(
-                    fileTree("$buildDir/tmp/kotlin-classes/${variant.name}") {
+                    fileTree("${layout.buildDirectory.get().asFile.path}/tmp/kotlin-classes/${variant.name}") {
                         exclude(coverageExclusions)
                     }
                 )
 
                 sourceDirectories.setFrom(files("$projectDir/src/main/java"))
-                executionData.setFrom(file("$buildDir/jacoco/$testTaskName.exec"))
+                executionData.setFrom(file("${layout.buildDirectory.get().asFile.path}/jacoco/$testTaskName.exec"))
             }
 
-        jacocoTestReport.dependsOn(reportTask)
+        jacocoTestReport.configure {
+            dependsOn(reportTask)
+        }
     }
 
     tasks.withType<Test>().configureEach {
