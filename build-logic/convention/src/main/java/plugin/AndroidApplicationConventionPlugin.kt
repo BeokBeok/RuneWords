@@ -14,6 +14,8 @@ internal class AndroidApplicationConventionPlugin : Plugin<Project> {
             extensions.configure<ApplicationExtension> {
                 configureKotlinAndroid(this)
 
+                buildFeatures.buildConfig = true
+
                 with(defaultConfig) {
                     targetSdk = 36
                     versionCode = VERSION_CODE
