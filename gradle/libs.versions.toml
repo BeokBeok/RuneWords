@@ -6,7 +6,7 @@ kotlin = "2.4.10"
 gradle = "9.0.1"
 jacoco = "0.8.7"
 room = "2.7.1"
-ksp = "2.3.7"
+ksp = "2.3.12"
 retrofit = "2.11.0"
 
 [libraries]
