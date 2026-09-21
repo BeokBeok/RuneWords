@@ -19,7 +19,7 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import com.beok.runewords.home.BuildConfig
+import com.beok.runewords.BuildConfig
 import com.beok.runewords.inapp.presentation.InAppUpdateContract
 import com.beok.runewords.inapp.presentation.InAppUpdateViewModel
 import com.beok.runewords.integrity.presentation.IntegrityContract
@@ -82,7 +82,7 @@ internal class RuneWordsActivity : ComponentActivity() {
         installSplashScreen()
         super.onCreate(savedInstanceState)
 
-        if (com.beok.runewords.BuildConfig.DEBUG) {
+        if (BuildConfig.DEBUG) {
             refreshAppUpdateType()
         } else {
             checkIntegrity()

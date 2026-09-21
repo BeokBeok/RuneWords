@@ -16,6 +16,10 @@ plugins {
 android {
     namespace = "com.beok.runewords"
 
+    buildFeatures {
+        buildConfig = true
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = true
