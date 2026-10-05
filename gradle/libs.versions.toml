@@ -32,6 +32,7 @@ konsist = { module = "com.lemonappdev:konsist", version = "0.17.1" }
 
 # Compose
 compose-bom = { module = "androidx.compose:compose-bom", version = "2025.05.01" }
+compose-runtime = { module = "androidx.compose.runtime:runtime" }
 compose-ui = { module = "androidx.compose.ui:ui" }
 compose-material = { module = "androidx.compose.material:material" }
 compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
@@ -43,13 +44,13 @@ navigation-compose = { module = "androidx.navigation:navigation-compose", versio
 
 # Firebase
 firebase-bom = { module = "com.google.firebase:firebase-bom", version = "33.14.0" }
-firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx" }
-firebase-firestore-ktx = { module = "com.google.firebase:firebase-firestore-ktx" }
-firebase-crashlytics-ktx = { module = "com.google.firebase:firebase-crashlytics-ktx" }
-firebase-config-ktx = { module = "com.google.firebase:firebase-config-ktx" }
-firebase-perf-ktx = { module = "com.google.firebase:firebase-perf-ktx" }
+firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
+firebase-firestore = { module = "com.google.firebase:firebase-firestore" }
+firebase-crashlytics = { module = "com.google.firebase:firebase-crashlytics" }
+firebase-config = { module = "com.google.firebase:firebase-config" }
+firebase-perf = { module = "com.google.firebase:firebase-perf" }
 firebase-appcheck-playintegrity = { module = "com.google.firebase:firebase-appcheck-playintegrity" }
-firebase-appcheck-ktx = { module = "com.google.firebase:firebase-appcheck-ktx" }
+firebase-appcheck = { module = "com.google.firebase:firebase-appcheck" }
 firebase-appcheck-debug = { module = "com.google.firebase:firebase-appcheck-debug" }
 
 timber = { module = "com.jakewharton.timber:timber", version = "5.0.1" }
@@ -68,6 +69,7 @@ gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
 kotlin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 detekt-gradle = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version = "1.23.8" }
 ksp-gradle = { module = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
+compose-compiler-gradle = { module = "org.jetbrains.kotlin:compose-compiler-gradle-plugin", version.ref = "kotlin" }
 
 # Benchmark
 junit = { module = "androidx.test.ext:junit", version = "1.2.1" }

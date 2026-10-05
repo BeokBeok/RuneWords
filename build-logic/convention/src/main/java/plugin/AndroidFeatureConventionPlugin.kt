@@ -2,6 +2,7 @@ package plugin
 
 import extension.libs
 import extension.implementation
+import extension.testImplementation
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies
@@ -24,6 +25,8 @@ internal class AndroidFeatureConventionPlugin : Plugin<Project> {
                 implementation(project(":tracking"))
 
                 implementation(libs.findLibrary("hilt.navigation.compose").get())
+
+                testImplementation(testFixtures(project(":common")))
             }
         }
     }
