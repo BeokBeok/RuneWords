@@ -6,3 +6,7 @@ plugins {
 android {
     namespace = "com.beok.runewords.home"
 }
+
+dependencies {
+    implementation(libs.core.ktx)
+}

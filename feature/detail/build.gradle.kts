@@ -10,7 +10,12 @@ android {
 }
 
 dependencies {
+    implementation(libs.core.ktx)
+    implementation(libs.constraintlayout.compose)
+
     implementation(libs.play.services.ads)
 
     implementation(libs.firebase.firestore)
+
+    testImplementation(testFixtures(project(":common")))
 }
