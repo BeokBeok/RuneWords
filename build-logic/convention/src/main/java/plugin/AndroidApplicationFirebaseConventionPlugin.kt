@@ -17,13 +17,13 @@ internal class AndroidApplicationFirebaseConventionPlugin : Plugin<Project> {
 
             dependencies {
                 implementation(platform(libs.findLibrary("firebase.bom").get()))
-                implementation(libs.findLibrary("firebase.analytics.ktx").get())
-                implementation(libs.findLibrary("firebase.firestore.ktx").get())
-                implementation(libs.findLibrary("firebase.crashlytics.ktx").get())
-                implementation(libs.findLibrary("firebase.config.ktx").get())
-                implementation(libs.findLibrary("firebase.perf.ktx").get())
+                implementation(libs.findLibrary("firebase.analytics").get())
+                implementation(libs.findLibrary("firebase.firestore").get())
+                implementation(libs.findLibrary("firebase.crashlytics").get())
+                implementation(libs.findLibrary("firebase.config").get())
+                implementation(libs.findLibrary("firebase.perf").get())
                 implementation(libs.findLibrary("firebase.appcheck.playintegrity").get())
-                implementation(libs.findLibrary("firebase.appcheck.ktx").get())
+                implementation(libs.findLibrary("firebase.appcheck").get())
                 implementation(libs.findLibrary("firebase.appcheck.debug").get())
             }
         }

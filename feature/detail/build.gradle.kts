@@ -12,5 +12,5 @@ android {
 dependencies {
     implementation(libs.play.services.ads)
 
-    implementation(libs.firebase.firestore.ktx)
+    implementation(libs.firebase.firestore)
 }

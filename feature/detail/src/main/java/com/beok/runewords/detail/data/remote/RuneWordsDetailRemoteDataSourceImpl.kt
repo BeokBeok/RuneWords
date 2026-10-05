@@ -1,8 +1,8 @@
 package com.beok.runewords.detail.data.remote
 
 import com.beok.runewords.detail.data.model.RuneWordsDetailResponse
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
+import com.google.firebase.firestore.firestore
+import com.google.firebase.Firebase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext

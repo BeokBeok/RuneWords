@@ -12,5 +12,5 @@ android {
 
 dependencies {
     api(platform(libs.firebase.bom))
-    api(libs.firebase.analytics.ktx)
+    api(libs.firebase.analytics)
 }

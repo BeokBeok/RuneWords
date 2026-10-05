@@ -10,7 +10,7 @@ android {
 }
 
 dependencies {
-    implementation(libs.firebase.firestore.ktx)
+    implementation(libs.firebase.firestore)
 
     implementation(libs.kotlinx.collections.immutable)
 }
