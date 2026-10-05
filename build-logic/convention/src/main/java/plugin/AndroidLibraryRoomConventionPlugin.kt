@@ -25,7 +25,7 @@ internal class AndroidLibraryRoomConventionPlugin : Plugin<Project> {
             }
 
             dependencies {
-                implementation(libs.findLibrary("room.ktx").get())
+                implementation(libs.findLibrary("room.runtime").get())
                 ksp(libs.findLibrary("room.compiler").get())
             }
         }

@@ -28,8 +28,6 @@ internal class AndroidBenchmarkConventionPlugin : Plugin<Project> {
 
             dependencies {
                 implementation(libs.findLibrary("junit").get())
-                implementation(libs.findLibrary("espresso.core").get())
-                implementation(libs.findLibrary("uiautomator").get())
                 implementation(libs.findLibrary("benchmark.macro.junit4").get())
             }
         }

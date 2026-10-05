@@ -11,6 +11,9 @@ android {
 }
 
 dependencies {
+    api(platform(libs.compose.bom))
+    api(libs.compose.runtime)
+
     api(platform(libs.firebase.bom))
     api(libs.firebase.analytics)
 }

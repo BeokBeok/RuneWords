@@ -52,7 +52,12 @@ dependencies {
     implementation(project(":feature:detail"))
     implementation(project(":feature:info"))
 
+    implementation(libs.bundles.compose)
+    implementation(libs.activity.compose)
+    implementation(libs.navigation.compose)
+
     implementation(libs.core.splashscreen)
+    implementation(libs.timber)
 
     implementation(libs.play.services.ads)
     implementation(libs.play.review.ktx)
