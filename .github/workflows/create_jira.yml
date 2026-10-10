@@ -13,8 +13,10 @@ jobs:
     steps:
       - name: Extract ticket title
         id: ticket
+        env:
+          RAW_COMMENT: ${{ github.event.comment.body }}
         run: |
-          RAW_COMMENT="${{ github.event.comment.body }}"
+          RAW_COMMENT="${RAW_COMMENT}"
           TRIMMED_COMMENT=$(echo "$RAW_COMMENT" | sed 's/[[:space:]]*티켓생성$//')
           if [ "$TRIMMED_COMMENT" != "$RAW_COMMENT" ]; then
             TITLE="$TRIMMED_COMMENT"
