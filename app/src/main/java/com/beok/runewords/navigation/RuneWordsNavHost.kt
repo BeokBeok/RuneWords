@@ -19,7 +19,8 @@ import com.beok.runewords.info.presentation.navigation.runeInfoScreen
 fun RuneWordsNavHost(
     navController: NavHostController = rememberNavController(),
     startDestination: String = HomeNavigationRoute,
-    showReviewWriteForm: () -> Unit
+    showReviewWriteForm: () -> Unit,
+    showInterstitial: (onFinished: () -> Unit) -> Unit
 ) {
     NavHost(
         navController = navController,
@@ -28,7 +29,9 @@ fun RuneWordsNavHost(
         homeScreen(onRuneClick = navController::navigateToCombination)
         combinationScreen(
             onRuneInfoClick = navController::navigateToRuneInfo,
-            onRuneWordClick = navController::navigateToDetail
+            onRuneWordClick = { runeWordName ->
+                showInterstitial { navController.navigateToDetail(runeWordName) }
+            }
         )
         runeInfoScreen()
         detailScreen(

@@ -20,6 +20,8 @@ class IntegrityViewModel @Inject constructor(
     private val _effect: Channel<IntegrityContract.Effect> = Channel()
     val effect: Flow<IntegrityContract.Effect> get() = _effect.receiveAsFlow()
 
+    private var isChecked = false
+
     init {
         viewModelScope.launch {
             _event.collect(::handleEvent)
@@ -29,6 +31,11 @@ class IntegrityViewModel @Inject constructor(
     fun handleEvent(event: IntegrityContract.Event) {
         when (event) {
             is IntegrityContract.Event.CheckIntegrity -> {
+                if (isChecked) {
+                    event.gcpInputStream.close()
+                    return
+                }
+                isChecked = true
                 viewModelScope.launch {
                     integrityRepository.integrity(
                         requestHash = event.requestHash,
