@@ -29,6 +29,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -45,10 +46,12 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import androidx.core.os.bundleOf
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.LifecycleResumeEffect
 import com.beok.runewords.common.ext.EMPTY
 import com.beok.runewords.common.ext.resourceIDByName
 import com.beok.runewords.common.util.HtmlConverter
 import com.beok.runewords.common.view.ContentLoading
+import com.beok.runewords.detail.BuildConfig
 import com.beok.runewords.detail.R
 import com.beok.runewords.detail.presentation.model.DetailState
 import com.beok.runewords.detail.presentation.model.RuneWordsItem
@@ -96,8 +99,6 @@ private fun DetailContent(
     info: RuneWordsItem,
     onRuneClick: (String) -> Unit
 ) {
-    val deviceCurrentWidth = LocalConfiguration.current.screenWidthDp
-    val applicationContext = LocalContext.current.applicationContext
     ConstraintLayout(modifier = Modifier.fillMaxSize()) {
         val (content, admob) = createRefs()
         Column(
@@ -116,29 +117,48 @@ private fun DetailContent(
             RuneWordsCombination(info = info, onRuneClick = onRuneClick)
             RuneWordsOption(info = info)
         }
-        AndroidView(
+        BannerAd(
             modifier = Modifier.constrainAs(admob) {
                 top.linkTo(content.bottom)
                 start.linkTo(parent.start)
                 end.linkTo(parent.end)
                 bottom.linkTo(parent.bottom)
-            },
-            factory = { context ->
-                AdView(applicationContext).apply {
-                    setAdSize(
-                        AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(
-                            applicationContext,
-                            deviceCurrentWidth
-                        )
-                    )
-                    adUnitId = context.getString(
-                        com.beok.runewords.common.R.string.admob_banner_app_key
-                    )
-                    @SuppressLint("MissingPermission")
-                    loadAd(AdRequest.Builder().build())
-                }
             }
         )
+    }
+}
+
+@Composable
+private fun BannerAd(modifier: Modifier = Modifier) {
+    val deviceCurrentWidth = LocalConfiguration.current.screenWidthDp
+    val applicationContext = LocalContext.current.applicationContext
+    val adView = remember {
+        AdView(applicationContext).apply {
+            setAdSize(
+                AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(
+                    applicationContext,
+                    deviceCurrentWidth
+                )
+            )
+            adUnitId = applicationContext.getString(
+                if (BuildConfig.DEBUG) {
+                    com.beok.runewords.common.R.string.test_admob_banner_app_key
+                } else {
+                    com.beok.runewords.common.R.string.admob_banner_app_key
+                }
+            )
+            @SuppressLint("MissingPermission")
+            loadAd(AdRequest.Builder().build())
+        }
+    }
+    AndroidView(
+        modifier = modifier,
+        factory = { adView },
+        onRelease = AdView::destroy
+    )
+    LifecycleResumeEffect(adView) {
+        adView.resume()
+        onPauseOrDispose { adView.pause() }
     }
 }
 
