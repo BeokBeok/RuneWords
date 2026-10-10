@@ -6,3 +6,8 @@ plugins {
 android {
     namespace = "com.beok.runewords.info"
 }
+
+dependencies {
+    api(libs.compose.runtime)
+    implementation(libs.compose.material.icons.core)
+}

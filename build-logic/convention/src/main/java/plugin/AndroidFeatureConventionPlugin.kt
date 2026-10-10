@@ -23,6 +23,8 @@ internal class AndroidFeatureConventionPlugin : Plugin<Project> {
                 implementation(project(":common"))
                 implementation(project(":tracking"))
 
+                implementation(libs.findBundle("compose").get())
+                implementation(libs.findLibrary("navigation.compose").get())
                 implementation(libs.findLibrary("hilt.navigation.compose").get())
             }
         }

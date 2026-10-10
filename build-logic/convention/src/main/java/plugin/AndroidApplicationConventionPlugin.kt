@@ -15,6 +15,7 @@ internal class AndroidApplicationConventionPlugin : Plugin<Project> {
                 configureKotlinAndroid(this)
 
                 with(defaultConfig) {
+                    applicationId = "com.beok.runewords"
                     targetSdk = 36
                     versionCode = VERSION_CODE
                     versionName = VERSION_NAME

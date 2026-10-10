@@ -2,7 +2,6 @@ package plugin
 
 import com.android.build.api.dsl.LibraryExtension
 import extension.libs
-import extension.implementation
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies
@@ -28,15 +27,14 @@ internal class AndroidJUnitConventionPlugin : Plugin<Project> {
             }
 
             dependencies {
-                implementation(libs.findLibrary("junit.jupiter.api").get())
+                testImplementation(libs.findLibrary("junit.jupiter.api").get())
                 testImplementation(libs.findLibrary("assertj.core").get())
                 testRuntimeOnly(libs.findLibrary("junit.jupiter.engine").get())
                 testRuntimeOnly(libs.findLibrary("junit.platform.launcher").get())
 
                 testImplementation(libs.findLibrary("mockk").get())
                 testImplementation(libs.findLibrary("kotlin.test.junit").get())
-                implementation(libs.findLibrary("kotlinx.coroutines.test").get())
-                testImplementation(libs.findLibrary("konsist").get())
+                testImplementation(libs.findLibrary("kotlinx.coroutines.test").get())
             }
         }
     }

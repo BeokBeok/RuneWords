@@ -8,6 +8,7 @@ android {
 }
 
 dependencies {
-    testImplementation(libs.activity.compose)
-    testImplementation(libs.room.ktx)
+    testImplementation(libs.konsist)
+    testImplementation(libs.lifecycle.viewmodel)
+    testImplementation(libs.room.common)
 }

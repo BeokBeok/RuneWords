@@ -2,10 +2,10 @@ package com.beok.runewords.di
 
 import com.beok.runewords.BuildConfig
 import com.beok.runewords.R
-import com.google.firebase.ktx.Firebase
+import com.google.firebase.Firebase
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings
-import com.google.firebase.remoteconfig.ktx.remoteConfig
+import com.google.firebase.remoteconfig.remoteConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

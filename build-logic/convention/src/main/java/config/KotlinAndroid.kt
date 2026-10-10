@@ -33,17 +33,6 @@ internal fun Project.configureKotlinAndroid(
                         "-opt-in=androidx.compose.ui.ExperimentalComposeUiApi"
                     )
                 )
-                if (project.findProperty("enableMultiModuleComposeReports") == "true") {
-                    val composeMetricsDir = "${rootProject.layout.buildDirectory.get().asFile.absolutePath}/compose_metrics/"
-                    freeCompilerArgs.addAll(
-                        listOf(
-                            "-P",
-                            "plugin:androidx.compose.compiler.plugins.kotlin:reportsDestination=$composeMetricsDir",
-                            "-P",
-                            "plugin:androidx.compose.compiler.plugins.kotlin:metricsDestination=$composeMetricsDir"
-                        )
-                    )
-                }
             }
         }
     }

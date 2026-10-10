@@ -10,7 +10,12 @@ android {
 }
 
 dependencies {
-    implementation(libs.firebase.firestore.ktx)
+    implementation(libs.core.ktx)
+    implementation(libs.compose.material.icons.core)
+
+    implementation(libs.firebase.firestore)
 
     implementation(libs.kotlinx.collections.immutable)
+
+    testImplementation(testFixtures(project(":common")))
 }
