@@ -9,7 +9,6 @@ plugins {
     id("com.google.firebase.appdistribution")
     alias(libs.plugins.runewords.android.detekt)
     alias(libs.plugins.runewords.android.application.jacoco)
-    alias(libs.plugins.runewords.android.kotlinx.serialization)
     id("com.joetr.compose.guard")
 }
 
@@ -62,13 +61,6 @@ dependencies {
     implementation(libs.play.services.ads)
     implementation(libs.play.review.ktx)
     implementation(libs.play.update.ktx)
-    implementation(libs.play.integrity)
-
-    implementation(libs.retrofit)
-    implementation(libs.converter.kotlinx.serialization)
-    implementation(libs.okhttp3)
-
-    implementation(libs.google.auth.library.oauth2.http)
 
     implementation(libs.startup.runtime)
 }

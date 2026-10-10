@@ -22,8 +22,6 @@ import androidx.lifecycle.repeatOnLifecycle
 import com.beok.runewords.BuildConfig
 import com.beok.runewords.inapp.presentation.InAppUpdateContract
 import com.beok.runewords.inapp.presentation.InAppUpdateViewModel
-import com.beok.runewords.integrity.presentation.IntegrityContract
-import com.beok.runewords.integrity.presentation.IntegrityViewModel
 import com.beok.runewords.navigation.RuneWordsNavHost
 import com.beok.runewords.tracking.LocalTracker
 import com.beok.runewords.tracking.Tracking
@@ -38,8 +36,6 @@ import com.google.android.play.core.common.IntentSenderForResultStarter
 import com.google.android.play.core.install.model.AppUpdateType
 import com.google.android.play.core.install.model.UpdateAvailability
 import com.google.android.play.core.review.ReviewManagerFactory
-import com.google.firebase.crashlytics.crashlytics
-import com.google.firebase.Firebase
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import kotlinx.coroutines.delay
@@ -54,7 +50,6 @@ internal class RuneWordsActivity : ComponentActivity() {
     @Inject
     lateinit var inAppUpdateManager: AppUpdateManager
 
-    private val integrityViewModel by viewModels<IntegrityViewModel>()
     private val inAppUpdateViewModel by viewModels<InAppUpdateViewModel>()
 
     private val inAppUpdateLauncher = registerForActivityResult(
@@ -82,11 +77,7 @@ internal class RuneWordsActivity : ComponentActivity() {
         installSplashScreen()
         super.onCreate(savedInstanceState)
 
-        if (BuildConfig.DEBUG) {
-            refreshAppUpdateType()
-        } else {
-            checkIntegrity()
-        }
+        refreshAppUpdateType()
         handleEffect()
     }
 
@@ -127,15 +118,6 @@ internal class RuneWordsActivity : ComponentActivity() {
         }
     }
 
-    private fun checkIntegrity() {
-        integrityViewModel.handleEvent(
-            event = IntegrityContract.Event.CheckIntegrity(
-                requestHash = "aGVsbG8gd29scmQgdGhlcmU",
-                gcpInputStream = assets.open("integrity.json")
-            )
-        )
-    }
-
     private fun refreshAppUpdateType() {
         val packageManager = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             packageManager.getPackageInfo(packageName, PackageManager.PackageInfoFlags.of(0L))
@@ -150,22 +132,6 @@ internal class RuneWordsActivity : ComponentActivity() {
     }
 
     private fun handleEffect() {
-        lifecycleScope.launch {
-            repeatOnLifecycle(state = Lifecycle.State.CREATED) {
-                integrityViewModel.effect.collect { effect ->
-                    when (effect) {
-                        IntegrityContract.Effect.Recognize -> {
-                            refreshAppUpdateType()
-                        }
-
-                        is IntegrityContract.Effect.UnRecognize -> {
-                            Firebase.crashlytics.recordException(effect.throwable)
-                            refreshAppUpdateType()
-                        }
-                    }
-                }
-            }
-        }
         lifecycleScope.launch {
             repeatOnLifecycle(state = Lifecycle.State.CREATED) {
                 inAppUpdateViewModel.effect.collect { effect ->
