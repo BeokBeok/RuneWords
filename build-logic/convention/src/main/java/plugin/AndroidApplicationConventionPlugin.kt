@@ -20,15 +20,6 @@ internal class AndroidApplicationConventionPlugin : Plugin<Project> {
                     versionCode = VERSION_CODE
                     versionName = VERSION_NAME
                 }
-
-                packaging {
-                    resources {
-                        excludes += "META-INF/LICENSE.md"
-                        excludes += "META-INF/LICENSE-notice.md"
-                        excludes += "META-INF/INDEX.LIST"
-                        excludes += "META-INF/DEPENDENCIES"
-                    }
-                }
             }
         }
     }
