@@ -23,3 +23,8 @@
 # Firebase FireStore
 -keepclassmembers class com.beok.runewords.combination.data.model.** { *; }
 -keepclassmembers class com.beok.runewords.detail.data.model.** { *; }
+
+# Firebase ComponentRegistrar
+# AGP 9의 R8은 -keep class 규칙만으로 기본 생성자를 유지하지 않는다.
+# ComponentDiscovery가 리플렉션으로 기본 생성자를 호출하므로 명시적으로 유지한다.
+-keep class * implements com.google.firebase.components.ComponentRegistrar { <init>(); }
