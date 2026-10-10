@@ -41,6 +41,7 @@ android {
 | 모듈 | 이유 |
 |------|------|
 | `:app` | `BuildConfig.DEBUG` 플래그, 앱 버전 정보 등 사용 |
+| `:feature:detail` | `BuildConfig.DEBUG` 플래그로 배너 광고 단위 ID 선택 |
 
 > **신규 모듈에서 BuildConfig가 필요한 경우**: 해당 모듈의 `build.gradle.kts`에 `buildFeatures { buildConfig = true }`를 추가하고 이 목록을 업데이트하십시오.
 

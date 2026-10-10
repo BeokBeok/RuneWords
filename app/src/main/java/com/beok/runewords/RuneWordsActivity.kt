@@ -13,23 +13,20 @@ import androidx.activity.viewModels
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.CompositionLocalProvider
-import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import com.beok.runewords.BuildConfig
+import com.beok.runewords.ad.InterstitialAdManager
 import com.beok.runewords.inapp.presentation.InAppUpdateContract
 import com.beok.runewords.inapp.presentation.InAppUpdateViewModel
 import com.beok.runewords.navigation.RuneWordsNavHost
 import com.beok.runewords.tracking.LocalTracker
 import com.beok.runewords.tracking.Tracking
 import com.beok.runewords.ui.RuneWordsTheme
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.LoadAdError
-import com.google.android.gms.ads.interstitial.InterstitialAd
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.appupdate.AppUpdateOptions
 import com.google.android.play.core.common.IntentSenderForResultStarter
@@ -38,7 +35,6 @@ import com.google.android.play.core.install.model.UpdateAvailability
 import com.google.android.play.core.review.ReviewManagerFactory
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
@@ -49,6 +45,9 @@ internal class RuneWordsActivity : ComponentActivity() {
 
     @Inject
     lateinit var inAppUpdateManager: AppUpdateManager
+
+    @Inject
+    lateinit var interstitialAdManager: InterstitialAdManager
 
     private val inAppUpdateViewModel by viewModels<InAppUpdateViewModel>()
 
@@ -74,48 +73,37 @@ internal class RuneWordsActivity : ComponentActivity() {
         }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        installSplashScreen()
+        val splashScreen = installSplashScreen()
         super.onCreate(savedInstanceState)
 
+        splashScreen.setKeepOnScreenCondition {
+            inAppUpdateViewModel.state.value == InAppUpdateContract.State.Checking
+        }
+        interstitialAdManager.preload()
         refreshAppUpdateType()
         handleEffect()
+        showContent()
     }
 
-    private fun showAd() {
-        InterstitialAd.load(
-            this@RuneWordsActivity,
-            getString(
-                if (BuildConfig.DEBUG) {
-                    com.beok.runewords.common.R.string.test_admob_screen_app_key
-                } else {
-                    com.beok.runewords.common.R.string.admob_screen_app_key
-                }
-            ),
-            AdRequest.Builder().build(),
-            object : InterstitialAdLoadCallback() {
-                override fun onAdFailedToLoad(loadAdError: LoadAdError) = Unit
-
-                override fun onAdLoaded(ad: InterstitialAd) {
-                    ad.show(this@RuneWordsActivity)
-                }
-            }
-        )
-    }
-
-    private fun showContentWithAd() {
+    private fun showContent() {
         setContent {
+            val state by inAppUpdateViewModel.state.collectAsState()
             RuneWordsTheme {
-                LaunchedEffect(key1 = Unit) {
-                    delay(500)
-                    showAd()
-                }
+                if (state != InAppUpdateContract.State.Ready) return@RuneWordsTheme
                 CompositionLocalProvider(LocalTracker provides tracking) {
                     Box(modifier = Modifier.fillMaxSize()) {
-                        RuneWordsNavHost(showReviewWriteForm = ::showReviewWriteForm)
+                        RuneWordsNavHost(
+                            showReviewWriteForm = ::showReviewWriteForm,
+                            showInterstitial = ::showInterstitial
+                        )
                     }
                 }
             }
         }
+    }
+
+    private fun showInterstitial(onFinished: () -> Unit) {
+        interstitialAdManager.showIfAllowed(activity = this, onFinished = onFinished)
     }
 
     private fun refreshAppUpdateType() {
@@ -136,10 +124,6 @@ internal class RuneWordsActivity : ComponentActivity() {
             repeatOnLifecycle(state = Lifecycle.State.CREATED) {
                 inAppUpdateViewModel.effect.collect { effect ->
                     when (effect) {
-                        InAppUpdateContract.Effect.ShowScreenAD -> {
-                            showContentWithAd()
-                        }
-
                         InAppUpdateContract.Effect.ForceUpdate -> {
                             forceUpdate()
                         }
@@ -164,12 +148,16 @@ internal class RuneWordsActivity : ComponentActivity() {
                     }
 
                     else -> {
-                        showContentWithAd()
+                        inAppUpdateViewModel.handleEvent(
+                            event = InAppUpdateContract.Event.UpdateUnavailable
+                        )
                     }
                 }
             }
             .addOnFailureListener {
-                showContentWithAd()
+                inAppUpdateViewModel.handleEvent(
+                    event = InAppUpdateContract.Event.UpdateUnavailable
+                )
             }
     }
 

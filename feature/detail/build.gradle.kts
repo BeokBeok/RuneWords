@@ -7,11 +7,16 @@ plugins {
 
 android {
     namespace = "com.beok.runewords.detail"
+
+    buildFeatures {
+        buildConfig = true
+    }
 }
 
 dependencies {
     implementation(libs.core.ktx)
     implementation(libs.constraintlayout.compose)
+    implementation(libs.lifecycle.runtime.compose)
 
     implementation(libs.play.services.ads)
 
