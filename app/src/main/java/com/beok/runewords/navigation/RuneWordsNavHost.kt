@@ -17,7 +17,7 @@ import com.beok.runewords.home.presentation.navigation.homeScreen
 import com.beok.runewords.info.presentation.navigation.navigateToRuneInfo
 import com.beok.runewords.info.presentation.navigation.runeInfoScreen
 
-private const val TRANSITION_DURATION_MILLIS = 300
+private const val TransitionDurationMillis = 300
 
 @Composable
 fun RuneWordsNavHost(
@@ -30,16 +30,16 @@ fun RuneWordsNavHost(
         navController = navController,
         startDestination = startDestination,
         enterTransition = {
-            slideIntoContainer(SlideDirection.Start, tween(TRANSITION_DURATION_MILLIS))
+            slideIntoContainer(SlideDirection.Start, tween(TransitionDurationMillis))
         },
         exitTransition = {
-            slideOutOfContainer(SlideDirection.Start, tween(TRANSITION_DURATION_MILLIS))
+            slideOutOfContainer(SlideDirection.Start, tween(TransitionDurationMillis))
         },
         popEnterTransition = {
-            slideIntoContainer(SlideDirection.End, tween(TRANSITION_DURATION_MILLIS))
+            slideIntoContainer(SlideDirection.End, tween(TransitionDurationMillis))
         },
         popExitTransition = {
-            slideOutOfContainer(SlideDirection.End, tween(TRANSITION_DURATION_MILLIS))
+            slideOutOfContainer(SlideDirection.End, tween(TransitionDurationMillis))
         }
     ) {
         homeScreen(onRuneClick = navController::navigateToCombination)
