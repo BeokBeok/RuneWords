@@ -26,13 +26,7 @@ internal fun Project.configureKotlinAndroid(
             compilerOptions {
                 jvmTarget.set(JvmTarget.JVM_17)
 
-                freeCompilerArgs.addAll(
-                    listOf(
-                        "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
-                        "-opt-in=androidx.compose.foundation.ExperimentalFoundationApi",
-                        "-opt-in=androidx.compose.ui.ExperimentalComposeUiApi"
-                    )
-                )
+                optIn.add("kotlinx.coroutines.ExperimentalCoroutinesApi")
             }
         }
     }
