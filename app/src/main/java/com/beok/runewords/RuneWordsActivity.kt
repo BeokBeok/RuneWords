@@ -23,6 +23,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import com.beok.runewords.ad.InterstitialAdManager
 import com.beok.runewords.inapp.presentation.InAppUpdateContract
 import com.beok.runewords.inapp.presentation.InAppUpdateViewModel
+import com.beok.runewords.inapp.presentation.UpdateRequiredScreen
 import com.beok.runewords.navigation.RuneWordsNavHost
 import com.beok.runewords.tracking.LocalTracker
 import com.beok.runewords.tracking.Tracking
@@ -30,6 +31,7 @@ import com.beok.runewords.ui.RuneWordsTheme
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.appupdate.AppUpdateOptions
 import com.google.android.play.core.common.IntentSenderForResultStarter
+import com.google.android.play.core.install.model.ActivityResult
 import com.google.android.play.core.install.model.AppUpdateType
 import com.google.android.play.core.install.model.UpdateAvailability
 import com.google.android.play.core.review.ReviewManagerFactory
@@ -54,12 +56,16 @@ internal class RuneWordsActivity : ComponentActivity() {
     private val inAppUpdateLauncher = registerForActivityResult(
         ActivityResultContracts.StartIntentSenderForResult()
     ) { result ->
-        if (result.data == null) return@registerForActivityResult
-        if (result.resultCode == REQ_IN_APP_UPDATE) {
-            Toast.makeText(this, R.string.downloading, Toast.LENGTH_SHORT).show()
-        }
-        if (result.resultCode != Activity.RESULT_OK) {
-            Toast.makeText(this, R.string.downloading_failed, Toast.LENGTH_SHORT).show()
+        when (result.resultCode) {
+            Activity.RESULT_OK -> {
+                Toast.makeText(this, R.string.downloading, Toast.LENGTH_SHORT).show()
+            }
+
+            ActivityResult.RESULT_IN_APP_UPDATE_FAILED -> {
+                Toast.makeText(this, R.string.downloading_failed, Toast.LENGTH_SHORT).show()
+            }
+
+            // RESULT_CANCELED: UpdateRequiredScreen이 업데이트 버튼을 보여준다.
         }
     }
 
@@ -85,10 +91,19 @@ internal class RuneWordsActivity : ComponentActivity() {
         showContent()
     }
 
+    override fun onResume() {
+        super.onResume()
+        resumeUpdateIfInProgress()
+    }
+
     private fun showContent() {
         setContent {
             val state by inAppUpdateViewModel.state.collectAsState()
             RuneWordsTheme {
+                if (state == InAppUpdateContract.State.UpdateRequired) {
+                    UpdateRequiredScreen(onUpdateClick = ::forceUpdate)
+                    return@RuneWordsTheme
+                }
                 if (state != InAppUpdateContract.State.Ready) return@RuneWordsTheme
                 CompositionLocalProvider(LocalTracker provides tracking) {
                     Box(modifier = Modifier.fillMaxSize()) {
@@ -157,6 +172,24 @@ internal class RuneWordsActivity : ComponentActivity() {
             .addOnFailureListener {
                 inAppUpdateViewModel.handleEvent(
                     event = InAppUpdateContract.Event.UpdateUnavailable
+                )
+            }
+    }
+
+    private fun resumeUpdateIfInProgress() {
+        if (inAppUpdateViewModel.state.value != InAppUpdateContract.State.UpdateRequired) return
+        inAppUpdateManager.appUpdateInfo
+            .addOnSuccessListener { appUpdateInfo ->
+                if (appUpdateInfo.updateAvailability() !=
+                    UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS
+                ) {
+                    return@addOnSuccessListener
+                }
+                inAppUpdateManager.startUpdateFlowForResult(
+                    appUpdateInfo,
+                    updateResultStarter,
+                    AppUpdateOptions.defaultOptions(AppUpdateType.IMMEDIATE),
+                    REQ_IN_APP_UPDATE
                 )
             }
     }
