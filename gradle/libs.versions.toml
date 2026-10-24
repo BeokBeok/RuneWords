@@ -7,6 +7,7 @@ gradle = "9.0.1"
 jacoco = "0.8.7"
 room = "2.7.1"
 ksp = "2.3.12"
+androidJUnit5 = "2.0.1"
 
 [libraries]
 core-ktx = { module = "androidx.core:core-ktx", version = "1.16.0" }
@@ -68,6 +69,7 @@ kotlin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.
 detekt-gradle = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version = "1.23.8" }
 ksp-gradle = { module = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
 compose-compiler-gradle = { module = "org.jetbrains.kotlin:compose-compiler-gradle-plugin", version.ref = "kotlin" }
+android-junit5-gradle = { module = "de.mannodermaus.gradle.plugins:android-junit5", version.ref = "androidJUnit5" }
 
 # Benchmark
 junit = { module = "androidx.test.ext:junit", version = "1.2.1" }
@@ -87,7 +89,7 @@ startup-runtime = { module = "androidx.startup:startup-runtime", version = "1.1.
 [plugins]
 android-application = { id = "com.android.application", version.ref = "gradle" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
-android-junit5 = { id = "de.mannodermaus.android-junit5", version = "2.0.1" }
+android-junit5 = { id = "de.mannodermaus.android-junit5", version.ref = "androidJUnit5" }
 google-services = { id = "com.google.gms.google-services", version = "4.4.2" }
 hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 firebase-crashlytics = { id = "com.google.firebase.crashlytics", version = "3.0.3" }
