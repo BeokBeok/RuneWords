@@ -17,19 +17,15 @@ internal class DatabaseModule {
 
     @Provides
     @Singleton
-    fun providesRuneDatabase(@ApplicationContext context: Context): RuneDatabase {
-        return Room
-            .databaseBuilder(
-                context = context,
-                klass = RuneDatabase::class.java,
-                name = "rune.db"
-            )
-            .build()
-    }
+    fun providesRuneDatabase(@ApplicationContext context: Context): RuneDatabase = Room
+        .databaseBuilder(
+            context = context,
+            klass = RuneDatabase::class.java,
+            name = "rune.db"
+        )
+        .build()
 
     @Provides
     @Singleton
-    fun providesRuneDAO(database: RuneDatabase): RuneDAO {
-        return database.runeDAO()
-    }
+    fun providesRuneDAO(database: RuneDatabase): RuneDAO = database.runeDAO()
 }

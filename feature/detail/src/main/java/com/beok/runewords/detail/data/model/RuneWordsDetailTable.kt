@@ -20,25 +20,22 @@ internal data class RuneWordsDetailTable constructor(
     @ColumnInfo(name = "levelLimit")
     val levelLimit: Int
 ) : DataToDomainMapper<RuneWordsDetail> {
-    override fun toDomain(): RuneWordsDetail {
-        return RuneWordsDetail(
-            name = name,
-            runeCombination = runeCombination,
-            type = type,
-            option = option,
-            levelLimit = levelLimit
-        )
-    }
+    override fun toDomain(): RuneWordsDetail = RuneWordsDetail(
+        name = name,
+        runeCombination = runeCombination,
+        type = type,
+        option = option,
+        levelLimit = levelLimit
+    )
 
     companion object {
-        fun fromDomain(runeWordsDetail: RuneWordsDetail): RuneWordsDetailTable {
-            return RuneWordsDetailTable(
+        fun fromDomain(runeWordsDetail: RuneWordsDetail): RuneWordsDetailTable =
+            RuneWordsDetailTable(
                 name = runeWordsDetail.name,
                 runeCombination = runeWordsDetail.runeCombination,
                 type = runeWordsDetail.type,
                 option = runeWordsDetail.option,
                 levelLimit = runeWordsDetail.levelLimit
             )
-        }
     }
 }

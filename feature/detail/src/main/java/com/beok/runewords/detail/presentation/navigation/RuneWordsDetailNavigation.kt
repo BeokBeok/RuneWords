@@ -18,10 +18,7 @@ fun NavController.navigateToDetail(runeWordName: String) {
     }
 }
 
-fun NavGraphBuilder.detailScreen(
-    showReviewWriteForm: () -> Unit,
-    onRuneClick: (String) -> Unit
-) {
+fun NavGraphBuilder.detailScreen(showReviewWriteForm: () -> Unit, onRuneClick: (String) -> Unit) {
     composable(
         route = "$DetailNavigationRoute/{${BundleKeyConstants.RUNE_WORDS_NAME}}",
         arguments = listOf(

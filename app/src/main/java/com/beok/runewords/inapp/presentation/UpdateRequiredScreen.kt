@@ -19,10 +19,7 @@ import androidx.compose.ui.unit.dp
 import com.beok.runewords.R
 
 @Composable
-internal fun UpdateRequiredScreen(
-    onUpdateClick: () -> Unit,
-    modifier: Modifier = Modifier
-) {
+internal fun UpdateRequiredScreen(onUpdateClick: () -> Unit, modifier: Modifier = Modifier) {
     Column(
         modifier = modifier
             .fillMaxSize()

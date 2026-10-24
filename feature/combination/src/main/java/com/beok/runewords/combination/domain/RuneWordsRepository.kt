@@ -10,15 +10,13 @@ internal interface RuneWordsRepository {
 
     class Fake : RuneWordsRepository {
 
-        override fun searchByRune(rune: String): Flow<List<RuneWords>> {
-            return flow {
-                emit(
-                    listOf(
-                        RuneWords(name = "breath_of_the_dying"),
-                        RuneWords(name = "obsession")
-                    )
+        override fun searchByRune(rune: String): Flow<List<RuneWords>> = flow {
+            emit(
+                listOf(
+                    RuneWords(name = "breath_of_the_dying"),
+                    RuneWords(name = "obsession")
                 )
-            }
+            )
         }
     }
 }

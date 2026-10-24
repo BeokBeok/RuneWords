@@ -7,9 +7,7 @@ class InAppRepositoryImpl @Inject constructor(
     private val remoteConfigService: InAppRemoteConfigService
 ) : InAppRepository {
 
-    override suspend fun fetchForceUpdateVersion(): Result<String> {
-        return runCatching {
-            remoteConfigService.fetchForceUpdateVersion()
-        }
+    override suspend fun fetchForceUpdateVersion(): Result<String> = runCatching {
+        remoteConfigService.fetchForceUpdateVersion()
     }
 }

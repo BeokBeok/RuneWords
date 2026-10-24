@@ -6,12 +6,8 @@ import kotlinx.serialization.json.Json
 
 internal class StringListTypeConverter {
     @TypeConverter
-    fun toJson(value: List<String>): String {
-        return Json.encodeToString(value)
-    }
+    fun toJson(value: List<String>): String = Json.encodeToString(value)
 
     @TypeConverter
-    fun fromJson(value: String): List<String> {
-        return Json.decodeFromString(value)
-    }
+    fun fromJson(value: String): List<String> = Json.decodeFromString(value)
 }
