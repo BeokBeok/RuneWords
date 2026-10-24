@@ -9,7 +9,5 @@ class MobileAdsInitializer : Initializer<Unit> {
         MobileAds.initialize(context)
     }
 
-    override fun dependencies(): List<Class<out Initializer<*>>> {
-        return emptyList()
-    }
+    override fun dependencies(): List<Class<out Initializer<*>>> = emptyList()
 }

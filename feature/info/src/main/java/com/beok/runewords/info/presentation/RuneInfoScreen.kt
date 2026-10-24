@@ -27,10 +27,7 @@ import androidx.compose.ui.unit.dp
 import com.beok.runewords.common.model.Rune
 
 @Composable
-internal fun RuneInfoScreen(
-    rune: Rune?,
-    modifier: Modifier = Modifier
-) {
+internal fun RuneInfoScreen(rune: Rune?, modifier: Modifier = Modifier) {
     if (rune == null) return
 
     Column(modifier = modifier.fillMaxSize()) {
@@ -43,10 +40,7 @@ internal fun RuneInfoScreen(
 }
 
 @Composable
-private fun RuneInfoContent(
-    modifier: Modifier,
-    rune: Rune
-) {
+private fun RuneInfoContent(modifier: Modifier, rune: Rune) {
     Column(
         modifier = modifier.padding(vertical = 24.dp),
         horizontalAlignment = Alignment.CenterHorizontally

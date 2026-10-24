@@ -4,9 +4,8 @@ package com.beok.runewords.inapp.domain
  * "3.10.0" 형식의 버전을 숫자 단위로 비교합니다.
  * 자릿수가 다르면 부족한 자리를 0으로 보고 비교합니다. (3.10 == 3.10.0)
  */
-internal class AppVersion private constructor(
-    private val parts: List<Int>
-) : Comparable<AppVersion> {
+internal class AppVersion private constructor(private val parts: List<Int>) :
+    Comparable<AppVersion> {
 
     override fun compareTo(other: AppVersion): Int {
         val size = maxOf(parts.size, other.parts.size)

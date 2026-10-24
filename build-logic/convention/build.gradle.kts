@@ -15,6 +15,7 @@ dependencies {
     compileOnly(libs.detekt.gradle)
     compileOnly(libs.ksp.gradle)
     compileOnly(libs.compose.compiler.gradle)
+    compileOnly(libs.android.junit5.gradle)
 }
 
 

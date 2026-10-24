@@ -18,17 +18,16 @@ internal class FirebaseModule {
 
     @Provides
     @Singleton
-    fun providesRemoteConfig(): FirebaseRemoteConfig =
-        Firebase.remoteConfig.apply {
-            setDefaultsAsync(R.xml.remote_config_defaults)
-        }.also {
-            if (BuildConfig.DEBUG) {
-                it.setConfigSettingsAsync(
-                    FirebaseRemoteConfigSettings.Builder()
-                        .setMinimumFetchIntervalInSeconds(0)
-                        .build()
-                )
-            }
-            it.fetchAndActivate()
+    fun providesRemoteConfig(): FirebaseRemoteConfig = Firebase.remoteConfig.apply {
+        setDefaultsAsync(R.xml.remote_config_defaults)
+    }.also {
+        if (BuildConfig.DEBUG) {
+            it.setConfigSettingsAsync(
+                FirebaseRemoteConfigSettings.Builder()
+                    .setMinimumFetchIntervalInSeconds(0)
+                    .build()
+            )
         }
+        it.fetchAndActivate()
+    }
 }

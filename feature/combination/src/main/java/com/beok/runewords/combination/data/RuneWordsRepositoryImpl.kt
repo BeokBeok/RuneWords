@@ -27,22 +27,17 @@ internal class RuneWordsRepositoryImpl @Inject constructor(
             }
     }
 
-    private suspend fun emitAndSet(rune: String): Flow<List<RuneWords>> {
-        return flowOf(
-            remoteDataSource.searchByRune(rune)
-                .toDomain()
-                .also {
-                    localDataSource.insert(
-                        RuneTable(name = rune, runewords = it.map(RuneWords::name))
-                    )
-                }
-        )
-    }
+    private suspend fun emitAndSet(rune: String): Flow<List<RuneWords>> = flowOf(
+        remoteDataSource.searchByRune(rune)
+            .toDomain()
+            .also {
+                localDataSource.insert(
+                    RuneTable(name = rune, runewords = it.map(RuneWords::name))
+                )
+            }
+    )
 
-    private fun emitAndSync(
-        runeTables: List<RuneTable>,
-        rune: String
-    ): Flow<List<RuneWords>> {
+    private fun emitAndSync(runeTables: List<RuneTable>, rune: String): Flow<List<RuneWords>> {
         return flow {
             runeTables.flatMap { runeTable ->
                 runeTable.runewords.map(::RuneWords)

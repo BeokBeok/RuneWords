@@ -27,17 +27,15 @@ internal class RuneWordsDetailRepositoryImpl @Inject constructor(
             }
     }
 
-    private suspend fun emitAndSet(runeName: String): Flow<RuneWordsDetail> {
-        return flowOf(
-            remoteDataSource.fetchInfo(runeName)
-                .toDomain()
-                .also { runeWordsDetail ->
-                    localDataSource.insert(
-                        RuneWordsDetailTable.fromDomain(runeWordsDetail)
-                    )
-                }
-        )
-    }
+    private suspend fun emitAndSet(runeName: String): Flow<RuneWordsDetail> = flowOf(
+        remoteDataSource.fetchInfo(runeName)
+            .toDomain()
+            .also { runeWordsDetail ->
+                localDataSource.insert(
+                    RuneWordsDetailTable.fromDomain(runeWordsDetail)
+                )
+            }
+    )
 
     private fun emitAndSync(
         runeWordsDetailTables: List<RuneWordsDetailTable>,

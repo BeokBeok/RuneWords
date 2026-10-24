@@ -127,10 +127,7 @@ private fun CombinationContent(
 }
 
 @Composable
-private fun CombinationTopBar(
-    rune: Rune,
-    onRuneInfoClick: (String) -> Unit
-) {
+private fun CombinationTopBar(rune: Rune, onRuneInfoClick: (String) -> Unit) {
     val tracking = LocalTracker.current
     TopAppBar(
         title = {
@@ -161,10 +158,7 @@ private fun CombinationTopBar(
 }
 
 @Composable
-private fun RuneInfoIcon(
-    rune: Rune,
-    onRuneInfoClick: (String) -> Unit
-) {
+private fun RuneInfoIcon(rune: Rune, onRuneInfoClick: (String) -> Unit) {
     Box(
         modifier = Modifier.fillMaxWidth(),
         contentAlignment = Alignment.CenterEnd

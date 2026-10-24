@@ -95,10 +95,7 @@ internal fun DetailRoute(
 }
 
 @Composable
-private fun DetailContent(
-    info: RuneWordsItem,
-    onRuneClick: (String) -> Unit
-) {
+private fun DetailContent(info: RuneWordsItem, onRuneClick: (String) -> Unit) {
     ConstraintLayout(modifier = Modifier.fillMaxSize()) {
         val (content, admob) = createRefs()
         Column(
@@ -192,10 +189,7 @@ private fun RuneWordsOption(info: RuneWordsItem) {
 }
 
 @Composable
-private fun RuneWordsCombination(
-    info: RuneWordsItem,
-    onRuneClick: (String) -> Unit
-) {
+private fun RuneWordsCombination(info: RuneWordsItem, onRuneClick: (String) -> Unit) {
     val tracking = LocalTracker.current
     Headline(
         title = stringResource(

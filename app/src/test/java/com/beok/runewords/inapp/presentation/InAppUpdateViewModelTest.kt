@@ -15,7 +15,10 @@ internal class InAppUpdateViewModelTest {
 
         viewModel.handleEvent(InAppUpdateContract.Event.CheckInAppUpdateType(version = "3.9.0"))
 
-        assertEquals(expected = InAppUpdateContract.State.UpdateRequired, actual = viewModel.state.value)
+        assertEquals(
+            expected = InAppUpdateContract.State.UpdateRequired,
+            actual = viewModel.state.value
+        )
     }
 
     @Test

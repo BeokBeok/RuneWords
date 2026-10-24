@@ -11,7 +11,5 @@ class TimberInitializer : Initializer<Unit> {
         Timber.plant(tree = Timber.DebugTree())
     }
 
-    override fun dependencies(): List<Class<out Initializer<*>>> {
-        return emptyList()
-    }
+    override fun dependencies(): List<Class<out Initializer<*>>> = emptyList()
 }
