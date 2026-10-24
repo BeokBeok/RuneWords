@@ -1,5 +1,7 @@
 package com.beok.runewords.navigation
 
+import androidx.compose.animation.AnimatedContentTransitionScope.SlideDirection
+import androidx.compose.animation.core.tween
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -15,6 +17,8 @@ import com.beok.runewords.home.presentation.navigation.homeScreen
 import com.beok.runewords.info.presentation.navigation.navigateToRuneInfo
 import com.beok.runewords.info.presentation.navigation.runeInfoScreen
 
+private const val TransitionDurationMillis = 300
+
 @Composable
 fun RuneWordsNavHost(
     navController: NavHostController = rememberNavController(),
@@ -24,7 +28,19 @@ fun RuneWordsNavHost(
 ) {
     NavHost(
         navController = navController,
-        startDestination = startDestination
+        startDestination = startDestination,
+        enterTransition = {
+            slideIntoContainer(SlideDirection.Start, tween(TransitionDurationMillis))
+        },
+        exitTransition = {
+            slideOutOfContainer(SlideDirection.Start, tween(TransitionDurationMillis))
+        },
+        popEnterTransition = {
+            slideIntoContainer(SlideDirection.End, tween(TransitionDurationMillis))
+        },
+        popExitTransition = {
+            slideOutOfContainer(SlideDirection.End, tween(TransitionDurationMillis))
+        }
     ) {
         homeScreen(onRuneClick = navController::navigateToCombination)
         combinationScreen(
