@@ -3,6 +3,9 @@
     <string name="app_name">Diablo2 RuneWords</string>
     <string name="downloading" translatable="false">Downloading</string>
     <string name="downloading_failed" translatable="false">Downloading failed</string>
+    <string name="update_required_title">Update required</string>
+    <string name="update_required_message">A new version is available. Please update the app to continue.</string>
+    <string name="update">Update</string>
 
     <!-- RuneWords List -->
     <string name="ancient_pledge">Ancient\'s Pledge</string>
