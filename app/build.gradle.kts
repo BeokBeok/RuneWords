@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.runewords.android.application.compose)
     alias(libs.plugins.runewords.android.application.firebase)
     alias(libs.plugins.runewords.android.hilt)
+    alias(libs.plugins.runewords.android.junit)
     id("org.jlleitschuh.gradle.ktlint")
     id("com.google.firebase.appdistribution")
     alias(libs.plugins.runewords.android.detekt)
@@ -63,4 +64,6 @@ dependencies {
     implementation(libs.play.update.ktx)
 
     implementation(libs.startup.runtime)
+
+    testImplementation(testFixtures(project(":common")))
 }

@@ -1,6 +1,6 @@
 package plugin
 
-import com.android.build.api.dsl.LibraryExtension
+import com.android.build.api.dsl.CommonExtension
 import extension.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -17,10 +17,10 @@ internal class AndroidJUnitConventionPlugin : Plugin<Project> {
         with(target) {
             pluginManager.apply("de.mannodermaus.android-junit5")
 
-            extensions.getByType<LibraryExtension>()
-                .testOptions {
-                    unitTests.isReturnDefaultValues = true
-                }
+            extensions.getByType<CommonExtension>()
+                .testOptions
+                .unitTests
+                .isReturnDefaultValues = true
 
             tasks.withType<Test>().configureEach {
                 useJUnitPlatform()

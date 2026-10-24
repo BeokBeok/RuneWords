@@ -2,6 +2,7 @@ package com.beok.runewords.inapp.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.beok.runewords.inapp.domain.AppVersion
 import com.beok.runewords.inapp.domain.InAppRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -44,7 +45,7 @@ internal class InAppUpdateViewModel @Inject constructor(
                 viewModelScope.launch {
                     inAppRepository.fetchForceUpdateVersion()
                         .onSuccess { forceUpdateVersion ->
-                            if (forceUpdateVersion <= event.version) {
+                            if (!isForceUpdateRequired(forceUpdateVersion, event.version)) {
                                 _state.value = InAppUpdateContract.State.Ready
                             } else {
                                 _state.value = InAppUpdateContract.State.UpdateRequired
@@ -61,5 +62,12 @@ internal class InAppUpdateViewModel @Inject constructor(
                 _state.value = InAppUpdateContract.State.Ready
             }
         }
+    }
+
+    // 버전 형식이 잘못되면 강제 업데이트하지 않습니다.
+    private fun isForceUpdateRequired(forceUpdateVersion: String, currentVersion: String): Boolean {
+        val required = AppVersion.parse(forceUpdateVersion)
+        val current = AppVersion.parse(currentVersion)
+        return required != null && current != null && current < required
     }
 }
