@@ -5,7 +5,6 @@ import androidx.lifecycle.SavedStateHandle
 import com.beok.runewords.combination.domain.RuneWordsRepository
 import com.beok.runewords.combination.presentation.mapper.RuneWordsItemMapper
 import com.beok.runewords.combination.presentation.model.CombinationState
-import com.beok.runewords.common.BundleKeyConstants
 import com.beok.runewords.common.model.Rune
 import com.beok.runewords.common.test.MainCoroutineTestExtension
 import io.mockk.every
@@ -34,9 +33,7 @@ internal class CombinationViewModelTest {
     fun `룬 기준으로 룬워드 리스트를_불러옵니다`() = runTest {
         // given
         viewModel = CombinationViewModel(
-            savedStateHandle = SavedStateHandle().apply {
-                set(BundleKeyConstants.RUNE_NAME, Rune.ZOD.name)
-            },
+            savedStateHandle = SavedStateHandle(mapOf("rune" to Rune.ZOD.name)),
             runeWordsRepository = repository,
             runeWordsItemMapper = RuneWordsItemMapper(context)
         )
