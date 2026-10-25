@@ -1,25 +1,14 @@
 plugins {
     alias(libs.plugins.runewords.android.benchmark)
+    alias(libs.plugins.baselineprofile)
 }
 
 android {
-    buildTypes {
-        // This benchmark buildType is used for benchmarking, and should function like your
-        // release build (for example, with minification on). It"s signed with a debug key
-        // for easy local/CI testing.
-        create("benchmark") {
-            isDebuggable = true
-            signingConfig = getByName("debug").signingConfig
-            matchingFallbacks += listOf("release")
-        }
-    }
-
     targetProjectPath = ":app"
     experimentalProperties["android.experimental.self-instrumenting"] = true
 }
 
-androidComponents {
-    beforeVariants(selector().all()) {
-        it.enable = it.buildType == "benchmark"
-    }
+baselineProfile {
+    // 프로파일은 연결된 기기(에뮬레이터)에서 생성해서 저장소에 커밋한다.
+    useConnectedDevices = true
 }

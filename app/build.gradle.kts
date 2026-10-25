@@ -11,6 +11,7 @@ plugins {
     alias(libs.plugins.runewords.android.detekt)
     alias(libs.plugins.runewords.android.application.jacoco)
     id("com.joetr.compose.guard")
+    alias(libs.plugins.baselineprofile)
 }
 
 android {
@@ -35,11 +36,6 @@ android {
                 groups = "tester"
                 serviceCredentialsFile = "$rootDir/firebase-app-distributor-services.json"
             }
-        }
-        create("benchmark") {
-            signingConfig = signingConfigs.named("debug").get()
-            matchingFallbacks += listOf("release")
-            isDebuggable = false
         }
     }
 }
@@ -66,6 +62,9 @@ dependencies {
     implementation(libs.play.update.ktx)
 
     implementation(libs.startup.runtime)
+    implementation(libs.profileinstaller)
+
+    baselineProfile(project(":benchmark"))
 
     testImplementation(testFixtures(project(":common")))
 }
