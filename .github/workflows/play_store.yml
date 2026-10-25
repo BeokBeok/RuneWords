@@ -59,11 +59,12 @@ jobs:
       - name: Create service_account.json
         run: echo '${{ secrets.SERVICE_ACCOUNT_JSON }}' > service_account.json
 
-      - name: Deploy to Play Store (INTERNAL)
+      - name: Deploy to Play Store (PRODUCTION)
         uses: r0adkll/upload-google-play@v1.1.5
         with:
           serviceAccountJson: service_account.json
           packageName: com.beok.runewords
           releaseFiles: app/build/outputs/bundle/release/app-release.aab
-          track: internal
+          track: production
+          status: completed
           whatsNewDirectory: whatsnew/
