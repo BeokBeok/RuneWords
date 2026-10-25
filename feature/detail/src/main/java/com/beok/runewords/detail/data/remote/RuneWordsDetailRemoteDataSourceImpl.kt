@@ -1,16 +1,16 @@
 package com.beok.runewords.detail.data.remote
 
 import com.beok.runewords.detail.data.model.RuneWordsDetailResponse
-import com.google.firebase.Firebase
-import com.google.firebase.firestore.firestore
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.toObject
 import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 
-internal class RuneWordsDetailRemoteDataSourceImpl @Inject constructor() :
-    RuneWordsDetailRemoteDataSource {
+internal class RuneWordsDetailRemoteDataSourceImpl @Inject constructor(
+    private val firestore: FirebaseFirestore
+) : RuneWordsDetailRemoteDataSource {
 
-    override suspend fun fetchInfo(name: String): RuneWordsDetailResponse = Firebase.firestore
+    override suspend fun fetchInfo(name: String): RuneWordsDetailResponse = firestore
         .collection(COLLECTION_NAME_RUNEWORDS)
         .document(name)
         .get()
