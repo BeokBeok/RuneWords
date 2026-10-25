@@ -11,10 +11,13 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.material.Icon
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Add
@@ -30,10 +33,14 @@ import com.beok.runewords.common.model.Rune
 internal fun RuneInfoScreen(rune: Rune?, modifier: Modifier = Modifier) {
     if (rune == null) return
 
-    Column(modifier = modifier.fillMaxSize()) {
-        RuneInfoTopBar(rune)
+    Scaffold(
+        modifier = modifier.fillMaxSize(),
+        topBar = { RuneInfoTopBar(rune) }
+    ) { contentPadding ->
         RuneInfoContent(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(contentPadding),
             rune = rune
         )
     }
@@ -93,31 +100,34 @@ private fun RuneInfoItem(
         Text(
             modifier = Modifier.fillMaxWidth(),
             text = stringResource(id = messageResourceID),
-            color = MaterialTheme.colors.primary
+            color = MaterialTheme.colorScheme.primary
         )
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun RuneInfoTopBar(rune: Rune) {
     TopAppBar(
         title = {
-            Image(
-                painter = painterResource(id = rune.iconResourceID),
-                contentDescription = null,
-                modifier = Modifier.size(width = 40.dp, height = 40.dp)
-            )
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically
             ) {
+                Image(
+                    painter = painterResource(id = rune.iconResourceID),
+                    contentDescription = null,
+                    modifier = Modifier.size(width = 40.dp, height = 40.dp)
+                )
                 Rune.previous(rune)
                     ?.let {
                         RuneCompound(rune = it)
                     }
             }
         },
-        backgroundColor = MaterialTheme.colors.background
+        colors = TopAppBarDefaults.topAppBarColors(
+            containerColor = MaterialTheme.colorScheme.background
+        )
     )
 }
 
@@ -126,7 +136,7 @@ private fun RuneCompound(rune: Rune) {
     Icon(
         imageVector = Icons.AutoMirrored.Filled.ArrowBack,
         contentDescription = null,
-        tint = MaterialTheme.colors.primary
+        tint = MaterialTheme.colorScheme.primary
     )
     repeat(rune.compoundCount) {
         Image(
@@ -139,7 +149,7 @@ private fun RuneCompound(rune: Rune) {
     Icon(
         imageVector = Icons.Default.Add,
         contentDescription = null,
-        tint = MaterialTheme.colors.primary
+        tint = MaterialTheme.colorScheme.primary
     )
     Image(
         painter = painterResource(id = rune.gemResourceID!!),
