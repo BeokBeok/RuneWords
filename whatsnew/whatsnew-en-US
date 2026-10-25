@@ -1,2 +1,5 @@
-[ver 3.4.0]
-- Improved app stability and adjusted when ads are shown.
+[ver 3.5.0]
+- Applied the Material 3 design.
+- Changed screen transitions to a horizontal slide.
+- Links can now open runeword screens in the app directly.
+- Fixed in-app update errors and improved app performance.
