@@ -8,6 +8,8 @@ on:
         required: false
         type: string
 
+permissions: {}
+
 jobs:
   promote:
     runs-on: ubuntu-latest
