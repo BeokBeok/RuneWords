@@ -1,16 +1,11 @@
 package com.beok.runewords.detail.presentation
 
 import android.annotation.SuppressLint
-import android.util.TypedValue
-import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -37,6 +32,8 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.fromHtml
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -48,7 +45,6 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.beok.runewords.common.ext.EMPTY
-import com.beok.runewords.common.util.HtmlConverter
 import com.beok.runewords.common.view.ContentLoading
 import com.beok.runewords.detail.BuildConfig
 import com.beok.runewords.detail.R
@@ -160,32 +156,36 @@ private fun BannerAd(modifier: Modifier = Modifier) {
 
 @Composable
 private fun RuneWordsOption(info: RuneWordsItem) {
-    val isDarkTheme = isSystemInDarkTheme()
     Headline(title = stringResource(id = R.string.title_options))
-    AndroidView(
+    if (info.optionResourceID < 1) return
+    val html = stringResource(id = info.optionResourceID)
+    val option = remember(html) { AnnotatedString.fromHtml(html).withoutDefaultTextColor() }
+    Text(
+        text = option,
         modifier = Modifier
-            .fillMaxSize()
+            .fillMaxWidth()
             .padding(vertical = 20.dp),
-        factory = { context ->
-            TextView(context).apply {
-                layoutParams = ViewGroup.LayoutParams(
-                    ViewGroup.LayoutParams.MATCH_PARENT,
-                    ViewGroup.LayoutParams.MATCH_PARENT
-                )
-                textAlignment = View.TEXT_ALIGNMENT_CENTER
-                setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f)
-                text = if (info.optionResourceID > 0) {
-                    HtmlConverter.fromTheme(
-                        source = context.getString(info.optionResourceID),
-                        isDarkTheme = isDarkTheme
-                    )
-                } else {
-                    String.EMPTY
-                }
-            }
-        }
+        fontSize = 16.sp,
+        textAlign = TextAlign.Center,
+        color = MaterialTheme.colors.primary
     )
 }
+
+/**
+ * 옵션 HTML은 기본 문구에 검정색(#000000)을 지정한다.
+ * 검정색 지정을 지워서 테마의 글자 색상을 따르게 한다. 강조 색상은 유지한다.
+ */
+private fun AnnotatedString.withoutDefaultTextColor(): AnnotatedString = AnnotatedString(
+    text = text,
+    spanStyles = spanStyles.map { range ->
+        if (range.item.color == Color.Black) {
+            range.copy(item = range.item.copy(color = Color.Unspecified))
+        } else {
+            range
+        }
+    },
+    paragraphStyles = paragraphStyles
+)
 
 @Composable
 private fun RuneWordsCombination(info: RuneWordsItem, onRuneClick: (String) -> Unit) {
