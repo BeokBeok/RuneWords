@@ -1,0 +1,72 @@
+name: Play Store Promote
+
+on:
+  workflow_dispatch:
+    inputs:
+      version_code:
+        description: '프로덕션으로 올릴 version code (비우면 내부 테스트 트랙의 최신 릴리스)'
+        required: false
+        type: string
+
+permissions: {}
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get access token
+        env:
+          SERVICE_ACCOUNT_JSON: ${{ secrets.SERVICE_ACCOUNT_JSON }}
+        run: |
+          set -euo pipefail
+          b64url() { openssl base64 -A | tr '+/' '-_' | tr -d '='; }
+
+          client_email=$(jq -r .client_email <<< "$SERVICE_ACCOUNT_JSON")
+          jq -r .private_key <<< "$SERVICE_ACCOUNT_JSON" > private_key.pem
+          trap 'rm -f private_key.pem' EXIT
+
+          now=$(date +%s)
+          header=$(printf '{"alg":"RS256","typ":"JWT"}' | b64url)
+          claims=$(jq -nc --arg iss "$client_email" --argjson iat "$now" '{
+            iss: $iss,
+            scope: "https://www.googleapis.com/auth/androidpublisher",
+            aud: "https://oauth2.googleapis.com/token",
+            iat: $iat,
+            exp: ($iat + 600)
+          }' | b64url)
+          signature=$(printf '%s.%s' "$header" "$claims" | openssl dgst -sha256 -sign private_key.pem | b64url)
+
+          access_token=$(curl -sS --fail-with-body https://oauth2.googleapis.com/token \
+            -d grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer \
+            -d assertion="$header.$claims.$signature" | jq -r .access_token)
+          echo "::add-mask::$access_token"
+          echo "ACCESS_TOKEN=$access_token" >> $GITHUB_ENV
+
+      - name: Promote internal to production
+        env:
+          PACKAGE_NAME: com.beok.runewords
+          VERSION_CODE: ${{ inputs.version_code }}
+        run: |
+          set -euo pipefail
+          api="https://androidpublisher.googleapis.com/androidpublisher/v3/applications/$PACKAGE_NAME/edits"
+          call() { curl -sS --fail-with-body -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/json" "$@"; }
+
+          edit_id=$(call -X POST "$api" -d '{}' | jq -r .id)
+          trap 'status=$?; if [ $status -ne 0 ]; then call -X DELETE "$api/$edit_id" > /dev/null || true; fi' EXIT
+
+          # VERSION_CODE가 비어 있으면 completed 상태 릴리스 중 version code가 가장 큰 것을 고른다.
+          release=$(call "$api/$edit_id/tracks/internal" | jq -c --arg vc "$VERSION_CODE" '
+            [.releases[]? | select(.status == "completed") | select($vc == "" or (.versionCodes | index($vc)))]
+            | max_by(.versionCodes | map(tonumber) | max)
+            | if . == null then error("internal 트랙에 승격할 릴리스가 없습니다.") else . end
+            | {name, versionCodes, releaseNotes} | with_entries(select(.value != null))
+            | . + {status: "completed"}')
+          echo "Release: $release"
+
+          call -X PUT "$api/$edit_id/tracks/production" \
+            -d "$(jq -nc --argjson release "$release" '{track: "production", releases: [$release]}')" > /dev/null
+          call -X POST "$api/$edit_id:commit" > /dev/null
+
+          version_codes=$(jq -r '.versionCodes | join(", ")' <<< "$release")
+          echo "Production track version code $version_codes" >> $GITHUB_STEP_SUMMARY
