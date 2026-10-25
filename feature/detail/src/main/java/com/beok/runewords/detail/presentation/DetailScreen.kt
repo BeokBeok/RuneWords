@@ -27,7 +27,6 @@ import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -47,6 +46,7 @@ import androidx.constraintlayout.compose.Dimension
 import androidx.core.os.bundleOf
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.LifecycleResumeEffect
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.beok.runewords.common.ext.EMPTY
 import com.beok.runewords.common.ext.resourceIDByName
 import com.beok.runewords.common.util.HtmlConverter
@@ -72,7 +72,7 @@ internal fun DetailRoute(
         showReviewWriteForm()
     }
 
-    val state by viewModel.detailState.collectAsState()
+    val state by viewModel.detailState.collectAsStateWithLifecycle()
     Column(modifier = modifier.fillMaxSize()) {
         when (state) {
             is DetailState.Content -> {

@@ -13,11 +13,11 @@ import androidx.activity.viewModels
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.CompositionLocalProvider
-import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.beok.runewords.ad.InterstitialAdManager
@@ -98,7 +98,7 @@ internal class RuneWordsActivity : ComponentActivity() {
 
     private fun showContent() {
         setContent {
-            val state by inAppUpdateViewModel.state.collectAsState()
+            val state by inAppUpdateViewModel.state.collectAsStateWithLifecycle()
             RuneWordsTheme {
                 if (state == InAppUpdateContract.State.UpdateRequired) {
                     UpdateRequiredScreen(onUpdateClick = ::forceUpdate)

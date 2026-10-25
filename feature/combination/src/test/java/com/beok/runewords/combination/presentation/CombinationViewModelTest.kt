@@ -9,7 +9,7 @@ import com.beok.runewords.common.test.MainCoroutineTestExtension
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.test.runTest
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 
@@ -20,7 +20,7 @@ internal class CombinationViewModelTest {
     private lateinit var viewModel: CombinationViewModel
 
     @Test
-    fun `룬 기준으로 룬워드 리스트를_불러옵니다`() = runBlocking {
+    fun `룬 기준으로 룬워드 리스트를_불러옵니다`() = runTest {
         // given
         viewModel = CombinationViewModel(
             savedStateHandle = SavedStateHandle().apply {

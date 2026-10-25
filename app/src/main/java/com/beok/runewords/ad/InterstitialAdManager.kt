@@ -2,6 +2,7 @@ package com.beok.runewords.ad
 
 import android.app.Activity
 import android.content.Context
+import androidx.core.content.edit
 import com.beok.runewords.BuildConfig
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.AdRequest
@@ -59,9 +60,7 @@ internal class InterstitialAdManager @Inject constructor(
         }
         current.fullScreenContentCallback = object : FullScreenContentCallback() {
             override fun onAdShowedFullScreenContent() {
-                preferences.edit()
-                    .putLong(KEY_LAST_SHOWN_EPOCH_DAY, today())
-                    .apply()
+                preferences.edit { putLong(KEY_LAST_SHOWN_EPOCH_DAY, today()) }
             }
 
             override fun onAdDismissedFullScreenContent() = onFinished()

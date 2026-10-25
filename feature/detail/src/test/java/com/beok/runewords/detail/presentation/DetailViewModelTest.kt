@@ -8,7 +8,7 @@ import com.beok.runewords.detail.presentation.model.DetailState
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.test.runTest
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 
@@ -19,7 +19,7 @@ internal class DetailViewModelTest {
     private lateinit var viewModel: DetailViewModel
 
     @Test
-    fun `룬워드 상세 정보를_불러옵니다`() = runBlocking {
+    fun `룬워드 상세 정보를_불러옵니다`() = runTest {
         // given
         viewModel = DetailViewModel(
             savedStateHandle = SavedStateHandle().apply {

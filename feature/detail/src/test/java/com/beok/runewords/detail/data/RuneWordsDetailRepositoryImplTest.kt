@@ -3,7 +3,7 @@ package com.beok.runewords.detail.data
 import com.beok.runewords.detail.data.remote.RuneWordsDetailRemoteDataSource
 import com.beok.runewords.detail.domain.RuneWordsDetailRepository
 import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.test.runTest
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
@@ -14,7 +14,7 @@ internal class RuneWordsDetailRepositoryImplTest {
     private val repository: RuneWordsDetailRepository = RuneWordsDetailRepository.Fake()
 
     @Test
-    fun `룬워드 정보를 불러옵니다`() = runBlocking {
+    fun `룬워드 정보를 불러옵니다`() = runTest {
         val runeWordsName = "call_to_arms"
         val expected = runeWordsDetailRemoteDataSource
             .fetchInfo(name = runeWordsName)
