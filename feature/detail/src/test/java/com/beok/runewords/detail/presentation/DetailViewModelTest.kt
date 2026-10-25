@@ -1,10 +1,14 @@
 package com.beok.runewords.detail.presentation
 
+import android.content.Context
 import androidx.lifecycle.SavedStateHandle
 import com.beok.runewords.common.BundleKeyConstants
 import com.beok.runewords.common.test.MainCoroutineTestExtension
 import com.beok.runewords.detail.domain.RuneWordsDetailRepository
+import com.beok.runewords.detail.presentation.mapper.RuneWordsItemMapper
 import com.beok.runewords.detail.presentation.model.DetailState
+import io.mockk.every
+import io.mockk.mockk
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 import kotlinx.coroutines.flow.first
@@ -16,6 +20,12 @@ import org.junit.jupiter.api.extension.ExtendWith
 internal class DetailViewModelTest {
 
     private val repository: RuneWordsDetailRepository = RuneWordsDetailRepository.Fake()
+    private val context: Context = mockk {
+        every { packageName } returns "com.beok.runewords"
+        every { resources } returns mockk {
+            every { getIdentifier(any(), "string", any()) } returns 1
+        }
+    }
     private lateinit var viewModel: DetailViewModel
 
     @Test
@@ -25,7 +35,8 @@ internal class DetailViewModelTest {
             savedStateHandle = SavedStateHandle().apply {
                 set(BundleKeyConstants.RUNE_WORDS_NAME, "breath_of_the_dying")
             },
-            runeWordsDetailRepository = repository
+            runeWordsDetailRepository = repository,
+            runeWordsItemMapper = RuneWordsItemMapper(context)
         )
 
         // when

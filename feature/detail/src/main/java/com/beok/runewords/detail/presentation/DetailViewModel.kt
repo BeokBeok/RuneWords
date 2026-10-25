@@ -7,8 +7,8 @@ import com.beok.runewords.common.BundleKeyConstants
 import com.beok.runewords.common.model.Result
 import com.beok.runewords.common.model.asResult
 import com.beok.runewords.detail.domain.RuneWordsDetailRepository
+import com.beok.runewords.detail.presentation.mapper.RuneWordsItemMapper
 import com.beok.runewords.detail.presentation.model.DetailState
-import com.beok.runewords.detail.presentation.model.RuneWordsItem
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.flow.SharingStarted
@@ -19,7 +19,8 @@ import kotlinx.coroutines.flow.stateIn
 @HiltViewModel
 internal class DetailViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
-    runeWordsDetailRepository: RuneWordsDetailRepository
+    runeWordsDetailRepository: RuneWordsDetailRepository,
+    runeWordsItemMapper: RuneWordsItemMapper
 ) : ViewModel() {
 
     private val runeWordsName: String by lazy {
@@ -34,7 +35,7 @@ internal class DetailViewModel @Inject constructor(
                     is Result.Error -> DetailState.Failed
                     Result.Loading -> DetailState.Loading
                     is Result.Success -> DetailState.Content(
-                        RuneWordsItem.fromDomain(detailResult.data)
+                        runeWordsItemMapper.toItem(detailResult.data)
                     )
                 }
             }.stateIn(

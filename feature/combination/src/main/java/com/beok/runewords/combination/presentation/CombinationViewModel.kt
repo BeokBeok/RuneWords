@@ -4,6 +4,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.beok.runewords.combination.domain.RuneWordsRepository
+import com.beok.runewords.combination.presentation.mapper.RuneWordsItemMapper
 import com.beok.runewords.combination.presentation.model.CombinationState
 import com.beok.runewords.common.BundleKeyConstants
 import com.beok.runewords.common.model.Result
@@ -18,7 +19,8 @@ import kotlinx.coroutines.flow.stateIn
 @HiltViewModel
 internal class CombinationViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
-    runeWordsRepository: RuneWordsRepository
+    runeWordsRepository: RuneWordsRepository,
+    runeWordsItemMapper: RuneWordsItemMapper
 ) : ViewModel() {
 
     val rune: String by lazy {
@@ -32,7 +34,9 @@ internal class CombinationViewModel @Inject constructor(
                 when (runeWordsResult) {
                     is Result.Error -> CombinationState.Failed
                     Result.Loading -> CombinationState.Loading
-                    is Result.Success -> CombinationState.Content(runeWordsResult.data)
+                    is Result.Success -> CombinationState.Content(
+                        runeWordsItemMapper.toItems(runeWordsResult.data)
+                    )
                 }
             }
             .stateIn(
