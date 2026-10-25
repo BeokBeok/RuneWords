@@ -3,9 +3,7 @@ package com.beok.runewords.inapp.data
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigException
 import javax.inject.Inject
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.tasks.await
-import kotlinx.coroutines.withContext
 import kotlinx.coroutines.withTimeoutOrNull
 import timber.log.Timber
 
@@ -13,7 +11,7 @@ class InAppRemoteConfigServiceImpl @Inject constructor(
     private val remoteConfig: FirebaseRemoteConfig
 ) : InAppRemoteConfigService {
 
-    override suspend fun fetchForceUpdateVersion(): String = withContext(Dispatchers.IO) {
+    override suspend fun fetchForceUpdateVersion(): String {
         try {
             withTimeoutOrNull(FETCH_TIMEOUT_MS) {
                 remoteConfig.fetchAndActivate().await()
@@ -21,7 +19,7 @@ class InAppRemoteConfigServiceImpl @Inject constructor(
         } catch (e: FirebaseRemoteConfigException) {
             Timber.w(e)
         }
-        remoteConfig.getString(KEY_FORCE_UPDATE_VERSION)
+        return remoteConfig.getString(KEY_FORCE_UPDATE_VERSION)
     }
 
     private companion object {

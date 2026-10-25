@@ -3,6 +3,8 @@ package com.beok.runewords.di
 import com.beok.runewords.BuildConfig
 import com.beok.runewords.R
 import com.google.firebase.Firebase
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.firestore
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings
 import com.google.firebase.remoteconfig.remoteConfig
@@ -15,6 +17,10 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 internal class FirebaseModule {
+
+    @Provides
+    @Singleton
+    fun providesFirestore(): FirebaseFirestore = Firebase.firestore
 
     @Provides
     @Singleton
