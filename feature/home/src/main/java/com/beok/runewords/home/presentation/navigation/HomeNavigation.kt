@@ -6,10 +6,8 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import com.beok.runewords.home.presentation.HomeScreen
 
-const val HomeNavigationRoute = "home"
-
 fun NavGraphBuilder.homeScreen(onRuneClick: (String) -> Unit) {
-    composable(route = HomeNavigationRoute) {
+    composable<Home> {
         HomeScreen(
             modifier = Modifier.systemBarsPadding(),
             onRuneClick = onRuneClick

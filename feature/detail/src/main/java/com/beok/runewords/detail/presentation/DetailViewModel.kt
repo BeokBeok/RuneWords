@@ -3,12 +3,13 @@ package com.beok.runewords.detail.presentation
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.beok.runewords.common.BundleKeyConstants
+import androidx.navigation.toRoute
 import com.beok.runewords.common.model.Result
 import com.beok.runewords.common.model.asResult
 import com.beok.runewords.detail.domain.RuneWordsDetailRepository
 import com.beok.runewords.detail.presentation.mapper.RuneWordsItemMapper
 import com.beok.runewords.detail.presentation.model.DetailState
+import com.beok.runewords.detail.presentation.navigation.Detail
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.flow.SharingStarted
@@ -23,9 +24,7 @@ internal class DetailViewModel @Inject constructor(
     runeWordsItemMapper: RuneWordsItemMapper
 ) : ViewModel() {
 
-    private val runeWordsName: String by lazy {
-        savedStateHandle[BundleKeyConstants.RUNE_WORDS_NAME]!!
-    }
+    private val runeWordsName: String = savedStateHandle.toRoute<Detail>().runeWordName
 
     val detailState: StateFlow<DetailState> =
         runeWordsDetailRepository.fetchInfo(runeWordsName)

@@ -3,10 +3,11 @@ package com.beok.runewords.combination.presentation
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.navigation.toRoute
 import com.beok.runewords.combination.domain.RuneWordsRepository
 import com.beok.runewords.combination.presentation.mapper.RuneWordsItemMapper
 import com.beok.runewords.combination.presentation.model.CombinationState
-import com.beok.runewords.common.BundleKeyConstants
+import com.beok.runewords.combination.presentation.navigation.Combination
 import com.beok.runewords.common.model.Result
 import com.beok.runewords.common.model.asResult
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -23,9 +24,7 @@ internal class CombinationViewModel @Inject constructor(
     runeWordsItemMapper: RuneWordsItemMapper
 ) : ViewModel() {
 
-    val rune: String by lazy {
-        savedStateHandle[BundleKeyConstants.RUNE_NAME]!!
-    }
+    val rune: String = savedStateHandle.toRoute<Combination>().rune
 
     val combinationState: StateFlow<CombinationState> =
         runeWordsRepository.searchByRune(rune.lowercase())

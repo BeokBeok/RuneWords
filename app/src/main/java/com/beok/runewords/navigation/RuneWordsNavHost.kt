@@ -6,13 +6,12 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
-import com.beok.runewords.combination.presentation.navigation.CombinationNavigationRoute
+import com.beok.runewords.combination.presentation.navigation.Combination
 import com.beok.runewords.combination.presentation.navigation.combinationScreen
 import com.beok.runewords.combination.presentation.navigation.navigateToCombination
-import com.beok.runewords.common.BundleKeyConstants
 import com.beok.runewords.detail.presentation.navigation.detailScreen
 import com.beok.runewords.detail.presentation.navigation.navigateToDetail
-import com.beok.runewords.home.presentation.navigation.HomeNavigationRoute
+import com.beok.runewords.home.presentation.navigation.Home
 import com.beok.runewords.home.presentation.navigation.homeScreen
 import com.beok.runewords.info.presentation.navigation.navigateToRuneInfo
 import com.beok.runewords.info.presentation.navigation.runeInfoScreen
@@ -22,7 +21,7 @@ private const val TransitionDurationMillis = 300
 @Composable
 fun RuneWordsNavHost(
     navController: NavHostController = rememberNavController(),
-    startDestination: String = HomeNavigationRoute,
+    startDestination: Any = Home,
     showReviewWriteForm: () -> Unit,
     showInterstitial: (onFinished: () -> Unit) -> Unit
 ) {
@@ -54,9 +53,7 @@ fun RuneWordsNavHost(
             showReviewWriteForm = showReviewWriteForm,
             onRuneClick = {
                 navController.navigateToCombination(it) {
-                    popUpTo(
-                        route = "$CombinationNavigationRoute/{${BundleKeyConstants.RUNE_NAME}}"
-                    ) {
+                    popUpTo<Combination> {
                         inclusive = true
                     }
                 }

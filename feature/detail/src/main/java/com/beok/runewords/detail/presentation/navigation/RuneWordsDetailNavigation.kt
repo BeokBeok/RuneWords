@@ -4,29 +4,17 @@ import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
-import androidx.navigation.NavType
 import androidx.navigation.compose.composable
-import androidx.navigation.navArgument
-import com.beok.runewords.common.BundleKeyConstants
 import com.beok.runewords.detail.presentation.DetailRoute
 
-const val DetailNavigationRoute = "detail"
-
 fun NavController.navigateToDetail(runeWordName: String) {
-    navigate(route = "$DetailNavigationRoute/${runeWordName.removeSuffix(suffix = "_")}") {
+    navigate(route = Detail(runeWordName = runeWordName.removeSuffix(suffix = "_"))) {
         launchSingleTop = true
     }
 }
 
 fun NavGraphBuilder.detailScreen(showReviewWriteForm: () -> Unit, onRuneClick: (String) -> Unit) {
-    composable(
-        route = "$DetailNavigationRoute/{${BundleKeyConstants.RUNE_WORDS_NAME}}",
-        arguments = listOf(
-            navArgument(BundleKeyConstants.RUNE_WORDS_NAME) {
-                type = NavType.StringType
-            }
-        )
-    ) {
+    composable<Detail> {
         DetailRoute(
             modifier = Modifier.systemBarsPadding(),
             showReviewWriteForm = showReviewWriteForm,
