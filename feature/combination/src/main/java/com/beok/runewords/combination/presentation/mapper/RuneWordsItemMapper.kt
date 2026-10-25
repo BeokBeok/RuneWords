@@ -1,7 +1,6 @@
 package com.beok.runewords.combination.presentation.mapper
 
 import android.content.Context
-import com.beok.runewords.combination.R
 import com.beok.runewords.combination.domain.model.RuneWords
 import com.beok.runewords.combination.presentation.model.RuneWordsItem
 import com.beok.runewords.common.ext.resourceIDByName
@@ -12,10 +11,6 @@ internal class RuneWordsItemMapper @Inject constructor(
     @ApplicationContext private val context: Context
 ) {
 
-    private val standardRuneWords: Set<String> by lazy {
-        context.resources.getStringArray(R.array.standard_rune_words).toSet()
-    }
-
     fun toItems(runeWords: List<RuneWords>): List<RuneWordsItem> = runeWords
         .distinctBy(RuneWords::name)
         .mapNotNull { item ->
@@ -24,7 +19,7 @@ internal class RuneWordsItemMapper @Inject constructor(
             RuneWordsItem(
                 name = item.name,
                 nameResourceID = nameResourceID,
-                isStandardOnly = item.name in standardRuneWords
+                mode = item.mode
             )
         }
 }

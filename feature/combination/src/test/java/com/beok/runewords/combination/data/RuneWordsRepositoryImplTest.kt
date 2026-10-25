@@ -2,8 +2,10 @@ package com.beok.runewords.combination.data
 
 import com.beok.runewords.combination.data.local.RuneDAO
 import com.beok.runewords.combination.data.model.RuneTable
+import com.beok.runewords.combination.data.model.RuneWordsCache
 import com.beok.runewords.combination.data.model.RuneWordsResponse
 import com.beok.runewords.combination.data.remote.RuneWordsRemoteDataSource
+import com.beok.runewords.combination.domain.model.GameMode
 import com.beok.runewords.combination.domain.model.RuneWords
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
@@ -21,11 +23,17 @@ internal class RuneWordsRepositoryImplTest {
     private val rune = "zod"
     private val remoteResponse = listOf(
         RuneWordsResponse(name = "breath_of_the_dying"),
-        RuneWordsResponse(name = "obsession")
+        RuneWordsResponse(name = "obsession"),
+        RuneWordsResponse(name = "mosaic", mode = "standard"),
+        RuneWordsResponse(name = "hustle", mode = "ladder"),
+        RuneWordsResponse(name = "unknown_mode", mode = "hardcore")
     )
     private val remoteRuneWords = listOf(
         RuneWords(name = "breath_of_the_dying"),
-        RuneWords(name = "obsession")
+        RuneWords(name = "obsession"),
+        RuneWords(name = "mosaic", mode = GameMode.STANDARD),
+        RuneWords(name = "hustle", mode = GameMode.LADDER),
+        RuneWords(name = "unknown_mode")
     )
 
     @Test
@@ -40,7 +48,9 @@ internal class RuneWordsRepositoryImplTest {
 
         assertEquals(expected = remoteRuneWords, actual = actual)
         assertEquals(
-            expected = listOf(RuneTable(name = rune, runewords = remoteRuneWords.map { it.name })),
+            expected = listOf(
+                RuneTable(name = rune, runewords = remoteRuneWords.map(RuneWordsCache::from))
+            ),
             actual = localDataSource.tables.value
         )
     }
@@ -48,7 +58,7 @@ internal class RuneWordsRepositoryImplTest {
     @Test
     fun `캐시가 있으면 캐시를 먼저 내보내고 원격 데이터로 갱신합니다`() = runTest {
         val localDataSource = FakeRuneDAO(
-            RuneTable(name = rune, runewords = listOf("obsession"))
+            RuneTable(name = rune, runewords = listOf(RuneWordsCache(name = "obsession")))
         )
         val repository = RuneWordsRepositoryImpl(
             localDataSource = localDataSource,
@@ -60,6 +70,41 @@ internal class RuneWordsRepositoryImplTest {
         assertEquals(
             expected = listOf(listOf(RuneWords(name = "obsession")), remoteRuneWords),
             actual = actual
+        )
+    }
+
+    @Test
+    fun `원격에서 게임 모드가 바뀌면 캐시를 갱신하고 바뀐 모드를 내보냅니다`() = runTest {
+        val localDataSource = FakeRuneDAO(
+            RuneTable(
+                name = rune,
+                runewords = listOf(RuneWordsCache(name = "hustle", mode = GameMode.LADDER))
+            )
+        )
+        val repository = RuneWordsRepositoryImpl(
+            localDataSource = localDataSource,
+            remoteDataSource = FakeRemoteDataSource {
+                listOf(RuneWordsResponse(name = "hustle", mode = "standard"))
+            }
+        )
+
+        val actual = repository.searchByRune(rune = rune).take(2).toList()
+
+        assertEquals(
+            expected = listOf(
+                listOf(RuneWords(name = "hustle", mode = GameMode.LADDER)),
+                listOf(RuneWords(name = "hustle", mode = GameMode.STANDARD))
+            ),
+            actual = actual
+        )
+        assertEquals(
+            expected = listOf(
+                RuneTable(
+                    name = rune,
+                    runewords = listOf(RuneWordsCache(name = "hustle", mode = GameMode.STANDARD))
+                )
+            ),
+            actual = localDataSource.tables.value
         )
     }
 
@@ -79,7 +124,7 @@ internal class RuneWordsRepositoryImplTest {
     fun `캐시가 있고 원격 요청이 실패하면 캐시를 내보낸 뒤 예외를 전달합니다`() = runTest {
         val repository = RuneWordsRepositoryImpl(
             localDataSource = FakeRuneDAO(
-                RuneTable(name = rune, runewords = listOf("obsession"))
+                RuneTable(name = rune, runewords = listOf(RuneWordsCache(name = "obsession")))
             ),
             remoteDataSource = FakeRemoteDataSource { throw IllegalStateException() }
         )

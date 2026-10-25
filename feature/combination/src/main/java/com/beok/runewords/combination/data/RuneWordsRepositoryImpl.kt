@@ -2,6 +2,7 @@ package com.beok.runewords.combination.data
 
 import com.beok.runewords.combination.data.local.RuneDAO
 import com.beok.runewords.combination.data.model.RuneTable
+import com.beok.runewords.combination.data.model.RuneWordsCache
 import com.beok.runewords.combination.data.remote.RuneWordsRemoteDataSource
 import com.beok.runewords.combination.domain.RuneWordsRepository
 import com.beok.runewords.combination.domain.model.RuneWords
@@ -32,7 +33,7 @@ internal class RuneWordsRepositoryImpl @Inject constructor(
             .toDomain()
             .also {
                 localDataSource.insert(
-                    RuneTable(name = rune, runewords = it.map(RuneWords::name))
+                    RuneTable(name = rune, runewords = it.map(RuneWordsCache::from))
                 )
             }
     )
@@ -40,7 +41,7 @@ internal class RuneWordsRepositoryImpl @Inject constructor(
     private fun emitAndSync(runeTables: List<RuneTable>, rune: String): Flow<List<RuneWords>> {
         return flow {
             runeTables.flatMap { runeTable ->
-                runeTable.runewords.map(::RuneWords)
+                runeTable.runewords.toDomain()
             }.also {
                 emit(it)
             }.let { local ->
@@ -49,7 +50,7 @@ internal class RuneWordsRepositoryImpl @Inject constructor(
                     .also { remote ->
                         if (local == remote) return@let
                         localDataSource.insert(
-                            RuneTable(name = rune, runewords = remote.map(RuneWords::name))
+                            RuneTable(name = rune, runewords = remote.map(RuneWordsCache::from))
                         )
                     }
             }
