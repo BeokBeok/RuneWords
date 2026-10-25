@@ -8,7 +8,47 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  changes:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      build: ${{ steps.filter.outputs.build }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Filter changed files
+        id: filter
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          VERSION_FILE=build-logic/convention/src/main/java/plugin/AndroidApplicationConventionPlugin.kt
+          BUILD_PATTERN='\.kts?$|(^|/)src/|^gradle/libs\.versions\.toml$|^gradle/wrapper/|^gradle\.properties$|^gradlew$|^config/detekt\.yml$|^\.editorconfig$'
+          VERSION_NAME_LINE_PATTERN='^[+-][[:space:]]*private const val (MAJOR|MINOR|PATCH)_VERSION = [0-9]+$'
+
+          CHANGED_FILES=$(git diff --name-only "$BASE_SHA...$HEAD_SHA")
+
+          # 버전 이름 상수 줄만 바뀌었으면 VERSION_FILE을 변경 목록에서 뺀다.
+          OTHER_LINES=$(git diff -U0 "$BASE_SHA...$HEAD_SHA" -- "$VERSION_FILE" \
+            | grep -E '^[+-]' | grep -vE '^(\+\+\+|---) ' | grep -vE "$VERSION_NAME_LINE_PATTERN" || true)
+          if [ -z "$OTHER_LINES" ]; then
+            CHANGED_FILES=$(echo "$CHANGED_FILES" | grep -vxF "$VERSION_FILE" || true)
+          fi
+
+          if echo "$CHANGED_FILES" | grep -qE "$BUILD_PATTERN"; then
+            echo "build=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "build=false" >> "$GITHUB_OUTPUT"
+          fi
+
+  # build는 main ruleset의 required check이므로 workflow가 아닌 job 단계에서 건너뛴다.
   build:
+    needs: changes
+    if: needs.changes.outputs.build == 'true'
     runs-on: macos-latest
 
     steps:        
