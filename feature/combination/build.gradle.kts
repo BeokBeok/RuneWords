@@ -15,6 +15,7 @@ dependencies {
 
     implementation(libs.firebase.firestore)
 
+    implementation(libs.lifecycle.runtime.compose)
     implementation(libs.kotlinx.collections.immutable)
 
     testImplementation(testFixtures(project(":common")))

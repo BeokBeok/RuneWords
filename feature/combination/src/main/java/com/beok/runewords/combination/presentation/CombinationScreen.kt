@@ -20,7 +20,6 @@ import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -32,6 +31,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.os.bundleOf
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.beok.runewords.combination.R
 import com.beok.runewords.combination.domain.model.RuneWords
 import com.beok.runewords.combination.presentation.model.CombinationState
@@ -50,7 +50,7 @@ internal fun CombinationRoute(
     modifier: Modifier = Modifier,
     viewModel: CombinationViewModel = hiltViewModel()
 ) {
-    val state: CombinationState by viewModel.combinationState.collectAsState()
+    val state: CombinationState by viewModel.combinationState.collectAsStateWithLifecycle()
     Column(modifier = modifier.fillMaxSize()) {
         when (state) {
             is CombinationState.Content -> {

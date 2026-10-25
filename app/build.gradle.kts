@@ -55,7 +55,9 @@ dependencies {
     implementation(libs.bundles.compose)
     implementation(libs.activity.compose)
     implementation(libs.navigation.compose)
+    implementation(libs.lifecycle.runtime.compose)
 
+    implementation(libs.core.ktx)
     implementation(libs.core.splashscreen)
     implementation(libs.timber)
 
