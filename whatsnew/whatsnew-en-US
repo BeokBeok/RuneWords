@@ -1,5 +1,2 @@
-[ver 3.5.0]
-- Applied the Material 3 design.
-- Changed screen transitions to a horizontal slide.
-- Links can now open runeword screens in the app directly.
-- Fixed in-app update errors and improved app performance.
+[ver 3.6.0]
+- Standard/Ladder-only runeword labels now update from the server.
