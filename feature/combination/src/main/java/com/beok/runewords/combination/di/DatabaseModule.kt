@@ -23,6 +23,7 @@ internal class DatabaseModule {
             klass = RuneDatabase::class.java,
             name = "rune.db"
         )
+        .addMigrations(RuneDatabase.MIGRATION_1_2)
         .build()
 
     @Provides

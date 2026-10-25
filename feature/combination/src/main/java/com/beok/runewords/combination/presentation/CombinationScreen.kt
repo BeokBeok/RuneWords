@@ -35,6 +35,7 @@ import androidx.core.os.bundleOf
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.beok.runewords.combination.R
+import com.beok.runewords.combination.domain.model.GameMode
 import com.beok.runewords.combination.presentation.model.CombinationState
 import com.beok.runewords.combination.presentation.model.RuneWordsItem
 import com.beok.runewords.common.model.Rune
@@ -93,13 +94,11 @@ private fun CombinationContent(
     val tracking = LocalTracker.current
     LazyColumn(modifier = Modifier.fillMaxSize()) {
         items(items = runeWords, key = RuneWordsItem::name) { item ->
-            val runeWordsName = if (item.isStandardOnly) {
-                stringResource(
-                    id = R.string.standard_only,
-                    stringResource(id = item.nameResourceID)
-                )
-            } else {
-                stringResource(id = item.nameResourceID)
+            val name = stringResource(id = item.nameResourceID)
+            val runeWordsName = when (item.mode) {
+                GameMode.STANDARD -> stringResource(id = R.string.standard_only, name)
+                GameMode.LADDER -> stringResource(id = R.string.ladder_only, name)
+                GameMode.ALL -> name
             }
 
             Column(

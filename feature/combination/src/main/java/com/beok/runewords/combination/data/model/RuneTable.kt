@@ -10,5 +10,5 @@ internal data class RuneTable constructor(
     @ColumnInfo(name = "name")
     val name: String,
     @ColumnInfo(name = "runewords")
-    val runewords: List<String>
+    val runewords: List<RuneWordsCache>
 )
