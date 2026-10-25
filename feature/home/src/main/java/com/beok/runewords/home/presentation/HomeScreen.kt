@@ -13,8 +13,9 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -30,15 +31,18 @@ import com.beok.runewords.tracking.TrackingConstants
 
 @Composable
 internal fun HomeScreen(modifier: Modifier = Modifier, onRuneClick: (String) -> Unit) {
-    Column(modifier = modifier.fillMaxSize()) {
-        HomeContent(onRuneClick = onRuneClick)
+    Scaffold(modifier = modifier.fillMaxSize()) { contentPadding ->
+        HomeContent(
+            modifier = Modifier.padding(contentPadding),
+            onRuneClick = onRuneClick
+        )
     }
 }
 
 @Composable
-private fun HomeContent(onRuneClick: (String) -> Unit) {
+private fun HomeContent(modifier: Modifier, onRuneClick: (String) -> Unit) {
     val tracking = LocalTracker.current
-    Box(modifier = Modifier.fillMaxSize()) {
+    Box(modifier = modifier.fillMaxSize()) {
         LazyVerticalGrid(
             modifier = Modifier.fillMaxSize(),
             columns = GridCells.Adaptive(minSize = 128.dp)
@@ -79,7 +83,7 @@ private fun RuneItem(item: Rune, modifier: Modifier) {
         )
         Text(
             text = stringResource(id = item.nameResourceID),
-            color = MaterialTheme.colors.primary
+            color = MaterialTheme.colorScheme.primary
         )
     }
 }

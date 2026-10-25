@@ -10,6 +10,7 @@ android {
 }
 
 dependencies {
+    api(libs.compose.runtime)
     implementation(libs.core.ktx)
     implementation(libs.compose.material.icons.core)
 

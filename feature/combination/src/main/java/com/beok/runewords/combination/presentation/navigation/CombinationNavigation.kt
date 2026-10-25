@@ -1,7 +1,5 @@
 package com.beok.runewords.combination.presentation.navigation
 
-import androidx.compose.foundation.layout.systemBarsPadding
-import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptionsBuilder
@@ -28,7 +26,6 @@ fun NavGraphBuilder.combinationScreen(
         deepLinks = listOf(navDeepLink<Combination>(basePath = "$DeepLinkBaseUrl/rune"))
     ) {
         CombinationRoute(
-            modifier = Modifier.systemBarsPadding(),
             onRuneInfoClick = onRuneInfoClick,
             onRuneWordClick = onRuneWordClick
         )
