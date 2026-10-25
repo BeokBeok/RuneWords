@@ -1,11 +1,11 @@
 package com.beok.runewords.detail.presentation
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.util.TypedValue
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -48,7 +48,6 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.beok.runewords.common.ext.EMPTY
-import com.beok.runewords.common.ext.resourceIDByName
 import com.beok.runewords.common.util.HtmlConverter
 import com.beok.runewords.common.view.ContentLoading
 import com.beok.runewords.detail.BuildConfig
@@ -79,7 +78,7 @@ internal fun DetailRoute(
                 val runeWords = (state as DetailState.Content).value
 
                 if (runeWords.isEmpty()) return@Column
-                DetailTopBar(runeWordsName = runeWords.name)
+                DetailTopBar(runeWordsNameResourceID = runeWords.nameResourceID)
                 DetailContent(
                     info = runeWords,
                     onRuneClick = onRuneClick
@@ -175,9 +174,9 @@ private fun RuneWordsOption(info: RuneWordsItem) {
                 )
                 textAlignment = View.TEXT_ALIGNMENT_CENTER
                 setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f)
-                text = if (context.resourceIDByName(name = info.option) > 0) {
+                text = if (info.optionResourceID > 0) {
                     HtmlConverter.fromTheme(
-                        source = context.getString(context.resourceIDByName(name = info.option)),
+                        source = context.getString(info.optionResourceID),
                         isDarkTheme = isDarkTheme
                     )
                 } else {
@@ -237,12 +236,11 @@ private fun RuneWordsCombination(info: RuneWordsItem, onRuneClick: (String) -> U
 
 @Composable
 private fun RuneWordsType(info: RuneWordsItem) {
-    val context: Context = LocalContext.current
     Headline(title = stringResource(id = R.string.title_type))
     Text(
-        text = info.type
-            .filter { context.resourceIDByName(name = it) > 0 }
-            .joinToString { context.getString(context.resourceIDByName(it)) },
+        text = info.typeResourceIDs
+            .map { stringResource(id = it) }
+            .joinToString(),
         modifier = Modifier
             .fillMaxWidth()
             .padding(vertical = 20.dp),
@@ -253,13 +251,12 @@ private fun RuneWordsType(info: RuneWordsItem) {
 }
 
 @Composable
-private fun DetailTopBar(runeWordsName: String) {
-    val context: Context = LocalContext.current
+private fun DetailTopBar(@StringRes runeWordsNameResourceID: Int) {
     TopAppBar(
         title = {
             Text(
-                text = if (context.resourceIDByName(name = runeWordsName) > 0) {
-                    stringResource(id = context.resourceIDByName(name = runeWordsName))
+                text = if (runeWordsNameResourceID > 0) {
+                    stringResource(id = runeWordsNameResourceID)
                 } else {
                     String.EMPTY
                 },

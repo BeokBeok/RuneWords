@@ -1,6 +1,5 @@
 package com.beok.runewords.combination.presentation
 
-import android.content.Context
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -23,9 +22,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringArrayResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -33,9 +30,8 @@ import androidx.core.os.bundleOf
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.beok.runewords.combination.R
-import com.beok.runewords.combination.domain.model.RuneWords
 import com.beok.runewords.combination.presentation.model.CombinationState
-import com.beok.runewords.common.ext.resourceIDByName
+import com.beok.runewords.combination.presentation.model.RuneWordsItem
 import com.beok.runewords.common.model.Rune
 import com.beok.runewords.common.view.ContentLoading
 import com.beok.runewords.tracking.LocalTracker
@@ -76,23 +72,19 @@ internal fun CombinationRoute(
 
 @Composable
 private fun CombinationContent(
-    runeWords: ImmutableList<RuneWords>,
+    runeWords: ImmutableList<RuneWordsItem>,
     onRuneWordClick: (String) -> Unit
 ) {
-    val context: Context = LocalContext.current
     val tracking = LocalTracker.current
     LazyColumn(modifier = Modifier.fillMaxSize()) {
-        items(runeWords) { item ->
-            if (context.resourceIDByName(item.name) < 1) return@items
-            val isStandard = stringArrayResource(id = R.array.standard_rune_words)
-                .contains(item.name)
-            val runeWordsName = if (isStandard) {
+        items(items = runeWords, key = RuneWordsItem::name) { item ->
+            val runeWordsName = if (item.isStandardOnly) {
                 stringResource(
                     id = R.string.standard_only,
-                    stringResource(id = context.resourceIDByName(item.name))
+                    stringResource(id = item.nameResourceID)
                 )
             } else {
-                stringResource(id = context.resourceIDByName(item.name))
+                stringResource(id = item.nameResourceID)
             }
 
             Column(
