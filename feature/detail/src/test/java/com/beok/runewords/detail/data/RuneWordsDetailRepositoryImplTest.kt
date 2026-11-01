@@ -13,6 +13,8 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.take
 import kotlinx.coroutines.flow.toList
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.test.UnconfinedTestDispatcher
 import kotlinx.coroutines.test.runTest
 import org.junit.jupiter.api.Test
 
@@ -71,17 +73,57 @@ internal class RuneWordsDetailRepositoryImplTest {
     }
 
     @Test
-    fun `캐시가 있고 원격 요청이 실패하면 캐시를 내보낸 뒤 예외를 전달합니다`() = runTest {
+    fun `캐시가 있고 원격 요청이 실패하면 캐시를 유지합니다`() = runTest {
+        val localDataSource = FakeRuneWordsDetailDAO(RuneWordsDetailTable.fromDomain(cachedDetail))
         val repository = RuneWordsDetailRepositoryImpl(
-            localDataSource = FakeRuneWordsDetailDAO(RuneWordsDetailTable.fromDomain(cachedDetail)),
+            localDataSource = localDataSource,
             remoteDataSource = FakeRemoteDataSource { throw IllegalStateException() }
         )
         val emitted = mutableListOf<RuneWordsDetail>()
 
-        assertFailsWith<IllegalStateException> {
+        backgroundScope.launch(UnconfinedTestDispatcher(testScheduler)) {
             repository.fetchInfo(name = runeWordsName).collect { emitted.add(it) }
         }
+
         assertEquals(expected = listOf(cachedDetail), actual = emitted)
+        assertEquals(
+            expected = listOf(RuneWordsDetailTable.fromDomain(cachedDetail)),
+            actual = localDataSource.tables.value
+        )
+    }
+
+    @Test
+    fun `캐시가 없고 원격 문서가 없으면 저장하지 않고 예외를 전달합니다`() = runTest {
+        val localDataSource = FakeRuneWordsDetailDAO()
+        val repository = RuneWordsDetailRepositoryImpl(
+            localDataSource = localDataSource,
+            remoteDataSource = FakeRemoteDataSource { RuneWordsDetailResponse() }
+        )
+
+        assertFailsWith<IllegalStateException> {
+            repository.fetchInfo(name = runeWordsName).first()
+        }
+        assertEquals(expected = emptyList(), actual = localDataSource.tables.value)
+    }
+
+    @Test
+    fun `캐시가 있고 원격 문서가 없으면 캐시를 유지합니다`() = runTest {
+        val localDataSource = FakeRuneWordsDetailDAO(RuneWordsDetailTable.fromDomain(cachedDetail))
+        val repository = RuneWordsDetailRepositoryImpl(
+            localDataSource = localDataSource,
+            remoteDataSource = FakeRemoteDataSource { RuneWordsDetailResponse() }
+        )
+        val emitted = mutableListOf<RuneWordsDetail>()
+
+        backgroundScope.launch(UnconfinedTestDispatcher(testScheduler)) {
+            repository.fetchInfo(name = runeWordsName).collect { emitted.add(it) }
+        }
+
+        assertEquals(expected = listOf(cachedDetail), actual = emitted)
+        assertEquals(
+            expected = listOf(RuneWordsDetailTable.fromDomain(cachedDetail)),
+            actual = localDataSource.tables.value
+        )
     }
 
     private class FakeRuneWordsDetailDAO(vararg initial: RuneWordsDetailTable) :

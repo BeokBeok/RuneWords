@@ -15,6 +15,8 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.take
 import kotlinx.coroutines.flow.toList
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.test.UnconfinedTestDispatcher
 import kotlinx.coroutines.test.runTest
 import org.junit.jupiter.api.Test
 
@@ -121,19 +123,21 @@ internal class RuneWordsRepositoryImplTest {
     }
 
     @Test
-    fun `캐시가 있고 원격 요청이 실패하면 캐시를 내보낸 뒤 예외를 전달합니다`() = runTest {
+    fun `캐시가 있고 원격 요청이 실패하면 캐시를 유지합니다`() = runTest {
+        val cached = RuneTable(name = rune, runewords = listOf(RuneWordsCache(name = "obsession")))
+        val localDataSource = FakeRuneDAO(cached)
         val repository = RuneWordsRepositoryImpl(
-            localDataSource = FakeRuneDAO(
-                RuneTable(name = rune, runewords = listOf(RuneWordsCache(name = "obsession")))
-            ),
+            localDataSource = localDataSource,
             remoteDataSource = FakeRemoteDataSource { throw IllegalStateException() }
         )
         val emitted = mutableListOf<List<RuneWords>>()
 
-        assertFailsWith<IllegalStateException> {
+        backgroundScope.launch(UnconfinedTestDispatcher(testScheduler)) {
             repository.searchByRune(rune = rune).collect { emitted.add(it) }
         }
+
         assertEquals(expected = listOf(listOf(RuneWords(name = "obsession"))), actual = emitted)
+        assertEquals(expected = listOf(cached), actual = localDataSource.tables.value)
     }
 
     private class FakeRuneDAO(vararg initial: RuneTable) : RuneDAO {
