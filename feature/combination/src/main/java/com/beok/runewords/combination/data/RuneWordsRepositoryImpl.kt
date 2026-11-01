@@ -8,6 +8,8 @@ import com.beok.runewords.combination.domain.RuneWordsRepository
 import com.beok.runewords.combination.domain.model.RuneWords
 import com.beok.runewords.common.util.toDomain
 import javax.inject.Inject
+import kotlin.coroutines.coroutineContext
+import kotlinx.coroutines.ensureActive
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flatMapConcat
 import kotlinx.coroutines.flow.flow
@@ -40,20 +42,17 @@ internal class RuneWordsRepositoryImpl @Inject constructor(
 
     private fun emitAndSync(runeTables: List<RuneTable>, rune: String): Flow<List<RuneWords>> {
         return flow {
-            runeTables.flatMap { runeTable ->
-                runeTable.runewords.toDomain()
-            }.also {
-                emit(it)
-            }.let { local ->
-                remoteDataSource.searchByRune(rune)
-                    .toDomain()
-                    .also { remote ->
-                        if (local == remote) return@let
-                        localDataSource.insert(
-                            RuneTable(name = rune, runewords = remote.map(RuneWordsCache::from))
-                        )
-                    }
+            val local = runeTables.flatMap { runeTable -> runeTable.runewords.toDomain() }
+            emit(local)
+            // 동기화에 실패해도 이미 표시한 캐시를 유지합니다.
+            val remote = runCatching { remoteDataSource.searchByRune(rune).toDomain() }.getOrElse {
+                coroutineContext.ensureActive()
+                return@flow
             }
+            if (local == remote) return@flow
+            localDataSource.insert(
+                RuneTable(name = rune, runewords = remote.map(RuneWordsCache::from))
+            )
         }
     }
 }
