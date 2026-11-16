@@ -99,7 +99,7 @@ firebase-perf = { id = "com.google.firebase.firebase-perf", version = "2.0.2" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version = "1.23.8" }
 kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
-compose-guard = { id = "com.joetr.compose.guard", version = "2.0.0" }
+compose-guard = { id = "com.joetr.compose.guard", version = "2.6.0" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 dependency-analysis = { id = "com.autonomousapps.dependency-analysis", version = "3.19.2" }
 baselineprofile = { id = "androidx.baselineprofile", version.ref = "benchmark" }
