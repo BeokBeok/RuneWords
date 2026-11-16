@@ -462,8 +462,10 @@
     <string name="rune_word_eternity_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>파괴 불가<br></font>
-        <font color=\'#cc0029\'>피해 +260~310% 증가<br></font>
+        <font color=\'#000000\'>공격 속도 +30%<br></font>
+        <font color=\'#cc0029\'>피해 +300~390% 증가<br></font>
         <font color=\'#000000\'>최소 피해 +9<br></font>
+        <font color=\'#000000\'>최대 피해 +(캐릭터 레벨 x 3)<br></font>
         <font color=\'#000000\'>적중당 생명력 7% 훔침<br></font>
         <font color=\'#000000\'>강타 확률 20%<br></font>
         <font color=\'#000000\'>적중 시 대상 실명<br></font>
@@ -472,7 +474,7 @@
         <font color=\'#000000\'>마나 재생 16%<br></font>
         <font color=\'#000000\'>빙결되지 않음<br></font>
         <font color=\'#000000\'>마법 아이템 발견 확률 30% 증가<br></font>
-        <font color=\'#000000\'>8 레벨 부활 (88회)<br></font>
+        <font color=\'#000000\'>부활 +5<br></font>
     ]]>
     </string>
     <string name="rune_word_infinity_option" formatted="false">

@@ -462,8 +462,10 @@
     <string name="rune_word_eternity_option" formatted="false">
     <![CDATA[
         <font color=\'#000000\'>Indestructible<br></font>
-        <font color=\'#cc0029\'>+260-310% enhanced damage<br></font>
+        <font color=\'#000000\'>+30% increased attack speed<br></font>
+        <font color=\'#cc0029\'>+300-390% enhanced damage<br></font>
         <font color=\'#000000\'>+9 Minimum damage<br></font>
+        <font color=\'#000000\'>+3-297 to maximum damage (based on character level)<br></font>
         <font color=\'#000000\'>7% life stolen per hit<br></font>
         <font color=\'#000000\'>20% chance of crushing blow<br></font>
         <font color=\'#000000\'>Hit blinds target<br></font>
@@ -472,7 +474,7 @@
         <font color=\'#000000\'>Replenish life +16<br></font>
         <font color=\'#000000\'>Cannot be frozen<br></font>
         <font color=\'#000000\'>30% better chance of getting magic items<br></font>
-        <font color=\'#000000\'>Level 8 Revive (88 charges)<br></font>
+        <font color=\'#000000\'>+5 to Revive<br></font>
     ]]>
     </string>
     <string name="rune_word_infinity_option" formatted="false">
