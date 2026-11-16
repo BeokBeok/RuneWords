@@ -41,7 +41,7 @@ lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel", versi
 lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version = "2.9.0" }
 
 # Firebase
-firebase-bom = { module = "com.google.firebase:firebase-bom", version = "33.14.0" }
+firebase-bom = { module = "com.google.firebase:firebase-bom", version = "35.1.0" }
 firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
 firebase-firestore = { module = "com.google.firebase:firebase-firestore" }
 firebase-crashlytics = { module = "com.google.firebase:firebase-crashlytics" }
