@@ -31,13 +31,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.AnnotatedString
-import androidx.compose.ui.text.fromHtml
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -54,6 +51,7 @@ import com.beok.runewords.detail.BuildConfig
 import com.beok.runewords.detail.R
 import com.beok.runewords.detail.presentation.model.DetailState
 import com.beok.runewords.detail.presentation.model.RuneWordsItem
+import com.beok.runewords.detail.presentation.option.rememberRuneWordsOptionText
 import com.beok.runewords.tracking.LocalTracker
 import com.beok.runewords.tracking.TrackingConstants
 import com.google.android.gms.ads.AdRequest
@@ -172,9 +170,7 @@ private fun BannerAd(modifier: Modifier = Modifier) {
 @Composable
 private fun RuneWordsOption(info: RuneWordsItem) {
     Headline(title = stringResource(id = R.string.title_options))
-    if (info.optionResourceID < 1) return
-    val html = stringResource(id = info.optionResourceID)
-    val option = remember(html) { AnnotatedString.fromHtml(html).withoutDefaultTextColor() }
+    val option = rememberRuneWordsOptionText(info) ?: return
     Text(
         text = option,
         modifier = Modifier
@@ -185,22 +181,6 @@ private fun RuneWordsOption(info: RuneWordsItem) {
         color = MaterialTheme.colorScheme.primary
     )
 }
-
-/**
- * 옵션 HTML은 기본 문구에 검정색(#000000)을 지정한다.
- * 검정색 지정을 지워서 테마의 글자 색상을 따르게 한다. 강조 색상은 유지한다.
- */
-private fun AnnotatedString.withoutDefaultTextColor(): AnnotatedString = AnnotatedString(
-    text = text,
-    spanStyles = spanStyles.map { range ->
-        if (range.item.color == Color.Black) {
-            range.copy(item = range.item.copy(color = Color.Unspecified))
-        } else {
-            range
-        }
-    },
-    paragraphStyles = paragraphStyles
-)
 
 @Composable
 private fun RuneWordsCombination(info: RuneWordsItem, onRuneClick: (String) -> Unit) {
