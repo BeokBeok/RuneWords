@@ -20,7 +20,6 @@ internal class RuneWordsItemMapper @Inject constructor(
         typeResourceIDs = runeWordsDetail.type
             .map(context::resourceIDByName)
             .filter { it > 0 },
-        optionResourceID = context.resourceIDByName(runeWordsDetail.option),
         optionSections = RuneWordOptionCatalog.find(runeWordsDetail.name).orEmpty(),
         levelLimit = runeWordsDetail.levelLimit
     )

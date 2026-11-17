@@ -15,6 +15,36 @@ internal class RuneWordOptionFormatterTest {
     private val enFormatter = RuneWordOptionFormatter(EN::getString)
 
     @Test
+    fun `모든 룬워드의 옵션을_en과 ko로 빈 줄 없이 표시한다`() {
+        val formatSpecifier = Regex("""%(\d+\${'$'})?s|%%""")
+        RuneWordOptionCatalog.runeWordNames.forEach { name ->
+            val sections = RuneWordOptionCatalog.find(name).orEmpty()
+            listOf(enFormatter, koFormatter).forEach { formatter ->
+                val lines = formatter.format(sections).flatMap(FormattedOptionSection::lines)
+                assertEquals(
+                    expected = sections.sumOf { it.options.size },
+                    actual = lines.count { it.text.isNotBlank() && !formatSpecifier.containsMatchIn(it.text) },
+                    message = "$name 의 옵션 문구가 비었거나 형식 문자가 남았습니다."
+                )
+            }
+        }
+    }
+
+    @Test
+    fun `피해 범위는_범위로 표시하지만 강조하지 않는다`() {
+        // given
+        val sections = listOf(
+            RuneWordOptionSection(options = listOf(option(OptionType.ADDS_COLD_DAMAGE, OptionArg.DamageRange(3, 14))))
+        )
+
+        // when
+        val actual = koFormatter.format(sections).single().lines.single()
+
+        // then
+        assertEquals(expected = FormattedOptionLine(text = "냉기 피해 3~14 추가", isVariable = false), actual = actual)
+    }
+
+    @Test
     fun `영원의 옵션을_한국어로 표시한다`() {
         // given
         val sections = RuneWordOptionCatalog.find("eternity").orEmpty()
@@ -38,7 +68,7 @@ internal class RuneWordOptionFormatterTest {
                 "생명력 회복 +16",
                 "빙결되지 않음",
                 "마법 아이템 발견 확률 30% 증가",
-                "부활 +5"
+                "+5 부활"
             ),
             actual = actual.single().lines.map(FormattedOptionLine::text)
         )
@@ -134,5 +164,29 @@ internal class RuneWordOptionFormatterTest {
             ),
             actual = actual
         )
+    }
+
+    @Test
+    fun `한국어 기술 보너스는_게임 툴팁처럼 수치를 기술 이름 앞에 표시한다`() {
+        // given
+        val sections = listOf(
+            RuneWordOptionSection(
+                options = listOf(
+                    option(
+                        OptionType.CLASS_ONLY_SKILL,
+                        Fixed(3),
+                        OptionArg.SkillName(Skill.ABYSS),
+                        OptionArg.ClassName(CharacterClass.WARLOCK)
+                    ),
+                    option(OptionType.SKILL_BONUS, Fixed(5), OptionArg.SkillName(Skill.REVIVE))
+                )
+            )
+        )
+
+        // when
+        val actual = koFormatter.format(sections).single().lines.map(FormattedOptionLine::text)
+
+        // then
+        assertEquals(expected = listOf("+3 심연 (악마술사 전용)", "+5 부활"), actual = actual)
     }
 }

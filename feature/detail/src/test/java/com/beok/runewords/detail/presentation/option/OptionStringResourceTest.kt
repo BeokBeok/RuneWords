@@ -13,6 +13,7 @@ internal class OptionStringResourceTest {
 
     private val referencedResIDs: List<Int> = OptionType.entries.map(OptionType::templateResID) +
         Skill.entries.map(Skill::nameResID) +
+        CharacterClass.entries.map(CharacterClass::nameResID) +
         OptionSectionTitle.entries.map(OptionSectionTitle::titleResID) +
         listOf(R.string.option_value_range, R.string.option_value_per_level, R.string.option_value_per_level_range)
 

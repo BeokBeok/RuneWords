@@ -19,6 +19,12 @@ internal sealed interface OptionArg {
         override val isVariable: Boolean get() = true
     }
 
+    /**
+     * 피해의 최소~최대 값. 예: 냉기 피해 3~14 추가
+     * 표기는 [Range]와 같지만 아이템마다 달라지는 수치가 아니므로 강조하지 않는다.
+     */
+    data class DamageRange(val min: Number, val max: Number) : OptionArg
+
     /** 캐릭터 레벨 비례 수치. 예: 최대 피해 +(캐릭터 레벨 x 3) */
     data class PerLevel(val factor: Number) : OptionArg
 
@@ -29,4 +35,7 @@ internal sealed interface OptionArg {
 
     /** 기술 이름. 예: 15 레벨 냉기 갑옷 시전 */
     data class SkillName(val skill: Skill) : OptionArg
+
+    /** 직업 이름. 예: 뼈 창 +1 (강령술사 전용) */
+    data class ClassName(val characterClass: CharacterClass) : OptionArg
 }

@@ -12,7 +12,6 @@ internal data class RuneWordsItem(
     @StringRes val nameResourceID: Int = 0,
     val runeCombination: List<Rune> = emptyList(),
     val typeResourceIDs: List<Int> = emptyList(),
-    @StringRes val optionResourceID: Int = 0,
     val optionSections: List<RuneWordOptionSection> = emptyList(),
     val levelLimit: Int = 1
 ) {

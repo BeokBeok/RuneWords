@@ -29,13 +29,21 @@ internal class RuneWordsItemMapperTest {
     }
 
     @Test
-    fun `옵션 형식으로 정의되지 않은 룬워드는_기존 옵션 리소스만 담는다`() {
+    fun `옵션 형식으로 정의되지 않은 룬워드는_옵션이 비어 있다`() {
         // when
-        val actual = mapper.toItem(runeWordsDetail(name = "call_to_arms"))
+        val actual = mapper.toItem(runeWordsDetail(name = "new_rune_word"))
 
         // then
         assertTrue(actual.optionSections.isEmpty())
-        assertEquals(expected = 1, actual = actual.optionResourceID)
+    }
+
+    @Test
+    fun `예약어 때문에 밑줄이 붙은 공허도_옵션 정의를 담는다`() {
+        // when
+        val actual = mapper.toItem(runeWordsDetail(name = "void_"))
+
+        // then
+        assertTrue(actual.optionSections.isNotEmpty())
     }
 
     private fun runeWordsDetail(name: String) = RuneWordsDetail(
