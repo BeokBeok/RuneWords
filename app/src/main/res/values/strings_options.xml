@@ -44,7 +44,7 @@
         <font color=\'#000000\'>+50% faster hit Recovery<br></font>
         <font color=\'#cc0029\'>+25-50% to poison skill damage<br></font>
         <font color=\'#000000\'>+300 defense<br></font>
-        <font color=\'#000000\'>Increase maximum mana 50%<br></font>
+        <font color=\'#000000\'>Increase maximum mana 5%<br></font>
         <font color=\'#000000\'>Regenerate mana 15%<br></font>
         <font color=\'#000000\'>+5% maximum cold resist<br></font>
         <font color=\'#000000\'>Fire resist +30%<br></font>
@@ -453,7 +453,7 @@
         <font color=\'#cc0029\'>+140-210% enhanced damage<br></font>
         <font color=\'#000000\'>Ignore target\'s defense<br></font>
         <font color=\'#cc0029\'>+25-30% cold skill damage<br></font>
-        <font color=\'#000000\'>-20% to enemy cold skill resistance<br></font>
+        <font color=\'#000000\'>-20% to enemy cold resistance<br></font>
         <font color=\'#000000\'>7% life stolen per hit<br></font>
         <font color=\'#000000\'>20% deadly strike<br></font>
         <font color=\'#000000\'>3.125-309.375% extra gold from monsters (based on character level)<br></font>
@@ -615,7 +615,7 @@
         <font color=\'#000000\'>+25% increased attack speed<br></font>
         <font color=\'#cc0029\'>+160-210% enhanced damage<br></font>
         <font color=\'#cc0029\'>50-80% bonus to attack rating<br></font>
-        <font color=\'#000000\'>+75% damage to demons<br></font>
+        <font color=\'#000000\'>+75% damage to undead<br></font>
         <font color=\'#000000\'>+50 attack rating against undead<br></font>
         <font color=\'#000000\'>Adds 1-50 lightning damage<br></font>
         <font color=\'#000000\'>+1 to Berserk<br></font>
@@ -724,7 +724,7 @@
     </string>
     <string name="rune_word_pride_option" formatted="false">
     <![CDATA[
-        <font color=\'#000000\'>25% chance to cast level 17 Fire Ball when struck<br></font>
+        <font color=\'#000000\'>25% chance to cast level 17 Fire Wall when struck<br></font>
         <font color=\'#cc0029\'>Level 16-20 Concentrate aura when equipped<br></font>
         <font color=\'#cc0029\'>260-300% bonus to attack rating<br></font>
         <font color=\'#000000\'>+1-99% damage to demons (based on character level)<br></font>
@@ -1124,7 +1124,7 @@
         <font color=\'#000000\'>Magic damage reduced by 17<br></font>
         <font color=\'#000000\'>+2 to mana after each kill<br></font>
         <font color=\'#000000\'>+1 to light radius<br></font>
-        <font color=\'#000000\'>Repairs 1 durability in 14 seconds<br></font>
+        <font color=\'#000000\'>Repairs 1 durability in 4 seconds<br></font>
     ]]>
     </string>
     <string name="rune_word_pattern_option" formatted="false">
