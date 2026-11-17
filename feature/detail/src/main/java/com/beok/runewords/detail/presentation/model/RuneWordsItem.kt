@@ -4,6 +4,7 @@ import androidx.annotation.StringRes
 import androidx.compose.runtime.Stable
 import com.beok.runewords.common.ext.EMPTY
 import com.beok.runewords.common.model.Rune
+import com.beok.runewords.detail.presentation.option.RuneWordOptionSection
 
 @Stable
 internal data class RuneWordsItem(
@@ -12,6 +13,7 @@ internal data class RuneWordsItem(
     val runeCombination: List<Rune> = emptyList(),
     val typeResourceIDs: List<Int> = emptyList(),
     @StringRes val optionResourceID: Int = 0,
+    val optionSections: List<RuneWordOptionSection> = emptyList(),
     val levelLimit: Int = 1
 ) {
 
