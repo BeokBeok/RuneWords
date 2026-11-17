@@ -126,6 +126,30 @@ internal class RuneWordsDetailRepositoryImplTest {
         )
     }
 
+    @Test
+    fun `이름 끝에 밑줄이 붙은 룬워드는_밑줄 없는 이름으로 조회하고 다시 요청하지 않습니다`() = runTest {
+        val localDataSource = FakeRuneWordsDetailDAO()
+        var remoteCallCount = 0
+        val voidResponse = remoteResponse.copy(name = "void_", option = "rune_word_void_option")
+        val repository = RuneWordsDetailRepositoryImpl(
+            localDataSource = localDataSource,
+            remoteDataSource = FakeRemoteDataSource {
+                remoteCallCount++
+                voidResponse
+            }
+        )
+        val emitted = mutableListOf<RuneWordsDetail>()
+
+        backgroundScope.launch(UnconfinedTestDispatcher(testScheduler)) {
+            repository.fetchInfo(name = "void").collect { emitted.add(it) }
+        }
+
+        assertEquals(expected = "void_", actual = emitted.first().name)
+        assertEquals(expected = listOf("void_"), actual = localDataSource.tables.value.map { it.name })
+        // 최초 요청 1회 + 캐시 발행 후 동기화 1회. 그 뒤로는 같은 값이라 저장하지 않으므로 반복되지 않는다.
+        assertEquals(expected = 2, actual = remoteCallCount)
+    }
+
     private class FakeRuneWordsDetailDAO(vararg initial: RuneWordsDetailTable) :
         RuneWordsDetailDAO {
 
@@ -136,7 +160,7 @@ internal class RuneWordsDetailRepositoryImplTest {
         }
 
         override fun findBy(name: String): Flow<List<RuneWordsDetailTable>> =
-            tables.map { tables -> tables.filter { it.name == name } }
+            tables.map { tables -> tables.filter { it.name == name || it.name == "${name}_" } }
     }
 
     private class FakeRemoteDataSource(private val response: () -> RuneWordsDetailResponse) :

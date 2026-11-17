@@ -56,10 +56,14 @@ internal class RuneWordsDetailRepositoryImpl @Inject constructor(
     }
 
     // 조회 키와 다른 이름을 저장하면 Room Flow가 다시 발행되어 원격 요청이 끝없이 반복됩니다.
+    // 예약어와 겹치는 룬워드(void)는 문서 ID가 "void", name이 "void_"입니다.
+    // 그래서 끝의 "_"를 무시하고 비교합니다. DAO 조회도 같은 규칙을 따릅니다.
     private suspend fun fetchRemote(runeName: String): RuneWordsDetail =
         remoteDataSource.fetchInfo(runeName)
             .toDomain()
             .also { remote ->
-                check(remote.name == runeName) { "문서를 찾을 수 없습니다: $runeName" }
+                check(remote.name.removeSuffix(suffix = "_") == runeName.removeSuffix(suffix = "_")) {
+                    "문서를 찾을 수 없습니다: $runeName"
+                }
             }
 }
