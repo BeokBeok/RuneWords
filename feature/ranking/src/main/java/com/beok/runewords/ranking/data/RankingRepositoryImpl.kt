@@ -1,5 +1,6 @@
 package com.beok.runewords.ranking.data
 
+import com.beok.runewords.ranking.data.model.RankingResponse
 import com.beok.runewords.ranking.domain.RankingRepository
 import com.beok.runewords.ranking.domain.model.RuneRanking
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig

@@ -1,4 +1,4 @@
-package com.beok.runewords.ranking.data
+package com.beok.runewords.ranking.data.model
 
 import com.beok.runewords.common.util.DataToDomainMapper
 import com.beok.runewords.ranking.domain.model.RuneRanking
