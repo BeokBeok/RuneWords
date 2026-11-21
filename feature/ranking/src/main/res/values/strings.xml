@@ -2,8 +2,9 @@
 <resources>
     <string name="ranking_title">Ranking</string>
     <string name="ranking_period">Based on the last %d days</string>
-    <string name="ranking_runes">Popular runes</string>
-    <string name="ranking_rune_words">Popular rune words</string>
+    <string name="ranking_period_with_dates">Based on the last %1$d days (%2$s ~ %3$s)</string>
+    <string name="ranking_runes">Popular runes (by clicks)</string>
+    <string name="ranking_rune_words">Popular rune words (by clicks)</string>
     <string name="ranking_empty">There is no ranking data yet.</string>
     <string name="ranking_failed">Could not load the ranking.</string>
 </resources>

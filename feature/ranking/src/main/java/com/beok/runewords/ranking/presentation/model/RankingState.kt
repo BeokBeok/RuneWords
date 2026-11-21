@@ -14,6 +14,8 @@ internal sealed interface RankingState {
     @Immutable
     data class Content(
         val periodDays: Int,
+        val startDate: String,
+        val endDate: String,
         val runes: ImmutableList<Rune>,
         val runeWords: ImmutableList<RankingRuneWordItem>
     ) : RankingState

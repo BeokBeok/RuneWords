@@ -50,6 +50,8 @@ internal class RankingViewModel @Inject constructor(
         if (runes.isEmpty() && runeWords.isEmpty()) return RankingState.Empty
         return RankingState.Content(
             periodDays = periodDays,
+            startDate = startDate,
+            endDate = endDate,
             runes = runes.toImmutableList(),
             runeWords = runeWords.toImmutableList()
         )

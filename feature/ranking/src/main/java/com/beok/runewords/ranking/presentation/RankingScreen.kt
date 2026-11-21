@@ -97,7 +97,16 @@ private fun RankingContent(
         if (state.periodDays > 0) {
             item {
                 Text(
-                    text = stringResource(id = R.string.ranking_period, state.periodDays),
+                    text = if (state.startDate.isNotEmpty() && state.endDate.isNotEmpty()) {
+                        stringResource(
+                            id = R.string.ranking_period_with_dates,
+                            state.periodDays,
+                            state.startDate,
+                            state.endDate
+                        )
+                    } else {
+                        stringResource(id = R.string.ranking_period, state.periodDays)
+                    },
                     modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant

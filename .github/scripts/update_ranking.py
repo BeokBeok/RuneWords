@@ -3,7 +3,7 @@
 - rune_click(runeName), rune_words_click(runeWordsName)의 최근 N일 eventCount를 조회한다.
 - 상위 항목만 JSON으로 만들어 Remote Config 템플릿의 `key_ranking` 파라미터 하나만 바꾼다.
 - 다른 파라미터(예: key_force_update_version)는 건드리지 않는다.
-- 값이 바뀌지 않으면 게시하지 않는다.
+- 값이 바뀌지 않으면 게시하지 않는다. 값에 집계 날짜가 들어가므로 보통 매일 게시된다.
 
 환경 변수:
 - GA4_PROPERTY_ID: GA4 속성 ID (숫자)
@@ -17,6 +17,8 @@ import json
 import os
 import sys
 from collections import Counter
+from datetime import datetime, timedelta
+from zoneinfo import ZoneInfo
 
 PARAMETER_KEY = "key_ranking"
 NOT_SET_VALUES = {"", "(not set)", "(other)"}
@@ -46,10 +48,18 @@ def run_report(session, property_id, event_name, parameter_name, period_days):
         },
     )
     raise_for_status(response)
-    return [
+    body = response.json()
+    rows = [
         (row["dimensionValues"][0]["value"], int(row["metricValues"][0]["value"]))
-        for row in response.json().get("rows", [])
+        for row in body.get("rows", [])
     ]
+    return rows, body.get("metadata", {}).get("timeZone", "UTC")
+
+
+def date_range(period_days, time_zone, now=None):
+    """GA4의 `{N}daysAgo`~`yesterday`는 속성 시간대 기준이다. 같은 기준으로 날짜를 만든다."""
+    today = (now or datetime.now(ZoneInfo(time_zone))).date()
+    return (today - timedelta(days=period_days)).isoformat(), (today - timedelta(days=1)).isoformat()
 
 
 def top_names(rows, size):
@@ -64,9 +74,11 @@ def top_names(rows, size):
     return [name for name, _ in sorted(counts.items(), key=lambda item: (-item[1], item[0]))[:size]]
 
 
-def build_ranking(rune_rows, rune_words_rows, period_days, size):
+def build_ranking(rune_rows, rune_words_rows, period_days, size, start_date, end_date):
     return {
         "periodDays": period_days,
+        "startDate": start_date,
+        "endDate": end_date,
         "runes": top_names(rune_rows, size),
         "runeWords": top_names(rune_words_rows, size),
     }
@@ -124,11 +136,16 @@ def main():
     session = AuthorizedSession(credentials)
     print(f"서비스 계정: {getattr(credentials, 'service_account_email', '알 수 없음')}")
 
+    rune_rows, time_zone = run_report(session, property_id, "rune_click", "runeName", period_days)
+    rune_words_rows, _ = run_report(session, property_id, "rune_words_click", "runeWordsName", period_days)
+    start_date, end_date = date_range(period_days, time_zone)
     ranking = build_ranking(
-        rune_rows=run_report(session, property_id, "rune_click", "runeName", period_days),
-        rune_words_rows=run_report(session, property_id, "rune_words_click", "runeWordsName", period_days),
+        rune_rows=rune_rows,
+        rune_words_rows=rune_words_rows,
         period_days=period_days,
         size=size,
+        start_date=start_date,
+        end_date=end_date,
     )
     print(json.dumps(ranking, ensure_ascii=False, indent=2))
 

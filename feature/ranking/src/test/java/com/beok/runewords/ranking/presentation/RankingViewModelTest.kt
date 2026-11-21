@@ -32,6 +32,8 @@ internal class RankingViewModelTest {
             rankingRepository = RankingRepository.Fake(
                 RuneRanking(
                     periodDays = 7,
+                    startDate = "2026-11-14",
+                    endDate = "2026-11-20",
                     runes = listOf("ber", "unknown_rune", "JAH"),
                     runeWords = listOf("unknown_rune_word", "enigma")
                 )
@@ -44,6 +46,7 @@ internal class RankingViewModelTest {
 
         // then
         assertEquals(expected = 7, actual = state.periodDays)
+        assertEquals(expected = "2026-11-14", actual = state.startDate)
         assertEquals(expected = listOf(Rune.BER, Rune.JAH), actual = state.runes)
         assertEquals(expected = listOf("enigma"), actual = state.runeWords.map { it.name })
     }
@@ -53,7 +56,7 @@ internal class RankingViewModelTest {
         // given
         val viewModel = RankingViewModel(
             rankingRepository = RankingRepository.Fake(
-                RuneRanking(periodDays = 0, runes = emptyList(), runeWords = emptyList())
+                RuneRanking(periodDays = 0, startDate = "", endDate = "", runes = emptyList(), runeWords = emptyList())
             ),
             context = context
         )

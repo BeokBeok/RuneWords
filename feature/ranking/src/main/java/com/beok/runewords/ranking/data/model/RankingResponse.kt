@@ -1,4 +1,4 @@
-package com.beok.runewords.ranking.data
+package com.beok.runewords.ranking.data.model
 
 import com.beok.runewords.common.util.DataToDomainMapper
 import com.beok.runewords.ranking.domain.model.RuneRanking
@@ -9,12 +9,16 @@ import kotlinx.serialization.json.Json
 @Serializable
 internal data class RankingResponse(
     val periodDays: Int = 0,
+    val startDate: String = "",
+    val endDate: String = "",
     val runes: List<String> = emptyList(),
     val runeWords: List<String> = emptyList()
 ) : DataToDomainMapper<RuneRanking> {
 
     override fun toDomain(): RuneRanking = RuneRanking(
         periodDays = periodDays,
+        startDate = startDate,
+        endDate = endDate,
         runes = runes,
         runeWords = runeWords
     )
