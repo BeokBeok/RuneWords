@@ -13,9 +13,14 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -24,19 +29,54 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.core.os.bundleOf
 import com.beok.runewords.common.model.Rune
+import com.beok.runewords.home.R
 import com.beok.runewords.tracking.LocalTracker
 import com.beok.runewords.tracking.TrackingConstants
 
 @Composable
-internal fun HomeScreen(modifier: Modifier = Modifier, onRuneClick: (String) -> Unit) {
-    Scaffold(modifier = modifier.fillMaxSize()) { contentPadding ->
+internal fun HomeScreen(
+    onRuneClick: (String) -> Unit,
+    onRankingClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    Scaffold(
+        modifier = modifier.fillMaxSize(),
+        topBar = { HomeTopBar(onRankingClick = onRankingClick) }
+    ) { contentPadding ->
         HomeContent(
             modifier = Modifier.padding(contentPadding),
             onRuneClick = onRuneClick
         )
     }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun HomeTopBar(onRankingClick: () -> Unit) {
+    TopAppBar(
+        title = {
+            Text(
+                text = stringResource(id = R.string.home_title),
+                fontSize = 20.sp,
+                color = MaterialTheme.colorScheme.primary
+            )
+        },
+        actions = {
+            IconButton(onClick = onRankingClick) {
+                Icon(
+                    painter = painterResource(id = R.drawable.ic_ranking),
+                    contentDescription = stringResource(id = R.string.home_ranking),
+                    tint = MaterialTheme.colorScheme.primary
+                )
+            }
+        },
+        colors = TopAppBarDefaults.topAppBarColors(
+            containerColor = MaterialTheme.colorScheme.background
+        )
+    )
 }
 
 @Composable

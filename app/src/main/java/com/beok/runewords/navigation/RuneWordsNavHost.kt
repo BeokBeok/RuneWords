@@ -15,6 +15,8 @@ import com.beok.runewords.home.presentation.navigation.Home
 import com.beok.runewords.home.presentation.navigation.homeScreen
 import com.beok.runewords.info.presentation.navigation.navigateToRuneInfo
 import com.beok.runewords.info.presentation.navigation.runeInfoScreen
+import com.beok.runewords.ranking.presentation.navigation.navigateToRanking
+import com.beok.runewords.ranking.presentation.navigation.rankingScreen
 
 private const val TransitionDurationMillis = 300
 
@@ -41,7 +43,16 @@ fun RuneWordsNavHost(
             slideOutOfContainer(SlideDirection.End, tween(TransitionDurationMillis))
         }
     ) {
-        homeScreen(onRuneClick = navController::navigateToCombination)
+        homeScreen(
+            onRuneClick = navController::navigateToCombination,
+            onRankingClick = navController::navigateToRanking
+        )
+        rankingScreen(
+            onRuneClick = navController::navigateToCombination,
+            onRuneWordClick = { runeWordName ->
+                showInterstitial { navController.navigateToDetail(runeWordName) }
+            }
+        )
         combinationScreen(
             onRuneInfoClick = navController::navigateToRuneInfo,
             onRuneWordClick = { runeWordName ->

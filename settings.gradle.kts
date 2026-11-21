@@ -34,6 +34,7 @@ include(
     ":feature:combination",
     ":feature:detail",
     ":feature:info",
+    ":feature:ranking",
     ":benchmark",
     ":tracking",
     ":coding-convention"

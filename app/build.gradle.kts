@@ -47,6 +47,7 @@ dependencies {
     implementation(project(":feature:combination"))
     implementation(project(":feature:detail"))
     implementation(project(":feature:info"))
+    implementation(project(":feature:ranking"))
 
     implementation(libs.bundles.compose)
     implementation(libs.activity.compose)
