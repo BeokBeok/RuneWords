@@ -48,3 +48,24 @@ android {
 ### 4. 오버엔지니어링 지양
 
 단순 플래그나 모듈 전용 값을 위해 무리하게 인터페이스 + Hilt 주입 레이어를 만드는 오버엔지니어링을 피하십시오. 필요하다면 해당 모듈의 `build.gradle.kts`에 직접 `buildConfig = true`를 켜서 사용하는 직관적인 방식을 권장합니다.
+
+---
+
+## README 동기화 컨벤션
+
+`README.md`의 "모듈 구조"와 "기술 스택" 섹션은 코드와 같은 내용을 유지해야 합니다.
+
+### 1. 모듈을 추가하거나 삭제할 때
+
+1. `settings.gradle.kts`의 `include(...)`를 수정합니다.
+2. 같은 변경에서 `README.md`의 모듈 표에 행을 추가하거나 삭제합니다. 행 형식은 ``| `:모듈` | 역할 |``입니다.
+3. 모듈 의존 관계가 바뀌면 `README.md`의 mermaid 도표도 수정합니다.
+
+PR CI(`.github/scripts/check_readme_modules.sh`)가 `settings.gradle.kts`와 README 모듈 표를 비교합니다. 두 목록이 다르면 PR이 실패합니다.
+
+### 2. 기술 스택이 바뀔 때
+
+라이브러리나 프레임워크를 추가하거나 제거하면 `README.md`의 "기술 스택" 섹션을 수정합니다.
+
+- 예: Room 제거, Ktor 추가, 테스트 프레임워크 교체
+- 버전만 올리는 변경은 README를 수정하지 않습니다. README에는 버전을 적지 않습니다.
