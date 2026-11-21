@@ -52,5 +52,11 @@ dependencyAnalysis {
                 exclude(":tracking")
             }
         }
+        // 랭킹 화면의 클릭은 순위 자기강화를 막기 위해 이벤트를 기록하지 않는다.
+        project(":feature:ranking") {
+            onUnusedDependencies {
+                exclude(":tracking")
+            }
+        }
     }
 }
