@@ -28,7 +28,7 @@ def raise_for_status(response):
         return
     print(f"{response.status_code} {response.request.method} {response.url}", file=sys.stderr)
     print(response.text, file=sys.stderr)
-    raise_for_status(response)
+    response.raise_for_status()
 
 
 def run_report(session, property_id, event_name, parameter_name, period_days):
