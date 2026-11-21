@@ -39,6 +39,7 @@ graph TD
 | `:common` | 공통 모델, 리소스, 테스트 픽스처 |
 | `:tracking` | Firebase Analytics 이벤트 추적 |
 | `:benchmark` | Baseline Profile 생성, 시작 성능 측정 |
+| `:coding-convention` | Konsist로 네이밍과 ViewModel 규칙 검사 |
 | `build-logic` | Gradle 컨벤션 플러그인 |
 
 ## 기술 스택
