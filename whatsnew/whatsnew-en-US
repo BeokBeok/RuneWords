@@ -1,4 +1,2 @@
-[ver 3.8.0]
-- Unified the format of runeword option text.
-- Fixed incorrect option details for some runewords.
-- Fixed an issue where Void runeword details did not appear.
+[ver 3.9.0]
+- Added a ranking screen for popular runes and runewords.
