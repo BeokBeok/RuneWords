@@ -45,6 +45,17 @@ jobs:
             echo "build=false" >> "$GITHUB_OUTPUT"
           fi
 
+  readme:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Check README modules
+        run: .github/scripts/check_readme_modules.sh
+
   # build는 main ruleset의 required check이므로 workflow가 아닌 job 단계에서 건너뛴다.
   build:
     needs: changes
