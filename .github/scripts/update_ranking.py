@@ -22,6 +22,15 @@ PARAMETER_KEY = "key_ranking"
 NOT_SET_VALUES = {"", "(not set)", "(other)"}
 
 
+def raise_for_status(response):
+    """실패하면 Google이 보낸 오류 본문을 출력한다. 본문에 권한 부족, API 비활성 같은 원인이 있다."""
+    if response.ok:
+        return
+    print(f"{response.status_code} {response.request.method} {response.url}", file=sys.stderr)
+    print(response.text, file=sys.stderr)
+    response.raise_for_status()
+
+
 def run_report(session, property_id, event_name, parameter_name, period_days):
     response = session.post(
         f"https://analyticsdata.googleapis.com/v1beta/properties/{property_id}:runReport",
@@ -36,7 +45,7 @@ def run_report(session, property_id, event_name, parameter_name, period_days):
             "limit": 200,
         },
     )
-    response.raise_for_status()
+    raise_for_status(response)
     return [
         (row["dimensionValues"][0]["value"], int(row["metricValues"][0]["value"]))
         for row in response.json().get("rows", [])
@@ -66,7 +75,7 @@ def build_ranking(rune_rows, rune_words_rows, period_days, size):
 def publish(session, project_id, ranking):
     url = f"https://firebaseremoteconfig.googleapis.com/v1/projects/{project_id}/remoteConfig"
     response = session.get(url)
-    response.raise_for_status()
+    raise_for_status(response)
     etag = response.headers["ETag"]
     template = response.json()
 
@@ -92,7 +101,7 @@ def publish(session, project_id, ranking):
         data=json.dumps(template, ensure_ascii=False).encode("utf-8"),
         headers={"Content-Type": "application/json; UTF-8", "If-Match": etag},
     )
-    response.raise_for_status()
+    raise_for_status(response)
     print(f"게시 완료: version {response.json().get('version', {}).get('versionNumber')}")
 
 
@@ -113,6 +122,7 @@ def main():
         ]
     )
     session = AuthorizedSession(credentials)
+    print(f"서비스 계정: {getattr(credentials, 'service_account_email', '알 수 없음')}")
 
     ranking = build_ranking(
         rune_rows=run_report(session, property_id, "rune_click", "runeName", period_days),
