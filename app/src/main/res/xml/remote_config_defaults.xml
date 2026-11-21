@@ -4,4 +4,8 @@
         <key>key_force_update_version</key>
         <value>0.0.0</value>
     </entry>
+    <entry>
+        <key>key_ranking</key>
+        <value>{}</value>
+    </entry>
 </defaultMap>

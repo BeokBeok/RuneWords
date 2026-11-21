@@ -4,10 +4,11 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import com.beok.runewords.home.presentation.HomeScreen
 
-fun NavGraphBuilder.homeScreen(onRuneClick: (String) -> Unit) {
+fun NavGraphBuilder.homeScreen(onRuneClick: (String) -> Unit, onRankingClick: () -> Unit) {
     composable<Home> {
         HomeScreen(
-            onRuneClick = onRuneClick
+            onRuneClick = onRuneClick,
+            onRankingClick = onRankingClick
         )
     }
 }

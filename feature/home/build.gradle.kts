@@ -9,5 +9,7 @@ android {
 }
 
 dependencies {
+    api(libs.compose.runtime)
+    api(libs.compose.material3)
     implementation(libs.core.ktx)
 }

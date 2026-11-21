@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_title">Diablo2 RuneWords</string>
+    <string name="home_ranking">Ranking</string>
+    <string name="home_ranking_tooltip">Popular runes and rune words</string>
+</resources>

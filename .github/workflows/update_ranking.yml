@@ -1,0 +1,46 @@
+name: Update Ranking
+
+on:
+  schedule:
+    # 매일 03:00 KST (18:00 UTC). GA4 전날 데이터 처리가 끝난 뒤에 실행한다.
+    - cron: '0 18 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: '게시하지 않고 집계 결과만 출력'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install google-auth requests
+
+      - name: Write service account key
+        run: echo '${{ secrets.FIREBASE_APP_DISTRIBUTOR_SERVICES_JSON }}' > "$RUNNER_TEMP/sa.json"
+
+      - name: Update ranking
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/sa.json
+          GA4_PROPERTY_ID: ${{ vars.GA4_PROPERTY_ID }}
+          FIREBASE_PROJECT_ID: runewords-b261a
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: python .github/scripts/update_ranking.py
+
+      - name: Remove service account key
+        if: always()
+        run: rm -f "$RUNNER_TEMP/sa.json"
