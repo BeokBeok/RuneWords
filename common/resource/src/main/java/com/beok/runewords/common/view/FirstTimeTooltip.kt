@@ -54,8 +54,10 @@ fun rememberFirstTimeTooltipState(preferencesName: String, seenKey: String): Too
 /** 툴팁을 아이콘 아래에 둔다. 기본 위치(아이콘 위)는 상단 바에서 아이콘을 가린다. */
 @Composable
 fun rememberBelowAnchorPositionProvider(): PopupPositionProvider {
-    val spacing = with(LocalDensity.current) { TooltipAnchorSpacing.roundToPx() }
-    return remember(spacing) {
+    val density = LocalDensity.current
+    val spacing = with(density) { TooltipAnchorSpacing.roundToPx() }
+    val edgeMargin = with(density) { TooltipEdgeMargin.toPx() }
+    return remember(spacing, edgeMargin) {
         object : PopupPositionProvider {
             override fun calculatePosition(
                 anchorBounds: IntRect,
@@ -66,7 +68,8 @@ fun rememberBelowAnchorPositionProvider(): PopupPositionProvider {
                 val x = belowAnchorLeft(
                     anchorCenterX = anchorBounds.center.x.toFloat(),
                     tooltipWidth = popupContentSize.width.toFloat(),
-                    windowWidth = windowSize.width.toFloat()
+                    windowWidth = windowSize.width.toFloat(),
+                    edgeMargin = edgeMargin
                 )
                 return IntOffset(x = x.toInt(), y = anchorBounds.bottom + spacing)
             }
@@ -74,9 +77,16 @@ fun rememberBelowAnchorPositionProvider(): PopupPositionProvider {
     }
 }
 
-/** 툴팁을 앵커 가운데에 맞추되 창 밖으로 나가지 않게 한다. 툴팁 위치와 꼬리 위치가 같은 식을 쓴다. */
-private fun belowAnchorLeft(anchorCenterX: Float, tooltipWidth: Float, windowWidth: Float): Float =
-    (anchorCenterX - tooltipWidth / 2).coerceIn(0f, (windowWidth - tooltipWidth).coerceAtLeast(0f))
+/** 툴팁을 앵커 가운데에 맞추되 창 끝에서 [edgeMargin]만큼 띄운다. 툴팁 위치와 꼬리 위치가 같은 식을 쓴다. */
+private fun belowAnchorLeft(
+    anchorCenterX: Float,
+    tooltipWidth: Float,
+    windowWidth: Float,
+    edgeMargin: Float
+): Float {
+    val maxLeft = (windowWidth - tooltipWidth - edgeMargin).coerceAtLeast(edgeMargin)
+    return (anchorCenterX - tooltipWidth / 2).coerceIn(edgeMargin, maxLeft)
+}
 
 /**
  * [rememberBelowAnchorPositionProvider]와 함께 쓰는 툴팁. 위쪽 꼬리가 앵커 가운데를 가리킨다.
@@ -99,7 +109,8 @@ fun TooltipScope.BelowAnchorTooltip(text: String) {
                     val tooltipLeft = belowAnchorLeft(
                         anchorCenterX = anchorBounds.center.x,
                         tooltipWidth = size.width,
-                        windowWidth = anchor.findRootCoordinates().size.width.toFloat()
+                        windowWidth = anchor.findRootCoordinates().size.width.toFloat(),
+                        edgeMargin = TooltipEdgeMargin.toPx()
                     )
                     anchorBounds.center.x - tooltipLeft
                 }.coerceIn(caretWidth / 2, size.width - caretWidth / 2)
@@ -120,6 +131,7 @@ fun TooltipScope.BelowAnchorTooltip(text: String) {
 }
 
 private val TooltipAnchorSpacing = 4.dp
+private val TooltipEdgeMargin = 8.dp
 
 @OptIn(ExperimentalMaterial3Api::class)
 private val CaretSize = TooltipDefaults.caretSize
