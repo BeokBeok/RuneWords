@@ -17,7 +17,6 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.PlainTooltip
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TooltipBox
@@ -36,6 +35,7 @@ import androidx.core.os.bundleOf
 import com.beok.runewords.common.model.Rune
 import com.beok.runewords.common.resource.iconResourceID
 import com.beok.runewords.common.resource.nameResourceID
+import com.beok.runewords.common.view.BelowAnchorTooltip
 import com.beok.runewords.common.view.rememberBelowAnchorPositionProvider
 import com.beok.runewords.common.view.rememberFirstTimeTooltipState
 import com.beok.runewords.home.R
@@ -86,9 +86,7 @@ private fun RankingAction(onRankingClick: () -> Unit) {
     TooltipBox(
         positionProvider = rememberBelowAnchorPositionProvider(),
         tooltip = {
-            PlainTooltip {
-                Text(text = stringResource(id = R.string.home_ranking_tooltip))
-            }
+            BelowAnchorTooltip(text = stringResource(id = R.string.home_ranking_tooltip))
         },
         state = rememberFirstTimeTooltipState(
             preferencesName = PreferencesName,
