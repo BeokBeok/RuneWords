@@ -30,6 +30,7 @@ rootProject.name = "RuneWords"
 include(
     ":app",
     ":common",
+    ":common:option",
     ":feature:home",
     ":feature:combination",
     ":feature:detail",

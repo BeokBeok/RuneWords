@@ -24,6 +24,7 @@ graph TD
     app -. baselineProfile .-> benchmark[":benchmark"]
     home & info & combination & detail & ranking --> common[":common"]
     home & info & combination & detail & ranking --> tracking[":tracking"]
+    combination & detail --> option[":common:option"]
     app --> common
     app --> tracking
 ```
@@ -37,6 +38,7 @@ graph TD
 | `:feature:detail` | 룬워드 상세 화면 |
 | `:feature:ranking` | 룬/룬워드 랭킹 화면 |
 | `:common` | 공통 모델, 리소스, 테스트 픽스처 |
+| `:common:option` | 룬워드 옵션 정의, 옵션 문구, 옵션 필터 칩 이름 |
 | `:tracking` | Firebase Analytics 이벤트 추적 |
 | `:benchmark` | Baseline Profile 생성, 시작 성능 측정 |
 | `:coding-convention` | Konsist로 네이밍과 ViewModel 규칙 검사 |

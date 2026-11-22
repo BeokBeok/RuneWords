@@ -1,12 +1,12 @@
-package com.beok.runewords.detail.presentation.option
+package com.beok.runewords.common.option
 
-import com.beok.runewords.detail.presentation.option.OptionArg.ClassName
-import com.beok.runewords.detail.presentation.option.OptionArg.DamageRange
-import com.beok.runewords.detail.presentation.option.OptionArg.Fixed
-import com.beok.runewords.detail.presentation.option.OptionArg.PerLevel
-import com.beok.runewords.detail.presentation.option.OptionArg.PerLevelRange
-import com.beok.runewords.detail.presentation.option.OptionArg.Range
-import com.beok.runewords.detail.presentation.option.OptionArg.SkillName
+import com.beok.runewords.common.option.OptionArg.ClassName
+import com.beok.runewords.common.option.OptionArg.DamageRange
+import com.beok.runewords.common.option.OptionArg.Fixed
+import com.beok.runewords.common.option.OptionArg.PerLevel
+import com.beok.runewords.common.option.OptionArg.PerLevelRange
+import com.beok.runewords.common.option.OptionArg.Range
+import com.beok.runewords.common.option.OptionArg.SkillName
 
 /*
  * 룬워드별 옵션 정의. 키는 Firestore의 룬워드 `name`이다.
@@ -1833,7 +1833,7 @@ private val zephyr = listOf(
 )
 
 // 아래 맵은 위의 정의보다 뒤에 있어야 한다. 최상위 프로퍼티는 선언 순서대로 초기화된다.
-internal val runeWordOptionDefinitions: Map<String, List<RuneWordOptionSection>> = mapOf(
+val runeWordOptionDefinitions: Map<String, List<RuneWordOptionSection>> = mapOf(
     "ancient_pledge" to ancientPledge,
     "authority" to authority,
     "beast" to beast,

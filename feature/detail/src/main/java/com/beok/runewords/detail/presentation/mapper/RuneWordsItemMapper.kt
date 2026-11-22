@@ -5,7 +5,7 @@ import com.beok.runewords.common.ext.resourceIDByName
 import com.beok.runewords.common.model.Rune
 import com.beok.runewords.detail.domain.model.RuneWordsDetail
 import com.beok.runewords.detail.presentation.model.RuneWordsItem
-import com.beok.runewords.detail.presentation.option.RuneWordOptionCatalog
+import com.beok.runewords.common.option.RuneWordOptionCatalog
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 

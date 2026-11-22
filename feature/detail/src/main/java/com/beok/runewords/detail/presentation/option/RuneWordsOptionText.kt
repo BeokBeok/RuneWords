@@ -5,6 +5,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.AnnotatedString
+import com.beok.runewords.common.option.RuneWordOptionFormatter
+import com.beok.runewords.common.option.toAnnotatedString
 import com.beok.runewords.detail.presentation.model.RuneWordsItem
 
 /**

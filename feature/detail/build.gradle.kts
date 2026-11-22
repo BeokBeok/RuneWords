@@ -14,6 +14,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":common:option"))
     implementation(libs.core.ktx)
     implementation(libs.constraintlayout.compose)
     implementation(libs.lifecycle.runtime.compose)

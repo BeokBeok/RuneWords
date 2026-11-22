@@ -4,7 +4,7 @@ import androidx.annotation.StringRes
 import androidx.compose.runtime.Stable
 import com.beok.runewords.common.ext.EMPTY
 import com.beok.runewords.common.model.Rune
-import com.beok.runewords.detail.presentation.option.RuneWordOptionSection
+import com.beok.runewords.common.option.RuneWordOptionSection
 
 @Stable
 internal data class RuneWordsItem(

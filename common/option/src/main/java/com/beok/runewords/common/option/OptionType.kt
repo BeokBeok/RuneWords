@@ -1,7 +1,7 @@
-package com.beok.runewords.detail.presentation.option
+package com.beok.runewords.common.option
 
 import androidx.annotation.StringRes
-import com.beok.runewords.detail.R
+import com.beok.runewords.common.option.R
 
 /**
  * 옵션 형식. 형식 하나는 언어마다 문자열 리소스 하나만 가진다.
@@ -9,7 +9,7 @@ import com.beok.runewords.detail.R
  * 새 룬워드를 추가할 때는 이미 있는 형식을 먼저 찾아서 쓴다.
  * 없는 형식만 새로 추가한다. 문자열 리소스는 `option_type_` 접두사를 붙여 en, ko에 모두 추가한다.
  */
-internal enum class OptionType(@StringRes val templateResID: Int) {
+enum class OptionType(@StringRes val templateResID: Int) {
     ADDS_COLD_DAMAGE(R.string.option_type_adds_cold_damage),
     ADDS_COLD_DAMAGE_DURATION(R.string.option_type_adds_cold_damage_duration),
     ADDS_FIRE_DAMAGE(R.string.option_type_adds_fire_damage),
@@ -135,7 +135,7 @@ internal enum class OptionType(@StringRes val templateResID: Int) {
 }
 
 /** 기술 이름. 문자열 리소스는 `option_skill_` 접두사를 붙여 en, ko에 모두 추가한다. */
-internal enum class Skill(@StringRes val nameResID: Int) {
+enum class Skill(@StringRes val nameResID: Int) {
     ABYSS(R.string.option_skill_abyss),
     AMPLIFY_DAMAGE(R.string.option_skill_amplify_damage),
     ATTRACT(R.string.option_skill_attract),
@@ -243,7 +243,7 @@ internal enum class Skill(@StringRes val nameResID: Int) {
 }
 
 /** 직업 이름. 직업 전용 기술 옵션에 쓴다. 문자열 리소스는 `option_class_` 접두사를 붙인다. */
-internal enum class CharacterClass(@StringRes val nameResID: Int) {
+enum class CharacterClass(@StringRes val nameResID: Int) {
     AMAZON(R.string.option_class_amazon),
     ASSASSIN(R.string.option_class_assassin),
     BARBARIAN(R.string.option_class_barbarian),
@@ -255,7 +255,7 @@ internal enum class CharacterClass(@StringRes val nameResID: Int) {
 }
 
 /** 아이템 종류에 따라 옵션이 달라지는 룬워드의 구역 제목. 예: 인내의 갑옷/무기 */
-internal enum class OptionSectionTitle(@StringRes val titleResID: Int) {
+enum class OptionSectionTitle(@StringRes val titleResID: Int) {
     BODY_ARMOR(R.string.option_section_body_armor),
     HELM(R.string.option_section_helm),
     SHIELD(R.string.option_section_shield),

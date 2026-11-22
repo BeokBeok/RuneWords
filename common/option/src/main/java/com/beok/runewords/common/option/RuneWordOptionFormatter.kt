@@ -1,11 +1,11 @@
-package com.beok.runewords.detail.presentation.option
+package com.beok.runewords.common.option
 
-import com.beok.runewords.detail.R
+import com.beok.runewords.common.option.R
 import java.math.BigDecimal
 
-internal data class FormattedOptionLine(val text: String, val isVariable: Boolean)
+data class FormattedOptionLine(val text: String, val isVariable: Boolean)
 
-internal data class FormattedOptionSection(val title: String?, val lines: List<FormattedOptionLine>)
+data class FormattedOptionSection(val title: String?, val lines: List<FormattedOptionLine>)
 
 /**
  * 옵션 형식과 인자를 표시 문자열로 바꾼다.
@@ -13,7 +13,7 @@ internal data class FormattedOptionSection(val title: String?, val lines: List<F
  * [getString]은 문자열 리소스 ID와 format 인자를 받아 현재 언어의 문자열을 돌려준다.
  * 화면에서는 `Resources.getString`을 넘긴다.
  */
-internal class RuneWordOptionFormatter(
+class RuneWordOptionFormatter(
     private val getString: (resID: Int, args: Array<out Any>) -> String
 ) {
 
