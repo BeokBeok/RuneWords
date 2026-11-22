@@ -28,7 +28,6 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.InputChip
 import androidx.compose.material3.InputChipDefaults
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.PlainTooltip
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TooltipBox
@@ -63,6 +62,7 @@ import com.beok.runewords.common.option.RuneWordOptionCatalog
 import com.beok.runewords.common.option.RuneWordOptionSection
 import com.beok.runewords.common.resource.iconResourceID
 import com.beok.runewords.common.resource.nameResourceID
+import com.beok.runewords.common.view.BelowAnchorTooltip
 import com.beok.runewords.common.view.ContentLoading
 import com.beok.runewords.common.view.rememberBelowAnchorPositionProvider
 import com.beok.runewords.common.view.rememberFirstTimeTooltipState
@@ -373,9 +373,7 @@ private fun OptionFilterAction(filterCount: Int, onFilterClick: () -> Unit) {
     TooltipBox(
         positionProvider = rememberBelowAnchorPositionProvider(),
         tooltip = {
-            PlainTooltip {
-                Text(text = stringResource(id = R.string.option_filter_tooltip))
-            }
+            BelowAnchorTooltip(text = stringResource(id = R.string.option_filter_open))
         },
         state = rememberFirstTimeTooltipState(
             preferencesName = PreferencesName,

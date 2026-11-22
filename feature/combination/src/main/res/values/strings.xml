@@ -3,7 +3,6 @@
     <string name="standard_only">[standard] %s</string>
     <string name="ladder_only">[ladder] %s</string>
     <string name="option_filter_open">Option filter</string>
-    <string name="option_filter_tooltip">Find rune words by option</string>
     <string name="option_filter_title">Find by option</string>
     <string name="option_filter_reset">Reset</string>
     <string name="option_filter_hint_empty">Pick options. The number is the rune word count.</string>
