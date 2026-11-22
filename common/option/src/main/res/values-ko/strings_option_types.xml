@@ -259,4 +259,14 @@
     <string name="option_type_vitality">활력 +%1$s</string>
     <string name="option_type_werebear_strikes_grant_mark">곰인간 공격이 %1$s초 동안 징표 효과 부여</string>
     <string name="option_type_werewolf_strikes_grant_mark">늑대인간 공격이 %1$s초 동안 징표 효과 부여</string>
+
+    <!-- 옵션 필터 칩 이름. 형식 문자열에서 이름을 만들 수 없는 형식만 둔다. 나머지는 OptionFilterLabel이 형식 문자열에서 만든다. -->
+    <string name="option_filter_specific_skill">특정 기술</string>
+    <string name="option_filter_cast_on_striking">타격 시 기술 시전</string>
+    <string name="option_filter_cast_when_struck">피격 시 기술 시전</string>
+    <string name="option_filter_cast_on_attack">공격 시 기술 시전</string>
+    <string name="option_filter_cast_when_you_kill">적 처치 시 기술 시전</string>
+    <string name="option_filter_cast_when_you_die">사망 시 기술 시전</string>
+    <string name="option_filter_cast_when_you_level_up">레벨 상승 시 기술 시전</string>
+    <string name="option_filter_aura">오라</string>
 </resources>

@@ -2,7 +2,7 @@ package com.beok.runewords.detail.presentation.mapper
 
 import android.content.Context
 import com.beok.runewords.detail.domain.model.RuneWordsDetail
-import com.beok.runewords.detail.presentation.option.RuneWordOptionCatalog
+import com.beok.runewords.common.option.RuneWordOptionCatalog
 import io.mockk.every
 import io.mockk.mockk
 import kotlin.test.assertEquals

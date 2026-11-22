@@ -1,15 +1,15 @@
-package com.beok.runewords.detail.presentation.option
+package com.beok.runewords.common.option
 
-import com.beok.runewords.detail.R
-import com.beok.runewords.detail.presentation.option.XmlStringResources.Companion.EN
-import com.beok.runewords.detail.presentation.option.XmlStringResources.Companion.KO
-import com.beok.runewords.detail.presentation.option.XmlStringResources.Companion.placeholders
-import com.beok.runewords.detail.presentation.option.XmlStringResources.Companion.resourceNameByID
+import com.beok.runewords.common.option.R
+import com.beok.runewords.common.option.XmlStringResources.Companion.EN
+import com.beok.runewords.common.option.XmlStringResources.Companion.KO
+import com.beok.runewords.common.option.XmlStringResources.Companion.placeholders
+import com.beok.runewords.common.option.XmlStringResources.Companion.resourceNameByID
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 import org.junit.jupiter.api.Test
 
-internal class OptionStringResourceTest {
+class OptionStringResourceTest {
 
     private val referencedResIDs: List<Int> = OptionType.entries.map(OptionType::templateResID) +
         Skill.entries.map(Skill::nameResID) +

@@ -259,4 +259,14 @@
     <string name="option_type_vitality">+%1$s to vitality</string>
     <string name="option_type_werebear_strikes_grant_mark">Werebear strikes grant mark for %1$s seconds</string>
     <string name="option_type_werewolf_strikes_grant_mark">Werewolf strikes grant mark for %1$s seconds</string>
+
+    <!-- 옵션 필터 칩 이름. 형식 문자열에서 이름을 만들 수 없는 형식만 둔다. 나머지는 OptionFilterLabel이 형식 문자열에서 만든다. -->
+    <string name="option_filter_specific_skill">Specific skills</string>
+    <string name="option_filter_cast_on_striking">Cast on striking</string>
+    <string name="option_filter_cast_when_struck">Cast when struck</string>
+    <string name="option_filter_cast_on_attack">Cast on attack</string>
+    <string name="option_filter_cast_when_you_kill">Cast when you kill</string>
+    <string name="option_filter_cast_when_you_die">Cast when you die</string>
+    <string name="option_filter_cast_when_you_level_up">Cast on level up</string>
+    <string name="option_filter_aura">Aura</string>
 </resources>

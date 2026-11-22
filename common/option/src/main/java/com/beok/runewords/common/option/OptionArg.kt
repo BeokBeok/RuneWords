@@ -1,4 +1,4 @@
-package com.beok.runewords.detail.presentation.option
+package com.beok.runewords.common.option
 
 /**
  * 옵션 형식 문자열의 placeholder(%1$s, %2$s, ...)에 순서대로 들어가는 인자.
@@ -6,7 +6,7 @@ package com.beok.runewords.detail.presentation.option
  * 수치 표기(범위 구분자, 캐릭터 레벨 비례 표기)는 [RuneWordOptionFormatter]가 언어별 문자열 리소스 하나로 만든다.
  * 그래서 룬워드마다 수치 표기가 달라지지 않는다.
  */
-internal sealed interface OptionArg {
+sealed interface OptionArg {
 
     /** 아이템마다 수치가 달라지는 옵션이면 true. 화면에서 강조 색상으로 표시한다. */
     val isVariable: Boolean get() = false

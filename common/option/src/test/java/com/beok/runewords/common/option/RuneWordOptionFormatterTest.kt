@@ -1,15 +1,15 @@
-package com.beok.runewords.detail.presentation.option
+package com.beok.runewords.common.option
 
-import com.beok.runewords.detail.presentation.option.OptionArg.Fixed
-import com.beok.runewords.detail.presentation.option.OptionArg.PerLevel
-import com.beok.runewords.detail.presentation.option.OptionArg.PerLevelRange
-import com.beok.runewords.detail.presentation.option.OptionArg.Range
-import com.beok.runewords.detail.presentation.option.XmlStringResources.Companion.EN
-import com.beok.runewords.detail.presentation.option.XmlStringResources.Companion.KO
+import com.beok.runewords.common.option.OptionArg.Fixed
+import com.beok.runewords.common.option.OptionArg.PerLevel
+import com.beok.runewords.common.option.OptionArg.PerLevelRange
+import com.beok.runewords.common.option.OptionArg.Range
+import com.beok.runewords.common.option.XmlStringResources.Companion.EN
+import com.beok.runewords.common.option.XmlStringResources.Companion.KO
 import kotlin.test.assertEquals
 import org.junit.jupiter.api.Test
 
-internal class RuneWordOptionFormatterTest {
+class RuneWordOptionFormatterTest {
 
     private val koFormatter = RuneWordOptionFormatter(KO::getString)
     private val enFormatter = RuneWordOptionFormatter(EN::getString)

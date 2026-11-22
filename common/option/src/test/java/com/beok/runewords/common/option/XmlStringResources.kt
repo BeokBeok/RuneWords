@@ -1,6 +1,6 @@
-package com.beok.runewords.detail.presentation.option
+package com.beok.runewords.common.option
 
-import com.beok.runewords.detail.R
+import com.beok.runewords.common.option.R
 import java.io.File
 import java.util.Locale
 import javax.xml.parsers.DocumentBuilderFactory
@@ -10,7 +10,7 @@ import org.w3c.dom.Element
  * 단위 테스트에서 실제 옵션 문자열 리소스 파일을 읽는다.
  * Android 리소스 시스템 없이 en, ko 문자열을 검증하기 위해 쓴다.
  */
-internal class XmlStringResources(qualifier: String) {
+class XmlStringResources(qualifier: String) {
 
     val strings: Map<String, String> = readStrings(File("src/main/res/$qualifier/$FILE_NAME"))
 

@@ -10,6 +10,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":common:option"))
     api(libs.compose.runtime)
     implementation(libs.core.ktx)
     implementation(libs.compose.material.icons.core)
