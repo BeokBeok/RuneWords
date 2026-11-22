@@ -16,5 +16,5 @@ dependencies {
     implementation(libs.lifecycle.runtime.compose)
     implementation(libs.kotlinx.collections.immutable)
 
-    testImplementation(testFixtures(project(":common")))
+    testImplementation(project(":test:fixture"))
 }

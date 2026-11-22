@@ -31,6 +31,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.beok.runewords.common.resource.iconResourceID
+import com.beok.runewords.common.resource.nameResourceID
 import com.beok.runewords.common.view.ContentLoading
 import com.beok.runewords.ranking.R
 import com.beok.runewords.ranking.presentation.model.RankingState

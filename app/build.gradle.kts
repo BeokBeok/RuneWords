@@ -41,7 +41,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":common"))
+    implementation(project(":common:resource"))
     implementation(project(":tracking"))
     implementation(project(":feature:home"))
     implementation(project(":feature:combination"))
@@ -67,5 +67,5 @@ dependencies {
 
     baselineProfile(project(":benchmark"))
 
-    testImplementation(testFixtures(project(":common")))
+    testImplementation(project(":test:fixture"))
 }
