@@ -20,14 +20,16 @@ fun NavController.navigateToCombination(
 
 fun NavGraphBuilder.combinationScreen(
     onRuneInfoClick: (String) -> Unit,
-    onRuneWordClick: (String) -> Unit
+    onRuneWordClick: (String) -> Unit,
+    showInterstitial: (onFinished: () -> Unit) -> Unit
 ) {
     composable<Combination>(
         deepLinks = listOf(navDeepLink<Combination>(basePath = "$DeepLinkBaseUrl/rune"))
     ) {
         CombinationRoute(
             onRuneInfoClick = onRuneInfoClick,
-            onRuneWordClick = onRuneWordClick
+            onRuneWordClick = onRuneWordClick,
+            showInterstitial = showInterstitial
         )
     }
 }
