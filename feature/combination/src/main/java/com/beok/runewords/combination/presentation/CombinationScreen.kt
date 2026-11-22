@@ -59,6 +59,8 @@ import com.beok.runewords.common.model.Rune
 import com.beok.runewords.common.option.OptionFilterLabel
 import com.beok.runewords.common.option.RuneWordOptionCatalog
 import com.beok.runewords.common.option.RuneWordOptionSection
+import com.beok.runewords.common.resource.iconResourceID
+import com.beok.runewords.common.resource.nameResourceID
 import com.beok.runewords.common.view.ContentLoading
 import com.beok.runewords.tracking.LocalTracker
 import com.beok.runewords.tracking.Tracking

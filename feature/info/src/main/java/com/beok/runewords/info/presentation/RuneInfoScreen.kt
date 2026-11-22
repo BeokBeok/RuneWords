@@ -28,6 +28,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.beok.runewords.common.model.Rune
+import com.beok.runewords.common.resource.armorResourceID
+import com.beok.runewords.common.resource.gemResourceID
+import com.beok.runewords.common.resource.helmResourceID
+import com.beok.runewords.common.resource.iconResourceID
+import com.beok.runewords.common.resource.shieldResourceID
+import com.beok.runewords.common.resource.weaponResourceID
 
 @Composable
 internal fun RuneInfoScreen(rune: Rune?, modifier: Modifier = Modifier) {
@@ -56,26 +62,26 @@ private fun RuneInfoContent(modifier: Modifier, rune: Rune) {
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 24.dp),
-            imageResourceID = com.beok.runewords.common.R.drawable.ic_weapon,
+            imageResourceID = com.beok.runewords.common.resource.R.drawable.ic_weapon,
             messageResourceID = rune.weaponResourceID
         )
         RuneInfoItem(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 24.dp),
-            imageResourceID = com.beok.runewords.common.R.drawable.ic_helm,
+            imageResourceID = com.beok.runewords.common.resource.R.drawable.ic_helm,
             messageResourceID = rune.helmResourceID
         )
         RuneInfoItem(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 24.dp),
-            imageResourceID = com.beok.runewords.common.R.drawable.ic_armor,
+            imageResourceID = com.beok.runewords.common.resource.R.drawable.ic_armor,
             messageResourceID = rune.armorResourceID
         )
         RuneInfoItem(
             modifier = Modifier.fillMaxWidth(),
-            imageResourceID = com.beok.runewords.common.R.drawable.ic_shield,
+            imageResourceID = com.beok.runewords.common.resource.R.drawable.ic_shield,
             messageResourceID = rune.shieldResourceID
         )
     }

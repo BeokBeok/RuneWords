@@ -22,11 +22,14 @@ graph TD
     app --> detail[":feature:detail"]
     app --> ranking[":feature:ranking"]
     app -. baselineProfile .-> benchmark[":benchmark"]
-    home & info & combination & detail & ranking --> common[":common"]
+    home & info & combination & detail & ranking --> resource[":common:resource"]
+    home & info & combination & detail & ranking --> model[":common:model"]
     home & info & combination & detail & ranking --> tracking[":tracking"]
     combination & detail --> option[":common:option"]
-    app --> common
+    resource --> model
+    app --> resource
     app --> tracking
+    app & combination & detail & ranking -. test .-> fixture[":test:fixture"]
 ```
 
 | 모듈 | 역할 |
@@ -37,9 +40,11 @@ graph TD
 | `:feature:combination` | 룬별 룬워드 목록 화면 |
 | `:feature:detail` | 룬워드 상세 화면 |
 | `:feature:ranking` | 룬/룬워드 랭킹 화면 |
-| `:common` | 공통 모델, 리소스, 테스트 픽스처 |
+| `:common:model` | 룬 모델, Result 등 공통 모델 (순수 Kotlin) |
+| `:common:resource` | 룬 이름·아이콘·옵션 리소스 연결, drawable, strings, themes |
 | `:common:option` | 룬워드 옵션 정의, 옵션 문구, 옵션 필터 칩 이름 |
 | `:tracking` | Firebase Analytics 이벤트 추적 |
+| `:test:fixture` | 단위 테스트 공통 도구 (MainCoroutineTestExtension) |
 | `:benchmark` | Baseline Profile 생성, 시작 성능 측정 |
 | `:coding-convention` | Konsist로 네이밍과 ViewModel 규칙 검사 |
 | `build-logic` | Gradle 컨벤션 플러그인 |

@@ -29,7 +29,8 @@ dependencyResolutionManagement {
 rootProject.name = "RuneWords"
 include(
     ":app",
-    ":common",
+    ":common:model",
+    ":common:resource",
     ":common:option",
     ":feature:home",
     ":feature:combination",
@@ -38,5 +39,6 @@ include(
     ":feature:ranking",
     ":benchmark",
     ":tracking",
+    ":test:fixture",
     ":coding-convention"
 )

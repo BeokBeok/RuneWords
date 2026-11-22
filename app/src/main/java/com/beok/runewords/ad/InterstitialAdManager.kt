@@ -32,9 +32,9 @@ internal class InterstitialAdManager @Inject constructor(
             context,
             context.getString(
                 if (BuildConfig.DEBUG) {
-                    com.beok.runewords.common.R.string.test_admob_screen_app_key
+                    com.beok.runewords.common.resource.R.string.test_admob_screen_app_key
                 } else {
-                    com.beok.runewords.common.R.string.admob_screen_app_key
+                    com.beok.runewords.common.resource.R.string.admob_screen_app_key
                 }
             ),
             AdRequest.Builder().build(),

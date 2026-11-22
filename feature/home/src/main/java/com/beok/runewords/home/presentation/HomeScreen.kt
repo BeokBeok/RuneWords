@@ -47,6 +47,8 @@ import androidx.compose.ui.window.PopupPositionProvider
 import androidx.core.content.edit
 import androidx.core.os.bundleOf
 import com.beok.runewords.common.model.Rune
+import com.beok.runewords.common.resource.iconResourceID
+import com.beok.runewords.common.resource.nameResourceID
 import com.beok.runewords.home.R
 import com.beok.runewords.tracking.LocalTracker
 import com.beok.runewords.tracking.TrackingConstants

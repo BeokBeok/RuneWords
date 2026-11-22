@@ -77,5 +77,9 @@ gradlePlugin {
             id = "runewords.android.feature"
             implementationClass = "plugin.AndroidFeatureConventionPlugin"
         }
+        register("jvmLibrary") {
+            id = "runewords.jvm.library"
+            implementationClass = "plugin.JvmLibraryConventionPlugin"
+        }
     }
 }

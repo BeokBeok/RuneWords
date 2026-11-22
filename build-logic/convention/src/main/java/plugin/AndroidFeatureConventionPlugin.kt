@@ -20,7 +20,8 @@ internal class AndroidFeatureConventionPlugin : Plugin<Project> {
             }
 
             dependencies {
-                implementation(project(":common"))
+                implementation(project(":common:model"))
+                implementation(project(":common:resource"))
                 implementation(project(":tracking"))
 
                 implementation(libs.findBundle("compose").get())

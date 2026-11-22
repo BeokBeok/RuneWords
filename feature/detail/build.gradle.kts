@@ -23,5 +23,5 @@ dependencies {
 
     implementation(libs.firebase.firestore)
 
-    testImplementation(testFixtures(project(":common")))
+    testImplementation(project(":test:fixture"))
 }

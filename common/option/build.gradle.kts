@@ -11,6 +11,8 @@ android {
 }
 
 dependencies {
-    implementation(platform(libs.compose.bom))
-    implementation(libs.compose.ui)
+    api(platform(libs.compose.bom))
+    // 공개 API가 AnnotatedString을 돌려준다.
+    api(libs.compose.ui.text)
+    implementation(libs.compose.ui.graphics)
 }

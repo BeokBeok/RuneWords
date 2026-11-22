@@ -46,6 +46,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.beok.runewords.common.ext.EMPTY
+import com.beok.runewords.common.resource.iconResourceID
+import com.beok.runewords.common.resource.nameResourceID
 import com.beok.runewords.common.view.ContentLoading
 import com.beok.runewords.detail.BuildConfig
 import com.beok.runewords.detail.R
@@ -147,9 +149,9 @@ private fun BannerAd(modifier: Modifier = Modifier) {
             )
             adUnitId = applicationContext.getString(
                 if (BuildConfig.DEBUG) {
-                    com.beok.runewords.common.R.string.test_admob_banner_app_key
+                    com.beok.runewords.common.resource.R.string.test_admob_banner_app_key
                 } else {
-                    com.beok.runewords.common.R.string.admob_banner_app_key
+                    com.beok.runewords.common.resource.R.string.admob_banner_app_key
                 }
             )
             @SuppressLint("MissingPermission")
