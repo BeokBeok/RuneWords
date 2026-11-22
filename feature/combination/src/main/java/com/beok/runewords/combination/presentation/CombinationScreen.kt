@@ -28,8 +28,10 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.InputChip
 import androidx.compose.material3.InputChipDefaults
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.PlainTooltip
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TooltipBox
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
@@ -62,6 +64,8 @@ import com.beok.runewords.common.option.RuneWordOptionSection
 import com.beok.runewords.common.resource.iconResourceID
 import com.beok.runewords.common.resource.nameResourceID
 import com.beok.runewords.common.view.ContentLoading
+import com.beok.runewords.common.view.rememberBelowAnchorPositionProvider
+import com.beok.runewords.common.view.rememberFirstTimeTooltipState
 import com.beok.runewords.tracking.LocalTracker
 import com.beok.runewords.tracking.Tracking
 import com.beok.runewords.tracking.TrackingConstants
@@ -253,19 +257,7 @@ private fun CombinationTopBar(
             }
         },
         actions = {
-            IconButton(onClick = onFilterClick) {
-                BadgedBox(
-                    badge = {
-                        if (filterCount > 0) Badge { Text(text = filterCount.toString()) }
-                    }
-                ) {
-                    Icon(
-                        painter = painterResource(id = R.drawable.ic_filter_list),
-                        contentDescription = stringResource(id = R.string.option_filter_open),
-                        tint = MaterialTheme.colorScheme.primary
-                    )
-                }
-            }
+            OptionFilterAction(filterCount = filterCount, onFilterClick = onFilterClick)
             IconButton(
                 onClick = {
                     onRuneInfoClick(rune.name)
@@ -373,3 +365,38 @@ private fun Tracking.logOptionFilterApply(runeName: String, keys: Set<String>, r
         )
     }
 }
+
+/** 옵션 필터 아이콘. 처음 한 번은 툴팁을 자동으로 보여준다. */
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun OptionFilterAction(filterCount: Int, onFilterClick: () -> Unit) {
+    TooltipBox(
+        positionProvider = rememberBelowAnchorPositionProvider(),
+        tooltip = {
+            PlainTooltip {
+                Text(text = stringResource(id = R.string.option_filter_tooltip))
+            }
+        },
+        state = rememberFirstTimeTooltipState(
+            preferencesName = PreferencesName,
+            seenKey = KeyOptionFilterTooltipSeen
+        )
+    ) {
+        IconButton(onClick = onFilterClick) {
+            BadgedBox(
+                badge = {
+                    if (filterCount > 0) Badge { Text(text = filterCount.toString()) }
+                }
+            ) {
+                Icon(
+                    painter = painterResource(id = R.drawable.ic_filter_list),
+                    contentDescription = stringResource(id = R.string.option_filter_open),
+                    tint = MaterialTheme.colorScheme.primary
+                )
+            }
+        }
+    }
+}
+
+private const val PreferencesName = "combination"
+private const val KeyOptionFilterTooltipSeen = "option_filter_tooltip_seen"

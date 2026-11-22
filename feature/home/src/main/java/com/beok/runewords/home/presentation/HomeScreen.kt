@@ -1,6 +1,5 @@
 package com.beok.runewords.home.presentation
 
-import android.content.Context
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -24,36 +23,24 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TooltipBox
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
-import androidx.compose.material3.rememberTooltipState
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.IntOffset
-import androidx.compose.ui.unit.IntRect
-import androidx.compose.ui.unit.IntSize
-import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.ui.window.PopupPositionProvider
-import androidx.core.content.edit
 import androidx.core.os.bundleOf
 import com.beok.runewords.common.model.Rune
 import com.beok.runewords.common.resource.iconResourceID
 import com.beok.runewords.common.resource.nameResourceID
+import com.beok.runewords.common.view.rememberBelowAnchorPositionProvider
+import com.beok.runewords.common.view.rememberFirstTimeTooltipState
 import com.beok.runewords.home.R
 import com.beok.runewords.tracking.LocalTracker
 import com.beok.runewords.tracking.TrackingConstants
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.launch
 
 @Composable
 internal fun HomeScreen(
@@ -92,25 +79,10 @@ private fun HomeTopBar(onRankingClick: () -> Unit) {
     )
 }
 
-/**
- * 랭킹 아이콘. 처음 한 번은 툴팁을 자동으로 보여준다. 사용자가 툴팁을 닫으면 다시 자동으로 보여주지 않는다.
- * 길게 누르면 언제든 툴팁을 볼 수 있다.
- */
+/** 랭킹 아이콘. 처음 한 번은 툴팁을 자동으로 보여준다. */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun RankingAction(onRankingClick: () -> Unit) {
-    val context = LocalContext.current
-    val preferences = remember { context.getSharedPreferences(PreferencesName, Context.MODE_PRIVATE) }
-    val tooltipState = rememberTooltipState(isPersistent = true)
-    LaunchedEffect(Unit) {
-        if (preferences.getBoolean(KeyRankingTooltipSeen, false)) return@LaunchedEffect
-        // 툴팁이 떠 있을 때 첫 터치는 툴팁을 닫는 데 쓰인다. 그래서 닫힌 시점에 본 것으로 저장한다.
-        // show()는 바깥 터치로 닫혀도 반환되지 않으므로 별도 코루틴에서 실행하고 표시 상태만 관찰한다.
-        launch { tooltipState.show() }
-        snapshotFlow { tooltipState.isVisible }.first { visible -> visible }
-        snapshotFlow { tooltipState.isVisible }.first { visible -> !visible }
-        preferences.edit { putBoolean(KeyRankingTooltipSeen, true) }
-    }
     TooltipBox(
         positionProvider = rememberBelowAnchorPositionProvider(),
         tooltip = {
@@ -118,7 +90,10 @@ private fun RankingAction(onRankingClick: () -> Unit) {
                 Text(text = stringResource(id = R.string.home_ranking_tooltip))
             }
         },
-        state = tooltipState
+        state = rememberFirstTimeTooltipState(
+            preferencesName = PreferencesName,
+            seenKey = KeyRankingTooltipSeen
+        )
     ) {
         IconButton(
             onClick = {
@@ -134,27 +109,6 @@ private fun RankingAction(onRankingClick: () -> Unit) {
     }
 }
 
-/** 툴팁을 아이콘 아래에 둔다. 기본 위치(아이콘 위)는 상단 바에서 아이콘을 가린다. */
-@Composable
-private fun rememberBelowAnchorPositionProvider(): PopupPositionProvider {
-    val spacing = with(LocalDensity.current) { TooltipAnchorSpacing.roundToPx() }
-    return remember(spacing) {
-        object : PopupPositionProvider {
-            override fun calculatePosition(
-                anchorBounds: IntRect,
-                windowSize: IntSize,
-                layoutDirection: LayoutDirection,
-                popupContentSize: IntSize
-            ): IntOffset {
-                val x = (anchorBounds.center.x - popupContentSize.width / 2)
-                    .coerceIn(0, (windowSize.width - popupContentSize.width).coerceAtLeast(0))
-                return IntOffset(x = x, y = anchorBounds.bottom + spacing)
-            }
-        }
-    }
-}
-
-private val TooltipAnchorSpacing = 4.dp
 private const val PreferencesName = "home"
 private const val KeyRankingTooltipSeen = "ranking_tooltip_seen"
 

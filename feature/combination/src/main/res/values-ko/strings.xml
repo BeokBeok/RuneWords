@@ -3,6 +3,7 @@
     <string name="standard_only">[스탠] %s</string>
     <string name="ladder_only">[레더] %s</string>
     <string name="option_filter_open">옵션 필터</string>
+    <string name="option_filter_tooltip">옵션으로 룬워드 찾기</string>
     <string name="option_filter_title">옵션으로 찾기</string>
     <string name="option_filter_reset">초기화</string>
     <string name="option_filter_hint_empty">옵션을 고르세요. 괄호 숫자는 룬워드 수입니다.</string>
