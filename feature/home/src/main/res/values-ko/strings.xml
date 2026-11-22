@@ -2,5 +2,4 @@
 <resources>
     <string name="home_title">디아2 룬워드</string>
     <string name="home_ranking">랭킹</string>
-    <string name="home_ranking_tooltip">인기 룬·룬워드 랭킹</string>
 </resources>

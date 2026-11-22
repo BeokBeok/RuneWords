@@ -86,7 +86,7 @@ private fun RankingAction(onRankingClick: () -> Unit) {
     TooltipBox(
         positionProvider = rememberBelowAnchorPositionProvider(),
         tooltip = {
-            BelowAnchorTooltip(text = stringResource(id = R.string.home_ranking_tooltip))
+            BelowAnchorTooltip(text = stringResource(id = R.string.home_ranking))
         },
         state = rememberFirstTimeTooltipState(
             preferencesName = PreferencesName,
