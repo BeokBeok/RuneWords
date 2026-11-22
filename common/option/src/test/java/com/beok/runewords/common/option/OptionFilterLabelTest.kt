@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test
 
 internal class OptionFilterLabelTest {
 
-    private val invalid = Regex("""[0-9%$+~×]|\(\s*\)|^\s|\s$|^to """)
+    private val invalid = Regex("""[0-9%$+~×]|\(\s*\)|^\s|\s$|:$|^to """)
 
     @Test
     fun `모든 옵션 형식의 칩 이름은_수치 자리가 남지 않아야 한다`() {

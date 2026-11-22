@@ -60,23 +60,12 @@ internal fun OptionFilterSheet(
                 .verticalScroll(rememberScrollState())
                 .padding(horizontal = 16.dp, vertical = 12.dp)
         ) {
-            val (skillChips, otherChips) = filter.chips.partition(OptionFilterChip::isSkill)
-            listOf(
-                R.string.option_filter_skill_group to skillChips,
-                R.string.option_filter_other_group to otherChips
-            ).filter { (_, chips) -> chips.isNotEmpty() }.forEach { (titleResID, chips) ->
-                Text(
-                    text = stringResource(id = titleResID),
-                    style = MaterialTheme.typography.labelLarge,
-                    modifier = Modifier.padding(top = 4.dp, bottom = 4.dp)
-                )
-                OptionFilterChips(
-                    chips = chips,
-                    draft = draft,
-                    isEnabled = { key -> filter.matchingRuneWords(draft + key).isNotEmpty() },
-                    onToggle = { key -> draft = if (key in draft) draft - key else draft + key }
-                )
-            }
+            OptionFilterChips(
+                chips = filter.chips,
+                draft = draft,
+                isEnabled = { key -> filter.matchingRuneWords(draft + key).isNotEmpty() },
+                onToggle = { key -> draft = if (key in draft) draft - key else draft + key }
+            )
         }
         HorizontalDivider()
         Button(

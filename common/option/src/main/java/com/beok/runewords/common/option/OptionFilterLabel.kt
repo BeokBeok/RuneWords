@@ -9,20 +9,6 @@ package com.beok.runewords.common.option
  */
 object OptionFilterLabel {
 
-    /** 시트 맨 위 "기술" 묶음에 들어가는 형식. 목록 순서가 칩 표시 순서다. */
-    val skillTypes: List<OptionType> = listOf(
-        OptionType.ALL_SKILLS,
-        OptionType.SKILL_BONUS,
-        OptionType.CLASS_ONLY_SKILL,
-        OptionType.SKILL_CHARGES,
-        OptionType.CHANCE_TO_CAST_ON_STRIKING,
-        OptionType.CHANCE_TO_CAST_WHEN_STRUCK,
-        OptionType.CHANCE_TO_CAST_ON_ATTACK,
-        OptionType.CHANCE_TO_CAST_WHEN_YOU_KILL,
-        OptionType.CHANCE_TO_CAST_WHEN_YOU_DIE,
-        OptionType.CHANCE_TO_CAST_WHEN_YOU_LEVEL_UP
-    )
-
     private val labelOverrides: Map<OptionType, Int> = mapOf(
         OptionType.SKILL_BONUS to R.string.option_filter_specific_skill,
         OptionType.CLASS_ONLY_SKILL to R.string.option_filter_specific_skill,
@@ -57,6 +43,7 @@ object OptionFilterLabel {
         .replace(SPACE_BEFORE_CLOSE, ")")
         .replace(SPACES, " ")
         .trim()
+        .trimEnd(':')
         .replace(EN_LEADING, "")
         .replace(EN_TRAILING, "")
         .replaceFirstChar(Char::uppercaseChar)

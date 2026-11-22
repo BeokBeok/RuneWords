@@ -61,6 +61,7 @@ import com.beok.runewords.common.option.RuneWordOptionCatalog
 import com.beok.runewords.common.option.RuneWordOptionSection
 import com.beok.runewords.common.view.ContentLoading
 import com.beok.runewords.tracking.LocalTracker
+import com.beok.runewords.tracking.Tracking
 import com.beok.runewords.tracking.TrackingConstants
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toImmutableList
@@ -114,14 +115,7 @@ internal fun CombinationRoute(
             onApply = { keys, resultCount ->
                 selectedKeys = keys
                 isFilterOpen = false
-                tracking.logEvent(
-                    name = TrackingConstants.OptionFilter.APPLY,
-                    bundle = bundleOf(
-                        TrackingConstants.Params.RUNE_NAME to rune.name,
-                        TrackingConstants.Params.OPTIONS to keys.sorted().joinToString(","),
-                        TrackingConstants.Params.RESULT_COUNT to resultCount.toLong()
-                    )
-                )
+                tracking.logOptionFilterApply(runeName = rune.name, keys = keys, resultCount = resultCount)
             },
             onDismiss = { isFilterOpen = false }
         )
@@ -348,5 +342,26 @@ private fun RuneWordsTags(tags: List<String>) {
                     .padding(horizontal = 8.dp, vertical = 2.dp)
             )
         }
+    }
+}
+
+/** 필터 적용 이벤트 하나와, 고른 칩마다 옵션 이벤트 하나씩을 보낸다. */
+private fun Tracking.logOptionFilterApply(runeName: String, keys: Set<String>, resultCount: Int) {
+    logEvent(
+        name = TrackingConstants.OptionFilter.APPLY,
+        bundle = bundleOf(
+            TrackingConstants.Params.RUNE_NAME to runeName,
+            TrackingConstants.Params.OPTIONS to keys.sorted().joinToString(","),
+            TrackingConstants.Params.RESULT_COUNT to resultCount.toLong()
+        )
+    )
+    keys.forEach { key ->
+        logEvent(
+            name = TrackingConstants.OptionFilter.OPTION,
+            bundle = bundleOf(
+                TrackingConstants.Params.RUNE_NAME to runeName,
+                TrackingConstants.Params.OPTION to key
+            )
+        )
     }
 }

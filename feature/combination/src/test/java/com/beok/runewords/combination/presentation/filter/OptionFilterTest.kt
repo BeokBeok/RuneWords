@@ -16,7 +16,11 @@ internal class OptionFilterTest {
         OptionType.ALL_SKILLS to "모든 기술",
         OptionType.CHANCE_TO_CAST_ON_STRIKING to "타격 시 기술 시전",
         OptionType.DAMAGE_REDUCED to "피해 감소",
-        OptionType.DAMAGE_REDUCED_PERCENT to "피해 감소"
+        OptionType.DAMAGE_REDUCED_PERCENT to "피해 감소",
+        OptionType.STRENGTH to "힘",
+        OptionType.DEXTERITY to "민첩",
+        OptionType.FIRE_RESIST to "화염 저항",
+        OptionType.MAGIC_FIND to "마법 아이템 발견"
     )
 
     private val filter = OptionFilter(
@@ -24,11 +28,15 @@ internal class OptionFilterTest {
             "a" to listOf(
                 option(OptionType.ENHANCED_DAMAGE, Fixed(100)),
                 option(OptionType.CHANCE_TO_CAST_ON_STRIKING, Fixed(5), Fixed(10), SkillName(Skill.VOLCANO)),
-                option(OptionType.DAMAGE_REDUCED, Fixed(7))
+                option(OptionType.DAMAGE_REDUCED, Fixed(7)),
+                option(OptionType.STRENGTH, Fixed(10)),
+                option(OptionType.FIRE_RESIST, Fixed(30))
             ),
             "b" to listOf(
                 option(OptionType.ENHANCED_DAMAGE, Fixed(200)),
-                option(OptionType.SKILL_CHARGES, Fixed(1), Fixed(5), SkillName(Skill.VENOM))
+                option(OptionType.SKILL_CHARGES, Fixed(1), Fixed(5), SkillName(Skill.VENOM)),
+                option(OptionType.DEXTERITY, Fixed(10)),
+                option(OptionType.MAGIC_FIND, Fixed(25))
             ),
             "c" to listOf(
                 option(OptionType.ALL_SKILLS, Fixed(2)),
@@ -36,13 +44,17 @@ internal class OptionFilterTest {
                 option(OptionType.DAMAGE_REDUCED_PERCENT, Fixed(8))
             )
         ),
-        labelOf = { labels[it] ?: it.name }
+        labelOf = { labels[it] ?: it.name },
+        labelComparator = naturalOrder()
     )
 
     @Test
-    fun `기술 칩은_고정 순서로 앞에 두고 나머지는 룬워드 수 내림차순이다`() {
+    fun `칩은_이름 순서로 나열한다`() {
         assertEquals(
-            expected = listOf("모든 기술", "특정 기술", "타격 시 기술 시전", "ENHANCED_DAMAGE", "피해 감소"),
+            expected = listOf(
+                "ENHANCED_DAMAGE", "마법 아이템 발견", "모든 기술", "민첩", "타격 시 기술 시전",
+                "특정 기술", "피해 감소", "화염 저항", "힘"
+            ),
             actual = filter.chips.map(OptionFilterChip::label)
         )
     }
@@ -70,7 +82,7 @@ internal class OptionFilterTest {
 
     @Test
     fun `이 룬에 없는 칩 key는_버린다`() {
-        assertEquals(setOf("ENHANCED_DAMAGE"), filter.validKeys(setOf("ENHANCED_DAMAGE", "MAGIC_FIND")))
+        assertEquals(setOf("ENHANCED_DAMAGE"), filter.validKeys(setOf("ENHANCED_DAMAGE", "VITALITY")))
     }
 
     private fun specificSkillKey(): String = filter.chips.single { it.label == "특정 기술" }.key

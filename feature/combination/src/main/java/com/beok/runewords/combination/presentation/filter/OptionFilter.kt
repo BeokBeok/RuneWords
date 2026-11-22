@@ -2,10 +2,10 @@ package com.beok.runewords.combination.presentation.filter
 
 import androidx.compose.runtime.Immutable
 import com.beok.runewords.common.option.OptionArg
-import com.beok.runewords.common.option.OptionFilterLabel
 import com.beok.runewords.common.option.OptionType
 import com.beok.runewords.common.option.RuneWordOption
 import com.beok.runewords.common.option.Skill
+import java.text.Collator
 
 /**
  * 옵션 필터 칩 하나. [types] 중 하나라도 가진 룬워드가 이 칩에 맞는다.
@@ -16,8 +16,7 @@ internal data class OptionFilterChip(
     val key: String,
     val label: String,
     val types: Set<OptionType>,
-    val runeWordCount: Int,
-    val isSkill: Boolean
+    val runeWordCount: Int
 )
 
 /**
@@ -27,9 +26,15 @@ internal data class OptionFilterChip(
 @Immutable
 internal class OptionFilter(
     private val optionsByRuneWord: Map<String, List<RuneWordOption>>,
-    labelOf: (OptionType) -> String
+    labelOf: (OptionType) -> String,
+    labelComparator: Comparator<String> = Collator.getInstance().let { collator -> Comparator(collator::compare) }
 ) {
 
+    /**
+     * 칩 목록. 칩 이름 순서(ko 가나다, en abc)다.
+     * 묶음 없이 나열한다. 사용자가 많이 고르는 옵션을 Analytics로 모은 뒤 묶음이나 고정 구역을 정한다.
+     * 인기와 관계없는 순서로 두어서 화면 위치 때문에 선택 수가 치우치는 것을 줄인다.
+     */
     val chips: List<OptionFilterChip>
 
     init {
@@ -47,15 +52,10 @@ internal class OptionFilter(
                     key = keyByLabel.getValue(label),
                     label = label,
                     types = typeSet,
-                    runeWordCount = optionsByRuneWord.values.count { options -> options.any { it.type in typeSet } },
-                    isSkill = typeSet.any(OptionFilterLabel.skillTypes::contains)
+                    runeWordCount = optionsByRuneWord.values.count { options -> options.any { it.type in typeSet } }
                 )
             }
-            .sortedWith(
-                compareBy<OptionFilterChip> { chip -> chip.skillOrder() }
-                    .thenByDescending(OptionFilterChip::runeWordCount)
-                    .thenBy(OptionFilterChip::label)
-            )
+            .sortedWith(compareBy(labelComparator, OptionFilterChip::label))
     }
 
     private val chipByKey: Map<String, OptionFilterChip> = chips.associateBy(OptionFilterChip::key)
@@ -81,9 +81,4 @@ internal class OptionFilter(
             .map(OptionArg.SkillName::skill)
             .distinct()
     }
-
-    private fun OptionFilterChip.skillOrder(): Int = types
-        .map(OptionFilterLabel.skillTypes::indexOf)
-        .filter { it >= 0 }
-        .minOrNull() ?: Int.MAX_VALUE
 }
