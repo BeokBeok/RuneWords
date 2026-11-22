@@ -57,7 +57,8 @@ fun RuneWordsNavHost(
             onRuneInfoClick = navController::navigateToRuneInfo,
             onRuneWordClick = { runeWordName ->
                 showInterstitial { navController.navigateToDetail(runeWordName) }
-            }
+            },
+            showInterstitial = showInterstitial
         )
         runeInfoScreen()
         detailScreen(

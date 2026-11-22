@@ -72,6 +72,7 @@ import kotlinx.collections.immutable.toImmutableList
 internal fun CombinationRoute(
     onRuneInfoClick: (String) -> Unit,
     onRuneWordClick: (String) -> Unit,
+    showInterstitial: (onFinished: () -> Unit) -> Unit,
     modifier: Modifier = Modifier,
     viewModel: CombinationViewModel = hiltViewModel()
 ) {
@@ -115,8 +116,13 @@ internal fun CombinationRoute(
             filter = filter,
             initialKeys = activeKeys,
             onApply = { keys, resultCount ->
-                selectedKeys = keys
                 isFilterOpen = false
+                // 필터 해제는 결과 조회가 아니므로 광고를 띄우지 않는다.
+                if (keys.isEmpty()) {
+                    selectedKeys = keys
+                } else {
+                    showInterstitial { selectedKeys = keys }
+                }
                 tracking.logOptionFilterApply(runeName = rune.name, keys = keys, resultCount = resultCount)
             },
             onDismiss = { isFilterOpen = false }
